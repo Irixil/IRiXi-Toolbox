@@ -1,0 +1,673 @@
+/* فارسی — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "ضبط ناحیه";
+"Capture Screen" = "ضبط صفحه";
+"Capture OCR" = "ضبط OCR";
+"Quick Capture" = "ضبط سریع";
+"Scroll Capture" = "ضبط پیمایشی";
+"Capture Last Area" = "ضبط آخرین ناحیه";
+"Capture Delay" = "تاخیر ضبط";
+"None" = "هیچ";
+"%d seconds" = "%d ثانیه";
+"Record Area" = "ضبط ویدیوی ناحیه";
+"Record Screen" = "ضبط ویدیوی صفحه";
+"Recent Captures" = "ضبط‌های اخیر";
+"Show History Panel" = "نمایش پنل تاریخچه";
+"Open Image..." = "باز کردن تصویر...";
+"Open from Clipboard" = "باز کردن از کلیپ‌بورد";
+"Pin from Clipboard" = "سنجاق کردن از کلیپ‌بورد";
+"Preferences..." = "تنظیمات...";
+"Check for Updates..." = "بررسی به‌روزرسانی‌ها...";
+"Quit Snaploom" = "خروج از Snaploom";
+"No recent captures" = "ضبط اخیری وجود ندارد";
+"Clear History" = "پاک کردن تاریخچه";
+
+/* History Panel */
+"Copy" = "کپی";
+"Save As..." = "ذخیره به عنوان...";
+"Open in Editor" = "باز کردن در ویرایشگر";
+"Open With" = "باز کردن با";
+"Open Link" = "باز کردن پیوند";
+"No Apps Available" = "هیچ برنامه‌ای در دسترس نیست";
+"No Share Services" = "هیچ سرویس اشتراک‌گذاری در دسترس نیست";
+"Pin to Screen" = "سنجاق به صفحه";
+"Quick Look" = "نمای سریع";
+"Delete" = "حذف";
+"All" = "همه";
+"Screenshots" = "تصاویر صفحه";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "کلیک برای کپی · کشیدن به برنامه";
+"No captures yet" = "هنوز ضبطی انجام نشده";
+
+/* Floating Thumbnail */
+"Close All" = "بستن همه";
+"Save All to Folder…" = "ذخیره همه در پوشه…";
+"Save" = "ذخیره";
+
+/* Editor Top Bar */
+"Zoom" = "بزرگ‌نمایی";
+"Zoom In" = "بزرگ‌نمایی";
+"Zoom Out" = "کوچک‌نمایی";
+"Fit Canvas" = "تناسب بوم";
+"Crop" = "برش";
+"Rotate Left" = "چرخش به چپ";
+"Rotate Right" = "چرخش به راست";
+"Flip Horizontal" = "وارونه افقی";
+"Flip Vertical" = "وارونه عمودی";
+"Add Capture" = "افزودن ضبط";
+
+/* Toolbar - Tools */
+"Arrow" = "فلش";
+"Line" = "خط";
+"Rectangle" = "مستطیل";
+"Ellipse" = "بیضی";
+"Pencil" = "مداد";
+"Pencil (Draw)" = "مداد (رسم)";
+"Marker" = "ماژیک";
+"Text" = "متن";
+"Number" = "شماره";
+"Number / Counter" = "شماره / شمارنده";
+"Stamp / Emoji" = "مهر / ایموجی";
+"Censor" = "سانسور";
+"Censor (Pixelate / Blur / Solid)" = "سانسور (پیکسلی / تار / توپر)";
+"Measure" = "اندازه‌گیری";
+"Measure (px)" = "اندازه‌گیری (px)";
+"Magnify (Loupe)" = "بزرگ‌نمایی (ذره‌بین)";
+"Highlight" = "برجسته‌سازی";
+"Highlight (Spotlight)" = "برجسته‌سازی (نورافکن)";
+"Dim" = "تیرگی";
+"Color Sampler" = "نمونه‌بردار رنگ";
+"Color Picker" = "انتخابگر رنگ";
+"Select & Edit" = "انتخاب و ویرایش";
+"Color" = "رنگ";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "کپی به کلیپ‌بورد";
+"Save to File" = "ذخیره در فایل";
+"Save to" = "ذخیره در";
+"Open in Editor Window" = "باز کردن در پنجره ویرایشگر";
+"Pin on Screen" = "سنجاق روی صفحه";
+"Pin" = "سنجاق";
+"Pin (floating window)" = "سنجاق (پنجره شناور)";
+"OCR" = "OCR";
+"OCR Text" = "متن OCR";
+"OCR (extract text)" = "OCR (استخراج متن)";
+"Upload" = "بارگذاری";
+"Share" = "اشتراک‌گذاری";
+"Undo" = "برگردان";
+"Redo" = "بازانجام";
+"Close" = "بستن";
+"Remove Background" = "حذف پس‌زمینه";
+"Beautify" = "زیباسازی";
+"Adjust" = "تنظیم";
+"Adjust (Image Effects)" = "تنظیم (افکت‌های تصویر)";
+"Invert Colors" = "معکوس کردن رنگ‌ها";
+"Record" = "ضبط ویدیو";
+"Record screen" = "ضبط ویدیوی صفحه";
+"Translate" = "ترجمه";
+"Auto-Redact sensitive data" = "سانسور خودکار داده‌های حساس";
+"Move Selection" = "جابجایی انتخاب";
+
+/* Toolbar - Recording */
+"Start Recording" = "شروع ضبط ویدیو";
+"Cancel Recording" = "لغو ضبط ویدیو";
+"Highlight Mouse Clicks" = "برجسته‌سازی کلیک‌های موس";
+"Record System Audio" = "ضبط صدای سیستم";
+"Record Microphone" = "ضبط میکروفون";
+"Recording Settings" = "تنظیمات ضبط ویدیو";
+
+/* Tool Options */
+"Size" = "اندازه";
+"Stroke" = "ضخامت خط";
+"Radius" = "شعاع";
+"Start:" = "شروع:";
+"Draw:" = "رسم:";
+"Auto:" = "خودکار:";
+"Fill" = "پر";
+"Outline" = "حاشیه";
+"More Emojis" = "ایموجی‌های بیشتر";
+"Load Image" = "بارگذاری تصویر";
+"Gradient Style" = "سبک گرادیان";
+"On" = "روشن";
+"Text Only" = "فقط متن";
+"All Text" = "تمام متن";
+"PII" = "PII";
+"Faces" = "چهره‌ها";
+"People" = "افراد";
+"Confirm before upload" = "تایید قبل از بارگذاری";
+"Flip" = "وارونه";
+"Smooth" = "هموار";
+"Refined" = "پالایش‌شده";
+"Smart" = "هوشمند";
+"Padding" = "فاصله داخلی";
+"Shadow" = "سایه";
+"Right-click to add points" = "کلیک راست برای افزودن نقطه";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "نگه‌داشتن 1 عمودی خودکار  ·  نگه‌داشتن 2 افقی خودکار";
+"Limit to selection" = "محدود به انتخاب";
+"Effect" = "جلوه";
+"Font" = "قلم";
+"System" = "سیستم";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "کلیک روی پنجره  ·  کشیدن برای ناحیه دلخواه  ·  F برای تمام صفحه";
+"Drag to select  ·  Click for full screen" = "بکشید برای انتخاب  ·  کلیک برای تمام صفحه";
+"Release to annotate and edit" = "رها کنید برای حاشیه‌نویسی و ویرایش";
+"Release to finish" = "رها کنید برای پایان";
+"Hold Space to move. Release to annotate and edit" = "Space را نگه دارید برای جابجایی. رها کنید برای حاشیه‌نویسی و ویرایش";
+"Hold Space to move. Release to finish" = "Space را نگه دارید برای جابجایی. رها کنید برای پایان";
+"Window snap: " = "چسبش پنجره: ";
+"ON" = "روشن";
+"OFF" = "خاموش";
+"  (Tab to toggle)" = "  (Tab برای تغییر)";
+"Right-click to copy" = "کلیک راست برای کپی";
+"Copied %@" = "کپی شد %@";
+"Set color %@" = "تنظیم رنگ %@";
+"Draw something first to use the move tool." = "ابتدا چیزی بکشید تا بتوانید از ابزار جابجایی استفاده کنید.";
+"Drag to reposition" = "بکشید برای جابجایی";
+
+/* Overlay - Popovers */
+"Format:" = "فرمت:";
+"FPS:" = "FPS:";
+"When done:" = "پس از اتمام:";
+"Open editor" = "باز کردن ویرایشگر";
+"Show in Finder" = "نمایش در Finder";
+"Copy to clipboard" = "کپی به کلیپ‌بورد";
+
+/* Preferences - General */
+"Snaploom Preferences" = "تنظیمات Snaploom";
+"General" = "عمومی";
+"Tools" = "ابزارها";
+"Recording" = "ضبط ویدیو";
+"About" = "درباره";
+"Shortcuts" = "میانبرها";
+"Uploads" = "بارگذاری‌ها";
+"Language" = "زبان";
+"Language:" = "زبان:";
+"Restart the app to fully apply the new language." = "برنامه را مجددا راه‌اندازی کنید تا زبان جدید به طور کامل اعمال شود.";
+"Capture" = "ضبط";
+"Play sound on capture" = "پخش صدا هنگام ضبط تصویر";
+"Play sound on copy" = "پخش صدا هنگام کپی";
+"Remember last selected tool" = "به خاطر سپردن آخرین ابزار انتخابی";
+"Show floating thumbnail after capture" = "نمایش تصویر بندانگشتی شناور پس از ضبط";
+"Launch at login" = "اجرا هنگام ورود";
+"Show snap alignment guides" = "نمایش خطوط راهنمای تراز";
+"Snap selection edges to image boundaries" = "چسباندن لبه‌های انتخاب به مرزهای تصویر";
+"Capture mouse cursor in screenshot" = "ضبط نشانگر موس در تصویر صفحه";
+"Double-click selection to copy" = "دوبار کلیک روی انتخاب برای کپی";
+"Hide capture instructions" = "پنهان کردن راهنمای تصویربرداری";
+"Disable shadow outside selection" = "غیرفعال کردن سایه خارج از انتخاب";
+"Show shortcuts in tooltips" = "نمایش میانبرها در راهنمای ابزار";
+"Use window title in saved filename" = "استفاده از عنوان پنجره در نام فایل ذخیره‌شده";
+"Hide menu bar icon" = "پنهان کردن آیکون نوار منو";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "کلیدهای میانبر همچنان کار می‌کنند. برای نمایش مجدد آیکون، Snaploom را دوباره اجرا کنید.";
+"Menu bar icon:" = "آیکون نوار منو:";
+"Default" = "پیش‌فرض";
+"Custom symbol" = "نماد سفارشی";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "هر نام SF Symbol دلخواه (مثلاً camera.fill) را وارد کنید یا یک پیش‌تنظیم انتخاب کنید. نام‌ها را در برنامه SF Symbols اپل مرور کنید. نام‌های نامعتبر به آیکون پیش‌فرض بازمی‌گردند.";
+"Check for updates automatically" = "بررسی خودکار به‌روزرسانی‌ها";
+"Check for beta updates" = "بررسی به‌روزرسانی‌های بتا";
+"Thumbnail" = "تصویر بندانگشتی";
+"  Dismiss after:" = "  بستن بعد از:";
+"seconds before auto-dismiss (0 = never)" = "ثانیه قبل از بستن خودکار (0 = هرگز)";
+"  Multiple previews:" = "  پیش‌نمایش‌های متعدد:";
+"  Position:" = "  موقعیت:";
+"Stack (keep all)" = "روی هم (نگه‌داشتن همه)";
+"Replace (show only latest)" = "جایگزینی (فقط نمایش آخرین)";
+"Menu Bar Order" = "ترتیب نوار منو";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "ترتیب اقدامات ضبط را در منوی نوار منوی Snaploom انتخاب کنید.";
+"Move up" = "انتقال به بالا";
+"Move down" = "انتقال به پایین";
+"Output" = "خروجی";
+"Image format:" = "فرمت تصویر:";
+"Quality:" = "کیفیت:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "ذخیره با وضوح استاندارد (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "ابعاد را در نمایشگرهای Retina نصف می‌کند، فایل‌ها حدود ۴ برابر کوچکتر";
+"Embed sRGB color profile" = "جاسازی پروفایل رنگ sRGB";
+"Ensures consistent colors across different displays" = "رنگ‌های یکسان در نمایشگرهای مختلف را تضمین می‌کند";
+"Screenshot History" = "تاریخچه تصاویر صفحه";
+"History size:" = "اندازه تاریخچه:";
+"screenshots kept on disk (0 = off)" = "تصویر صفحه نگهداری‌شده روی دیسک (0 = خاموش)";
+"Order history by last edit" = "مرتب‌سازی تاریخچه بر اساس آخرین ویرایش";
+"Edited screenshots move to the top. Off keeps them in capture order." = "تصاویر صفحه ویرایش‌شده به بالا منتقل می‌شوند. خاموش‌بودن آن‌ها را به ترتیب گرفتن نگه می‌دارد.";
+"Custom · %@" = "سفارشی · %@";
+"Space" = "فاصله";
+"Save Directory" = "پوشه ذخیره‌سازی";
+"Save folder:" = "پوشه ذخیره:";
+"Browse…" = "مرور…";
+"Save action:" = "عملکرد ذخیره:";
+"Save to default folder" = "ذخیره در پوشه پیش‌فرض";
+"Ask where to save" = "پرسش درباره محل ذخیره";
+"Appearance" = "ظاهر";
+"Accent color:" = "رنگ تاکیدی:";
+"Icon color:" = "رنگ آیکون:";
+"Background color:" = "رنگ پس‌زمینه:";
+"Reset" = "بازنشانی";
+"OCR Capture:" = "ضبط OCR:";
+"Show window + copy to clipboard" = "نمایش پنجره + کپی به کلیپ‌بورد";
+"Show window only" = "فقط نمایش پنجره";
+"Copy to clipboard only" = "فقط کپی به کلیپ‌بورد";
+"Enter / Quick Capture:" = "Enter / ضبط سریع:";
+"Save to file" = "ذخیره در فایل";
+"Save + copy to clipboard" = "ذخیره + کپی به کلیپ‌بورد";
+"OCR Action" = "عملکرد OCR";
+"OCR & QR Capture:" = "ضبط OCR و QR:";
+"OCR & QR" = "OCR و QR";
+"Text & QR Recognition" = "تشخیص متن و QR";
+"Capture OCR & QR" = "ضبط OCR و QR";
+"Capture area and read text/QR codes" = "ضبط ناحیه و خواندن متن/کدهای QR";
+"Run OCR & QR" = "اجرای OCR و QR";
+"QR Code" = "کد QR";
+"QR Codes" = "کدهای QR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "میانبرهای صفحه‌کلید";
+"Hotkeys" = "کلیدهای میانبر";
+"Clear shortcut" = "پاک کردن میانبر";
+"Press keys..." = "کلیدها را فشار دهید...";
+"Waiting..." = "در انتظار...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "ابزارهای حاشیه‌نویسی";
+"Hidden tools are removed from the bottom toolbar." = "ابزارهای پنهان از نوار ابزار پایین حذف می‌شوند.";
+"Capture Actions" = "عملکردهای ضبط";
+"Bottom Toolbar Actions" = "عملکردهای نوار ابزار پایین";
+"Hidden actions are removed from the bottom toolbar." = "عملکردهای پنهان از نوار ابزار پایین حذف می‌شوند.";
+"Editor Actions" = "عملکردهای ویرایشگر";
+"Right Toolbar Actions" = "عملکردهای نوار ابزار راست";
+"Hidden actions are removed from the right toolbar." = "عملکردهای پنهان از نوار ابزار راست حذف می‌شوند.";
+
+/* Preferences - Recording */
+"Frame rate:" = "نرخ فریم:";
+"After recording:" = "پس از ضبط ویدیو:";
+"Save recording to:" = "ذخیره ضبط ویدیو در:";
+"Save Recording" = "ذخیره ضبط";
+"Clear" = "پاک کردن";
+"Max height:" = "حداکثر ارتفاع:";
+"px (0 = unlimited)" = "px (0 = نامحدود)";
+"Behavior" = "رفتار";
+"Auto-scroll (sends synthetic scroll events)" = "پیمایش خودکار (ارسال رویدادهای پیمایش مصنوعی)";
+"Detect fixed/sticky headers" = "تشخیص سربرگ‌های ثابت/چسبنده";
+"Scroll speed:" = "سرعت پیمایش:";
+"Slow" = "آهسته";
+"Medium" = "متوسط";
+"Fast" = "سریع";
+"Very fast" = "خیلی سریع";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "سرویس بارگذاری";
+"Upload Provider" = "ارائه‌دهنده بارگذاری";
+"Provider:" = "ارائه‌دهنده:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (تصاویر + ویدیوها)";
+"imgbb (images only)" = "imgbb (فقط تصاویر)";
+"S3-Compatible (images + videos)" = "S3-Compatible (تصاویر + ویدیوها)";
+"S3-Compatible Storage" = "فضای ذخیره‌سازی S3-Compatible";
+"Sign In with Google" = "ورود با Google";
+"Sign Out" = "خروج از حساب";
+"Signed in" = "وارد شده";
+"Not signed in" = "وارد نشده";
+"Account:" = "حساب کاربری:";
+"Test Connection" = "تست اتصال";
+"Fill in endpoint, bucket, and credentials first" = "ابتدا آدرس، باکت و اطلاعات ورود را پر کنید";
+"Testing..." = "در حال تست...";
+"Connection successful!" = "اتصال موفقیت‌آمیز بود!";
+"Leave empty to use default" = "برای استفاده از پیش‌فرض خالی بگذارید";
+"Endpoint:" = "آدرس:";
+"Region:" = "منطقه:";
+"Bucket:" = "باکت:";
+"Access Key:" = "کلید دسترسی:";
+"Secret Key:" = "کلید محرمانه:";
+"Public URL:" = "آدرس عمومی:";
+"Path Prefix:" = "پیشوند مسیر:";
+"API key:" = "کلید API:";
+"Upload History" = "تاریخچه بارگذاری";
+"No uploads yet." = "هنوز بارگذاری‌ای انجام نشده.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "آدرس پایه برای دسترسی عمومی. اگر خالی باشد، آدرس S3 استفاده می‌شود (ممکن است به صورت عمومی قابل دسترسی نباشد).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "یک کلید مشترک موجود است — اگر به محدودیت نرخ رسیدید، کلید رایگان خود را از imgbb.com/api دریافت کنید. فقط تصاویر (بدون پشتیبانی ویدیو).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "با AWS S3، Cloudflare R2، MinIO، DigitalOcean Spaces، Backblaze B2 و سایر سرویس‌های سازگار با S3 کار می‌کند. از تصاویر و ویدیوها پشتیبانی می‌کند.";
+"Configure S3 in Preferences" = "پیکربندی S3 در تنظیمات";
+"Sign in to Google Drive in Preferences" = "ورود به Google Drive در تنظیمات";
+"Video upload requires Google Drive or S3" = "بارگذاری ویدیو نیاز به Google Drive یا S3 دارد";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "نسخه %@ (%@)";
+"Made by" = "ساخته شده توسط";
+"Licensed under the GPLv3" = "تحت مجوز GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "ابزار رایگان و متن‌باز تصویربرداری و ضبط ویدیو از صفحه برای macOS.\nکاملا بومی — ساخته شده با Swift و AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "تصویری در کلیپ‌بورد نیست";
+"No Image or Text on Clipboard" = "تصویر یا متنی در کلیپ‌بورد نیست";
+"Copy an image to the clipboard first, then try again." = "ابتدا یک تصویر را به کلیپ‌بورد کپی کنید، سپس دوباره تلاش کنید.";
+"Copy an image or text to the clipboard first, then try again." = "ابتدا یک تصویر یا متن را به کلیپ‌بورد کپی کنید، سپس دوباره تلاش کنید.";
+"OK" = "تایید";
+"Accessibility Access Required" = "دسترسی به قابلیت‌های دسترسی‌پذیری لازم است";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom برای پیمایش خودکار سایر برنامه‌ها به مجوز دسترسی‌پذیری نیاز دارد. لطفا دسترسی را در تنظیمات سیستم اعطا کنید و دوباره تلاش کنید.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom برای ثبت پیمایشی به مجوز دسترس‌پذیری نیاز دارد. لطفاً در تنظیمات سیستم دسترسی بدهید و دوباره امتحان کنید.";
+"Open Settings" = "باز کردن تنظیمات";
+"Cancel" = "لغو";
+"Microphone Access Required" = "دسترسی به میکروفون لازم است";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom برای ضبط صدای میکروفون به مجوز میکروفون نیاز دارد. تنظیمات سیستم را باز کنید تا دسترسی اعطا شود.";
+"Upload to Google Drive?" = "بارگذاری به Google Drive؟";
+"Upload to S3?" = "بارگذاری به S3؟";
+"Upload to imgbb.com?" = "بارگذاری به imgbb.com؟";
+"Your screenshot will be uploaded." = "تصویر صفحه شما بارگذاری خواهد شد.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "به Snaploom خوش آمدید";
+"Snaploom needs one permission" = "Snaploom به یک مجوز نیاز دارد";
+"Screen Recording not yet granted" = "مجوز ضبط صفحه هنوز اعطا نشده";
+"Screen Recording granted!" = "مجوز ضبط صفحه اعطا شد!";
+"Enable Snaploom, then try taking a screenshot" = "Snaploom را فعال کنید، سپس تصویربرداری از صفحه را امتحان کنید";
+"Open Screen Recording Settings" = "باز کردن تنظیمات ضبط صفحه";
+"Continue" = "ادامه";
+
+/* OCR Window */
+"Text Recognition" = "تشخیص متن";
+"Translate to:" = "ترجمه به:";
+"%d chars · %d words" = "%d نویسه · %d کلمه";
+"Copy  ⌘↩" = "کپی  ⌘↩";
+"AI Search" = "جستجوی هوش مصنوعی";
+"Show Original" = "نمایش اصلی";
+"Translation Failed" = "ترجمه ناموفق بود";
+"Translation" = "ترجمه";
+"(No text detected in the selected area)" = "(متنی در ناحیه انتخابی شناسایی نشد)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "آدرس به کلیپ‌بورد کپی شد";
+"Uploading... %d%%" = "در حال بارگذاری... %d%%";
+"Upload failed: %@" = "بارگذاری ناموفق: %@";
+"Uploaded! Link copied." = "بارگذاری شد! لینک کپی شد.";
+"Uploading to %@... %d%%" = "در حال بارگذاری به %@... %d%%";
+"Open" = "باز کردن";
+
+/* Recording Toast */
+"Recording saved" = "ضبط ویدیو ذخیره شد";
+"%@ • Recording saved" = "%@ • ضبط ویدیو ذخیره شد";
+"Copy Path" = "کپی مسیر";
+"Path copied!" = "مسیر کپی شد!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "ویرایشگر ویدیوی Snaploom";
+"%@ selected" = "%@ انتخاب شده";
+"Exporting..." = "در حال خروجی گرفتن...";
+"Export failed" = "خروجی گرفتن ناموفق بود";
+"Saved to %@" = "ذخیره شد در %@";
+"Save failed" = "ذخیره ناموفق بود";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "ذخیره به عنوان...";
+"Choose a folder" = "یک پوشه انتخاب کنید";
+"Save All to Folder…" = "ذخیره همه در پوشه…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "پیمایش خودکار";
+"Stop" = "توقف";
+"Scrolling..." = "در حال پیمایش...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "پیش‌تنظیمات";
+"Adjustments" = "تنظیمات";
+"Brightness" = "روشنایی";
+"Contrast" = "کنتراست";
+"Saturation" = "اشباع";
+"Sharpness" = "وضوح";
+
+/* Time Ago */
+"just now" = "همین الان";
+"%ds ago" = "%d ثانیه پیش";
+"%dm ago" = "%d دقیقه پیش";
+"%dh ago" = "%d ساعت پیش";
+
+/* Hotkey Labels */
+"History" = "تاریخچه";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "روی \"ضبط ویدیو\" کلیک کنید و ترکیب کلیدی با حداقل یک کلید تغییردهنده (⌘، ⌥، ⌃، ⇧) فشار دهید تا میانبر تنظیم شود.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "در حال پردازش GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "نظارت بر ورودی لازم است";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom برای نمایش کلیدهای فشرده‌شده هنگام ضبط ویدیو به مجوز نظارت بر ورودی نیاز دارد. لطفا دسترسی را در System Settings اعطا کنید و دوباره تلاش کنید.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom برای نمایش کلیدهای فشرده‌شده هنگام ضبط ویدیو به مجوز دسترسی‌پذیری نیاز دارد. لطفا دسترسی را در System Settings اعطا کنید و دوباره تلاش کنید.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "نمایش کلیدهای فشرده‌شده";
+"Shortcuts Only" = "فقط میانبرها";
+"All Keystrokes" = "همه کلیدها";
+
+/* Recording — Settings Popover */
+"Delay:" = "تاخیر:";
+
+/* Video Editor */
+"Copied to clipboard!" = "به کلیپ‌بورد کپی شد!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "همپوشانی وب‌کم";
+"Camera Access Required" = "دسترسی به دوربین لازم است";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom برای همپوشانی وب‌کم به مجوز دوربین نیاز دارد. تنظیمات سیستم را باز کنید تا دسترسی اعطا شود.";
+"Webcam" = "وب‌کم";
+"Bottom Right" = "پایین راست";
+"Bottom Left" = "پایین چپ";
+"Top Right" = "بالا راست";
+"Top Left" = "بالا چپ";
+"Small" = "کوچک";
+"Large" = "بزرگ";
+"Webcam Size Small" = "کوچک";
+"Webcam Size Medium" = "متوسط";
+"Webcam Size Large" = "بزرگ";
+"Webcam Size Extra Large" = "خیلی بزرگ";
+"Circle" = "دایره";
+"Rounded Rectangle" = "مستطیل گردشده";
+"Cam pos:" = "موقعیت دوربین:";
+"Cam size:" = "اندازه دوربین:";
+"Cam shape:" = "شکل دوربین:";
+
+/* Settings */
+"Settings..." = "تنظیمات...";
+"Snaploom Settings" = "تنظیمات Snaploom";
+"Also open in Editor" = "باز کردن در ویرایشگر نیز";
+"Hide controls" = "پنهان کردن کنترل‌ها";
+"Hide recording controls" = "پنهان کردن کنترل‌های ضبط ویدیو";
+"Stop recording from the menu bar icon instead." = "به جای آن، ضبط ویدیو را از آیکون نوار منو متوقف کنید.";
+"Pixelate" = "پیکسلی";
+"Blur" = "تار";
+"Solid" = "توپر";
+"Erase" = "پاک کردن";
+"Done" = "انجام شد";
+"Do nothing" = "هیچ کاری نکن";
+"Overlay / Editor Shortcuts" = "میانبرهای همپوشانی / ویرایشگر";
+"Set" = "تنظیم";
+"Press..." = "فشار دهید...";
+"Reset to default" = "بازنشانی به پیش‌فرض";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "یک کلید را فشار دهید تا به عنوان میانبر آن ابزار تنظیم شود. این میانبرها زمانی کار می‌کنند که همپوشانی یا ویرایشگر فعال باشد.";
+"Keep Separate" = "جداگانه نگه دار";
+"Merge Audio" = "ادغام صدا";
+"Audio Tracks" = "تراک‌های صوتی";
+"Adjust volume for each audio track:" = "تنظیم صدا برای هر تراک صوتی:";
+"Microphone:" = "میکروفون:";
+"System audio:" = "صدای سیستم:";
+"Loupe" = "ذره‌بین";
+"Stamp" = "مهر";
+"Unlimited" = "نامحدود";
+
+/* Save/Discard, Recording, Translation Engine, Upload, Inspector */
+"Save changes?" = "تغییرات ذخیره شود؟";
+"Your annotations will be lost if you close without saving." = "حاشیه‌نویسی‌های شما در صورت بستن بدون ذخیره از دست خواهند رفت.";
+"Save & Close" = "ذخیره و بستن";
+"Discard" = "صرف‌نظر";
+"Stop Recording" = "توقف ضبط ویدیو";
+"Pause" = "مکث";
+"Resume" = "ادامه";
+"Engine:" = "موتور:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (روی دستگاه)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "ترجمه Apple سریع‌تر است و بدون اینترنت کار می‌کند. Google Translate از زبان‌های بیشتری پشتیبانی می‌کند.";
+"Download language packs in System Settings…" = "بسته‌های زبان را در تنظیمات سیستم دانلود کنید…";
+"Configure S3 in Settings" = "پیکربندی S3 در تنظیمات";
+"Sign in to Google Drive in Settings" = "ورود به Google Drive در تنظیمات";
+"Position:" = "موقعیت:";
+"Size:" = "اندازه:";
+"Shape:" = "شکل:";
+
+"Same as screenshots" = "مشابه اسکرین‌شات‌ها";
+"  Preview size:" = "  اندازه پیش‌نمایش:";
+"(0 = off)" = "(0 = خاموش)";
+"Clear All" = "پاک کردن همه";
+"Clear History?" = "پاک کردن تاریخچه؟";
+"This will permanently delete all screenshots from history." = "این کار تمام اسکرین‌شات‌ها را به‌طور دائمی از تاریخچه حذف می‌کند.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "روی \"تنظیم\" کلیک کنید و یک ترکیب کلید با حداقل یک کلید تغییردهنده (⌘, ⌥, ⌃, ⇧) را برای تعیین میانبر فشار دهید.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "فایل‌ها در پوشه‌ای به نام \"Snaploom\" در Google Drive شما بارگذاری می‌شوند. همه چیز خصوصی می‌ماند — هیچ چیز به‌صورت عمومی به اشتراک گذاشته نمی‌شود.";
+
+"Pressure" = "فشار";
+
+/* Aspect ratio & resolution presets */
+"Aspect ratio & resolution presets" = "پیش‌تنظیم‌های نسبت ابعاد و وضوح";
+"Aspect ratio" = "نسبت ابعاد";
+"Resolution" = "وضوح";
+"Freeform" = "آزاد";
+"Units" = "واحدها";
+"Keep ratio for next captures" = "حفظ نسبت برای ضبط‌های بعدی";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "باز کردن ویدیو...";
+"Choose a video to open in Snaploom editor" = "ویدیویی را برای باز کردن در ویرایشگر Snaploom انتخاب کنید";
+"Click to add effects" = "برای افزودن افکت کلیک کنید";
+"Add Zoom" = "افزودن زوم";
+"Add Censor" = "افزودن سانسور";
+"Add Cut" = "افزودن برش";
+"Add Speed" = "افزودن سرعت";
+"Add Freeze" = "افزودن فریز";
+"Add Text" = "افزودن متن";
+"Delete Zoom" = "حذف زوم";
+"Delete Censor" = "حذف سانسور";
+"Delete Cut" = "حذف برش";
+"Delete Speed" = "حذف سرعت";
+"Delete Freeze" = "حذف فریز";
+"Delete Text" = "حذف متن";
+"Edit Text…" = "ویرایش متن…";
+"Huge" = "بسیار بزرگ";
+"Bold" = "توپر";
+"Italic" = "مورب";
+"Alignment" = "ترازبندی";
+"Left" = "چپ";
+"Center" = "وسط";
+"Right" = "راست";
+"Text Color" = "رنگ متن";
+"Background Color" = "رنگ پس‌زمینه";
+"Rounded" = "گرد";
+"Custom…" = "سفارشی…";
+"Transparent" = "شفاف";
+"Black" = "مشکی";
+"White" = "سفید";
+"Yellow" = "زرد";
+"Red" = "قرمز";
+"Green" = "سبز";
+"Blue" = "آبی";
+"Untitled" = "بدون عنوان";
+"Add effect" = "افزودن افکت";
+"Fade" = "محو";
+"High" = "زیاد";
+"Low" = "کم";
+"Not enough room here" = "فضای کافی اینجا نیست";
+"Copied!" = "کپی شد!";
+"Converting to GIF…" = "در حال تبدیل به GIF…";
+"GIF conversion failed" = "تبدیل GIF ناموفق بود";
+"No video track found" = "هیچ تراک ویدیویی یافت نشد";
+"Preview:" = "پیش‌نمایش:";
+"Copy Screen Info" = "کپی اطلاعات صفحه";
+"Copies display and capture diagnostics to clipboard" = "اطلاعات تشخیصی نمایشگر و ضبط را در کلیپ‌بورد کپی می‌کند";
+"Accent" = "تاکیدی";
+"Icon" = "آیکون";
+"Background" = "پس‌زمینه";
+"Custom" = "سفارشی";
+"Theme:" = "تم:";
+"Application" = "برنامه";
+"Capture area and extract text" = "ضبط ناحیه و استخراج متن";
+"Capture the full screen" = "ضبط تمام صفحه";
+"Counter for multi-screen captures" = "شمارنده برای ضبط‌های چند صفحه‌ای";
+"8-character random string (e.g. k3j7x9q2)" = "رشته تصادفی ۸ کاراکتری (مثلاً k3j7x9q2)";
+"Filename Template Tokens" = "توکن‌های قالب نام فایل";
+"Filename tokens" = "توکن‌های نام فایل";
+"Filename:" = "نام فایل:";
+"Open an image file in the editor" = "باز کردن یک فایل تصویری در ویرایشگر";
+"Open the recent captures overlay" = "باز کردن همپوشانی ضبط‌های اخیر";
+"Open this settings window" = "باز کردن این پنجره تنظیمات";
+"Quick capture (uses your Enter action)" = "ضبط سریع (از عملکرد Enter شما استفاده می‌کند)";
+"Re-capture the last selected area" = "ضبط مجدد آخرین ناحیه انتخاب‌شده";
+"Screenshots only — captured window title (blank otherwise)" = "فقط اسکرین‌شات — عنوان پنجره ضبط‌شده (در غیر این صورت خالی)";
+"Show available filename tokens" = "نمایش توکن‌های موجود نام فایل";
+"Enable snaploom:// URL scheme" = "فعال‌سازی طرح URL با snaploom://";
+"Show supported URL scheme commands" = "نمایش دستورات پشتیبانی‌شده طرح URL";
+"Start area capture" = "شروع ضبط ناحیه";
+"Start area recording" = "شروع ضبط ویدیوی ناحیه";
+"Start full-screen recording" = "شروع ضبط ویدیوی تمام صفحه";
+"Start scroll capture" = "شروع ضبط پیمایشی";
+"Stop the current recording" = "توقف ضبط ویدیوی جاری";
+"Supported URL Scheme Commands" = "دستورات پشتیبانی‌شده طرح URL";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "پسوند فایل به طور خودکار افزوده می‌شود. اسلش و دونقطه در {window} به خط تیره تبدیل می‌شوند.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Snaploom را از Raycast، Alfred، Shortcuts یا هر ابزاری که URL باز می‌کند فعال کنید.";
+"URL scheme info" = "اطلاعات طرح URL";
+"sec (0 = never)" = "ثانیه (0 = هرگز)";
+"Settings" = "تنظیمات";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "نسخهٔ آفلاین: یکپارچه‌سازی‌های بارگذاری و فضای ابری حذف شده‌اند. بررسی به‌روزرسانی‌ها ممکن است همچنان به سرور به‌روزرسانی Snaploom متصل شود. اسکرین‌شات‌ها و ضبط‌ها محلی می‌مانند مگر اینکه خودتان آن‌ها را به اشتراک بگذارید یا ذخیره کنید.";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "پشتیبان‌گیری تنظیمات";
+"Export Settings…" = "برون‌بری تنظیمات…";
+"Import Settings…" = "درون‌ری تنظیمات…";
+"Reveal Settings File in Finder" = "نمایش فایل تنظیمات در Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "ترجیحات خود را به یک فایل برون‌بری کنید تا آن‌ها را به Mac دیگری یا یک نصب تازه منتقل کنید. اطلاعات ورود بارگذاری، پوشه‌ی ذخیره و تاریخچه‌ی اسکرین‌شات‌ها گنجانده نمی‌شوند. تنظیمات درون کانتینر برنامه‌ی Snaploom ذخیره می‌شوند.";
+"Export Settings" = "برون‌بری تنظیمات";
+"Import Settings" = "درون‌ری تنظیمات";
+"Import failed" = "درون‌ری ناموفق بود";
+"Settings exported" = "تنظیمات برون‌بری شد";
+"Settings imported" = "تنظیمات درون‌ری شد";
+"Import" = "درون‌ری";
+"Later" = "بعداً";
+"Relaunch Now" = "اکنون راه‌اندازی مجدد";
+"Replace your current settings?" = "تنظیمات فعلی خود را جایگزین می‌کنید؟";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "درون‌ری، ترجیحات فعلی شما را با ترجیحات موجود در این فایل جایگزین می‌کند. پوشه‌ی ذخیره، اطلاعات ورود بارگذاری و تاریخچه‌ی اسکرین‌شات‌های شما حفظ می‌شوند. این عمل قابل بازگردانی نیست.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d تنظیم اعمال شد. برای اعمال همه‌ی تغییرات، Snaploom را دوباره راه‌اندازی کنید.";
+"A few large items were too big to include. Everything else was saved." = "چند مورد حجیم برای گنجاندن بسیار بزرگ بودند. باقی موارد ذخیره شدند.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "تصویر پس‌زمینه‌ی سفارشی Beautify شما برای گنجاندن بسیار بزرگ بود. باقی موارد ذخیره شدند.";
+"This file is not a valid Snaploom settings file." = "این فایل یک فایل تنظیمات معتبر Snaploom نیست.";
+"This settings file contains no settings." = "این فایل تنظیمات حاوی هیچ تنظیمی نیست.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "این فایل تنظیمات توسط نسخه‌ی جدیدتری از Snaploom ساخته شده است. لطفاً ابتدا Snaploom را به‌روزرسانی کنید.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "متن را ثبت، ترجمه و روی تصویر هم‌پوشانی کنید";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "باز کردن یک مورد از تاریخچه در ویرایشگر (حاشیه‌نویسی‌ها قابل ویرایش می‌مانند)";

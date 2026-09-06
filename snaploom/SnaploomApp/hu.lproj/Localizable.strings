@@ -1,0 +1,671 @@
+/* Magyar — Snaploom lokalizáció
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Terület rögzítése";
+"Capture Screen" = "Képernyő rögzítése";
+"Capture OCR" = "OCR rögzítés";
+"Capture OCR & QR" = "OCR és QR rögzítés";
+"Capture area and read text/QR codes" = "Terület rögzítése és szöveg/QR-kódok olvasása";
+"Quick Capture" = "Gyors rögzítés";
+"Scroll Capture" = "Görgetett rögzítés";
+"Capture Last Area" = "Utolsó terület rögzítése";
+"Capture Delay" = "Rögzítés késleltetéssel";
+"None" = "Nincs";
+"%d seconds" = "%d másodperc";
+"Record Area" = "Terület felvétele";
+"Record Screen" = "Képernyő felvétele";
+"Recent Captures" = "Legutóbbi rögzítések";
+"Show History Panel" = "Előzmények panel megjelenítése";
+"Open Image..." = "Kép megnyitása...";
+"Open from Clipboard" = "Megnyitás vágólapról";
+"Pin from Clipboard" = "Rögzítés vágólapról";
+"Preferences..." = "Beállítások...";
+"Check for Updates..." = "Frissítések keresése...";
+"Quit Snaploom" = "Kilépés a Snaploom-ból";
+"No recent captures" = "Nincsenek legutóbbi rögzítések";
+"Clear History" = "Előzmények törlése";
+
+/* History Panel */
+"Copy" = "Másolás";
+"Save As..." = "Mentés másként...";
+"Open in Editor" = "Megnyitás a szerkesztőben";
+"Open With" = "Megnyitás ezzel";
+"Open Link" = "Hivatkozás megnyitása";
+"No Apps Available" = "Nincs elérhető alkalmazás";
+"Pin to Screen" = "Rögzítés a képernyőre";
+"Quick Look" = "Gyorsnézet";
+"Delete" = "Törlés";
+"All" = "Mind";
+"Screenshots" = "Képernyőképek";
+"GIFs" = "GIF-ek";
+"Click to copy · Drag to app" = "Kattints a másoláshoz · Húzd az alkalmazásba";
+"No captures yet" = "Még nincsenek rögzítések";
+
+/* Floating Thumbnail */
+"Close All" = "Összes bezárása";
+"Save All to Folder…" = "Összes mentése mappába…";
+"Save" = "Mentés";
+
+/* Editor Top Bar */
+"Zoom" = "Nagyítás/Kicsinyítés";
+"Zoom In" = "Nagyítás";
+"Zoom Out" = "Kicsinyítés";
+"Fit Canvas" = "Vászon illesztése";
+"Crop" = "Vágás";
+"Flip Horizontal" = "Vízszintes tükrözés";
+"Flip Vertical" = "Függőleges tükrözés";
+"Rotate Left" = "Forgatás balra";
+"Rotate Right" = "Forgatás jobbra";
+"Add Capture" = "Rögzítés hozzáadása";
+
+/* Toolbar - Tools */
+"Arrow" = "Nyíl";
+"Line" = "Vonal";
+"Rectangle" = "Téglalap";
+"Ellipse" = "Ellipszis";
+"Pencil" = "Ceruza";
+"Pencil (Draw)" = "Ceruza (Rajzolás)";
+"Marker" = "Kiemelő";
+"Text" = "Szöveg";
+"Number" = "Szám";
+"Number / Counter" = "Szám / Számláló";
+"Stamp / Emoji" = "Pecsét / Emoji";
+"Censor" = "Cenzúra";
+"Censor (Pixelate / Blur / Solid)" = "Cenzúra (Pixelezés / Elmosás / Színátfedés)";
+"Measure" = "Mérés";
+"Measure (px)" = "Mérés (px)";
+"Magnify (Loupe)" = "Nagyítás (Nagyító)";
+"Highlight" = "Kiemelés";
+"Highlight (Spotlight)" = "Kiemelés (Reflektorfény)";
+"Dim" = "Sötétítés";
+"Color Sampler" = "Színminta";
+"Color Picker" = "Színválasztó";
+"Select & Edit" = "Kiválasztás és szerkesztés";
+"Color" = "Szín";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Másolás a vágólapra";
+"Save to File" = "Mentés fájlba";
+"Save to" = "Mentés ide";
+"Open in Editor Window" = "Megnyitás szerkesztő ablakban";
+"Pin on Screen" = "Rögzítés a képernyőre";
+"Pin" = "Rögzítés";
+"Pin (floating window)" = "Rögzítés (lebegő ablak)";
+"OCR" = "OCR";
+"OCR Text" = "OCR szöveg";
+"OCR (extract text)" = "OCR (szöveg kinyerése)";
+"OCR & QR" = "OCR és QR";
+"Run OCR & QR" = "OCR és QR futtatása";
+"Upload" = "Feltöltés";
+"Share" = "Megosztás";
+"No Share Services" = "Nincsenek megosztási szolgáltatások";
+"Undo" = "Visszavonás";
+"Redo" = "Újra";
+"Close" = "Bezárás";
+"Remove Background" = "Háttér eltávolítása";
+"Beautify" = "Szépítés";
+"Adjust" = "Módosítás";
+"Adjust (Image Effects)" = "Módosítás (Képeffektusok)";
+"Invert Colors" = "Színek invertálása";
+"Record" = "Felvétel";
+"Record screen" = "Képernyő felvétele";
+"Translate" = "Fordítás";
+"Auto-Redact sensitive data" = "Érzékeny adatok automatikus kitakarása";
+"Move Selection" = "Kiválasztás mozgatása";
+
+/* Toolbar - Recording */
+"Start Recording" = "Felvétel indítása";
+"Cancel Recording" = "Felvétel megszakítása";
+"Highlight Mouse Clicks" = "Egérkattintások kiemelése";
+"Record System Audio" = "Rendszerhang felvétele";
+"Record Microphone" = "Mikrofon felvétele";
+"Recording Settings" = "Felvételi beállítások";
+
+/* Tool Options */
+"Size" = "Méret";
+"Stroke" = "Vonalvastagság";
+"Radius" = "Sugár";
+"Start:" = "Kezdés:";
+"Draw:" = "Rajzolás:";
+"Auto:" = "Auto:";
+"Fill" = "Kitöltés";
+"Outline" = "Körvonal";
+"More Emojis" = "Több emoji";
+"Load Image" = "Kép betöltése";
+"Gradient Style" = "Színátmenet stílus";
+"On" = "Be";
+"Text Only" = "Csak szöveg";
+"All Text" = "Összes szöveg";
+"PII" = "PII";
+"Faces" = "Arcok";
+"People" = "Emberek";
+"Confirm before upload" = "Megerősítés feltöltés előtt";
+"Flip" = "Tükrözés";
+"Smooth" = "Simítás";
+"Refined" = "Finomított";
+"Smart" = "Okos";
+"Padding" = "Margó";
+"Shadow" = "Árnyék";
+"Right-click to add points" = "Jobb kattintás pontok hozzáadásához";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Tartsd az 1-et automatikus függőlegeshez  ·  Tartsd a 2-t automatikus vízszinteshez";
+"Limit to selection" = "Korlátozás a kijelölésre";
+"Effect" = "Effektus";
+"Font" = "Betűtípus";
+"System" = "Rendszer";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Kattints egy ablakra  ·  Húzd az egyéni területhez  ·  F a teljes képernyőhöz";
+"Drag to select  ·  Click for full screen" = "Húzd a kiválasztáshoz  ·  Kattints a teljes képernyőhöz";
+"Release to annotate and edit" = "Engedd el a jegyzetelés és szerkesztés megkezdéséhez";
+"Release to finish" = "Engedd el a befejezéshez";
+"Hold Space to move. Release to annotate and edit" = "Tartsd lenyomva a szóközt a mozgatáshoz. Engedd el a jegyzeteléshez és szerkesztéshez";
+"Hold Space to move. Release to finish" = "Tartsd lenyomva a szóközt a mozgatáshoz. Engedd el a befejezéshez";
+"Window snap: " = "Ablak illesztés: ";
+"ON" = "BE";
+"OFF" = "KI";
+"  (Tab to toggle)" = "  (Tab a váltáshoz)";
+"Right-click to copy" = "Jobb kattintás a másoláshoz";
+"Copied %@" = "%@ másolva";
+"Set color %@" = "Szín beállítva: %@";
+"Draw something first to use the move tool." = "Rajzolj valamit előbb az áthelyező eszköz használatához.";
+"Drag to reposition" = "Húzd az áthelyezéshez";
+
+/* Overlay - Popovers */
+"Format:" = "Formátum:";
+"FPS:" = "FPS:";
+"When done:" = "Befejezéskor:";
+"Open editor" = "Szerkesztő megnyitása";
+"Show in Finder" = "Megjelenítés a Finder-ben";
+"Copy to clipboard" = "Másolás a vágólapra";
+
+/* Overlay - Presets (aspect ratio & resolution) */
+"Aspect ratio & resolution presets" = "Képarány- és felbontás-előbeállítások";
+"Aspect ratio" = "Képarány";
+"Resolution" = "Felbontás";
+"Freeform" = "Szabad forma";
+"Units" = "Mértékegységek";
+"Keep ratio for next captures" = "Képarány megtartása a következő rögzítésekhez";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom beállítások";
+"General" = "Általános";
+"Tools" = "Eszközök";
+"Recording" = "Felvétel";
+"About" = "Névjegy";
+"Shortcuts" = "Gyorsbillentyűk";
+"Uploads" = "Feltöltések";
+"Language" = "Nyelv";
+"Language:" = "Nyelv:";
+"Restart the app to fully apply the new language." = "Indítsd újra az alkalmazást az új nyelv teljes alkalmazásához.";
+"Capture" = "Rögzítés";
+"Play sound on capture" = "Hang lejátszása rögzítéskor";
+"Play sound on copy" = "Hang lejátszása másoláskor";
+"Remember last selected tool" = "Utolsó kiválasztott eszköz megjegyzése";
+"Show floating thumbnail after capture" = "Lebegő bélyegkép megjelenítése rögzítés után";
+"Launch at login" = "Indítás bejelentkezéskor";
+"Show snap alignment guides" = "Illesztési segédvonalak megjelenítése";
+"Snap selection edges to image boundaries" = "Kijelölés széleinek illesztése a kép határaihoz";
+"Capture mouse cursor in screenshot" = "Egérmutató rögzítése a képernyőképen";
+"Double-click selection to copy" = "Dupla kattintás a kijelölésre a másoláshoz";
+"Hide capture instructions" = "Rögzítési útmutató elrejtése";
+"Disable shadow outside selection" = "Árnyék letiltása a kijelölésen kívül";
+"Show shortcuts in tooltips" = "Gyorsbillentyűk megjelenítése a buboréksúgókban";
+"Use window title in saved filename" = "Ablakcím használata a mentett fájlnévben";
+"Hide menu bar icon" = "Menüsor ikon elrejtése";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "A gyorsbillentyűk továbbra is működnek. Az ikon újbóli megjelenítéséhez indítsd újra a Snaploom-ot.";
+"Check for updates automatically" = "Frissítések automatikus keresése";
+"Check for beta updates" = "Béta frissítések keresése";
+"Thumbnail" = "Bélyegkép";
+"  Dismiss after:" = "  Eltüntetés ennyi idő után:";
+"seconds before auto-dismiss (0 = never)" = "másodperc az automatikus eltüntetés előtt (0 = soha)";
+"  Multiple previews:" = "  Több előnézet:";
+"  Position:" = "  Pozíció:";
+"Stack (keep all)" = "Halmozás (összes megtartása)";
+"Replace (show only latest)" = "Csere (csak a legutolsó megjelenítése)";
+"Menu Bar Order" = "Menüsor sorrendje";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Válaszd ki a rögzítési műveletek sorrendjét a Snaploom menüsorának menüjében.";
+"Move up" = "Mozgatás felfelé";
+"Move down" = "Mozgatás lefelé";
+"Output" = "Kimenet";
+"Image format:" = "Képformátum:";
+"Quality:" = "Minőség:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Mentés szabványos felbontásban (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Felezi a méreteket Retina kijelzőkön, ~4x kisebb fájlok";
+"Embed sRGB color profile" = "sRGB színprofil beágyazása";
+"Ensures consistent colors across different displays" = "Egységes színeket biztosít különböző kijelzőkön";
+"Screenshot History" = "Képernyőkép előzmény";
+"History size:" = "Előzmények mérete:";
+"screenshots kept on disk (0 = off)" = "lemezen tárolt képernyőkép (0 = ki)";
+"Order history by last edit" = "Előzmények rendezése utolsó szerkesztés szerint";
+"Edited screenshots move to the top. Off keeps them in capture order." = "A szerkesztett képernyőképek a tetejére kerülnek. Kikapcsolva a rögzítés sorrendjében maradnak.";
+"Custom · %@" = "Egyéni · %@";
+"Space" = "Szóköz";
+"Save Directory" = "Mentési könyvtár";
+"Save folder:" = "Mentési mappa:";
+"Browse…" = "Tallózás…";
+"Save action:" = "Mentési művelet:";
+"Save to default folder" = "Mentés az alapértelmezett mappába";
+"Ask where to save" = "Kérdezze meg a mentés helyét";
+"Appearance" = "Megjelenés";
+"Accent color:" = "Kiemelőszín:";
+"Icon color:" = "Ikon szín:";
+"Background color:" = "Háttérszín:";
+"Reset" = "Visszaállítás";
+"Menu bar icon:" = "Menüsor ikon:";
+"Default" = "Alapértelmezett";
+"Custom symbol" = "Egyéni szimbólum";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Adj meg bármilyen SF Symbol nevet (pl. camera.fill), vagy válassz egy előbeállítást. A neveket az Apple SF Symbols alkalmazásában böngészheted. Az érvénytelen nevek esetén az alapértelmezett ikon kerül használatra.";
+"OCR Capture:" = "OCR rögzítés:";
+"OCR & QR Capture:" = "OCR és QR rögzítés:";
+"Text & QR Recognition" = "Szöveg- és QR-felismerés";
+"Show window + copy to clipboard" = "Ablak megjelenítése + másolás a vágólapra";
+"Show window only" = "Csak ablak megjelenítése";
+"Copy to clipboard only" = "Csak másolás a vágólapra";
+"Enter / Quick Capture:" = "Enter / Gyors rögzítés:";
+"Save to file" = "Mentés fájlba";
+"Save + copy to clipboard" = "Mentés + másolás a vágólapra";
+"OCR Action" = "OCR művelet";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Gyorsbillentyűk";
+"Hotkeys" = "Gyorsbillentyűk";
+"Clear shortcut" = "Gyorsbillentyű törlése";
+"Press keys..." = "Nyomj billentyűket...";
+"Waiting..." = "Várakozás...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Jegyzetelési eszközök";
+"Hidden tools are removed from the bottom toolbar." = "A rejtett eszközök eltávolításra kerülnek az alsó eszközsorból.";
+"Capture Actions" = "Rögzítési műveletek";
+"Bottom Toolbar Actions" = "Alsó eszközsor műveletei";
+"Hidden actions are removed from the bottom toolbar." = "A rejtett műveletek eltávolításra kerülnek az alsó eszközsorból.";
+"Editor Actions" = "Szerkesztői műveletek";
+"Right Toolbar Actions" = "Jobb eszközsor műveletei";
+"Hidden actions are removed from the right toolbar." = "A rejtett műveletek eltávolításra kerülnek a jobb eszközsorból.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Képkockaszám:";
+"After recording:" = "Felvétel után:";
+"Save recording to:" = "Felvétel mentése ide:";
+"Save Recording" = "Felvétel mentése";
+"Clear" = "Törlés";
+"Max height:" = "Max magasság:";
+"px (0 = unlimited)" = "px (0 = korlátlan)";
+"Behavior" = "Viselkedés";
+"Auto-scroll (sends synthetic scroll events)" = "Automatikus görgetés (szintetikus görgetési események küldése)";
+"Detect fixed/sticky headers" = "Rögzített/ragadós fejlécek észlelése";
+"Scroll speed:" = "Görgetési sebesség:";
+"Slow" = "Lassú";
+"Medium" = "Közepes";
+"Fast" = "Gyors";
+"Very fast" = "Nagyon gyors";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Feltöltési szolgáltatás";
+"Upload Provider" = "Feltöltési szolgáltató";
+"Provider:" = "Szolgáltató:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (képek + videók)";
+"imgbb (images only)" = "imgbb (csak képek)";
+"S3-Compatible (images + videos)" = "S3-kompatibilis (képek + videók)";
+"S3-Compatible Storage" = "S3-kompatibilis tároló";
+"Sign In with Google" = "Bejelentkezés Google-lel";
+"Sign Out" = "Kijelentkezés";
+"Signed in" = "Bejelentkezve";
+"Not signed in" = "Nincs bejelentkezve";
+"Account:" = "Fiók:";
+"Test Connection" = "Kapcsolat tesztelése";
+"Fill in endpoint, bucket, and credentials first" = "Előbb add meg a végpontot, a tárolót és a hitelesítési adatokat";
+"Testing..." = "Tesztelés...";
+"Connection successful!" = "Sikeres kapcsolódás!";
+"Leave empty to use default" = "Hagyd üresen az alapértelmezett használatához";
+"Endpoint:" = "Végpont:";
+"Region:" = "Régió:";
+"Bucket:" = "Tároló:";
+"Access Key:" = "Hozzáférési kulcs:";
+"Secret Key:" = "Titkos kulcs:";
+"Public URL:" = "Nyilvános URL:";
+"Path Prefix:" = "Útvonal előtag:";
+"API key:" = "API kulcs:";
+"Upload History" = "Feltöltési előzmények";
+"No uploads yet." = "Még nincsenek feltöltések.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Alap URL a nyilvános hozzáféréshez. Ha üres, az S3 végpont URL kerül használatra (lehet, hogy nem nyilvánosan elérhető).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Egy megosztott kulcs már benne van — szerezd be a saját ingyenes kulcsodat az imgbb.com/api oldalon, ha eléred a sebességkorlátot. Csak képek (nincs videó támogatás).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Működik AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 és más S3-kompatibilis szolgáltatásokkal. Képeket és videókat támogat.";
+"Configure S3 in Preferences" = "S3 beállítása a Beállításokban";
+"Sign in to Google Drive in Preferences" = "Jelentkezz be a Google Drive-ba a Beállításokban";
+"Video upload requires Google Drive or S3" = "A videó feltöltéshez Google Drive vagy S3 szükséges";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Verzió %@ (%@)";
+"Made by" = "Készítette";
+"Licensed under the GPLv3" = "GPLv3 licenc alatt";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Egy ingyenes, nyílt forráskódú képernyőkép- és képernyőfelvétel-eszköz macOS-re.\nTeljesen natív — Swift-tel és AppKit-tel építve.";
+
+/* Alerts */
+"No Image on Clipboard" = "Nincs kép a vágólapon";
+"No Image or Text on Clipboard" = "Nincs kép vagy szöveg a vágólapon";
+"Copy an image to the clipboard first, then try again." = "Előbb másolj egy képet a vágólapra, majd próbáld újra.";
+"Copy an image or text to the clipboard first, then try again." = "Előbb másolj egy képet vagy szöveget a vágólapra, majd próbáld újra.";
+"OK" = "OK";
+"Accessibility Access Required" = "Akadálymentesítési hozzáférés szükséges";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "A Snaploom-nak Akadálymentesítési engedélyre van szüksége más alkalmazások automatikus görgetéséhez. Kérlek, adj hozzáférést a Rendszerbeállításokban, majd próbáld újra.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "A Snaploom Kisegítő lehetőségek engedélyre van szüksége a görgetéses rögzítéshez. Kérjük, engedélyezze a hozzáférést a Rendszerbeállításokban, majd próbálja újra.";
+"Open Settings" = "Beállítások megnyitása";
+"Cancel" = "Mégse";
+"Microphone Access Required" = "Mikrofon hozzáférés szükséges";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "A Snaploom-nak mikrofon engedélyre van szüksége a hangfelvételhez. Nyisd meg a Rendszerbeállításokat a hozzáférés megadásához.";
+"Upload to Google Drive?" = "Feltöltés a Google Drive-ra?";
+"Upload to S3?" = "Feltöltés az S3-ra?";
+"Upload to imgbb.com?" = "Feltöltés az imgbb.com-ra?";
+"Your screenshot will be uploaded." = "A képernyőkép feltöltésre kerül.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Üdvözöl a Snaploom";
+"Snaploom needs one permission" = "A Snaploom-nak egy engedélyre van szüksége";
+"Screen Recording not yet granted" = "Képernyőfelvétel engedélye még nem adott";
+"Screen Recording granted!" = "Képernyőfelvétel engedélyezve!";
+"Enable Snaploom, then try taking a screenshot" = "Engedélyezd a Snaploom-ot, majd próbálj képernyőképet készíteni";
+"Open Screen Recording Settings" = "Képernyőfelvétel beállításainak megnyitása";
+"Continue" = "Tovább";
+
+/* OCR Window */
+"Text Recognition" = "Szövegfelismerés";
+"QR Code" = "QR-kód";
+"QR Codes" = "QR-kódok";
+"Translate to:" = "Fordítás erre:";
+"%d chars · %d words" = "%d karakter · %d szó";
+"Copy  ⌘↩" = "Másolás  ⌘↩";
+"AI Search" = "MI keresés";
+"Show Original" = "Eredeti megjelenítése";
+"Translation Failed" = "Fordítás sikertelen";
+"Translation" = "Fordítás";
+"(No text detected in the selected area)" = "(Nem található szöveg a kiválasztott területen)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL másolva a vágólapra";
+"Uploading... %d%%" = "Feltöltés... %d%%";
+"Upload failed: %@" = "Feltöltés sikertelen: %@";
+"Uploaded! Link copied." = "Feltöltve! Link másolva.";
+"Uploading to %@... %d%%" = "Feltöltés ide: %@... %d%%";
+"Open" = "Megnyitás";
+
+/* Recording Toast */
+"Recording saved" = "Felvétel mentve";
+"%@ • Recording saved" = "%@ • Felvétel mentve";
+"Copy Path" = "Útvonal másolása";
+"Path copied!" = "Útvonal másolva!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom videószerkesztő";
+"%@ selected" = "%@ kiválasztva";
+"Exporting..." = "Exportálás...";
+"Export failed" = "Exportálás sikertelen";
+"Saved to %@" = "Mentve ide: %@";
+"Save failed" = "Mentés sikertelen";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Mentés másként...";
+"Choose a folder" = "Válassz mappát";
+"Save All to Folder…" = "Összes mentése mappába…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Automatikus görgetés";
+"Stop" = "Megállítás";
+"Scrolling..." = "Görgetés...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Előre beállítottak";
+"Adjustments" = "Módosítások";
+"Brightness" = "Fényerő";
+"Contrast" = "Kontraszt";
+"Saturation" = "Telítettség";
+"Sharpness" = "Élesség";
+
+/* Time Ago */
+"just now" = "éppen most";
+"%ds ago" = "%d mp-vel ezelőtt";
+"%dm ago" = "%d perccel ezelőtt";
+"%dh ago" = "%d órával ezelőtt";
+
+/* Hotkey Labels */
+"History" = "Előzmények";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Kattints a \"Felvétel\" gombra, és nyomj meg egy billentyűkombinációt legalább egy módosítóval (⌘, ⌥, ⌃, ⇧) a gyorsbillentyű beállításához.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "GIF feldolgozása…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Bevitelfigyelés szükséges";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "A Snaploom-nak Bevitelfigyelés engedélyre van szüksége a billentyűleütések megjelenítéséhez felvétel közben. Kérlek, adj hozzáférést a System Settings-ben, majd próbáld újra.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "A Snaploom-nak Akadálymentesítési engedélyre van szüksége a billentyűleütések megjelenítéséhez felvétel közben. Kérlek, adj hozzáférést a System Settings-ben, majd próbáld újra.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Billentyűleütések megjelenítése";
+"Shortcuts Only" = "Csak gyorsbillentyűk";
+"All Keystrokes" = "Összes billentyűleütés";
+
+/* Recording — Settings Popover */
+"Delay:" = "Késleltetés:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Vágólapra másolva!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Webkamera átfedés";
+"Camera Access Required" = "Kamera hozzáférés szükséges";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "A Snaploom-nak kamera engedélyre van szüksége a webkamera átfedéshez. Nyisd meg a Rendszerbeállításokat a hozzáférés megadásához.";
+"Webcam" = "Webkamera";
+"Bottom Right" = "Jobb alsó";
+"Bottom Left" = "Bal alsó";
+"Top Right" = "Jobb felső";
+"Top Left" = "Bal felső";
+"Small" = "Kicsi";
+"Large" = "Nagy";
+"Webcam Size Small" = "Kicsi";
+"Webcam Size Medium" = "Közepes";
+"Webcam Size Large" = "Nagy";
+"Webcam Size Extra Large" = "Nagyon nagy";
+"Circle" = "Kör";
+"Rounded Rectangle" = "Lekerekített téglalap";
+"Cam pos:" = "Kam. poz.:";
+"Cam size:" = "Kam. méret:";
+"Cam shape:" = "Kam. alak:";
+
+/* New Strings */
+"Settings" = "Beállítások";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Offline build: a feltöltési és felhőtárhely-integrációk el vannak távolítva. A frissítések keresése továbbra is csatlakozhat a Snaploom frissítési szerveréhez. A képernyőképek és felvételek helyben maradnak, hacsak nem osztod meg vagy mented el őket magad.";
+"Settings..." = "Beállítások...";
+"Snaploom Settings" = "Snaploom beállítások";
+"Also open in Editor" = "Megnyitás a szerkesztőben is";
+"Hide controls" = "Vezérlők elrejtése";
+"Hide recording controls" = "Felvételi vezérlők elrejtése";
+"Stop recording from the menu bar icon instead." = "Állítsd le a felvételt a menüsor ikonjából.";
+"Pixelate" = "Pixelezés";
+"Blur" = "Elmosás";
+"Solid" = "Színátfedés";
+"Erase" = "Törlés";
+"Done" = "Kész";
+"Do nothing" = "Ne csináljon semmit";
+"Overlay / Editor Shortcuts" = "Átfedés / Szerkesztő gyorsbillentyűk";
+"Set" = "Beállítás";
+"Press..." = "Nyomj...";
+"Reset to default" = "Visszaállítás alapértelmezettre";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Nyomj meg egy billentyűt az adott eszköz gyorsbillentyűjének beállításához. Ezek az átfedés vagy a szerkesztő aktív állapotában működnek.";
+"Keep Separate" = "Külön tartás";
+"Merge Audio" = "Hang összevonása";
+"Audio Tracks" = "Hangsávok";
+"Adjust volume for each audio track:" = "Hangerő beállítása minden hangsávhoz:";
+"Microphone:" = "Mikrofon:";
+"System audio:" = "Rendszerhang:";
+"Loupe" = "Nagyító";
+"Stamp" = "Pecsét";
+"Unlimited" = "Korlátlan";
+"Save changes?" = "Mentsük a változtatásokat?";
+"Your annotations will be lost if you close without saving." = "A jegyzeteid elvesznek, ha mentés nélkül bezárod.";
+"Save & Close" = "Mentés és bezárás";
+"Discard" = "Elvetés";
+"Stop Recording" = "Felvétel leállítása";
+"Pause" = "Szünet";
+"Resume" = "Folytatás";
+"Engine:" = "Motor:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (eszközön)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Az Apple fordítás gyorsabb és offline is működik. A Google Translate több nyelvet támogat.";
+"Download language packs in System Settings…" = "Töltsd le a nyelvi csomagokat a Rendszerbeállításokban…";
+"Configure S3 in Settings" = "S3 beállítása a Beállításokban";
+"Sign in to Google Drive in Settings" = "Jelentkezz be a Google Drive-ba a Beállításokban";
+"Position:" = "Pozíció:";
+"Size:" = "Méret:";
+"Shape:" = "Alakzat:";
+
+"Same as screenshots" = "Megegyezik a képernyőképekkel";
+"  Preview size:" = "  Előnézet mérete:";
+"(0 = off)" = "(0 = ki)";
+"Clear All" = "Összes törlése";
+"Clear History?" = "Törli az előzményeket?";
+"This will permanently delete all screenshots from history." = "Ez véglegesen törli az összes képernyőképet az előzményekből.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Kattintson a \"Beállítás\" gombra, majd nyomjon meg egy billentyűkombinációt legalább egy módosítóbillentyűvel (⌘, ⌥, ⌃, ⇧) a gyorsbillentyű beállításához.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "A fájlok a Google Drive-on lévő \"Snaploom\" mappába töltődnek fel. Minden privát marad — semmi nem kerül nyilvános megosztásra.";
+
+"Pressure" = "Nyomás";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Videó megnyitása...";
+"Choose a video to open in Snaploom editor" = "Válassz videót a Snaploom szerkesztőben való megnyitáshoz";
+"Click to add effects" = "Kattints effektusok hozzáadásához";
+"Add Zoom" = "Nagyítás hozzáadása";
+"Add Censor" = "Cenzúra hozzáadása";
+"Add Cut" = "Vágás hozzáadása";
+"Add Speed" = "Sebesség hozzáadása";
+"Add Freeze" = "Kimerevítés hozzáadása";
+"Add Text" = "Szöveg hozzáadása";
+"Delete Zoom" = "Nagyítás törlése";
+"Delete Censor" = "Cenzúra törlése";
+"Delete Cut" = "Vágás törlése";
+"Delete Speed" = "Sebesség törlése";
+"Delete Freeze" = "Kimerevítés törlése";
+"Delete Text" = "Szöveg törlése";
+"Edit Text…" = "Szöveg szerkesztése…";
+"Huge" = "Hatalmas";
+"Bold" = "Félkövér";
+"Italic" = "Dőlt";
+"Alignment" = "Igazítás";
+"Left" = "Bal";
+"Center" = "Középre";
+"Right" = "Jobb";
+"Text Color" = "Szövegszín";
+"Background Color" = "Háttérszín";
+"Rounded" = "Lekerekített";
+"Custom…" = "Egyéni…";
+"Transparent" = "Átlátszó";
+"Black" = "Fekete";
+"White" = "Fehér";
+"Yellow" = "Sárga";
+"Red" = "Piros";
+"Green" = "Zöld";
+"Blue" = "Kék";
+"Untitled" = "Névtelen";
+"Add effect" = "Effektus hozzáadása";
+"Fade" = "Áttűnés";
+"High" = "Magas";
+"Low" = "Alacsony";
+"Not enough room here" = "Nincs elég hely itt";
+"Copied!" = "Másolva!";
+"Converting to GIF…" = "Konvertálás GIF-re…";
+"GIF conversion failed" = "GIF konvertálás sikertelen";
+"No video track found" = "Nem található videósáv";
+"Preview:" = "Előnézet:";
+"Copy Screen Info" = "Képernyő információ másolása";
+"Copies display and capture diagnostics to clipboard" = "Kijelző- és rögzítési diagnosztikát másol a vágólapra";
+"Accent" = "Kiemelés";
+"Icon" = "Ikon";
+"Background" = "Háttér";
+"Custom" = "Egyéni";
+"Theme:" = "Téma:";
+"Application" = "Alkalmazás";
+"Capture area and extract text" = "Terület rögzítése és szöveg kinyerése";
+"Capture the full screen" = "Teljes képernyő rögzítése";
+"Counter for multi-screen captures" = "Számláló többképernyős rögzítésekhez";
+"8-character random string (e.g. k3j7x9q2)" = "8 karakteres véletlen karakterlánc (pl. k3j7x9q2)";
+"Filename Template Tokens" = "Fájlnév sablon tokenek";
+"Filename tokens" = "Fájlnév tokenek";
+"Filename:" = "Fájlnév:";
+"Open an image file in the editor" = "Képfájl megnyitása a szerkesztőben";
+"Open the recent captures overlay" = "Legutóbbi rögzítések átfedés megnyitása";
+"Open this settings window" = "Ezen beállítások ablak megnyitása";
+"Quick capture (uses your Enter action)" = "Gyors rögzítés (az Enter műveletedet használja)";
+"Re-capture the last selected area" = "Utoljára kiválasztott terület újbóli rögzítése";
+"Screenshots only — captured window title (blank otherwise)" = "Csak képernyőképeknél — rögzített ablak címe (egyébként üres)";
+"Show available filename tokens" = "Elérhető fájlnév tokenek megjelenítése";
+"Enable snaploom:// URL scheme" = "snaploom:// URL séma engedélyezése";
+"Show supported URL scheme commands" = "Támogatott URL séma parancsok megjelenítése";
+"Start area capture" = "Terület rögzítés indítása";
+"Start area recording" = "Terület felvétel indítása";
+"Start full-screen recording" = "Teljes képernyős felvétel indítása";
+"Start scroll capture" = "Görgetett rögzítés indítása";
+"Stop the current recording" = "Jelenlegi felvétel leállítása";
+"Supported URL Scheme Commands" = "Támogatott URL séma parancsok";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "A fájlkiterjesztés automatikusan hozzáadódik. A {window} perjeleiből és kettőspontjaiból kötőjel lesz.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Indítsd el a Snaploom-ot Raycast, Alfred, Shortcuts, vagy bármilyen URL-eket megnyitó eszközből.";
+"URL scheme info" = "URL séma információ";
+"sec (0 = never)" = "mp (0 = soha)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Beállítások mentése";
+"Export Settings…" = "Beállítások exportálása…";
+"Import Settings…" = "Beállítások importálása…";
+"Reveal Settings File in Finder" = "Beállításfájl megjelenítése a Finderben";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Exportáld a beállításaidat egy fájlba, hogy áthelyezhesd őket egy másik Macre vagy egy tiszta telepítésbe. A feltöltési hitelesítő adatok, a mentési mappa és a képernyőképek előzményei nem szerepelnek benne. A beállítások a Snaploom alkalmazáskonténerében tárolódnak.";
+"Export Settings" = "Beállítások exportálása";
+"Import Settings" = "Beállítások importálása";
+"Import failed" = "Az importálás sikertelen";
+"Settings exported" = "Beállítások exportálva";
+"Settings imported" = "Beállítások importálva";
+"Import" = "Importálás";
+"Later" = "Később";
+"Relaunch Now" = "Újraindítás most";
+"Replace your current settings?" = "Lecseréled a jelenlegi beállításaidat?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Az importálás lecseréli a jelenlegi beállításaidat a fájlban lévőkre. A mentési mappa, a feltöltési hitelesítő adatok és a képernyőképek előzményei megmaradnak. Ez a művelet nem vonható vissza.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d beállítás lett alkalmazva. Indítsd újra a Snaploomot az összes módosítás érvényesítéséhez.";
+"A few large items were too big to include. Everything else was saved." = "Néhány nagyméretű elem túl nagy volt ahhoz, hogy belekerüljön. Minden más mentésre került.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Az egyéni Beautify háttérképed túl nagy volt ahhoz, hogy belekerüljön. Minden más mentésre került.";
+"This file is not a valid Snaploom settings file." = "Ez a fájl nem érvényes Snaploom beállításfájl.";
+"This settings file contains no settings." = "Ez a beállításfájl nem tartalmaz beállításokat.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Ez a beállításfájl a Snaploom egy újabb verziójával készült. Kérlek, először frissítsd a Snaploomot.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "A kép szövegének rögzítése, fordítása és rávetítése";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Előzményelem megnyitása a szerkesztőben (a jegyzetek szerkeszthetők maradnak)";

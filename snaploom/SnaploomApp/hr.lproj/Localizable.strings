@@ -1,0 +1,671 @@
+/* Hrvatski — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Snimi podrucje";
+"Capture Screen" = "Snimi zaslon";
+"Capture OCR" = "Snimi OCR";
+"Capture OCR & QR" = "Snimi OCR i QR";
+"Capture area and read text/QR codes" = "Snimi područje i očitaj tekst/QR kodove";
+"Quick Capture" = "Brzo snimanje";
+"Scroll Capture" = "Snimanje pomicanjem";
+"Capture Last Area" = "Snimi zadnje područje";
+"Capture Delay" = "Odgoda snimanja";
+"None" = "Nema";
+"%d seconds" = "%d sekundi";
+"Record Area" = "Snimi podrucje (video)";
+"Record Screen" = "Snimi zaslon (video)";
+"Recent Captures" = "Nedavna snimanja";
+"Show History Panel" = "Prikazi plocu povijesti";
+"Open Image..." = "Otvori sliku...";
+"Open from Clipboard" = "Otvori iz meduspremnika";
+"Pin from Clipboard" = "Prikvaci iz meduspremnika";
+"Preferences..." = "Postavke...";
+"Check for Updates..." = "Provjeri azuriranja...";
+"Quit Snaploom" = "Zatvori Snaploom";
+"No recent captures" = "Nema nedavnih snimanja";
+"Clear History" = "Ocisti povijest";
+
+/* History Panel */
+"Copy" = "Kopiraj";
+"Save As..." = "Spremi kao...";
+"Open in Editor" = "Otvori u uredivacku";
+"Pin to Screen" = "Prikvaci na zaslon";
+"Quick Look" = "Brzi pregled";
+"Delete" = "Obrisi";
+"All" = "Sve";
+"Screenshots" = "Snimke zaslona";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "Klikni za kopiranje · Povuci u aplikaciju";
+"No captures yet" = "Nema snimki";
+
+/* Floating Thumbnail */
+"Close All" = "Zatvori sve";
+"Save All to Folder…" = "Spremi sve u mapu...";
+"Save" = "Spremi";
+
+/* Editor Top Bar */
+"Zoom In" = "Povecaj";
+"Zoom Out" = "Smanji";
+"Fit Canvas" = "Prilagodi platnu";
+"Crop" = "Izrezi";
+"Flip Horizontal" = "Okreni vodoravno";
+"Flip Vertical" = "Okreni okomito";
+"Rotate Left" = "Zakreni ulijevo";
+"Rotate Right" = "Zakreni udesno";
+"Zoom" = "Zumiranje";
+"Add Capture" = "Dodaj snimku";
+
+/* Toolbar - Tools */
+"Arrow" = "Strelica";
+"Line" = "Linija";
+"Rectangle" = "Pravokutnik";
+"Ellipse" = "Elipsa";
+"Pencil" = "Olovka";
+"Pencil (Draw)" = "Olovka (Crtanje)";
+"Marker" = "Marker";
+"Text" = "Tekst";
+"Number" = "Broj";
+"Number / Counter" = "Broj / Brojac";
+"Stamp / Emoji" = "Pecat / Emoji";
+"Censor" = "Cenzura";
+"Censor (Pixelate / Blur / Solid)" = "Cenzura (Pikselizacija / Zamucenje / Ispuna)";
+"Measure" = "Mjerenje";
+"Measure (px)" = "Mjerenje (px)";
+"Magnify (Loupe)" = "Povecalo (Lupa)";
+"Highlight" = "Istakni";
+"Highlight (Spotlight)" = "Istakni (Reflektor)";
+"Dim" = "Zatamni";
+"Color Sampler" = "Uzorkovanje boje";
+"Color Picker" = "Birac boja";
+"Select & Edit" = "Odaberi i uredi";
+"Color" = "Boja";
+
+/* Aspect ratio & resolution presets */
+"Aspect ratio & resolution presets" = "Predlošci omjera i razlučivosti";
+"Aspect ratio" = "Omjer slike";
+"Resolution" = "Razlučivost";
+"Freeform" = "Slobodan oblik";
+"Units" = "Jedinice";
+"Keep ratio for next captures" = "Zadrži omjer za sljedeća snimanja";
+"Custom · %@" = "Prilagođeno · %@";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Kopiraj u meduspremnik";
+"Save to File" = "Spremi u datoteku";
+"Save to" = "Spremi u";
+"Open in Editor Window" = "Otvori u prozoru uredivacka";
+"Pin on Screen" = "Prikvaci na zaslon";
+"Pin" = "Prikvaci";
+"Pin (floating window)" = "Prikvaci (plutajuci prozor)";
+"OCR" = "OCR";
+"OCR Text" = "OCR tekst";
+"OCR (extract text)" = "OCR (izdvoji tekst)";
+"OCR & QR" = "OCR i QR";
+"Run OCR & QR" = "Pokreni OCR i QR";
+"Text & QR Recognition" = "Prepoznavanje teksta i QR";
+"QR Code" = "QR kod";
+"QR Codes" = "QR kodovi";
+"Open Link" = "Otvori poveznicu";
+"Open With" = "Otvori pomoću";
+"No Apps Available" = "Nema dostupnih aplikacija";
+"No Share Services" = "Nema usluga dijeljenja";
+"Upload" = "Ucitaj";
+"Share" = "Podijeli";
+"Undo" = "Ponisti";
+"Redo" = "Ponovi";
+"Close" = "Zatvori";
+"Remove Background" = "Ukloni pozadinu";
+"Beautify" = "Uljepsaj";
+"Adjust" = "Prilagodi";
+"Adjust (Image Effects)" = "Prilagodi (Efekti slike)";
+"Invert Colors" = "Obrni boje";
+"Record" = "Snimaj";
+"Record screen" = "Snimaj zaslon";
+"Translate" = "Prevedi";
+"Auto-Redact sensitive data" = "Automatski cenzuriraj osjetljive podatke";
+"Move Selection" = "Pomakni odabir";
+"Move up" = "Pomakni gore";
+"Move down" = "Pomakni dolje";
+"Menu Bar Order" = "Redoslijed u traci izbornika";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Odaberite redoslijed radnji snimanja u izborniku Snaploom u traci izbornika.";
+
+/* Toolbar - Recording */
+"Start Recording" = "Pocni snimanje";
+"Cancel Recording" = "Otkazi snimanje";
+"Highlight Mouse Clicks" = "Istakni klikove misa";
+"Record System Audio" = "Snimaj zvuk sustava";
+"Record Microphone" = "Snimaj mikrofon";
+"Recording Settings" = "Postavke snimanja";
+
+/* Tool Options */
+"Size" = "Velicina";
+"Stroke" = "Potez";
+"Radius" = "Polumjer";
+"Start:" = "Pocetak:";
+"Draw:" = "Crtanje:";
+"Auto:" = "Auto:";
+"Fill" = "Ispuna";
+"Outline" = "Obrub";
+"More Emojis" = "Vise emojija";
+"Load Image" = "Ucitaj sliku";
+"Gradient Style" = "Stil gradijenta";
+"On" = "Ukljuceno";
+"Text Only" = "Samo tekst";
+"All Text" = "Sav tekst";
+"PII" = "PII";
+"Faces" = "Lica";
+"People" = "Osobe";
+"Confirm before upload" = "Potvrdi prije ucitavanja";
+"Flip" = "Okreni";
+"Smooth" = "Glatkoca";
+"Refined" = "Profinjeno";
+"Smart" = "Pametno";
+"Padding" = "Razmak";
+"Shadow" = "Sjena";
+"Right-click to add points" = "Desni klik za dodavanje tocaka";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Drzi 1 auto-okomito  ·  Drzi 2 auto-vodoravno";
+"Limit to selection" = "Ograniči na odabir";
+"Effect" = "Efekt";
+"Font" = "Font";
+"System" = "Sustav";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Klikni prozor  ·  Povuci za podrucje  ·  F za cijeli zaslon";
+"Drag to select  ·  Click for full screen" = "Povuci za odabir  ·  Klikni za cijeli zaslon";
+"Release to annotate and edit" = "Pusti za oznacavanje i uredivanje";
+"Release to finish" = "Pusti za završetak";
+"Hold Space to move. Release to annotate and edit" = "Držite Razmaknicu za pomicanje. Pustite za označavanje i uređivanje";
+"Hold Space to move. Release to finish" = "Držite Razmaknicu za pomicanje. Pustite za završetak";
+"Window snap: " = "Hvatanje prozora: ";
+"ON" = "UKLJ.";
+"OFF" = "ISKLJ.";
+"  (Tab to toggle)" = "  (Tab za prebacivanje)";
+"Space" = "Razmaknica";
+"Right-click to copy" = "Desni klik za kopiranje";
+"Copied %@" = "Kopirano %@";
+"Set color %@" = "Postavi boju %@";
+"Draw something first to use the move tool." = "Najprije nacrtajte nesto da biste koristili alat za pomicanje.";
+"Drag to reposition" = "Povuci za premjestanje";
+
+/* Overlay - Popovers */
+"Format:" = "Format:";
+"FPS:" = "FPS:";
+"When done:" = "Po zavrsetku:";
+"Open editor" = "Otvori uredivack";
+"Show in Finder" = "Prikazi u Finder";
+"Copy to clipboard" = "Kopiraj u meduspremnik";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom Postavke";
+"General" = "Opcenito";
+"Tools" = "Alati";
+"Recording" = "Snimanje";
+"About" = "O programu";
+"Shortcuts" = "Precaci";
+"Uploads" = "Ucitavanja";
+"Language" = "Jezik";
+"Language:" = "Jezik:";
+"Restart the app to fully apply the new language." = "Ponovno pokrenite aplikaciju za potpunu primjenu novog jezika.";
+"Capture" = "Snimanje";
+"Play sound on capture" = "Reproduciraj zvuk pri snimanju";
+"Play sound on copy" = "Reproduciraj zvuk pri kopiranju";
+"Remember last selected tool" = "Zapamti zadnji odabrani alat";
+"Show floating thumbnail after capture" = "Prikazi plutajucu minijaturu nakon snimanja";
+"Launch at login" = "Pokreni pri prijavi";
+"Show snap alignment guides" = "Prikazi vodilice za poravnanje";
+"Snap selection edges to image boundaries" = "Privezi rubove odabira uz granice slike";
+"Capture mouse cursor in screenshot" = "Snimi kursor misa na snimci zaslona";
+"Double-click selection to copy" = "Kopiraj dvostrukim klikom na odabir";
+"Hide capture instructions" = "Sakrij upute pri snimanju";
+"Use window title in saved filename" = "Koristi naslov prozora u nazivu datoteke";
+"Hide menu bar icon" = "Sakrij ikonu u traci izbornika";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Tipkovni precaci i dalje rade. Za ponovni prikaz ikone ponovno pokrenite Snaploom.";
+"Check for updates automatically" = "Automatski provjeravaj azuriranja";
+"Check for beta updates" = "Provjeri beta ažuriranja";
+"Thumbnail" = "Minijatura";
+"  Dismiss after:" = "  Odbaci nakon:";
+"seconds before auto-dismiss (0 = never)" = "sekundi prije automatskog odbacivanja (0 = nikad)";
+"  Multiple previews:" = "  Visestruki pregledi:";
+"Stack (keep all)" = "Slozi (zadrzi sve)";
+"Replace (show only latest)" = "Zamijeni (prikazi samo najnovije)";
+"Output" = "Izlaz";
+"Image format:" = "Format slike:";
+"Quality:" = "Kvaliteta:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Spremi u standardnoj razlucivosti (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Prepolavlja dimenzije na Retina zaslonima, ~4x manje datoteke";
+"Embed sRGB color profile" = "Ugradi sRGB profil boja";
+"Ensures consistent colors across different displays" = "Osigurava dosljedne boje na razlicitim zaslonima";
+"Screenshot History" = "Povijest snimki zaslona";
+"History size:" = "Velicina povijesti:";
+"screenshots kept on disk (0 = off)" = "snimki zaslona na disku (0 = iskljuceno)";
+"Order history by last edit" = "Poredaj povijest po zadnjoj izmjeni";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Uređene snimke premještaju se na vrh. Isključeno zadržava redoslijed snimanja.";
+"Save Directory" = "Mapa za spremanje";
+"Save folder:" = "Mapa za spremanje:";
+"Browse…" = "Pregledaj...";
+"Appearance" = "Izgled";
+"Accent color:" = "Naglasna boja:";
+"Icon color:" = "Boja ikone:";
+"Background color:" = "Boja pozadine:";
+"Reset" = "Ponisti";
+"OCR Capture:" = "OCR snimanje:";
+"OCR & QR Capture:" = "OCR i QR snimanje:";
+"Show window + copy to clipboard" = "Prikazi prozor + kopiraj u meduspremnik";
+"Show window only" = "Samo prikazi prozor";
+"Copy to clipboard only" = "Samo kopiraj u meduspremnik";
+"Enter / Quick Capture:" = "Enter / Brzo snimanje:";
+"Save to file" = "Spremi u datoteku";
+"Save + copy to clipboard" = "Spremi + kopiraj u meduspremnik";
+"OCR Action" = "OCR radnja";
+"Save action:" = "Radnja spremanja:";
+"Save to default folder" = "Spremi u zadanu mapu";
+"Ask where to save" = "Pitaj gdje spremiti";
+"Show shortcuts in tooltips" = "Prikaži prečace u opisima";
+"Disable shadow outside selection" = "Onemogući sjenu izvan odabira";
+"Menu bar icon:" = "Ikona u traci izbornika:";
+"Default" = "Zadano";
+"Custom symbol" = "Prilagođeni simbol";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Unesite bilo koje SF Symbol ime (npr. camera.fill) ili odaberite predložak. Pregledajte imena u Apple SF Symbols aplikaciji. Nevažeća imena vraćaju se na zadanu ikonu.";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Tipkovni precaci";
+"Hotkeys" = "Precaci";
+"Clear shortcut" = "Obrisi precac";
+"Press keys..." = "Pritisnite tipke...";
+"Waiting..." = "Cekanje...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Alati za oznacavanje";
+"Hidden tools are removed from the bottom toolbar." = "Skriveni alati se uklanjaju iz donje alatne trake.";
+"Capture Actions" = "Radnje snimanja";
+"Bottom Toolbar Actions" = "Radnje donje alatne trake";
+"Hidden actions are removed from the bottom toolbar." = "Skrivene radnje se uklanjaju iz donje alatne trake.";
+"Editor Actions" = "Radnje uredivacka";
+"Right Toolbar Actions" = "Radnje desne alatne trake";
+"Hidden actions are removed from the right toolbar." = "Skrivene radnje se uklanjaju iz desne alatne trake.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Broj sli. u sek.:";
+"After recording:" = "Nakon snimanja:";
+"Save recording to:" = "Spremi snimku u:";
+"Save Recording" = "Spremi snimku";
+"Clear" = "Ocisti";
+"Max height:" = "Maks. visina:";
+"px (0 = unlimited)" = "px (0 = neograniceno)";
+"Behavior" = "Ponasanje";
+"Auto-scroll (sends synthetic scroll events)" = "Automatsko pomicanje (salje sinteticke dogadaje pomicanja)";
+"Detect fixed/sticky headers" = "Otkrij fiksna/ljepljiva zaglavlja";
+"Scroll speed:" = "Brzina pomicanja:";
+"Slow" = "Sporo";
+"Medium" = "Srednje";
+"Fast" = "Brzo";
+"Very fast" = "Vrlo brzo";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Usluga ucitavanja";
+"Upload Provider" = "Pruzatelj ucitavanja";
+"Provider:" = "Pruzatelj:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (slike + videozapisi)";
+"imgbb (images only)" = "imgbb (samo slike)";
+"S3-Compatible (images + videos)" = "S3-kompatibilno (slike + videozapisi)";
+"S3-Compatible Storage" = "S3-kompatibilna pohrana";
+"Sign In with Google" = "Prijava putem Googlea";
+"Sign Out" = "Odjava";
+"Signed in" = "Prijavljeni";
+"Not signed in" = "Niste prijavljeni";
+"Account:" = "Racun:";
+"Test Connection" = "Testiraj vezu";
+"Fill in endpoint, bucket, and credentials first" = "Najprije unesite krajnju tocku, spremnik i vjerodajnice";
+"Testing..." = "Testiranje...";
+"Connection successful!" = "Veza uspjesna!";
+"Leave empty to use default" = "Ostavite prazno za zadanu vrijednost";
+"Endpoint:" = "Krajnja tocka:";
+"Region:" = "Regija:";
+"Bucket:" = "Spremnik:";
+"Access Key:" = "Pristupni kljuc:";
+"Secret Key:" = "Tajni kljuc:";
+"Public URL:" = "Javni URL:";
+"Path Prefix:" = "Prefiks putanje:";
+"API key:" = "API kljuc:";
+"Upload History" = "Povijest ucitavanja";
+"No uploads yet." = "Nema ucitavanja.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Osnovni URL za javni pristup. Ako je prazno, koristi se URL S3 krajnje tocke (mozda nije javno dostupan).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Dijeljeni kljuc je ukljucen — nabavite vlastiti besplatni kljuc na imgbb.com/api ako dosegnete ogranicenje. Samo slike (bez podrske za video).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Radi s AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 i drugim S3-kompatibilnim uslugama. Podrzava slike i videozapise.";
+"Configure S3 in Preferences" = "Konfigurirajte S3 u Postavkama";
+"Sign in to Google Drive in Preferences" = "Prijavite se na Google Drive u Postavkama";
+"Video upload requires Google Drive or S3" = "Ucitavanje videa zahtijeva Google Drive ili S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Verzija %@ (%@)";
+"Made by" = "Izradio";
+"Licensed under the GPLv3" = "Licencirano pod GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Besplatan alat otvorenog koda za snimanje zaslona i ekrana za macOS.\nU potpunosti izvoran — izgraden sa Swift i AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Nema slike u meduspremniku";
+"No Image or Text on Clipboard" = "Nema slike ni teksta u meduspremniku";
+"Copy an image to the clipboard first, then try again." = "Najprije kopirajte sliku u meduspremnik, zatim pokusajte ponovo.";
+"Copy an image or text to the clipboard first, then try again." = "Najprije kopirajte sliku ili tekst u meduspremnik, zatim pokusajte ponovo.";
+"OK" = "U redu";
+"Accessibility Access Required" = "Potreban pristup pristupacnosti";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom treba dozvolu pristupacnosti za automatsko pomicanje drugih aplikacija. Odobrite pristup u Postavkama sustava, zatim pokusajte ponovo.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom treba dozvolu pristupačnosti za snimanje pomicanjem. Odobrite pristup u Postavkama sustava i pokušajte ponovno.";
+"Open Settings" = "Otvori postavke";
+"Cancel" = "Odustani";
+"Microphone Access Required" = "Potreban pristup mikrofonu";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom treba dozvolu mikrofona za snimanje glasa. Otvorite Postavke sustava za odobravanje pristupa.";
+"Upload to Google Drive?" = "Ucitaj na Google Drive?";
+"Upload to S3?" = "Ucitaj na S3?";
+"Upload to imgbb.com?" = "Ucitaj na imgbb.com?";
+"Your screenshot will be uploaded." = "Vasa snimka zaslona ce biti ucitana.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Dobrodosli u Snaploom";
+"Snaploom needs one permission" = "Snaploom treba jednu dozvolu";
+"Screen Recording not yet granted" = "Snimanje zaslona jos nije odobreno";
+"Screen Recording granted!" = "Snimanje zaslona odobreno!";
+"Enable Snaploom, then try taking a screenshot" = "Omogucite Snaploom, zatim pokusajte snimiti zaslon";
+"Open Screen Recording Settings" = "Otvori postavke snimanja zaslona";
+"Continue" = "Nastavi";
+
+/* OCR Window */
+"Text Recognition" = "Prepoznavanje teksta";
+"Translate to:" = "Prevedi na:";
+"%d chars · %d words" = "%d znakova · %d rijeci";
+"Copy  ⌘↩" = "Kopiraj  ⌘↩";
+"AI Search" = "AI pretraga";
+"Show Original" = "Prikazi izvornik";
+"Translation Failed" = "Prijevod nije uspio";
+"Translation" = "Prijevod";
+"(No text detected in the selected area)" = "(Nije prepoznat tekst u odabranom podrucju)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL kopiran u meduspremnik";
+"Uploading... %d%%" = "Ucitavanje... %d%%";
+"Upload failed: %@" = "Ucitavanje neuspjelo: %@";
+"Uploaded! Link copied." = "Ucitano! Poveznica kopirana.";
+"Uploading to %@... %d%%" = "Ucitavanje na %@... %d%%";
+"Open" = "Otvori";
+
+/* Recording Toast */
+"Recording saved" = "Snimka spremljena";
+"%@ • Recording saved" = "%@ • Snimka spremljena";
+"Copy Path" = "Kopiraj putanju";
+"Path copied!" = "Putanja kopirana!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom Video uredivack";
+"%@ selected" = "%@ odabrano";
+"Exporting..." = "Izvoz...";
+"Export failed" = "Izvoz neuspjeo";
+"Saved to %@" = "Spremljeno u %@";
+"Save failed" = "Spremanje neuspjelo";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Spremi kao...";
+"Choose a folder" = "Odaberite mapu";
+"Save All to Folder…" = "Spremi sve u mapu...";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Automatsko pomicanje";
+"Stop" = "Zaustavi";
+"Scrolling..." = "Pomicanje...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Predloski";
+"Adjustments" = "Prilagodbe";
+"Brightness" = "Svjetlina";
+"Contrast" = "Kontrast";
+"Saturation" = "Zasicenost";
+"Sharpness" = "Ostrina";
+
+/* Time Ago */
+"just now" = "upravo sada";
+"%ds ago" = "prije %ds";
+"%dm ago" = "prije %dm";
+"%dh ago" = "prije %dh";
+
+/* Hotkey Labels */
+"History" = "Povijest";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Kliknite \"Snimaj\" i pritisnite kombinaciju tipki s barem jednom modifikatorskom tipkom (⌘, ⌥, ⌃, ⇧) za postavljanje precaca.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "Obrada GIF-a…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Potrebno pracenje unosa";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom treba dozvolu pracenja unosa za prikaz pritisaka tipki tijekom snimanja. Odobrite pristup u System Settings, zatim pokusajte ponovo.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom treba dozvolu pristupacnosti za prikaz pritisaka tipki tijekom snimanja. Odobrite pristup u System Settings, zatim pokusajte ponovo.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Prikazi pritiske tipki";
+"Shortcuts Only" = "Samo precaci";
+"All Keystrokes" = "Svi pritisci tipki";
+
+/* Recording — Settings Popover */
+"Delay:" = "Odgoda:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Kopirano u meduspremnik!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Preklapanje web-kamere";
+"Camera Access Required" = "Potreban pristup kameri";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom treba dozvolu kamere za preklapanje web-kamere. Otvorite Postavke sustava za odobravanje pristupa.";
+"Webcam" = "Web-kamera";
+"Bottom Right" = "Dolje desno";
+"Bottom Left" = "Dolje lijevo";
+"Top Right" = "Gore desno";
+"Top Left" = "Gore lijevo";
+"Small" = "Malo";
+"Large" = "Veliko";
+"Webcam Size Small" = "Malo";
+"Webcam Size Medium" = "Srednje";
+"Webcam Size Large" = "Veliko";
+"Webcam Size Extra Large" = "Izuzetno veliko";
+"Circle" = "Krug";
+"Rounded Rectangle" = "Zaobljeni pravokutnik";
+"Cam pos:" = "Poz. kamere:";
+"Cam size:" = "Vel. kamere:";
+"Cam shape:" = "Oblik kamere:";
+
+/* New Strings */
+"Settings" = "Postavke";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Izvanmrežna verzija: integracije za prijenos i pohranu u oblaku uklonjene su. Provjere ažuriranja i dalje se mogu povezivati s Snaploomovim poslužiteljem za ažuriranja. Snimke zaslona i snimke ostaju lokalne osim ako ih sami ne podijelite ili spremite.";
+"Settings..." = "Postavke...";
+"Snaploom Settings" = "Snaploom Postavke";
+"Also open in Editor" = "Otvori i u uredivacku";
+"Hide controls" = "Sakrij kontrole";
+"Hide recording controls" = "Sakrij kontrole snimanja";
+"Stop recording from the menu bar icon instead." = "Umjesto toga zaustavite snimanje putem ikone u traci izbornika.";
+"Pixelate" = "Pikselizacija";
+"Blur" = "Zamucenje";
+"Solid" = "Ispuna";
+"Erase" = "Obrisi";
+"Done" = "Gotovo";
+"Do nothing" = "Ne radi nista";
+"Overlay / Editor Shortcuts" = "Precaci preklapanja / uredivacka";
+"Set" = "Postavi";
+"Press..." = "Pritisnite...";
+"Reset to default" = "Vrati na zadano";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Pritisnite jednu tipku da je dodijelite kao precac za taj alat. Rade kad je preklapanje ili uredivack aktivan.";
+"Keep Separate" = "Zadrzi odvojeno";
+"Merge Audio" = "Spoji zvuk";
+"Audio Tracks" = "Zvucne zapise";
+"Adjust volume for each audio track:" = "Prilagodite glasnocu za svaku zvucnu stopu:";
+"Microphone:" = "Mikrofon:";
+"System audio:" = "Zvuk sustava:";
+"Loupe" = "Lupa";
+"Stamp" = "Pecat";
+"Unlimited" = "Neograniceno";
+"Save changes?" = "Spremiti promjene?";
+"Your annotations will be lost if you close without saving." = "Vase oznake ce biti izgubljene ako zatvorite bez spremanja.";
+"Save & Close" = "Spremi i zatvori";
+"Discard" = "Odbaci";
+"Stop Recording" = "Zaustavi snimanje";
+"Pause" = "Pauziraj";
+"Resume" = "Nastavi";
+"Engine:" = "Pokretac:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (na uredaju)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple prijevod je brzi i radi bez mreze. Google Translate podrzava vise jezika.";
+"Download language packs in System Settings…" = "Preuzmite jezicne pakete u Postavkama sustava…";
+"Configure S3 in Settings" = "Konfigurirajte S3 u Postavkama";
+"Sign in to Google Drive in Settings" = "Prijavite se na Google Drive u Postavkama";
+"Position:" = "Pozicija:";
+"  Position:" = "  Pozicija:";
+"Size:" = "Velicina:";
+"Shape:" = "Oblik:";
+
+"Same as screenshots" = "Isto kao snimke zaslona";
+"  Preview size:" = "  Veličina pregleda:";
+"(0 = off)" = "(0 = isključeno)";
+"Clear All" = "Obriši sve";
+"Clear History?" = "Obrisati povijest?";
+"This will permanently delete all screenshots from history." = "Ovo će trajno izbrisati sve snimke zaslona iz povijesti.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Kliknite \"Postavi\" i pritisnite kombinaciju tipki s barem jednim modifikatorom (⌘, ⌥, ⌃, ⇧) za postavljanje prečaca.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Datoteke se učitavaju u mapu \"Snaploom\" na vašem Google Disku. Sve ostaje privatno — ništa se ne dijeli javno.";
+
+"Pressure" = "Pritisak";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Otvori video...";
+"Choose a video to open in Snaploom editor" = "Odaberite videozapis za otvaranje u Snaploom uređivaču";
+"Click to add effects" = "Kliknite za dodavanje efekata";
+"Add Zoom" = "Dodaj zumiranje";
+"Add Censor" = "Dodaj cenzuru";
+"Add Cut" = "Dodaj rez";
+"Add Speed" = "Dodaj brzinu";
+"Add Freeze" = "Dodaj zamrznuti kadar";
+"Add Text" = "Dodaj tekst";
+"Delete Zoom" = "Obriši zumiranje";
+"Delete Censor" = "Obriši cenzuru";
+"Delete Cut" = "Obriši rez";
+"Delete Speed" = "Obriši brzinu";
+"Delete Freeze" = "Obriši zamrznuti kadar";
+"Delete Text" = "Obriši tekst";
+"Edit Text…" = "Uredi tekst…";
+"Huge" = "Ogromno";
+"Bold" = "Podebljano";
+"Italic" = "Kurziv";
+"Alignment" = "Poravnanje";
+"Left" = "Lijevo";
+"Center" = "Sredina";
+"Right" = "Desno";
+"Text Color" = "Boja teksta";
+"Background Color" = "Boja pozadine";
+"Rounded" = "Zaobljeno";
+"Custom…" = "Prilagođeno…";
+"Transparent" = "Prozirno";
+"Black" = "Crna";
+"White" = "Bijela";
+"Yellow" = "Žuta";
+"Red" = "Crvena";
+"Green" = "Zelena";
+"Blue" = "Plava";
+"Untitled" = "Bez naslova";
+"Add effect" = "Dodaj efekt";
+"Fade" = "Prijelaz";
+"High" = "Visoko";
+"Low" = "Nisko";
+"Not enough room here" = "Nema dovoljno prostora ovdje";
+"Copied!" = "Kopirano!";
+"Converting to GIF…" = "Pretvaranje u GIF…";
+"GIF conversion failed" = "Pretvaranje u GIF nije uspjelo";
+"No video track found" = "Videozapis nije pronađen";
+"Preview:" = "Pregled:";
+"Copy Screen Info" = "Kopiraj informacije o zaslonu";
+"Copies display and capture diagnostics to clipboard" = "Kopira dijagnostiku zaslona i snimanja u međuspremnik";
+"Accent" = "Naglasak";
+"Icon" = "Ikona";
+"Background" = "Pozadina";
+"Custom" = "Prilagođeno";
+"Theme:" = "Tema:";
+"Application" = "Aplikacija";
+"Capture area and extract text" = "Snimi područje i izdvoji tekst";
+"Capture the full screen" = "Snimi cijeli zaslon";
+"Counter for multi-screen captures" = "Brojač za snimanja s više zaslona";
+"8-character random string (e.g. k3j7x9q2)" = "Nasumični niz od 8 znakova (npr. k3j7x9q2)";
+"Filename Template Tokens" = "Oznake predloška naziva datoteke";
+"Filename tokens" = "Oznake naziva datoteke";
+"Filename:" = "Naziv datoteke:";
+"Open an image file in the editor" = "Otvori datoteku slike u uređivaču";
+"Open the recent captures overlay" = "Otvori preklapanje nedavnih snimanja";
+"Open this settings window" = "Otvori ovaj prozor postavki";
+"Quick capture (uses your Enter action)" = "Brzo snimanje (koristi vašu Enter radnju)";
+"Re-capture the last selected area" = "Ponovno snimi zadnje odabrano područje";
+"Screenshots only — captured window title (blank otherwise)" = "Samo snimke zaslona — naslov snimljenog prozora (inače prazno)";
+"Show available filename tokens" = "Prikaži dostupne oznake naziva datoteke";
+"Show supported URL scheme commands" = "Prikaži podržane naredbe URL sheme";
+"Start area capture" = "Započni snimanje područja";
+"Start area recording" = "Započni snimanje područja (video)";
+"Start full-screen recording" = "Započni snimanje cijelog zaslona";
+"Start scroll capture" = "Započni snimanje pomicanjem";
+"Stop the current recording" = "Zaustavi trenutno snimanje";
+"Supported URL Scheme Commands" = "Podržane naredbe URL sheme";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Ekstenzija datoteke dodaje se automatski. Kose crte i dvotočke u {window} pretvaraju se u crtice.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Pokrenite Snaploom iz Raycast, Alfred, Shortcuts ili bilo kojeg alata koji otvara URL-ove.";
+"Enable snaploom:// URL scheme" = "Omogući URL shemu snaploom://";
+"URL scheme info" = "Informacije o URL shemi";
+"sec (0 = never)" = "s (0 = nikad)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Sigurnosna kopija postavki";
+"Export Settings…" = "Izvezi postavke…";
+"Import Settings…" = "Uvezi postavke…";
+"Reveal Settings File in Finder" = "Prikaži datoteku postavki u Finderu";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Izvezite svoje postavke u datoteku kako biste ih prenijeli na drugi Mac ili čistu instalaciju. Vjerodajnice za prijenos, mapa za spremanje i povijest snimaka zaslona nisu uključeni. Postavke se pohranjuju unutar Snaploom spremnika aplikacije.";
+"Export Settings" = "Izvezi postavke";
+"Import Settings" = "Uvezi postavke";
+"Import failed" = "Uvoz nije uspio";
+"Settings exported" = "Postavke su izvezene";
+"Settings imported" = "Postavke su uvezene";
+"Import" = "Uvezi";
+"Later" = "Kasnije";
+"Relaunch Now" = "Ponovno pokreni sada";
+"Replace your current settings?" = "Zamijeniti trenutne postavke?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Uvoz će zamijeniti vaše trenutne postavke onima iz ove datoteke. Mapa za spremanje, vjerodajnice za prijenos i povijest snimaka zaslona ostaju sačuvane. Ovu radnju nije moguće poništiti.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "Primijenjeno je %d postavki. Ponovno pokrenite Snaploom kako biste primijenili sve promjene.";
+"A few large items were too big to include. Everything else was saved." = "Nekoliko velikih stavki bilo je preveliko za uključivanje. Sve ostalo je spremljeno.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Vaša prilagođena Beautify pozadinska slika bila je prevelika za uključivanje. Sve ostalo je spremljeno.";
+"This file is not a valid Snaploom settings file." = "Ova datoteka nije valjana Snaploom datoteka postavki.";
+"This settings file contains no settings." = "Ova datoteka postavki ne sadrži nijednu postavku.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Ova datoteka postavki izrađena je novijom verzijom Snaplooma. Najprije ažurirajte Snaploom.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Snimite, prevedite i prekrijte tekst na slici";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Otvori stavku povijesti u uređivaču (bilješke ostaju uredive)";

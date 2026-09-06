@@ -1,0 +1,673 @@
+/* 繁體中文 — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "擷取區域";
+"Capture Screen" = "擷取螢幕";
+"Capture OCR" = "擷取 OCR";
+"Capture OCR & QR" = "擷取 OCR 與 QR";
+"Capture area and read text/QR codes" = "擷取區域並讀取文字／QR 條碼";
+"Quick Capture" = "快速擷取";
+"Scroll Capture" = "捲動擷取";
+"Capture Last Area" = "擷取上次區域";
+"Capture Delay" = "延遲擷取";
+"None" = "無";
+"%d seconds" = "%d 秒";
+"Record Area" = "錄製區域";
+"Record Screen" = "錄製螢幕";
+"Recent Captures" = "最近的擷取";
+"Show History Panel" = "顯示歷史記錄面板";
+"Open Image..." = "開啟影像⋯";
+"Open from Clipboard" = "從剪貼簿開啟";
+"Pin from Clipboard" = "從剪貼簿釘選";
+"Preferences..." = "偏好設定⋯";
+"Check for Updates..." = "檢查更新⋯";
+"Quit Snaploom" = "結束 Snaploom";
+"No recent captures" = "沒有最近的擷取";
+"Clear History" = "清除歷史記錄";
+
+/* History Panel */
+"Copy" = "拷貝";
+"Save As..." = "另存新檔⋯";
+"Open in Editor" = "在編輯器中開啟";
+"Pin to Screen" = "釘選至螢幕";
+"Quick Look" = "快速查看";
+"Delete" = "刪除";
+"All" = "全部";
+"Screenshots" = "螢幕截圖";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "點按以拷貝 · 拖移至 App";
+"No captures yet" = "尚無擷取";
+
+/* Floating Thumbnail */
+"Close All" = "全部關閉";
+"Save All to Folder…" = "全部儲存至檔案夾⋯";
+"Save" = "儲存";
+
+/* Editor Top Bar */
+"Zoom In" = "放大";
+"Zoom Out" = "縮小";
+"Zoom" = "縮放";
+"Fit Canvas" = "配合畫布大小";
+"Crop" = "裁切";
+"Flip Horizontal" = "水平翻轉";
+"Flip Vertical" = "垂直翻轉";
+"Rotate Left" = "向左旋轉";
+"Rotate Right" = "向右旋轉";
+"Add Capture" = "加入擷取";
+
+/* Toolbar - Tools */
+"Arrow" = "箭頭";
+"Line" = "線條";
+"Rectangle" = "矩形";
+"Ellipse" = "橢圓";
+"Pencil" = "鉛筆";
+"Pencil (Draw)" = "鉛筆（繪圖）";
+"Marker" = "螢光筆";
+"Text" = "文字";
+"Number" = "編號";
+"Number / Counter" = "編號 / 計數器";
+"Stamp / Emoji" = "圖章 / 表情符號";
+"Censor" = "遮蔽";
+"Censor (Pixelate / Blur / Solid)" = "遮蔽（馬賽克 / 模糊 / 填色）";
+"Measure" = "測量";
+"Measure (px)" = "測量 (px)";
+"Magnify (Loupe)" = "放大鏡";
+"Highlight" = "聚光";
+"Highlight (Spotlight)" = "聚光（聚光燈）";
+"Dim" = "變暗";
+"Color Sampler" = "顏色取樣器";
+"Color Picker" = "顏色選取器";
+"Select & Edit" = "選取與編輯";
+"Color" = "顏色";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "拷貝至剪貼簿";
+"Save to File" = "儲存至檔案";
+"Save to" = "儲存至";
+"Open in Editor Window" = "在編輯器視窗中開啟";
+"Pin on Screen" = "釘選在螢幕上";
+"Pin" = "釘選";
+"Pin (floating window)" = "釘選（浮動視窗）";
+"OCR" = "OCR";
+"OCR Text" = "OCR 文字辨識";
+"OCR (extract text)" = "OCR（擷取文字）";
+"OCR & QR" = "OCR 與 QR";
+"Run OCR & QR" = "執行 OCR 與 QR";
+"Open Link" = "開啟連結";
+"Open With" = "開啟方式";
+"No Apps Available" = "沒有可用的 App";
+"No Share Services" = "沒有可用的分享服務";
+"QR Code" = "QR 條碼";
+"QR Codes" = "QR 條碼";
+"Upload" = "上傳";
+"Share" = "分享";
+"Undo" = "還原";
+"Redo" = "重做";
+"Close" = "關閉";
+"Remove Background" = "移除背景";
+"Beautify" = "美化";
+"Adjust" = "調整";
+"Adjust (Image Effects)" = "調整（影像效果）";
+"Invert Colors" = "反轉顏色";
+"Record" = "錄製";
+"Record screen" = "錄製螢幕";
+"Translate" = "翻譯";
+"Auto-Redact sensitive data" = "自動遮蔽敏感資料";
+"Move Selection" = "移動選取範圍";
+
+/* Toolbar - Recording */
+"Start Recording" = "開始錄製";
+"Cancel Recording" = "取消錄製";
+"Highlight Mouse Clicks" = "標示滑鼠點按";
+"Record System Audio" = "錄製系統音訊";
+"Record Microphone" = "錄製麥克風";
+"Recording Settings" = "錄製設定";
+
+/* Tool Options */
+"Size" = "大小";
+"Stroke" = "筆畫";
+"Radius" = "半徑";
+"Start:" = "起始：";
+"Draw:" = "繪製：";
+"Auto:" = "自動：";
+"Fill" = "填充";
+"Outline" = "外框";
+"More Emojis" = "更多表情符號";
+"Load Image" = "載入影像";
+"Gradient Style" = "漸層樣式";
+"On" = "開啟";
+"Text Only" = "僅文字";
+"All Text" = "全部文字";
+"PII" = "個資";
+"Faces" = "臉孔";
+"People" = "人物";
+"Confirm before upload" = "上傳前確認";
+"Flip" = "翻轉";
+"Smooth" = "平滑";
+"Refined" = "精細";
+"Smart" = "智慧型";
+"Padding" = "間距";
+"Shadow" = "陰影";
+"Right-click to add points" = "右鍵點按以加入控制點";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "按住 1 自動垂直  ·  按住 2 自動水平";
+"Limit to selection" = "限制在選取範圍內";
+"Effect" = "效果";
+"Font" = "字型";
+"System" = "系統";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "點按視窗  ·  拖移以自訂區域  ·  F 全螢幕";
+"Drag to select  ·  Click for full screen" = "拖移以選取  ·  點按以全螢幕";
+"Release to annotate and edit" = "放開以標註與編輯";
+"Release to finish" = "放開以完成";
+"Hold Space to move. Release to annotate and edit" = "按住空白鍵以移動。放開以標註與編輯";
+"Hold Space to move. Release to finish" = "按住空白鍵以移動。放開以完成";
+"Space" = "空白鍵";
+"Window snap: " = "視窗吸附：";
+"ON" = "開";
+"OFF" = "關";
+"  (Tab to toggle)" = "  （Tab 切換）";
+"Right-click to copy" = "右鍵點按以拷貝";
+"Copied %@" = "已拷貝 %@";
+"Set color %@" = "設定顏色 %@";
+"Draw something first to use the move tool." = "請先繪製內容再使用移動工具。";
+"Drag to reposition" = "拖移以重新定位";
+
+/* Resolution / Aspect Ratio Presets */
+"Aspect ratio & resolution presets" = "長寬比與解析度預設";
+"Aspect ratio" = "長寬比";
+"Resolution" = "解析度";
+"Freeform" = "自由形式";
+"Units" = "單位";
+"Keep ratio for next captures" = "為後續擷取保留比例";
+"Custom · %@" = "自訂 · %@";
+"Order history by last edit" = "依最近編輯排序歷史記錄";
+"Edited screenshots move to the top. Off keeps them in capture order." = "編輯過的截圖會移至頂部。關閉後則保持擷取順序。";
+
+/* Overlay - Popovers */
+"Format:" = "格式：";
+"FPS:" = "FPS：";
+"When done:" = "完成後：";
+"Open editor" = "開啟編輯器";
+"Show in Finder" = "在 Finder 中顯示";
+"Copy to clipboard" = "拷貝至剪貼簿";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom 偏好設定";
+"General" = "一般";
+"Tools" = "工具";
+"Recording" = "錄製";
+"About" = "關於";
+"Shortcuts" = "快捷鍵";
+"Uploads" = "上傳";
+"Language" = "語言";
+"Language:" = "語言：";
+"Restart the app to fully apply the new language." = "重新啟動 App 以完整套用新語言。";
+"Capture" = "擷取";
+"Play sound on capture" = "擷取時播放提示音";
+"Play sound on copy" = "拷貝時播放音效";
+"Remember last selected tool" = "記住上次選取的工具";
+"Show floating thumbnail after capture" = "擷取後顯示浮動縮圖";
+"Launch at login" = "登入時啟動";
+"Show snap alignment guides" = "顯示對齊輔助線";
+"Snap selection edges to image boundaries" = "將選取範圍邊緣貼齊影像邊界";
+"Capture mouse cursor in screenshot" = "在螢幕截圖中擷取滑鼠游標";
+"Double-click selection to copy" = "雙擊選取範圍以複製";
+"Hide capture instructions" = "隱藏截圖操作提示";
+"Disable shadow outside selection" = "停用選取範圍外的陰影";
+"Show shortcuts in tooltips" = "在工具提示中顯示快捷鍵";
+"Use window title in saved filename" = "在儲存的檔案名稱中使用視窗標題";
+"Hide menu bar icon" = "隱藏選單列圖像";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "快捷鍵仍可使用。若要再次顯示圖像，請重新啟動 Snaploom。";
+"Menu bar icon:" = "選單列圖像：";
+"Default" = "預設";
+"Custom symbol" = "自訂符號";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "輸入任何 SF Symbol 名稱（例如 camera.fill）或選擇預設。可在 Apple 的 SF Symbols App 中瀏覽名稱。無效的名稱將回復為預設圖像。";
+"Menu Bar Order" = "選單列順序";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "選擇 Snaploom 選單列選單中擷取動作的順序。";
+"Move up" = "上移";
+"Move down" = "下移";
+"Check for updates automatically" = "自動檢查更新";
+"Check for beta updates" = "檢查測試版更新";
+"Thumbnail" = "縮圖";
+"  Dismiss after:" = "  自動關閉：";
+"seconds before auto-dismiss (0 = never)" = "秒後自動關閉（0 = 永不）";
+"  Multiple previews:" = "  多個預覽：";
+"Stack (keep all)" = "堆疊（保留全部）";
+"Replace (show only latest)" = "取代（僅顯示最新）";
+"Output" = "輸出";
+"Image format:" = "影像格式：";
+"Quality:" = "品質：";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "以標準解析度 (1x) 儲存";
+"Halves dimensions on Retina displays, ~4x smaller files" = "在 Retina 顯示器上尺寸減半，檔案約縮小 4 倍";
+"Embed sRGB color profile" = "嵌入 sRGB 色彩描述檔";
+"Ensures consistent colors across different displays" = "確保不同顯示器之間色彩一致";
+"Screenshot History" = "螢幕截圖歷史記錄";
+"History size:" = "歷史記錄大小：";
+"screenshots kept on disk (0 = off)" = "張螢幕截圖保留在磁碟上（0 = 關閉）";
+"Save Directory" = "儲存目錄";
+"Save folder:" = "儲存檔案夾：";
+"Browse…" = "瀏覽⋯";
+"Appearance" = "外觀";
+"Accent color:" = "強調色：";
+"Icon color:" = "圖像顏色：";
+"Background color:" = "背景顏色：";
+"Reset" = "重置";
+"OCR Capture:" = "OCR 擷取：";
+"OCR & QR Capture:" = "OCR 與 QR 擷取：";
+"Show window + copy to clipboard" = "顯示視窗 + 拷貝至剪貼簿";
+"Show window only" = "僅顯示視窗";
+"Copy to clipboard only" = "僅拷貝至剪貼簿";
+"Enter / Quick Capture:" = "Enter / 快速擷取：";
+"Save to file" = "儲存至檔案";
+"Save + copy to clipboard" = "儲存 + 拷貝至剪貼簿";
+"Save action:" = "儲存動作：";
+"Save to default folder" = "儲存至預設檔案夾";
+"Ask where to save" = "詢問儲存位置";
+"OCR Action" = "OCR 動作";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "鍵盤快捷鍵";
+"Hotkeys" = "快捷鍵";
+"Clear shortcut" = "清除快捷鍵";
+"Press keys..." = "請按下按鍵⋯";
+"Waiting..." = "等候中⋯";
+
+/* Preferences - Tools */
+"Annotation Tools" = "標註工具";
+"Hidden tools are removed from the bottom toolbar." = "隱藏的工具會從底部工具列中移除。";
+"Capture Actions" = "擷取動作";
+"Bottom Toolbar Actions" = "底部工具列動作";
+"Hidden actions are removed from the bottom toolbar." = "隱藏的動作會從底部工具列中移除。";
+"Editor Actions" = "編輯器動作";
+"Right Toolbar Actions" = "右側工具列動作";
+"Hidden actions are removed from the right toolbar." = "隱藏的動作會從右側工具列中移除。";
+
+/* Preferences - Recording */
+"Frame rate:" = "影格率：";
+"After recording:" = "錄製後：";
+"Save recording to:" = "將錄製儲存至：";
+"Save Recording" = "儲存錄製";
+"Clear" = "清除";
+"Max height:" = "最大高度：";
+"px (0 = unlimited)" = "px（0 = 不限）";
+"Behavior" = "行為";
+"Auto-scroll (sends synthetic scroll events)" = "自動捲動（傳送模擬捲動事件）";
+"Detect fixed/sticky headers" = "偵測固定/黏性標頭";
+"Scroll speed:" = "捲動速度：";
+"Slow" = "慢";
+"Medium" = "中";
+"Fast" = "快";
+"Very fast" = "極快";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "上傳服務";
+"Upload Provider" = "上傳供應商";
+"Provider:" = "供應商：";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive（影像 + 影片）";
+"imgbb (images only)" = "imgbb（僅影像）";
+"S3-Compatible (images + videos)" = "S3 相容（影像 + 影片）";
+"S3-Compatible Storage" = "S3 相容儲存空間";
+"Sign In with Google" = "使用 Google 登入";
+"Sign Out" = "登出";
+"Signed in" = "已登入";
+"Not signed in" = "未登入";
+"Account:" = "帳號：";
+"Test Connection" = "測試連線";
+"Fill in endpoint, bucket, and credentials first" = "請先填寫端點、儲存貯體及憑證";
+"Testing..." = "測試中⋯";
+"Connection successful!" = "連線成功！";
+"Leave empty to use default" = "留空以使用預設值";
+"Endpoint:" = "端點：";
+"Region:" = "區域：";
+"Bucket:" = "儲存貯體：";
+"Access Key:" = "存取金鑰：";
+"Secret Key:" = "秘密金鑰：";
+"Public URL:" = "公開 URL：";
+"Path Prefix:" = "路徑前綴：";
+"API key:" = "API 金鑰：";
+"Upload History" = "上傳歷史記錄";
+"No uploads yet." = "尚無上傳記錄。";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "用於公開存取的基礎 URL。若為空，將使用 S3 端點 URL（可能無法公開存取）。";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "已包含共用金鑰 — 如遇到速率限制，請至 imgbb.com/api 取得您自己的免費金鑰。僅支援影像（不支援影片）。";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "支援 AWS S3、Cloudflare R2、MinIO、DigitalOcean Spaces、Backblaze B2 及其他 S3 相容服務。支援影像和影片。";
+"Configure S3 in Preferences" = "在偏好設定中設定 S3";
+"Sign in to Google Drive in Preferences" = "在偏好設定中登入 Google Drive";
+"Video upload requires Google Drive or S3" = "影片上傳需要 Google Drive 或 S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "版本 %@（%@）";
+"Made by" = "開發者";
+"Licensed under the GPLv3" = "以 GPLv3 授權";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "免費、開放原始碼的 macOS 螢幕截圖與錄製工具。\n完全原生 — 以 Swift 和 AppKit 打造。";
+
+/* Alerts */
+"No Image on Clipboard" = "剪貼簿中沒有影像";
+"No Image or Text on Clipboard" = "剪貼簿中沒有影像或文字";
+"Copy an image to the clipboard first, then try again." = "請先將影像拷貝到剪貼簿，然後再試一次。";
+"Copy an image or text to the clipboard first, then try again." = "請先將影像或文字拷貝到剪貼簿，然後再試一次。";
+"OK" = "好";
+"Accessibility Access Required" = "需要輔助使用權限";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom 需要「輔助使用」權限才能自動捲動其他 App。請在系統設定中授予權限，然後再試一次。";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom 需要輔助使用權限才能進行捲動擷取。請在系統設定中授予存取權限，然後重試。";
+"Open Settings" = "打開設定";
+"Cancel" = "取消";
+"Microphone Access Required" = "需要麥克風權限";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom 需要麥克風權限才能錄製語音。請打開系統設定以授予權限。";
+"Upload to Google Drive?" = "上傳至 Google Drive？";
+"Upload to S3?" = "上傳至 S3？";
+"Upload to imgbb.com?" = "上傳至 imgbb.com？";
+"Your screenshot will be uploaded." = "您的螢幕截圖將被上傳。";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "歡迎使用 Snaploom";
+"Snaploom needs one permission" = "Snaploom 需要一項權限";
+"Screen Recording not yet granted" = "尚未授予螢幕錄製權限";
+"Screen Recording granted!" = "螢幕錄製權限已授予！";
+"Enable Snaploom, then try taking a screenshot" = "啟用 Snaploom，然後試試擷取螢幕截圖";
+"Open Screen Recording Settings" = "打開螢幕錄製設定";
+"Continue" = "繼續";
+
+/* OCR Window */
+"Text Recognition" = "文字辨識";
+"Text & QR Recognition" = "文字與 QR 辨識";
+"Translate to:" = "翻譯為：";
+"%d chars · %d words" = "%d 字元 · %d 詞";
+"Copy  ⌘↩" = "拷貝  ⌘↩";
+"AI Search" = "AI 搜尋";
+"Show Original" = "顯示原文";
+"Translation Failed" = "翻譯失敗";
+"Translation" = "翻譯";
+"(No text detected in the selected area)" = "（在選取區域中未偵測到文字）";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL 已拷貝至剪貼簿";
+"Uploading... %d%%" = "上傳中⋯ %d%%";
+"Upload failed: %@" = "上傳失敗：%@";
+"Uploaded! Link copied." = "上傳完成！連結已拷貝。";
+"Uploading to %@... %d%%" = "上傳至 %@⋯ %d%%";
+"Open" = "開啟";
+
+/* Recording Toast */
+"Recording saved" = "錄製已儲存";
+"%@ • Recording saved" = "%@ · 錄製已儲存";
+"Copy Path" = "拷貝路徑";
+"Path copied!" = "路徑已拷貝！";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom 影片編輯器";
+"%@ selected" = "已選取 %@";
+"Exporting..." = "輸出中⋯";
+"Export failed" = "輸出失敗";
+"Saved to %@" = "已儲存至 %@";
+"Save failed" = "儲存失敗";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "另存新檔⋯";
+"Choose a folder" = "選擇檔案夾";
+"Save All to Folder…" = "全部儲存至檔案夾⋯";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "自動捲動";
+"Stop" = "停止";
+"Scrolling..." = "捲動中⋯";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "預設";
+"Adjustments" = "調整";
+"Brightness" = "亮度";
+"Contrast" = "對比";
+"Saturation" = "飽和度";
+"Sharpness" = "銳利度";
+
+/* Time Ago */
+"just now" = "剛剛";
+"%ds ago" = "%d 秒前";
+"%dm ago" = "%d 分鐘前";
+"%dh ago" = "%d 小時前";
+
+/* Hotkey Labels */
+"History" = "歷史記錄";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "點按 \"錄製\" 並按下包含至少一個修飾鍵（⌘、⌥、⌃、⇧）的組合鍵來設定快捷鍵。";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "正在處理 GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "需要輸入監控權限";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom 需要「輸入監控」權限才能在錄製時顯示按鍵。請在 System Settings 中授予權限，然後再試一次。";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom 需要「輔助使用」權限才能在錄製時顯示按鍵。請在 System Settings 中授予權限，然後再試一次。";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "顯示按鍵";
+"Shortcuts Only" = "僅快捷鍵";
+"All Keystrokes" = "所有按鍵";
+
+/* Recording — Settings Popover */
+"Delay:" = "延遲：";
+
+/* Video Editor */
+"Copied to clipboard!" = "已拷貝至剪貼簿！";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "網路攝影機疊加";
+"Camera Access Required" = "需要攝影機權限";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom 需要攝影機權限才能使用網路攝影機疊加。請打開系統設定以授予權限。";
+"Webcam" = "網路攝影機";
+"Bottom Right" = "右下";
+"Bottom Left" = "左下";
+"Top Right" = "右上";
+"Top Left" = "左上";
+"Small" = "小";
+"Large" = "大";
+"Webcam Size Small" = "小";
+"Webcam Size Medium" = "中";
+"Webcam Size Large" = "大";
+"Webcam Size Extra Large" = "特大";
+"Circle" = "圓形";
+"Rounded Rectangle" = "圓角矩形";
+"Cam pos:" = "攝影機位置：";
+"Cam size:" = "攝影機大小：";
+"Cam shape:" = "攝影機形狀：";
+
+/* New Strings */
+"Settings" = "設定";
+"Settings..." = "設定...";
+"Snaploom Settings" = "Snaploom 設定";
+"Also open in Editor" = "同時在編輯器中開啟";
+"Hide controls" = "隱藏控制";
+"Hide recording controls" = "隱藏錄製控制";
+"Stop recording from the menu bar icon instead." = "改為從選單列圖像停止錄製。";
+"Pixelate" = "馬賽克";
+"Blur" = "模糊";
+"Solid" = "填色";
+"Erase" = "清除";
+"Done" = "完成";
+"Do nothing" = "不執行任何動作";
+"Overlay / Editor Shortcuts" = "覆蓋層 / 編輯器快捷鍵";
+"Set" = "設定";
+"Press..." = "按下⋯";
+"Reset to default" = "重置為預設";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "按下一個按鍵將其指定為該工具的快捷鍵。這些快捷鍵在覆蓋層或編輯器啟用時有效。";
+"Keep Separate" = "保持分離";
+"Merge Audio" = "合併音訊";
+"Audio Tracks" = "音訊軌道";
+"Adjust volume for each audio track:" = "調整每個音訊軌道的音量：";
+"Microphone:" = "麥克風：";
+"System audio:" = "系統音訊：";
+"Loupe" = "放大鏡";
+"Stamp" = "圖章";
+"Unlimited" = "不限";
+
+/* Save Confirmation / Recording / Translation / Upload / Inspector */
+"Save changes?" = "儲存更改？";
+"Your annotations will be lost if you close without saving." = "如果不儲存就關閉，您的標註將會遺失。";
+"Save & Close" = "儲存並關閉";
+"Discard" = "捨棄";
+"Stop Recording" = "停止錄製";
+"Pause" = "暫停";
+"Resume" = "繼續";
+"Engine:" = "引擎：";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple（裝置端）";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple 翻譯更快且支援離線使用。Google Translate 支援更多語言。";
+"Download language packs in System Settings…" = "在系統設定中下載語言套件⋯";
+"Configure S3 in Settings" = "在設定中設定 S3";
+"Sign in to Google Drive in Settings" = "在設定中登入 Google Drive";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "離線版本：已移除上傳和雲端儲存整合。檢查更新時可能仍會連接到 Snaploom 的更新伺服器。除非你自行分享或儲存，否則截圖和錄製內容只會保留在本機。";
+"Position:" = "位置：";
+"  Position:" = "  位置：";
+"Size:" = "大小：";
+"Shape:" = "形狀：";
+
+"Same as screenshots" = "與截圖相同";
+"  Preview size:" = "  預覽大小:";
+"(0 = off)" = "(0 = 關閉)";
+"Clear All" = "清除全部";
+"Clear History?" = "清除歷史記錄？";
+"This will permanently delete all screenshots from history." = "這將從歷史記錄中永久刪除所有截圖。";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "點擊\"設定\"，然後按下包含至少一個修飾鍵（⌘、⌥、⌃、⇧）的組合鍵來設定快捷鍵。";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "檔案將上傳至您 Google Drive 中的\"Snaploom\"資料夾。所有內容均保持私密——不會公開分享任何內容。";
+
+"Pressure" = "壓感";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "開啟影片⋯";
+"Choose a video to open in Snaploom editor" = "選擇一個影片以在 Snaploom 編輯器中開啟";
+"Click to add effects" = "點按以加入效果";
+"Add Zoom" = "加入縮放";
+"Add Censor" = "加入遮蔽";
+"Add Cut" = "加入剪輯";
+"Add Speed" = "加入速度";
+"Add Freeze" = "加入凍結";
+"Add Text" = "加入文字";
+"Delete Zoom" = "刪除縮放";
+"Delete Censor" = "刪除遮蔽";
+"Delete Cut" = "刪除剪輯";
+"Delete Speed" = "刪除速度";
+"Delete Freeze" = "刪除凍結";
+"Delete Text" = "刪除文字";
+"Edit Text…" = "編輯文字⋯";
+"Huge" = "特大";
+"Bold" = "粗體";
+"Italic" = "斜體";
+"Alignment" = "對齊";
+"Left" = "靠左";
+"Center" = "置中";
+"Right" = "靠右";
+"Text Color" = "文字顏色";
+"Background Color" = "背景顏色";
+"Rounded" = "圓角";
+"Custom…" = "自訂⋯";
+"Transparent" = "透明";
+"Black" = "黑色";
+"White" = "白色";
+"Yellow" = "黃色";
+"Red" = "紅色";
+"Green" = "綠色";
+"Blue" = "藍色";
+"Untitled" = "未命名";
+"Add effect" = "加入效果";
+"Fade" = "淡化";
+"High" = "高";
+"Low" = "低";
+"Not enough room here" = "此處空間不足";
+"Copied!" = "已拷貝！";
+"Converting to GIF…" = "正在轉換為 GIF⋯";
+"GIF conversion failed" = "GIF 轉換失敗";
+"No video track found" = "找不到影片軌道";
+"Preview:" = "預覽：";
+"Copy Screen Info" = "拷貝螢幕資訊";
+"Copies display and capture diagnostics to clipboard" = "將顯示器與擷取診斷資訊拷貝至剪貼簿";
+"Accent" = "強調";
+"Icon" = "圖像";
+"Background" = "背景";
+"Custom" = "自訂";
+"Theme:" = "主題：";
+"Application" = "應用程式";
+"Capture area and extract text" = "擷取區域並提取文字";
+"Capture the full screen" = "擷取全螢幕";
+"Counter for multi-screen captures" = "多螢幕擷取計數器";
+"8-character random string (e.g. k3j7x9q2)" = "8 位隨機字串（例如 k3j7x9q2）";
+"Filename Template Tokens" = "檔案名稱範本代碼";
+"Filename tokens" = "檔案名稱代碼";
+"Filename:" = "檔案名稱：";
+"Open an image file in the editor" = "在編輯器中開啟影像檔案";
+"Open the recent captures overlay" = "開啟最近擷取的覆蓋層";
+"Open this settings window" = "開啟此設定視窗";
+"Quick capture (uses your Enter action)" = "快速擷取（使用您的 Enter 動作）";
+"Re-capture the last selected area" = "重新擷取上次選取的區域";
+"Screenshots only — captured window title (blank otherwise)" = "僅螢幕截圖 — 已擷取的視窗標題（否則為空白）";
+"Show available filename tokens" = "顯示可用的檔案名稱代碼";
+"Show supported URL scheme commands" = "顯示支援的 URL scheme 指令";
+"Start area capture" = "開始區域擷取";
+"Start area recording" = "開始區域錄製";
+"Start full-screen recording" = "開始全螢幕錄製";
+"Start scroll capture" = "開始捲動擷取";
+"Stop the current recording" = "停止目前的錄製";
+"Supported URL Scheme Commands" = "支援的 URL Scheme 指令";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "副檔名會自動附加。{window} 中的斜線與冒號會變成破折號。";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "從 Raycast、Alfred、Shortcuts 或任何可開啟 URL 的工具觸發 Snaploom。";
+"URL scheme info" = "URL scheme 資訊";
+"Enable snaploom:// URL scheme" = "啟用 snaploom:// URL scheme";
+"sec (0 = never)" = "秒（0 = 永不）";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "設定備份";
+"Export Settings…" = "匯出設定…";
+"Import Settings…" = "匯入設定…";
+"Reveal Settings File in Finder" = "在 Finder 中顯示設定檔案";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "將偏好設定匯出至檔案，以便移轉至另一部 Mac 或全新安裝環境。上傳認證資料、儲存資料夾及截圖記錄不會包含在內。設定儲存於 Snaploom 的 App 容器中。";
+"Export Settings" = "匯出設定";
+"Import Settings" = "匯入設定";
+"Import failed" = "匯入失敗";
+"Settings exported" = "設定已匯出";
+"Settings imported" = "設定已匯入";
+"Import" = "匯入";
+"Later" = "稍後";
+"Relaunch Now" = "立即重新啟動";
+"Replace your current settings?" = "要取代目前的設定嗎？";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "匯入將以此檔案中的偏好設定取代您目前的偏好設定。您的儲存資料夾、上傳認證資料及截圖記錄會保留。此操作無法復原。";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "已套用 %d 項設定。請重新啟動 Snaploom 以套用所有變更。";
+"A few large items were too big to include. Everything else was saved." = "部分較大的項目因體積過大而未包含在內。其餘項目皆已儲存。";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "您自訂的 Beautify 背景圖片因體積過大而未包含在內。其餘項目皆已儲存。";
+"This file is not a valid Snaploom settings file." = "此檔案不是有效的 Snaploom 設定檔案。";
+"This settings file contains no settings." = "此設定檔案不含任何設定。";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "此設定檔案是由較新版本的 Snaploom 所建立。請先更新 Snaploom。";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "擷取、翻譯並將文字疊加在影像上";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "在編輯器中開啟歷史記錄項目（標註仍可編輯）";

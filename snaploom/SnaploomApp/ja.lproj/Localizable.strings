@@ -1,0 +1,671 @@
+/* 日本語 — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "エリアをキャプチャ";
+"Capture Screen" = "画面をキャプチャ";
+"Capture OCR" = "OCR キャプチャ";
+"Capture OCR & QR" = "OCR & QR キャプチャ";
+"Capture area and read text/QR codes" = "エリアをキャプチャしてテキスト/QR コードを読み取る";
+"Quick Capture" = "クイックキャプチャ";
+"Scroll Capture" = "スクロールキャプチャ";
+"Capture Last Area" = "前回のエリアをキャプチャ";
+"Capture Delay" = "キャプチャ遅延";
+"None" = "なし";
+"%d seconds" = "%d 秒";
+"Record Area" = "エリアを録画";
+"Record Screen" = "画面を録画";
+"Recent Captures" = "最近のキャプチャ";
+"Show History Panel" = "履歴パネルを表示";
+"Open Image..." = "画像を開く...";
+"Open from Clipboard" = "クリップボードから開く";
+"Pin from Clipboard" = "クリップボードからピン留め";
+"Preferences..." = "環境設定...";
+"Check for Updates..." = "アップデートを確認...";
+"Quit Snaploom" = "Snaploom を終了";
+"No recent captures" = "最近のキャプチャはありません";
+"Clear History" = "履歴を消去";
+
+/* History Panel */
+"Copy" = "コピー";
+"Save As..." = "名前を付けて保存...";
+"Open in Editor" = "エディタで開く";
+"Pin to Screen" = "画面にピン留め";
+"Quick Look" = "クイックルック";
+"Delete" = "削除";
+"All" = "すべて";
+"Screenshots" = "スクリーンショット";
+"GIFs" = "GIF";
+"Click to copy · Drag to app" = "クリックでコピー · ドラッグでアプリへ";
+"No captures yet" = "キャプチャはまだありません";
+
+/* Floating Thumbnail */
+"Close All" = "すべて閉じる";
+"Save All to Folder…" = "すべてフォルダに保存…";
+"Save" = "保存";
+
+/* Editor Top Bar */
+"Zoom In" = "拡大";
+"Zoom Out" = "縮小";
+"Fit Canvas" = "キャンバスに合わせる";
+"Crop" = "切り取り";
+"Flip Horizontal" = "左右反転";
+"Flip Vertical" = "上下反転";
+"Rotate Left" = "左に回転";
+"Rotate Right" = "右に回転";
+"Zoom" = "ズーム";
+"Add Capture" = "キャプチャを追加";
+
+/* Toolbar - Tools */
+"Arrow" = "矢印";
+"Line" = "線";
+"Rectangle" = "四角形";
+"Ellipse" = "楕円";
+"Pencil" = "鉛筆";
+"Pencil (Draw)" = "鉛筆 (描画)";
+"Marker" = "マーカー";
+"Text" = "テキスト";
+"Number" = "番号";
+"Number / Counter" = "番号 / カウンター";
+"Stamp / Emoji" = "スタンプ / 絵文字";
+"Censor" = "モザイク";
+"Censor (Pixelate / Blur / Solid)" = "モザイク (ピクセル化 / ぼかし / 塗りつぶし)";
+"Measure" = "計測";
+"Measure (px)" = "計測 (px)";
+"Magnify (Loupe)" = "拡大鏡 (ルーペ)";
+"Highlight" = "スポット";
+"Highlight (Spotlight)" = "スポット (スポットライト)";
+"Dim" = "暗さ";
+"Color Sampler" = "カラーサンプラー";
+"Color Picker" = "カラーピッカー";
+"Select & Edit" = "選択して編集";
+"Color" = "カラー";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "クリップボードにコピー";
+"Save to File" = "ファイルに保存";
+"Save to" = "保存先";
+"Open in Editor Window" = "エディタウインドウで開く";
+"Pin on Screen" = "画面にピン留め";
+"Pin" = "ピン留め";
+"Pin (floating window)" = "ピン留め (フローティングウインドウ)";
+"OCR" = "OCR";
+"OCR Text" = "OCR テキスト";
+"OCR (extract text)" = "OCR (テキスト抽出)";
+"OCR & QR" = "OCR & QR";
+"Run OCR & QR" = "OCR & QR を実行";
+"Upload" = "アップロード";
+"Share" = "共有";
+"Undo" = "取り消す";
+"Redo" = "やり直す";
+"Close" = "閉じる";
+"Remove Background" = "背景を削除";
+"Beautify" = "美化";
+"Adjust" = "調整";
+"Adjust (Image Effects)" = "調整 (画像エフェクト)";
+"Invert Colors" = "色を反転";
+"Record" = "録画";
+"Record screen" = "画面を録画";
+"Translate" = "翻訳";
+"Auto-Redact sensitive data" = "機密データを自動墨消し";
+"Move Selection" = "選択範囲を移動";
+
+/* Toolbar - Recording */
+"Start Recording" = "録画を開始";
+"Cancel Recording" = "録画をキャンセル";
+"Highlight Mouse Clicks" = "マウスクリックをハイライト";
+"Record System Audio" = "システムオーディオを録音";
+"Record Microphone" = "マイクを録音";
+"Recording Settings" = "録画設定";
+
+/* Tool Options */
+"Size" = "サイズ";
+"Stroke" = "線幅";
+"Radius" = "半径";
+"Start:" = "開始:";
+"Draw:" = "描画:";
+"Auto:" = "自動:";
+"Fill" = "塗りつぶし";
+"Outline" = "アウトライン";
+"More Emojis" = "もっと絵文字";
+"Load Image" = "画像を読み込む";
+"Gradient Style" = "グラデーションスタイル";
+"On" = "オン";
+"Text Only" = "テキストのみ";
+"All Text" = "すべてのテキスト";
+"PII" = "個人情報";
+"Faces" = "顔";
+"People" = "人物";
+"Confirm before upload" = "アップロード前に確認";
+"Flip" = "反転";
+"Smooth" = "スムーズ";
+"Refined" = "精密";
+"Smart" = "スマート";
+"Padding" = "余白";
+"Shadow" = "シャドウ";
+"Right-click to add points" = "右クリックでポイントを追加";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "1 長押しで自動垂直  ·  2 長押しで自動水平";
+"Limit to selection" = "選択範囲内に制限";
+"Effect" = "エフェクト";
+"Font" = "フォント";
+"System" = "システム";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "ウインドウをクリック · ドラッグで範囲選択 · F でフルスクリーン";
+"Drag to select  ·  Click for full screen" = "ドラッグで選択 · クリックでフルスクリーン";
+"Release to annotate and edit" = "離して注釈・編集";
+"Release to finish" = "離して完了";
+"Hold Space to move. Release to annotate and edit" = "スペースキー長押しで移動。離して注釈・編集";
+"Hold Space to move. Release to finish" = "スペースキー長押しで移動。離して完了";
+"Space" = "スペース";
+"Window snap: " = "ウインドウスナップ: ";
+"ON" = "オン";
+"OFF" = "オフ";
+"  (Tab to toggle)" = "  (Tab で切替)";
+"Right-click to copy" = "右クリックでコピー";
+"Copied %@" = "%@ をコピーしました";
+"Set color %@" = "カラーを %@ に設定";
+"Draw something first to use the move tool." = "移動ツールを使うには、先に何か描いてください。";
+"Drag to reposition" = "ドラッグで位置を変更";
+
+/* Overlay - Popovers */
+"Format:" = "形式:";
+"FPS:" = "FPS:";
+"When done:" = "完了時:";
+"Open editor" = "エディタを開く";
+"Show in Finder" = "Finder で表示";
+"Copy to clipboard" = "クリップボードにコピー";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom 環境設定";
+"General" = "一般";
+"Tools" = "ツール";
+"Recording" = "録画";
+"About" = "Snaploom について";
+"Shortcuts" = "ショートカット";
+"Uploads" = "アップロード";
+"Language" = "言語";
+"Language:" = "言語:";
+"Restart the app to fully apply the new language." = "新しい言語を完全に適用するには、アプリを再起動してください。";
+"Capture" = "キャプチャ";
+"Play sound on capture" = "キャプチャ時にサウンドを再生";
+"Play sound on copy" = "コピー時にサウンドを再生";
+"Remember last selected tool" = "前回選択したツールを記憶";
+"Show floating thumbnail after capture" = "キャプチャ後にフローティングサムネイルを表示";
+"Launch at login" = "ログイン時に起動";
+"Show snap alignment guides" = "スナップ整列ガイドを表示";
+"Snap selection edges to image boundaries" = "選択範囲の端を画像の境界にスナップ";
+"Capture mouse cursor in screenshot" = "スクリーンショットにマウスカーソルを含める";
+"Double-click selection to copy" = "選択範囲をダブルクリックでコピー";
+"Hide capture instructions" = "撮影時の操作説明を非表示";
+"Use window title in saved filename" = "保存ファイル名にウインドウタイトルを使用";
+"Hide menu bar icon" = "メニューバーアイコンを隠す";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "ホットキーは引き続き使用できます。アイコンを再表示するには、Snaploom を再起動してください。";
+"Menu Bar Order" = "メニューバーの順序";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Snaploom メニューバーメニューでのキャプチャアクションの順序を選択します。";
+"Move up" = "上へ移動";
+"Move down" = "下へ移動";
+"Check for updates automatically" = "自動的にアップデートを確認";
+"Check for beta updates" = "ベータアップデートを確認";
+"Thumbnail" = "サムネイル";
+"  Dismiss after:" = "  自動非表示:";
+"seconds before auto-dismiss (0 = never)" = "秒後に自動非表示 (0 = 無効)";
+"  Multiple previews:" = "  複数プレビュー:";
+"Stack (keep all)" = "スタック (すべて保持)";
+"Replace (show only latest)" = "置き換え (最新のみ表示)";
+"Output" = "出力";
+"Image format:" = "画像形式:";
+"Quality:" = "品質:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "標準解像度 (1x) で保存";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Retina ディスプレイで解像度を半分に、ファイルサイズ約 1/4";
+"Embed sRGB color profile" = "sRGB カラープロファイルを埋め込む";
+"Ensures consistent colors across different displays" = "異なるディスプレイ間で一貫した色を保証";
+"Screenshot History" = "スクリーンショット履歴";
+"History size:" = "履歴サイズ:";
+"screenshots kept on disk (0 = off)" = "枚をディスクに保存 (0 = 無効)";
+"Save Directory" = "保存先ディレクトリ";
+"Save folder:" = "保存フォルダ:";
+"Browse…" = "参照…";
+"Appearance" = "外観";
+"Accent color:" = "アクセントカラー:";
+"Icon color:" = "アイコンカラー:";
+"Background color:" = "背景色:";
+"Reset" = "リセット";
+"Menu bar icon:" = "メニューバーアイコン:";
+"Custom symbol" = "カスタムシンボル";
+"Default" = "デフォルト";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "任意の SF Symbol 名 (例: camera.fill) を入力するか、プリセットを選択します。名前は Apple の SF Symbols アプリで参照できます。無効な名前はデフォルトのアイコンに戻ります。";
+"Save action:" = "保存アクション:";
+"Save to default folder" = "デフォルトフォルダに保存";
+"Ask where to save" = "保存先を確認";
+"Disable shadow outside selection" = "選択範囲外のシャドウを無効化";
+"Show shortcuts in tooltips" = "ツールチップにショートカットを表示";
+"OCR Capture:" = "OCR キャプチャ:";
+"OCR & QR Capture:" = "OCR & QR キャプチャ:";
+"Show window + copy to clipboard" = "ウインドウを表示 + クリップボードにコピー";
+"Show window only" = "ウインドウのみ表示";
+"Copy to clipboard only" = "クリップボードにコピーのみ";
+"Enter / Quick Capture:" = "Enter / クイックキャプチャ:";
+"Save to file" = "ファイルに保存";
+"Save + copy to clipboard" = "保存 + クリップボードにコピー";
+"OCR Action" = "OCR アクション";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "キーボードショートカット";
+"Hotkeys" = "ホットキー";
+"Clear shortcut" = "ショートカットを消去";
+"Press keys..." = "キーを押してください...";
+"Waiting..." = "入力待ち...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "注釈ツール";
+"Hidden tools are removed from the bottom toolbar." = "非表示のツールは下部ツールバーから除外されます。";
+"Capture Actions" = "キャプチャアクション";
+"Bottom Toolbar Actions" = "下部ツールバーアクション";
+"Hidden actions are removed from the bottom toolbar." = "非表示のアクションは下部ツールバーから除外されます。";
+"Editor Actions" = "エディタアクション";
+"Right Toolbar Actions" = "右側ツールバーアクション";
+"Hidden actions are removed from the right toolbar." = "非表示のアクションは右側ツールバーから除外されます。";
+
+/* Preferences - Recording */
+"Frame rate:" = "フレームレート:";
+"After recording:" = "録画後:";
+"Save recording to:" = "録画の保存先:";
+"Save Recording" = "録画を保存";
+"Clear" = "クリア";
+"Max height:" = "最大高さ:";
+"px (0 = unlimited)" = "px (0 = 無制限)";
+"Behavior" = "動作";
+"Auto-scroll (sends synthetic scroll events)" = "自動スクロール (合成スクロールイベントを送信)";
+"Detect fixed/sticky headers" = "固定/スティッキーヘッダーを検出";
+"Scroll speed:" = "スクロール速度:";
+"Slow" = "遅い";
+"Medium" = "中";
+"Fast" = "速い";
+"Very fast" = "非常に速い";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "アップロードサービス";
+"Upload Provider" = "アップロードプロバイダ";
+"Provider:" = "プロバイダ:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (画像 + 動画)";
+"imgbb (images only)" = "imgbb (画像のみ)";
+"S3-Compatible (images + videos)" = "S3 互換 (画像 + 動画)";
+"S3-Compatible Storage" = "S3 互換ストレージ";
+"Sign In with Google" = "Google でサインイン";
+"Sign Out" = "サインアウト";
+"Signed in" = "サインイン済み";
+"Not signed in" = "未サインイン";
+"Account:" = "アカウント:";
+"Test Connection" = "接続テスト";
+"Fill in endpoint, bucket, and credentials first" = "先にエンドポイント、バケット、認証情報を入力してください";
+"Testing..." = "テスト中...";
+"Connection successful!" = "接続に成功しました!";
+"Leave empty to use default" = "デフォルトを使用する場合は空欄";
+"Endpoint:" = "エンドポイント:";
+"Region:" = "リージョン:";
+"Bucket:" = "バケット:";
+"Access Key:" = "アクセスキー:";
+"Secret Key:" = "シークレットキー:";
+"Public URL:" = "パブリック URL:";
+"Path Prefix:" = "パスプレフィックス:";
+"API key:" = "API キー:";
+"Upload History" = "アップロード履歴";
+"No uploads yet." = "アップロードはまだありません。";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "公開アクセス用のベース URL。空の場合、S3 エンドポイント URL が使用されます (公開アクセスできない場合があります)。";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "共有キーが含まれています — レート制限に達した場合は imgbb.com/api で無料キーを取得してください。画像のみ (動画は非対応)。";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "AWS S3、Cloudflare R2、MinIO、DigitalOcean Spaces、Backblaze B2、その他の S3 互換サービスで利用できます。画像と動画に対応。";
+"Configure S3 in Preferences" = "環境設定で S3 を設定してください";
+"Sign in to Google Drive in Preferences" = "環境設定で Google Drive にサインインしてください";
+"Video upload requires Google Drive or S3" = "動画のアップロードには Google Drive または S3 が必要です";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "バージョン %@ (%@)";
+"Made by" = "作者";
+"Licensed under the GPLv3" = "GPLv3 ライセンス";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "macOS 用の無料・オープンソースのスクリーンショット & 画面録画ツール。\n完全ネイティブ — Swift と AppKit で構築。";
+
+/* Alerts */
+"No Image on Clipboard" = "クリップボードに画像がありません";
+"No Image or Text on Clipboard" = "クリップボードに画像またはテキストがありません";
+"Copy an image to the clipboard first, then try again." = "先にクリップボードに画像をコピーしてから、もう一度お試しください。";
+"Copy an image or text to the clipboard first, then try again." = "先にクリップボードに画像またはテキストをコピーしてから、もう一度お試しください。";
+"OK" = "OK";
+"Accessibility Access Required" = "アクセシビリティの許可が必要です";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom が他のアプリを自動スクロールするには、アクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "スクロールキャプチャにはアクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
+"Open Settings" = "設定を開く";
+"Cancel" = "キャンセル";
+"Microphone Access Required" = "マイクのアクセスが必要です";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom が音声を録音するには、マイクの許可が必要です。システム設定を開いてアクセスを許可してください。";
+"Upload to Google Drive?" = "Google Drive にアップロードしますか?";
+"Upload to S3?" = "S3 にアップロードしますか?";
+"Upload to imgbb.com?" = "imgbb.com にアップロードしますか?";
+"Your screenshot will be uploaded." = "スクリーンショットがアップロードされます。";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Snaploom へようこそ";
+"Snaploom needs one permission" = "Snaploom には1つの許可が必要です";
+"Screen Recording not yet granted" = "画面収録がまだ許可されていません";
+"Screen Recording granted!" = "画面収録が許可されました!";
+"Enable Snaploom, then try taking a screenshot" = "Snaploom を有効にして、スクリーンショットを撮ってみてください";
+"Open Screen Recording Settings" = "画面収録の設定を開く";
+"Continue" = "続ける";
+
+/* OCR Window */
+"Text Recognition" = "テキスト認識";
+"Text & QR Recognition" = "テキスト & QR 認識";
+"QR Code" = "QR コード";
+"QR Codes" = "QR コード";
+"Translate to:" = "翻訳先:";
+"%d chars · %d words" = "%d 文字 · %d 単語";
+"Copy  ⌘↩" = "コピー  ⌘↩";
+"AI Search" = "AI 検索";
+"Show Original" = "原文を表示";
+"Translation Failed" = "翻訳に失敗しました";
+"Translation" = "翻訳";
+"(No text detected in the selected area)" = "(選択範囲にテキストが検出されませんでした)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL をクリップボードにコピーしました";
+"Uploading... %d%%" = "アップロード中... %d%%";
+"Upload failed: %@" = "アップロード失敗: %@";
+"Uploaded! Link copied." = "アップロード完了! リンクをコピーしました。";
+"Uploading to %@... %d%%" = "%@ にアップロード中... %d%%";
+"Open" = "開く";
+"Open Link" = "リンクを開く";
+"Open With" = "次で開く";
+"No Apps Available" = "利用可能なアプリがありません";
+"No Share Services" = "共有サービスがありません";
+
+/* Recording Toast */
+"Recording saved" = "録画を保存しました";
+"%@ • Recording saved" = "%@ · 録画を保存しました";
+"Copy Path" = "パスをコピー";
+"Path copied!" = "パスをコピーしました!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom ビデオエディタ";
+"%@ selected" = "%@ を選択中";
+"Exporting..." = "書き出し中...";
+"Export failed" = "書き出しに失敗しました";
+"Saved to %@" = "%@ に保存しました";
+"Save failed" = "保存に失敗しました";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "名前を付けて保存...";
+"Choose a folder" = "フォルダを選択";
+"Save All to Folder…" = "すべてフォルダに保存…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "自動スクロール";
+"Stop" = "停止";
+"Scrolling..." = "スクロール中...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "プリセット";
+"Adjustments" = "調整";
+"Brightness" = "明るさ";
+"Contrast" = "コントラスト";
+"Saturation" = "彩度";
+"Sharpness" = "シャープネス";
+
+/* Time Ago */
+"just now" = "たった今";
+"%ds ago" = "%d秒前";
+"%dm ago" = "%d分前";
+"%dh ago" = "%d時間前";
+
+/* Hotkey Labels */
+"History" = "履歴";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "「録画」をクリックし、修飾キー (⌘, ⌥, ⌃, ⇧) を1つ以上含むキーの組み合わせを押して、ショートカットを設定してください。";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "GIF を処理中…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "入力監視の許可が必要です";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom が録画中にキー入力を表示するには、入力監視の許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom が録画中にキー入力を表示するには、アクセシビリティの許可が必要です。システム設定でアクセスを許可してから、もう一度お試しください。";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "キー入力を表示";
+"Shortcuts Only" = "ショートカットのみ";
+"All Keystrokes" = "すべてのキー入力";
+
+/* Recording — Settings Popover */
+"Delay:" = "遅延:";
+
+/* Video Editor */
+"Copied to clipboard!" = "クリップボードにコピーしました!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "ウェブカメラオーバーレイ";
+"Camera Access Required" = "カメラのアクセスが必要です";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom がウェブカメラオーバーレイを使用するには、カメラの許可が必要です。システム設定を開いてアクセスを許可してください。";
+"Webcam" = "ウェブカメラ";
+"Bottom Right" = "右下";
+"Bottom Left" = "左下";
+"Top Right" = "右上";
+"Top Left" = "左上";
+"Small" = "小";
+"Large" = "大";
+"Webcam Size Small" = "小";
+"Webcam Size Medium" = "中";
+"Webcam Size Large" = "大";
+"Webcam Size Extra Large" = "特大";
+"Circle" = "円形";
+"Rounded Rectangle" = "角丸四角形";
+"Cam pos:" = "カメラ位置:";
+"Cam size:" = "カメラサイズ:";
+"Cam shape:" = "カメラ形状:";
+
+/* New strings */
+"Settings" = "設定";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "オフラインビルド：アップロードおよびクラウドストレージ連携は削除されています。アップデートの確認では、Snaploomのアップデートサーバーに接続することがあります。スクリーンショットと録画は、自分で共有または保存しない限りローカルに保持されます。";
+"Settings..." = "設定...";
+"Snaploom Settings" = "Snaploom 設定";
+"Also open in Editor" = "エディタでも開く";
+"Hide controls" = "コントロールを隠す";
+"Hide recording controls" = "録画コントロールを隠す";
+"Stop recording from the menu bar icon instead." = "代わりにメニューバーアイコンから録画を停止してください。";
+"Pixelate" = "ピクセル化";
+"Blur" = "ぼかし";
+"Solid" = "塗りつぶし";
+"Erase" = "消去";
+"Done" = "完了";
+"Do nothing" = "何もしない";
+"Overlay / Editor Shortcuts" = "オーバーレイ / エディタのショートカット";
+"Set" = "設定";
+"Press..." = "キーを押す...";
+"Reset to default" = "デフォルトに戻す";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "キーを1つ押して、そのツールのショートカットとして割り当てます。オーバーレイまたはエディタがアクティブなときに機能します。";
+"Keep Separate" = "個別のまま";
+"Merge Audio" = "オーディオを結合";
+"Audio Tracks" = "オーディオトラック";
+"Adjust volume for each audio track:" = "各オーディオトラックの音量を調整:";
+"Microphone:" = "マイク:";
+"System audio:" = "システムオーディオ:";
+"Loupe" = "ルーペ";
+"Stamp" = "スタンプ";
+"Unlimited" = "無制限";
+"Save changes?" = "変更を保存しますか?";
+"Your annotations will be lost if you close without saving." = "保存せずに閉じると、注釈が失われます。";
+"Save & Close" = "保存して閉じる";
+"Discard" = "破棄";
+"Stop Recording" = "録画を停止";
+"Pause" = "一時停止";
+"Resume" = "再開";
+"Engine:" = "エンジン:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (オンデバイス)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple の翻訳はより高速でオフラインでも動作します。Google Translate はより多くの言語に対応しています。";
+"Download language packs in System Settings…" = "システム設定で言語パックをダウンロード…";
+"Configure S3 in Settings" = "設定で S3 を構成してください";
+"Sign in to Google Drive in Settings" = "設定で Google Drive にサインインしてください";
+"Position:" = "位置:";
+"  Position:" = "  位置:";
+"Size:" = "サイズ:";
+"Shape:" = "形状:";
+
+"Same as screenshots" = "スクリーンショットと同じ";
+"  Preview size:" = "  プレビューサイズ:";
+"(0 = off)" = "(0 = オフ)";
+"Clear All" = "すべてクリア";
+"Clear History?" = "履歴をクリアしますか？";
+"This will permanently delete all screenshots from history." = "履歴からすべてのスクリーンショットが完全に削除されます。";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"設定\" をクリックし、少なくとも1つの修飾キー (⌘, ⌥, ⌃, ⇧) を含むキーの組み合わせを押してショートカットを設定してください。";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "ファイルはGoogle Driveの \"Snaploom\" フォルダにアップロードされます。すべてプライベートに保たれ、公開されることはありません。";
+
+"Pressure" = "筆圧";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "動画を開く...";
+"Choose a video to open in Snaploom editor" = "Snaploom エディタで開く動画を選択";
+"Click to add effects" = "クリックしてエフェクトを追加";
+"Add Zoom" = "ズームを追加";
+"Add Censor" = "モザイクを追加";
+"Add Cut" = "カットを追加";
+"Add Speed" = "速度を追加";
+"Add Freeze" = "フリーズを追加";
+"Add Text" = "テキストを追加";
+"Delete Zoom" = "ズームを削除";
+"Delete Censor" = "モザイクを削除";
+"Delete Cut" = "カットを削除";
+"Delete Speed" = "速度を削除";
+"Delete Freeze" = "フリーズを削除";
+"Delete Text" = "テキストを削除";
+"Edit Text…" = "テキストを編集…";
+"Huge" = "特大";
+"Bold" = "太字";
+"Italic" = "斜体";
+"Alignment" = "配置";
+"Left" = "左";
+"Center" = "中央";
+"Right" = "右";
+"Text Color" = "文字色";
+"Background Color" = "背景色";
+"Rounded" = "角丸";
+"Custom…" = "カスタム…";
+"Transparent" = "透明";
+"Black" = "黒";
+"White" = "白";
+"Yellow" = "黄";
+"Red" = "赤";
+"Green" = "緑";
+"Blue" = "青";
+"Untitled" = "無題";
+"Add effect" = "エフェクトを追加";
+"Fade" = "フェード";
+"High" = "高";
+"Low" = "低";
+"Not enough room here" = "ここにはスペースが足りません";
+"Copied!" = "コピーしました!";
+"Converting to GIF…" = "GIF に変換中…";
+"GIF conversion failed" = "GIF 変換に失敗しました";
+"No video track found" = "動画トラックが見つかりません";
+"Preview:" = "プレビュー:";
+"Copy Screen Info" = "画面情報をコピー";
+"Copies display and capture diagnostics to clipboard" = "ディスプレイとキャプチャの診断情報をクリップボードにコピー";
+"Accent" = "アクセント";
+"Icon" = "アイコン";
+"Background" = "背景";
+"Custom" = "カスタム";
+"Theme:" = "テーマ:";
+"Application" = "アプリケーション";
+"Capture area and extract text" = "エリアをキャプチャしてテキストを抽出";
+"Capture the full screen" = "フルスクリーンをキャプチャ";
+"Counter for multi-screen captures" = "マルチスクリーンキャプチャのカウンター";
+"8-character random string (e.g. k3j7x9q2)" = "8文字のランダムな文字列（例: k3j7x9q2）";
+"Filename Template Tokens" = "ファイル名テンプレートトークン";
+"Filename tokens" = "ファイル名トークン";
+"Filename:" = "ファイル名:";
+"Open an image file in the editor" = "エディタで画像ファイルを開く";
+"Open the recent captures overlay" = "最近のキャプチャオーバーレイを開く";
+"Open this settings window" = "この設定ウインドウを開く";
+"Quick capture (uses your Enter action)" = "クイックキャプチャ (Enter アクションを使用)";
+"Re-capture the last selected area" = "前回選択したエリアを再キャプチャ";
+"Screenshots only — captured window title (blank otherwise)" = "スクリーンショットのみ — キャプチャしたウインドウのタイトル (それ以外は空白)";
+"Show available filename tokens" = "利用可能なファイル名トークンを表示";
+"Show supported URL scheme commands" = "サポートされている URL スキームコマンドを表示";
+"Start area capture" = "エリアキャプチャを開始";
+"Start area recording" = "エリア録画を開始";
+"Start full-screen recording" = "フルスクリーン録画を開始";
+"Start scroll capture" = "スクロールキャプチャを開始";
+"Stop the current recording" = "現在の録画を停止";
+"Supported URL Scheme Commands" = "サポートされている URL スキームコマンド";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "ファイル拡張子は自動的に追加されます。{window} 内のスラッシュとコロンはダッシュになります。";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Raycast、Alfred、Shortcuts、または URL を開くツールから Snaploom を起動します。";
+"URL scheme info" = "URL スキーム情報";
+"Enable snaploom:// URL scheme" = "snaploom:// URL スキームを有効にする";
+"sec (0 = never)" = "秒 (0 = 無効)";
+
+/* Resolution / Aspect Ratio Presets */
+"Aspect ratio & resolution presets" = "アスペクト比と解像度のプリセット";
+"Aspect ratio" = "アスペクト比";
+"Resolution" = "解像度";
+"Freeform" = "自由形式";
+"Units" = "単位";
+"Keep ratio for next captures" = "次回以降のキャプチャでも比率を維持";
+"Custom · %@" = "カスタム · %@";
+"Order history by last edit" = "最終編集順に履歴を並べ替え";
+"Edited screenshots move to the top. Off keeps them in capture order." = "編集したスクリーンショットが先頭に移動します。オフにするとキャプチャ順のままになります。";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "設定のバックアップ";
+"Export Settings…" = "設定を書き出す…";
+"Import Settings…" = "設定を読み込む…";
+"Reveal Settings File in Finder" = "設定ファイルをFinderで表示";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "環境設定をファイルに書き出して、別のMacやクリーンインストール環境に移行できます。アップロードの認証情報、保存フォルダ、スクリーンショットの履歴は含まれません。設定はSnaploomのアプリコンテナ内に保存されます。";
+"Export Settings" = "設定を書き出す";
+"Import Settings" = "設定を読み込む";
+"Import failed" = "読み込みに失敗しました";
+"Settings exported" = "設定を書き出しました";
+"Settings imported" = "設定を読み込みました";
+"Import" = "読み込む";
+"Later" = "あとで";
+"Relaunch Now" = "今すぐ再起動";
+"Replace your current settings?" = "現在の設定を置き換えますか？";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "読み込むと、現在の環境設定がこのファイルの内容に置き換わります。保存フォルダ、アップロードの認証情報、スクリーンショットの履歴は保持されます。この操作は取り消せません。";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d件の設定を適用しました。すべての変更を反映するにはSnaploomを再起動してください。";
+"A few large items were too big to include. Everything else was saved." = "サイズが大きすぎて含められなかった項目がいくつかあります。それ以外はすべて保存されました。";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "カスタムのBeautify背景画像はサイズが大きすぎて含められませんでした。それ以外はすべて保存されました。";
+"This file is not a valid Snaploom settings file." = "このファイルは有効なSnaploomの設定ファイルではありません。";
+"This settings file contains no settings." = "この設定ファイルには設定が含まれていません。";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "この設定ファイルは新しいバージョンのSnaploomで作成されています。先にSnaploomをアップデートしてください。";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "テキストをキャプチャして翻訳し、画像に重ねて表示します";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "履歴の項目をエディタで開く（注釈を編集可能なまま維持）";

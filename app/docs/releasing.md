@@ -1,0 +1,68 @@
+# GitHub Release 发布流程
+
+TO-DO Panel 采用与 CC Switch 类似的开源分发方式：源码公开在 GitHub，安装包放在 Releases。项目明确使用 ad-hoc 签名、不进行 Apple 公证，也不上架 Mac App Store；用户首次启动时通过“隐私与安全性”确认“仍要打开”是正式安装流程。
+
+## 用户安装
+
+1. 从 [GitHub Releases](https://github.com/xiaopu-ai/TO-DO-Panel/releases/latest) 下载 `TO-DO-Panel-*-arm64.dmg`。
+2. 打开 DMG，将 `TO-DO Panel.app` 拖入“应用程序”。
+3. 首次启动若被 macOS 拦截，打开“系统设置 → 隐私与安全性”，点击“仍要打开”。
+4. 再次启动 TO-DO Panel，并按系统提示授权摄像头和麦克风。
+
+“仍要打开”只需要确认一次。安装包使用 ad-hoc 签名且未经过 Apple 公证，因此无法省略这一步。
+
+## 本地直接生成 DMG
+
+不依赖 GitHub 也能出包，自己分发或先行验证时用这条路径：
+
+```bash
+npm install
+npm test
+npm run build
+```
+
+产物是 `dist.noindex/TO-DO-Panel-<版本>-arm64.dmg`。`.noindex` 后缀避免解包后的应用被 Spotlight 当成第二份已安装应用；`afterPack` 的 ad-hoc 签名校验失败会直接中断构建，
+所以只要命令成功退出，产物就是可分发的。
+
+## 维护者经 GitHub 发布新版本
+
+> **前置条件**：本地 `main` 已跟踪 GitHub 的 `origin/main`，并已配置可写入
+> `xiaopu-ai/TO-DO-Panel` 的 GitHub 凭据。发布前先确认工作区干净且本地提交已经推送。
+
+GitHub Actions 只在推送语义化版本标签时发布安装包。标签必须与 `package.json` 中的版本一致，
+所以先读版本号再打标签，不要照抄示例里的数字：
+
+```bash
+npm test
+version=$(node -p "require('./package.json').version")
+git tag "v${version}"
+git push origin main
+git push origin "v${version}"
+```
+
+工作流会在 GitHub 的 Apple Silicon macOS runner 上自动完成：
+
+1. 安装锁定版本的 npm 依赖。
+2. 执行桌面端检查。
+3. 生成并验证 Apple Silicon DMG。
+4. 生成 SHA-256 校验文件。
+5. 创建 GitHub Release，并上传 DMG 与校验文件。
+
+如果任一测试、版本检查或 DMG 校验失败，Release 不会创建。
+
+## 手动验证发布流程（不发布）
+
+发布工作流支持从 GitHub Actions 页面手动运行。选择 `Release macOS DMG`，点击 `Run workflow` 后，工作流会安装依赖、执行桌面检查、生成 DMG，并完成签名、镜像与 SHA-256 校验。
+
+手动运行固定为验证模式：它会在 GitHub 托管 runner 中临时重新构建安装包，但不会创建或修改 GitHub Release，也不会覆盖现有版本。只有推送与 `package.json` 版本一致的 `v*.*.*` 标签时，发布步骤才会启用。
+
+## 发布前检查
+
+- 不提交 `node_modules/`、`dist/`、`.env`、录音、剪贴板图片或本地工作区数据。
+- 任何产品更新推送到 GitHub 前，都要同步核对 `package.json` / `package-lock.json`、`CHANGELOG.md`、README 当前稳定版本与下载入口。
+- 确认 GitHub Pages 下载按钮仍通过 `releases/latest` 选择当前标签的 `TO-DO-Panel-<版本>-arm64.dmg`；推送后必须在线验证最新 Release 资产和 Pages 入口。
+- 确认 `scripts/codex-notify.js` 与 `scripts/claude-notify.js` 已随包装入（在 `build.files` 白名单内），
+  否则装了 DMG 的用户按 README 注册钩子时会指向空路径。
+- 不把 API Key、密码、Apple ID 或其他凭据写入源码和 Release。
+- 发布说明必须注明 macOS 13.0+、Apple Silicon 系统要求和首次“仍要打开”的操作。
+- 每个正式版本只使用一个唯一标签，不覆盖已经公开的安装包。

@@ -1,0 +1,74 @@
+name: Release macOS DMG
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build unsigned Apple Silicon DMG
+    runs-on: macos-14
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Resolve release policy
+        id: release
+        run: node scripts/release-policy.js
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run desktop checks
+        run: npm test
+
+      - name: Build DMG
+        run: npm run build
+
+      - name: Verify and checksum DMG
+        id: artifact
+        shell: zsh {0}
+        run: |
+          version=$(node -p "require('./package.json').version")
+          dmg_path="dist.noindex/TO-DO-Panel-${version}-arm64.dmg"
+          app_path="dist.noindex/mac-arm64/TO-DO Panel.app"
+          [[ -f ${dmg_path} ]]
+          [[ -x "${app_path}/Contents/MacOS/TO-DO Panel" ]]
+          codesign --verify --deep --strict "${app_path}"
+          hdiutil verify "${dmg_path}"
+          shasum -a 256 "${dmg_path}" > "${dmg_path}.sha256"
+          print "dmg_path=${dmg_path}" >> "${GITHUB_OUTPUT}"
+          print "checksum_path=${dmg_path}.sha256" >> "${GITHUB_OUTPUT}"
+
+      - name: Publish GitHub Release
+        if: steps.release.outputs.publish == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DMG_PATH: ${{ steps.artifact.outputs.dmg_path }}
+          CHECKSUM_PATH: ${{ steps.artifact.outputs.checksum_path }}
+        shell: zsh {0}
+        run: |
+          release_notes=$'## 安装\n\n1. 下载下方 `TO-DO-Panel-*-arm64.dmg`。\n2. 打开 DMG，将 `TO-DO Panel.app` 拖入“应用程序”。\n3. 首次启动若被 macOS 拦截，打开“系统设置 → 隐私与安全性”，点击“仍要打开”。此操作只需一次。\n\n当前安装包要求 macOS 13.0+ 与 Apple Silicon Mac。项目采用 ad-hoc 签名分发，不进行 Apple 公证，也不上架 Mac App Store。'
+          gh release create "${GITHUB_REF_NAME}" \
+            "${DMG_PATH}" \
+            "${CHECKSUM_PATH}" \
+            --title "TO-DO Panel ${GITHUB_REF_NAME}" \
+            --generate-notes \
+            --notes "${release_notes}"

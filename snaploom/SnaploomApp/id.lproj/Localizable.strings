@@ -1,0 +1,671 @@
+/* Bahasa Indonesia — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Tangkap Area";
+"Capture Screen" = "Tangkap Layar";
+"Capture OCR" = "Tangkap OCR";
+"Capture OCR & QR" = "Tangkap OCR & QR";
+"Capture area and read text/QR codes" = "Tangkap area dan baca teks/kode QR";
+"Quick Capture" = "Tangkap Cepat";
+"Scroll Capture" = "Tangkap Gulir";
+"Capture Last Area" = "Tangkap Area Terakhir";
+"Capture Delay" = "Tunda Tangkapan";
+"None" = "Tidak Ada";
+"%d seconds" = "%d detik";
+"Record Area" = "Rekam Area";
+"Record Screen" = "Rekam Layar";
+"Recent Captures" = "Tangkapan Terbaru";
+"Show History Panel" = "Tampilkan Panel Riwayat";
+"Open Image..." = "Buka Gambar...";
+"Open from Clipboard" = "Buka dari Papan Klip";
+"Pin from Clipboard" = "Sematkan dari Papan Klip";
+"Preferences..." = "Preferensi...";
+"Check for Updates..." = "Periksa Pembaruan...";
+"Quit Snaploom" = "Keluar Snaploom";
+"No recent captures" = "Tidak ada tangkapan terbaru";
+"Clear History" = "Hapus Riwayat";
+
+/* History Panel */
+"Copy" = "Salin";
+"Save As..." = "Simpan Sebagai...";
+"Open in Editor" = "Buka di Editor";
+"Pin to Screen" = "Sematkan ke Layar";
+"Quick Look" = "Lihat Cepat";
+"Delete" = "Hapus";
+"All" = "Semua";
+"Screenshots" = "Tangkapan Layar";
+"GIFs" = "GIF";
+"Click to copy · Drag to app" = "Klik untuk menyalin · Seret ke aplikasi";
+"No captures yet" = "Belum ada tangkapan";
+
+/* Floating Thumbnail */
+"Close All" = "Tutup Semua";
+"Save All to Folder…" = "Simpan Semua ke Folder…";
+"Save" = "Simpan";
+
+/* Editor Top Bar */
+"Zoom In" = "Perbesar";
+"Zoom Out" = "Perkecil";
+"Zoom" = "Zoom";
+"Fit Canvas" = "Sesuaikan Kanvas";
+"Crop" = "Potong";
+"Flip Horizontal" = "Balik Horizontal";
+"Flip Vertical" = "Balik Vertikal";
+"Rotate Left" = "Putar Kiri";
+"Rotate Right" = "Putar Kanan";
+"Add Capture" = "Tambah Tangkapan";
+
+/* Toolbar - Tools */
+"Arrow" = "Panah";
+"Line" = "Garis";
+"Rectangle" = "Persegi Panjang";
+"Ellipse" = "Elips";
+"Pencil" = "Pensil";
+"Pencil (Draw)" = "Pensil (Gambar)";
+"Marker" = "Stabilo";
+"Text" = "Teks";
+"Number" = "Angka";
+"Number / Counter" = "Angka / Penghitung";
+"Stamp / Emoji" = "Stempel / Emoji";
+"Censor" = "Sensor";
+"Censor (Pixelate / Blur / Solid)" = "Sensor (Pikselasi / Blur / Solid)";
+"Measure" = "Ukur";
+"Measure (px)" = "Ukur (px)";
+"Magnify (Loupe)" = "Perbesar (Lup)";
+"Highlight" = "Sorot";
+"Highlight (Spotlight)" = "Sorot (Lampu Sorot)";
+"Dim" = "Redupkan";
+"Color Sampler" = "Pengambil Warna";
+"Color Picker" = "Pemilih Warna";
+"Select & Edit" = "Pilih & Edit";
+"Color" = "Warna";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Salin ke Papan Klip";
+"Save to File" = "Simpan ke File";
+"Save to" = "Simpan ke";
+"Open in Editor Window" = "Buka di Jendela Editor";
+"Pin on Screen" = "Sematkan di Layar";
+"Pin" = "Sematkan";
+"Pin (floating window)" = "Sematkan (jendela mengambang)";
+"OCR" = "OCR";
+"OCR Text" = "Teks OCR";
+"OCR (extract text)" = "OCR (ekstrak teks)";
+"OCR & QR" = "OCR & QR";
+"Run OCR & QR" = "Jalankan OCR & QR";
+"Text & QR Recognition" = "Pengenalan Teks & QR";
+"QR Code" = "Kode QR";
+"QR Codes" = "Kode QR";
+"Open Link" = "Buka Tautan";
+"Upload" = "Unggah";
+"Share" = "Bagikan";
+"Open With" = "Buka Dengan";
+"No Apps Available" = "Tidak Ada Aplikasi Tersedia";
+"No Share Services" = "Tidak Ada Layanan Berbagi";
+"Undo" = "Urungkan";
+"Redo" = "Ulangi";
+"Close" = "Tutup";
+"Remove Background" = "Hapus Latar Belakang";
+"Beautify" = "Percantik";
+"Adjust" = "Sesuaikan";
+"Adjust (Image Effects)" = "Sesuaikan (Efek Gambar)";
+"Invert Colors" = "Balik Warna";
+"Record" = "Rekam";
+"Record screen" = "Rekam layar";
+"Translate" = "Terjemahkan";
+"Auto-Redact sensitive data" = "Redaksi otomatis data sensitif";
+"Move Selection" = "Pindahkan Seleksi";
+
+/* Toolbar - Recording */
+"Start Recording" = "Mulai Merekam";
+"Cancel Recording" = "Batalkan Rekaman";
+"Highlight Mouse Clicks" = "Sorot Klik Mouse";
+"Record System Audio" = "Rekam Audio Sistem";
+"Record Microphone" = "Rekam Mikrofon";
+"Recording Settings" = "Pengaturan Rekaman";
+
+/* Tool Options */
+"Size" = "Ukuran";
+"Stroke" = "Goresan";
+"Radius" = "Radius";
+"Start:" = "Mulai:";
+"Draw:" = "Gambar:";
+"Auto:" = "Otomatis:";
+"Fill" = "Isi";
+"Outline" = "Garis Luar";
+"More Emojis" = "Emoji Lainnya";
+"Load Image" = "Muat Gambar";
+"Gradient Style" = "Gaya Gradien";
+"On" = "Aktif";
+"Text Only" = "Teks Saja";
+"All Text" = "Semua Teks";
+"PII" = "PII";
+"Faces" = "Wajah";
+"People" = "Orang";
+"Confirm before upload" = "Konfirmasi sebelum mengunggah";
+"Flip" = "Balik";
+"Smooth" = "Halus";
+"Refined" = "Diperhalus";
+"Smart" = "Cerdas";
+"Padding" = "Padding";
+"Shadow" = "Bayangan";
+"Right-click to add points" = "Klik kanan untuk menambah titik";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Tahan 1 otomatis-vertikal  ·  Tahan 2 otomatis-horizontal";
+"Limit to selection" = "Batasi ke seleksi";
+"Effect" = "Efek";
+"Font" = "Font";
+"System" = "Sistem";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Klik jendela  ·  Seret untuk area kustom  ·  F untuk layar penuh";
+"Drag to select  ·  Click for full screen" = "Seret untuk memilih  ·  Klik untuk layar penuh";
+"Release to annotate and edit" = "Lepaskan untuk menganotasi dan mengedit";
+"Release to finish" = "Lepaskan untuk menyelesaikan";
+"Hold Space to move. Release to annotate and edit" = "Tahan Spasi untuk memindahkan. Lepaskan untuk menganotasi dan mengedit";
+"Hold Space to move. Release to finish" = "Tahan Spasi untuk memindahkan. Lepaskan untuk menyelesaikan";
+"Space" = "Spasi";
+"Window snap: " = "Jepret jendela: ";
+"ON" = "AKTIF";
+"OFF" = "NONAKTIF";
+"  (Tab to toggle)" = "  (Tab untuk beralih)";
+"Right-click to copy" = "Klik kanan untuk menyalin";
+"Copied %@" = "Disalin %@";
+"Set color %@" = "Atur warna %@";
+"Draw something first to use the move tool." = "Gambar sesuatu terlebih dahulu untuk menggunakan alat pindah.";
+"Drag to reposition" = "Seret untuk memposisikan ulang";
+
+/* Aspect ratio & resolution presets */
+"Aspect ratio & resolution presets" = "Prasetel rasio aspek & resolusi";
+"Aspect ratio" = "Rasio aspek";
+"Resolution" = "Resolusi";
+"Freeform" = "Bebas";
+"Units" = "Unit";
+"Keep ratio for next captures" = "Pertahankan rasio untuk tangkapan berikutnya";
+"Custom · %@" = "Kustom · %@";
+"Order history by last edit" = "Urutkan riwayat berdasarkan suntingan terakhir";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Tangkapan layar yang disunting akan dipindahkan ke atas. Nonaktifkan untuk mempertahankan urutan tangkapan.";
+
+/* Overlay - Popovers */
+"Format:" = "Format:";
+"FPS:" = "FPS:";
+"When done:" = "Setelah selesai:";
+"Open editor" = "Buka editor";
+"Show in Finder" = "Tampilkan di Finder";
+"Copy to clipboard" = "Salin ke papan klip";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Preferensi Snaploom";
+"General" = "Umum";
+"Tools" = "Alat";
+"Recording" = "Rekaman";
+"About" = "Tentang";
+"Shortcuts" = "Pintasan";
+"Uploads" = "Unggahan";
+"Language" = "Bahasa";
+"Language:" = "Bahasa:";
+"Restart the app to fully apply the new language." = "Mulai ulang aplikasi untuk menerapkan bahasa baru sepenuhnya.";
+"Capture" = "Tangkapan";
+"Play sound on capture" = "Putar suara saat menangkap";
+"Play sound on copy" = "Putar suara saat menyalin";
+"Remember last selected tool" = "Ingat alat terakhir yang dipilih";
+"Show floating thumbnail after capture" = "Tampilkan thumbnail mengambang setelah tangkapan";
+"Launch at login" = "Jalankan saat masuk";
+"Show snap alignment guides" = "Tampilkan panduan perataan jepret";
+"Snap selection edges to image boundaries" = "Jepretkan tepi pilihan ke batas gambar";
+"Capture mouse cursor in screenshot" = "Tangkap kursor mouse di tangkapan layar";
+"Double-click selection to copy" = "Klik dua kali pilihan untuk menyalin";
+"Hide capture instructions" = "Sembunyikan petunjuk pengambilan tangkapan layar";
+"Disable shadow outside selection" = "Nonaktifkan bayangan di luar seleksi";
+"Show shortcuts in tooltips" = "Tampilkan pintasan di tooltip";
+"Use window title in saved filename" = "Gunakan judul jendela di nama file tersimpan";
+"Hide menu bar icon" = "Sembunyikan ikon bilah menu";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Tombol pintas tetap berfungsi. Untuk menampilkan ikon kembali, jalankan ulang Snaploom.";
+"Menu Bar Order" = "Urutan Bilah Menu";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Pilih urutan tindakan tangkapan di menu bilah menu Snaploom.";
+"Move up" = "Pindah ke atas";
+"Move down" = "Pindah ke bawah";
+"Check for updates automatically" = "Periksa pembaruan secara otomatis";
+"Check for beta updates" = "Periksa pembaruan beta";
+"Thumbnail" = "Thumbnail";
+"  Dismiss after:" = "  Tutup setelah:";
+"seconds before auto-dismiss (0 = never)" = "detik sebelum ditutup otomatis (0 = tidak pernah)";
+"  Multiple previews:" = "  Beberapa pratinjau:";
+"Stack (keep all)" = "Tumpuk (simpan semua)";
+"Replace (show only latest)" = "Ganti (tampilkan hanya terbaru)";
+"Output" = "Keluaran";
+"Image format:" = "Format gambar:";
+"Quality:" = "Kualitas:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Simpan pada resolusi standar (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Membagi dua dimensi di layar Retina, file ~4x lebih kecil";
+"Embed sRGB color profile" = "Sematkan profil warna sRGB";
+"Ensures consistent colors across different displays" = "Memastikan warna konsisten di berbagai layar";
+"Screenshot History" = "Riwayat Tangkapan Layar";
+"History size:" = "Ukuran riwayat:";
+"screenshots kept on disk (0 = off)" = "tangkapan layar disimpan di disk (0 = nonaktif)";
+"Save Directory" = "Direktori Simpan";
+"Save folder:" = "Folder simpan:";
+"Browse…" = "Telusuri…";
+"Appearance" = "Tampilan";
+"Accent color:" = "Warna aksen:";
+"Icon color:" = "Warna ikon:";
+"Background color:" = "Warna latar belakang:";
+"Reset" = "Atur Ulang";
+"Menu bar icon:" = "Ikon bilah menu:";
+"Custom symbol" = "Simbol kustom";
+"Default" = "Default";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Masukkan nama SF Symbol apa pun (mis. camera.fill) atau pilih prasetel. Telusuri nama di aplikasi SF Symbols Apple. Nama yang tidak valid akan kembali ke ikon default.";
+"OCR Capture:" = "Tangkapan OCR:";
+"OCR & QR Capture:" = "Tangkapan OCR & QR:";
+"Save action:" = "Aksi simpan:";
+"Ask where to save" = "Tanya lokasi penyimpanan";
+"Save to default folder" = "Simpan ke folder default";
+"Show window + copy to clipboard" = "Tampilkan jendela + salin ke papan klip";
+"Show window only" = "Tampilkan jendela saja";
+"Copy to clipboard only" = "Salin ke papan klip saja";
+"Enter / Quick Capture:" = "Enter / Tangkap Cepat:";
+"Save to file" = "Simpan ke file";
+"Save + copy to clipboard" = "Simpan + salin ke papan klip";
+"OCR Action" = "Aksi OCR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Pintasan Keyboard";
+"Hotkeys" = "Tombol Pintas";
+"Clear shortcut" = "Hapus pintasan";
+"Press keys..." = "Tekan tombol...";
+"Waiting..." = "Menunggu...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Alat Anotasi";
+"Hidden tools are removed from the bottom toolbar." = "Alat tersembunyi dihapus dari bilah alat bawah.";
+"Capture Actions" = "Aksi Tangkapan";
+"Bottom Toolbar Actions" = "Aksi Bilah Alat Bawah";
+"Hidden actions are removed from the bottom toolbar." = "Aksi tersembunyi dihapus dari bilah alat bawah.";
+"Editor Actions" = "Aksi Editor";
+"Right Toolbar Actions" = "Aksi Bilah Alat Kanan";
+"Hidden actions are removed from the right toolbar." = "Aksi tersembunyi dihapus dari bilah alat kanan.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Laju bingkai:";
+"After recording:" = "Setelah merekam:";
+"Save recording to:" = "Simpan rekaman ke:";
+"Save Recording" = "Simpan Rekaman";
+"Clear" = "Hapus";
+"Max height:" = "Tinggi maks:";
+"px (0 = unlimited)" = "px (0 = tak terbatas)";
+"Behavior" = "Perilaku";
+"Auto-scroll (sends synthetic scroll events)" = "Gulir otomatis (mengirim peristiwa gulir sintetis)";
+"Detect fixed/sticky headers" = "Deteksi header tetap/menempel";
+"Scroll speed:" = "Kecepatan gulir:";
+"Slow" = "Lambat";
+"Medium" = "Sedang";
+"Fast" = "Cepat";
+"Very fast" = "Sangat cepat";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Layanan Unggah";
+"Upload Provider" = "Penyedia Unggahan";
+"Provider:" = "Penyedia:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (gambar + video)";
+"imgbb (images only)" = "imgbb (gambar saja)";
+"S3-Compatible (images + videos)" = "S3-Compatible (gambar + video)";
+"S3-Compatible Storage" = "Penyimpanan S3-Compatible";
+"Sign In with Google" = "Masuk dengan Google";
+"Sign Out" = "Keluar";
+"Signed in" = "Sudah masuk";
+"Not signed in" = "Belum masuk";
+"Account:" = "Akun:";
+"Test Connection" = "Tes Koneksi";
+"Fill in endpoint, bucket, and credentials first" = "Isi endpoint, bucket, dan kredensial terlebih dahulu";
+"Testing..." = "Menguji...";
+"Connection successful!" = "Koneksi berhasil!";
+"Leave empty to use default" = "Biarkan kosong untuk menggunakan default";
+"Endpoint:" = "Endpoint:";
+"Region:" = "Region:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Access Key:";
+"Secret Key:" = "Secret Key:";
+"Public URL:" = "URL Publik:";
+"Path Prefix:" = "Prefiks Path:";
+"API key:" = "Kunci API:";
+"Upload History" = "Riwayat Unggahan";
+"No uploads yet." = "Belum ada unggahan.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL dasar untuk akses publik. Jika kosong, URL endpoint S3 yang digunakan (mungkin tidak dapat diakses publik).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Kunci bersama sudah disertakan — dapatkan kunci gratis Anda sendiri di imgbb.com/api jika mencapai batas penggunaan. Gambar saja (tidak mendukung video).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Berfungsi dengan AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, dan layanan S3-compatible lainnya. Mendukung gambar dan video.";
+"Configure S3 in Preferences" = "Konfigurasikan S3 di Preferensi";
+"Sign in to Google Drive in Preferences" = "Masuk ke Google Drive di Preferensi";
+"Video upload requires Google Drive or S3" = "Unggahan video memerlukan Google Drive atau S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Versi %@ (%@)";
+"Made by" = "Dibuat oleh";
+"Licensed under the GPLv3" = "Dilisensikan di bawah GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Alat tangkapan layar & perekaman layar gratis dan sumber terbuka untuk macOS.\nSepenuhnya native — dibangun dengan Swift dan AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Tidak Ada Gambar di Papan Klip";
+"No Image or Text on Clipboard" = "Tidak Ada Gambar atau Teks di Papan Klip";
+"Copy an image to the clipboard first, then try again." = "Salin gambar ke papan klip terlebih dahulu, lalu coba lagi.";
+"Copy an image or text to the clipboard first, then try again." = "Salin gambar atau teks ke papan klip terlebih dahulu, lalu coba lagi.";
+"OK" = "OK";
+"Accessibility Access Required" = "Akses Aksesibilitas Diperlukan";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom memerlukan izin Aksesibilitas untuk menggulir otomatis aplikasi lain. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom memerlukan izin Aksesibilitas untuk tangkapan gulir. Berikan akses di Pengaturan Sistem, lalu coba lagi.";
+"Open Settings" = "Buka Pengaturan";
+"Cancel" = "Batal";
+"Microphone Access Required" = "Akses Mikrofon Diperlukan";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom memerlukan izin mikrofon untuk merekam audio suara. Buka Pengaturan Sistem untuk memberikan akses.";
+"Upload to Google Drive?" = "Unggah ke Google Drive?";
+"Upload to S3?" = "Unggah ke S3?";
+"Upload to imgbb.com?" = "Unggah ke imgbb.com?";
+"Your screenshot will be uploaded." = "Tangkapan layar Anda akan diunggah.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Selamat datang di Snaploom";
+"Snaploom needs one permission" = "Snaploom memerlukan satu izin";
+"Screen Recording not yet granted" = "Perekaman Layar belum diberikan";
+"Screen Recording granted!" = "Perekaman Layar diberikan!";
+"Enable Snaploom, then try taking a screenshot" = "Aktifkan Snaploom, lalu coba ambil tangkapan layar";
+"Open Screen Recording Settings" = "Buka Pengaturan Perekaman Layar";
+"Continue" = "Lanjutkan";
+
+/* OCR Window */
+"Text Recognition" = "Pengenalan Teks";
+"Translate to:" = "Terjemahkan ke:";
+"%d chars · %d words" = "%d karakter · %d kata";
+"Copy  ⌘↩" = "Salin  ⌘↩";
+"AI Search" = "Pencarian AI";
+"Show Original" = "Tampilkan Asli";
+"Translation Failed" = "Terjemahan Gagal";
+"Translation" = "Terjemahan";
+"(No text detected in the selected area)" = "(Tidak ada teks terdeteksi di area yang dipilih)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL disalin ke papan klip";
+"Uploading... %d%%" = "Mengunggah... %d%%";
+"Upload failed: %@" = "Unggahan gagal: %@";
+"Uploaded! Link copied." = "Terunggah! Tautan disalin.";
+"Uploading to %@... %d%%" = "Mengunggah ke %@... %d%%";
+"Open" = "Buka";
+
+/* Recording Toast */
+"Recording saved" = "Rekaman disimpan";
+"%@ • Recording saved" = "%@ • Rekaman disimpan";
+"Copy Path" = "Salin Path";
+"Path copied!" = "Path disalin!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Editor Video Snaploom";
+"%@ selected" = "%@ dipilih";
+"Exporting..." = "Mengekspor...";
+"Export failed" = "Ekspor gagal";
+"Saved to %@" = "Disimpan ke %@";
+"Save failed" = "Gagal menyimpan";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Simpan Sebagai...";
+"Choose a folder" = "Pilih folder";
+"Save All to Folder…" = "Simpan Semua ke Folder…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Gulir Otomatis";
+"Stop" = "Berhenti";
+"Scrolling..." = "Menggulir...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Prasetel";
+"Adjustments" = "Penyesuaian";
+"Brightness" = "Kecerahan";
+"Contrast" = "Kontras";
+"Saturation" = "Saturasi";
+"Sharpness" = "Ketajaman";
+
+/* Time Ago */
+"just now" = "baru saja";
+"%ds ago" = "%dd lalu";
+"%dm ago" = "%dm lalu";
+"%dh ago" = "%dj lalu";
+
+/* Hotkey Labels */
+"History" = "Riwayat";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klik \"Rekam\" dan tekan kombinasi tombol dengan setidaknya satu pengubah (⌘, ⌥, ⌃, ⇧) untuk mengatur pintasan.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "Memproses GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Pemantauan Input Diperlukan";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom memerlukan izin Pemantauan Input untuk menampilkan ketukan tombol selama perekaman. Berikan akses di System Settings, lalu coba lagi.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom memerlukan izin Aksesibilitas untuk menampilkan ketukan tombol selama perekaman. Berikan akses di System Settings, lalu coba lagi.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Tampilkan Ketukan Tombol";
+"Shortcuts Only" = "Pintasan Saja";
+"All Keystrokes" = "Semua Ketukan Tombol";
+
+/* Recording — Settings Popover */
+"Delay:" = "Tunda:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Disalin ke papan klip!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Hamparan Webcam";
+"Camera Access Required" = "Akses Kamera Diperlukan";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom memerlukan izin kamera untuk hamparan webcam. Buka Pengaturan Sistem untuk memberikan akses.";
+"Webcam" = "Webcam";
+"Bottom Right" = "Kanan Bawah";
+"Bottom Left" = "Kiri Bawah";
+"Top Right" = "Kanan Atas";
+"Top Left" = "Kiri Atas";
+"Small" = "Kecil";
+"Large" = "Besar";
+"Webcam Size Small" = "Kecil";
+"Webcam Size Medium" = "Sedang";
+"Webcam Size Large" = "Besar";
+"Webcam Size Extra Large" = "Sangat Besar";
+"Circle" = "Lingkaran";
+"Rounded Rectangle" = "Persegi Panjang Bulat";
+"Cam pos:" = "Pos. kam:";
+"Cam size:" = "Ukuran kam:";
+"Cam shape:" = "Bentuk kam:";
+
+/* New Strings */
+"Settings" = "Pengaturan";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Versi offline: integrasi unggah dan penyimpanan cloud dihapus. Pemeriksaan pembaruan mungkin masih terhubung ke server pembaruan Snaploom. Tangkapan layar dan rekaman tetap lokal kecuali Anda membagikan atau menyimpannya sendiri.";
+"Settings..." = "Pengaturan...";
+"Snaploom Settings" = "Pengaturan Snaploom";
+"Also open in Editor" = "Buka juga di Editor";
+"Hide controls" = "Sembunyikan kontrol";
+"Hide recording controls" = "Sembunyikan kontrol rekaman";
+"Stop recording from the menu bar icon instead." = "Hentikan rekaman dari ikon bilah menu.";
+"Pixelate" = "Pikselasi";
+"Blur" = "Blur";
+"Solid" = "Solid";
+"Erase" = "Hapus";
+"Done" = "Selesai";
+"Do nothing" = "Tidak melakukan apa-apa";
+"Overlay / Editor Shortcuts" = "Pintasan Hamparan / Editor";
+"Set" = "Atur";
+"Press..." = "Tekan...";
+"Reset to default" = "Atur ulang ke default";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Tekan satu tombol untuk menetapkannya sebagai pintasan untuk alat tersebut. Berfungsi saat hamparan atau editor aktif.";
+"Keep Separate" = "Pisahkan";
+"Merge Audio" = "Gabungkan Audio";
+"Audio Tracks" = "Trek Audio";
+"Adjust volume for each audio track:" = "Atur volume untuk setiap trek audio:";
+"Microphone:" = "Mikrofon:";
+"System audio:" = "Audio sistem:";
+"Loupe" = "Lup";
+"Stamp" = "Stempel";
+"Unlimited" = "Tak terbatas";
+"Save changes?" = "Simpan perubahan?";
+"Your annotations will be lost if you close without saving." = "Anotasi Anda akan hilang jika Anda menutup tanpa menyimpan.";
+"Save & Close" = "Simpan & Tutup";
+"Discard" = "Buang";
+"Stop Recording" = "Hentikan Rekaman";
+"Pause" = "Jeda";
+"Resume" = "Lanjutkan";
+"Engine:" = "Mesin:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (di perangkat)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Terjemahan Apple lebih cepat dan berfungsi secara offline. Google Translate mendukung lebih banyak bahasa.";
+"Download language packs in System Settings…" = "Unduh paket bahasa di Pengaturan Sistem…";
+"Configure S3 in Settings" = "Konfigurasikan S3 di Pengaturan";
+"Sign in to Google Drive in Settings" = "Masuk ke Google Drive di Pengaturan";
+"Position:" = "Posisi:";
+"  Position:" = "  Posisi:";
+"Size:" = "Ukuran:";
+"Shape:" = "Bentuk:";
+
+"Same as screenshots" = "Sama seperti tangkapan layar";
+"  Preview size:" = "  Ukuran pratinjau:";
+"(0 = off)" = "(0 = nonaktif)";
+"Clear All" = "Hapus Semua";
+"Clear History?" = "Hapus Riwayat?";
+"This will permanently delete all screenshots from history." = "Ini akan menghapus semua tangkapan layar dari riwayat secara permanen.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klik \"Atur\" dan tekan kombinasi tombol dengan setidaknya satu modifier (⌘, ⌥, ⌃, ⇧) untuk menetapkan pintasan.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "File diunggah ke folder \"Snaploom\" di Google Drive Anda. Semuanya tetap privat — tidak ada yang dibagikan secara publik.";
+
+"Pressure" = "Tekanan";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Buka Video...";
+"Choose a video to open in Snaploom editor" = "Pilih video untuk dibuka di editor Snaploom";
+"Click to add effects" = "Klik untuk menambahkan efek";
+"Add Zoom" = "Tambah Zoom";
+"Add Censor" = "Tambah Sensor";
+"Add Cut" = "Tambah Potongan";
+"Add Speed" = "Tambah Kecepatan";
+"Add Freeze" = "Tambah Bekukan";
+"Add Text" = "Tambah Teks";
+"Delete Zoom" = "Hapus Zoom";
+"Delete Censor" = "Hapus Sensor";
+"Delete Cut" = "Hapus Potongan";
+"Delete Speed" = "Hapus Kecepatan";
+"Delete Freeze" = "Hapus Bekukan";
+"Delete Text" = "Hapus Teks";
+"Edit Text…" = "Edit Teks…";
+"Huge" = "Sangat Besar";
+"Bold" = "Tebal";
+"Italic" = "Miring";
+"Alignment" = "Perataan";
+"Left" = "Kiri";
+"Center" = "Tengah";
+"Right" = "Kanan";
+"Text Color" = "Warna Teks";
+"Background Color" = "Warna Latar";
+"Rounded" = "Membulat";
+"Custom…" = "Kustom…";
+"Transparent" = "Transparan";
+"Black" = "Hitam";
+"White" = "Putih";
+"Yellow" = "Kuning";
+"Red" = "Merah";
+"Green" = "Hijau";
+"Blue" = "Biru";
+"Untitled" = "Tanpa Judul";
+"Add effect" = "Tambah efek";
+"Fade" = "Pudar";
+"High" = "Tinggi";
+"Low" = "Rendah";
+"Not enough room here" = "Tidak cukup ruang di sini";
+"Copied!" = "Disalin!";
+"Converting to GIF…" = "Mengonversi ke GIF…";
+"GIF conversion failed" = "Konversi GIF gagal";
+"No video track found" = "Tidak ada trek video ditemukan";
+"Preview:" = "Pratinjau:";
+"Copy Screen Info" = "Salin Info Layar";
+"Copies display and capture diagnostics to clipboard" = "Menyalin diagnostik tampilan dan tangkapan ke papan klip";
+"Accent" = "Aksen";
+"Icon" = "Ikon";
+"Background" = "Latar Belakang";
+"Custom" = "Kustom";
+"Theme:" = "Tema:";
+"Application" = "Aplikasi";
+"Capture area and extract text" = "Tangkap area dan ekstrak teks";
+"Capture the full screen" = "Tangkap seluruh layar";
+"Counter for multi-screen captures" = "Penghitung untuk tangkapan multi-layar";
+"8-character random string (e.g. k3j7x9q2)" = "String acak 8 karakter (mis. k3j7x9q2)";
+"Filename Template Tokens" = "Token Template Nama File";
+"Filename tokens" = "Token nama file";
+"Filename:" = "Nama file:";
+"Open an image file in the editor" = "Buka file gambar di editor";
+"Open the recent captures overlay" = "Buka hamparan tangkapan terbaru";
+"Open this settings window" = "Buka jendela pengaturan ini";
+"Quick capture (uses your Enter action)" = "Tangkap cepat (menggunakan aksi Enter Anda)";
+"Re-capture the last selected area" = "Tangkap ulang area terakhir yang dipilih";
+"Screenshots only — captured window title (blank otherwise)" = "Tangkapan layar saja — judul jendela yang ditangkap (kosong jika tidak)";
+"Show available filename tokens" = "Tampilkan token nama file yang tersedia";
+"Show supported URL scheme commands" = "Tampilkan perintah skema URL yang didukung";
+"Start area capture" = "Mulai tangkap area";
+"Start area recording" = "Mulai rekam area";
+"Start full-screen recording" = "Mulai rekam layar penuh";
+"Start scroll capture" = "Mulai tangkap gulir";
+"Stop the current recording" = "Hentikan rekaman saat ini";
+"Supported URL Scheme Commands" = "Perintah Skema URL yang Didukung";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Ekstensi file ditambahkan secara otomatis. Garis miring dan titik dua di {window} menjadi tanda hubung.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Picu Snaploom dari Raycast, Alfred, Shortcuts, atau alat apa pun yang membuka URL.";
+"URL scheme info" = "Info skema URL";
+"Enable snaploom:// URL scheme" = "Aktifkan skema URL snaploom://";
+"sec (0 = never)" = "detik (0 = tidak pernah)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Cadangan Pengaturan";
+"Export Settings…" = "Ekspor Pengaturan…";
+"Import Settings…" = "Impor Pengaturan…";
+"Reveal Settings File in Finder" = "Tampilkan Berkas Pengaturan di Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Ekspor preferensi Anda ke sebuah berkas untuk memindahkannya ke Mac lain atau instalasi baru. Kredensial unggah, folder penyimpanan, dan riwayat tangkapan layar tidak disertakan. Pengaturan disimpan di dalam wadah aplikasi Snaploom.";
+"Export Settings" = "Ekspor Pengaturan";
+"Import Settings" = "Impor Pengaturan";
+"Import failed" = "Impor gagal";
+"Settings exported" = "Pengaturan diekspor";
+"Settings imported" = "Pengaturan diimpor";
+"Import" = "Impor";
+"Later" = "Nanti";
+"Relaunch Now" = "Luncurkan Ulang Sekarang";
+"Replace your current settings?" = "Ganti pengaturan Anda saat ini?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Mengimpor akan mengganti preferensi Anda saat ini dengan yang ada di berkas ini. Folder penyimpanan, kredensial unggah, dan riwayat tangkapan layar Anda tetap dipertahankan. Tindakan ini tidak dapat dibatalkan.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d pengaturan telah diterapkan. Luncurkan ulang Snaploom untuk menerapkan semua perubahan.";
+"A few large items were too big to include. Everything else was saved." = "Beberapa item besar terlalu besar untuk disertakan. Selebihnya telah disimpan.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Gambar latar Beautify khusus Anda terlalu besar untuk disertakan. Selebihnya telah disimpan.";
+"This file is not a valid Snaploom settings file." = "Berkas ini bukan berkas pengaturan Snaploom yang valid.";
+"This settings file contains no settings." = "Berkas pengaturan ini tidak berisi pengaturan apa pun.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Berkas pengaturan ini dibuat oleh versi Snaploom yang lebih baru. Harap perbarui Snaploom terlebih dahulu.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Tangkap, terjemahkan, dan tampilkan teks di atas gambar";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Buka entri riwayat di editor (anotasi tetap dapat diedit)";

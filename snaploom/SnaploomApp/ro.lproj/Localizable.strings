@@ -1,0 +1,671 @@
+/* Romana — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Captura zona";
+"Capture Screen" = "Captura ecranul";
+"Capture OCR" = "Captura OCR";
+"Quick Capture" = "Captura rapida";
+"Scroll Capture" = "Captura cu derulare";
+"Capture Last Area" = "Captură ultima zonă";
+"Capture Delay" = "Intarziere captura";
+"None" = "Fara";
+"%d seconds" = "%d secunde";
+"Record Area" = "Inregistreaza zona";
+"Record Screen" = "Inregistreaza ecranul";
+"Recent Captures" = "Capturi recente";
+"Show History Panel" = "Afiseaza panoul istoric";
+"Open Image..." = "Deschide imagine...";
+"Open from Clipboard" = "Deschide din clipboard";
+"Pin from Clipboard" = "Fixeaza din clipboard";
+"Preferences..." = "Preferinte...";
+"Check for Updates..." = "Verifica actualizari...";
+"Quit Snaploom" = "Inchide Snaploom";
+"No recent captures" = "Nicio captura recenta";
+"Clear History" = "Sterge istoricul";
+
+/* History Panel */
+"Copy" = "Copiaza";
+"Save As..." = "Salveaza ca...";
+"Open in Editor" = "Deschide in editor";
+"Open With" = "Deschide cu";
+"Open Link" = "Deschide linkul";
+"No Apps Available" = "Nicio aplicatie disponibila";
+"Pin to Screen" = "Fixeaza pe ecran";
+"Quick Look" = "Previzualizare rapida";
+"Delete" = "Sterge";
+"All" = "Toate";
+"Screenshots" = "Capturi de ecran";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "Clic pentru copiere · Trage in aplicatie";
+"No captures yet" = "Nicio captura inca";
+
+/* Floating Thumbnail */
+"Close All" = "Inchide toate";
+"Save All to Folder…" = "Salveaza toate in dosar...";
+"Save" = "Salveaza";
+
+/* Editor Top Bar */
+"Zoom" = "Zoom";
+"Zoom In" = "Mareste";
+"Zoom Out" = "Micsoreaza";
+"Fit Canvas" = "Potriveste la canvas";
+"Crop" = "Decupeaza";
+"Flip Horizontal" = "Oglindire orizontala";
+"Flip Vertical" = "Oglindire verticala";
+"Rotate Left" = "Roteste la stanga";
+"Rotate Right" = "Roteste la dreapta";
+"Add Capture" = "Adauga captura";
+
+/* Toolbar - Tools */
+"Arrow" = "Sageata";
+"Line" = "Linie";
+"Rectangle" = "Dreptunghi";
+"Ellipse" = "Elipsa";
+"Pencil" = "Creion";
+"Pencil (Draw)" = "Creion (Deseneaza)";
+"Marker" = "Marker";
+"Text" = "Text";
+"Number" = "Numar";
+"Number / Counter" = "Numar / Contor";
+"Stamp / Emoji" = "Stampila / Emoji";
+"Censor" = "Cenzura";
+"Censor (Pixelate / Blur / Solid)" = "Cenzura (Pixelare / Estompare / Solid)";
+"Measure" = "Masoara";
+"Measure (px)" = "Masoara (px)";
+"Magnify (Loupe)" = "Lupa (Marire)";
+"Highlight" = "Evidentiere";
+"Highlight (Spotlight)" = "Evidentiere (Reflector)";
+"Dim" = "Intunecare";
+"Color Sampler" = "Selector culoare";
+"Color Picker" = "Alegator de culori";
+"Select & Edit" = "Selecteaza si editeaza";
+"Color" = "Culoare";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Copiaza in clipboard";
+"Save to File" = "Salveaza in fisier";
+"Save to" = "Salveaza in";
+"Open in Editor Window" = "Deschide in fereastra de editare";
+"Pin on Screen" = "Fixeaza pe ecran";
+"Pin" = "Fixeaza";
+"Pin (floating window)" = "Fixeaza (fereastra flotanta)";
+"OCR" = "OCR";
+"OCR Text" = "OCR Text";
+"OCR (extract text)" = "OCR (extrage text)";
+"Upload" = "Incarca";
+"Share" = "Partajeaza";
+"No Share Services" = "Niciun serviciu de partajare";
+"Undo" = "Anuleaza";
+"Redo" = "Refacere";
+"Close" = "Inchide";
+"Remove Background" = "Elimina fundalul";
+"Beautify" = "Infrumuseteaza";
+"Adjust" = "Ajusteaza";
+"Adjust (Image Effects)" = "Ajusteaza (Efecte imagine)";
+"Invert Colors" = "Inverseaza culorile";
+"Record" = "Inregistreaza";
+"Record screen" = "Inregistreaza ecranul";
+"Translate" = "Traducere";
+"Auto-Redact sensitive data" = "Auto-cenzurare date sensibile";
+"Move Selection" = "Muta selectia";
+
+/* Toolbar - Recording */
+"Start Recording" = "Incepe inregistrarea";
+"Cancel Recording" = "Anuleaza inregistrarea";
+"Highlight Mouse Clicks" = "Evidentiaza clicurile mouse-ului";
+"Record System Audio" = "Inregistreaza sunetul sistemului";
+"Record Microphone" = "Inregistreaza microfonul";
+"Recording Settings" = "Setari inregistrare";
+
+/* Tool Options */
+"Size" = "Dimensiune";
+"Stroke" = "Contur";
+"Radius" = "Raza";
+"Start:" = "Start:";
+"Draw:" = "Deseneaza:";
+"Auto:" = "Auto:";
+"Fill" = "Umplere";
+"Outline" = "Contur";
+"More Emojis" = "Mai multe Emoji-uri";
+"Load Image" = "Incarca imagine";
+"Gradient Style" = "Stil gradient";
+"On" = "Activat";
+"Text Only" = "Doar text";
+"All Text" = "Tot textul";
+"PII" = "PII";
+"Faces" = "Fete";
+"People" = "Persoane";
+"Confirm before upload" = "Confirma inainte de incarcare";
+"Flip" = "Oglindire";
+"Smooth" = "Neted";
+"Refined" = "Rafinat";
+"Smart" = "Inteligent";
+"Padding" = "Spatiere";
+"Shadow" = "Umbra";
+"Right-click to add points" = "Clic dreapta pentru a adauga puncte";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Tine 1 auto-vertical  ·  Tine 2 auto-orizontal";
+"Limit to selection" = "Limiteaza la selectie";
+"Effect" = "Efect";
+"Font" = "Font";
+"System" = "Sistem";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Clic pe o fereastra  ·  Trage pentru zona personalizata  ·  F pentru ecran complet";
+"Drag to select  ·  Click for full screen" = "Trage pentru selectare  ·  Clic pentru ecran complet";
+"Release to annotate and edit" = "Elibereaza pentru adnotare si editare";
+"Release to finish" = "Elibereaza pentru a finaliza";
+"Hold Space to move. Release to annotate and edit" = "Tine Space pentru a muta. Elibereaza pentru adnotare si editare";
+"Hold Space to move. Release to finish" = "Tine Space pentru a muta. Elibereaza pentru a finaliza";
+"Window snap: " = "Fixare fereastra: ";
+"ON" = "ACTIVAT";
+"OFF" = "DEZACTIVAT";
+"  (Tab to toggle)" = "  (Tab pentru comutare)";
+"Right-click to copy" = "Clic dreapta pentru copiere";
+"Copied %@" = "Copiat %@";
+"Set color %@" = "Seteaza culoarea %@";
+"Draw something first to use the move tool." = "Deseneaza ceva mai intai pentru a folosi instrumentul de mutare.";
+"Drag to reposition" = "Trage pentru a repozitiona";
+
+/* Overlay - Popovers */
+"Format:" = "Format:";
+"FPS:" = "FPS:";
+"When done:" = "La finalizare:";
+"Open editor" = "Deschide editorul";
+"Show in Finder" = "Afiseaza in Finder";
+"Copy to clipboard" = "Copiaza in clipboard";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Preferinte Snaploom";
+"General" = "General";
+"Tools" = "Instrumente";
+"Recording" = "Inregistrare";
+"About" = "Despre";
+"Shortcuts" = "Scurtaturi";
+"Uploads" = "Incarcari";
+"Language" = "Limba";
+"Language:" = "Limba:";
+"Restart the app to fully apply the new language." = "Reporneste aplicatia pentru a aplica complet noua limba.";
+"Capture" = "Captura";
+"Play sound on capture" = "Redă sunet la captură";
+"Play sound on copy" = "Reda sunet la copiere";
+"Remember last selected tool" = "Retine ultimul instrument selectat";
+"Show floating thumbnail after capture" = "Afiseaza miniatura flotanta dupa captura";
+"Launch at login" = "Porneste la autentificare";
+"Show snap alignment guides" = "Afiseaza ghidajele de aliniere";
+"Snap selection edges to image boundaries" = "Aliniaza marginile selectiei la limitele imaginii";
+"Capture mouse cursor in screenshot" = "Captura cursorul mouse-ului in captura de ecran";
+"Double-click selection to copy" = "Dublu-clic pe selectie pentru a copia";
+"Hide capture instructions" = "Ascunde instructiunile de captura";
+"Disable shadow outside selection" = "Dezactiveaza umbra in afara selectiei";
+"Show shortcuts in tooltips" = "Afiseaza scurtaturile in sfaturi";
+"Use window title in saved filename" = "Foloseste titlul ferestrei in numele fisierului salvat";
+"Hide menu bar icon" = "Ascunde pictograma din bara de meniu";
+"Menu bar icon:" = "Pictograma barei de meniu:";
+"Custom symbol" = "Simbol personalizat";
+"Default" = "Implicit";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Introdu orice nume de SF Symbol (ex. camera.fill) sau alege o presetare. Rasfoieste numele in aplicatia SF Symbols de la Apple. Numele invalide revin la pictograma implicita.";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Scurtaturile functioneaza in continuare. Pentru a afisa din nou pictograma, reporneste Snaploom.";
+"Check for updates automatically" = "Verifica actualizarile automat";
+"Check for beta updates" = "Verifica actualizarile beta";
+"Thumbnail" = "Miniatura";
+"  Dismiss after:" = "  Inchide dupa:";
+"seconds before auto-dismiss (0 = never)" = "secunde inainte de inchidere automata (0 = niciodata)";
+"  Multiple previews:" = "  Previzualizari multiple:";
+"  Position:" = "  Pozitie:";
+"Stack (keep all)" = "Stiva (pastreaza toate)";
+"Replace (show only latest)" = "Inlocuieste (afiseaza doar ultima)";
+"Menu Bar Order" = "Ordinea barei de meniu";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Alege ordinea actiunilor de capturare in meniul barei de meniu Snaploom.";
+"Move up" = "Muta in sus";
+"Move down" = "Muta in jos";
+"Output" = "Iesire";
+"Image format:" = "Format imagine:";
+"Quality:" = "Calitate:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Salveaza la rezolutie standard (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Injumatateste dimensiunile pe ecranele Retina, fisiere de ~4x mai mici";
+"Embed sRGB color profile" = "Incorporeaza profilul de culoare sRGB";
+"Ensures consistent colors across different displays" = "Asigura culori consistente pe diferite ecrane";
+"Screenshot History" = "Istoric capturi de ecran";
+"History size:" = "Dimensiune istoric:";
+"screenshots kept on disk (0 = off)" = "capturi de ecran pastrate pe disc (0 = dezactivat)";
+"Order history by last edit" = "Ordoneaza istoricul dupa ultima editare";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Capturile editate se muta in partea de sus. Dezactivat le pastreaza in ordinea capturarii.";
+"Custom · %@" = "Personalizat · %@";
+"Space" = "Spatiu";
+"Save Directory" = "Director de salvare";
+"Save folder:" = "Dosar de salvare:";
+"Save action:" = "Actiune salvare:";
+"Save to default folder" = "Salveaza in dosarul implicit";
+"Ask where to save" = "Intreaba unde sa salveze";
+"Browse…" = "Rasfoieste...";
+"Appearance" = "Aspect";
+"Accent color:" = "Culoare accent:";
+"Icon color:" = "Culoare pictograma:";
+"Background color:" = "Culoare fundal:";
+"Reset" = "Reseteaza";
+"OCR Capture:" = "Captura OCR:";
+"Show window + copy to clipboard" = "Afiseaza fereastra + copiaza in clipboard";
+"Show window only" = "Afiseaza doar fereastra";
+"Copy to clipboard only" = "Copiaza doar in clipboard";
+"Enter / Quick Capture:" = "Enter / Captura rapida:";
+"Save to file" = "Salveaza in fisier";
+"Save + copy to clipboard" = "Salveaza + copiaza in clipboard";
+"OCR Action" = "Actiune OCR";
+"OCR & QR Capture:" = "Captura OCR & QR:";
+"OCR & QR" = "OCR & QR";
+"Text & QR Recognition" = "Recunoastere text & QR";
+"QR Code" = "Cod QR";
+"QR Codes" = "Coduri QR";
+"Capture OCR & QR" = "Captura OCR & QR";
+"Capture area and read text/QR codes" = "Captura zona si citeste text/coduri QR";
+"Run OCR & QR" = "Ruleaza OCR & QR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Scurtaturi de tastatura";
+"Hotkeys" = "Taste rapide";
+"Clear shortcut" = "Sterge scurtatura";
+"Press keys..." = "Apasa tastele...";
+"Waiting..." = "Se asteapta...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Instrumente de adnotare";
+"Hidden tools are removed from the bottom toolbar." = "Instrumentele ascunse sunt eliminate din bara de instrumente de jos.";
+"Capture Actions" = "Actiuni de captura";
+"Bottom Toolbar Actions" = "Actiuni bara de instrumente de jos";
+"Hidden actions are removed from the bottom toolbar." = "Actiunile ascunse sunt eliminate din bara de instrumente de jos.";
+"Editor Actions" = "Actiuni editor";
+"Right Toolbar Actions" = "Actiuni bara de instrumente din dreapta";
+"Hidden actions are removed from the right toolbar." = "Actiunile ascunse sunt eliminate din bara de instrumente din dreapta.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Rata de cadre:";
+"After recording:" = "Dupa inregistrare:";
+"Save recording to:" = "Salveaza inregistrarea in:";
+"Save Recording" = "Salveaza inregistrarea";
+"Clear" = "Sterge";
+"Max height:" = "Inaltime maxima:";
+"px (0 = unlimited)" = "px (0 = nelimitat)";
+"Behavior" = "Comportament";
+"Auto-scroll (sends synthetic scroll events)" = "Derulare automata (trimite evenimente de derulare sintetice)";
+"Detect fixed/sticky headers" = "Detecteaza anteturile fixe/lipicioase";
+"Scroll speed:" = "Viteza de derulare:";
+"Slow" = "Lent";
+"Medium" = "Mediu";
+"Fast" = "Rapid";
+"Very fast" = "Foarte rapid";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Serviciu de incarcare";
+"Upload Provider" = "Furnizor de incarcare";
+"Provider:" = "Furnizor:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (imagini + videoclipuri)";
+"imgbb (images only)" = "imgbb (doar imagini)";
+"S3-Compatible (images + videos)" = "S3-Compatible (imagini + videoclipuri)";
+"S3-Compatible Storage" = "S3-Compatible Storage";
+"Sign In with Google" = "Autentificare cu Google";
+"Sign Out" = "Deconectare";
+"Signed in" = "Conectat";
+"Not signed in" = "Neconectat";
+"Account:" = "Cont:";
+"Test Connection" = "Testeaza conexiunea";
+"Fill in endpoint, bucket, and credentials first" = "Completeaza mai intai endpoint-ul, bucket-ul si credentialele";
+"Testing..." = "Se testeaza...";
+"Connection successful!" = "Conexiune reusita!";
+"Leave empty to use default" = "Lasa gol pentru a folosi valoarea implicita";
+"Endpoint:" = "Endpoint:";
+"Region:" = "Regiune:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Cheie de acces:";
+"Secret Key:" = "Cheie secreta:";
+"Public URL:" = "URL public:";
+"Path Prefix:" = "Prefix cale:";
+"API key:" = "Cheie API:";
+"Upload History" = "Istoric incarcari";
+"No uploads yet." = "Nicio incarcare inca.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL de baza pentru acces public. Daca este gol, se foloseste URL-ul endpoint-ului S3 (poate sa nu fie accesibil public).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "O cheie partajata este inclusa — obtine propria cheie gratuita la imgbb.com/api daca atingi limitele de rata. Doar imagini (fara suport video).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Functioneaza cu AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 si alte servicii S3-compatible. Suporta imagini si videoclipuri.";
+"Configure S3 in Preferences" = "Configureaza S3 in Preferinte";
+"Sign in to Google Drive in Preferences" = "Autentifica-te in Google Drive din Preferinte";
+"Video upload requires Google Drive or S3" = "Incarcarea video necesita Google Drive sau S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Versiunea %@ (%@)";
+"Made by" = "Creat de";
+"Licensed under the GPLv3" = "Licenta GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Un instrument gratuit si open-source de captura de ecran si inregistrare pentru macOS.\nComplet nativ — construit cu Swift si AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Nicio imagine in clipboard";
+"No Image or Text on Clipboard" = "Nicio imagine sau text in clipboard";
+"Copy an image to the clipboard first, then try again." = "Copiaza mai intai o imagine in clipboard, apoi incearca din nou.";
+"Copy an image or text to the clipboard first, then try again." = "Copiaza mai intai o imagine sau text in clipboard, apoi incearca din nou.";
+"OK" = "OK";
+"Accessibility Access Required" = "Acces de accesibilitate necesar";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom are nevoie de permisiunea de accesibilitate pentru a derula automat alte aplicatii. Acorda acces din Setarile sistemului, apoi incearca din nou.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom are nevoie de permisiunea Accesibilitate pentru captura cu derulare. Acordați acces în Setările Sistemului și încercați din nou.";
+"Open Settings" = "Deschide setarile";
+"Cancel" = "Anuleaza";
+"Microphone Access Required" = "Acces la microfon necesar";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom are nevoie de permisiunea microfonului pentru a inregistra audio vocal. Deschide Setarile sistemului pentru a acorda acces.";
+"Upload to Google Drive?" = "Incarca pe Google Drive?";
+"Upload to S3?" = "Incarca pe S3?";
+"Upload to imgbb.com?" = "Incarca pe imgbb.com?";
+"Your screenshot will be uploaded." = "Captura ta de ecran va fi incarcata.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Bun venit in Snaploom";
+"Snaploom needs one permission" = "Snaploom are nevoie de o permisiune";
+"Screen Recording not yet granted" = "Inregistrarea ecranului nu a fost inca acordata";
+"Screen Recording granted!" = "Inregistrarea ecranului a fost acordata!";
+"Enable Snaploom, then try taking a screenshot" = "Activeaza Snaploom, apoi incearca sa faci o captura de ecran";
+"Open Screen Recording Settings" = "Deschide setarile de inregistrare a ecranului";
+"Continue" = "Continua";
+
+/* OCR Window */
+"Text Recognition" = "Recunoastere text";
+"Translate to:" = "Traduce in:";
+"%d chars · %d words" = "%d caractere · %d cuvinte";
+"Copy  ⌘↩" = "Copiaza  ⌘↩";
+"AI Search" = "Cautare AI";
+"Show Original" = "Afiseaza originalul";
+"Translation Failed" = "Traducerea a esuat";
+"Translation" = "Traducere";
+"(No text detected in the selected area)" = "(Niciun text detectat in zona selectata)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL copiat in clipboard";
+"Uploading... %d%%" = "Se incarca... %d%%";
+"Upload failed: %@" = "Incarcarea a esuat: %@";
+"Uploaded! Link copied." = "Incarcat! Link copiat.";
+"Uploading to %@... %d%%" = "Se incarca pe %@... %d%%";
+"Open" = "Deschide";
+
+/* Recording Toast */
+"Recording saved" = "Inregistrare salvata";
+"%@ • Recording saved" = "%@ • Inregistrare salvata";
+"Copy Path" = "Copiaza calea";
+"Path copied!" = "Cale copiata!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom Editor Video";
+"%@ selected" = "%@ selectat";
+"Exporting..." = "Se exporta...";
+"Export failed" = "Exportul a esuat";
+"Saved to %@" = "Salvat in %@";
+"Save failed" = "Salvarea a esuat";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Salveaza ca...";
+"Choose a folder" = "Alege un dosar";
+"Save All to Folder…" = "Salveaza toate in dosar...";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Derulare automata";
+"Stop" = "Opreste";
+"Scrolling..." = "Se deruleaza...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Presetari";
+"Adjustments" = "Ajustari";
+"Brightness" = "Luminozitate";
+"Contrast" = "Contrast";
+"Saturation" = "Saturatie";
+"Sharpness" = "Claritate";
+
+/* Time Ago */
+"just now" = "chiar acum";
+"%ds ago" = "acum %ds";
+"%dm ago" = "acum %dm";
+"%dh ago" = "acum %dh";
+
+/* Hotkey Labels */
+"History" = "Istoric";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Apasa \"Inregistreaza\" si apasa o combinatie de taste cu cel putin un modificator (⌘, ⌥, ⌃, ⇧) pentru a seta o scurtatura.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "Se proceseaza GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Monitorizarea tastaturii este necesara";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom are nevoie de permisiunea Monitorizare intrare pentru a afisa apasarile de taste in timpul inregistrarii. Acorda acces din System Settings, apoi incearca din nou.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom are nevoie de permisiunea de accesibilitate pentru a afisa apasarile de taste in timpul inregistrarii. Acorda acces din System Settings, apoi incearca din nou.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Afiseaza apasarile de taste";
+"Shortcuts Only" = "Doar scurtaturi";
+"All Keystrokes" = "Toate apasarile de taste";
+
+/* Recording — Settings Popover */
+"Delay:" = "Intarziere:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Copiat in clipboard!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Suprapunere webcam";
+"Camera Access Required" = "Acces la camera necesar";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom are nevoie de permisiunea camerei pentru suprapunerea webcam. Deschide Setarile sistemului pentru a acorda acces.";
+"Webcam" = "Webcam";
+"Bottom Right" = "Dreapta jos";
+"Bottom Left" = "Stanga jos";
+"Top Right" = "Dreapta sus";
+"Top Left" = "Stanga sus";
+"Small" = "Mic";
+"Large" = "Mare";
+"Webcam Size Small" = "Mic";
+"Webcam Size Medium" = "Mediu";
+"Webcam Size Large" = "Mare";
+"Webcam Size Extra Large" = "Foarte mare";
+"Circle" = "Cerc";
+"Rounded Rectangle" = "Dreptunghi rotunjit";
+"Cam pos:" = "Poz. cam.:";
+"Cam size:" = "Dim. cam.:";
+"Cam shape:" = "Forma cam.:";
+
+/* New Strings */
+"Settings..." = "Setări...";
+"Settings" = "Setări";
+"Snaploom Settings" = "Setari Snaploom";
+"Also open in Editor" = "Deschide si in editor";
+"Hide controls" = "Ascunde controalele";
+"Hide recording controls" = "Ascunde controalele de inregistrare";
+"Stop recording from the menu bar icon instead." = "Opreste inregistrarea din pictograma barei de meniu.";
+"Pixelate" = "Pixelare";
+"Blur" = "Estompare";
+"Solid" = "Solid";
+"Erase" = "Sterge";
+"Done" = "Gata";
+"Do nothing" = "Nu face nimic";
+"Overlay / Editor Shortcuts" = "Scurtaturi suprapunere / editor";
+"Set" = "Seteaza";
+"Press..." = "Apasa...";
+"Reset to default" = "Reseteaza la implicit";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Apasa o singura tasta pentru a o atribui ca scurtatura pentru acel instrument. Functioneaza cand suprapunerea sau editorul este activ.";
+"Keep Separate" = "Pastreaza separat";
+"Merge Audio" = "Combina audio";
+"Audio Tracks" = "Piste audio";
+"Adjust volume for each audio track:" = "Ajusteaza volumul pentru fiecare pista audio:";
+"Microphone:" = "Microfon:";
+"System audio:" = "Sunet sistem:";
+"Loupe" = "Lupa";
+"Stamp" = "Stampila";
+"Unlimited" = "Nelimitat";
+"Save changes?" = "Salvezi modificarile?";
+"Your annotations will be lost if you close without saving." = "Adnotarile tale vor fi pierdute daca inchizi fara a salva.";
+"Save & Close" = "Salveaza si inchide";
+"Discard" = "Renunta";
+"Stop Recording" = "Opreste inregistrarea";
+"Pause" = "Pauza";
+"Resume" = "Reia";
+"Engine:" = "Motor:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (pe dispozitiv)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Traducerea Apple este mai rapida si functioneaza offline. Google Translate suporta mai multe limbi.";
+"Download language packs in System Settings…" = "Descarca pachetele de limbi din Setarile sistemului…";
+"Configure S3 in Settings" = "Configureaza S3 in Setari";
+"Sign in to Google Drive in Settings" = "Autentifica-te in Google Drive din Setari";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Versiune offline: integrările de încărcare și stocare în cloud au fost eliminate. Verificările de actualizări încă se pot conecta la serverul de actualizări al Snaploom. Capturile de ecran și înregistrările rămân locale, cu excepția cazului în care le partajezi sau le salvezi chiar tu.";
+"Position:" = "Pozitie:";
+"Size:" = "Dimensiune:";
+"Shape:" = "Forma:";
+
+"Same as screenshots" = "La fel ca capturile de ecran";
+"  Preview size:" = "  Dimensiune previzualizare:";
+"(0 = off)" = "(0 = dezactivat)";
+"Clear All" = "Șterge tot";
+"Clear History?" = "Ștergi istoricul?";
+"This will permanently delete all screenshots from history." = "Aceasta va șterge definitiv toate capturile de ecran din istoric.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Apasă \"Setează\" și tastează o combinație de taste cu cel puțin un modificator (⌘, ⌥, ⌃, ⇧) pentru a seta o scurtătură.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Fișierele sunt încărcate într-un folder \"Snaploom\" din Google Drive-ul tău. Totul rămâne privat — nimic nu este distribuit public.";
+
+"Pressure" = "Presiune";
+
+/* Aspect Ratio & Resolution Presets */
+"Aspect ratio & resolution presets" = "Presetari raport aspect & rezolutie";
+"Aspect ratio" = "Raport aspect";
+"Resolution" = "Rezolutie";
+"Freeform" = "Liber";
+"Units" = "Unitati";
+"Keep ratio for next captures" = "Pastreaza raportul pentru capturile urmatoare";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Deschide video...";
+"Choose a video to open in Snaploom editor" = "Alege un videoclip pentru a-l deschide in editorul Snaploom";
+"Click to add effects" = "Clic pentru a adauga efecte";
+"Add Zoom" = "Adauga zoom";
+"Add Censor" = "Adauga cenzura";
+"Add Cut" = "Adauga taietura";
+"Add Speed" = "Adauga viteza";
+"Add Freeze" = "Adauga inghetare";
+"Add Text" = "Adauga text";
+"Delete Zoom" = "Sterge zoom-ul";
+"Delete Censor" = "Sterge cenzura";
+"Delete Cut" = "Sterge taietura";
+"Delete Speed" = "Sterge viteza";
+"Delete Freeze" = "Sterge inghetarea";
+"Delete Text" = "Sterge textul";
+"Edit Text…" = "Editeaza textul…";
+"Huge" = "Imens";
+"Bold" = "Aldin";
+"Italic" = "Cursiv";
+"Alignment" = "Aliniere";
+"Left" = "Stanga";
+"Center" = "Centru";
+"Right" = "Dreapta";
+"Text Color" = "Culoare text";
+"Background Color" = "Culoare fundal";
+"Rounded" = "Rotunjit";
+"Custom…" = "Personalizat…";
+"Transparent" = "Transparent";
+"Black" = "Negru";
+"White" = "Alb";
+"Yellow" = "Galben";
+"Red" = "Rosu";
+"Green" = "Verde";
+"Blue" = "Albastru";
+"Untitled" = "Fara titlu";
+"Add effect" = "Adauga efect";
+"Fade" = "Estompare";
+"High" = "Ridicat";
+"Low" = "Scazut";
+"Not enough room here" = "Nu este suficient spatiu aici";
+"Copied!" = "Copiat!";
+"Converting to GIF…" = "Se converteste in GIF…";
+"GIF conversion failed" = "Conversia in GIF a esuat";
+"No video track found" = "Nu s-a gasit nicio pista video";
+"Preview:" = "Previzualizare:";
+"Copy Screen Info" = "Copiaza informatiile despre ecran";
+"Copies display and capture diagnostics to clipboard" = "Copiaza in clipboard diagnosticele de afisare si captura";
+"Accent" = "Accent";
+"Icon" = "Pictograma";
+"Background" = "Fundal";
+"Custom" = "Personalizat";
+"Theme:" = "Tema:";
+"Application" = "Aplicatie";
+"Capture area and extract text" = "Captura zona si extrage textul";
+"Capture the full screen" = "Captura ecranul complet";
+"Counter for multi-screen captures" = "Contor pentru capturi multi-ecran";
+"8-character random string (e.g. k3j7x9q2)" = "Sir aleatoriu de 8 caractere (ex. k3j7x9q2)";
+"Filename Template Tokens" = "Jetoane pentru sablonul numelui de fisier";
+"Filename tokens" = "Jetoane nume fisier";
+"Filename:" = "Nume fisier:";
+"Open an image file in the editor" = "Deschide un fisier imagine in editor";
+"Open the recent captures overlay" = "Deschide suprapunerea capturilor recente";
+"Open this settings window" = "Deschide aceasta fereastra de setari";
+"Quick capture (uses your Enter action)" = "Captura rapida (foloseste actiunea ta Enter)";
+"Re-capture the last selected area" = "Recaptureaza ultima zona selectata";
+"Screenshots only — captured window title (blank otherwise)" = "Doar capturi de ecran — titlul ferestrei capturate (gol altfel)";
+"Show available filename tokens" = "Afiseaza jetoanele disponibile pentru nume fisier";
+"Enable snaploom:// URL scheme" = "Activeaza schema URL snaploom://";
+"Show supported URL scheme commands" = "Afiseaza comenzile schemei URL suportate";
+"Start area capture" = "Porneste captura de zona";
+"Start area recording" = "Porneste inregistrarea de zona";
+"Start full-screen recording" = "Porneste inregistrarea ecranului complet";
+"Start scroll capture" = "Porneste captura cu derulare";
+"Stop the current recording" = "Opreste inregistrarea curenta";
+"Supported URL Scheme Commands" = "Comenzi schema URL suportate";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Extensia fisierului este adaugata automat. Bara oblica si doua puncte din {window} devin liniute.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Declanseaza Snaploom din Raycast, Alfred, Shortcuts sau orice instrument care deschide URL-uri.";
+"URL scheme info" = "Informatii schema URL";
+"sec (0 = never)" = "sec (0 = niciodata)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Copie de rezervă a setărilor";
+"Export Settings…" = "Exportă setările…";
+"Import Settings…" = "Importă setările…";
+"Reveal Settings File in Finder" = "Afișează fișierul de setări în Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Exportă preferințele într-un fișier pentru a le muta pe alt Mac sau pe o instalare nouă. Datele de autentificare pentru încărcare, folderul de salvare și istoricul capturilor nu sunt incluse. Setările sunt stocate în containerul aplicației Snaploom.";
+"Export Settings" = "Exportă setările";
+"Import Settings" = "Importă setările";
+"Import failed" = "Importul a eșuat";
+"Settings exported" = "Setări exportate";
+"Settings imported" = "Setări importate";
+"Import" = "Importă";
+"Later" = "Mai târziu";
+"Relaunch Now" = "Relansează acum";
+"Replace your current settings?" = "Înlocuiești setările curente?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Importarea va înlocui preferințele curente cu cele din acest fișier. Folderul de salvare, datele de autentificare pentru încărcare și istoricul capturilor sunt păstrate. Această acțiune nu poate fi anulată.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d setări au fost aplicate. Relansează Snaploom pentru a aplica toate modificările.";
+"A few large items were too big to include. Everything else was saved." = "Câteva elemente mari au fost prea voluminoase pentru a fi incluse. Restul a fost salvat.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Imaginea personalizată de fundal Beautify a fost prea mare pentru a fi inclusă. Restul a fost salvat.";
+"This file is not a valid Snaploom settings file." = "Acest fișier nu este un fișier de setări Snaploom valid.";
+"This settings file contains no settings." = "Acest fișier de setări nu conține nicio setare.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Acest fișier de setări a fost creat cu o versiune mai nouă de Snaploom. Actualizează mai întâi Snaploom.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Capturează, traduce și suprapune textul pe imagine";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Deschide o intrare din istoric în editor (păstrează adnotările editabile)";

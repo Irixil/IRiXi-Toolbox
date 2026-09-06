@@ -1,0 +1,671 @@
+/* Tiếng Việt — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Chụp vùng chọn";
+"Capture Screen" = "Chụp màn hình";
+"Capture OCR" = "Chụp OCR";
+"Capture OCR & QR" = "Chụp OCR & QR";
+"Capture area and read text/QR codes" = "Chụp vùng chọn và đọc văn bản/mã QR";
+"Quick Capture" = "Chụp nhanh";
+"Scroll Capture" = "Chụp cuộn trang";
+"Capture Last Area" = "Chụp vùng cuối cùng";
+"Capture Delay" = "Chụp hẹn giờ";
+"None" = "Không";
+"%d seconds" = "%d giây";
+"Record Area" = "Quay vùng chọn";
+"Record Screen" = "Quay màn hình";
+"Recent Captures" = "Ảnh chụp gần đây";
+"Show History Panel" = "Hiển thị bảng lịch sử";
+"Open Image..." = "Mở ảnh...";
+"Open from Clipboard" = "Mở từ bộ nhớ tạm";
+"Pin from Clipboard" = "Ghim từ bộ nhớ tạm";
+"Preferences..." = "Tùy chọn...";
+"Check for Updates..." = "Kiểm tra cập nhật...";
+"Quit Snaploom" = "Thoát Snaploom";
+"No recent captures" = "Không có ảnh chụp gần đây";
+"Clear History" = "Xóa lịch sử";
+
+/* History Panel */
+"Copy" = "Sao chép";
+"Save As..." = "Lưu thành...";
+"Open in Editor" = "Mở trong trình chỉnh sửa";
+"Pin to Screen" = "Ghim lên màn hình";
+"Quick Look" = "Xem nhanh";
+"Delete" = "Xóa";
+"All" = "Tất cả";
+"Screenshots" = "Ảnh chụp";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "Nhấp để sao chép · Kéo vào ứng dụng";
+"No captures yet" = "Chưa có ảnh chụp nào";
+
+/* Floating Thumbnail */
+"Close All" = "Đóng tất cả";
+"Save All to Folder…" = "Lưu tất cả vào thư mục…";
+"Save" = "Lưu";
+
+/* Editor Top Bar */
+"Zoom In" = "Phóng to";
+"Zoom Out" = "Thu nhỏ";
+"Zoom" = "Thu phóng";
+"Fit Canvas" = "Vừa khung hình";
+"Crop" = "Cắt";
+"Flip Horizontal" = "Lật ngang";
+"Flip Vertical" = "Lật dọc";
+"Rotate Left" = "Xoay trái";
+"Rotate Right" = "Xoay phải";
+"Add Capture" = "Thêm ảnh chụp";
+
+/* Toolbar - Tools */
+"Arrow" = "Mũi tên";
+"Line" = "Đường thẳng";
+"Rectangle" = "Hình chữ nhật";
+"Ellipse" = "Hình elip";
+"Pencil" = "Bút chì";
+"Pencil (Draw)" = "Bút chì (Vẽ)";
+"Marker" = "Bút đánh dấu";
+"Text" = "Văn bản";
+"Number" = "Số thứ tự";
+"Number / Counter" = "Số thứ tự / Bộ đếm";
+"Stamp / Emoji" = "Tem / Emoji";
+"Censor" = "Che mờ";
+"Censor (Pixelate / Blur / Solid)" = "Che mờ (Khảm / Mờ / Đặc)";
+"Measure" = "Đo";
+"Measure (px)" = "Đo (px)";
+"Magnify (Loupe)" = "Phóng đại (Kính lúp)";
+"Highlight" = "Tiêu điểm";
+"Highlight (Spotlight)" = "Tiêu điểm (Đèn rọi)";
+"Dim" = "Làm tối";
+"Color Sampler" = "Lấy mẫu màu";
+"Color Picker" = "Bộ chọn màu";
+"Select & Edit" = "Chọn & Chỉnh sửa";
+"Color" = "Màu";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Sao chép vào bộ nhớ tạm";
+"Save to File" = "Lưu vào tệp";
+"Save to" = "Lưu vào";
+"Open in Editor Window" = "Mở trong cửa sổ chỉnh sửa";
+"Pin on Screen" = "Ghim lên màn hình";
+"Pin" = "Ghim";
+"Pin (floating window)" = "Ghim (cửa sổ nổi)";
+"OCR" = "OCR";
+"OCR Text" = "OCR văn bản";
+"OCR (extract text)" = "OCR (trích xuất văn bản)";
+"OCR & QR" = "OCR & QR";
+"Run OCR & QR" = "Chạy OCR & QR";
+"Open Link" = "Mở liên kết";
+"Open With" = "Mở bằng";
+"No Apps Available" = "Không có ứng dụng nào";
+"No Share Services" = "Không có dịch vụ chia sẻ";
+"QR Code" = "Mã QR";
+"QR Codes" = "Mã QR";
+"Upload" = "Tải lên";
+"Share" = "Chia sẻ";
+"Undo" = "Hoàn tác";
+"Redo" = "Làm lại";
+"Close" = "Đóng";
+"Remove Background" = "Xóa nền";
+"Beautify" = "Làm đẹp";
+"Adjust" = "Điều chỉnh";
+"Adjust (Image Effects)" = "Điều chỉnh (Hiệu ứng ảnh)";
+"Invert Colors" = "Đảo màu";
+"Record" = "Quay";
+"Record screen" = "Quay màn hình";
+"Translate" = "Dịch";
+"Auto-Redact sensitive data" = "Tự động che dữ liệu nhạy cảm";
+"Move Selection" = "Di chuyển vùng chọn";
+
+/* Toolbar - Recording */
+"Start Recording" = "Bắt đầu quay";
+"Cancel Recording" = "Hủy quay";
+"Highlight Mouse Clicks" = "Nổi bật nhấp chuột";
+"Record System Audio" = "Ghi âm thanh hệ thống";
+"Record Microphone" = "Ghi micro";
+"Recording Settings" = "Cài đặt quay";
+
+/* Tool Options */
+"Size" = "Kích thước";
+"Stroke" = "Nét";
+"Radius" = "Bán kính";
+"Start:" = "Bắt đầu:";
+"Draw:" = "Vẽ:";
+"Auto:" = "Tự động:";
+"Fill" = "Tô";
+"Outline" = "Viền";
+"More Emojis" = "Thêm Emoji";
+"Load Image" = "Tải ảnh";
+"Gradient Style" = "Kiểu chuyển sắc";
+"On" = "Bật";
+"Text Only" = "Chỉ văn bản";
+"All Text" = "Tất cả văn bản";
+"PII" = "PII";
+"Faces" = "Khuôn mặt";
+"People" = "Người";
+"Confirm before upload" = "Xác nhận trước khi tải lên";
+"Flip" = "Lật";
+"Smooth" = "Mượt";
+"Refined" = "Tinh chỉnh";
+"Smart" = "Thông minh";
+"Padding" = "Đệm";
+"Shadow" = "Bóng";
+"Right-click to add points" = "Nhấp chuột phải để thêm điểm";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Giữ 1 tự động dọc  ·  Giữ 2 tự động ngang";
+"Limit to selection" = "Giới hạn trong vùng chọn";
+"Effect" = "Hiệu ứng";
+"Font" = "Phông chữ";
+"System" = "Hệ thống";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Nhấp vào cửa sổ  ·  Kéo để chọn vùng  ·  F để toàn màn hình";
+"Drag to select  ·  Click for full screen" = "Kéo để chọn  ·  Nhấp để toàn màn hình";
+"Release to annotate and edit" = "Thả chuột để chú thích và chỉnh sửa";
+"Release to finish" = "Thả chuột để hoàn tất";
+"Hold Space to move. Release to annotate and edit" = "Giữ Space để di chuyển. Thả chuột để chú thích và chỉnh sửa";
+"Hold Space to move. Release to finish" = "Giữ Space để di chuyển. Thả chuột để hoàn tất";
+"Space" = "Space";
+"Window snap: " = "Bắt cửa sổ: ";
+"ON" = "BẬT";
+"OFF" = "TẮT";
+"  (Tab to toggle)" = "  (Tab để chuyển)";
+"Right-click to copy" = "Nhấp chuột phải để sao chép";
+"Copied %@" = "Đã sao chép %@";
+"Set color %@" = "Đặt màu %@";
+"Draw something first to use the move tool." = "Hãy vẽ gì đó trước khi dùng công cụ di chuyển.";
+"Drag to reposition" = "Kéo để thay đổi vị trí";
+
+/* Resolution / Aspect Ratio Presets */
+"Aspect ratio & resolution presets" = "Cài sẵn tỷ lệ khung hình & độ phân giải";
+"Aspect ratio" = "Tỷ lệ khung hình";
+"Resolution" = "Độ phân giải";
+"Freeform" = "Tự do";
+"Units" = "Đơn vị";
+"Keep ratio for next captures" = "Giữ tỷ lệ cho các lần chụp sau";
+"Custom · %@" = "Tùy chỉnh · %@";
+"Order history by last edit" = "Sắp xếp lịch sử theo lần chỉnh sửa gần nhất";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Ảnh chụp đã chỉnh sửa sẽ chuyển lên đầu. Tắt để giữ theo thứ tự chụp.";
+
+/* Overlay - Popovers */
+"Format:" = "Định dạng:";
+"FPS:" = "FPS:";
+"When done:" = "Khi xong:";
+"Open editor" = "Mở trình chỉnh sửa";
+"Show in Finder" = "Hiển thị trong Finder";
+"Copy to clipboard" = "Sao chép vào bộ nhớ tạm";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Tùy chọn Snaploom";
+"General" = "Chung";
+"Tools" = "Công cụ";
+"Recording" = "Quay phim";
+"About" = "Giới thiệu";
+"Shortcuts" = "Phím tắt";
+"Uploads" = "Tải lên";
+"Language" = "Ngôn ngữ";
+"Language:" = "Ngôn ngữ:";
+"Restart the app to fully apply the new language." = "Khởi động lại ứng dụng để áp dụng đầy đủ ngôn ngữ mới.";
+"Capture" = "Chụp";
+"Play sound on capture" = "Phát âm thanh khi chụp";
+"Play sound on copy" = "Phát âm thanh khi sao chép";
+"Remember last selected tool" = "Nhớ công cụ đã chọn lần trước";
+"Show floating thumbnail after capture" = "Hiển thị ảnh thu nhỏ nổi sau khi chụp";
+"Launch at login" = "Khởi chạy khi đăng nhập";
+"Show snap alignment guides" = "Hiển thị đường căn chỉnh bắt dính";
+"Snap selection edges to image boundaries" = "Bắt dính cạnh vùng chọn vào ranh giới ảnh";
+"Capture mouse cursor in screenshot" = "Chụp con trỏ chuột trong ảnh";
+"Double-click selection to copy" = "Nhấp đúp vào vùng chọn để sao chép";
+"Hide capture instructions" = "Ẩn hướng dẫn chụp màn hình";
+"Disable shadow outside selection" = "Tắt bóng tối bên ngoài vùng chọn";
+"Show shortcuts in tooltips" = "Hiển thị phím tắt trong chú giải công cụ";
+"Use window title in saved filename" = "Dùng tiêu đề cửa sổ trong tên tệp";
+"Hide menu bar icon" = "Ẩn biểu tượng thanh menu";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Phím tắt vẫn hoạt động. Để hiện lại biểu tượng, hãy khởi chạy lại Snaploom.";
+"Menu bar icon:" = "Biểu tượng thanh menu:";
+"Default" = "Mặc định";
+"Custom symbol" = "Ký hiệu tùy chỉnh";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Nhập bất kỳ tên SF Symbol nào (ví dụ: camera.fill) hoặc chọn một cài sẵn. Duyệt tên trong ứng dụng SF Symbols của Apple. Tên không hợp lệ sẽ chuyển về biểu tượng mặc định.";
+"Menu Bar Order" = "Thứ tự thanh menu";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Chọn thứ tự các hành động chụp trong menu thanh menu của Snaploom.";
+"Move up" = "Di chuyển lên";
+"Move down" = "Di chuyển xuống";
+"Check for updates automatically" = "Tự động kiểm tra cập nhật";
+"Check for beta updates" = "Kiểm tra bản cập nhật beta";
+"Thumbnail" = "Ảnh thu nhỏ";
+"  Dismiss after:" = "  Ẩn sau:";
+"seconds before auto-dismiss (0 = never)" = "giây trước khi tự động ẩn (0 = không bao giờ)";
+"  Multiple previews:" = "  Nhiều bản xem trước:";
+"Stack (keep all)" = "Xếp chồng (giữ tất cả)";
+"Replace (show only latest)" = "Thay thế (chỉ hiển thị mới nhất)";
+"Output" = "Đầu ra";
+"Image format:" = "Định dạng ảnh:";
+"Quality:" = "Chất lượng:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Lưu ở độ phân giải tiêu chuẩn (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Giảm một nửa kích thước trên màn hình Retina, tệp nhỏ hơn ~4 lần";
+"Embed sRGB color profile" = "Nhúng hồ sơ màu sRGB";
+"Ensures consistent colors across different displays" = "Đảm bảo màu sắc đồng nhất trên các màn hình khác nhau";
+"Screenshot History" = "Lịch sử ảnh chụp";
+"History size:" = "Dung lượng lịch sử:";
+"screenshots kept on disk (0 = off)" = "ảnh chụp lưu trên ổ đĩa (0 = tắt)";
+"Save Directory" = "Thư mục lưu";
+"Save folder:" = "Thư mục lưu:";
+"Browse…" = "Duyệt…";
+"Appearance" = "Giao diện";
+"Accent color:" = "Màu nhấn:";
+"Icon color:" = "Màu biểu tượng:";
+"Background color:" = "Màu nền:";
+"Reset" = "Đặt lại";
+"OCR Capture:" = "Chụp OCR:";
+"OCR & QR Capture:" = "Chụp OCR & QR:";
+"Show window + copy to clipboard" = "Hiện cửa sổ + sao chép vào bộ nhớ tạm";
+"Show window only" = "Chỉ hiện cửa sổ";
+"Copy to clipboard only" = "Chỉ sao chép vào bộ nhớ tạm";
+"Enter / Quick Capture:" = "Enter / Chụp nhanh:";
+"Save to file" = "Lưu vào tệp";
+"Save + copy to clipboard" = "Lưu + sao chép vào bộ nhớ tạm";
+"Save action:" = "Hành động lưu:";
+"Save to default folder" = "Lưu vào thư mục mặc định";
+"Ask where to save" = "Hỏi nơi lưu";
+"OCR Action" = "Hành động OCR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Phím tắt bàn phím";
+"Hotkeys" = "Phím nóng";
+"Clear shortcut" = "Xóa phím tắt";
+"Press keys..." = "Nhấn phím...";
+"Waiting..." = "Đang chờ...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Công cụ chú thích";
+"Hidden tools are removed from the bottom toolbar." = "Công cụ bị ẩn sẽ bị xóa khỏi thanh công cụ dưới.";
+"Capture Actions" = "Hành động chụp";
+"Bottom Toolbar Actions" = "Hành động thanh công cụ dưới";
+"Hidden actions are removed from the bottom toolbar." = "Hành động bị ẩn sẽ bị xóa khỏi thanh công cụ dưới.";
+"Editor Actions" = "Hành động trình chỉnh sửa";
+"Right Toolbar Actions" = "Hành động thanh công cụ phải";
+"Hidden actions are removed from the right toolbar." = "Hành động bị ẩn sẽ bị xóa khỏi thanh công cụ phải.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Tốc độ khung hình:";
+"After recording:" = "Sau khi quay:";
+"Save recording to:" = "Lưu bản quay vào:";
+"Save Recording" = "Lưu bản quay";
+"Clear" = "Xóa";
+"Max height:" = "Chiều cao tối đa:";
+"px (0 = unlimited)" = "px (0 = không giới hạn)";
+"Behavior" = "Hành vi";
+"Auto-scroll (sends synthetic scroll events)" = "Tự động cuộn (gửi sự kiện cuộn giả lập)";
+"Detect fixed/sticky headers" = "Phát hiện tiêu đề cố định/dính";
+"Scroll speed:" = "Tốc độ cuộn:";
+"Slow" = "Chậm";
+"Medium" = "Trung bình";
+"Fast" = "Nhanh";
+"Very fast" = "Rất nhanh";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Dịch vụ tải lên";
+"Upload Provider" = "Nhà cung cấp tải lên";
+"Provider:" = "Nhà cung cấp:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (ảnh + video)";
+"imgbb (images only)" = "imgbb (chỉ ảnh)";
+"S3-Compatible (images + videos)" = "S3-Compatible (ảnh + video)";
+"S3-Compatible Storage" = "Lưu trữ tương thích S3";
+"Sign In with Google" = "Đăng nhập bằng Google";
+"Sign Out" = "Đăng xuất";
+"Signed in" = "Đã đăng nhập";
+"Not signed in" = "Chưa đăng nhập";
+"Account:" = "Tài khoản:";
+"Test Connection" = "Kiểm tra kết nối";
+"Fill in endpoint, bucket, and credentials first" = "Điền endpoint, bucket và thông tin xác thực trước";
+"Testing..." = "Đang kiểm tra...";
+"Connection successful!" = "Kết nối thành công!";
+"Leave empty to use default" = "Để trống để dùng mặc định";
+"Endpoint:" = "Endpoint:";
+"Region:" = "Vùng:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Khóa truy cập:";
+"Secret Key:" = "Khóa bí mật:";
+"Public URL:" = "URL công khai:";
+"Path Prefix:" = "Tiền tố đường dẫn:";
+"API key:" = "Khóa API:";
+"Upload History" = "Lịch sử tải lên";
+"No uploads yet." = "Chưa có tải lên nào.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL cơ sở để truy cập công khai. Nếu để trống, URL endpoint S3 sẽ được sử dụng (có thể không truy cập được công khai).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Đã bao gồm khóa dùng chung — lấy khóa miễn phí riêng tại imgbb.com/api nếu bạn bị giới hạn tốc độ. Chỉ hỗ trợ ảnh (không hỗ trợ video).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Hoạt động với AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 và các dịch vụ tương thích S3 khác. Hỗ trợ ảnh và video.";
+"Configure S3 in Preferences" = "Cấu hình S3 trong Tùy chọn";
+"Sign in to Google Drive in Preferences" = "Đăng nhập Google Drive trong Tùy chọn";
+"Video upload requires Google Drive or S3" = "Tải video lên yêu cầu Google Drive hoặc S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Phiên bản %@ (%@)";
+"Made by" = "Được tạo bởi";
+"Licensed under the GPLv3" = "Được cấp phép theo GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Công cụ chụp ảnh và quay màn hình mã nguồn mở, miễn phí cho macOS.\nHoàn toàn gốc — được xây dựng bằng Swift và AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Không có ảnh trong bộ nhớ tạm";
+"No Image or Text on Clipboard" = "Không có ảnh hoặc văn bản trong bộ nhớ tạm";
+"Copy an image to the clipboard first, then try again." = "Sao chép ảnh vào bộ nhớ tạm trước, rồi thử lại.";
+"Copy an image or text to the clipboard first, then try again." = "Sao chép ảnh hoặc văn bản vào bộ nhớ tạm trước, rồi thử lại.";
+"OK" = "OK";
+"Accessibility Access Required" = "Yêu cầu quyền Trợ năng";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom cần quyền Trợ năng để tự động cuộn các ứng dụng khác. Vui lòng cấp quyền trong Cài đặt hệ thống, rồi thử lại.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom cần quyền Trợ năng để chụp cuộn. Vui lòng cấp quyền trong Cài đặt Hệ thống, rồi thử lại.";
+"Open Settings" = "Mở Cài đặt";
+"Cancel" = "Hủy";
+"Microphone Access Required" = "Yêu cầu quyền Micro";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom cần quyền micro để ghi âm giọng nói. Mở Cài đặt hệ thống để cấp quyền.";
+"Upload to Google Drive?" = "Tải lên Google Drive?";
+"Upload to S3?" = "Tải lên S3?";
+"Upload to imgbb.com?" = "Tải lên imgbb.com?";
+"Your screenshot will be uploaded." = "Ảnh chụp của bạn sẽ được tải lên.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Chào mừng đến với Snaploom";
+"Snaploom needs one permission" = "Snaploom cần một quyền";
+"Screen Recording not yet granted" = "Chưa cấp quyền Quay màn hình";
+"Screen Recording granted!" = "Đã cấp quyền Quay màn hình!";
+"Enable Snaploom, then try taking a screenshot" = "Bật Snaploom, rồi thử chụp ảnh màn hình";
+"Open Screen Recording Settings" = "Mở Cài đặt Quay màn hình";
+"Continue" = "Tiếp tục";
+
+/* OCR Window */
+"Text Recognition" = "Nhận dạng văn bản";
+"Text & QR Recognition" = "Nhận dạng văn bản & QR";
+"Translate to:" = "Dịch sang:";
+"%d chars · %d words" = "%d ký tự · %d từ";
+"Copy  ⌘↩" = "Sao chép  ⌘↩";
+"AI Search" = "Tìm kiếm AI";
+"Show Original" = "Hiện bản gốc";
+"Translation Failed" = "Dịch thất bại";
+"Translation" = "Bản dịch";
+"(No text detected in the selected area)" = "(Không phát hiện văn bản trong vùng đã chọn)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "Đã sao chép URL vào bộ nhớ tạm";
+"Uploading... %d%%" = "Đang tải lên... %d%%";
+"Upload failed: %@" = "Tải lên thất bại: %@";
+"Uploaded! Link copied." = "Đã tải lên! Đã sao chép liên kết.";
+"Uploading to %@... %d%%" = "Đang tải lên %@... %d%%";
+"Open" = "Mở";
+
+/* Recording Toast */
+"Recording saved" = "Đã lưu bản quay";
+"%@ • Recording saved" = "%@ • Đã lưu bản quay";
+"Copy Path" = "Sao chép đường dẫn";
+"Path copied!" = "Đã sao chép đường dẫn!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Trình chỉnh sửa video Snaploom";
+"%@ selected" = "%@ đã chọn";
+"Exporting..." = "Đang xuất...";
+"Export failed" = "Xuất thất bại";
+"Saved to %@" = "Đã lưu vào %@";
+"Save failed" = "Lưu thất bại";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Lưu thành...";
+"Choose a folder" = "Chọn thư mục";
+"Save All to Folder…" = "Lưu tất cả vào thư mục…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Tự động cuộn";
+"Stop" = "Dừng";
+"Scrolling..." = "Đang cuộn...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Cài sẵn";
+"Adjustments" = "Điều chỉnh";
+"Brightness" = "Độ sáng";
+"Contrast" = "Độ tương phản";
+"Saturation" = "Độ bão hòa";
+"Sharpness" = "Độ sắc nét";
+
+/* Time Ago */
+"just now" = "vừa xong";
+"%ds ago" = "%d giây trước";
+"%dm ago" = "%d phút trước";
+"%dh ago" = "%d giờ trước";
+
+/* Hotkey Labels */
+"History" = "Lịch sử";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Nhấp \"Quay\" và nhấn tổ hợp phím với ít nhất một phím bổ trợ (⌘, ⌥, ⌃, ⇧) để đặt phím tắt.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "Đang xử lý GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Yêu cầu quyền Giám sát đầu vào";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom cần quyền Giám sát đầu vào để hiển thị phím bấm trong khi quay. Vui lòng cấp quyền trong System Settings, rồi thử lại.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom cần quyền Trợ năng để hiển thị phím bấm trong khi quay. Vui lòng cấp quyền trong System Settings, rồi thử lại.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Hiển thị phím bấm";
+"Shortcuts Only" = "Chỉ phím tắt";
+"All Keystrokes" = "Tất cả phím bấm";
+
+/* Recording — Settings Popover */
+"Delay:" = "Trì hoãn:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Đã sao chép vào bộ nhớ tạm!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Lớp phủ webcam";
+"Camera Access Required" = "Yêu cầu quyền Camera";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom cần quyền camera để sử dụng lớp phủ webcam. Mở Cài đặt hệ thống để cấp quyền.";
+"Webcam" = "Webcam";
+"Bottom Right" = "Dưới phải";
+"Bottom Left" = "Dưới trái";
+"Top Right" = "Trên phải";
+"Top Left" = "Trên trái";
+"Small" = "Nhỏ";
+"Large" = "Lớn";
+"Webcam Size Small" = "Nhỏ";
+"Webcam Size Medium" = "Trung bình";
+"Webcam Size Large" = "Lớn";
+"Webcam Size Extra Large" = "Rất lớn";
+"Circle" = "Hình tròn";
+"Rounded Rectangle" = "Hình chữ nhật bo góc";
+"Cam pos:" = "Vị trí cam:";
+"Cam size:" = "Kích thước cam:";
+"Cam shape:" = "Hình dạng cam:";
+
+/* New Strings */
+"Settings" = "Cài đặt";
+"Settings..." = "Cài đặt...";
+"Snaploom Settings" = "Cài đặt Snaploom";
+"Also open in Editor" = "Đồng thời mở trong trình chỉnh sửa";
+"Hide controls" = "Ẩn điều khiển";
+"Hide recording controls" = "Ẩn điều khiển quay";
+"Stop recording from the menu bar icon instead." = "Dừng quay từ biểu tượng thanh menu thay thế.";
+"Pixelate" = "Khảm";
+"Blur" = "Mờ";
+"Solid" = "Đặc";
+"Erase" = "Xóa";
+"Done" = "Xong";
+"Do nothing" = "Không làm gì";
+"Overlay / Editor Shortcuts" = "Phím tắt lớp phủ / trình chỉnh sửa";
+"Set" = "Đặt";
+"Press..." = "Nhấn...";
+"Reset to default" = "Đặt lại mặc định";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Nhấn một phím để gán làm phím tắt cho công cụ đó. Hoạt động khi lớp phủ hoặc trình chỉnh sửa đang mở.";
+"Keep Separate" = "Giữ riêng";
+"Merge Audio" = "Gộp âm thanh";
+"Audio Tracks" = "Rãnh âm thanh";
+"Adjust volume for each audio track:" = "Điều chỉnh âm lượng cho từng rãnh âm thanh:";
+"Microphone:" = "Micro:";
+"System audio:" = "Âm thanh hệ thống:";
+"Loupe" = "Kính lúp";
+"Stamp" = "Tem";
+"Unlimited" = "Không giới hạn";
+"Save changes?" = "Lưu thay đổi?";
+"Your annotations will be lost if you close without saving." = "Các chú thích của bạn sẽ bị mất nếu đóng mà không lưu.";
+"Save & Close" = "Lưu và đóng";
+"Discard" = "Bỏ qua";
+"Stop Recording" = "Dừng quay";
+"Pause" = "Tạm dừng";
+"Resume" = "Tiếp tục";
+"Engine:" = "Công cụ:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (trên thiết bị)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Bản dịch Apple nhanh hơn và hoạt động ngoại tuyến. Google Translate hỗ trợ nhiều ngôn ngữ hơn.";
+"Download language packs in System Settings…" = "Tải gói ngôn ngữ trong Cài đặt hệ thống…";
+"Configure S3 in Settings" = "Cấu hình S3 trong Cài đặt";
+"Sign in to Google Drive in Settings" = "Đăng nhập Google Drive trong Cài đặt";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Bản dựng ngoại tuyến: các tích hợp tải lên và lưu trữ đám mây đã bị loại bỏ. Việc kiểm tra cập nhật vẫn có thể kết nối đến máy chủ cập nhật của Snaploom. Ảnh chụp màn hình và bản ghi vẫn được lưu cục bộ trừ khi bạn tự chia sẻ hoặc lưu chúng.";
+"Position:" = "Vị trí:";
+"  Position:" = "  Vị trí:";
+"Size:" = "Kích thước:";
+"Shape:" = "Hình dạng:";
+
+"Same as screenshots" = "Giống như ảnh chụp màn hình";
+"  Preview size:" = "  Kích thước xem trước:";
+"(0 = off)" = "(0 = tắt)";
+"Clear All" = "Xóa tất cả";
+"Clear History?" = "Xóa lịch sử?";
+"This will permanently delete all screenshots from history." = "Thao tác này sẽ xóa vĩnh viễn tất cả ảnh chụp màn hình khỏi lịch sử.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Nhấp vào \"Đặt\" và nhấn tổ hợp phím có ít nhất một phím bổ trợ (⌘, ⌥, ⌃, ⇧) để đặt phím tắt.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Các tệp được tải lên thư mục \"Snaploom\" trong Google Drive của bạn. Mọi thứ đều được giữ bí mật — không có gì được chia sẻ công khai.";
+
+"Pressure" = "Lực nhấn";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Mở video...";
+"Choose a video to open in Snaploom editor" = "Chọn video để mở trong trình chỉnh sửa Snaploom";
+"Click to add effects" = "Nhấp để thêm hiệu ứng";
+"Add Zoom" = "Thêm thu phóng";
+"Add Censor" = "Thêm che mờ";
+"Add Cut" = "Thêm cắt";
+"Add Speed" = "Thêm tốc độ";
+"Add Freeze" = "Thêm đóng băng";
+"Add Text" = "Thêm văn bản";
+"Delete Zoom" = "Xóa thu phóng";
+"Delete Censor" = "Xóa che mờ";
+"Delete Cut" = "Xóa cắt";
+"Delete Speed" = "Xóa tốc độ";
+"Delete Freeze" = "Xóa đóng băng";
+"Delete Text" = "Xóa văn bản";
+"Edit Text…" = "Chỉnh sửa văn bản…";
+"Huge" = "Rất lớn";
+"Bold" = "Đậm";
+"Italic" = "Nghiêng";
+"Alignment" = "Căn lề";
+"Left" = "Trái";
+"Center" = "Giữa";
+"Right" = "Phải";
+"Text Color" = "Màu chữ";
+"Background Color" = "Màu nền";
+"Rounded" = "Bo tròn";
+"Custom…" = "Tùy chỉnh…";
+"Transparent" = "Trong suốt";
+"Black" = "Đen";
+"White" = "Trắng";
+"Yellow" = "Vàng";
+"Red" = "Đỏ";
+"Green" = "Xanh lá";
+"Blue" = "Xanh dương";
+"Untitled" = "Không có tiêu đề";
+"Add effect" = "Thêm hiệu ứng";
+"Fade" = "Làm mờ dần";
+"High" = "Cao";
+"Low" = "Thấp";
+"Not enough room here" = "Không đủ chỗ ở đây";
+"Copied!" = "Đã sao chép!";
+"Converting to GIF…" = "Đang chuyển đổi sang GIF…";
+"GIF conversion failed" = "Chuyển đổi GIF thất bại";
+"No video track found" = "Không tìm thấy rãnh video";
+"Preview:" = "Xem trước:";
+"Copy Screen Info" = "Sao chép thông tin màn hình";
+"Copies display and capture diagnostics to clipboard" = "Sao chép thông tin chẩn đoán màn hình và ảnh chụp vào bộ nhớ tạm";
+"Accent" = "Nhấn";
+"Icon" = "Biểu tượng";
+"Background" = "Nền";
+"Custom" = "Tùy chỉnh";
+"Theme:" = "Chủ đề:";
+"Application" = "Ứng dụng";
+"Capture area and extract text" = "Chụp vùng chọn và trích xuất văn bản";
+"Capture the full screen" = "Chụp toàn bộ màn hình";
+"Counter for multi-screen captures" = "Bộ đếm cho ảnh chụp nhiều màn hình";
+"8-character random string (e.g. k3j7x9q2)" = "Chuỗi ngẫu nhiên 8 ký tự (ví dụ: k3j7x9q2)";
+"Filename Template Tokens" = "Token mẫu tên tệp";
+"Filename tokens" = "Token tên tệp";
+"Filename:" = "Tên tệp:";
+"Open an image file in the editor" = "Mở tệp ảnh trong trình chỉnh sửa";
+"Open the recent captures overlay" = "Mở lớp phủ ảnh chụp gần đây";
+"Open this settings window" = "Mở cửa sổ cài đặt này";
+"Quick capture (uses your Enter action)" = "Chụp nhanh (dùng hành động Enter của bạn)";
+"Re-capture the last selected area" = "Chụp lại vùng đã chọn gần nhất";
+"Screenshots only — captured window title (blank otherwise)" = "Chỉ ảnh chụp — tiêu đề cửa sổ đã chụp (trống nếu khác)";
+"Show available filename tokens" = "Hiển thị các token tên tệp có sẵn";
+"Show supported URL scheme commands" = "Hiển thị các lệnh URL scheme được hỗ trợ";
+"Start area capture" = "Bắt đầu chụp vùng chọn";
+"Start area recording" = "Bắt đầu quay vùng chọn";
+"Start full-screen recording" = "Bắt đầu quay toàn màn hình";
+"Start scroll capture" = "Bắt đầu chụp cuộn trang";
+"Stop the current recording" = "Dừng bản quay hiện tại";
+"Supported URL Scheme Commands" = "Các lệnh URL Scheme được hỗ trợ";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Phần mở rộng tệp sẽ được thêm tự động. Dấu gạch chéo và hai chấm trong {window} sẽ chuyển thành dấu gạch ngang.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Kích hoạt Snaploom từ Raycast, Alfred, Shortcuts, hoặc bất kỳ công cụ nào mở URL.";
+"URL scheme info" = "Thông tin URL scheme";
+"Enable snaploom:// URL scheme" = "Bật URL scheme snaploom://";
+"sec (0 = never)" = "giây (0 = không bao giờ)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Sao lưu cài đặt";
+"Export Settings…" = "Xuất cài đặt…";
+"Import Settings…" = "Nhập cài đặt…";
+"Reveal Settings File in Finder" = "Hiện tệp cài đặt trong Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Xuất tùy chọn của bạn ra tệp để chuyển sang một máy Mac khác hoặc bản cài đặt mới. Thông tin đăng nhập tải lên, thư mục lưu và lịch sử ảnh chụp màn hình không được bao gồm. Cài đặt được lưu bên trong app container của Snaploom.";
+"Export Settings" = "Xuất cài đặt";
+"Import Settings" = "Nhập cài đặt";
+"Import failed" = "Nhập thất bại";
+"Settings exported" = "Đã xuất cài đặt";
+"Settings imported" = "Đã nhập cài đặt";
+"Import" = "Nhập";
+"Later" = "Để sau";
+"Relaunch Now" = "Khởi động lại ngay";
+"Replace your current settings?" = "Thay thế cài đặt hiện tại của bạn?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Việc nhập sẽ thay thế tùy chọn hiện tại của bạn bằng những tùy chọn trong tệp này. Thư mục lưu, thông tin đăng nhập tải lên và lịch sử ảnh chụp màn hình được giữ lại. Thao tác này không thể hoàn tác.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "Đã áp dụng %d cài đặt. Khởi động lại Snaploom để áp dụng tất cả thay đổi.";
+"A few large items were too big to include. Everything else was saved." = "Một vài mục lớn quá dung lượng nên không được bao gồm. Mọi thứ còn lại đã được lưu.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Ảnh nền Beautify tùy chỉnh của bạn quá lớn nên không được bao gồm. Mọi thứ còn lại đã được lưu.";
+"This file is not a valid Snaploom settings file." = "Tệp này không phải là tệp cài đặt Snaploom hợp lệ.";
+"This settings file contains no settings." = "Tệp cài đặt này không chứa cài đặt nào.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Tệp cài đặt này được tạo bởi một phiên bản Snaploom mới hơn. Vui lòng cập nhật Snaploom trước.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Chụp, dịch và phủ văn bản lên hình ảnh";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Mở một mục lịch sử trong trình chỉnh sửa (giữ chú thích có thể chỉnh sửa)";

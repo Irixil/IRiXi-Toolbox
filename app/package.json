@@ -1,0 +1,124 @@
+{
+  "name": "irixi-toolbox",
+  "version": "0.4.1",
+  "description": "IRiXi的小工具库 - a lightweight personal toolbox for macOS",
+  "main": "main.js",
+  "author": "IRiXi",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js && env -u ELECTRON_RUN_AS_NODE electron tests/notch-focus.electron.js && node --check main.js && node --check main-services.js && node --check tool-platform.js && node --check native-helper-manager.js && node --check native-module-manager.js && node --check preload.js && node --check renderer/domain.js && node --check renderer/effects.js && node --check renderer/app.js && node --check renderer/workspace.js && node --check renderer/tools.js && node --check renderer/icon-motion.js && node --check renderer/notification.js && node --check build/afterPack.js && node --check scripts/stage-native-module.js && node --check scripts/verify-packaged-native-module.js",
+    "start": "electron .",
+    "build": "electron-builder --mac dmg --publish never",
+    "build:zip": "electron-builder --mac zip",
+    "pack": "electron-builder --dir",
+    "stage:native-module": "node scripts/stage-native-module.js",
+    "verify:native-module": "node scripts/verify-packaged-native-module.js",
+    "test:native-module": "env -u ELECTRON_RUN_AS_NODE electron tests/native-module.electron.js"
+  },
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.15.7"
+  },
+  "build": {
+    "appId": "com.irixi.toolbox",
+    "productName": "IRiXi的小工具库",
+    "artifactName": "IRiXi-Toolbox-${version}-${arch}.${ext}",
+    "copyright": "© 2026 IRiXi",
+    "asar": true,
+    "directories": {
+      "output": "dist.noindex",
+      "buildResources": "build"
+    },
+    "electronDist": "node_modules/electron/dist",
+    "afterPack": "./build/afterPack.js",
+    "extraFiles": [
+      {
+        "from": "build/native-module/IRiXiNativeKit.framework",
+        "to": "Frameworks/IRiXiNativeKit.framework",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "build/native-module/irixi-native.node",
+        "to": "Frameworks/irixi-native.node"
+      }
+    ],
+    "extraResources": [
+      {
+        "from": "build/native-module-manifest.json",
+        "to": "native-module-manifest.json"
+      }
+    ],
+    "files": [
+      "main.js",
+      "main-services.js",
+      "agent-service.js",
+      "tool-platform.js",
+      "native-module-manager.js",
+      "preload.js",
+      "renderer/**/*",
+      "bundled-tools/**/*",
+      "LICENSE",
+      "UPSTREAM.md",
+      "THIRD_PARTY_NOTICES.md",
+      "THIRD_PARTY_LICENSES/**/*",
+      "package.json",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/.bin",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "minimumSystemVersion": "13.0",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "darkModeSupport": true,
+      "extendInfo": {
+        "LSUIElement": true,
+        "NSHighResolutionCapable": true,
+        "CFBundleDisplayName": "IRiXi的小工具库",
+        "NSCameraUsageDescription": "IRiXi的小工具库需要使用摄像头来显示「镜子」预览。",
+        "NSMicrophoneUsageDescription": "IRiXi的小工具库需要使用麦克风来录音并生成转写文本。",
+        "NSAppleEventsUsageDescription": "IRiXi的小工具库需要控制「系统事件」来枚举并聚焦当前窗口、发送汽水音乐快捷键。"
+      }
+    },
+    "dmg": {
+      "title": "IRiXi的小工具库 ${version}",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    }
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  }
+}

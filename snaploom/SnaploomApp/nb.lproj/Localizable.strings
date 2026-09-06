@@ -1,0 +1,671 @@
+/* Norsk bokmål — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Ta bilde av omr\U00E5de";
+"Capture Screen" = "Ta bilde av skjerm";
+"Capture OCR" = "Ta bilde for OCR";
+"Capture OCR & QR" = "Ta bilde for OCR & QR";
+"Capture area and read text/QR codes" = "Ta bilde av omr\U00E5de og les tekst/QR-koder";
+"Quick Capture" = "Hurtigopptak";
+"Scroll Capture" = "Rulleopptak";
+"Capture Last Area" = "Ta bilde av siste område";
+"Capture Delay" = "Forsinket opptak";
+"None" = "Ingen";
+"%d seconds" = "%d sekunder";
+"Record Area" = "Ta opp omr\U00E5de";
+"Record Screen" = "Ta opp skjerm";
+"Recent Captures" = "Nylige opptak";
+"Show History Panel" = "Vis historikkpanel";
+"Open Image..." = "\U00C5pne bilde\U2026";
+"Open from Clipboard" = "\U00C5pne fra utklippstavlen";
+"Pin from Clipboard" = "Fest fra utklippstavlen";
+"Preferences..." = "Innstillinger\U2026";
+"Check for Updates..." = "Se etter oppdateringer\U2026";
+"Quit Snaploom" = "Avslutt Snaploom";
+"No recent captures" = "Ingen nylige opptak";
+"Clear History" = "T\U00F8m historikk";
+
+/* History Panel */
+"Copy" = "Kopier";
+"Save As..." = "Lagre som\U2026";
+"Open in Editor" = "\U00C5pne i redigering";
+"Pin to Screen" = "Fest til skjerm";
+"Quick Look" = "Hurtigvisning";
+"Delete" = "Slett";
+"All" = "Alle";
+"Screenshots" = "Skjermbilder";
+"GIFs" = "GIF-er";
+"Click to copy \U00B7 Drag to app" = "Klikk for \U00E5 kopiere \U00B7 Dra til app";
+"No captures yet" = "Ingen opptak enn\U00E5";
+
+/* Floating Thumbnail */
+"Close All" = "Lukk alle";
+"Save All to Folder\U2026" = "Lagre alle i mappe\U2026";
+"Save" = "Lagre";
+
+/* Editor Top Bar */
+"Zoom" = "Zoom";
+"Zoom In" = "Zoom inn";
+"Zoom Out" = "Zoom ut";
+"Fit Canvas" = "Tilpass lerret";
+"Crop" = "Besk\U00E6r";
+"Rotate Left" = "Roter mot venstre";
+"Rotate Right" = "Roter mot h\U00F8yre";
+"Flip Horizontal" = "Speilvend horisontalt";
+"Flip Vertical" = "Speilvend vertikalt";
+"Add Capture" = "Legg til opptak";
+
+/* Toolbar - Tools */
+"Arrow" = "Pil";
+"Line" = "Linje";
+"Rectangle" = "Rektangel";
+"Ellipse" = "Ellipse";
+"Pencil" = "Blyant";
+"Pencil (Draw)" = "Blyant (Tegn)";
+"Marker" = "Markering";
+"Text" = "Tekst";
+"Number" = "Nummer";
+"Number / Counter" = "Nummer / Teller";
+"Stamp / Emoji" = "Stempel / Emoji";
+"Censor" = "Sensur";
+"Censor (Pixelate / Blur / Solid)" = "Sensur (Pikselering / Uskarphet / Heldekkende)";
+"Measure" = "M\U00E5l";
+"Measure (px)" = "M\U00E5l (px)";
+"Magnify (Loupe)" = "Forst\U00F8rr (Lupe)";
+"Highlight" = "Fokus";
+"Highlight (Spotlight)" = "Fokus (Spotlight)";
+"Dim" = "Demp";
+"Color Sampler" = "Fargevelger";
+"Color Picker" = "Fargevelger";
+"Select & Edit" = "Velg og rediger";
+"Color" = "Farge";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Kopier til utklippstavlen";
+"Save to File" = "Lagre til fil";
+"Save to" = "Lagre til";
+"Open in Editor Window" = "\U00C5pne i redigeringsvindu";
+"Pin on Screen" = "Fest p\U00E5 skjerm";
+"Pin" = "Fest";
+"Pin (floating window)" = "Fest (flytende vindu)";
+"OCR" = "OCR";
+"OCR Text" = "OCR-tekst";
+"OCR (extract text)" = "OCR (trekk ut tekst)";
+"OCR & QR" = "OCR & QR";
+"Run OCR & QR" = "Kj\U00F8r OCR & QR";
+"Text & QR Recognition" = "Tekst- & QR-gjenkjenning";
+"QR Code" = "QR-kode";
+"QR Codes" = "QR-koder";
+"Open Link" = "\U00C5pne lenke";
+"Upload" = "Last opp";
+"Share" = "Del";
+"Undo" = "Angre";
+"Redo" = "Gj\U00F8r om";
+"Close" = "Lukk";
+"Remove Background" = "Fjern bakgrunn";
+"Beautify" = "Forskj\U00F8nn";
+"Adjust" = "Juster";
+"Adjust (Image Effects)" = "Juster (Bildeeffekter)";
+"Invert Colors" = "Inverter farger";
+"Record" = "Ta opp";
+"Record screen" = "Ta opp skjerm";
+"Translate" = "Oversett";
+"Auto-Redact sensitive data" = "Skjul sensitiv informasjon automatisk";
+"Move Selection" = "Flytt utvalg";
+"Aspect ratio & resolution presets" = "Forh\U00E5ndsinnstillinger for bildeforhold og oppl\U00F8sning";
+"Aspect ratio" = "Bildeforhold";
+"Custom \U00B7 %@" = "Egendefinert \U00B7 %@";
+"Resolution" = "Oppl\U00F8sning";
+"Freeform" = "Fri form";
+"Units" = "Enheter";
+"Keep ratio for next captures" = "Behold forhold for neste opptak";
+
+/* Toolbar - Recording */
+"Start Recording" = "Start opptak";
+"Cancel Recording" = "Avbryt opptak";
+"Highlight Mouse Clicks" = "Fremhev museklikk";
+"Record System Audio" = "Ta opp systemlyd";
+"Record Microphone" = "Ta opp mikrofon";
+"Recording Settings" = "Opptaksinnstillinger";
+
+/* Tool Options */
+"Size" = "St\U00F8rrelse";
+"Stroke" = "Strek";
+"Radius" = "Radius";
+"Start:" = "Start:";
+"Draw:" = "Tegn:";
+"Auto:" = "Auto:";
+"Fill" = "Fyll";
+"Outline" = "Omriss";
+"More Emojis" = "Flere emojier";
+"Load Image" = "Last inn bilde";
+"Gradient Style" = "Gradientstil";
+"On" = "P\U00E5";
+"Text Only" = "Kun tekst";
+"All Text" = "All tekst";
+"PII" = "PII";
+"Faces" = "Ansikter";
+"People" = "Personer";
+"Confirm before upload" = "Bekreft f\U00F8r opplasting";
+"Flip" = "Speilvend";
+"Smooth" = "Jevn";
+"Refined" = "Forfinet";
+"Smart" = "Smart";
+"Padding" = "Utfylling";
+"Shadow" = "Skygge";
+"Right-click to add points" = "H\U00F8yreklikk for \U00E5 legge til punkter";
+"Hold 1 auto-vertical  \U00B7  Hold 2 auto-horizontal" = "Hold 1 auto-vertikal  \U00B7  Hold 2 auto-horisontal";
+"Limit to selection" = "Begrens til utvalg";
+"Effect" = "Effekt";
+"Font" = "Skrift";
+"System" = "System";
+
+/* Overlay / Canvas */
+"Click a window  \U00B7  Drag for custom area  \U00B7  F for full screen" = "Klikk et vindu  \U00B7  Dra for egendefinert omr\U00E5de  \U00B7  F for fullskjerm";
+"Drag to select  \U00B7  Click for full screen" = "Dra for \U00E5 velge  \U00B7  Klikk for fullskjerm";
+"Release to annotate and edit" = "Slipp for \U00E5 kommentere og redigere";
+"Release to finish" = "Slipp for \U00E5 fullf\U00F8re";
+"Hold Space to move. Release to annotate and edit" = "Hold mellomrom for \U00E5 flytte. Slipp for \U00E5 kommentere og redigere";
+"Hold Space to move. Release to finish" = "Hold mellomrom for \U00E5 flytte. Slipp for \U00E5 fullf\U00F8re";
+"Space" = "Mellomrom";
+"Window snap: " = "Vindussnapping: ";
+"ON" = "P\U00C5";
+"OFF" = "AV";
+"  (Tab to toggle)" = "  (Tab for \U00E5 veksle)";
+"Right-click to copy" = "H\U00F8yreklikk for \U00E5 kopiere";
+"Copied %@" = "Kopierte %@";
+"Set color %@" = "Sett farge %@";
+"Draw something first to use the move tool." = "Tegn noe f\U00F8rst for \U00E5 bruke flytteverkt\U00F8yet.";
+"Drag to reposition" = "Dra for \U00E5 flytte";
+
+/* Overlay - Popovers */
+"Format:" = "Format:";
+"FPS:" = "FPS:";
+"When done:" = "N\U00E5r ferdig:";
+"Open editor" = "\U00C5pne redigering";
+"Open With" = "\U00C5pne med";
+"No Apps Available" = "Ingen apper tilgjengelige";
+"No Share Services" = "Ingen delingstjenester";
+"Show in Finder" = "Vis i Finder";
+"Copy to clipboard" = "Kopier til utklippstavlen";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom-innstillinger";
+"General" = "Generelt";
+"Tools" = "Verkt\U00F8y";
+"Recording" = "Opptak";
+"About" = "Om";
+"Shortcuts" = "Snarveier";
+"Uploads" = "Opplastinger";
+"Language" = "Spr\U00E5k";
+"Language:" = "Spr\U00E5k:";
+"Restart the app to fully apply the new language." = "Start appen p\U00E5 nytt for \U00E5 bruke det nye spr\U00E5ket.";
+"Capture" = "Opptak";
+"Play sound on capture" = "Spill lyd ved opptak";
+"Play sound on copy" = "Spill lyd ved kopiering";
+"Remember last selected tool" = "Husk siste valgte verkt\U00F8y";
+"Show floating thumbnail after capture" = "Vis flytende miniatyrbilde etter opptak";
+"Launch at login" = "Start ved innlogging";
+"Show snap alignment guides" = "Vis hjelpelinje for justering";
+"Snap selection edges to image boundaries" = "Fest markeringskanter til bildegrenser";
+"Capture mouse cursor in screenshot" = "Ta med musepeker i skjermbilde";
+"Double-click selection to copy" = "Dobbeltklikk p\U00E5 utvalget for \U00E5 kopiere";
+"Hide capture instructions" = "Skjul instruksjoner ved skjermbilde";
+"Use window title in saved filename" = "Bruk vindustittel i lagret filnavn";
+"Hide menu bar icon" = "Skjul menylinje-ikon";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Hurtigtastene fungerer fortsatt. For \U00E5 vise ikonet igjen, start Snaploom p\U00E5 nytt.";
+"Check for updates automatically" = "Se etter oppdateringer automatisk";
+"Check for beta updates" = "Se etter betaoppdateringer";
+"Thumbnail" = "Miniatyrbilde";
+"  Dismiss after:" = "  Lukk etter:";
+"seconds before auto-dismiss (0 = never)" = "sekunder f\U00F8r automatisk lukking (0 = aldri)";
+"  Multiple previews:" = "  Flere forh\U00E5ndsvisninger:";
+"Stack (keep all)" = "Stable (behold alle)";
+"Replace (show only latest)" = "Erstatt (vis kun siste)";
+"Output" = "Utdata";
+"Image format:" = "Bildeformat:";
+"Quality:" = "Kvalitet:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Lagre med standard oppl\U00F8sning (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Halverer dimensjonene p\U00E5 Retina-skjermer, ~4x mindre filer";
+"Embed sRGB color profile" = "Bygg inn sRGB-fargeprofil";
+"Ensures consistent colors across different displays" = "Sikrer konsistente farger p\U00E5 tvers av ulike skjermer";
+"Screenshot History" = "Skjermbildehistorikk";
+"History size:" = "Historikkst\U00F8rrelse:";
+"screenshots kept on disk (0 = off)" = "skjermbilder lagret p\U00E5 disk (0 = av)";
+"Order history by last edit" = "Sorter historikk etter siste redigering";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Redigerte skjermbilder flyttes til toppen. Av beholder dem i opptaksrekkef\U00F8lge.";
+"Save Directory" = "Lagringsmappe";
+"Save folder:" = "Lagringsmappe:";
+"Browse\U2026" = "Bla gjennom\U2026";
+"Appearance" = "Utseende";
+"Accent color:" = "Aksentfarge:";
+"Icon color:" = "Ikonfarge:";
+"Background color:" = "Bakgrunnsfarge:";
+"Reset" = "Tilbakestill";
+"OCR Capture:" = "OCR-opptak:";
+"OCR & QR Capture:" = "OCR- & QR-opptak:";
+"Show window + copy to clipboard" = "Vis vindu + kopier til utklippstavlen";
+"Show window only" = "Vis kun vindu";
+"Copy to clipboard only" = "Kopier kun til utklippstavlen";
+"Enter / Quick Capture:" = "Enter / Hurtigopptak:";
+"Save to file" = "Lagre til fil";
+"Save + copy to clipboard" = "Lagre + kopier til utklippstavlen";
+"OCR Action" = "OCR-handling";
+"Save action:" = "Lagringshandling:";
+"Save to default folder" = "Lagre i standardmappe";
+"Ask where to save" = "Sp\U00F8r hvor det skal lagres";
+"Disable shadow outside selection" = "Deaktiver skygge utenfor utvalg";
+"Show shortcuts in tooltips" = "Vis snarveier i verkt\U00F8ytips";
+"Menu bar icon:" = "Menylinje-ikon:";
+"Default" = "Standard";
+"Custom symbol" = "Egendefinert symbol";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Skriv inn et hvilket som helst SF Symbol-navn (f.eks. camera.fill) eller velg en forh\U00E5ndsinnstilling. Bla gjennom navn i Apples SF Symbols-app. Ugyldige navn faller tilbake til standardikonet.";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Tastatursnarveier";
+"Hotkeys" = "Hurtigtaster";
+"Clear shortcut" = "Fjern snarvei";
+"Press keys..." = "Trykk taster\U2026";
+"Waiting..." = "Venter\U2026";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Kommentarverkt\U00F8y";
+"Hidden tools are removed from the bottom toolbar." = "Skjulte verkt\U00F8y fjernes fra den nederste verkt\U00F8ylinjen.";
+"Capture Actions" = "Opptakshandlinger";
+"Menu Bar Order" = "Menylinjens rekkef\U00F8lge";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Velg rekkef\U00F8lgen p\U00E5 opptakshandlingene i Snaploom-menylinjemenyen.";
+"Move up" = "Flytt opp";
+"Move down" = "Flytt ned";
+"Bottom Toolbar Actions" = "Handlinger i den nederste verkt\U00F8ylinjen";
+"Hidden actions are removed from the bottom toolbar." = "Skjulte handlinger fjernes fra den nederste verkt\U00F8ylinjen.";
+"Editor Actions" = "Redigeringshandlinger";
+"Right Toolbar Actions" = "Handlinger i h\U00F8yre verkt\U00F8ylinje";
+"Hidden actions are removed from the right toolbar." = "Skjulte handlinger fjernes fra h\U00F8yre verkt\U00F8ylinje.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Bildefrekvens:";
+"After recording:" = "Etter opptak:";
+"Save recording to:" = "Lagre opptak til:";
+"Save Recording" = "Lagre opptak";
+"Clear" = "T\U00F8m";
+"Max height:" = "Maks h\U00F8yde:";
+"px (0 = unlimited)" = "px (0 = ubegrenset)";
+"Behavior" = "Atferd";
+"Auto-scroll (sends synthetic scroll events)" = "Autorulling (sender syntetiske rullehendelser)";
+"Detect fixed/sticky headers" = "Oppdag faste/klebrige topptekster";
+"Scroll speed:" = "Rullehastighet:";
+"Slow" = "Sakte";
+"Medium" = "Middels";
+"Fast" = "Raskt";
+"Very fast" = "Veldig raskt";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Opplastingstjeneste";
+"Upload Provider" = "Opplastingsleverand\U00F8r";
+"Provider:" = "Leverand\U00F8r:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (bilder + videoer)";
+"imgbb (images only)" = "imgbb (kun bilder)";
+"S3-Compatible (images + videos)" = "S3-kompatibel (bilder + videoer)";
+"S3-Compatible Storage" = "S3-kompatibel lagring";
+"Sign In with Google" = "Logg inn med Google";
+"Sign Out" = "Logg ut";
+"Signed in" = "Innlogget";
+"Not signed in" = "Ikke innlogget";
+"Account:" = "Konto:";
+"Test Connection" = "Test tilkobling";
+"Fill in endpoint, bucket, and credentials first" = "Fyll inn endepunkt, beholder og legitimasjon f\U00F8rst";
+"Testing..." = "Tester\U2026";
+"Connection successful!" = "Tilkobling vellykket!";
+"Leave empty to use default" = "La st\U00E5 tom for \U00E5 bruke standard";
+"Endpoint:" = "Endepunkt:";
+"Region:" = "Region:";
+"Bucket:" = "Beholder:";
+"Access Key:" = "Tilgangsn\U00F8kkel:";
+"Secret Key:" = "Hemmelig n\U00F8kkel:";
+"Public URL:" = "Offentlig URL:";
+"Path Prefix:" = "Sti-prefiks:";
+"API key:" = "API-n\U00F8kkel:";
+"Upload History" = "Opplastingshistorikk";
+"No uploads yet." = "Ingen opplastinger enn\U00E5.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Basis-URL for offentlig tilgang. Hvis tom, brukes S3-endepunktets URL (som kanskje ikke er offentlig tilgjengelig).";
+"A shared key is included \U2014 get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "En delt n\U00F8kkel er inkludert \U2014 f\U00E5 din egen gratis n\U00F8kkel p\U00E5 imgbb.com/api hvis du n\U00E5r hastighetsgrenser. Kun bilder (ingen st\U00F8tte for video).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Fungerer med AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 og andre S3-kompatible tjenester. St\U00F8tter bilder og videoer.";
+"Configure S3 in Preferences" = "Konfigurer S3 i innstillingene";
+"Sign in to Google Drive in Preferences" = "Logg inn p\U00E5 Google Drive i innstillingene";
+"Video upload requires Google Drive or S3" = "Videoopplasting krever Google Drive eller S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Versjon %@ (%@)";
+"Made by" = "Laget av";
+"Licensed under the GPLv3" = "Lisensiert under GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native \U2014 built with Swift and AppKit." = "Et gratis skjermbilde- og skjermopptaksverkt\U00F8y med \U00E5pen kildekode for macOS.\nHelt innebygd \U2014 bygget med Swift og AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Ingen bilde p\U00E5 utklippstavlen";
+"No Image or Text on Clipboard" = "Ingen bilde eller tekst p\U00E5 utklippstavlen";
+"Copy an image to the clipboard first, then try again." = "Kopier et bilde til utklippstavlen f\U00F8rst, og pr\U00F8v igjen.";
+"Copy an image or text to the clipboard first, then try again." = "Kopier et bilde eller tekst til utklippstavlen f\U00F8rst, og pr\U00F8v igjen.";
+"OK" = "OK";
+"Accessibility Access Required" = "Tilgjengelighetstilgang p\U00E5krevd";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom trenger tilgjengelighetstillatelse for \U00E5 autorulling i andre apper. Gi tilgang i Systeminnstillinger, og pr\U00F8v igjen.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom trenger tilgjengelighets­tillatelse for rullefangst. Gi tilgang i Systeminnstillinger og prøv igjen.";
+"Open Settings" = "\U00C5pne innstillinger";
+"Cancel" = "Avbryt";
+"Microphone Access Required" = "Mikrofontilgang p\U00E5krevd";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom trenger mikrofontillatelse for \U00E5 ta opp lyd. \U00C5pne Systeminnstillinger for \U00E5 gi tilgang.";
+"Upload to Google Drive?" = "Laste opp til Google Drive?";
+"Upload to S3?" = "Laste opp til S3?";
+"Upload to imgbb.com?" = "Laste opp til imgbb.com?";
+"Your screenshot will be uploaded." = "Skjermbildet ditt vil bli lastet opp.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Velkommen til Snaploom";
+"Snaploom needs one permission" = "Snaploom trenger \U00E9n tillatelse";
+"Screen Recording not yet granted" = "Skjermopptak er ikke gitt enn\U00E5";
+"Screen Recording granted!" = "Skjermopptak er gitt!";
+"Enable Snaploom, then try taking a screenshot" = "Aktiver Snaploom, og pr\U00F8v \U00E5 ta et skjermbilde";
+"Open Screen Recording Settings" = "\U00C5pne innstillinger for skjermopptak";
+"Continue" = "Fortsett";
+
+/* OCR Window */
+"Text Recognition" = "Tekstgjenkjenning";
+"Translate to:" = "Oversett til:";
+"%d chars \U00B7 %d words" = "%d tegn \U00B7 %d ord";
+"Copy  \U2318\U21A9" = "Kopier  \U2318\U21A9";
+"AI Search" = "AI-s\U00F8k";
+"Show Original" = "Vis original";
+"Translation Failed" = "Oversettelse mislyktes";
+"Translation" = "Oversettelse";
+"(No text detected in the selected area)" = "(Ingen tekst oppdaget i det valgte omr\U00E5det)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL kopiert til utklippstavlen";
+"Uploading... %d%%" = "Laster opp\U2026 %d%%";
+"Upload failed: %@" = "Opplasting mislyktes: %@";
+"Uploaded! Link copied." = "Lastet opp! Lenke kopiert.";
+"Uploading to %@... %d%%" = "Laster opp til %@\U2026 %d%%";
+"Open" = "\U00C5pne";
+
+/* Recording Toast */
+"Recording saved" = "Opptak lagret";
+"%@ \U2022 Recording saved" = "%@ \U2022 Opptak lagret";
+"Copy Path" = "Kopier sti";
+"Path copied!" = "Sti kopiert!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom Videoredigering";
+"%@ selected" = "%@ valgt";
+"Exporting..." = "Eksporterer\U2026";
+"Export failed" = "Eksport mislyktes";
+"Saved to %@" = "Lagret til %@";
+"Save failed" = "Lagring mislyktes";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Lagre som\U2026";
+"Choose a folder" = "Velg en mappe";
+"Save All to Folder\U2026" = "Lagre alle i mappe\U2026";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Autorulling";
+"Stop" = "Stopp";
+"Scrolling..." = "Ruller\U2026";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Forh\U00E5ndsinnstillinger";
+"Adjustments" = "Justeringer";
+"Brightness" = "Lysstyrke";
+"Contrast" = "Kontrast";
+"Saturation" = "Metning";
+"Sharpness" = "Skarphet";
+
+/* Time Ago */
+"just now" = "akkurat n\U00E5";
+"%ds ago" = "%ds siden";
+"%dm ago" = "%dm siden";
+"%dh ago" = "%dt siden";
+
+/* Hotkey Labels */
+"History" = "Historikk";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (\U2318, \U2325, \U2303, \U21E7) to set a shortcut." = "Klikk \"Ta opp\" og trykk en tastekombinasjon med minst \U00E9n modifikator (\U2318, \U2325, \U2303, \U21E7) for \U00E5 angi en snarvei.";
+
+/* Recording — GIF Processing */
+"Processing GIF\U2026" = "Behandler GIF\U2026";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Inngangsoverv\U00E5king p\U00E5krevd";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom trenger tillatelse for inngangsoverv\U00E5king for \U00E5 vise tastetrykk under opptak. Gi tilgang i System Settings, og pr\U00F8v igjen.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom trenger tilgjengelighetstillatelse for \U00E5 vise tastetrykk under opptak. Gi tilgang i System Settings, og pr\U00F8v igjen.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Vis tastetrykk";
+"Shortcuts Only" = "Kun snarveier";
+"All Keystrokes" = "Alle tastetrykk";
+
+/* Recording — Settings Popover */
+"Delay:" = "Forsinkelse:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Kopiert til utklippstavlen!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Webkameraoverlegg";
+"Camera Access Required" = "Kameratilgang p\U00E5krevd";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom trenger kameratillatelse for webkameraoverlegget. \U00C5pne Systeminnstillinger for \U00E5 gi tilgang.";
+"Webcam" = "Webkamera";
+"Bottom Right" = "Nederst til h\U00F8yre";
+"Bottom Left" = "Nederst til venstre";
+"Top Right" = "\U00D8verst til h\U00F8yre";
+"Top Left" = "\U00D8verst til venstre";
+"Small" = "Liten";
+"Large" = "Stor";
+"Webcam Size Small" = "Liten";
+"Webcam Size Medium" = "Middels";
+"Webcam Size Large" = "Stor";
+"Webcam Size Extra Large" = "Ekstra stor";
+"Circle" = "Sirkel";
+"Rounded Rectangle" = "Avrundet rektangel";
+"Cam pos:" = "Kam.pos.:";
+"Cam size:" = "Kam.str.:";
+"Cam shape:" = "Kam.form:";
+"  Position:" = "  Posisjon:";
+
+/* New Strings */
+"Settings" = "Innstillinger";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Frakoblet bygg: integrasjoner for opplasting og skylagring er fjernet. Oppdateringssøk kan fortsatt koble til Snaplooms oppdateringsserver. Skjermbilder og opptak forblir lokale med mindre du deler eller lagrer dem selv.";
+"Settings..." = "Innstillinger...";
+"Snaploom Settings" = "Snaploom-innstillinger";
+"Also open in Editor" = "\U00C5pne ogs\U00E5 i redigering";
+"Hide controls" = "Skjul kontroller";
+"Hide recording controls" = "Skjul opptakskontroller";
+"Stop recording from the menu bar icon instead." = "Stopp opptaket fra menylinjeikonen i stedet.";
+"Pixelate" = "Pikselering";
+"Blur" = "Uskarphet";
+"Solid" = "Heldekkende";
+"Erase" = "Slett";
+"Done" = "Ferdig";
+"Do nothing" = "Gj\U00F8r ingenting";
+"Overlay / Editor Shortcuts" = "Overlegg / Redigeringssnarveier";
+"Set" = "Angi";
+"Press..." = "Trykk...";
+"Reset to default" = "Tilbakestill til standard";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Trykk p\U00E5 en enkelt tast for \U00E5 tilordne den som snarvei for det verkt\U00F8yet. Disse fungerer n\U00E5r overlegget eller redigeringen er aktiv.";
+"Keep Separate" = "Hold adskilt";
+"Merge Audio" = "Sl\U00E5 sammen lyd";
+"Audio Tracks" = "Lydspor";
+"Adjust volume for each audio track:" = "Juster volumet for hvert lydspor:";
+"Microphone:" = "Mikrofon:";
+"System audio:" = "Systemlyd:";
+"Loupe" = "Lupe";
+"Stamp" = "Stempel";
+"Unlimited" = "Ubegrenset";
+
+/* Save Confirmation / Recording / Translation / Upload / Inspector */
+"Save changes?" = "Lagre endringer?";
+"Your annotations will be lost if you close without saving." = "Kommentarene dine g\U00E5r tapt hvis du lukker uten \U00E5 lagre.";
+"Save & Close" = "Lagre og lukk";
+"Discard" = "Forkast";
+"Stop Recording" = "Stopp opptak";
+"Pause" = "Pause";
+"Resume" = "Gjenoppta";
+"Engine:" = "Motor:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (p\U00E5 enheten)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple-oversettelse er raskere og fungerer uten nett. Google Translate st\U00F8tter flere spr\U00E5k.";
+"Download language packs in System Settings\U2026" = "Last ned spr\U00E5kpakker i Systeminnstillinger\U2026";
+"Configure S3 in Settings" = "Konfigurer S3 i innstillingene";
+"Sign in to Google Drive in Settings" = "Logg inn p\U00E5 Google Drive i innstillingene";
+"Position:" = "Posisjon:";
+"Size:" = "St\U00F8rrelse:";
+"Shape:" = "Form:";
+
+"Same as screenshots" = "Samme som skjermbilder";
+"  Preview size:" = "  Forhåndsvisningsstørrelse:";
+"(0 = off)" = "(0 = av)";
+"Clear All" = "Tøm alt";
+"Clear History?" = "Tøm historikk?";
+"This will permanently delete all screenshots from history." = "Dette vil slette alle skjermbilder fra historikken permanent.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klikk \"Angi\" og trykk en tastekombinasjon med minst én modifikatortast (⌘, ⌥, ⌃, ⇧) for å angi en snarvei.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Filer lastes opp til en \"Snaploom\"-mappe i Google Disk. Alt forblir privat — ingenting deles offentlig.";
+
+"Pressure" = "Trykk";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Åpne video...";
+"Choose a video to open in Snaploom editor" = "Velg en video som skal åpnes i Snaploom-redigering";
+"Click to add effects" = "Klikk for å legge til effekter";
+"Add Zoom" = "Legg til zoom";
+"Add Censor" = "Legg til sensur";
+"Add Cut" = "Legg til klipp";
+"Add Speed" = "Legg til hastighet";
+"Add Freeze" = "Legg til frys";
+"Add Text" = "Legg til tekst";
+"Delete Zoom" = "Slett zoom";
+"Delete Censor" = "Slett sensur";
+"Delete Cut" = "Slett klipp";
+"Delete Speed" = "Slett hastighet";
+"Delete Freeze" = "Slett frys";
+"Delete Text" = "Slett tekst";
+"Edit Text…" = "Rediger tekst…";
+"Huge" = "Enorm";
+"Bold" = "Fet";
+"Italic" = "Kursiv";
+"Alignment" = "Justering";
+"Left" = "Venstre";
+"Center" = "Sentrert";
+"Right" = "Høyre";
+"Text Color" = "Tekstfarge";
+"Background Color" = "Bakgrunnsfarge";
+"Rounded" = "Avrundet";
+"Custom…" = "Egendefinert…";
+"Transparent" = "Gjennomsiktig";
+"Black" = "Svart";
+"White" = "Hvit";
+"Yellow" = "Gul";
+"Red" = "Rød";
+"Green" = "Grønn";
+"Blue" = "Blå";
+"Untitled" = "Uten navn";
+"Add effect" = "Legg til effekt";
+"Fade" = "Uttoning";
+"High" = "Høy";
+"Low" = "Lav";
+"Not enough room here" = "Ikke nok plass her";
+"Copied!" = "Kopiert!";
+"Converting to GIF…" = "Konverterer til GIF…";
+"GIF conversion failed" = "GIF-konvertering mislyktes";
+"No video track found" = "Fant ikke noe videospor";
+"Preview:" = "Forhåndsvisning:";
+"Copy Screen Info" = "Kopier skjerminformasjon";
+"Copies display and capture diagnostics to clipboard" = "Kopierer skjerm- og opptaksdiagnostikk til utklippstavlen";
+"Accent" = "Aksent";
+"Icon" = "Ikon";
+"Background" = "Bakgrunn";
+"Custom" = "Egendefinert";
+"Theme:" = "Tema:";
+"Application" = "Program";
+"Capture area and extract text" = "Ta opp område og trekk ut tekst";
+"Capture the full screen" = "Ta bilde av hele skjermen";
+"Counter for multi-screen captures" = "Teller for flerskjermsopptak";
+"8-character random string (e.g. k3j7x9q2)" = "8-tegns tilfeldig streng (f.eks. k3j7x9q2)";
+"Filename Template Tokens" = "Tegn for filnavnmal";
+"Filename tokens" = "Filnavntegn";
+"Filename:" = "Filnavn:";
+"Open an image file in the editor" = "Åpne en bildefil i redigering";
+"Open the recent captures overlay" = "Åpne overlegget for nylige opptak";
+"Open this settings window" = "Åpne dette innstillingsvinduet";
+"Quick capture (uses your Enter action)" = "Hurtigopptak (bruker Enter-handlingen din)";
+"Re-capture the last selected area" = "Ta nytt opptak av sist valgte område";
+"Screenshots only — captured window title (blank otherwise)" = "Kun skjermbilder — tittelen på vinduet som er tatt bilde av (tom ellers)";
+"Show available filename tokens" = "Vis tilgjengelige filnavntegn";
+"Show supported URL scheme commands" = "Vis støttede URL-skjemakommandoer";
+"Start area capture" = "Start områdeopptak";
+"Start area recording" = "Start områdeinnspilling";
+"Start full-screen recording" = "Start fullskjermsinnspilling";
+"Start scroll capture" = "Start rulleopptak";
+"Stop the current recording" = "Stopp gjeldende opptak";
+"Supported URL Scheme Commands" = "Støttede URL-skjemakommandoer";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Filtypen legges til automatisk. Skråstreker og kolon i {window} blir til bindestreker.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Utløs Snaploom fra Raycast, Alfred, Shortcuts eller et hvilket som helst verktøy som åpner URL-er.";
+"URL scheme info" = "URL-skjemainformasjon";
+"Enable snaploom:// URL scheme" = "Aktiver snaploom://-URL-skjema";
+"sec (0 = never)" = "sek (0 = aldri)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Sikkerhetskopi av innstillinger";
+"Export Settings…" = "Eksporter innstillinger…";
+"Import Settings…" = "Importer innstillinger…";
+"Reveal Settings File in Finder" = "Vis innstillingsfil i Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Eksporter innstillingene dine til en fil for å flytte dem til en annen Mac eller en ren installasjon. Opplastingslegitimasjon, lagringsmappen din og skjermbildehistorikk er ikke inkludert. Innstillingene lagres i Snaplooms appbeholder.";
+"Export Settings" = "Eksporter innstillinger";
+"Import Settings" = "Importer innstillinger";
+"Import failed" = "Importen mislyktes";
+"Settings exported" = "Innstillinger eksportert";
+"Settings imported" = "Innstillinger importert";
+"Import" = "Importer";
+"Later" = "Senere";
+"Relaunch Now" = "Start på nytt nå";
+"Replace your current settings?" = "Erstatte nåværende innstillinger?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Import erstatter de nåværende innstillingene dine med dem i denne filen. Lagringsmappen din, opplastingslegitimasjon og skjermbildehistorikk beholdes. Dette kan ikke angres.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d innstillinger ble brukt. Start Snaploom på nytt for å bruke alle endringene.";
+"A few large items were too big to include. Everything else was saved." = "Noen få store elementer var for store til å inkluderes. Alt annet ble lagret.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Det egendefinerte Beautify-bakgrunnsbildet ditt var for stort til å inkluderes. Alt annet ble lagret.";
+"This file is not a valid Snaploom settings file." = "Denne filen er ikke en gyldig Snaploom-innstillingsfil.";
+"This settings file contains no settings." = "Denne innstillingsfilen inneholder ingen innstillinger.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Denne innstillingsfilen ble laget av en nyere versjon av Snaploom. Oppdater Snaploom først.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Ta opp, oversett og legg teksten over bildet";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Åpne et loggelement i editoren (beholder merknader redigerbare)";

@@ -1,0 +1,673 @@
+/* हिन्दी — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "क्षेत्र कैप्चर करें";
+"Capture Screen" = "स्क्रीन कैप्चर करें";
+"Capture OCR" = "OCR कैप्चर करें";
+"Capture OCR & QR" = "OCR और QR कैप्चर करें";
+"Capture area and read text/QR codes" = "क्षेत्र कैप्चर करें और पाठ/QR कोड पढ़ें";
+"Quick Capture" = "त्वरित कैप्चर";
+"Scroll Capture" = "स्क्रॉल कैप्चर";
+"Capture Last Area" = "अंतिम क्षेत्र कैप्चर करें";
+"Capture Delay" = "कैप्चर विलंब";
+"None" = "कोई नहीं";
+"%d seconds" = "%d सेकंड";
+"Record Area" = "क्षेत्र रिकॉर्ड करें";
+"Record Screen" = "स्क्रीन रिकॉर्ड करें";
+"Recent Captures" = "हाल के कैप्चर";
+"Show History Panel" = "इतिहास पैनल दिखाएँ";
+"Open Image..." = "चित्र खोलें...";
+"Open from Clipboard" = "क्लिपबोर्ड से खोलें";
+"Pin from Clipboard" = "क्लिपबोर्ड से पिन करें";
+"Preferences..." = "प्राथमिकताएँ...";
+"Check for Updates..." = "अपडेट जाँचें...";
+"Quit Snaploom" = "Snaploom बंद करें";
+"No recent captures" = "कोई हालिया कैप्चर नहीं";
+"Clear History" = "इतिहास मिटाएँ";
+
+/* History Panel */
+"Copy" = "कॉपी करें";
+"Save As..." = "इस रूप में सहेजें...";
+"Open in Editor" = "संपादक में खोलें";
+"Open Link" = "लिंक खोलें";
+"Open With" = "इसके साथ खोलें";
+"Pin to Screen" = "स्क्रीन पर पिन करें";
+"Quick Look" = "त्वरित झलक";
+"Delete" = "हटाएँ";
+"All" = "सभी";
+"Screenshots" = "स्क्रीनशॉट";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "कॉपी करने के लिए क्लिक करें · ऐप में खींचें";
+"No captures yet" = "अभी तक कोई कैप्चर नहीं";
+
+/* Floating Thumbnail */
+"Close All" = "सभी बंद करें";
+"Save All to Folder…" = "सभी को फ़ोल्डर में सहेजें…";
+"Save" = "सहेजें";
+
+/* Editor Top Bar */
+"Zoom" = "ज़ूम";
+"Zoom In" = "ज़ूम इन";
+"Zoom Out" = "ज़ूम आउट";
+"Fit Canvas" = "कैनवास फ़िट करें";
+"Crop" = "क्रॉप";
+"Flip Horizontal" = "क्षैतिज पलटें";
+"Flip Vertical" = "लंबवत पलटें";
+"Rotate Left" = "बाएँ घुमाएँ";
+"Rotate Right" = "दाएँ घुमाएँ";
+"Add Capture" = "कैप्चर जोड़ें";
+
+/* Toolbar - Tools */
+"Arrow" = "तीर";
+"Line" = "रेखा";
+"Rectangle" = "आयत";
+"Ellipse" = "दीर्घवृत्त";
+"Pencil" = "पेंसिल";
+"Pencil (Draw)" = "पेंसिल (ड्रॉ)";
+"Marker" = "मार्कर";
+"Text" = "पाठ";
+"Number" = "संख्या";
+"Number / Counter" = "संख्या / काउंटर";
+"Stamp / Emoji" = "स्टैंप / इमोजी";
+"Censor" = "सेंसर";
+"Censor (Pixelate / Blur / Solid)" = "सेंसर (पिक्सलेट / ब्लर / ठोस)";
+"Measure" = "माप";
+"Measure (px)" = "माप (px)";
+"Magnify (Loupe)" = "आवर्धन (लूप)";
+"Highlight" = "हाइलाइट";
+"Highlight (Spotlight)" = "हाइलाइट (स्पॉटलाइट)";
+"Dim" = "मंद";
+"Color Sampler" = "रंग नमूना";
+"Color Picker" = "रंग चयनकर्ता";
+"Select & Edit" = "चुनें और संपादित करें";
+"Color" = "रंग";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "क्लिपबोर्ड पर कॉपी करें";
+"Save to File" = "फ़ाइल में सहेजें";
+"Save to" = "इसमें सहेजें";
+"Open in Editor Window" = "संपादक विंडो में खोलें";
+"Pin on Screen" = "स्क्रीन पर पिन करें";
+"Pin" = "पिन";
+"Pin (floating window)" = "पिन (फ़्लोटिंग विंडो)";
+"OCR" = "OCR";
+"OCR Text" = "OCR पाठ";
+"OCR (extract text)" = "OCR (पाठ निकालें)";
+"Upload" = "अपलोड";
+"Share" = "साझा करें";
+"Undo" = "पूर्ववत करें";
+"Redo" = "फिर से करें";
+"Close" = "बंद करें";
+"Remove Background" = "पृष्ठभूमि हटाएँ";
+"Beautify" = "सुशोभित करें";
+"Adjust" = "समायोजित करें";
+"Adjust (Image Effects)" = "समायोजित करें (छवि प्रभाव)";
+"Invert Colors" = "रंग उलटें";
+"Record" = "रिकॉर्ड";
+"Record screen" = "स्क्रीन रिकॉर्ड करें";
+"Translate" = "अनुवाद करें";
+"Auto-Redact sensitive data" = "संवेदनशील डेटा स्वतः छुपाएँ";
+"Move Selection" = "चयन स्थानांतरित करें";
+
+/* Toolbar - Recording */
+"Start Recording" = "रिकॉर्डिंग शुरू करें";
+"Cancel Recording" = "रिकॉर्डिंग रद्द करें";
+"Highlight Mouse Clicks" = "माउस क्लिक हाइलाइट करें";
+"Record System Audio" = "सिस्टम ऑडियो रिकॉर्ड करें";
+"Record Microphone" = "माइक्रोफ़ोन रिकॉर्ड करें";
+"Recording Settings" = "रिकॉर्डिंग सेटिंग्स";
+
+/* Tool Options */
+"Size" = "आकार";
+"Stroke" = "स्ट्रोक";
+"Radius" = "त्रिज्या";
+"Start:" = "शुरू:";
+"Draw:" = "ड्रॉ:";
+"Auto:" = "स्वतः:";
+"Fill" = "भरण";
+"Outline" = "रूपरेखा";
+"More Emojis" = "और इमोजी";
+"Load Image" = "चित्र लोड करें";
+"Gradient Style" = "ग्रेडिएंट शैली";
+"On" = "चालू";
+"Text Only" = "केवल पाठ";
+"All Text" = "सभी पाठ";
+"PII" = "PII";
+"Faces" = "चेहरे";
+"People" = "लोग";
+"Confirm before upload" = "अपलोड से पहले पुष्टि करें";
+"Flip" = "पलटें";
+"Smooth" = "चिकना";
+"Refined" = "परिष्कृत";
+"Smart" = "स्मार्ट";
+"Padding" = "पैडिंग";
+"Shadow" = "छाया";
+"Right-click to add points" = "बिंदु जोड़ने के लिए राइट-क्लिक करें";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "1 दबाएँ स्वतः-लंबवत  ·  2 दबाएँ स्वतः-क्षैतिज";
+"Limit to selection" = "चयन तक सीमित";
+"Effect" = "प्रभाव";
+"Font" = "फ़ॉन्ट";
+"System" = "सिस्टम";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "विंडो पर क्लिक करें  ·  कस्टम क्षेत्र के लिए खींचें  ·  पूर्ण स्क्रीन के लिए F";
+"Drag to select  ·  Click for full screen" = "चुनने के लिए खींचें  ·  पूर्ण स्क्रीन के लिए क्लिक करें";
+"Release to annotate and edit" = "एनोटेट और संपादित करने के लिए छोड़ें";
+"Release to finish" = "समाप्त करने के लिए छोड़ें";
+"Hold Space to move. Release to annotate and edit" = "स्थानांतरित करने के लिए Space दबाए रखें। एनोटेट और संपादित करने के लिए छोड़ें";
+"Hold Space to move. Release to finish" = "स्थानांतरित करने के लिए Space दबाए रखें। समाप्त करने के लिए छोड़ें";
+"Window snap: " = "विंडो स्नैप: ";
+"ON" = "चालू";
+"OFF" = "बंद";
+"  (Tab to toggle)" = "  (टॉगल के लिए Tab)";
+"Right-click to copy" = "कॉपी करने के लिए राइट-क्लिक करें";
+"Copied %@" = "%@ कॉपी किया";
+"Set color %@" = "रंग सेट किया %@";
+"Draw something first to use the move tool." = "मूव टूल का उपयोग करने के लिए पहले कुछ बनाएँ।";
+"Drag to reposition" = "स्थिति बदलने के लिए खींचें";
+
+/* Overlay - Popovers */
+"Format:" = "प्रारूप:";
+"FPS:" = "FPS:";
+"When done:" = "पूर्ण होने पर:";
+"Open editor" = "संपादक खोलें";
+"Show in Finder" = "Finder में दिखाएँ";
+"Copy to clipboard" = "क्लिपबोर्ड पर कॉपी करें";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom प्राथमिकताएँ";
+"General" = "सामान्य";
+"Tools" = "उपकरण";
+"Recording" = "रिकॉर्डिंग";
+"About" = "बारे में";
+"Shortcuts" = "शॉर्टकट";
+"Uploads" = "अपलोड";
+"Language" = "भाषा";
+"Language:" = "भाषा:";
+"Restart the app to fully apply the new language." = "नई भाषा पूरी तरह लागू करने के लिए ऐप पुनः आरंभ करें।";
+"Capture" = "कैप्चर";
+"Play sound on capture" = "कैप्चर पर ध्वनि चलाएं";
+"Play sound on copy" = "कॉपी पर ध्वनि बजाएँ";
+"Remember last selected tool" = "अंतिम चयनित उपकरण याद रखें";
+"Show floating thumbnail after capture" = "कैप्चर के बाद फ़्लोटिंग थंबनेल दिखाएँ";
+"Launch at login" = "लॉगिन पर लॉन्च करें";
+"Show snap alignment guides" = "स्नैप संरेखण गाइड दिखाएँ";
+"Snap selection edges to image boundaries" = "चयन के किनारों को छवि की सीमाओं पर स्नैप करें";
+"Capture mouse cursor in screenshot" = "स्क्रीनशॉट में माउस कर्सर कैप्चर करें";
+"Double-click selection to copy" = "कॉपी करने के लिए चयन पर डबल-क्लिक करें";
+"Hide capture instructions" = "कैप्चर निर्देश छिपाएँ";
+"Disable shadow outside selection" = "चयन के बाहर छाया अक्षम करें";
+"Show shortcuts in tooltips" = "टूलटिप में शॉर्टकट दिखाएँ";
+
+/* Capture Presets — aspect ratio / resolution */
+"Aspect ratio & resolution presets" = "पहलू अनुपात और रिज़ॉल्यूशन प्रीसेट";
+"Aspect ratio" = "पहलू अनुपात";
+"Resolution" = "रिज़ॉल्यूशन";
+"Freeform" = "मुक्त रूप";
+"Units" = "इकाइयाँ";
+"Keep ratio for next captures" = "अगले कैप्चर के लिए अनुपात बनाए रखें";
+"Use window title in saved filename" = "सहेजे गए फ़ाइलनाम में विंडो शीर्षक उपयोग करें";
+"Hide menu bar icon" = "मेनू बार आइकन छिपाएँ";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "हॉटकी अभी भी काम करेंगी। आइकन फिर से दिखाने के लिए Snaploom पुनः लॉन्च करें।";
+"Check for updates automatically" = "स्वचालित रूप से अपडेट जाँचें";
+"Check for beta updates" = "बीटा अपडेट जाँचें";
+"Thumbnail" = "थंबनेल";
+"  Dismiss after:" = "  इसके बाद खारिज करें:";
+"seconds before auto-dismiss (0 = never)" = "सेकंड में स्वतः खारिज (0 = कभी नहीं)";
+"  Multiple previews:" = "  एकाधिक पूर्वावलोकन:";
+"  Position:" = "  स्थिति:";
+"Stack (keep all)" = "स्टैक (सभी रखें)";
+"Replace (show only latest)" = "बदलें (केवल नवीनतम दिखाएँ)";
+"Menu Bar Order" = "मेनू बार क्रम";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Snaploom मेनू बार मेनू में कैप्चर क्रियाओं का क्रम चुनें।";
+"Move up" = "ऊपर ले जाएँ";
+"Move down" = "नीचे ले जाएँ";
+"Output" = "आउटपुट";
+"Image format:" = "छवि प्रारूप:";
+"Quality:" = "गुणवत्ता:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "मानक रिज़ॉल्यूशन (1x) में सहेजें";
+"Halves dimensions on Retina displays, ~4x smaller files" = "रेटिना डिस्प्ले पर आयाम आधे करता है, ~4x छोटी फ़ाइलें";
+"Embed sRGB color profile" = "sRGB रंग प्रोफ़ाइल एम्बेड करें";
+"Ensures consistent colors across different displays" = "विभिन्न डिस्प्ले पर एकसमान रंग सुनिश्चित करता है";
+"Screenshot History" = "स्क्रीनशॉट इतिहास";
+"History size:" = "इतिहास आकार:";
+"screenshots kept on disk (0 = off)" = "डिस्क पर रखे गए स्क्रीनशॉट (0 = बंद)";
+"Order history by last edit" = "इतिहास को अंतिम संपादन के अनुसार क्रमित करें";
+"Edited screenshots move to the top. Off keeps them in capture order." = "संपादित स्क्रीनशॉट सबसे ऊपर आ जाते हैं. बंद होने पर वे कैप्चर क्रम में रहते हैं.";
+"Custom · %@" = "कस्टम · %@";
+"Space" = "स्पेस";
+"Save Directory" = "सहेजने की डायरेक्टरी";
+"Save folder:" = "सहेजने का फ़ोल्डर:";
+"Browse…" = "ब्राउज़ करें…";
+"Appearance" = "दिखावट";
+"Accent color:" = "एक्सेंट रंग:";
+"Icon color:" = "आइकन रंग:";
+"Background color:" = "पृष्ठभूमि रंग:";
+"Reset" = "रीसेट";
+"Menu bar icon:" = "मेनू बार आइकन:";
+"Default" = "डिफ़ॉल्ट";
+"Custom symbol" = "कस्टम सिंबल";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "कोई भी SF Symbol नाम दर्ज करें (उदा. camera.fill) या एक प्रीसेट चुनें। Apple के SF Symbols ऐप में नाम ब्राउज़ करें। अमान्य नाम डिफ़ॉल्ट आइकन पर वापस आ जाते हैं।";
+"OCR Capture:" = "OCR कैप्चर:";
+"OCR & QR Capture:" = "OCR और QR कैप्चर:";
+"Show window + copy to clipboard" = "विंडो दिखाएँ + क्लिपबोर्ड पर कॉपी करें";
+"Show window only" = "केवल विंडो दिखाएँ";
+"Copy to clipboard only" = "केवल क्लिपबोर्ड पर कॉपी करें";
+"Enter / Quick Capture:" = "Enter / त्वरित कैप्चर:";
+"Save to file" = "फ़ाइल में सहेजें";
+"Save + copy to clipboard" = "सहेजें + क्लिपबोर्ड पर कॉपी करें";
+"OCR Action" = "OCR क्रिया";
+"OCR & QR" = "OCR और QR";
+"Run OCR & QR" = "OCR और QR चलाएँ";
+"QR Code" = "QR कोड";
+"QR Codes" = "QR कोड";
+"Save action:" = "सहेजने की क्रिया:";
+"Save to default folder" = "डिफ़ॉल्ट फ़ोल्डर में सहेजें";
+"Ask where to save" = "कहाँ सहेजना है पूछें";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "कीबोर्ड शॉर्टकट";
+"Hotkeys" = "हॉटकी";
+"Clear shortcut" = "शॉर्टकट मिटाएँ";
+"Press keys..." = "कुंजियाँ दबाएँ...";
+"Waiting..." = "प्रतीक्षा कर रहे हैं...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "एनोटेशन उपकरण";
+"Hidden tools are removed from the bottom toolbar." = "छिपे उपकरण निचले टूलबार से हटा दिए जाते हैं।";
+"Capture Actions" = "कैप्चर क्रियाएँ";
+"Bottom Toolbar Actions" = "निचले टूलबार की क्रियाएँ";
+"Hidden actions are removed from the bottom toolbar." = "छिपी क्रियाएँ निचले टूलबार से हटा दी जाती हैं।";
+"Editor Actions" = "संपादक क्रियाएँ";
+"Right Toolbar Actions" = "दाएँ टूलबार की क्रियाएँ";
+"Hidden actions are removed from the right toolbar." = "छिपी क्रियाएँ दाएँ टूलबार से हटा दी जाती हैं।";
+
+/* Preferences - Recording */
+"Frame rate:" = "फ़्रेम दर:";
+"After recording:" = "रिकॉर्डिंग के बाद:";
+"Save recording to:" = "रिकॉर्डिंग यहाँ सहेजें:";
+"Save Recording" = "रिकॉर्डिंग सहेजें";
+"Clear" = "मिटाएँ";
+"Max height:" = "अधिकतम ऊँचाई:";
+"px (0 = unlimited)" = "px (0 = असीमित)";
+"Behavior" = "व्यवहार";
+"Auto-scroll (sends synthetic scroll events)" = "स्वतः-स्क्रॉल (सिंथेटिक स्क्रॉल इवेंट भेजता है)";
+"Detect fixed/sticky headers" = "स्थिर/स्टिकी हेडर पहचानें";
+"Scroll speed:" = "स्क्रॉल गति:";
+"Slow" = "धीमी";
+"Medium" = "मध्यम";
+"Fast" = "तेज़";
+"Very fast" = "बहुत तेज़";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "अपलोड सेवा";
+"Upload Provider" = "अपलोड प्रदाता";
+"Provider:" = "प्रदाता:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (चित्र + वीडियो)";
+"imgbb (images only)" = "imgbb (केवल चित्र)";
+"S3-Compatible (images + videos)" = "S3-संगत (चित्र + वीडियो)";
+"S3-Compatible Storage" = "S3-संगत भंडारण";
+"Sign In with Google" = "Google से साइन इन करें";
+"Sign Out" = "साइन आउट";
+"Signed in" = "साइन इन किया हुआ";
+"Not signed in" = "साइन इन नहीं किया";
+"Account:" = "खाता:";
+"Test Connection" = "कनेक्शन परीक्षण";
+"Fill in endpoint, bucket, and credentials first" = "पहले एंडपॉइंट, बकेट और क्रेडेंशियल भरें";
+"Testing..." = "परीक्षण हो रहा है...";
+"Connection successful!" = "कनेक्शन सफल!";
+"Leave empty to use default" = "डिफ़ॉल्ट उपयोग के लिए खाली छोड़ें";
+"Endpoint:" = "एंडपॉइंट:";
+"Region:" = "क्षेत्र:";
+"Bucket:" = "बकेट:";
+"Access Key:" = "एक्सेस कुंजी:";
+"Secret Key:" = "सीक्रेट कुंजी:";
+"Public URL:" = "सार्वजनिक URL:";
+"Path Prefix:" = "पथ उपसर्ग:";
+"API key:" = "API कुंजी:";
+"Upload History" = "अपलोड इतिहास";
+"No uploads yet." = "अभी तक कोई अपलोड नहीं।";
+"No Apps Available" = "कोई ऐप उपलब्ध नहीं";
+"No Share Services" = "कोई साझा सेवा नहीं";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "सार्वजनिक पहुँच के लिए बेस URL। यदि खाली है, तो S3 एंडपॉइंट URL उपयोग होता है (सार्वजनिक रूप से सुलभ नहीं हो सकता)।";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "एक साझा कुंजी शामिल है — यदि दर सीमा तक पहुँचें तो imgbb.com/api पर अपनी मुफ़्त कुंजी प्राप्त करें। केवल चित्र (वीडियो समर्थन नहीं)।";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, और अन्य S3-संगत सेवाओं के साथ काम करता है। चित्र और वीडियो समर्थित हैं।";
+"Configure S3 in Preferences" = "प्राथमिकताओं में S3 कॉन्फ़िगर करें";
+"Sign in to Google Drive in Preferences" = "प्राथमिकताओं में Google Drive से साइन इन करें";
+"Video upload requires Google Drive or S3" = "वीडियो अपलोड के लिए Google Drive या S3 आवश्यक है";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "संस्करण %@ (%@)";
+"Made by" = "निर्माता";
+"Licensed under the GPLv3" = "GPLv3 के अंतर्गत लाइसेंसीकृत";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "macOS के लिए एक मुफ़्त, ओपन-सोर्स स्क्रीनशॉट और स्क्रीन रिकॉर्डिंग उपकरण।\nपूर्णतः नेटिव — Swift और AppKit से निर्मित।";
+
+/* Alerts */
+"No Image on Clipboard" = "क्लिपबोर्ड पर कोई छवि नहीं";
+"No Image or Text on Clipboard" = "क्लिपबोर्ड पर कोई छवि या पाठ नहीं";
+"Copy an image to the clipboard first, then try again." = "पहले क्लिपबोर्ड पर एक छवि कॉपी करें, फिर पुनः प्रयास करें।";
+"Copy an image or text to the clipboard first, then try again." = "पहले क्लिपबोर्ड पर एक छवि या पाठ कॉपी करें, फिर पुनः प्रयास करें।";
+"OK" = "ठीक है";
+"Accessibility Access Required" = "सुलभता पहुँच आवश्यक";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom को अन्य ऐप्स को स्वतः-स्क्रॉल करने के लिए सुलभता अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में पहुँच प्रदान करें, फिर पुनः प्रयास करें।";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "स्क्रॉल कैप्चर के लिए Snaploom को एक्सेसिबिलिटी अनुमति चाहिए। कृपया सिस्टम सेटिंग्स में एक्सेस दें, फिर पुनः प्रयास करें।";
+"Open Settings" = "सेटिंग्स खोलें";
+"Cancel" = "रद्द करें";
+"Microphone Access Required" = "माइक्रोफ़ोन पहुँच आवश्यक";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom को ध्वनि ऑडियो रिकॉर्ड करने के लिए माइक्रोफ़ोन अनुमति चाहिए। पहुँच प्रदान करने के लिए सिस्टम सेटिंग्स खोलें।";
+"Upload to Google Drive?" = "Google Drive पर अपलोड करें?";
+"Upload to S3?" = "S3 पर अपलोड करें?";
+"Upload to imgbb.com?" = "imgbb.com पर अपलोड करें?";
+"Your screenshot will be uploaded." = "आपका स्क्रीनशॉट अपलोड किया जाएगा।";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Snaploom में आपका स्वागत है";
+"Snaploom needs one permission" = "Snaploom को एक अनुमति चाहिए";
+"Screen Recording not yet granted" = "स्क्रीन रिकॉर्डिंग अभी तक प्रदान नहीं की गई";
+"Screen Recording granted!" = "स्क्रीन रिकॉर्डिंग प्रदान की गई!";
+"Enable Snaploom, then try taking a screenshot" = "Snaploom सक्षम करें, फिर स्क्रीनशॉट लेने का प्रयास करें";
+"Open Screen Recording Settings" = "स्क्रीन रिकॉर्डिंग सेटिंग्स खोलें";
+"Continue" = "जारी रखें";
+
+/* OCR Window */
+"Text Recognition" = "पाठ पहचान";
+"Text & QR Recognition" = "पाठ और QR पहचान";
+"Translate to:" = "अनुवाद करें:";
+"%d chars · %d words" = "%d अक्षर · %d शब्द";
+"Copy  ⌘↩" = "कॉपी  ⌘↩";
+"AI Search" = "AI खोज";
+"Show Original" = "मूल दिखाएँ";
+"Translation Failed" = "अनुवाद विफल";
+"Translation" = "अनुवाद";
+"(No text detected in the selected area)" = "(चयनित क्षेत्र में कोई पाठ नहीं मिला)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL क्लिपबोर्ड पर कॉपी किया गया";
+"Uploading... %d%%" = "अपलोड हो रहा है... %d%%";
+"Upload failed: %@" = "अपलोड विफल: %@";
+"Uploaded! Link copied." = "अपलोड हो गया! लिंक कॉपी किया गया।";
+"Uploading to %@... %d%%" = "%@ पर अपलोड हो रहा है... %d%%";
+"Open" = "खोलें";
+
+/* Recording Toast */
+"Recording saved" = "रिकॉर्डिंग सहेजी गई";
+"%@ • Recording saved" = "%@ • रिकॉर्डिंग सहेजी गई";
+"Copy Path" = "पथ कॉपी करें";
+"Path copied!" = "पथ कॉपी किया गया!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom वीडियो संपादक";
+"%@ selected" = "%@ चयनित";
+"Exporting..." = "निर्यात हो रहा है...";
+"Export failed" = "निर्यात विफल";
+"Saved to %@" = "%@ में सहेजा गया";
+"Save failed" = "सहेजना विफल";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "इस रूप में सहेजें...";
+"Choose a folder" = "फ़ोल्डर चुनें";
+"Save All to Folder…" = "सभी को फ़ोल्डर में सहेजें…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "स्वतः स्क्रॉल";
+"Stop" = "रोकें";
+"Scrolling..." = "स्क्रॉल हो रहा है...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "प्रीसेट";
+"Adjustments" = "समायोजन";
+"Brightness" = "चमक";
+"Contrast" = "कंट्रास्ट";
+"Saturation" = "संतृप्ति";
+"Sharpness" = "तीक्ष्णता";
+
+/* Time Ago */
+"just now" = "अभी";
+"%ds ago" = "%d से. पहले";
+"%dm ago" = "%d मि. पहले";
+"%dh ago" = "%d घं. पहले";
+
+/* Hotkey Labels */
+"History" = "इतिहास";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"Record\" पर क्लिक करें और शॉर्टकट सेट करने के लिए कम से कम एक मॉडिफ़ायर (⌘, ⌥, ⌃, ⇧) के साथ कुंजी संयोजन दबाएँ।";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "GIF संसाधित हो रहा है…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "इनपुट मॉनिटरिंग आवश्यक";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom को रिकॉर्डिंग के दौरान कीस्ट्रोक दिखाने के लिए इनपुट मॉनिटरिंग अनुमति चाहिए। कृपया System Settings में पहुँच प्रदान करें, फिर पुनः प्रयास करें।";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom को रिकॉर्डिंग के दौरान कीस्ट्रोक दिखाने के लिए सुलभता अनुमति चाहिए। कृपया System Settings में पहुँच प्रदान करें, फिर पुनः प्रयास करें।";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "कीस्ट्रोक दिखाएँ";
+"Shortcuts Only" = "केवल शॉर्टकट";
+"All Keystrokes" = "सभी कीस्ट्रोक";
+
+/* Recording — Settings Popover */
+"Delay:" = "विलंब:";
+
+/* Video Editor */
+"Copied to clipboard!" = "क्लिपबोर्ड पर कॉपी किया गया!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "वेबकैम ओवरले";
+"Camera Access Required" = "कैमरा पहुँच आवश्यक";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom को वेबकैम ओवरले के लिए कैमरा अनुमति चाहिए। पहुँच प्रदान करने के लिए सिस्टम सेटिंग्स खोलें।";
+"Webcam" = "वेबकैम";
+"Bottom Right" = "नीचे दाएँ";
+"Bottom Left" = "नीचे बाएँ";
+"Top Right" = "ऊपर दाएँ";
+"Top Left" = "ऊपर बाएँ";
+"Small" = "छोटा";
+"Large" = "बड़ा";
+"Webcam Size Small" = "छोटा";
+"Webcam Size Medium" = "मध्यम";
+"Webcam Size Large" = "बड़ा";
+"Webcam Size Extra Large" = "बहुत बड़ा";
+"Circle" = "वृत्त";
+"Rounded Rectangle" = "गोलाकार आयत";
+"Cam pos:" = "कैम स्थिति:";
+"Cam size:" = "कैम आकार:";
+"Cam shape:" = "कैम आकृति:";
+
+/* New Strings */
+"Settings..." = "सेटिंग्स...";
+"Snaploom Settings" = "Snaploom सेटिंग्स";
+"Also open in Editor" = "संपादक में भी खोलें";
+"Hide controls" = "नियंत्रण छिपाएँ";
+"Hide recording controls" = "रिकॉर्डिंग नियंत्रण छिपाएँ";
+"Stop recording from the menu bar icon instead." = "इसके बजाय मेनू बार आइकन से रिकॉर्डिंग बंद करें।";
+"Pixelate" = "पिक्सलेट";
+"Blur" = "ब्लर";
+"Solid" = "ठोस";
+"Erase" = "मिटाएँ";
+"Done" = "हो गया";
+"Do nothing" = "कुछ न करें";
+"Overlay / Editor Shortcuts" = "ओवरले / संपादक शॉर्टकट";
+"Set" = "सेट करें";
+"Press..." = "दबाएँ...";
+"Reset to default" = "डिफ़ॉल्ट पर रीसेट करें";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "उस उपकरण के शॉर्टकट के रूप में निर्दिष्ट करने के लिए एक कुंजी दबाएँ। ये ओवरले या संपादक सक्रिय होने पर काम करते हैं।";
+"Keep Separate" = "अलग रखें";
+"Merge Audio" = "ऑडियो मर्ज करें";
+"Audio Tracks" = "ऑडियो ट्रैक";
+"Adjust volume for each audio track:" = "प्रत्येक ऑडियो ट्रैक की आवाज़ समायोजित करें:";
+"Microphone:" = "माइक्रोफ़ोन:";
+"System audio:" = "सिस्टम ऑडियो:";
+"Loupe" = "आवर्धक";
+"Stamp" = "स्टैंप";
+"Unlimited" = "असीमित";
+
+/* Save Confirmation / Recording / Translation / Upload / Inspector */
+"Save changes?" = "परिवर्तन सहेजें?";
+"Your annotations will be lost if you close without saving." = "यदि आप सहेजे बिना बंद करते हैं तो आपकी टिप्पणियाँ खो जाएँगी।";
+"Save & Close" = "सहेजें और बंद करें";
+"Discard" = "त्यागें";
+"Stop Recording" = "रिकॉर्डिंग रोकें";
+"Pause" = "विराम";
+"Resume" = "फिर से शुरू करें";
+"Engine:" = "इंजन:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (डिवाइस पर)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple अनुवाद तेज़ है और ऑफ़लाइन काम करता है। Google Translate अधिक भाषाओं का समर्थन करता है।";
+"Download language packs in System Settings…" = "सिस्टम सेटिंग्स में भाषा पैक डाउनलोड करें…";
+"Configure S3 in Settings" = "सेटिंग्स में S3 कॉन्फ़िगर करें";
+"Sign in to Google Drive in Settings" = "सेटिंग्स में Google Drive में साइन इन करें";
+"Position:" = "स्थिति:";
+"Size:" = "आकार:";
+"Shape:" = "आकृति:";
+
+"Same as screenshots" = "स्क्रीनशॉट के समान";
+"  Preview size:" = "  पूर्वावलोकन आकार:";
+"(0 = off)" = "(0 = बंद)";
+"Clear All" = "सब साफ़ करें";
+"Clear History?" = "इतिहास साफ़ करें?";
+"This will permanently delete all screenshots from history." = "यह इतिहास से सभी स्क्रीनशॉट स्थायी रूप से हटा देगा।";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"सेट\" पर क्लिक करें और कम से कम एक मॉडिफ़ायर (⌘, ⌥, ⌃, ⇧) के साथ एक कुंजी संयोजन दबाएं।";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "फ़ाइलें आपके Google Drive में एक \"Snaploom\" फ़ोल्डर में अपलोड की जाती हैं। सब कुछ निजी रहता है — कुछ भी सार्वजनिक रूप से साझा नहीं किया जाता।";
+
+"Pressure" = "दबाव";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "वीडियो खोलें...";
+"Choose a video to open in Snaploom editor" = "Snaploom संपादक में खोलने के लिए वीडियो चुनें";
+"Click to add effects" = "प्रभाव जोड़ने के लिए क्लिक करें";
+"Add Zoom" = "ज़ूम जोड़ें";
+"Add Censor" = "सेंसर जोड़ें";
+"Add Cut" = "कट जोड़ें";
+"Add Speed" = "गति जोड़ें";
+"Add Freeze" = "फ़्रीज़ जोड़ें";
+"Add Text" = "टेक्स्ट जोड़ें";
+"Delete Zoom" = "ज़ूम हटाएँ";
+"Delete Censor" = "सेंसर हटाएँ";
+"Delete Cut" = "कट हटाएँ";
+"Delete Speed" = "गति हटाएँ";
+"Delete Freeze" = "फ़्रीज़ हटाएँ";
+"Delete Text" = "टेक्स्ट हटाएँ";
+"Edit Text…" = "टेक्स्ट संपादित करें…";
+"Huge" = "विशाल";
+"Bold" = "बोल्ड";
+"Italic" = "इटैलिक";
+"Alignment" = "संरेखण";
+"Left" = "बाएँ";
+"Center" = "मध्य";
+"Right" = "दाएँ";
+"Text Color" = "टेक्स्ट का रंग";
+"Background Color" = "पृष्ठभूमि का रंग";
+"Rounded" = "गोलाकार";
+"Custom…" = "कस्टम…";
+"Transparent" = "पारदर्शी";
+"Black" = "काला";
+"White" = "सफ़ेद";
+"Yellow" = "पीला";
+"Red" = "लाल";
+"Green" = "हरा";
+"Blue" = "नीला";
+"Untitled" = "बिना शीर्षक";
+"Add effect" = "प्रभाव जोड़ें";
+"Fade" = "फ़ेड";
+"High" = "उच्च";
+"Low" = "निम्न";
+"Not enough room here" = "यहाँ पर्याप्त जगह नहीं है";
+"Copied!" = "कॉपी किया गया!";
+"Converting to GIF…" = "GIF में परिवर्तित हो रहा है…";
+"GIF conversion failed" = "GIF रूपांतरण विफल";
+"No video track found" = "कोई वीडियो ट्रैक नहीं मिला";
+"Preview:" = "पूर्वावलोकन:";
+"Copy Screen Info" = "स्क्रीन जानकारी कॉपी करें";
+"Copies display and capture diagnostics to clipboard" = "डिस्प्ले और कैप्चर डायग्नोस्टिक्स को क्लिपबोर्ड पर कॉपी करता है";
+"Accent" = "एक्सेंट";
+"Icon" = "आइकन";
+"Background" = "पृष्ठभूमि";
+"Custom" = "कस्टम";
+"Theme:" = "थीम:";
+"Application" = "एप्लिकेशन";
+"Capture area and extract text" = "क्षेत्र कैप्चर करें और पाठ निकालें";
+"Capture the full screen" = "पूरी स्क्रीन कैप्चर करें";
+"Counter for multi-screen captures" = "मल्टी-स्क्रीन कैप्चर के लिए काउंटर";
+"8-character random string (e.g. k3j7x9q2)" = "8-अक्षर की रैंडम स्ट्रिंग (उदा. k3j7x9q2)";
+"Filename Template Tokens" = "फ़ाइलनाम टेम्पलेट टोकन";
+"Filename tokens" = "फ़ाइलनाम टोकन";
+"Filename:" = "फ़ाइलनाम:";
+"Open an image file in the editor" = "संपादक में एक छवि फ़ाइल खोलें";
+"Open the recent captures overlay" = "हाल के कैप्चर ओवरले खोलें";
+"Open this settings window" = "यह सेटिंग्स विंडो खोलें";
+"Quick capture (uses your Enter action)" = "त्वरित कैप्चर (आपकी Enter क्रिया का उपयोग करता है)";
+"Re-capture the last selected area" = "अंतिम चयनित क्षेत्र पुनः कैप्चर करें";
+"Screenshots only — captured window title (blank otherwise)" = "केवल स्क्रीनशॉट — कैप्चर किए गए विंडो का शीर्षक (अन्यथा खाली)";
+"Show available filename tokens" = "उपलब्ध फ़ाइलनाम टोकन दिखाएँ";
+"Enable snaploom:// URL scheme" = "snaploom:// URL स्कीम सक्षम करें";
+"Show supported URL scheme commands" = "समर्थित URL स्कीम कमांड दिखाएँ";
+"Start area capture" = "क्षेत्र कैप्चर शुरू करें";
+"Start area recording" = "क्षेत्र रिकॉर्डिंग शुरू करें";
+"Start full-screen recording" = "पूर्ण-स्क्रीन रिकॉर्डिंग शुरू करें";
+"Start scroll capture" = "स्क्रॉल कैप्चर शुरू करें";
+"Stop the current recording" = "वर्तमान रिकॉर्डिंग रोकें";
+"Supported URL Scheme Commands" = "समर्थित URL स्कीम कमांड";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "फ़ाइल एक्सटेंशन स्वचालित रूप से जोड़ा जाता है। {window} में स्लैश और कोलन डैश बन जाते हैं।";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Raycast, Alfred, Shortcuts, या URL खोलने वाले किसी भी उपकरण से Snaploom ट्रिगर करें।";
+"URL scheme info" = "URL स्कीम जानकारी";
+"sec (0 = never)" = "से. (0 = कभी नहीं)";
+"Settings" = "सेटिंग्स";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "ऑफ़लाइन बिल्ड: अपलोड और क्लाउड स्टोरेज इंटीग्रेशन हटा दिए गए हैं। अपडेट जाँच अब भी Snaploom के अपडेट सर्वर से कनेक्ट हो सकती है। स्क्रीनशॉट और रिकॉर्डिंग स्थानीय रहते हैं जब तक कि आप उन्हें स्वयं साझा या सहेज न लें।";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "सेटिंग्स बैकअप";
+"Export Settings…" = "सेटिंग्स एक्सपोर्ट करें…";
+"Import Settings…" = "सेटिंग्स इम्पोर्ट करें…";
+"Reveal Settings File in Finder" = "सेटिंग्स फ़ाइल को Finder में दिखाएँ";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "अपनी प्राथमिकताओं को किसी फ़ाइल में एक्सपोर्ट करें ताकि उन्हें किसी दूसरे Mac पर या नई इंस्टॉल में ले जा सकें। अपलोड क्रेडेंशियल्स, आपका सेव फ़ोल्डर और स्क्रीनशॉट इतिहास शामिल नहीं हैं। सेटिंग्स Snaploom के ऐप कंटेनर के अंदर संग्रहीत होती हैं।";
+"Export Settings" = "सेटिंग्स एक्सपोर्ट करें";
+"Import Settings" = "सेटिंग्स इम्पोर्ट करें";
+"Import failed" = "इम्पोर्ट विफल रहा";
+"Settings exported" = "सेटिंग्स एक्सपोर्ट हो गईं";
+"Settings imported" = "सेटिंग्स इम्पोर्ट हो गईं";
+"Import" = "इम्पोर्ट करें";
+"Later" = "बाद में";
+"Relaunch Now" = "अभी पुनः लॉन्च करें";
+"Replace your current settings?" = "अपनी वर्तमान सेटिंग्स बदलें?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "इम्पोर्ट करने से आपकी वर्तमान प्राथमिकताएँ इस फ़ाइल की प्राथमिकताओं से बदल जाएँगी। आपका सेव फ़ोल्डर, अपलोड क्रेडेंशियल्स और स्क्रीनशॉट इतिहास बना रहेगा। इसे पूर्ववत नहीं किया जा सकता।";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d सेटिंग्स लागू की गईं। सभी बदलाव लागू करने के लिए Snaploom को पुनः लॉन्च करें।";
+"A few large items were too big to include. Everything else was saved." = "कुछ बड़ी वस्तुएँ शामिल करने के लिए बहुत बड़ी थीं। बाकी सब कुछ सहेज लिया गया।";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "आपकी कस्टम Beautify बैकग्राउंड छवि शामिल करने के लिए बहुत बड़ी थी। बाकी सब कुछ सहेज लिया गया।";
+"This file is not a valid Snaploom settings file." = "यह फ़ाइल एक मान्य Snaploom सेटिंग्स फ़ाइल नहीं है।";
+"This settings file contains no settings." = "इस सेटिंग्स फ़ाइल में कोई सेटिंग्स नहीं हैं।";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "यह सेटिंग्स फ़ाइल Snaploom के किसी नए संस्करण द्वारा बनाई गई थी। कृपया पहले Snaploom को अपडेट करें।";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "टेक्स्ट को कैप्चर करें, अनुवाद करें और छवि पर ओवरले करें";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "किसी हिस्ट्री एंट्री को एडिटर में खोलें (एनोटेशन संपादन योग्य रहते हैं)";

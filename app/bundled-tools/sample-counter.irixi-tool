@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "sample.counter",
+  "name": "示例计数器",
+  "author": "IRiXi",
+  "version": "1.0.0",
+  "minimumHostVersion": "0.3.0",
+  "description": "用于确认工具安装、保存、停用、恢复和卸载流程是否正常。",
+  "capabilities": ["storage"],
+  "ui": {
+    "type": "counter",
+    "title": "今天完成了多少件事？",
+    "emptyText": "从 0 开始，退出重开后数字仍会保留。"
+  },
+  "actions": [
+    { "id": "subtract", "label": "减 1", "operation": "increment", "amount": -1 },
+    { "id": "add", "label": "加 1", "operation": "increment", "amount": 1 },
+    { "id": "reset", "label": "归零", "operation": "set", "amount": 0 }
+  ]
+}

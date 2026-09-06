@@ -1,0 +1,673 @@
+/* Nederlands — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Gebied vastleggen";
+"Capture Screen" = "Scherm vastleggen";
+"Capture OCR" = "OCR vastleggen";
+"Quick Capture" = "Snelle opname";
+"Scroll Capture" = "Scrollopname";
+"Capture Last Area" = "Laatste gebied vastleggen";
+"Capture Delay" = "Opnamevertraging";
+"None" = "Geen";
+"%d seconds" = "%d seconden";
+"Record Area" = "Gebied opnemen";
+"Record Screen" = "Scherm opnemen";
+"Recent Captures" = "Recente opnames";
+"Show History Panel" = "Geschiedenispaneel tonen";
+"Open Image..." = "Afbeelding openen...";
+"Open from Clipboard" = "Openen vanuit klembord";
+"Pin from Clipboard" = "Vastpinnen vanuit klembord";
+"Preferences..." = "Instellingen...";
+"Check for Updates..." = "Controleer op updates...";
+"Quit Snaploom" = "Stop Snaploom";
+"No recent captures" = "Geen recente opnames";
+"Clear History" = "Geschiedenis wissen";
+
+/* History Panel */
+"Copy" = "Kopieer";
+"Save As..." = "Bewaar als...";
+"Open in Editor" = "Open in editor";
+"Pin to Screen" = "Vastpinnen op scherm";
+"Quick Look" = "Snelle weergave";
+"Delete" = "Verwijder";
+"All" = "Alles";
+"Screenshots" = "Schermafbeeldingen";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "Klik om te kopieren · Sleep naar app";
+"No captures yet" = "Nog geen opnames";
+
+/* Floating Thumbnail */
+"Close All" = "Sluit alles";
+"Save All to Folder…" = "Bewaar alles in map…";
+"Save" = "Bewaar";
+
+/* Editor Top Bar */
+"Zoom In" = "Inzoomen";
+"Zoom Out" = "Uitzoomen";
+"Fit Canvas" = "Pas canvas in";
+"Crop" = "Bijsnijden";
+"Flip Horizontal" = "Horizontaal spiegelen";
+"Flip Vertical" = "Verticaal spiegelen";
+"Rotate Left" = "Linksom draaien";
+"Rotate Right" = "Rechtsom draaien";
+"Add Capture" = "Opname toevoegen";
+
+/* Toolbar - Tools */
+"Arrow" = "Pijl";
+"Line" = "Lijn";
+"Rectangle" = "Rechthoek";
+"Ellipse" = "Ellips";
+"Pencil" = "Potlood";
+"Pencil (Draw)" = "Potlood (Tekenen)";
+"Marker" = "Markeerstift";
+"Text" = "Tekst";
+"Number" = "Nummer";
+"Number / Counter" = "Nummer / Teller";
+"Stamp / Emoji" = "Stempel / Emoji";
+"Censor" = "Censureren";
+"Censor (Pixelate / Blur / Solid)" = "Censureren (Pixelen / Vervagen / Effen)";
+"Measure" = "Meten";
+"Measure (px)" = "Meten (px)";
+"Magnify (Loupe)" = "Vergroten (Loep)";
+"Highlight" = "Uitlichten";
+"Highlight (Spotlight)" = "Uitlichten (Spotlight)";
+"Dim" = "Dimmen";
+"Color Sampler" = "Kleurpipet";
+"Color Picker" = "Kleurkiezer";
+"Select & Edit" = "Selecteren en bewerken";
+"Color" = "Kleur";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Kopieer naar klembord";
+"Save to File" = "Bewaar als bestand";
+"Save to" = "Bewaar in";
+"Open in Editor Window" = "Open in editorvenster";
+"Pin on Screen" = "Vastpinnen op scherm";
+"Pin" = "Vastpinnen";
+"Pin (floating window)" = "Vastpinnen (zwevend venster)";
+"OCR" = "OCR";
+"OCR Text" = "OCR-tekst";
+"OCR (extract text)" = "OCR (tekst extraheren)";
+"OCR & QR" = "OCR & QR";
+"Capture OCR & QR" = "OCR & QR vastleggen";
+"Capture area and read text/QR codes" = "Gebied vastleggen en tekst/QR-codes lezen";
+"Run OCR & QR" = "OCR & QR uitvoeren";
+"Text & QR Recognition" = "Tekst- & QR-herkenning";
+"QR Code" = "QR-code";
+"QR Codes" = "QR-codes";
+"Open Link" = "Link openen";
+"Open With" = "Openen met";
+"No Apps Available" = "Geen apps beschikbaar";
+"No Share Services" = "Geen deeldiensten";
+"Upload" = "Uploaden";
+"Share" = "Deel";
+"Undo" = "Ongedaan maken";
+"Redo" = "Opnieuw";
+"Close" = "Sluit";
+"Remove Background" = "Achtergrond verwijderen";
+"Beautify" = "Verfraai";
+"Adjust" = "Aanpassen";
+"Adjust (Image Effects)" = "Aanpassen (Afbeeldingseffecten)";
+"Invert Colors" = "Kleuren omkeren";
+"Record" = "Opnemen";
+"Record screen" = "Scherm opnemen";
+"Translate" = "Vertalen";
+"Auto-Redact sensitive data" = "Gevoelige gegevens automatisch censureren";
+"Move Selection" = "Selectie verplaatsen";
+
+/* Toolbar - Recording */
+"Start Recording" = "Opname starten";
+"Cancel Recording" = "Opname annuleren";
+"Highlight Mouse Clicks" = "Muisklikken markeren";
+"Record System Audio" = "Systeemaudio opnemen";
+"Record Microphone" = "Microfoon opnemen";
+"Recording Settings" = "Opname-instellingen";
+
+/* Tool Options */
+"Size" = "Grootte";
+"Stroke" = "Lijn";
+"Radius" = "Radius";
+"Start:" = "Start:";
+"Draw:" = "Teken:";
+"Auto:" = "Auto:";
+"Fill" = "Vulling";
+"Outline" = "Omtrek";
+"More Emojis" = "Meer emoji's";
+"Load Image" = "Afbeelding laden";
+"Gradient Style" = "Verloopstijl";
+"On" = "Aan";
+"Text Only" = "Alleen tekst";
+"All Text" = "Alle tekst";
+"PII" = "PII";
+"Faces" = "Gezichten";
+"People" = "Personen";
+"Confirm before upload" = "Bevestig voor uploaden";
+"Flip" = "Spiegelen";
+"Smooth" = "Vloeiend";
+"Refined" = "Verfijnd";
+"Smart" = "Slim";
+"Padding" = "Opvulling";
+"Shadow" = "Schaduw";
+"Right-click to add points" = "Rechtsklik om punten toe te voegen";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Houd 1 ingedrukt auto-verticaal  ·  Houd 2 ingedrukt auto-horizontaal";
+"Limit to selection" = "Beperken tot selectie";
+"Effect" = "Effect";
+"Font" = "Lettertype";
+"System" = "Systeem";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Klik op een venster  ·  Sleep voor aangepast gebied  ·  F voor volledig scherm";
+"Drag to select  ·  Click for full screen" = "Sleep om te selecteren  ·  Klik voor volledig scherm";
+"Release to annotate and edit" = "Laat los om te annoteren en bewerken";
+"Release to finish" = "Laat los om te voltooien";
+"Hold Space to move. Release to annotate and edit" = "Houd Spatie ingedrukt om te verplaatsen. Laat los om te annoteren en bewerken";
+"Hold Space to move. Release to finish" = "Houd Spatie ingedrukt om te verplaatsen. Laat los om te voltooien";
+"Window snap: " = "Venster-snap: ";
+"ON" = "AAN";
+"OFF" = "UIT";
+"  (Tab to toggle)" = "  (Tab om te wisselen)";
+"Right-click to copy" = "Rechtsklik om te kopieren";
+"Copied %@" = "%@ gekopieerd";
+"Set color %@" = "Kleur %@ ingesteld";
+"Draw something first to use the move tool." = "Teken eerst iets om het verplaatsgereedschap te gebruiken.";
+"Drag to reposition" = "Sleep om te herpositioneren";
+
+/* Overlay - Popovers */
+"Format:" = "Formaat:";
+"FPS:" = "FPS:";
+"When done:" = "Na afloop:";
+"Open editor" = "Open editor";
+"Show in Finder" = "Toon in Finder";
+"Copy to clipboard" = "Kopieer naar klembord";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom-instellingen";
+"General" = "Algemeen";
+"Tools" = "Gereedschap";
+"Recording" = "Opname";
+"About" = "Over";
+"Shortcuts" = "Sneltoetsen";
+"Uploads" = "Uploads";
+"Language" = "Taal";
+"Language:" = "Taal:";
+"Restart the app to fully apply the new language." = "Herstart de app om de nieuwe taal volledig toe te passen.";
+"Capture" = "Opname";
+"Play sound on capture" = "Geluid afspelen bij opname";
+"Play sound on copy" = "Geluid afspelen bij kopieren";
+"Remember last selected tool" = "Laatst geselecteerd gereedschap onthouden";
+"Show floating thumbnail after capture" = "Zwevende miniatuur tonen na opname";
+"Launch at login" = "Open bij inloggen";
+"Show snap alignment guides" = "Uitlijnhulplijnen tonen";
+"Snap selection edges to image boundaries" = "Selectieranden uitlijnen op afbeeldingsgrenzen";
+"Capture mouse cursor in screenshot" = "Muiscursor vastleggen in schermafbeelding";
+"Double-click selection to copy" = "Dubbelklik op selectie om te kopiëren";
+"Hide capture instructions" = "Opname-instructies verbergen";
+"Disable shadow outside selection" = "Schaduw buiten selectie uitschakelen";
+"Show shortcuts in tooltips" = "Sneltoetsen in knopinfo tonen";
+"Use window title in saved filename" = "Venstertitel gebruiken in bestandsnaam";
+"Hide menu bar icon" = "Menubalkpictogram verbergen";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Sneltoetsen werken nog steeds. Start Snaploom opnieuw op om het pictogram weer te tonen.";
+"Check for updates automatically" = "Automatisch op updates controleren";
+"Check for beta updates" = "Controleren op bèta-updates";
+"Thumbnail" = "Miniatuur";
+"  Dismiss after:" = "  Verberg na:";
+"seconds before auto-dismiss (0 = never)" = "seconden voor automatisch verbergen (0 = nooit)";
+"  Multiple previews:" = "  Meerdere voorbeelden:";
+"Stack (keep all)" = "Stapelen (alles bewaren)";
+"Replace (show only latest)" = "Vervangen (alleen laatste tonen)";
+"  Position:" = "  Positie:";
+"Menu Bar Order" = "Volgorde menubalk";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Kies de volgorde van opname-acties in het menubalkmenu van Snaploom.";
+"Move up" = "Omhoog verplaatsen";
+"Move down" = "Omlaag verplaatsen";
+"Output" = "Uitvoer";
+"Image format:" = "Afbeeldingsformaat:";
+"Quality:" = "Kwaliteit:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Opslaan op standaardresolutie (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Halveert afmetingen op Retina-schermen, ~4x kleinere bestanden";
+"Embed sRGB color profile" = "sRGB-kleurprofiel insluiten";
+"Ensures consistent colors across different displays" = "Zorgt voor consistente kleuren op verschillende schermen";
+"Screenshot History" = "Schermafbeeldingsgeschiedenis";
+"Order history by last edit" = "Geschiedenis sorteren op laatste bewerking";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Bewerkte schermafbeeldingen komen bovenaan. Uit houdt ze in opnamevolgorde.";
+"History size:" = "Geschiedenisgrootte:";
+"screenshots kept on disk (0 = off)" = "schermafbeeldingen bewaard op schijf (0 = uit)";
+"Save Directory" = "Opslagmap";
+"Save action:" = "Opslagactie:";
+"Save to default folder" = "Opslaan in standaardmap";
+"Ask where to save" = "Vragen waar op te slaan";
+"Save folder:" = "Opslagmap:";
+"Browse…" = "Bladeren…";
+"Appearance" = "Weergave";
+"Accent color:" = "Accentkleur:";
+"Icon color:" = "Pictogramkleur:";
+"Background color:" = "Achtergrondkleur:";
+"Reset" = "Herstel";
+"Menu bar icon:" = "Menubalkpictogram:";
+"Default" = "Standaard";
+"Custom symbol" = "Aangepast symbool";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Voer een willekeurige SF Symbol-naam in (bijv. camera.fill) of kies een voorinstelling. Blader door namen in Apple's SF Symbols-app. Ongeldige namen vallen terug op het standaardpictogram.";
+"OCR Capture:" = "OCR-opname:";
+"OCR & QR Capture:" = "OCR & QR-opname:";
+"Show window + copy to clipboard" = "Venster tonen + kopieren naar klembord";
+"Show window only" = "Alleen venster tonen";
+"Copy to clipboard only" = "Alleen kopieren naar klembord";
+"Enter / Quick Capture:" = "Enter / Snelle opname:";
+"Save to file" = "Bewaar als bestand";
+"Save + copy to clipboard" = "Bewaar + kopieer naar klembord";
+"OCR Action" = "OCR-actie";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Sneltoetsen";
+"Hotkeys" = "Sneltoetsen";
+"Clear shortcut" = "Sneltoets wissen";
+"Press keys..." = "Druk op toetsen...";
+"Waiting..." = "Wachten...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Annotatiegereedschap";
+"Hidden tools are removed from the bottom toolbar." = "Verborgen gereedschappen worden verwijderd uit de onderste werkbalk.";
+"Capture Actions" = "Opnameacties";
+"Bottom Toolbar Actions" = "Acties in onderste werkbalk";
+"Hidden actions are removed from the bottom toolbar." = "Verborgen acties worden verwijderd uit de onderste werkbalk.";
+"Editor Actions" = "Editoracties";
+"Right Toolbar Actions" = "Acties in rechter werkbalk";
+"Hidden actions are removed from the right toolbar." = "Verborgen acties worden verwijderd uit de rechter werkbalk.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Framesnelheid:";
+"After recording:" = "Na opname:";
+"Save recording to:" = "Opname opslaan in:";
+"Clear" = "Wis";
+"Max height:" = "Max hoogte:";
+"px (0 = unlimited)" = "px (0 = onbeperkt)";
+"Behavior" = "Gedrag";
+"Auto-scroll (sends synthetic scroll events)" = "Automatisch scrollen (stuurt synthetische scroll-events)";
+"Detect fixed/sticky headers" = "Vaste/plakkende headers detecteren";
+"Scroll speed:" = "Scrollsnelheid:";
+"Slow" = "Langzaam";
+"Medium" = "Gemiddeld";
+"Fast" = "Snel";
+"Very fast" = "Zeer snel";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Uploaddienst";
+"Upload Provider" = "Uploadprovider";
+"Provider:" = "Provider:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (afbeeldingen + video's)";
+"imgbb (images only)" = "imgbb (alleen afbeeldingen)";
+"S3-Compatible (images + videos)" = "S3-compatibel (afbeeldingen + video's)";
+"S3-Compatible Storage" = "S3-compatibele opslag";
+"Sign In with Google" = "Inloggen met Google";
+"Sign Out" = "Uitloggen";
+"Signed in" = "Ingelogd";
+"Not signed in" = "Niet ingelogd";
+"Account:" = "Account:";
+"Test Connection" = "Verbinding testen";
+"Fill in endpoint, bucket, and credentials first" = "Vul eerst endpoint, bucket en inloggegevens in";
+"Testing..." = "Testen...";
+"Connection successful!" = "Verbinding geslaagd!";
+"Leave empty to use default" = "Laat leeg voor standaardwaarde";
+"Endpoint:" = "Endpoint:";
+"Region:" = "Regio:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Toegangssleutel:";
+"Secret Key:" = "Geheime sleutel:";
+"Public URL:" = "Publieke URL:";
+"Path Prefix:" = "Padprefix:";
+"API key:" = "API-sleutel:";
+"Upload History" = "Uploadgeschiedenis";
+"No uploads yet." = "Nog geen uploads.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Basis-URL voor publieke toegang. Indien leeg wordt de S3-endpoint-URL gebruikt (mogelijk niet publiek toegankelijk).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Een gedeelde sleutel is inbegrepen — haal je eigen gratis sleutel op imgbb.com/api als je limieten bereikt. Alleen afbeeldingen (geen video-ondersteuning).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Werkt met AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 en andere S3-compatibele diensten. Ondersteunt afbeeldingen en video's.";
+"Configure S3 in Preferences" = "Configureer S3 in Instellingen";
+"Sign in to Google Drive in Preferences" = "Log in bij Google Drive in Instellingen";
+"Video upload requires Google Drive or S3" = "Video-upload vereist Google Drive of S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Versie %@ (%@)";
+"Made by" = "Gemaakt door";
+"Licensed under the GPLv3" = "Gelicenseerd onder de GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Een gratis, open-source schermafbeelding- en schermopnametool voor macOS.\nVolledig natief — gebouwd met Swift en AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Geen afbeelding op klembord";
+"No Image or Text on Clipboard" = "Geen afbeelding of tekst op klembord";
+"Copy an image to the clipboard first, then try again." = "Kopieer eerst een afbeelding naar het klembord en probeer het opnieuw.";
+"Copy an image or text to the clipboard first, then try again." = "Kopieer eerst een afbeelding of tekst naar het klembord en probeer het opnieuw.";
+"OK" = "OK";
+"Accessibility Access Required" = "Toegankelijkheidstoegang vereist";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom heeft toegankelijkheidstoegang nodig om automatisch in andere apps te scrollen. Verleen toegang in Systeeminstellingen en probeer het opnieuw.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom heeft toegankelijkheids­toestemming nodig voor scrollopname. Verleen toegang in Systeeminstellingen en probeer het opnieuw.";
+"Open Settings" = "Open Instellingen";
+"Cancel" = "Annuleer";
+"Microphone Access Required" = "Microfoontoegang vereist";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom heeft microfoontoestemming nodig om spraak op te nemen. Open Systeeminstellingen om toegang te verlenen.";
+"Upload to Google Drive?" = "Uploaden naar Google Drive?";
+"Upload to S3?" = "Uploaden naar S3?";
+"Upload to imgbb.com?" = "Uploaden naar imgbb.com?";
+"Your screenshot will be uploaded." = "Je schermafbeelding wordt geupload.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Welkom bij Snaploom";
+"Snaploom needs one permission" = "Snaploom heeft een toestemming nodig";
+"Screen Recording not yet granted" = "Schermopname nog niet toegestaan";
+"Screen Recording granted!" = "Schermopname toegestaan!";
+"Enable Snaploom, then try taking a screenshot" = "Schakel Snaploom in en probeer een schermafbeelding te maken";
+"Open Screen Recording Settings" = "Open schermopname-instellingen";
+"Continue" = "Ga door";
+
+/* OCR Window */
+"Text Recognition" = "Tekstherkenning";
+"Translate to:" = "Vertalen naar:";
+"%d chars · %d words" = "%d tekens · %d woorden";
+"Copy  ⌘↩" = "Kopieer  ⌘↩";
+"AI Search" = "AI-zoeken";
+"Show Original" = "Toon origineel";
+"Translation Failed" = "Vertaling mislukt";
+"Translation" = "Vertaling";
+"(No text detected in the selected area)" = "(Geen tekst gedetecteerd in het geselecteerde gebied)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL gekopieerd naar het klembord";
+"Uploading... %d%%" = "Uploaden... %d%%";
+"Upload failed: %@" = "Upload mislukt: %@";
+"Uploaded! Link copied." = "Geupload! Link gekopieerd.";
+"Uploading to %@... %d%%" = "Uploaden naar %@... %d%%";
+"Open" = "Open";
+
+/* Recording Toast */
+"Recording saved" = "Opname opgeslagen";
+"%@ • Recording saved" = "%@ • Opname opgeslagen";
+"Copy Path" = "Kopieer pad";
+"Path copied!" = "Pad gekopieerd!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom Video-editor";
+"%@ selected" = "%@ geselecteerd";
+"Exporting..." = "Exporteren...";
+"Export failed" = "Export mislukt";
+"Saved to %@" = "Opgeslagen in %@";
+"Save failed" = "Opslaan mislukt";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Bewaar als...";
+"Save Recording" = "Bewaar opname";
+"Choose a folder" = "Kies een map";
+"Save All to Folder…" = "Bewaar alles in map…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Automatisch scrollen";
+"Stop" = "Stop";
+"Scrolling..." = "Scrollen...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Voorinstellingen";
+"Adjustments" = "Aanpassingen";
+"Brightness" = "Helderheid";
+"Contrast" = "Contrast";
+"Saturation" = "Verzadiging";
+"Sharpness" = "Scherpte";
+
+/* Time Ago */
+"just now" = "zojuist";
+"%ds ago" = "%ds geleden";
+"%dm ago" = "%dm geleden";
+"%dh ago" = "%du geleden";
+
+/* Hotkey Labels */
+"History" = "Geschiedenis";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klik op \"Opnemen\" en druk op een toetsencombinatie met ten minste een modifier (⌘, ⌥, ⌃, ⇧) om een sneltoets in te stellen.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "GIF verwerken…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Invoerbewaking vereist";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom heeft de toestemming Invoerbewaking nodig om toetsaanslagen te tonen tijdens de opname. Verleen toegang in System Settings en probeer het opnieuw.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom heeft de toegankelijkheidstoestemming nodig om toetsaanslagen te tonen tijdens de opname. Verleen toegang in System Settings en probeer het opnieuw.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Toetsaanslagen tonen";
+"Shortcuts Only" = "Alleen sneltoetsen";
+"All Keystrokes" = "Alle toetsaanslagen";
+
+/* Recording — Settings Popover */
+"Delay:" = "Vertraging:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Gekopieerd naar klembord!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Webcamoverlay";
+"Camera Access Required" = "Cameratoegang vereist";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom heeft cameratoegang nodig voor de webcamoverlay. Open Systeeminstellingen om toegang te verlenen.";
+"Webcam" = "Webcam";
+"Bottom Right" = "Rechtsonder";
+"Bottom Left" = "Linksonder";
+"Top Right" = "Rechtsboven";
+"Top Left" = "Linksboven";
+"Small" = "Klein";
+"Large" = "Groot";
+"Webcam Size Small" = "Klein";
+"Webcam Size Medium" = "Gemiddeld";
+"Webcam Size Large" = "Groot";
+"Webcam Size Extra Large" = "Extra groot";
+"Circle" = "Cirkel";
+"Rounded Rectangle" = "Afgeronde rechthoek";
+"Cam pos:" = "Cam pos.:";
+"Cam size:" = "Cam grootte:";
+"Cam shape:" = "Cam vorm:";
+
+/* New strings */
+"Settings..." = "Instellingen...";
+"Settings" = "Instellingen";
+"Snaploom Settings" = "Snaploom-instellingen";
+"Also open in Editor" = "Ook openen in editor";
+"Hide controls" = "Bedieningselementen verbergen";
+"Hide recording controls" = "Opnamebediening verbergen";
+"Stop recording from the menu bar icon instead." = "Stop de opname via het menubalkpictogram.";
+"Pixelate" = "Pixelen";
+"Blur" = "Vervagen";
+"Solid" = "Effen";
+"Erase" = "Wissen";
+"Done" = "Gereed";
+"Do nothing" = "Niets doen";
+"Overlay / Editor Shortcuts" = "Overlay- / editorsneltoetsen";
+"Set" = "Instellen";
+"Press..." = "Druk...";
+"Reset to default" = "Standaardwaarden herstellen";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Druk op een toets om deze als sneltoets voor dat gereedschap toe te wijzen. Deze werken wanneer de overlay of editor actief is.";
+"Keep Separate" = "Gescheiden houden";
+"Merge Audio" = "Audio samenvoegen";
+"Audio Tracks" = "Audiotracks";
+"Adjust volume for each audio track:" = "Pas het volume aan voor elke audiotrack:";
+"Microphone:" = "Microfoon:";
+"System audio:" = "Systeemaudio:";
+"Loupe" = "Loep";
+"Stamp" = "Stempel";
+"Unlimited" = "Onbeperkt";
+"Save changes?" = "Wijzigingen opslaan?";
+"Your annotations will be lost if you close without saving." = "Je annotaties gaan verloren als je sluit zonder op te slaan.";
+"Save & Close" = "Opslaan en sluiten";
+"Discard" = "Verwerpen";
+"Stop Recording" = "Opname stoppen";
+"Pause" = "Pauzeren";
+"Resume" = "Hervatten";
+"Engine:" = "Engine:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (op het apparaat)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple-vertaling is sneller en werkt offline. Google Translate ondersteunt meer talen.";
+"Download language packs in System Settings…" = "Download taalpakketten in Systeeminstellingen…";
+"Configure S3 in Settings" = "Configureer S3 in Instellingen";
+"Sign in to Google Drive in Settings" = "Log in bij Google Drive in Instellingen";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Offline build: integraties voor uploaden en cloudopslag zijn verwijderd. Controles op updates kunnen nog steeds verbinding maken met de updateserver van Snaploom. Schermafbeeldingen en opnames blijven lokaal tenzij je ze zelf deelt of opslaat.";
+"Position:" = "Positie:";
+"Size:" = "Grootte:";
+"Shape:" = "Vorm:";
+
+"Same as screenshots" = "Hetzelfde als schermafbeeldingen";
+"  Preview size:" = "  Voorbeeldgrootte:";
+"(0 = off)" = "(0 = uit)";
+"Clear All" = "Alles wissen";
+"Clear History?" = "Geschiedenis wissen?";
+"This will permanently delete all screenshots from history." = "Hiermee worden alle schermafbeeldingen definitief uit de geschiedenis verwijderd.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Klik op \"Instellen\" en druk op een toetscombinatie met ten minste één modifier (⌘, ⌥, ⌃, ⇧) om een sneltoets in te stellen.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Bestanden worden geüpload naar een \"Snaploom\"-map in uw Google Drive. Alles blijft privé — er wordt niets openbaar gedeeld.";
+
+"Pressure" = "Druk";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Video openen...";
+"Choose a video to open in Snaploom editor" = "Kies een video om in de Snaploom-editor te openen";
+"Click to add effects" = "Klik om effecten toe te voegen";
+"Add Zoom" = "Zoom toevoegen";
+"Add Censor" = "Censuur toevoegen";
+"Add Cut" = "Knip toevoegen";
+"Add Speed" = "Snelheid toevoegen";
+"Add Freeze" = "Stilstaand beeld toevoegen";
+"Add Text" = "Tekst toevoegen";
+"Delete Zoom" = "Zoom verwijderen";
+"Delete Censor" = "Censuur verwijderen";
+"Delete Cut" = "Knip verwijderen";
+"Delete Speed" = "Snelheid verwijderen";
+"Delete Freeze" = "Stilstaand beeld verwijderen";
+"Delete Text" = "Tekst verwijderen";
+"Edit Text…" = "Tekst bewerken…";
+"Huge" = "Enorm";
+"Bold" = "Vet";
+"Italic" = "Cursief";
+"Alignment" = "Uitlijning";
+"Left" = "Links";
+"Center" = "Midden";
+"Right" = "Rechts";
+"Text Color" = "Tekstkleur";
+"Background Color" = "Achtergrondkleur";
+"Rounded" = "Afgerond";
+"Custom…" = "Aangepast…";
+"Transparent" = "Transparant";
+"Black" = "Zwart";
+"White" = "Wit";
+"Yellow" = "Geel";
+"Red" = "Rood";
+"Green" = "Groen";
+"Blue" = "Blauw";
+"Untitled" = "Naamloos";
+"Add effect" = "Effect toevoegen";
+"Fade" = "Vervagen";
+"High" = "Hoog";
+"Low" = "Laag";
+"Not enough room here" = "Niet genoeg ruimte hier";
+"Copied!" = "Gekopieerd!";
+"Converting to GIF…" = "Omzetten naar GIF…";
+"GIF conversion failed" = "GIF-conversie mislukt";
+"No video track found" = "Geen videotrack gevonden";
+"Preview:" = "Voorbeeld:";
+"Copy Screen Info" = "Scherminfo kopiëren";
+"Copies display and capture diagnostics to clipboard" = "Kopieert scherm- en opnamediagnostiek naar het klembord";
+"Accent" = "Accent";
+"Icon" = "Pictogram";
+"Background" = "Achtergrond";
+"Custom" = "Aangepast";
+"Theme:" = "Thema:";
+"Application" = "Applicatie";
+"Capture area and extract text" = "Gebied vastleggen en tekst extraheren";
+"Capture the full screen" = "Volledig scherm vastleggen";
+"Counter for multi-screen captures" = "Teller voor opnames op meerdere schermen";
+"8-character random string (e.g. k3j7x9q2)" = "Willekeurige reeks van 8 tekens (bijv. k3j7x9q2)";
+"Filename Template Tokens" = "Tokens voor bestandsnaamsjabloon";
+"Filename tokens" = "Bestandsnaam-tokens";
+"Filename:" = "Bestandsnaam:";
+"Open an image file in the editor" = "Open een afbeeldingsbestand in de editor";
+"Open the recent captures overlay" = "Open de overlay met recente opnames";
+"Open this settings window" = "Open dit instellingenvenster";
+"Quick capture (uses your Enter action)" = "Snelle opname (gebruikt je Enter-actie)";
+"Re-capture the last selected area" = "Laatst geselecteerde gebied opnieuw vastleggen";
+"Screenshots only — captured window title (blank otherwise)" = "Alleen schermafbeeldingen — titel van het vastgelegde venster (anders leeg)";
+"Show available filename tokens" = "Beschikbare bestandsnaam-tokens tonen";
+"Show supported URL scheme commands" = "Ondersteunde URL-schemacommando's tonen";
+"Enable snaploom:// URL scheme" = "snaploom:// URL-schema inschakelen";
+"Start area capture" = "Gebiedsopname starten";
+"Start area recording" = "Gebiedsopname (video) starten";
+"Start full-screen recording" = "Volledige schermopname starten";
+"Start scroll capture" = "Scrollopname starten";
+"Stop the current recording" = "Huidige opname stoppen";
+"Supported URL Scheme Commands" = "Ondersteunde URL-schemacommando's";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "De bestandsextensie wordt automatisch toegevoegd. Schuine strepen en dubbele punten in {window} worden streepjes.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Activeer Snaploom vanuit Raycast, Alfred, Shortcuts of elke tool die URL's opent.";
+"URL scheme info" = "URL-schema-info";
+"sec (0 = never)" = "sec (0 = nooit)";
+
+/* Resolution / aspect ratio presets */
+"Aspect ratio & resolution presets" = "Voorinstellingen voor beeldverhouding en resolutie";
+"Aspect ratio" = "Beeldverhouding";
+"Resolution" = "Resolutie";
+"Freeform" = "Vrije vorm";
+"Custom · %@" = "Aangepast · %@";
+"Units" = "Eenheden";
+"Keep ratio for next captures" = "Verhouding behouden voor volgende opnames";
+"Zoom" = "Zoom";
+
+/* Keyboard key names */
+"Space" = "Spatie";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Back-up van instellingen";
+"Export Settings…" = "Instellingen exporteren…";
+"Import Settings…" = "Instellingen importeren…";
+"Reveal Settings File in Finder" = "Instellingenbestand tonen in Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Exporteer je voorkeuren naar een bestand om ze naar een andere Mac of een schone installatie te verplaatsen. Uploadgegevens, je opslagmap en schermafbeeldingsgeschiedenis worden niet meegenomen. Instellingen worden bewaard in de app-container van Snaploom.";
+"Export Settings" = "Instellingen exporteren";
+"Import Settings" = "Instellingen importeren";
+"Import failed" = "Importeren mislukt";
+"Settings exported" = "Instellingen geëxporteerd";
+"Settings imported" = "Instellingen geïmporteerd";
+"Import" = "Importeer";
+"Later" = "Later";
+"Relaunch Now" = "Nu opnieuw starten";
+"Replace your current settings?" = "Je huidige instellingen vervangen?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Bij het importeren worden je huidige voorkeuren vervangen door die in dit bestand. Je opslagmap, uploadgegevens en schermafbeeldingsgeschiedenis blijven behouden. Dit kan niet ongedaan worden gemaakt.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d instellingen zijn toegepast. Start Snaploom opnieuw om alle wijzigingen door te voeren.";
+"A few large items were too big to include. Everything else was saved." = "Een paar grote items waren te groot om mee te nemen. Al het overige is bewaard.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Je aangepaste Beautify-achtergrondafbeelding was te groot om mee te nemen. Al het overige is bewaard.";
+"This file is not a valid Snaploom settings file." = "Dit bestand is geen geldig Snaploom-instellingenbestand.";
+"This settings file contains no settings." = "Dit instellingenbestand bevat geen instellingen.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Dit instellingenbestand is gemaakt met een nieuwere versie van Snaploom. Werk Snaploom eerst bij.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Leg de tekst op de afbeelding vast, vertaal deze en plaats de vertaling eroverheen";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Open een geschiedenisitem in de editor (annotaties blijven bewerkbaar)";

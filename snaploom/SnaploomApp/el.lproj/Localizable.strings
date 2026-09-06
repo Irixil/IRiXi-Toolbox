@@ -1,0 +1,673 @@
+/* Ελληνικά — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Λήψη περιοχής";
+"Capture Screen" = "Λήψη οθόνης";
+"Capture OCR" = "Λήψη OCR";
+"Capture OCR & QR" = "Λήψη OCR & QR";
+"Capture area and read text/QR codes" = "Λήψη περιοχής και ανάγνωση κειμένου/κωδικών QR";
+"OCR & QR" = "OCR & QR";
+"Quick Capture" = "Γρήγορη λήψη";
+"Scroll Capture" = "Λήψη με κύλιση";
+"Capture Last Area" = "Λήψη τελευταίας περιοχής";
+"Capture Delay" = "Καθυστέρηση λήψης";
+"None" = "Καμία";
+"%d seconds" = "%d δευτερόλεπτα";
+"Record Area" = "Εγγραφή περιοχής";
+"Record Screen" = "Εγγραφή οθόνης";
+"Recent Captures" = "Πρόσφατες λήψεις";
+"Show History Panel" = "Εμφάνιση πίνακα ιστορικού";
+"Open Image..." = "Άνοιγμα εικόνας...";
+"Open from Clipboard" = "Άνοιγμα από πρόχειρο";
+"Pin from Clipboard" = "Καρφίτσωμα από πρόχειρο";
+"Preferences..." = "Προτιμήσεις...";
+"Check for Updates..." = "Έλεγχος για ενημερώσεις...";
+"Quit Snaploom" = "Τερματισμός Snaploom";
+"No recent captures" = "Δεν υπάρχουν πρόσφατες λήψεις";
+"Clear History" = "Εκκαθάριση ιστορικού";
+
+/* History Panel */
+"Copy" = "Αντιγραφή";
+"Save As..." = "Αποθήκευση ως...";
+"Open in Editor" = "Άνοιγμα σε επεξεργαστή";
+"Open Link" = "Άνοιγμα συνδέσμου";
+"Open With" = "Άνοιγμα με";
+"No Apps Available" = "Δεν υπάρχουν διαθέσιμες εφαρμογές";
+"Pin to Screen" = "Καρφίτσωμα στην οθόνη";
+"Quick Look" = "Γρήγορη προβολή";
+"Delete" = "Διαγραφή";
+"All" = "Όλα";
+"Screenshots" = "Στιγμιότυπα";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "Κλικ για αντιγραφή · Σύρσιμο σε εφαρμογή";
+"No captures yet" = "Δεν υπάρχουν λήψεις ακόμα";
+
+/* Floating Thumbnail */
+"Close All" = "Κλείσιμο όλων";
+"Save All to Folder…" = "Αποθήκευση όλων σε φάκελο…";
+"Save" = "Αποθήκευση";
+
+/* Editor Top Bar */
+"Zoom In" = "Μεγέθυνση";
+"Zoom Out" = "Σμίκρυνση";
+"Zoom" = "Ζουμ";
+"Fit Canvas" = "Προσαρμογή καμβά";
+"Crop" = "Περικοπή";
+"Flip Horizontal" = "Αναστροφή οριζόντια";
+"Flip Vertical" = "Αναστροφή κατακόρυφα";
+"Rotate Left" = "Περιστροφή αριστερά";
+"Rotate Right" = "Περιστροφή δεξιά";
+"Add Capture" = "Προσθήκη λήψης";
+
+/* Toolbar - Tools */
+"Arrow" = "Βέλος";
+"Line" = "Γραμμή";
+"Rectangle" = "Ορθογώνιο";
+"Ellipse" = "Έλλειψη";
+"Pencil" = "Μολύβι";
+"Pencil (Draw)" = "Μολύβι (Σχεδίαση)";
+"Marker" = "Μαρκαδόρος";
+"Text" = "Κείμενο";
+"Number" = "Αριθμός";
+"Number / Counter" = "Αριθμός / Μετρητής";
+"Stamp / Emoji" = "Σφραγίδα / Emoji";
+"Censor" = "Λογοκρισία";
+"Censor (Pixelate / Blur / Solid)" = "Λογοκρισία (Εικονοστοιχεία / Θόλωμα / Συμπαγές)";
+"Measure" = "Μέτρηση";
+"Measure (px)" = "Μέτρηση (px)";
+"Magnify (Loupe)" = "Μεγέθυνση (Φακός)";
+"Highlight" = "Ανάδειξη";
+"Highlight (Spotlight)" = "Ανάδειξη (Προβολέας)";
+"Dim" = "Σκίαση";
+"Color Sampler" = "Δειγματολήπτης χρώματος";
+"Color Picker" = "Επιλογέας χρώματος";
+"Select & Edit" = "Επιλογή & Επεξεργασία";
+"Color" = "Χρώμα";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Αντιγραφή στο πρόχειρο";
+"Save to File" = "Αποθήκευση σε αρχείο";
+"Save to" = "Αποθήκευση σε";
+"Open in Editor Window" = "Άνοιγμα σε παράθυρο επεξεργασίας";
+"Pin on Screen" = "Καρφίτσωμα στην οθόνη";
+"Pin" = "Καρφίτσωμα";
+"Pin (floating window)" = "Καρφίτσωμα (αιωρούμενο παράθυρο)";
+"OCR" = "OCR";
+"OCR Text" = "Κείμενο OCR";
+"OCR (extract text)" = "OCR (εξαγωγή κειμένου)";
+"Run OCR & QR" = "Εκτέλεση OCR & QR";
+"Upload" = "Μεταφόρτωση";
+"Share" = "Κοινοποίηση";
+"No Share Services" = "Δεν υπάρχουν υπηρεσίες κοινοποίησης";
+"Undo" = "Αναίρεση";
+"Redo" = "Επανάληψη";
+"Close" = "Κλείσιμο";
+"Remove Background" = "Αφαίρεση φόντου";
+"Beautify" = "Ομορφιά";
+"Adjust" = "Ρύθμιση";
+"Adjust (Image Effects)" = "Ρύθμιση (Εφέ εικόνας)";
+"Invert Colors" = "Αντιστροφή χρωμάτων";
+"Record" = "Εγγραφή";
+"Record screen" = "Εγγραφή οθόνης";
+"Translate" = "Μετάφραση";
+"Auto-Redact sensitive data" = "Αυτόματη απόκρυψη ευαίσθητων δεδομένων";
+"Move Selection" = "Μετακίνηση επιλογής";
+
+/* Toolbar - Recording */
+"Start Recording" = "Έναρξη εγγραφής";
+"Cancel Recording" = "Ακύρωση εγγραφής";
+"Highlight Mouse Clicks" = "Επισήμανση κλικ ποντικιού";
+"Record System Audio" = "Εγγραφή ήχου συστήματος";
+"Record Microphone" = "Εγγραφή μικροφώνου";
+"Recording Settings" = "Ρυθμίσεις εγγραφής";
+
+/* Tool Options */
+"Size" = "Μέγεθος";
+"Stroke" = "Πάχος γραμμής";
+"Radius" = "Ακτίνα";
+"Start:" = "Έναρξη:";
+"Draw:" = "Σχεδίαση:";
+"Auto:" = "Αυτόματα:";
+"Fill" = "Γέμισμα";
+"Outline" = "Περίγραμμα";
+"More Emojis" = "Περισσότερα Emoji";
+"Load Image" = "Φόρτωση εικόνας";
+"Gradient Style" = "Στυλ διαβάθμισης";
+"On" = "Ενεργό";
+"Text Only" = "Μόνο κείμενο";
+"All Text" = "Όλο το κείμενο";
+"PII" = "PII";
+"Faces" = "Πρόσωπα";
+"People" = "Άνθρωποι";
+"Confirm before upload" = "Επιβεβαίωση πριν τη μεταφόρτωση";
+"Flip" = "Αναστροφή";
+"Smooth" = "Εξομάλυνση";
+"Refined" = "Εκλεπτυσμένο";
+"Smart" = "Έξυπνο";
+"Padding" = "Περιθώριο";
+"Shadow" = "Σκιά";
+"Right-click to add points" = "Δεξί κλικ για προσθήκη σημείων";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Κρατήστε 1 αυτόματα κατακόρυφα  ·  Κρατήστε 2 αυτόματα οριζόντια";
+"Limit to selection" = "Περιορισμός στην επιλογή";
+"Effect" = "Εφέ";
+"Font" = "Γραμματοσειρά";
+"System" = "Σύστημα";
+
+/* Aspect Ratio & Resolution Presets */
+"Aspect ratio" = "Αναλογία διαστάσεων";
+"Aspect ratio & resolution presets" = "Προεπιλογές αναλογίας διαστάσεων & ανάλυσης";
+"Resolution" = "Ανάλυση";
+"Freeform" = "Ελεύθερη μορφή";
+"Units" = "Μονάδες";
+"Keep ratio for next captures" = "Διατήρηση αναλογίας για επόμενες λήψεις";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Κλικ σε παράθυρο  ·  Σύρσιμο για προσαρμοσμένη περιοχή  ·  F για πλήρη οθόνη";
+"Drag to select  ·  Click for full screen" = "Σύρετε για επιλογή  ·  Κλικ για πλήρη οθόνη";
+"Release to annotate and edit" = "Αφήστε για σχολιασμό και επεξεργασία";
+"Release to finish" = "Αφήστε για ολοκλήρωση";
+"Hold Space to move. Release to annotate and edit" = "Κρατήστε το Space για μετακίνηση. Αφήστε για σχολιασμό και επεξεργασία";
+"Hold Space to move. Release to finish" = "Κρατήστε το Space για μετακίνηση. Αφήστε για ολοκλήρωση";
+"Window snap: " = "Κούμπωμα παραθύρου: ";
+"ON" = "ON";
+"OFF" = "OFF";
+"  (Tab to toggle)" = "  (Tab για εναλλαγή)";
+"Right-click to copy" = "Δεξί κλικ για αντιγραφή";
+"Copied %@" = "Αντιγράφηκε %@";
+"Set color %@" = "Ορισμός χρώματος %@";
+"Draw something first to use the move tool." = "Σχεδιάστε κάτι πρώτα για να χρησιμοποιήσετε το εργαλείο μετακίνησης.";
+"Drag to reposition" = "Σύρετε για επανατοποθέτηση";
+
+/* Overlay - Popovers */
+"Format:" = "Μορφή:";
+"FPS:" = "FPS:";
+"When done:" = "Μετά την ολοκλήρωση:";
+"Open editor" = "Άνοιγμα επεξεργαστή";
+"Show in Finder" = "Εμφάνιση στο Finder";
+"Copy to clipboard" = "Αντιγραφή στο πρόχειρο";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Προτιμήσεις Snaploom";
+"General" = "Γενικά";
+"Tools" = "Εργαλεία";
+"Recording" = "Εγγραφή";
+"About" = "Σχετικά";
+"Shortcuts" = "Συντομεύσεις";
+"Uploads" = "Μεταφορτώσεις";
+"Language" = "Γλώσσα";
+"Language:" = "Γλώσσα:";
+"Restart the app to fully apply the new language." = "Επανεκκινήστε την εφαρμογή για πλήρη εφαρμογή της νέας γλώσσας.";
+"Capture" = "Λήψη";
+"Play sound on capture" = "Αναπαραγωγή ήχου κατά τη λήψη";
+"Play sound on copy" = "Αναπαραγωγή ήχου κατά την αντιγραφή";
+"Remember last selected tool" = "Απομνημόνευση τελευταίου επιλεγμένου εργαλείου";
+"Show floating thumbnail after capture" = "Εμφάνιση αιωρούμενης μικρογραφίας μετά τη λήψη";
+"Launch at login" = "Εκκίνηση κατά τη σύνδεση";
+"Show snap alignment guides" = "Εμφάνιση οδηγών ευθυγράμμισης κουμπώματος";
+"Snap selection edges to image boundaries" = "Κούμπωμα των άκρων επιλογής στα όρια της εικόνας";
+"Capture mouse cursor in screenshot" = "Λήψη δρομέα ποντικιού στο στιγμιότυπο";
+"Double-click selection to copy" = "Διπλό κλικ στην επιλογή για αντιγραφή";
+"Hide capture instructions" = "Απόκρυψη οδηγιών λήψης";
+"Disable shadow outside selection" = "Απενεργοποίηση σκιάς εκτός επιλογής";
+"Show shortcuts in tooltips" = "Εμφάνιση συντομεύσεων στις επεξηγήσεις";
+"Use window title in saved filename" = "Χρήση τίτλου παραθύρου στο όνομα αρχείου";
+"Hide menu bar icon" = "Απόκρυψη εικονιδίου γραμμής μενού";
+"Menu bar icon:" = "Εικονίδιο γραμμής μενού:";
+"Custom symbol" = "Προσαρμοσμένο σύμβολο";
+"Default" = "Προεπιλογή";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Εισαγάγετε οποιοδήποτε όνομα SF Symbol (π.χ. camera.fill) ή επιλέξτε μια προεπιλογή. Περιηγηθείτε στα ονόματα στην εφαρμογή SF Symbols της Apple. Τα μη έγκυρα ονόματα επιστρέφουν στο προεπιλεγμένο εικονίδιο.";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Τα πλήκτρα συντόμευσης λειτουργούν ακόμα. Για εμφάνιση του εικονιδίου, επανεκκινήστε το Snaploom.";
+"Check for updates automatically" = "Αυτόματος έλεγχος ενημερώσεων";
+"Check for beta updates" = "Έλεγχος για ενημερώσεις beta";
+"Thumbnail" = "Μικρογραφία";
+"  Dismiss after:" = "  Απόκρυψη μετά από:";
+"seconds before auto-dismiss (0 = never)" = "δευτερόλεπτα πριν την αυτόματη απόκρυψη (0 = ποτέ)";
+"  Multiple previews:" = "  Πολλαπλές προεπισκοπήσεις:";
+"  Position:" = "  Θέση:";
+"Stack (keep all)" = "Στοίβαξη (διατήρηση όλων)";
+"Replace (show only latest)" = "Αντικατάσταση (εμφάνιση μόνο τελευταίου)";
+"Menu Bar Order" = "Σειρά γραμμής μενού";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Επιλέξτε τη σειρά των ενεργειών λήψης στο μενού της γραμμής μενού του Snaploom.";
+"Move up" = "Μετακίνηση πάνω";
+"Move down" = "Μετακίνηση κάτω";
+"Output" = "Έξοδος";
+"Image format:" = "Μορφή εικόνας:";
+"Quality:" = "Ποιότητα:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Αποθήκευση σε τυπική ανάλυση (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Υποδιπλασιάζει τις διαστάσεις σε οθόνες Retina, ~4x μικρότερα αρχεία";
+"Embed sRGB color profile" = "Ενσωμάτωση προφίλ χρώματος sRGB";
+"Ensures consistent colors across different displays" = "Εξασφαλίζει συνεπή χρώματα σε διαφορετικές οθόνες";
+"Screenshot History" = "Ιστορικό στιγμιοτύπων";
+"History size:" = "Μέγεθος ιστορικού:";
+"screenshots kept on disk (0 = off)" = "στιγμιότυπα αποθηκευμένα στον δίσκο (0 = απενεργοποίηση)";
+"Order history by last edit" = "Ταξινόμηση ιστορικού κατά τελευταία επεξεργασία";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Τα επεξεργασμένα στιγμιότυπα μετακινούνται στην κορυφή. Απενεργοποιημένο τα διατηρεί στη σειρά λήψης.";
+"Custom · %@" = "Προσαρμοσμένο · %@";
+"Space" = "Διάστημα";
+"Save Directory" = "Φάκελος αποθήκευσης";
+"Save folder:" = "Φάκελος αποθήκευσης:";
+"Browse…" = "Περιήγηση…";
+"Appearance" = "Εμφάνιση";
+"Accent color:" = "Χρώμα τονισμού:";
+"Icon color:" = "Χρώμα εικονιδίου:";
+"Background color:" = "Χρώμα φόντου:";
+"Reset" = "Επαναφορά";
+"OCR Capture:" = "Λήψη OCR:";
+"OCR & QR Capture:" = "Λήψη OCR & QR:";
+"Show window + copy to clipboard" = "Εμφάνιση παραθύρου + αντιγραφή στο πρόχειρο";
+"Show window only" = "Μόνο εμφάνιση παραθύρου";
+"Copy to clipboard only" = "Μόνο αντιγραφή στο πρόχειρο";
+"Enter / Quick Capture:" = "Enter / Γρήγορη λήψη:";
+"Save action:" = "Ενέργεια αποθήκευσης:";
+"Save to default folder" = "Αποθήκευση στον προεπιλεγμένο φάκελο";
+"Ask where to save" = "Ερώτηση πού να αποθηκευτεί";
+"Save to file" = "Αποθήκευση σε αρχείο";
+"Save + copy to clipboard" = "Αποθήκευση + αντιγραφή στο πρόχειρο";
+"OCR Action" = "Ενέργεια OCR";
+"QR Code" = "Κωδικός QR";
+"QR Codes" = "Κωδικοί QR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Συντομεύσεις πληκτρολογίου";
+"Hotkeys" = "Πλήκτρα συντόμευσης";
+"Clear shortcut" = "Εκκαθάριση συντόμευσης";
+"Press keys..." = "Πατήστε πλήκτρα...";
+"Waiting..." = "Αναμονή...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Εργαλεία σχολιασμού";
+"Hidden tools are removed from the bottom toolbar." = "Τα κρυφά εργαλεία αφαιρούνται από την κάτω γραμμή εργαλείων.";
+"Capture Actions" = "Ενέργειες λήψης";
+"Bottom Toolbar Actions" = "Ενέργειες κάτω γραμμής εργαλείων";
+"Hidden actions are removed from the bottom toolbar." = "Οι κρυφές ενέργειες αφαιρούνται από την κάτω γραμμή εργαλείων.";
+"Editor Actions" = "Ενέργειες επεξεργαστή";
+"Right Toolbar Actions" = "Ενέργειες δεξιάς γραμμής εργαλείων";
+"Hidden actions are removed from the right toolbar." = "Οι κρυφές ενέργειες αφαιρούνται από τη δεξιά γραμμή εργαλείων.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Ρυθμός καρέ:";
+"After recording:" = "Μετά την εγγραφή:";
+"Save recording to:" = "Αποθήκευση εγγραφής σε:";
+"Save Recording" = "Αποθήκευση εγγραφής";
+"Clear" = "Εκκαθάριση";
+"Max height:" = "Μέγιστο ύψος:";
+"px (0 = unlimited)" = "px (0 = απεριόριστο)";
+"Behavior" = "Συμπεριφορά";
+"Auto-scroll (sends synthetic scroll events)" = "Αυτόματη κύλιση (στέλνει συνθετικά συμβάντα κύλισης)";
+"Detect fixed/sticky headers" = "Ανίχνευση σταθερών/κολλημένων κεφαλίδων";
+"Scroll speed:" = "Ταχύτητα κύλισης:";
+"Slow" = "Αργή";
+"Medium" = "Μεσαία";
+"Fast" = "Γρήγορη";
+"Very fast" = "Πολύ γρήγορη";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Υπηρεσία μεταφόρτωσης";
+"Upload Provider" = "Πάροχος μεταφόρτωσης";
+"Provider:" = "Πάροχος:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (εικόνες + βίντεο)";
+"imgbb (images only)" = "imgbb (μόνο εικόνες)";
+"S3-Compatible (images + videos)" = "S3-Compatible (εικόνες + βίντεο)";
+"S3-Compatible Storage" = "Αποθήκευση συμβατή με S3";
+"Sign In with Google" = "Σύνδεση με Google";
+"Sign Out" = "Αποσύνδεση";
+"Signed in" = "Συνδεδεμένος";
+"Not signed in" = "Μη συνδεδεμένος";
+"Account:" = "Λογαριασμός:";
+"Test Connection" = "Δοκιμή σύνδεσης";
+"Fill in endpoint, bucket, and credentials first" = "Συμπληρώστε πρώτα το endpoint, το bucket και τα διαπιστευτήρια";
+"Testing..." = "Δοκιμή...";
+"Connection successful!" = "Επιτυχής σύνδεση!";
+"Leave empty to use default" = "Αφήστε κενό για χρήση προεπιλογής";
+"Endpoint:" = "Endpoint:";
+"Region:" = "Περιοχή:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Κλειδί πρόσβασης:";
+"Secret Key:" = "Μυστικό κλειδί:";
+"Public URL:" = "Δημόσιο URL:";
+"Path Prefix:" = "Πρόθεμα διαδρομής:";
+"API key:" = "Κλειδί API:";
+"Upload History" = "Ιστορικό μεταφορτώσεων";
+"No uploads yet." = "Δεν υπάρχουν μεταφορτώσεις ακόμα.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Βασικό URL για δημόσια πρόσβαση. Αν είναι κενό, χρησιμοποιείται το URL του S3 endpoint (μπορεί να μην είναι δημόσια προσβάσιμο).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Περιλαμβάνεται κοινόχρηστο κλειδί — αποκτήστε το δικό σας δωρεάν κλειδί στο imgbb.com/api αν φτάσετε τα όρια. Μόνο εικόνες (χωρίς υποστήριξη βίντεο).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Λειτουργεί με AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 και άλλες υπηρεσίες συμβατές με S3. Υποστηρίζει εικόνες και βίντεο.";
+"Configure S3 in Preferences" = "Ρύθμιση S3 στις Προτιμήσεις";
+"Sign in to Google Drive in Preferences" = "Σύνδεση στο Google Drive στις Προτιμήσεις";
+"Video upload requires Google Drive or S3" = "Η μεταφόρτωση βίντεο απαιτεί Google Drive ή S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Έκδοση %@ (%@)";
+"Made by" = "Δημιουργήθηκε από";
+"Licensed under the GPLv3" = "Με άδεια GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Ένα δωρεάν εργαλείο στιγμιοτύπων και εγγραφής οθόνης ανοιχτού κώδικα για macOS.\nΠλήρως εγγενές — κατασκευασμένο με Swift και AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Δεν υπάρχει εικόνα στο πρόχειρο";
+"No Image or Text on Clipboard" = "Δεν υπάρχει εικόνα ή κείμενο στο πρόχειρο";
+"Copy an image to the clipboard first, then try again." = "Αντιγράψτε πρώτα μια εικόνα στο πρόχειρο και δοκιμάστε ξανά.";
+"Copy an image or text to the clipboard first, then try again." = "Αντιγράψτε πρώτα μια εικόνα ή κείμενο στο πρόχειρο και δοκιμάστε ξανά.";
+"OK" = "OK";
+"Accessibility Access Required" = "Απαιτείται πρόσβαση προσβασιμότητας";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Το Snaploom χρειάζεται άδεια προσβασιμότητας για αυτόματη κύλιση άλλων εφαρμογών. Παραχωρήστε πρόσβαση στις Ρυθμίσεις συστήματος και δοκιμάστε ξανά.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Το Snaploom χρειάζεται άδεια Προσβασιμότητας για λήψη κύλισης. Παραχωρήστε πρόσβαση στις Ρυθμίσεις Συστήματος και δοκιμάστε ξανά.";
+"Open Settings" = "Άνοιγμα ρυθμίσεων";
+"Cancel" = "Ακύρωση";
+"Microphone Access Required" = "Απαιτείται πρόσβαση μικροφώνου";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Το Snaploom χρειάζεται άδεια μικροφώνου για εγγραφή φωνητικού ήχου. Ανοίξτε τις Ρυθμίσεις συστήματος για παραχώρηση πρόσβασης.";
+"Upload to Google Drive?" = "Μεταφόρτωση στο Google Drive;";
+"Upload to S3?" = "Μεταφόρτωση στο S3;";
+"Upload to imgbb.com?" = "Μεταφόρτωση στο imgbb.com;";
+"Your screenshot will be uploaded." = "Το στιγμιότυπό σας θα μεταφορτωθεί.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Καλώς ήρθατε στο Snaploom";
+"Snaploom needs one permission" = "Το Snaploom χρειάζεται μία άδεια";
+"Screen Recording not yet granted" = "Η εγγραφή οθόνης δεν έχει παραχωρηθεί ακόμα";
+"Screen Recording granted!" = "Η εγγραφή οθόνης παραχωρήθηκε!";
+"Enable Snaploom, then try taking a screenshot" = "Ενεργοποιήστε το Snaploom και δοκιμάστε να τραβήξετε στιγμιότυπο";
+"Open Screen Recording Settings" = "Άνοιγμα ρυθμίσεων εγγραφής οθόνης";
+"Continue" = "Συνέχεια";
+
+/* OCR Window */
+"Text Recognition" = "Αναγνώριση κειμένου";
+"Text & QR Recognition" = "Αναγνώριση κειμένου & QR";
+"Translate to:" = "Μετάφραση σε:";
+"%d chars · %d words" = "%d χαρακτήρες · %d λέξεις";
+"Copy  ⌘↩" = "Αντιγραφή  ⌘↩";
+"AI Search" = "Αναζήτηση AI";
+"Show Original" = "Εμφάνιση πρωτοτύπου";
+"Translation Failed" = "Η μετάφραση απέτυχε";
+"Translation" = "Μετάφραση";
+"(No text detected in the selected area)" = "(Δεν ανιχνεύθηκε κείμενο στην επιλεγμένη περιοχή)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "Το URL αντιγράφηκε στο πρόχειρο";
+"Uploading... %d%%" = "Μεταφόρτωση... %d%%";
+"Upload failed: %@" = "Αποτυχία μεταφόρτωσης: %@";
+"Uploaded! Link copied." = "Μεταφορτώθηκε! Ο σύνδεσμος αντιγράφηκε.";
+"Uploading to %@... %d%%" = "Μεταφόρτωση στο %@... %d%%";
+"Open" = "Άνοιγμα";
+
+/* Recording Toast */
+"Recording saved" = "Η εγγραφή αποθηκεύτηκε";
+"%@ • Recording saved" = "%@ • Η εγγραφή αποθηκεύτηκε";
+"Copy Path" = "Αντιγραφή διαδρομής";
+"Path copied!" = "Η διαδρομή αντιγράφηκε!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Επεξεργαστής βίντεο Snaploom";
+"%@ selected" = "%@ επιλεγμένο";
+"Exporting..." = "Εξαγωγή...";
+"Export failed" = "Αποτυχία εξαγωγής";
+"Saved to %@" = "Αποθηκεύτηκε στο %@";
+"Save failed" = "Αποτυχία αποθήκευσης";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Αποθήκευση ως...";
+"Choose a folder" = "Επιλέξτε φάκελο";
+"Save All to Folder…" = "Αποθήκευση όλων σε φάκελο…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Αυτόματη κύλιση";
+"Stop" = "Διακοπή";
+"Scrolling..." = "Κύλιση...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Προεπιλογές";
+"Adjustments" = "Ρυθμίσεις";
+"Brightness" = "Φωτεινότητα";
+"Contrast" = "Αντίθεση";
+"Saturation" = "Κορεσμός";
+"Sharpness" = "Ευκρίνεια";
+
+/* Time Ago */
+"just now" = "μόλις τώρα";
+"%ds ago" = "%ds πριν";
+"%dm ago" = "%dm πριν";
+"%dh ago" = "%dh πριν";
+
+/* Hotkey Labels */
+"History" = "Ιστορικό";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Κάντε κλικ στο \"Record\" και πατήστε έναν συνδυασμό πλήκτρων με τουλάχιστον ένα τροποποιητικό (⌘, ⌥, ⌃, ⇧) για να ορίσετε συντόμευση.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "Επεξεργασία GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Απαιτείται παρακολούθηση εισόδου";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Το Snaploom χρειάζεται άδεια παρακολούθησης εισόδου για να εμφανίζει τα πλήκτρα κατά την εγγραφή. Παραχωρήστε πρόσβαση στις System Settings και δοκιμάστε ξανά.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Το Snaploom χρειάζεται άδεια προσβασιμότητας για να εμφανίζει τα πλήκτρα κατά την εγγραφή. Παραχωρήστε πρόσβαση στις System Settings και δοκιμάστε ξανά.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Εμφάνιση πλήκτρων";
+"Shortcuts Only" = "Μόνο συντομεύσεις";
+"All Keystrokes" = "Όλα τα πλήκτρα";
+
+/* Recording — Settings Popover */
+"Delay:" = "Καθυστέρηση:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Αντιγράφηκε στο πρόχειρο!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Επικάλυψη κάμερας";
+"Camera Access Required" = "Απαιτείται πρόσβαση κάμερας";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Το Snaploom χρειάζεται άδεια κάμερας για την επικάλυψη κάμερας. Ανοίξτε τις Ρυθμίσεις συστήματος για παραχώρηση πρόσβασης.";
+"Webcam" = "Κάμερα";
+"Bottom Right" = "Κάτω δεξιά";
+"Bottom Left" = "Κάτω αριστερά";
+"Top Right" = "Πάνω δεξιά";
+"Top Left" = "Πάνω αριστερά";
+"Small" = "Μικρό";
+"Large" = "Μεγάλο";
+"Webcam Size Small" = "Μικρό";
+"Webcam Size Medium" = "Μεσαίο";
+"Webcam Size Large" = "Μεγάλο";
+"Webcam Size Extra Large" = "Πολύ μεγάλο";
+"Circle" = "Κύκλος";
+"Rounded Rectangle" = "Στρογγυλεμένο ορθογώνιο";
+"Cam pos:" = "Θέση κάμ.:";
+"Cam size:" = "Μέγ. κάμ.:";
+"Cam shape:" = "Σχήμα κάμ.:";
+
+/* Settings */
+"Settings" = "Ρυθμίσεις";
+"Settings..." = "Ρυθμίσεις...";
+"Snaploom Settings" = "Ρυθμίσεις Snaploom";
+"Also open in Editor" = "Άνοιγμα και σε επεξεργαστή";
+"Hide controls" = "Απόκρυψη χειριστηρίων";
+"Hide recording controls" = "Απόκρυψη χειριστηρίων εγγραφής";
+"Stop recording from the menu bar icon instead." = "Σταματήστε την εγγραφή από το εικονίδιο στη γραμμή μενού.";
+"Pixelate" = "Εικονοστοιχεία";
+"Blur" = "Θόλωμα";
+"Solid" = "Συμπαγές";
+"Erase" = "Διαγραφή";
+"Done" = "Τέλος";
+"Do nothing" = "Καμία ενέργεια";
+"Overlay / Editor Shortcuts" = "Συντομεύσεις επικάλυψης / επεξεργαστή";
+"Set" = "Ορισμός";
+"Press..." = "Πατήστε...";
+"Reset to default" = "Επαναφορά προεπιλογής";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Πατήστε ένα μόνο πλήκτρο για να το ορίσετε ως συντόμευση για αυτό το εργαλείο. Λειτουργούν όταν η επικάλυψη ή ο επεξεργαστής είναι ενεργός.";
+"Keep Separate" = "Διατήρηση ξεχωριστά";
+"Merge Audio" = "Συγχώνευση ήχου";
+"Audio Tracks" = "Κομμάτια ήχου";
+"Adjust volume for each audio track:" = "Ρύθμιση έντασης για κάθε κομμάτι ήχου:";
+"Microphone:" = "Μικρόφωνο:";
+"System audio:" = "Ήχος συστήματος:";
+"Loupe" = "Φακός";
+"Stamp" = "Σφραγίδα";
+"Unlimited" = "Απεριόριστο";
+
+/* Save/Discard, Recording, Translation Engine, Upload, Inspector */
+"Save changes?" = "Αποθήκευση αλλαγών;";
+"Your annotations will be lost if you close without saving." = "Οι σημειώσεις σας θα χαθούν αν κλείσετε χωρίς αποθήκευση.";
+"Save & Close" = "Αποθήκευση & Κλείσιμο";
+"Discard" = "Απόρριψη";
+"Stop Recording" = "Διακοπή εγγραφής";
+"Pause" = "Παύση";
+"Resume" = "Συνέχιση";
+"Engine:" = "Μηχανή:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (στη συσκευή)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Η μετάφραση Apple είναι πιο γρήγορη και λειτουργεί εκτός σύνδεσης. Το Google Translate υποστηρίζει περισσότερες γλώσσες.";
+"Download language packs in System Settings…" = "Λήψη πακέτων γλώσσας στις Ρυθμίσεις Συστήματος…";
+"Configure S3 in Settings" = "Ρύθμιση S3 στις Ρυθμίσεις";
+"Sign in to Google Drive in Settings" = "Σύνδεση στο Google Drive στις Ρυθμίσεις";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Έκδοση εκτός σύνδεσης: οι ενσωματώσεις μεταφόρτωσης και αποθήκευσης στο cloud έχουν αφαιρεθεί. Οι έλεγχοι ενημερώσεων ενδέχεται να συνδέονται ακόμη στον διακομιστή ενημερώσεων του Snaploom. Τα στιγμιότυπα οθόνης και οι εγγραφές παραμένουν τοπικά, εκτός αν τα μοιραστείτε ή τα αποθηκεύσετε εσείς.";
+"Position:" = "Θέση:";
+"Size:" = "Μέγεθος:";
+"Shape:" = "Σχήμα:";
+
+"Same as screenshots" = "Ίδιο με τα στιγμιότυπα";
+"  Preview size:" = "  Μέγεθος προεπισκόπησης:";
+"(0 = off)" = "(0 = απενεργοποίηση)";
+"Clear All" = "Εκκαθάριση όλων";
+"Clear History?" = "Εκκαθάριση ιστορικού;";
+"This will permanently delete all screenshots from history." = "Αυτό θα διαγράψει μόνιμα όλα τα στιγμιότυπα από το ιστορικό.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Κάνε κλικ στο \"Ορισμός\" και πάτησε έναν συνδυασμό πλήκτρων με τουλάχιστον έναν τροποποιητή (⌘, ⌥, ⌃, ⇧) για να ορίσεις μια συντόμευση.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Τα αρχεία ανεβαίνουν σε έναν φάκελο \"Snaploom\" στο Google Drive σου. Όλα παραμένουν ιδιωτικά — τίποτα δεν κοινοποιείται δημόσια.";
+
+"Pressure" = "Πίεση";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Άνοιγμα βίντεο...";
+"Choose a video to open in Snaploom editor" = "Επιλέξτε ένα βίντεο για άνοιγμα στον επεξεργαστή του Snaploom";
+"Click to add effects" = "Κάντε κλικ για προσθήκη εφέ";
+"Add Zoom" = "Προσθήκη ζουμ";
+"Add Censor" = "Προσθήκη λογοκρισίας";
+"Add Cut" = "Προσθήκη αποκοπής";
+"Add Speed" = "Προσθήκη ταχύτητας";
+"Add Freeze" = "Προσθήκη παγώματος";
+"Add Text" = "Προσθήκη κειμένου";
+"Delete Zoom" = "Διαγραφή ζουμ";
+"Delete Censor" = "Διαγραφή λογοκρισίας";
+"Delete Cut" = "Διαγραφή αποκοπής";
+"Delete Speed" = "Διαγραφή ταχύτητας";
+"Delete Freeze" = "Διαγραφή παγώματος";
+"Delete Text" = "Διαγραφή κειμένου";
+"Edit Text…" = "Επεξεργασία κειμένου…";
+"Huge" = "Τεράστιο";
+"Bold" = "Έντονα";
+"Italic" = "Πλάγια";
+"Alignment" = "Στοίχιση";
+"Left" = "Αριστερά";
+"Center" = "Κέντρο";
+"Right" = "Δεξιά";
+"Text Color" = "Χρώμα κειμένου";
+"Background Color" = "Χρώμα φόντου";
+"Rounded" = "Στρογγυλεμένο";
+"Custom…" = "Προσαρμοσμένο…";
+"Transparent" = "Διαφανές";
+"Black" = "Μαύρο";
+"White" = "Λευκό";
+"Yellow" = "Κίτρινο";
+"Red" = "Κόκκινο";
+"Green" = "Πράσινο";
+"Blue" = "Μπλε";
+"Untitled" = "Χωρίς τίτλο";
+"Add effect" = "Προσθήκη εφέ";
+"Fade" = "Ξεθώριασμα";
+"High" = "Υψηλό";
+"Low" = "Χαμηλό";
+"Not enough room here" = "Δεν υπάρχει αρκετός χώρος εδώ";
+"Copied!" = "Αντιγράφηκε!";
+"Converting to GIF…" = "Μετατροπή σε GIF…";
+"GIF conversion failed" = "Η μετατροπή σε GIF απέτυχε";
+"No video track found" = "Δεν βρέθηκε κομμάτι βίντεο";
+"Preview:" = "Προεπισκόπηση:";
+"Copy Screen Info" = "Αντιγραφή πληροφοριών οθόνης";
+"Copies display and capture diagnostics to clipboard" = "Αντιγράφει διαγνωστικά οθόνης και λήψης στο πρόχειρο";
+"Accent" = "Τονισμός";
+"Icon" = "Εικονίδιο";
+"Background" = "Φόντο";
+"Custom" = "Προσαρμοσμένο";
+"Theme:" = "Θέμα:";
+"Application" = "Εφαρμογή";
+"Capture area and extract text" = "Λήψη περιοχής και εξαγωγή κειμένου";
+"Capture the full screen" = "Λήψη πλήρους οθόνης";
+"Counter for multi-screen captures" = "Μετρητής για λήψεις πολλαπλών οθονών";
+"8-character random string (e.g. k3j7x9q2)" = "Τυχαία συμβολοσειρά 8 χαρακτήρων (π.χ. k3j7x9q2)";
+"Filename Template Tokens" = "Διακριτικά προτύπου ονόματος αρχείου";
+"Filename tokens" = "Διακριτικά ονόματος αρχείου";
+"Filename:" = "Όνομα αρχείου:";
+"Open an image file in the editor" = "Άνοιγμα αρχείου εικόνας στον επεξεργαστή";
+"Open the recent captures overlay" = "Άνοιγμα επικάλυψης πρόσφατων λήψεων";
+"Open this settings window" = "Άνοιγμα αυτού του παραθύρου ρυθμίσεων";
+"Quick capture (uses your Enter action)" = "Γρήγορη λήψη (χρησιμοποιεί την ενέργεια Enter)";
+"Re-capture the last selected area" = "Επανάληψη λήψης της τελευταίας επιλεγμένης περιοχής";
+"Screenshots only — captured window title (blank otherwise)" = "Μόνο στιγμιότυπα — τίτλος παραθύρου λήψης (κενό διαφορετικά)";
+"Show available filename tokens" = "Εμφάνιση διαθέσιμων διακριτικών ονόματος αρχείου";
+"Enable snaploom:// URL scheme" = "Ενεργοποίηση URL scheme snaploom://";
+"Show supported URL scheme commands" = "Εμφάνιση υποστηριζόμενων εντολών URL scheme";
+"Start area capture" = "Έναρξη λήψης περιοχής";
+"Start area recording" = "Έναρξη εγγραφής περιοχής";
+"Start full-screen recording" = "Έναρξη εγγραφής πλήρους οθόνης";
+"Start scroll capture" = "Έναρξη λήψης με κύλιση";
+"Stop the current recording" = "Διακοπή της τρέχουσας εγγραφής";
+"Supported URL Scheme Commands" = "Υποστηριζόμενες εντολές URL Scheme";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Η επέκταση αρχείου προστίθεται αυτόματα. Οι κάθετοι και οι άνω κάτω τελείες στο {window} γίνονται παύλες.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Ενεργοποιήστε το Snaploom από το Raycast, το Alfred, τα Shortcuts ή οποιοδήποτε εργαλείο ανοίγει URLs.";
+"URL scheme info" = "Πληροφορίες URL scheme";
+"sec (0 = never)" = "δευτ. (0 = ποτέ)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Αντίγραφο ασφαλείας ρυθμίσεων";
+"Export Settings…" = "Εξαγωγή ρυθμίσεων…";
+"Import Settings…" = "Εισαγωγή ρυθμίσεων…";
+"Reveal Settings File in Finder" = "Εμφάνιση αρχείου ρυθμίσεων στο Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Εξαγάγετε τις προτιμήσεις σας σε ένα αρχείο για να τις μεταφέρετε σε άλλο Mac ή σε μια καθαρή εγκατάσταση. Τα διαπιστευτήρια μεταφόρτωσης, ο φάκελος αποθήκευσης και το ιστορικό στιγμιότυπων δεν περιλαμβάνονται. Οι ρυθμίσεις αποθηκεύονται μέσα στο app container του Snaploom.";
+"Export Settings" = "Εξαγωγή ρυθμίσεων";
+"Import Settings" = "Εισαγωγή ρυθμίσεων";
+"Import failed" = "Η εισαγωγή απέτυχε";
+"Settings exported" = "Οι ρυθμίσεις εξήχθησαν";
+"Settings imported" = "Οι ρυθμίσεις εισήχθησαν";
+"Import" = "Εισαγωγή";
+"Later" = "Αργότερα";
+"Relaunch Now" = "Επανεκκίνηση τώρα";
+"Replace your current settings?" = "Αντικατάσταση των τρεχουσών ρυθμίσεων;";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Η εισαγωγή θα αντικαταστήσει τις τρέχουσες προτιμήσεις σας με αυτές του αρχείου. Ο φάκελος αποθήκευσης, τα διαπιστευτήρια μεταφόρτωσης και το ιστορικό στιγμιότυπων διατηρούνται. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "Εφαρμόστηκαν %d ρυθμίσεις. Κάντε επανεκκίνηση του Snaploom για να εφαρμοστούν όλες οι αλλαγές.";
+"A few large items were too big to include. Everything else was saved." = "Ορισμένα μεγάλα στοιχεία ήταν πολύ μεγάλα για να συμπεριληφθούν. Όλα τα υπόλοιπα αποθηκεύτηκαν.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Η προσαρμοσμένη εικόνα φόντου Beautify ήταν πολύ μεγάλη για να συμπεριληφθεί. Όλα τα υπόλοιπα αποθηκεύτηκαν.";
+"This file is not a valid Snaploom settings file." = "Αυτό το αρχείο δεν είναι έγκυρο αρχείο ρυθμίσεων του Snaploom.";
+"This settings file contains no settings." = "Αυτό το αρχείο ρυθμίσεων δεν περιέχει ρυθμίσεις.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Αυτό το αρχείο ρυθμίσεων δημιουργήθηκε από νεότερη έκδοση του Snaploom. Ενημερώστε πρώτα το Snaploom.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Καταγράψτε, μεταφράστε και επικαλύψτε το κείμενο στην εικόνα";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Άνοιγμα καταχώρισης ιστορικού στον επεξεργαστή (διατηρεί τις επισημάνσεις επεξεργάσιμες)";

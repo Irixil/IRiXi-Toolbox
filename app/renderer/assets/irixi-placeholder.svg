@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">IRiXi Toolbox placeholder</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#192729"/>
+      <stop offset="1" stop-color="#0b1112"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <rect x="104" y="132" width="304" height="248" rx="72" fill="none" stroke="#42d6bd" stroke-width="24"/>
+  <path d="M178 132v-28c0-31 25-56 56-56h44c31 0 56 25 56 56v28" fill="none" stroke="#ff5964" stroke-width="24" stroke-linecap="round"/>
+  <path d="M192 256h128M256 192v128" stroke="#f5f7f7" stroke-width="26" stroke-linecap="round"/>
+</svg>

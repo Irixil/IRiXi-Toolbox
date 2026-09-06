@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Privacy - Screen Capture Usage Description</key>
+	<string>IRiXi 原生助手需要屏幕录制权限来完成用户主动发起的截图和录屏。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>IRiXi 原生助手仅在用户选择录入麦克风时使用麦克风。</string>
+	<key>NSSupportsAutomaticTermination</key>
+	<false/>
+	<key>LSMinimumSystemVersion</key>
+	<string>15.0</string>
+</dict>
+</plist>

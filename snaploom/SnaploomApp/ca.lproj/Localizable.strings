@@ -1,0 +1,673 @@
+/* Catala — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Capturar area";
+"Capture Screen" = "Capturar pantalla";
+"Capture OCR" = "Capturar OCR";
+"Quick Capture" = "Captura rapida";
+"Scroll Capture" = "Captura amb desplacament";
+"Capture Last Area" = "Captura l'ultima area";
+"Capture Delay" = "Retard de captura";
+"None" = "Cap";
+"%d seconds" = "%d segons";
+"Record Area" = "Gravar area";
+"Record Screen" = "Gravar pantalla";
+"Recent Captures" = "Captures recents";
+"Show History Panel" = "Mostrar panell d'historial";
+"Open Image..." = "Obrir imatge...";
+"Open from Clipboard" = "Obrir des del porta-retalls";
+"Pin from Clipboard" = "Fixar des del porta-retalls";
+"Preferences..." = "Preferencies...";
+"Check for Updates..." = "Cercar actualitzacions...";
+"Quit Snaploom" = "Sortir de Snaploom";
+"No recent captures" = "No hi ha captures recents";
+"Clear History" = "Esborrar historial";
+
+/* History Panel */
+"Copy" = "Copiar";
+"Save As..." = "Desar com a...";
+"Open in Editor" = "Obrir a l'editor";
+"Open With" = "Obrir amb";
+"Open Link" = "Obrir enllaç";
+"No Apps Available" = "No hi ha aplicacions disponibles";
+"No Share Services" = "No hi ha serveis de compartició";
+"Pin to Screen" = "Fixar a la pantalla";
+"Quick Look" = "Vista rapida";
+"Delete" = "Eliminar";
+"All" = "Tot";
+"Screenshots" = "Captures de pantalla";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "Clic per copiar · Arrossegar a l'app";
+"No captures yet" = "Encara no hi ha captures";
+
+/* Floating Thumbnail */
+"Close All" = "Tancar tot";
+"Save All to Folder…" = "Desar tot a la carpeta...";
+"Save" = "Desar";
+
+/* Editor Top Bar */
+"Zoom In" = "Ampliar";
+"Zoom Out" = "Reduir";
+"Zoom" = "Zoom";
+"Fit Canvas" = "Ajustar al llencat";
+"Crop" = "Retallar";
+"Flip Horizontal" = "Voltejar horitzontalment";
+"Flip Vertical" = "Voltejar verticalment";
+"Rotate Left" = "Girar a l'esquerra";
+"Rotate Right" = "Girar a la dreta";
+"Add Capture" = "Afegir captura";
+
+/* Toolbar - Tools */
+"Arrow" = "Fletxa";
+"Line" = "Linia";
+"Rectangle" = "Rectangle";
+"Ellipse" = "El·lipse";
+"Pencil" = "Llapis";
+"Pencil (Draw)" = "Llapis (Dibuixar)";
+"Marker" = "Marcador";
+"Text" = "Text";
+"Number" = "Numero";
+"Number / Counter" = "Numero / Comptador";
+"Stamp / Emoji" = "Segell / Emoji";
+"Censor" = "Censurar";
+"Censor (Pixelate / Blur / Solid)" = "Censurar (Pixelar / Difuminar / Solid)";
+"Measure" = "Mesurar";
+"Measure (px)" = "Mesurar (px)";
+"Magnify (Loupe)" = "Ampliar (Lupa)";
+"Highlight" = "Ressaltar";
+"Highlight (Spotlight)" = "Ressaltar (Focus)";
+"Dim" = "Enfosquir";
+"Color Sampler" = "Mostrejador de color";
+"Color Picker" = "Selector de color";
+"Select & Edit" = "Seleccionar i editar";
+"Color" = "Color";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Copiar al porta-retalls";
+"Save to File" = "Desar a fitxer";
+"Save to" = "Desar a";
+"Open in Editor Window" = "Obrir a la finestra de l'editor";
+"Pin on Screen" = "Fixar a la pantalla";
+"Pin" = "Fixar";
+"Pin (floating window)" = "Fixar (finestra flotant)";
+"OCR" = "OCR";
+"OCR Text" = "Text OCR";
+"OCR (extract text)" = "OCR (extreure text)";
+"Upload" = "Pujar";
+"Share" = "Compartir";
+"Undo" = "Desfer";
+"Redo" = "Refer";
+"Close" = "Tancar";
+"Remove Background" = "Eliminar fons";
+"Beautify" = "Embellir";
+"Adjust" = "Ajustar";
+"Adjust (Image Effects)" = "Ajustar (Efectes d'imatge)";
+"Invert Colors" = "Invertir colors";
+"Record" = "Gravar";
+"Record screen" = "Gravar pantalla";
+"Translate" = "Traduir";
+"Auto-Redact sensitive data" = "Auto-censurar dades sensibles";
+"Move Selection" = "Moure seleccio";
+
+/* Toolbar - Recording */
+"Start Recording" = "Iniciar gravacio";
+"Cancel Recording" = "Cancel·lar gravacio";
+"Highlight Mouse Clicks" = "Ressaltar clics del ratoli";
+"Record System Audio" = "Gravar audio del sistema";
+"Record Microphone" = "Gravar microfon";
+"Recording Settings" = "Configuracio de gravacio";
+
+/* Tool Options */
+"Size" = "Mida";
+"Stroke" = "Trac";
+"Radius" = "Radi";
+"Start:" = "Inici:";
+"Draw:" = "Dibuixar:";
+"Auto:" = "Auto:";
+"Fill" = "Omplir";
+"Outline" = "Contorn";
+"More Emojis" = "Mes emojis";
+"Load Image" = "Carregar imatge";
+"Gradient Style" = "Estil de gradient";
+"On" = "Activat";
+"Text Only" = "Nomes text";
+"All Text" = "Tot el text";
+"PII" = "PII";
+"Faces" = "Cares";
+"People" = "Persones";
+"Confirm before upload" = "Confirmar abans de pujar";
+"Flip" = "Voltejar";
+"Smooth" = "Suau";
+"Refined" = "Refinat";
+"Smart" = "Intel·ligent";
+"Padding" = "Farciment";
+"Shadow" = "Ombra";
+"Right-click to add points" = "Clic dret per afegir punts";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Mantenir 1 auto-vertical  ·  Mantenir 2 auto-horitzontal";
+"Limit to selection" = "Limitar a la selecció";
+"Effect" = "Efecte";
+"Font" = "Tipus de lletra";
+"System" = "Sistema";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Clic a una finestra  ·  Arrossegar per area personalitzada  ·  F per pantalla completa";
+"Drag to select  ·  Click for full screen" = "Arrossegar per seleccionar  ·  Clic per pantalla completa";
+"Release to annotate and edit" = "Deixar anar per anotar i editar";
+"Hold Space to move. Release to annotate and edit" = "Mantingueu Espai per moure. Deixeu anar per anotar i editar";
+"Hold Space to move. Release to finish" = "Mantingueu Espai per moure. Deixeu anar per acabar";
+"Release to finish" = "Deixar anar per acabar";
+"Window snap: " = "Ajust de finestra: ";
+"ON" = "ACTIVAT";
+"OFF" = "DESACTIVAT";
+"  (Tab to toggle)" = "  (Tab per canviar)";
+"Right-click to copy" = "Clic dret per copiar";
+"Copied %@" = "Copiat %@";
+"Set color %@" = "Color establert %@";
+"Draw something first to use the move tool." = "Dibuixeu alguna cosa primer per utilitzar l'eina de moure.";
+"Drag to reposition" = "Arrossegar per reposicionar";
+
+/* Overlay - Popovers */
+"Format:" = "Format:";
+"FPS:" = "FPS:";
+"When done:" = "En acabar:";
+"Open editor" = "Obrir editor";
+"Show in Finder" = "Mostrar al Finder";
+"Copy to clipboard" = "Copiar al porta-retalls";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Preferencies de Snaploom";
+"General" = "General";
+"Tools" = "Eines";
+"Recording" = "Gravacio";
+"About" = "Quant a";
+"Shortcuts" = "Dreceres";
+"Uploads" = "Pujades";
+"Language" = "Idioma";
+"Language:" = "Idioma:";
+"Restart the app to fully apply the new language." = "Reinicieu l'aplicacio per aplicar completament el nou idioma.";
+"Capture" = "Captura";
+"Play sound on capture" = "Reprodueix un so en capturar";
+"Play sound on copy" = "Reproduir so en copiar";
+"Remember last selected tool" = "Recordar l'ultima eina seleccionada";
+"Show floating thumbnail after capture" = "Mostrar miniatura flotant despres de la captura";
+"Launch at login" = "Iniciar en iniciar sessio";
+"Show snap alignment guides" = "Mostrar guies d'alineacio";
+"Snap selection edges to image boundaries" = "Ajustar les vores de la seleccio als limits de la imatge";
+"Capture mouse cursor in screenshot" = "Capturar el cursor del ratoli a la captura";
+"Double-click selection to copy" = "Doble clic a la seleccio per copiar";
+"Hide capture instructions" = "Amagar les instruccions de captura";
+"Disable shadow outside selection" = "Desactivar l'ombra fora de la selecció";
+"Show shortcuts in tooltips" = "Mostrar dreceres als consells d'eina";
+"Use window title in saved filename" = "Utilitzar el titol de la finestra al nom del fitxer";
+"Hide menu bar icon" = "Amagar la icona de la barra de menus";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Les dreceres segueixen funcionant. Per mostrar la icona de nou, reinicieu Snaploom.";
+"Check for updates automatically" = "Cercar actualitzacions automaticament";
+"Check for beta updates" = "Cercar actualitzacions beta";
+"Thumbnail" = "Miniatura";
+"  Dismiss after:" = "  Descartar despres de:";
+"seconds before auto-dismiss (0 = never)" = "segons abans de descartar automaticament (0 = mai)";
+"  Multiple previews:" = "  Multiples previsualitzacions:";
+"  Position:" = "  Posicio:";
+"Stack (keep all)" = "Apilar (mantenir totes)";
+"Replace (show only latest)" = "Substituir (mostrar nomes l'ultima)";
+"Menu Bar Order" = "Ordre de la barra de menus";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Tria l'ordre de les accions de captura al menu de la barra de menus de Snaploom.";
+"Move up" = "Mou amunt";
+"Move down" = "Mou avall";
+"Output" = "Sortida";
+"Image format:" = "Format d'imatge:";
+"Quality:" = "Qualitat:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Desar a resolucio estandard (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Redueix les dimensions a la meitat en pantalles Retina, fitxers ~4x mes petits";
+"Embed sRGB color profile" = "Incloure perfil de color sRGB";
+"Ensures consistent colors across different displays" = "Assegura colors consistents entre diferents pantalles";
+"Screenshot History" = "Historial de captures";
+"History size:" = "Mida de l'historial:";
+"screenshots kept on disk (0 = off)" = "captures desades al disc (0 = desactivat)";
+"Order history by last edit" = "Ordena l'historial per última edició";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Les captures editades passen a dalt. Desactivat les manté en l'ordre de captura.";
+"Custom · %@" = "Personalitzat · %@";
+"Space" = "Espai";
+"Save Directory" = "Directori de desat";
+"Save folder:" = "Carpeta de desat:";
+"Browse…" = "Explorar...";
+"Save action:" = "Acció de desat:";
+"Save to default folder" = "Desar a la carpeta per defecte";
+"Ask where to save" = "Preguntar on desar";
+"Appearance" = "Aparenca";
+"Menu bar icon:" = "Icona de la barra de menus:";
+"Default" = "Per defecte";
+"Custom symbol" = "Símbol personalitzat";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Introduïu qualsevol nom de SF Symbol (p. ex. camera.fill) o trieu un predefinit. Exploreu els noms a l'aplicació SF Symbols d'Apple. Els noms no vàlids tornen a la icona per defecte.";
+"Accent color:" = "Color d'accent:";
+"Icon color:" = "Color de la icona:";
+"Background color:" = "Color de fons:";
+"Reset" = "Reiniciar";
+"OCR Capture:" = "Captura OCR:";
+"Show window + copy to clipboard" = "Mostrar finestra + copiar al porta-retalls";
+"Show window only" = "Mostrar nomes la finestra";
+"Copy to clipboard only" = "Copiar nomes al porta-retalls";
+"Enter / Quick Capture:" = "Enter / Captura rapida:";
+"Save to file" = "Desar a fitxer";
+"Save + copy to clipboard" = "Desar + copiar al porta-retalls";
+"OCR Action" = "Accio OCR";
+"OCR & QR Capture:" = "Captura OCR & QR:";
+"OCR & QR" = "OCR & QR";
+"Text & QR Recognition" = "Reconeixement de text & QR";
+"Capture OCR & QR" = "Capturar OCR & QR";
+"Capture area and read text/QR codes" = "Capturar àrea i llegir text/codis QR";
+"Run OCR & QR" = "Executar OCR & QR";
+"QR Code" = "Codi QR";
+"QR Codes" = "Codis QR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Dreceres de teclat";
+"Hotkeys" = "Tecles rapides";
+"Clear shortcut" = "Esborrar drecera";
+"Press keys..." = "Premeu les tecles...";
+"Waiting..." = "Esperant...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Eines d'anotacio";
+"Hidden tools are removed from the bottom toolbar." = "Les eines ocultes s'eliminen de la barra d'eines inferior.";
+"Capture Actions" = "Accions de captura";
+"Bottom Toolbar Actions" = "Accions de la barra d'eines inferior";
+"Hidden actions are removed from the bottom toolbar." = "Les accions ocultes s'eliminen de la barra d'eines inferior.";
+"Editor Actions" = "Accions de l'editor";
+"Right Toolbar Actions" = "Accions de la barra d'eines dreta";
+"Hidden actions are removed from the right toolbar." = "Les accions ocultes s'eliminen de la barra d'eines dreta.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Velocitat de fotogrames:";
+"After recording:" = "Despres de gravar:";
+"Save recording to:" = "Desar gravacio a:";
+"Save Recording" = "Desar gravació";
+"Clear" = "Esborrar";
+"Max height:" = "Alcada maxima:";
+"px (0 = unlimited)" = "px (0 = il·limitat)";
+"Behavior" = "Comportament";
+"Auto-scroll (sends synthetic scroll events)" = "Desplacament automatic (envia esdeveniments de desplacament sintetics)";
+"Detect fixed/sticky headers" = "Detectar capcaleres fixes/enganxoses";
+"Scroll speed:" = "Velocitat de desplacament:";
+"Slow" = "Lent";
+"Medium" = "Mitja";
+"Fast" = "Rapid";
+"Very fast" = "Molt rapid";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Servei de pujada";
+"Upload Provider" = "Proveidor de pujada";
+"Provider:" = "Proveidor:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (imatges + videos)";
+"imgbb (images only)" = "imgbb (nomes imatges)";
+"S3-Compatible (images + videos)" = "S3-Compatible (imatges + videos)";
+"S3-Compatible Storage" = "Emmagatzematge S3-Compatible";
+"Sign In with Google" = "Iniciar sessio amb Google";
+"Sign Out" = "Tancar sessio";
+"Signed in" = "Sessio iniciada";
+"Not signed in" = "Sessio no iniciada";
+"Account:" = "Compte:";
+"Test Connection" = "Provar connexio";
+"Fill in endpoint, bucket, and credentials first" = "Ompliu primer l'endpoint, el bucket i les credencials";
+"Testing..." = "Provant...";
+"Connection successful!" = "Connexio correcta!";
+"Leave empty to use default" = "Deixar buit per utilitzar el valor per defecte";
+"Endpoint:" = "Endpoint:";
+"Region:" = "Regio:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Clau d'acces:";
+"Secret Key:" = "Clau secreta:";
+"Public URL:" = "URL publica:";
+"Path Prefix:" = "Prefix de ruta:";
+"API key:" = "Clau API:";
+"Upload History" = "Historial de pujades";
+"No uploads yet." = "Encara no hi ha pujades.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL base per acces public. Si es buida, s'utilitza la URL de l'endpoint S3 (pot no ser accessible publicament).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "S'inclou una clau compartida — obteniu la vostra propia clau gratuita a imgbb.com/api si arribeu als limits de velocitat. Nomes imatges (sense suport de video).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Funciona amb AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 i altres serveis S3-compatibles. Suporta imatges i videos.";
+"Configure S3 in Preferences" = "Configurar S3 a les Preferencies";
+"Sign in to Google Drive in Preferences" = "Iniciar sessio a Google Drive a les Preferencies";
+"Video upload requires Google Drive or S3" = "La pujada de video requereix Google Drive o S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Versio %@ (%@)";
+"Made by" = "Creat per";
+"Licensed under the GPLv3" = "Llicenciat sota la GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Una eina gratuita i de codi obert per a captures de pantalla i gravacio de pantalla per a macOS.\nTotalment nativa — construida amb Swift i AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "No hi ha cap imatge al porta-retalls";
+"No Image or Text on Clipboard" = "No hi ha cap imatge ni text al porta-retalls";
+"Copy an image to the clipboard first, then try again." = "Copieu primer una imatge al porta-retalls i torneu-ho a provar.";
+"Copy an image or text to the clipboard first, then try again." = "Copieu primer una imatge o text al porta-retalls i torneu-ho a provar.";
+"OK" = "D'acord";
+"Accessibility Access Required" = "Es requereix acces d'accessibilitat";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom necessita permis d'accessibilitat per desplacar automaticament altres aplicacions. Concediu l'acces a la Configuracio del sistema i torneu-ho a provar.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom necessita permís d'accessibilitat per a la captura de desplaçament. Concediu l'accés a Configuració del sistema i torneu-ho a provar.";
+"Open Settings" = "Obrir configuracio";
+"Cancel" = "Cancel·lar";
+"Microphone Access Required" = "Es requereix acces al microfon";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom necessita permis de microfon per gravar audio de veu. Obriu la Configuracio del sistema per concedir l'acces.";
+"Upload to Google Drive?" = "Pujar a Google Drive?";
+"Upload to S3?" = "Pujar a S3?";
+"Upload to imgbb.com?" = "Pujar a imgbb.com?";
+"Your screenshot will be uploaded." = "La vostra captura de pantalla es pujara.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Benvingut a Snaploom";
+"Snaploom needs one permission" = "Snaploom necessita un permis";
+"Screen Recording not yet granted" = "Gravacio de pantalla encara no concedida";
+"Screen Recording granted!" = "Gravacio de pantalla concedida!";
+"Enable Snaploom, then try taking a screenshot" = "Activeu Snaploom i proveu de fer una captura de pantalla";
+"Open Screen Recording Settings" = "Obrir la configuracio de gravacio de pantalla";
+"Continue" = "Continuar";
+
+/* OCR Window */
+"Text Recognition" = "Reconeixement de text";
+"Translate to:" = "Traduir a:";
+"%d chars · %d words" = "%d caracters · %d paraules";
+"Copy  ⌘↩" = "Copiar  ⌘↩";
+"AI Search" = "Cerca IA";
+"Show Original" = "Mostrar original";
+"Translation Failed" = "La traduccio ha fallat";
+"Translation" = "Traduccio";
+"(No text detected in the selected area)" = "(No s'ha detectat text a l'area seleccionada)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL copiada al porta-retalls";
+"Uploading... %d%%" = "Pujant... %d%%";
+"Upload failed: %@" = "Error en pujar: %@";
+"Uploaded! Link copied." = "Pujat! Enllac copiat.";
+"Uploading to %@... %d%%" = "Pujant a %@... %d%%";
+"Open" = "Obrir";
+
+/* Recording Toast */
+"Recording saved" = "Gravacio desada";
+"%@ • Recording saved" = "%@ • Gravacio desada";
+"Copy Path" = "Copiar ruta";
+"Path copied!" = "Ruta copiada!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Editor de video de Snaploom";
+"%@ selected" = "%@ seleccionat";
+"Exporting..." = "Exportant...";
+"Export failed" = "Error en exportar";
+"Saved to %@" = "Desat a %@";
+"Save failed" = "Error en desar";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Desar com a...";
+"Choose a folder" = "Triar una carpeta";
+"Save All to Folder…" = "Desar tot a la carpeta...";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Desplacament automatic";
+"Stop" = "Aturar";
+"Scrolling..." = "Desplacant...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Predefinits";
+"Adjustments" = "Ajustos";
+"Brightness" = "Brillantor";
+"Contrast" = "Contrast";
+"Saturation" = "Saturacio";
+"Sharpness" = "Nitidesa";
+
+/* Time Ago */
+"just now" = "ara mateix";
+"%ds ago" = "fa %ds";
+"%dm ago" = "fa %dm";
+"%dh ago" = "fa %dh";
+
+/* Hotkey Labels */
+"History" = "Historial";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Feu clic a \"Record\" i premeu una combinacio de tecles amb almenys un modificador (⌘, ⌥, ⌃, ⇧) per establir una drecera.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "Processant GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Es requereix monitoratge d'entrada";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom necessita permis de monitoratge d'entrada per mostrar les pulsacions de tecles durant la gravacio. Concediu l'acces a System Settings i torneu-ho a provar.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom necessita permis d'accessibilitat per mostrar les pulsacions de tecles durant la gravacio. Concediu l'acces a System Settings i torneu-ho a provar.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Mostrar pulsacions de tecles";
+"Shortcuts Only" = "Nomes dreceres";
+"All Keystrokes" = "Totes les pulsacions";
+
+/* Recording — Settings Popover */
+"Delay:" = "Retard:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Copiat al porta-retalls!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Superposicio de webcam";
+"Camera Access Required" = "Es requereix acces a la camera";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom necessita permis de camera per a la superposicio de webcam. Obriu la Configuracio del sistema per concedir l'acces.";
+"Webcam" = "Webcam";
+"Bottom Right" = "Baix a la dreta";
+"Bottom Left" = "Baix a l'esquerra";
+"Top Right" = "Dalt a la dreta";
+"Top Left" = "Dalt a l'esquerra";
+"Small" = "Petit";
+"Large" = "Gran";
+"Webcam Size Small" = "Petit";
+"Webcam Size Medium" = "Mitja";
+"Webcam Size Large" = "Gran";
+"Webcam Size Extra Large" = "Molt gran";
+"Circle" = "Cercle";
+"Rounded Rectangle" = "Rectangle arrodonit";
+"Cam pos:" = "Pos. cam:";
+"Cam size:" = "Mida cam:";
+"Cam shape:" = "Forma cam:";
+
+/* Settings */
+"Settings" = "Configuració";
+"Settings..." = "Configuració...";
+"Snaploom Settings" = "Configuracio de Snaploom";
+"Also open in Editor" = "Obrir tambe a l'editor";
+"Hide controls" = "Amagar controls";
+"Hide recording controls" = "Amagar controls de gravacio";
+"Stop recording from the menu bar icon instead." = "Atureu la gravacio des de la icona de la barra de menus.";
+"Pixelate" = "Pixelar";
+"Blur" = "Difuminar";
+"Solid" = "Solid";
+"Erase" = "Esborrar";
+"Done" = "Fet";
+"Do nothing" = "No fer res";
+"Overlay / Editor Shortcuts" = "Dreceres de superposicio / editor";
+"Set" = "Establir";
+"Press..." = "Premeu...";
+"Reset to default" = "Restablir per defecte";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Premeu una sola tecla per assignar-la com a drecera per a aquesta eina. Funcionen quan la superposicio o l'editor esta actiu.";
+"Keep Separate" = "Mantenir separat";
+"Merge Audio" = "Fusionar audio";
+"Audio Tracks" = "Pistes d'audio";
+"Adjust volume for each audio track:" = "Ajusteu el volum per a cada pista d'audio:";
+"Microphone:" = "Microfon:";
+"System audio:" = "Audio del sistema:";
+"Loupe" = "Lupa";
+"Stamp" = "Segell";
+"Unlimited" = "Il·limitat";
+
+/* Save/Discard, Recording, Translation Engine, Upload, Inspector */
+"Save changes?" = "Desar els canvis?";
+"Your annotations will be lost if you close without saving." = "Les vostres anotacions es perdran si tanqueu sense desar.";
+"Save & Close" = "Desar i tancar";
+"Discard" = "Descartar";
+"Stop Recording" = "Aturar gravacio";
+"Pause" = "Pausa";
+"Resume" = "Reprendre";
+"Engine:" = "Motor:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (al dispositiu)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "La traduccio d'Apple es mes rapida i funciona sense connexio. Google Translate admet mes idiomes.";
+"Download language packs in System Settings…" = "Descarregar paquets d'idioma a la Configuracio del sistema…";
+"Configure S3 in Settings" = "Configurar S3 a la Configuracio";
+"Sign in to Google Drive in Settings" = "Iniciar sessio a Google Drive a la Configuracio";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Versió sense connexió: s'han eliminat les integracions de pujada i d'emmagatzematge al núvol. Les comprovacions d'actualitzacions encara poden connectar-se al servidor d'actualitzacions de Snaploom. Les captures de pantalla i els enregistraments es mantenen locals tret que els comparteixis o els desis tu mateix.";
+"Position:" = "Posicio:";
+"Size:" = "Mida:";
+"Shape:" = "Forma:";
+
+"Same as screenshots" = "Igual que les captures de pantalla";
+"  Preview size:" = "  Mida de la previsualització:";
+"(0 = off)" = "(0 = desactivat)";
+"Clear All" = "Esborra-ho tot";
+"Clear History?" = "Esborrar l'historial?";
+"This will permanently delete all screenshots from history." = "Això eliminarà permanentment totes les captures de pantalla de l'historial.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Feu clic a \"Establir\" i premeu una combinació de tecles amb almenys un modificador (⌘, ⌥, ⌃, ⇧) per definir una drecera.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Els fitxers es pugen a una carpeta \"Snaploom\" del vostre Google Drive. Tot és privat — res no es comparteix públicament.";
+
+"Pressure" = "Pressió";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Obrir vídeo...";
+"Choose a video to open in Snaploom editor" = "Trieu un vídeo per obrir a l'editor de Snaploom";
+"Click to add effects" = "Feu clic per afegir efectes";
+"Add Zoom" = "Afegir zoom";
+"Add Censor" = "Afegir censura";
+"Add Cut" = "Afegir tall";
+"Add Speed" = "Afegir velocitat";
+"Add Freeze" = "Afegir congelació";
+"Add Text" = "Afegir text";
+"Delete Zoom" = "Eliminar zoom";
+"Delete Censor" = "Eliminar censura";
+"Delete Cut" = "Eliminar tall";
+"Delete Speed" = "Eliminar velocitat";
+"Delete Freeze" = "Eliminar congelació";
+"Delete Text" = "Eliminar text";
+"Edit Text…" = "Editar text…";
+"Huge" = "Enorme";
+"Bold" = "Negreta";
+"Italic" = "Cursiva";
+"Alignment" = "Alineació";
+"Left" = "Esquerra";
+"Center" = "Centre";
+"Right" = "Dreta";
+"Text Color" = "Color del text";
+"Background Color" = "Color del fons";
+"Rounded" = "Arrodonit";
+"Custom…" = "Personalitzat…";
+"Transparent" = "Transparent";
+"Black" = "Negre";
+"White" = "Blanc";
+"Yellow" = "Groc";
+"Red" = "Vermell";
+"Green" = "Verd";
+"Blue" = "Blau";
+"Untitled" = "Sense títol";
+"Add effect" = "Afegir efecte";
+"Fade" = "Esvaïment";
+"High" = "Alt";
+"Low" = "Baix";
+"Not enough room here" = "No hi ha prou espai aquí";
+"Copied!" = "Copiat!";
+"Converting to GIF…" = "Convertint a GIF…";
+"GIF conversion failed" = "La conversió a GIF ha fallat";
+"No video track found" = "No s'ha trobat cap pista de vídeo";
+"Preview:" = "Previsualització:";
+"Copy Screen Info" = "Copiar informació de pantalla";
+"Copies display and capture diagnostics to clipboard" = "Copia diagnòstics de pantalla i captura al porta-retalls";
+"Accent" = "Accent";
+"Icon" = "Icona";
+"Background" = "Fons";
+"Custom" = "Personalitzat";
+"Theme:" = "Tema:";
+"Application" = "Aplicació";
+"Capture area and extract text" = "Capturar àrea i extreure text";
+"Capture the full screen" = "Capturar la pantalla completa";
+"Counter for multi-screen captures" = "Comptador per a captures multipantalla";
+"8-character random string (e.g. k3j7x9q2)" = "Cadena aleatòria de 8 caràcters (p. ex. k3j7x9q2)";
+"Filename Template Tokens" = "Testimonis de plantilla de nom de fitxer";
+"Filename tokens" = "Testimonis de nom de fitxer";
+"Filename:" = "Nom de fitxer:";
+"Open an image file in the editor" = "Obrir un fitxer d'imatge a l'editor";
+"Open the recent captures overlay" = "Obrir la superposició de captures recents";
+"Open this settings window" = "Obrir aquesta finestra de configuració";
+"Quick capture (uses your Enter action)" = "Captura ràpida (utilitza la vostra acció d'Enter)";
+"Re-capture the last selected area" = "Tornar a capturar l'última àrea seleccionada";
+"Screenshots only — captured window title (blank otherwise)" = "Només captures de pantalla — títol de la finestra capturada (en blanc en cas contrari)";
+"Show available filename tokens" = "Mostrar els testimonis de nom de fitxer disponibles";
+"Enable snaploom:// URL scheme" = "Activar l'esquema d'URL snaploom://";
+"Show supported URL scheme commands" = "Mostrar les ordres d'esquema d'URL compatibles";
+"Start area capture" = "Iniciar captura d'àrea";
+"Start area recording" = "Iniciar gravació d'àrea";
+"Start full-screen recording" = "Iniciar gravació de pantalla completa";
+"Start scroll capture" = "Iniciar captura amb desplaçament";
+"Stop the current recording" = "Aturar la gravació actual";
+"Supported URL Scheme Commands" = "Ordres d'esquema d'URL compatibles";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "L'extensió del fitxer s'afegeix automàticament. Les barres i els dos punts a {window} es converteixen en guions.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Activeu Snaploom des de Raycast, Alfred, Shortcuts o qualsevol eina que obri URLs.";
+"URL scheme info" = "Informació de l'esquema d'URL";
+"sec (0 = never)" = "seg (0 = mai)";
+
+/* Capture presets — aspect ratio & resolution */
+"Aspect ratio" = "Relació d'aspecte";
+"Resolution" = "Resolució";
+"Aspect ratio & resolution presets" = "Predefinits de relació d'aspecte i resolució";
+"Freeform" = "Forma lliure";
+"Units" = "Unitats";
+"Keep ratio for next captures" = "Mantenir la relació per a les properes captures";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Còpia de seguretat de la configuració";
+"Export Settings…" = "Exporta la configuració…";
+"Import Settings…" = "Importa la configuració…";
+"Reveal Settings File in Finder" = "Mostra el fitxer de configuració al Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Exporta les preferències a un fitxer per traslladar-les a un altre Mac o a una instal·lació nova. Les credencials de pujada, la carpeta de desament i l'historial de captures no s'hi inclouen. La configuració es desa dins del contenidor de l'app de Snaploom.";
+"Export Settings" = "Exporta la configuració";
+"Import Settings" = "Importa la configuració";
+"Import failed" = "La importació ha fallat";
+"Settings exported" = "Configuració exportada";
+"Settings imported" = "Configuració importada";
+"Import" = "Importa";
+"Later" = "Més tard";
+"Relaunch Now" = "Reinicia ara";
+"Replace your current settings?" = "Vols substituir la configuració actual?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "En importar, se substituiran les preferències actuals per les d'aquest fitxer. La carpeta de desament, les credencials de pujada i l'historial de captures es conserven. Aquesta acció no es pot desfer.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "S'han aplicat %d opcions de configuració. Reinicia Snaploom per aplicar tots els canvis.";
+"A few large items were too big to include. Everything else was saved." = "Alguns elements grans eren massa grossos per incloure'ls. La resta s'ha desat.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "La teva imatge de fons personalitzada de Beautify era massa gran per incloure-la. La resta s'ha desat.";
+"This file is not a valid Snaploom settings file." = "Aquest fitxer no és un fitxer de configuració de Snaploom vàlid.";
+"This settings file contains no settings." = "Aquest fitxer de configuració no conté cap opció.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Aquest fitxer de configuració s'ha creat amb una versió més recent de Snaploom. Actualitza Snaploom primer.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Captura, tradueix i superposa el text a la imatge";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Obre una entrada de l'historial a l'editor (manté les anotacions editables)";

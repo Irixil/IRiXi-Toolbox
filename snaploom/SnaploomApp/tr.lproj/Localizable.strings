@@ -1,0 +1,673 @@
+/* Türkçe — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Alan Yakala";
+"Capture Screen" = "Ekran Yakala";
+"Capture OCR" = "OCR Yakala";
+"Quick Capture" = "Hızlı Yakalama";
+"Scroll Capture" = "Kaydırmalı Yakalama";
+"Capture Last Area" = "Son Alanı Yakala";
+"Capture Delay" = "Gecikmeli Yakalama";
+"None" = "Yok";
+"%d seconds" = "%d saniye";
+"Record Area" = "Alan Kaydet";
+"Record Screen" = "Ekran Kaydet";
+"Recent Captures" = "Son Yakalamalar";
+"Show History Panel" = "Geçmiş Panelini Göster";
+"Open Image..." = "Görsel Aç...";
+"Open from Clipboard" = "Panodan Aç";
+"Pin from Clipboard" = "Panodan Sabitle";
+"Preferences..." = "Tercihler...";
+"Check for Updates..." = "Güncellemeleri Denetle...";
+"Quit Snaploom" = "Snaploom'tan Çık";
+"No recent captures" = "Son yakalama yok";
+"Clear History" = "Geçmişi Temizle";
+
+/* History Panel */
+"Copy" = "Kopyala";
+"Save As..." = "Farklı Kaydet...";
+"Open in Editor" = "Düzenleyicide Aç";
+"Open With" = "Birlikte Aç";
+"Open Link" = "Bağlantıyı Aç";
+"No Apps Available" = "Kullanılabilir Uygulama Yok";
+"No Share Services" = "Paylaşım Servisi Yok";
+"Pin to Screen" = "Ekrana Sabitle";
+"Quick Look" = "Göz At";
+"Delete" = "Sil";
+"All" = "Tümü";
+"Screenshots" = "Ekran Görüntüleri";
+"GIFs" = "GIF'ler";
+"Click to copy · Drag to app" = "Kopyalamak için tıkla · Uygulamaya sürükle";
+"No captures yet" = "Henüz yakalama yok";
+
+/* Floating Thumbnail */
+"Close All" = "Tümünü Kapat";
+"Save All to Folder…" = "Tümünü Klasöre Kaydet…";
+"Save" = "Kaydet";
+
+/* Editor Top Bar */
+"Zoom" = "Yakınlaştırma";
+"Zoom In" = "Yakınlaştır";
+"Zoom Out" = "Uzaklaştır";
+"Fit Canvas" = "Tuvale Sığdır";
+"Crop" = "Kırp";
+"Rotate Left" = "Sola Döndür";
+"Rotate Right" = "Sağa Döndür";
+"Flip Horizontal" = "Yatay Çevir";
+"Flip Vertical" = "Dikey Çevir";
+"Add Capture" = "Yakalama Ekle";
+
+/* Toolbar - Tools */
+"Arrow" = "Ok";
+"Line" = "Çizgi";
+"Rectangle" = "Dikdörtgen";
+"Ellipse" = "Elips";
+"Pencil" = "Kalem";
+"Pencil (Draw)" = "Kalem (Çizim)";
+"Marker" = "İşaretleyici";
+"Text" = "Metin";
+"Number" = "Numara";
+"Number / Counter" = "Numara / Sayaç";
+"Stamp / Emoji" = "Damga / Emoji";
+"Censor" = "Sansür";
+"Censor (Pixelate / Blur / Solid)" = "Sansür (Pikselleştir / Bulanıklaştır / Düz)";
+"Measure" = "Ölçüm";
+"Measure (px)" = "Ölçüm (px)";
+"Magnify (Loupe)" = "Büyüteç (Lup)";
+"Highlight" = "Vurgula";
+"Highlight (Spotlight)" = "Vurgula (Spot Işığı)";
+"Dim" = "Karart";
+"Color Sampler" = "Renk Örnekleyici";
+"Color Picker" = "Renk Seçici";
+"Select & Edit" = "Seç ve Düzenle";
+"Color" = "Renk";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Panoya Kopyala";
+"Save to File" = "Dosyaya Kaydet";
+"Save to" = "Kaydet:";
+"Open in Editor Window" = "Düzenleyici Penceresinde Aç";
+"Pin on Screen" = "Ekrana Sabitle";
+"Pin" = "Sabitle";
+"Pin (floating window)" = "Sabitle (kayan pencere)";
+"OCR" = "OCR";
+"OCR Text" = "OCR Metin";
+"OCR (extract text)" = "OCR (metin çıkar)";
+"Upload" = "Yükle";
+"Share" = "Paylaş";
+"Undo" = "Geri Al";
+"Redo" = "Yinele";
+"Close" = "Kapat";
+"Remove Background" = "Arka Planı Kaldır";
+"Beautify" = "Güzelleştir";
+"Adjust" = "Ayarla";
+"Adjust (Image Effects)" = "Ayarla (Görsel Efektler)";
+"Invert Colors" = "Renkleri Ters Çevir";
+"Record" = "Kayıt";
+"Record screen" = "Ekran kaydet";
+"Translate" = "Çevir";
+"Auto-Redact sensitive data" = "Hassas verileri otomatik gizle";
+"Move Selection" = "Seçimi Taşı";
+
+/* Toolbar - Recording */
+"Start Recording" = "Kaydı Başlat";
+"Cancel Recording" = "Kaydı İptal Et";
+"Highlight Mouse Clicks" = "Fare Tıklamalarını Vurgula";
+"Record System Audio" = "Sistem Sesini Kaydet";
+"Record Microphone" = "Mikrofonu Kaydet";
+"Recording Settings" = "Kayıt Ayarları";
+
+/* Tool Options */
+"Size" = "Boyut";
+"Stroke" = "Çizgi";
+"Radius" = "Yarıçap";
+"Start:" = "Başlangıç:";
+"Draw:" = "Çizim:";
+"Auto:" = "Otomatik:";
+"Fill" = "Dolu";
+"Outline" = "Çerçeve";
+"More Emojis" = "Daha Fazla Emoji";
+"Load Image" = "Görsel Yükle";
+"Gradient Style" = "Gradyan Stili";
+"On" = "Açık";
+"Text Only" = "Yalnızca Metin";
+"All Text" = "Tüm Metin";
+"PII" = "Kişisel Veri";
+"Faces" = "Yüzler";
+"People" = "Kişiler";
+"Confirm before upload" = "Yüklemeden önce onayla";
+"Flip" = "Çevir";
+"Smooth" = "Yumuşat";
+"Refined" = "İnce";
+"Smart" = "Akıllı";
+"Padding" = "Dolgu";
+"Shadow" = "Gölge";
+"Right-click to add points" = "Nokta eklemek için sağ tıklayın";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "1 basılı tut: otomatik dikey  ·  2 basılı tut: otomatik yatay";
+"Limit to selection" = "Seçimle sınırla";
+"Effect" = "Efekt";
+"Font" = "Yazı tipi";
+"System" = "Sistem";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Pencereye tıklayın  ·  Özel alan için sürükleyin  ·  Tam ekran için F";
+"Drag to select  ·  Click for full screen" = "Seçmek için sürükleyin  ·  Tam ekran için tıklayın";
+"Release to annotate and edit" = "Açıklama eklemek ve düzenlemek için bırakın";
+"Release to finish" = "Bitirmek için bırakın";
+"Hold Space to move. Release to annotate and edit" = "Taşımak için Space tuşunu basılı tutun. Açıklama eklemek ve düzenlemek için bırakın";
+"Hold Space to move. Release to finish" = "Taşımak için Space tuşunu basılı tutun. Bitirmek için bırakın";
+"Window snap: " = "Pencere yakalama: ";
+"ON" = "AÇIK";
+"OFF" = "KAPALI";
+"  (Tab to toggle)" = "  (Değiştirmek için Tab)";
+"Right-click to copy" = "Kopyalamak için sağ tıklayın";
+"Copied %@" = "%@ kopyalandı";
+"Set color %@" = "Renk ayarlandı %@";
+"Draw something first to use the move tool." = "Taşıma aracını kullanmak için önce bir şey çizin.";
+"Drag to reposition" = "Yeniden konumlandırmak için sürükleyin";
+
+/* Overlay - Popovers */
+"Format:" = "Biçim:";
+"FPS:" = "FPS:";
+"When done:" = "Tamamlandığında:";
+"Open editor" = "Düzenleyiciyi aç";
+"Show in Finder" = "Finder'da Göster";
+"Copy to clipboard" = "Panoya kopyala";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom Tercihleri";
+"General" = "Genel";
+"Tools" = "Araçlar";
+"Recording" = "Kayıt";
+"About" = "Hakkında";
+"Shortcuts" = "Kısayollar";
+"Uploads" = "Yüklemeler";
+"Language" = "Dil";
+"Language:" = "Dil:";
+"Restart the app to fully apply the new language." = "Yeni dili tamamen uygulamak için uygulamayı yeniden başlatın.";
+"Capture" = "Yakalama";
+"Play sound on capture" = "Yakalama sırasında ses çal";
+"Play sound on copy" = "Kopyalamada ses çal";
+"Remember last selected tool" = "Son seçilen aracı hatırla";
+"Show floating thumbnail after capture" = "Yakalamadan sonra kayan küçük resim göster";
+"Launch at login" = "Oturum açılışında başlat";
+"Show snap alignment guides" = "Hizalama kılavuzlarını göster";
+"Snap selection edges to image boundaries" = "Seçim kenarlarını görüntü sınırlarına yapıştır";
+"Capture mouse cursor in screenshot" = "Ekran görüntüsünde fare imlecini yakala";
+"Double-click selection to copy" = "Kopyalamak için seçime çift tıkla";
+"Hide capture instructions" = "Yakalama talimatlarını gizle";
+"Disable shadow outside selection" = "Seçim dışındaki gölgeyi devre dışı bırak";
+"Show shortcuts in tooltips" = "Kısayolları ipuçlarında göster";
+"Use window title in saved filename" = "Kaydedilen dosya adında pencere başlığını kullan";
+"Hide menu bar icon" = "Menü çubuğu simgesini gizle";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Kısayol tuşları çalışmaya devam eder. Simgeyi tekrar göstermek için Snaploom'u yeniden başlatın.";
+"Menu bar icon:" = "Menü çubuğu simgesi:";
+"Default" = "Varsayılan";
+"Custom symbol" = "Özel sembol";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Herhangi bir SF Symbol adı girin (örn. camera.fill) veya bir hazır ayar seçin. Adlara Apple'ın SF Symbols uygulamasından göz atın. Geçersiz adlar varsayılan simgeye döner.";
+"Check for updates automatically" = "Güncellemeleri otomatik denetle";
+"Check for beta updates" = "Beta güncellemelerini denetle";
+"Thumbnail" = "Küçük Resim";
+"  Dismiss after:" = "  Kapatma süresi:";
+"seconds before auto-dismiss (0 = never)" = "saniye sonra otomatik kapat (0 = asla)";
+"  Multiple previews:" = "  Birden fazla önizleme:";
+"  Position:" = "  Konum:";
+"Stack (keep all)" = "Yığınla (tümünü tut)";
+"Replace (show only latest)" = "Değiştir (yalnızca son)";
+"Menu Bar Order" = "Menü Çubuğu Sırası";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Snaploom menü çubuğu menüsündeki yakalama eylemlerinin sırasını seçin.";
+"Move up" = "Yukarı taşı";
+"Move down" = "Aşağı taşı";
+"Output" = "Çıktı";
+"Image format:" = "Görsel biçimi:";
+"Quality:" = "Kalite:";
+"%d%%" = "%%%d";
+"Save at standard resolution (1x)" = "Standart çözünürlükte kaydet (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Retina ekranlarda boyutları yarıya indirir, ~4 kat küçük dosyalar";
+"Embed sRGB color profile" = "sRGB renk profilini göm";
+"Ensures consistent colors across different displays" = "Farklı ekranlar arasında tutarlı renkler sağlar";
+"Screenshot History" = "Ekran Görüntüsü Geçmişi";
+"History size:" = "Geçmiş boyutu:";
+"screenshots kept on disk (0 = off)" = "diskte saklanan ekran görüntüsü (0 = kapalı)";
+"Order history by last edit" = "Geçmişi son düzenlemeye göre sırala";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Düzenlenen ekran görüntüleri en üste taşınır. Kapalıyken yakalama sırasında kalır.";
+"Custom · %@" = "Özel · %@";
+"Space" = "Boşluk";
+"Save Directory" = "Kayıt Dizini";
+"Save folder:" = "Kayıt klasörü:";
+"Browse…" = "Gözat…";
+"Save action:" = "Kaydetme eylemi:";
+"Save to default folder" = "Varsayılan klasöre kaydet";
+"Ask where to save" = "Nereye kaydedileceğini sor";
+"Appearance" = "Görünüm";
+"Accent color:" = "Vurgu rengi:";
+"Icon color:" = "Simge rengi:";
+"Background color:" = "Arka plan rengi:";
+"Reset" = "Sıfırla";
+"OCR Capture:" = "OCR Yakalama:";
+"Show window + copy to clipboard" = "Pencere göster + panoya kopyala";
+"Show window only" = "Yalnızca pencere göster";
+"Copy to clipboard only" = "Yalnızca panoya kopyala";
+"Enter / Quick Capture:" = "Enter / Hızlı Yakalama:";
+"Save to file" = "Dosyaya kaydet";
+"Save + copy to clipboard" = "Kaydet + panoya kopyala";
+"OCR Action" = "OCR Eylemi";
+"OCR & QR Capture:" = "OCR ve QR Yakalama:";
+"OCR & QR" = "OCR ve QR";
+"Text & QR Recognition" = "Metin ve QR Tanıma";
+"Capture OCR & QR" = "OCR ve QR Yakala";
+"Capture area and read text/QR codes" = "Alan yakala ve metin/QR kodlarını oku";
+"Run OCR & QR" = "OCR ve QR Çalıştır";
+"QR Code" = "QR Kodu";
+"QR Codes" = "QR Kodları";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Klavye Kısayolları";
+"Hotkeys" = "Kısayol Tuşları";
+"Clear shortcut" = "Kısayolu temizle";
+"Press keys..." = "Tuşlara basın...";
+"Waiting..." = "Bekleniyor...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Açıklama Araçları";
+"Hidden tools are removed from the bottom toolbar." = "Gizli araçlar alt araç çubuğundan kaldırılır.";
+"Capture Actions" = "Yakalama Eylemleri";
+"Bottom Toolbar Actions" = "Alt Araç Çubuğu Eylemleri";
+"Hidden actions are removed from the bottom toolbar." = "Gizli eylemler alt araç çubuğundan kaldırılır.";
+"Editor Actions" = "Düzenleyici Eylemleri";
+"Right Toolbar Actions" = "Sağ Araç Çubuğu Eylemleri";
+"Hidden actions are removed from the right toolbar." = "Gizli eylemler sağ araç çubuğundan kaldırılır.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Kare hızı:";
+"After recording:" = "Kayıttan sonra:";
+"Save recording to:" = "Kaydı şuraya kaydet:";
+"Save Recording" = "Kaydı Kaydet";
+"Clear" = "Temizle";
+"Max height:" = "Maks. yükseklik:";
+"px (0 = unlimited)" = "px (0 = sınırsız)";
+"Behavior" = "Davranış";
+"Auto-scroll (sends synthetic scroll events)" = "Otomatik kaydır (yapay kaydırma olayları gönderir)";
+"Detect fixed/sticky headers" = "Sabit/yapışkan üst bilgileri algıla";
+"Scroll speed:" = "Kaydırma hızı:";
+"Slow" = "Yavaş";
+"Medium" = "Orta";
+"Fast" = "Hızlı";
+"Very fast" = "Çok hızlı";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Yükleme Servisi";
+"Upload Provider" = "Yükleme Sağlayıcısı";
+"Provider:" = "Sağlayıcı:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (görseller + videolar)";
+"imgbb (images only)" = "imgbb (yalnızca görseller)";
+"S3-Compatible (images + videos)" = "S3 Uyumlu (görseller + videolar)";
+"S3-Compatible Storage" = "S3 Uyumlu Depolama";
+"Sign In with Google" = "Google ile Giriş Yap";
+"Sign Out" = "Çıkış Yap";
+"Signed in" = "Giriş yapıldı";
+"Not signed in" = "Giriş yapılmadı";
+"Account:" = "Hesap:";
+"Test Connection" = "Bağlantıyı Test Et";
+"Fill in endpoint, bucket, and credentials first" = "Önce uç nokta, kova ve kimlik bilgilerini doldurun";
+"Testing..." = "Test ediliyor...";
+"Connection successful!" = "Bağlantı başarılı!";
+"Leave empty to use default" = "Varsayılanı kullanmak için boş bırakın";
+"Endpoint:" = "Uç Nokta:";
+"Region:" = "Bölge:";
+"Bucket:" = "Kova:";
+"Access Key:" = "Erişim Anahtarı:";
+"Secret Key:" = "Gizli Anahtar:";
+"Public URL:" = "Genel URL:";
+"Path Prefix:" = "Yol Ön Eki:";
+"API key:" = "API anahtarı:";
+"Upload History" = "Yükleme Geçmişi";
+"No uploads yet." = "Henüz yükleme yok.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Genel erişim için temel URL. Boşsa S3 uç nokta URL'si kullanılır (herkese açık olmayabilir).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Paylaşımlı bir anahtar dahildir — hız sınırına ulaşırsanız imgbb.com/api adresinden kendi ücretsiz anahtarınızı alın. Yalnızca görseller (video desteği yok).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 ve diğer S3 uyumlu servislerle çalışır. Görselleri ve videoları destekler.";
+"Configure S3 in Preferences" = "Tercihlerde S3'ü yapılandırın";
+"Sign in to Google Drive in Preferences" = "Tercihlerde Google Drive'a giriş yapın";
+"Video upload requires Google Drive or S3" = "Video yüklemek için Google Drive veya S3 gereklidir";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Sürüm %@ (%@)";
+"Made by" = "Yapımcı";
+"Licensed under the GPLv3" = "GPLv3 lisansı altında";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "macOS için ücretsiz, açık kaynaklı ekran görüntüsü ve ekran kaydı aracı.\nTamamen yerel — Swift ve AppKit ile geliştirilmiştir.";
+
+/* Alerts */
+"No Image on Clipboard" = "Panoda Görsel Yok";
+"No Image or Text on Clipboard" = "Panoda Görsel veya Metin Yok";
+"Copy an image to the clipboard first, then try again." = "Önce panoya bir görsel kopyalayın, ardından tekrar deneyin.";
+"Copy an image or text to the clipboard first, then try again." = "Önce panoya bir görsel veya metin kopyalayın, ardından tekrar deneyin.";
+"OK" = "Tamam";
+"Accessibility Access Required" = "Erişilebilirlik İzni Gerekli";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom, diğer uygulamaları otomatik kaydırmak için Erişilebilirlik iznine ihtiyaç duyar. Lütfen Sistem Ayarları'ndan izin verin ve tekrar deneyin.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom, kaydırmalı yakalama için Erişilebilirlik iznine ihtiyaç duyuyor. Lütfen Sistem Ayarları'ndan erişim verin ve tekrar deneyin.";
+"Open Settings" = "Ayarları Aç";
+"Cancel" = "İptal";
+"Microphone Access Required" = "Mikrofon Erişimi Gerekli";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom, ses kaydetmek için mikrofon iznine ihtiyaç duyar. İzin vermek için Sistem Ayarları'nı açın.";
+"Upload to Google Drive?" = "Google Drive'a yüklensin mi?";
+"Upload to S3?" = "S3'e yüklensin mi?";
+"Upload to imgbb.com?" = "imgbb.com'a yüklensin mi?";
+"Your screenshot will be uploaded." = "Ekran görüntünüz yüklenecek.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Snaploom'a Hoş Geldiniz";
+"Snaploom needs one permission" = "Snaploom bir izne ihtiyaç duyar";
+"Screen Recording not yet granted" = "Ekran Kaydı izni henüz verilmedi";
+"Screen Recording granted!" = "Ekran Kaydı izni verildi!";
+"Enable Snaploom, then try taking a screenshot" = "Snaploom'u etkinleştirin, ardından ekran görüntüsü almayı deneyin";
+"Open Screen Recording Settings" = "Ekran Kaydı Ayarlarını Aç";
+"Continue" = "Devam";
+
+/* OCR Window */
+"Text Recognition" = "Metin Tanıma";
+"Translate to:" = "Çeviri dili:";
+"%d chars · %d words" = "%d karakter · %d kelime";
+"Copy  ⌘↩" = "Kopyala  ⌘↩";
+"AI Search" = "Yapay Zeka Araması";
+"Show Original" = "Orijinali Göster";
+"Translation Failed" = "Çeviri Başarısız";
+"Translation" = "Çeviri";
+"(No text detected in the selected area)" = "(Seçili alanda metin algılanamadı)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL panoya kopyalandı";
+"Uploading... %d%%" = "Yükleniyor... %%%d";
+"Upload failed: %@" = "Yükleme başarısız: %@";
+"Uploaded! Link copied." = "Yüklendi! Bağlantı kopyalandı.";
+"Uploading to %@... %d%%" = "%@ hizmetine yükleniyor... %%%d";
+"Open" = "Aç";
+
+/* Recording Toast */
+"Recording saved" = "Kayıt kaydedildi";
+"%@ • Recording saved" = "%@ • Kayıt kaydedildi";
+"Copy Path" = "Yolu Kopyala";
+"Path copied!" = "Yol kopyalandı!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom Video Düzenleyici";
+"%@ selected" = "%@ seçili";
+"Exporting..." = "Dışa aktarılıyor...";
+"Export failed" = "Dışa aktarma başarısız";
+"Saved to %@" = "%@ konumuna kaydedildi";
+"Save failed" = "Kaydetme başarısız";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Farklı Kaydet...";
+"Choose a folder" = "Bir klasör seçin";
+"Save All to Folder…" = "Tümünü Klasöre Kaydet…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Otomatik Kaydır";
+"Stop" = "Durdur";
+"Scrolling..." = "Kaydırılıyor...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Hazır Ayarlar";
+"Adjustments" = "Ayarlamalar";
+"Brightness" = "Parlaklık";
+"Contrast" = "Kontrast";
+"Saturation" = "Doygunluk";
+"Sharpness" = "Keskinlik";
+
+/* Time Ago */
+"just now" = "az önce";
+"%ds ago" = "%d sn önce";
+"%dm ago" = "%d dk önce";
+"%dh ago" = "%d sa önce";
+
+/* Hotkey Labels */
+"History" = "Geçmiş";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Bir kısayol ayarlamak için \"Kayıt\" düğmesine tıklayın ve en az bir değiştirici tuş (⌘, ⌥, ⌃, ⇧) içeren bir tuş kombinasyonuna basın.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "GIF işleniyor…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Giriş İzleme Gerekli";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom, kayıt sırasında tuş vuruşlarını göstermek için Giriş İzleme iznine ihtiyaç duyar. Lütfen System Settings'ten izin verin ve tekrar deneyin.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom, kayıt sırasında tuş vuruşlarını göstermek için Erişilebilirlik iznine ihtiyaç duyar. Lütfen System Settings'ten izin verin ve tekrar deneyin.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Tuş Vuruşlarını Göster";
+"Shortcuts Only" = "Yalnızca Kısayollar";
+"All Keystrokes" = "Tüm Tuş Vuruşları";
+
+/* Recording — Settings Popover */
+"Delay:" = "Gecikme:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Panoya kopyalandı!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Web Kamerası Katmanı";
+"Camera Access Required" = "Kamera Erişimi Gerekli";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom, web kamerası katmanı için kamera iznine ihtiyaç duyar. İzin vermek için Sistem Ayarları'nı açın.";
+"Webcam" = "Web Kamerası";
+"Bottom Right" = "Sağ Alt";
+"Bottom Left" = "Sol Alt";
+"Top Right" = "Sağ Üst";
+"Top Left" = "Sol Üst";
+"Small" = "Küçük";
+"Large" = "Büyük";
+"Webcam Size Small" = "Küçük";
+"Webcam Size Medium" = "Orta";
+"Webcam Size Large" = "Büyük";
+"Webcam Size Extra Large" = "Çok Büyük";
+"Circle" = "Daire";
+"Rounded Rectangle" = "Yuvarlatılmış Dikdörtgen";
+"Cam pos:" = "Kam. konum:";
+"Cam size:" = "Kam. boyut:";
+"Cam shape:" = "Kam. şekil:";
+
+/* New Strings */
+"Settings" = "Ayarlar";
+"Settings..." = "Ayarlar...";
+"Snaploom Settings" = "Snaploom Ayarları";
+"Also open in Editor" = "Düzenleyicide de aç";
+"Hide controls" = "Kontrolleri gizle";
+"Hide recording controls" = "Kayıt kontrollerini gizle";
+"Stop recording from the menu bar icon instead." = "Bunun yerine menü çubuğu simgesinden kaydı durdurun.";
+"Pixelate" = "Pikselleştir";
+"Blur" = "Bulanıklaştır";
+"Solid" = "Düz";
+"Erase" = "Sil";
+"Done" = "Bitti";
+"Do nothing" = "Hiçbir şey yapma";
+"Overlay / Editor Shortcuts" = "Kaplama / Düzenleyici Kısayolları";
+"Set" = "Ayarla";
+"Press..." = "Basın...";
+"Reset to default" = "Varsayılana sıfırla";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Bir tuşa basarak o aracın kısayolunu atayın. Kaplama veya düzenleyici etkinken çalışırlar.";
+"Keep Separate" = "Ayrı Tut";
+"Merge Audio" = "Sesi Birleştir";
+"Audio Tracks" = "Ses İzleri";
+"Adjust volume for each audio track:" = "Her ses izi için ses seviyesini ayarlayın:";
+"Microphone:" = "Mikrofon:";
+"System audio:" = "Sistem sesi:";
+"Loupe" = "Büyüteç";
+"Stamp" = "Damga";
+"Unlimited" = "Sınırsız";
+
+/* Save Confirmation / Recording / Translation / Upload / Inspector */
+"Save changes?" = "Değişiklikler kaydedilsin mi?";
+"Your annotations will be lost if you close without saving." = "Kaydetmeden kapatırsanız açıklamalarınız kaybolacak.";
+"Save & Close" = "Kaydet ve Kapat";
+"Discard" = "Vazgeç";
+"Stop Recording" = "Kaydı Durdur";
+"Pause" = "Duraklat";
+"Resume" = "Devam Et";
+"Engine:" = "Motor:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (cihaz üzerinde)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple çevirisi daha hızlıdır ve çevrimdışı çalışır. Google Translate daha fazla dili destekler.";
+"Download language packs in System Settings…" = "Sistem Ayarları'ndan dil paketlerini indirin…";
+"Configure S3 in Settings" = "Ayarlar'da S3'ü yapılandırın";
+"Sign in to Google Drive in Settings" = "Ayarlar'da Google Drive'a giriş yapın";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Çevrimdışı sürüm: yükleme ve bulut depolama entegrasyonları kaldırıldı. Güncelleme denetimleri yine de Snaploom'ın güncelleme sunucusuna bağlanabilir. Ekran görüntüleri ve kayıtlar, siz kendiniz paylaşmadıkça veya kaydetmedikçe yerel kalır.";
+"Position:" = "Konum:";
+"Size:" = "Boyut:";
+"Shape:" = "Şekil:";
+
+"Same as screenshots" = "Ekran görüntüleriyle aynı";
+"  Preview size:" = "  Önizleme boyutu:";
+"(0 = off)" = "(0 = kapalı)";
+"Clear All" = "Tümünü Temizle";
+"Clear History?" = "Geçmiş Temizlensin mi?";
+"This will permanently delete all screenshots from history." = "Bu işlem, geçmişteki tüm ekran görüntülerini kalıcı olarak siler.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"Ayarla\"ya tıklayın ve kısayol atamak için en az bir değiştirici tuş (⌘, ⌥, ⌃, ⇧) içeren bir tuş kombinasyonuna basın.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Dosyalar, Google Drive'ınızdaki \"Snaploom\" klasörüne yüklenir. Her şey gizli kalır — hiçbir şey herkesle paylaşılmaz.";
+
+"Pressure" = "Basınç";
+
+/* Aspect ratio & resolution presets */
+"Aspect ratio & resolution presets" = "En boy oranı ve çözünürlük hazır ayarları";
+"Aspect ratio" = "En boy oranı";
+"Resolution" = "Çözünürlük";
+"Freeform" = "Serbest biçim";
+"Units" = "Birimler";
+"Keep ratio for next captures" = "Sonraki yakalamalar için oranı koru";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Video Aç...";
+"Choose a video to open in Snaploom editor" = "Snaploom düzenleyicisinde açmak için bir video seçin";
+"Click to add effects" = "Efekt eklemek için tıklayın";
+"Add Zoom" = "Yakınlaştırma Ekle";
+"Add Censor" = "Sansür Ekle";
+"Add Cut" = "Kesim Ekle";
+"Add Speed" = "Hız Ekle";
+"Add Freeze" = "Dondurma Ekle";
+"Add Text" = "Metin Ekle";
+"Delete Zoom" = "Yakınlaştırmayı Sil";
+"Delete Censor" = "Sansürü Sil";
+"Delete Cut" = "Kesimi Sil";
+"Delete Speed" = "Hızı Sil";
+"Delete Freeze" = "Dondurmayı Sil";
+"Delete Text" = "Metni Sil";
+"Edit Text…" = "Metni Düzenle…";
+"Huge" = "Çok Büyük";
+"Bold" = "Kalın";
+"Italic" = "İtalik";
+"Alignment" = "Hizalama";
+"Left" = "Sol";
+"Center" = "Orta";
+"Right" = "Sağ";
+"Text Color" = "Metin Rengi";
+"Background Color" = "Arka Plan Rengi";
+"Rounded" = "Yuvarlak";
+"Custom…" = "Özel…";
+"Transparent" = "Saydam";
+"Black" = "Siyah";
+"White" = "Beyaz";
+"Yellow" = "Sarı";
+"Red" = "Kırmızı";
+"Green" = "Yeşil";
+"Blue" = "Mavi";
+"Untitled" = "Adsız";
+"Add effect" = "Efekt ekle";
+"Fade" = "Solma";
+"High" = "Yüksek";
+"Low" = "Düşük";
+"Not enough room here" = "Burada yeterli alan yok";
+"Copied!" = "Kopyalandı!";
+"Converting to GIF…" = "GIF'e dönüştürülüyor…";
+"GIF conversion failed" = "GIF dönüştürme başarısız";
+"No video track found" = "Video izi bulunamadı";
+"Preview:" = "Önizleme:";
+"Copy Screen Info" = "Ekran Bilgilerini Kopyala";
+"Copies display and capture diagnostics to clipboard" = "Ekran ve yakalama tanılama bilgilerini panoya kopyalar";
+"Accent" = "Vurgu";
+"Icon" = "Simge";
+"Background" = "Arka Plan";
+"Custom" = "Özel";
+"Theme:" = "Tema:";
+"Application" = "Uygulama";
+"Capture area and extract text" = "Alan yakala ve metin çıkar";
+"Capture the full screen" = "Tam ekranı yakala";
+"Counter for multi-screen captures" = "Çok ekranlı yakalamalar için sayaç";
+"8-character random string (e.g. k3j7x9q2)" = "8 karakterlik rastgele dize (örn. k3j7x9q2)";
+"Filename Template Tokens" = "Dosya Adı Şablon Belirteçleri";
+"Filename tokens" = "Dosya adı belirteçleri";
+"Filename:" = "Dosya adı:";
+"Open an image file in the editor" = "Düzenleyicide bir görsel dosyası aç";
+"Open the recent captures overlay" = "Son yakalamalar kaplamasını aç";
+"Open this settings window" = "Bu ayarlar penceresini aç";
+"Quick capture (uses your Enter action)" = "Hızlı yakalama (Enter eyleminizi kullanır)";
+"Re-capture the last selected area" = "Son seçilen alanı yeniden yakala";
+"Screenshots only — captured window title (blank otherwise)" = "Yalnızca ekran görüntüleri — yakalanan pencere başlığı (aksi halde boş)";
+"Show available filename tokens" = "Kullanılabilir dosya adı belirteçlerini göster";
+"Enable snaploom:// URL scheme" = "snaploom:// URL şemasını etkinleştir";
+"Show supported URL scheme commands" = "Desteklenen URL şeması komutlarını göster";
+"Start area capture" = "Alan yakalamayı başlat";
+"Start area recording" = "Alan kaydını başlat";
+"Start full-screen recording" = "Tam ekran kaydını başlat";
+"Start scroll capture" = "Kaydırmalı yakalamayı başlat";
+"Stop the current recording" = "Geçerli kaydı durdur";
+"Supported URL Scheme Commands" = "Desteklenen URL Şeması Komutları";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Dosya uzantısı otomatik olarak eklenir. {window} içindeki eğik çizgiler ve iki nokta tire olur.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Snaploom'u Raycast, Alfred, Shortcuts veya URL açan herhangi bir araçtan tetikleyin.";
+"URL scheme info" = "URL şeması bilgisi";
+"sec (0 = never)" = "sn (0 = asla)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Ayar Yedeği";
+"Export Settings…" = "Ayarları Dışa Aktar…";
+"Import Settings…" = "Ayarları İçe Aktar…";
+"Reveal Settings File in Finder" = "Ayar Dosyasını Finder'da Göster";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Tercihlerinizi başka bir Mac'e ya da temiz bir kuruluma taşımak için bir dosyaya dışa aktarın. Yükleme kimlik bilgileri, kayıt klasörünüz ve ekran görüntüsü geçmişi dahil edilmez. Ayarlar Snaploom'un uygulama kapsayıcısında saklanır.";
+"Export Settings" = "Ayarları Dışa Aktar";
+"Import Settings" = "Ayarları İçe Aktar";
+"Import failed" = "İçe aktarma başarısız oldu";
+"Settings exported" = "Ayarlar dışa aktarıldı";
+"Settings imported" = "Ayarlar içe aktarıldı";
+"Import" = "İçe Aktar";
+"Later" = "Daha Sonra";
+"Relaunch Now" = "Şimdi Yeniden Başlat";
+"Replace your current settings?" = "Mevcut ayarlarınız değiştirilsin mi?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "İçe aktarma, mevcut tercihlerinizi bu dosyadakilerle değiştirir. Kayıt klasörünüz, yükleme kimlik bilgileriniz ve ekran görüntüsü geçmişiniz korunur. Bu işlem geri alınamaz.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d ayar uygulandı. Tüm değişiklikleri uygulamak için Snaploom'u yeniden başlatın.";
+"A few large items were too big to include. Everything else was saved." = "Birkaç büyük öğe dahil edilemeyecek kadar büyüktü. Diğer her şey kaydedildi.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Özel Beautify arka plan görüntünüz dahil edilemeyecek kadar büyüktü. Diğer her şey kaydedildi.";
+"This file is not a valid Snaploom settings file." = "Bu dosya geçerli bir Snaploom ayar dosyası değil.";
+"This settings file contains no settings." = "Bu ayar dosyası hiçbir ayar içermiyor.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Bu ayar dosyası Snaploom'un daha yeni bir sürümüyle oluşturulmuş. Lütfen önce Snaploom'u güncelleyin.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Metni yakalayın, çevirin ve görüntünün üzerine yerleştirin";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Geçmiş ögesini düzenleyicide aç (açıklamalar düzenlenebilir kalır)";

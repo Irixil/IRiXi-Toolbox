@@ -1,0 +1,673 @@
+/* தமிழ் — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "பகுதியைப் பிடி";
+"Capture Screen" = "திரையைப் பிடி";
+"Capture OCR" = "OCR பிடிப்பு";
+"Capture OCR & QR" = "OCR & QR பிடிப்பு";
+"Capture area and read text/QR codes" = "பகுதியைப் பிடித்து உரை/QR குறியீடுகளைப் படி";
+"OCR & QR" = "OCR & QR";
+"Run OCR & QR" = "OCR & QR இயக்கு";
+"Quick Capture" = "விரைவு பிடிப்பு";
+"Scroll Capture" = "உருள் பிடிப்பு";
+"Capture Last Area" = "கடைசி பகுதியை பிடி";
+"Capture Delay" = "பிடிப்பு தாமதம்";
+"None" = "இல்லை";
+"%d seconds" = "%d வினாடிகள்";
+"Record Area" = "பகுதியைப் பதிவு செய்";
+"Record Screen" = "திரையைப் பதிவு செய்";
+"Recent Captures" = "சமீபத்திய பிடிப்புகள்";
+"Show History Panel" = "வரலாற்றுப் பலகத்தைக் காட்டு";
+"Open Image..." = "படத்தைத் திற...";
+"Open from Clipboard" = "ஒட்டுப்பலகையிலிருந்து திற";
+"Pin from Clipboard" = "ஒட்டுப்பலகையிலிருந்து பொருத்து";
+"Preferences..." = "விருப்பங்கள்...";
+"Check for Updates..." = "புதுப்பிப்புகளைச் சரிபார்...";
+"Quit Snaploom" = "Snaploom-ஐ நிறுத்து";
+"No recent captures" = "சமீபத்திய பிடிப்புகள் இல்லை";
+"Clear History" = "வரலாற்றை அழி";
+
+/* History Panel */
+"Copy" = "நகலெடு";
+"Save As..." = "இவ்வாறு சேமி...";
+"Open in Editor" = "திருத்தியில் திற";
+"Open With" = "இதனுடன் திற";
+"Open Link" = "இணைப்பைத் திற";
+"Pin to Screen" = "திரையில் பொருத்து";
+"Quick Look" = "விரைவுப் பார்வை";
+"Delete" = "நீக்கு";
+"All" = "அனைத்தும்";
+"Screenshots" = "திரைப்பிடிப்புகள்";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "நகலெடுக்க கிளிக் செய் · பயன்பாட்டிற்கு இழு";
+"No captures yet" = "இதுவரை பிடிப்புகள் இல்லை";
+
+/* Floating Thumbnail */
+"Close All" = "அனைத்தையும் மூடு";
+"Save All to Folder…" = "அனைத்தையும் கோப்புறையில் சேமி…";
+"Save" = "சேமி";
+
+/* Editor Top Bar */
+"Zoom In" = "பெரிதாக்கு";
+"Zoom Out" = "சிறிதாக்கு";
+"Zoom" = "பெரிதாக்கம்";
+"Fit Canvas" = "கேன்வாஸுக்குப் பொருத்து";
+"Crop" = "செதுக்கு";
+"Flip Horizontal" = "கிடைமட்டமாகப் புரட்டு";
+"Flip Vertical" = "செங்குத்தாகப் புரட்டு";
+"Rotate Left" = "இடதுபுறம் சுழற்று";
+"Rotate Right" = "வலதுபுறம் சுழற்று";
+"Add Capture" = "பிடிப்பைச் சேர்";
+
+/* Toolbar - Tools */
+"Arrow" = "அம்பு";
+"Line" = "கோடு";
+"Rectangle" = "செவ்வகம்";
+"Ellipse" = "நீள்வட்டம்";
+"Pencil" = "பென்சில்";
+"Pencil (Draw)" = "பென்சில் (வரை)";
+"Marker" = "மார்க்கர்";
+"Text" = "உரை";
+"Number" = "எண்";
+"Number / Counter" = "எண் / எண்ணி";
+"Stamp / Emoji" = "முத்திரை / எமோஜி";
+"Censor" = "மறை";
+"Censor (Pixelate / Blur / Solid)" = "மறை (பிக்சலேட் / மங்கல் / திடம்)";
+"Measure" = "அளவிடு";
+"Measure (px)" = "அளவிடு (px)";
+"Magnify (Loupe)" = "பெரிதாக்கு (லூப்)";
+"Highlight" = "சிறப்பித்து காட்டு";
+"Highlight (Spotlight)" = "சிறப்பித்து காட்டு (ஒளிவட்டம்)";
+"Dim" = "மங்கலாக்கு";
+"Color Sampler" = "நிற மாதிரி";
+"Color Picker" = "நிறத் தேர்வி";
+"Select & Edit" = "தேர்வு & திருத்து";
+"Color" = "நிறம்";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "ஒட்டுப்பலகையில் நகலெடு";
+"Save to File" = "கோப்பில் சேமி";
+"Save to" = "இங்கே சேமி";
+"Open in Editor Window" = "திருத்தி சாளரத்தில் திற";
+"Pin on Screen" = "திரையில் பொருத்து";
+"Pin" = "பொருத்து";
+"Pin (floating window)" = "பொருத்து (மிதக்கும் சாளரம்)";
+"OCR" = "OCR";
+"OCR Text" = "OCR உரை";
+"OCR (extract text)" = "OCR (உரையைப் பிரி)";
+"Upload" = "பதிவேற்று";
+"Share" = "பகிர்";
+"No Apps Available" = "பயன்பாடுகள் எதுவும் இல்லை";
+"No Share Services" = "பகிர்வு சேவைகள் இல்லை";
+"Undo" = "செயல்தவிர்";
+"Redo" = "மீண்டும் செய்";
+"Close" = "மூடு";
+"Remove Background" = "பின்னணியை நீக்கு";
+"Beautify" = "அழகுபடுத்து";
+"Adjust" = "சரிசெய்";
+"Adjust (Image Effects)" = "சரிசெய் (பட விளைவுகள்)";
+"Invert Colors" = "நிறங்களை எதிர்மாற்று";
+"Record" = "பதிவு";
+"Record screen" = "திரையைப் பதிவு செய்";
+"Translate" = "மொழிபெயர்";
+"Auto-Redact sensitive data" = "முக்கிய தரவை தானாக மறை";
+"Move Selection" = "தேர்வை நகர்த்து";
+
+/* Toolbar - Recording */
+"Start Recording" = "பதிவைத் தொடங்கு";
+"Cancel Recording" = "பதிவை ரத்துசெய்";
+"Highlight Mouse Clicks" = "சுட்டி கிளிக்குகளை முன்னிலைப்படுத்து";
+"Record System Audio" = "கணினி ஒலியைப் பதிவு செய்";
+"Record Microphone" = "ஒலிவாங்கியைப் பதிவு செய்";
+"Recording Settings" = "பதிவு அமைப்புகள்";
+
+/* Tool Options */
+"Size" = "அளவு";
+"Stroke" = "கோடு";
+"Radius" = "ஆரை";
+"Start:" = "தொடக்கம்:";
+"Draw:" = "வரை:";
+"Auto:" = "தானியங்கு:";
+"Fill" = "நிரப்பு";
+"Outline" = "வெளிக்கோடு";
+"More Emojis" = "மேலும் எமோஜிகள்";
+"Load Image" = "படத்தை ஏற்று";
+"Gradient Style" = "சாய்வு நிற பாணி";
+"On" = "இயக்கு";
+"Text Only" = "உரை மட்டும்";
+"All Text" = "அனைத்து உரை";
+"PII" = "PII";
+"Faces" = "முகங்கள்";
+"People" = "நபர்கள்";
+"Confirm before upload" = "பதிவேற்றத்திற்கு முன் உறுதிசெய்";
+"Flip" = "புரட்டு";
+"Smooth" = "மென்மை";
+"Refined" = "நுணுக்கமான";
+"Smart" = "புத்திசாலி";
+"Padding" = "இடைவெளி";
+"Shadow" = "நிழல்";
+"Right-click to add points" = "புள்ளிகளைச் சேர்க்க வலது கிளிக் செய்";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "1 அழுத்தி தானியங்கு-செங்குத்து  ·  2 அழுத்தி தானியங்கு-கிடைமட்டம்";
+"Limit to selection" = "தேர்வுக்கு மட்டுப்படுத்து";
+"Effect" = "விளைவு";
+"Font" = "எழுத்துரு";
+"System" = "சிஸ்டம்";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "சாளரத்தைக் கிளிக் செய்  ·  தனிப்பயன் பகுதிக்கு இழு  ·  முழுத்திரைக்கு F";
+"Drag to select  ·  Click for full screen" = "தேர்வு செய்ய இழு  ·  முழுத்திரைக்கு கிளிக் செய்";
+"Release to annotate and edit" = "குறிப்பெழுத மற்றும் திருத்த விடுவி";
+"Release to finish" = "முடிக்க விடுவி";
+"Hold Space to move. Release to annotate and edit" = "நகர்த்த Space ஐ அழுத்திப் பிடி. குறிப்பெழுத மற்றும் திருத்த விடுவி";
+"Hold Space to move. Release to finish" = "நகர்த்த Space ஐ அழுத்திப் பிடி. முடிக்க விடுவி";
+"Window snap: " = "சாளர ஒட்டுதல்: ";
+"ON" = "இயக்கு";
+"OFF" = "நிறுத்து";
+"  (Tab to toggle)" = "  (மாற்ற Tab)";
+"Right-click to copy" = "நகலெடுக்க வலது கிளிக் செய்";
+"Copied %@" = "%@ நகலெடுக்கப்பட்டது";
+"Set color %@" = "நிறம் %@ அமைக்கப்பட்டது";
+"Draw something first to use the move tool." = "நகர்த்தும் கருவியைப் பயன்படுத்த முதலில் ஏதாவது வரையுங்கள்.";
+"Drag to reposition" = "இடமாற்ற இழுக்கவும்";
+
+/* Overlay - Popovers */
+"Format:" = "வடிவம்:";
+"FPS:" = "FPS:";
+"When done:" = "முடிந்ததும்:";
+"Open editor" = "திருத்தியைத் திற";
+"Show in Finder" = "Finder-இல் காட்டு";
+"Copy to clipboard" = "ஒட்டுப்பலகையில் நகலெடு";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Snaploom விருப்பங்கள்";
+"General" = "பொது";
+"Tools" = "கருவிகள்";
+"Recording" = "பதிவு";
+"About" = "பற்றி";
+"Shortcuts" = "குறுக்குவழிகள்";
+"Uploads" = "பதிவேற்றங்கள்";
+"Language" = "மொழி";
+"Language:" = "மொழி:";
+"Restart the app to fully apply the new language." = "புதிய மொழியை முழுமையாகப் பயன்படுத்த பயன்பாட்டை மறுதொடக்கம் செய்யுங்கள்.";
+"Capture" = "பிடிப்பு";
+"Play sound on capture" = "படமெடுக்கும்போது ஒலி எழுப்பு";
+"Play sound on copy" = "நகலெடுக்கும்போது ஒலி எழுப்பு";
+"Remember last selected tool" = "கடைசி தேர்ந்தெடுத்த கருவியை நினைவில் கொள்";
+"Show floating thumbnail after capture" = "பிடிப்புக்குப் பிறகு மிதக்கும் சிறுபடத்தைக் காட்டு";
+"Launch at login" = "உள்நுழையும்போது தொடங்கு";
+"Show snap alignment guides" = "ஒட்டு சீரமைப்பு வழிகாட்டிகளைக் காட்டு";
+"Snap selection edges to image boundaries" = "தேர்வின் விளிம்புகளைப் படத்தின் எல்லைகளுக்கு ஒட்டவை";
+"Capture mouse cursor in screenshot" = "திரைப்பிடிப்பில் சுட்டியைப் பிடி";
+"Double-click selection to copy" = "நகலெடுக்க தேர்வில் இருமுறை கிளிக் செய்க";
+"Hide capture instructions" = "பிடிப்பு வழிமுறைகளை மறை";
+"Use window title in saved filename" = "சேமிக்கும் கோப்புப் பெயரில் சாளரத் தலைப்பைப் பயன்படுத்து";
+"Disable shadow outside selection" = "தேர்வுக்கு வெளியே நிழலை முடக்கு";
+"Show shortcuts in tooltips" = "கருவித்துணுக்குகளில் குறுக்குவழிகளைக் காட்டு";
+
+/* Capture Presets */
+"Aspect ratio" = "விகிதம்";
+"Resolution" = "தெளிவுத்திறன்";
+"Aspect ratio & resolution presets" = "விகிதம் & தெளிவுத்திறன் முன்னமைவுகள்";
+"Freeform" = "சுதந்திர வடிவம்";
+"Units" = "அலகுகள்";
+"Keep ratio for next captures" = "அடுத்த பிடிப்புகளுக்கு விகிதத்தை வைத்திரு";
+"Hide menu bar icon" = "பட்டிப்பட்டை ஐகானை மறை";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "விரைவு விசைகள் செயல்படும். ஐகானை மீண்டும் காட்ட, Snaploom-ஐ மறுதொடக்கம் செய்யுங்கள்.";
+"Check for updates automatically" = "புதுப்பிப்புகளைத் தானாகச் சரிபார்";
+"Check for beta updates" = "பீட்டா புதுப்பிப்புகளைச் சரிபார்";
+"Thumbnail" = "சிறுபடம்";
+"  Dismiss after:" = "  பிறகு மறை:";
+"seconds before auto-dismiss (0 = never)" = "தானாக மறைவதற்கு முன் வினாடிகள் (0 = ஒருபோதும் இல்லை)";
+"  Multiple previews:" = "  பல முன்னோட்டங்கள்:";
+"  Position:" = "  நிலை:";
+"Stack (keep all)" = "அடுக்கு (அனைத்தையும் வை)";
+"Replace (show only latest)" = "மாற்று (சமீபத்தியதை மட்டும் காட்டு)";
+"Menu Bar Order" = "மெனு பட்டி வரிசை";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Snaploom மெனு பட்டி மெனுவில் படமெடுப்பு செயல்களின் வரிசையைத் தேர்வு செய்க.";
+"Move up" = "மேலே நகர்த்து";
+"Move down" = "கீழே நகர்த்து";
+"Output" = "வெளியீடு";
+"Image format:" = "பட வடிவம்:";
+"Quality:" = "தரம்:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "நிலையான தெளிவுத்திறனில் சேமி (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Retina திரைகளில் பரிமாணங்களைப் பாதியாக்குகிறது, ~4x சிறிய கோப்புகள்";
+"Embed sRGB color profile" = "sRGB நிறச் சுயவிவரத்தைப் பொதி";
+"Ensures consistent colors across different displays" = "வெவ்வேறு திரைகளில் நிலையான நிறங்களை உறுதி செய்கிறது";
+"Screenshot History" = "திரைப்பிடிப்பு வரலாறு";
+"History size:" = "வரலாற்று அளவு:";
+"screenshots kept on disk (0 = off)" = "வட்டில் வைக்கப்படும் திரைப்பிடிப்புகள் (0 = நிறுத்து)";
+"Order history by last edit" = "கடைசி திருத்தத்தின் படி வரலாற்றை வரிசைப்படுத்து";
+"Edited screenshots move to the top. Off keeps them in capture order." = "திருத்தப்பட்ட திரைப்பிடிப்புகள் மேலே நகர்கின்றன. அணைத்தால் அவை பிடிப்பு வரிசையில் இருக்கும்.";
+"Custom · %@" = "தனிப்பயன் · %@";
+"Space" = "இடைவெளி";
+"Save Directory" = "சேமிப்பு அடைவு";
+"Save action:" = "சேமிப்புச் செயல்:";
+"Save to default folder" = "இயல்புநிலை கோப்புறையில் சேமி";
+"Ask where to save" = "எங்கே சேமிப்பது என்று கேள்";
+"Save folder:" = "சேமிப்பு கோப்புறை:";
+"Browse…" = "உலாவு…";
+"Appearance" = "தோற்றம்";
+"Accent color:" = "முதன்மை நிறம்:";
+"Icon color:" = "ஐகான் நிறம்:";
+"Menu bar icon:" = "பட்டிப்பட்டை ஐகான்:";
+"Default" = "இயல்புநிலை";
+"Custom symbol" = "தனிப்பயன் சின்னம்";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "எந்த SF Symbol பெயரையும் உள்ளிடவும் (எ.கா. camera.fill) அல்லது ஒரு முன்னமைவைத் தேர்வுசெய்யவும். Apple-இன் SF Symbols பயன்பாட்டில் பெயர்களை உலாவவும். தவறான பெயர்கள் இயல்புநிலை ஐகானுக்குத் திரும்பும்.";
+"Background color:" = "பின்னணி நிறம்:";
+"Reset" = "மீட்டமை";
+"OCR Capture:" = "OCR பிடிப்பு:";
+"OCR & QR Capture:" = "OCR & QR பிடிப்பு:";
+"Show window + copy to clipboard" = "சாளரத்தைக் காட்டு + ஒட்டுப்பலகையில் நகலெடு";
+"Show window only" = "சாளரத்தை மட்டும் காட்டு";
+"Copy to clipboard only" = "ஒட்டுப்பலகையில் மட்டும் நகலெடு";
+"Enter / Quick Capture:" = "Enter / விரைவு பிடிப்பு:";
+"Save to file" = "கோப்பில் சேமி";
+"Save + copy to clipboard" = "சேமி + ஒட்டுப்பலகையில் நகலெடு";
+"OCR Action" = "OCR செயல்";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "விசைப்பலகை குறுக்குவழிகள்";
+"Hotkeys" = "விரைவு விசைகள்";
+"Clear shortcut" = "குறுக்குவழியை அழி";
+"Press keys..." = "விசைகளை அழுத்து...";
+"Waiting..." = "காத்திருக்கிறது...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "குறிப்புக் கருவிகள்";
+"Hidden tools are removed from the bottom toolbar." = "மறைக்கப்பட்ட கருவிகள் கீழ் கருவிப்பட்டியிலிருந்து நீக்கப்படும்.";
+"Capture Actions" = "பிடிப்புச் செயல்கள்";
+"Bottom Toolbar Actions" = "கீழ் கருவிப்பட்டிச் செயல்கள்";
+"Hidden actions are removed from the bottom toolbar." = "மறைக்கப்பட்ட செயல்கள் கீழ் கருவிப்பட்டியிலிருந்து நீக்கப்படும்.";
+"Editor Actions" = "திருத்தி செயல்கள்";
+"Right Toolbar Actions" = "வலது கருவிப்பட்டிச் செயல்கள்";
+"Hidden actions are removed from the right toolbar." = "மறைக்கப்பட்ட செயல்கள் வலது கருவிப்பட்டியிலிருந்து நீக்கப்படும்.";
+
+/* Preferences - Recording */
+"Frame rate:" = "பிரேம் வீதம்:";
+"After recording:" = "பதிவுக்குப் பிறகு:";
+"Save recording to:" = "பதிவை இங்கே சேமி:";
+"Save Recording" = "பதிவைச் சேமி";
+"Clear" = "அழி";
+"Max height:" = "அதிகபட்ச உயரம்:";
+"px (0 = unlimited)" = "px (0 = வரம்பில்லை)";
+"Behavior" = "நடத்தை";
+"Auto-scroll (sends synthetic scroll events)" = "தானியங்கு உருள்தல் (செயற்கை உருள் நிகழ்வுகளை அனுப்புகிறது)";
+"Detect fixed/sticky headers" = "நிலையான/ஒட்டும் தலைப்புகளைக் கண்டறி";
+"Scroll speed:" = "உருள் வேகம்:";
+"Slow" = "மெதுவாக";
+"Medium" = "நடுத்தரம்";
+"Fast" = "வேகமாக";
+"Very fast" = "மிக வேகமாக";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "பதிவேற்ற சேவை";
+"Upload Provider" = "பதிவேற்ற வழங்குநர்";
+"Provider:" = "வழங்குநர்:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (படங்கள் + காணொளிகள்)";
+"imgbb (images only)" = "imgbb (படங்கள் மட்டும்)";
+"S3-Compatible (images + videos)" = "S3-இணக்கமான (படங்கள் + காணொளிகள்)";
+"S3-Compatible Storage" = "S3-இணக்கமான சேமிப்பகம்";
+"Sign In with Google" = "Google மூலம் உள்நுழை";
+"Sign Out" = "வெளியேறு";
+"Signed in" = "உள்நுழைந்துள்ளீர்கள்";
+"Not signed in" = "உள்நுழையவில்லை";
+"Account:" = "கணக்கு:";
+"Test Connection" = "இணைப்பைச் சோதி";
+"Fill in endpoint, bucket, and credentials first" = "முதலில் முனைப்புள்ளி, பக்கெட் மற்றும் சான்றுகளை நிரப்புங்கள்";
+"Testing..." = "சோதிக்கிறது...";
+"Connection successful!" = "இணைப்பு வெற்றிகரம்!";
+"Leave empty to use default" = "இயல்புநிலையைப் பயன்படுத்த காலியாக விடு";
+"Endpoint:" = "முனைப்புள்ளி:";
+"Region:" = "பிராந்தியம்:";
+"Bucket:" = "பக்கெட்:";
+"Access Key:" = "அணுகல் விசை:";
+"Secret Key:" = "ரகசிய விசை:";
+"Public URL:" = "பொது URL:";
+"Path Prefix:" = "பாதை முன்னொட்டு:";
+"API key:" = "API விசை:";
+"Upload History" = "பதிவேற்ற வரலாறு";
+"No uploads yet." = "இதுவரை பதிவேற்றங்கள் இல்லை.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "பொது அணுகலுக்கான அடிப்படை URL. காலியாக இருந்தால், S3 முனைப்புள்ளி URL பயன்படுத்தப்படும் (பொதுவாக அணுகக்கூடியதாக இல்லாமல் போகலாம்).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "பகிரப்பட்ட விசை சேர்க்கப்பட்டுள்ளது — வீத வரம்புகளை அடைந்தால் imgbb.com/api இல் உங்கள் சொந்த இலவச விசையைப் பெறுங்கள். படங்கள் மட்டும் (காணொளி ஆதரவு இல்லை).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 மற்றும் பிற S3-இணக்கமான சேவைகளுடன் செயல்படும். படங்கள் மற்றும் காணொளிகளை ஆதரிக்கிறது.";
+"Configure S3 in Preferences" = "விருப்பங்களில் S3 ஐ உள்ளமை";
+"Sign in to Google Drive in Preferences" = "விருப்பங்களில் Google Drive இல் உள்நுழை";
+"Video upload requires Google Drive or S3" = "காணொளி பதிவேற்றத்திற்கு Google Drive அல்லது S3 தேவை";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "பதிப்பு %@ (%@)";
+"Made by" = "உருவாக்கியவர்";
+"Licensed under the GPLv3" = "GPLv3 உரிமத்தின் கீழ் வழங்கப்பட்டது";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "macOS க்கான இலவச, திறந்த மூல திரைப்பிடிப்பு & திரைப்பதிவு கருவி.\nமுழுமையாக நேட்டிவ் — Swift மற்றும் AppKit மூலம் உருவாக்கப்பட்டது.";
+
+/* Alerts */
+"No Image on Clipboard" = "ஒட்டுப்பலகையில் படம் இல்லை";
+"No Image or Text on Clipboard" = "ஒட்டுப்பலகையில் படம் அல்லது உரை இல்லை";
+"Copy an image to the clipboard first, then try again." = "முதலில் ஒட்டுப்பலகையில் ஒரு படத்தை நகலெடுத்து, பின்னர் மீண்டும் முயற்சிக்கவும்.";
+"Copy an image or text to the clipboard first, then try again." = "முதலில் ஒட்டுப்பலகையில் ஒரு படம் அல்லது உரையை நகலெடுத்து, பின்னர் மீண்டும் முயற்சிக்கவும்.";
+"OK" = "சரி";
+"Accessibility Access Required" = "அணுகல்தன்மை அனுமதி தேவை";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom பிற பயன்பாடுகளை தானாக உருட்ட அணுகல்தன்மை அனுமதி தேவை. கணினி அமைப்புகளில் அணுகலை வழங்கி, மீண்டும் முயற்சிக்கவும்.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "ஸ்க்ரோல் கேப்சருக்கு Snaploom-க்கு அணுகல்தன்மை அனுமதி தேவை. கணினி அமைப்புகளில் அணுகலை வழங்கி, மீண்டும் முயற்சிக்கவும்.";
+"Open Settings" = "அமைப்புகளைத் திற";
+"Cancel" = "ரத்துசெய்";
+"Microphone Access Required" = "ஒலிவாங்கி அணுகல் தேவை";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom குரல் ஒலியைப் பதிவு செய்ய ஒலிவாங்கி அனுமதி தேவை. அணுகலை வழங்க கணினி அமைப்புகளைத் திறக்கவும்.";
+"Upload to Google Drive?" = "Google Drive இல் பதிவேற்றவா?";
+"Upload to S3?" = "S3 இல் பதிவேற்றவா?";
+"Upload to imgbb.com?" = "imgbb.com இல் பதிவேற்றவா?";
+"Your screenshot will be uploaded." = "உங்கள் திரைப்பிடிப்பு பதிவேற்றப்படும்.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Snaploom க்கு வரவேற்கிறோம்";
+"Snaploom needs one permission" = "Snaploom க்கு ஒரு அனுமதி தேவை";
+"Screen Recording not yet granted" = "திரைப் பதிவு இன்னும் வழங்கப்படவில்லை";
+"Screen Recording granted!" = "திரைப் பதிவு வழங்கப்பட்டது!";
+"Enable Snaploom, then try taking a screenshot" = "Snaploom ஐ இயக்கி, திரைப்பிடிப்பு எடுக்க முயற்சிக்கவும்";
+"Open Screen Recording Settings" = "திரைப் பதிவு அமைப்புகளைத் திற";
+"Continue" = "தொடரவும்";
+
+/* OCR Window */
+"Text Recognition" = "உரை அடையாளம்";
+"Text & QR Recognition" = "உரை & QR அடையாளம்";
+"QR Code" = "QR குறியீடு";
+"QR Codes" = "QR குறியீடுகள்";
+"Translate to:" = "இதற்கு மொழிபெயர்:";
+"%d chars · %d words" = "%d எழுத்துகள் · %d சொற்கள்";
+"Copy  ⌘↩" = "நகலெடு  ⌘↩";
+"AI Search" = "AI தேடல்";
+"Show Original" = "மூலத்தைக் காட்டு";
+"Translation Failed" = "மொழிபெயர்ப்பு தோல்வி";
+"Translation" = "மொழிபெயர்ப்பு";
+"(No text detected in the selected area)" = "(தேர்ந்தெடுக்கப்பட்ட பகுதியில் உரை கண்டறியப்படவில்லை)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL ஒட்டுப்பலகையில் நகலெடுக்கப்பட்டது";
+"Uploading... %d%%" = "பதிவேற்றுகிறது... %d%%";
+"Upload failed: %@" = "பதிவேற்றம் தோல்வி: %@";
+"Uploaded! Link copied." = "பதிவேற்றப்பட்டது! இணைப்பு நகலெடுக்கப்பட்டது.";
+"Uploading to %@... %d%%" = "%@ இல் பதிவேற்றுகிறது... %d%%";
+"Open" = "திற";
+
+/* Recording Toast */
+"Recording saved" = "பதிவு சேமிக்கப்பட்டது";
+"%@ • Recording saved" = "%@ • பதிவு சேமிக்கப்பட்டது";
+"Copy Path" = "பாதையை நகலெடு";
+"Path copied!" = "பாதை நகலெடுக்கப்பட்டது!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom காணொளி திருத்தி";
+"%@ selected" = "%@ தேர்ந்தெடுக்கப்பட்டது";
+"Exporting..." = "ஏற்றுமதி செய்கிறது...";
+"Export failed" = "ஏற்றுமதி தோல்வி";
+"Saved to %@" = "%@ இல் சேமிக்கப்பட்டது";
+"Save failed" = "சேமிப்பு தோல்வி";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "இவ்வாறு சேமி...";
+"Choose a folder" = "கோப்புறையைத் தேர்வுசெய்";
+"Save All to Folder…" = "அனைத்தையும் கோப்புறையில் சேமி…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "தானியங்கு உருள்தல்";
+"Stop" = "நிறுத்து";
+"Scrolling..." = "உருள்கிறது...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "முன்னமைவுகள்";
+"Adjustments" = "சரிசெய்தல்கள்";
+"Brightness" = "ஒளிர்வு";
+"Contrast" = "மாறுபாடு";
+"Saturation" = "செறிவு";
+"Sharpness" = "கூர்மை";
+
+/* Time Ago */
+"just now" = "இப்போதுதான்";
+"%ds ago" = "%d வி முன்";
+"%dm ago" = "%d நி முன்";
+"%dh ago" = "%d ம.நே முன்";
+
+/* Hotkey Labels */
+"History" = "வரலாறு";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "குறுக்குவழியை அமைக்க \"பதிவு\" ஐ கிளிக் செய்து குறைந்தது ஒரு மாற்றி (⌘, ⌥, ⌃, ⇧) உடன் விசை கலவையை அழுத்தவும்.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "GIF செயலாக்கப்படுகிறது…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "உள்ளீட்டு கண்காணிப்பு தேவை";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "பதிவின் போது விசை அழுத்தங்களைக் காட்ட Snaploom க்கு உள்ளீட்டு கண்காணிப்பு அனுமதி தேவை. System Settings இல் அணுகலை வழங்கி, மீண்டும் முயற்சிக்கவும்.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "பதிவின் போது விசை அழுத்தங்களைக் காட்ட Snaploom க்கு அணுகல்தன்மை அனுமதி தேவை. System Settings இல் அணுகலை வழங்கி, மீண்டும் முயற்சிக்கவும்.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "விசை அழுத்தங்களைக் காட்டு";
+"Shortcuts Only" = "குறுக்குவழிகள் மட்டும்";
+"All Keystrokes" = "அனைத்து விசை அழுத்தங்களும்";
+
+/* Recording — Settings Popover */
+"Delay:" = "தாமதம்:";
+
+/* Video Editor */
+"Copied to clipboard!" = "ஒட்டுப்பலகையில் நகலெடுக்கப்பட்டது!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "வெப்கேம் மேலடுக்கு";
+"Camera Access Required" = "கேமரா அணுகல் தேவை";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "வெப்கேம் மேலடுக்குக்கு Snaploom க்கு கேமரா அனுமதி தேவை. அணுகலை வழங்க System Settings ஐ திறக்கவும்.";
+"Webcam" = "வெப்கேம்";
+"Bottom Right" = "கீழ் வலது";
+"Bottom Left" = "கீழ் இடது";
+"Top Right" = "மேல் வலது";
+"Top Left" = "மேல் இடது";
+"Small" = "சிறியது";
+"Large" = "பெரியது";
+"Webcam Size Small" = "சிறியது";
+"Webcam Size Medium" = "நடுத்தரம்";
+"Webcam Size Large" = "பெரியது";
+"Webcam Size Extra Large" = "மிகப் பெரியது";
+"Circle" = "வட்டம்";
+"Rounded Rectangle" = "வட்டமான செவ்வகம்";
+"Cam pos:" = "கேம் நிலை:";
+"Cam size:" = "கேம் அளவு:";
+"Cam shape:" = "கேம் வடிவம்:";
+
+/* Settings */
+"Settings" = "அமைப்புகள்";
+"Settings..." = "அமைப்புகள்...";
+"Snaploom Settings" = "Snaploom அமைப்புகள்";
+"Also open in Editor" = "எடிட்டரிலும் திற";
+"Hide controls" = "கட்டுப்பாடுகளை மறை";
+"Hide recording controls" = "பதிவு கட்டுப்பாடுகளை மறை";
+"Stop recording from the menu bar icon instead." = "அதற்குப் பதிலாக மெனு பட்டை ஐகானிலிருந்து பதிவை நிறுத்தவும்.";
+"Pixelate" = "பிக்சலேட்";
+"Blur" = "மங்கலாக்கு";
+"Solid" = "திடமான";
+"Erase" = "அழி";
+"Done" = "முடிந்தது";
+"Do nothing" = "எதுவும் செய்யாதே";
+"Overlay / Editor Shortcuts" = "மேலடுக்கு / எடிட்டர் குறுக்குவழிகள்";
+"Set" = "அமை";
+"Press..." = "அழுத்தவும்...";
+"Reset to default" = "இயல்புநிலைக்கு மீட்டமை";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "அந்த கருவிக்கான குறுக்குவழியாக ஒரு விசையை அழுத்தவும். மேலடுக்கு அல்லது எடிட்டர் செயலில் இருக்கும்போது இவை வேலை செய்யும்.";
+"Keep Separate" = "தனித்தனியாக வை";
+"Merge Audio" = "ஒலியை ஒன்றிணை";
+"Audio Tracks" = "ஒலி தடங்கள்";
+"Adjust volume for each audio track:" = "ஒவ்வொரு ஒலி தடத்திற்கும் ஒலி அளவை சரிசெய்:";
+"Microphone:" = "மைக்ரோஃபோன்:";
+"System audio:" = "கணினி ஒலி:";
+"Loupe" = "உருப்பெருக்கி";
+"Stamp" = "முத்திரை";
+"Unlimited" = "வரம்பற்ற";
+
+/* Save/Discard, Recording, Translation Engine, Upload, Inspector */
+"Save changes?" = "மாற்றங்களைச் சேமிக்கவா?";
+"Your annotations will be lost if you close without saving." = "சேமிக்காமல் மூடினால் உங்கள் குறிப்புகள் இழக்கப்படும்.";
+"Save & Close" = "சேமி & மூடு";
+"Discard" = "நிராகரி";
+"Stop Recording" = "பதிவை நிறுத்து";
+"Pause" = "இடைநிறுத்தம்";
+"Resume" = "தொடரவும்";
+"Engine:" = "இயந்திரம்:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (சாதனத்தில்)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Apple மொழிபெயர்ப்பு வேகமானது மற்றும் ஆஃப்லைனில் வேலை செய்யும். Google Translate அதிக மொழிகளை ஆதரிக்கிறது.";
+"Download language packs in System Settings…" = "கணினி அமைப்புகளில் மொழி தொகுப்புகளைப் பதிவிறக்கவும்…";
+"Configure S3 in Settings" = "அமைப்புகளில் S3 கட்டமைக்கவும்";
+"Sign in to Google Drive in Settings" = "அமைப்புகளில் Google Drive-இல் உள்நுழையவும்";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "ஆஃப்லைன் பதிப்பு: பதிவேற்றம் மற்றும் கிளவுட் சேமிப்பக ஒருங்கிணைப்புகள் அகற்றப்பட்டுள்ளன. புதுப்பிப்புச் சரிபார்ப்புகள் இன்னும் Snaploom-இன் புதுப்பிப்பு சேவையகத்துடன் இணையலாம். நீங்களே பகிர்ந்தாலோ சேமித்தாலோ தவிர, திரைப்பிடிப்புகளும் பதிவுகளும் உள்ளூரிலேயே இருக்கும்.";
+"Position:" = "நிலை:";
+"Size:" = "அளவு:";
+"Shape:" = "வடிவம்:";
+
+"Same as screenshots" = "ஸ்கிரீன்ஷாட்களைப் போலவே";
+"  Preview size:" = "  முன்னோட்ட அளவு:";
+"(0 = off)" = "(0 = அணைப்பு)";
+"Clear All" = "அனைத்தையும் அழி";
+"Clear History?" = "வரலாற்றை அழிக்கவா?";
+"This will permanently delete all screenshots from history." = "இது வரலாற்றில் உள்ள அனைத்து ஸ்கிரீன்ஷாட்களையும் நிரந்தரமாக நீக்கும்.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "\"அமை\" என்பதை கிளிக் செய்து, குறுக்குவழியை அமைக்க குறைந்தது ஒரு மாற்றி (⌘, ⌥, ⌃, ⇧) கொண்ட விசை சேர்க்கையை அழுத்தவும்.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "கோப்புகள் உங்கள் Google Drive-ல் உள்ள \"Snaploom\" கோப்புறையில் பதிவேற்றப்படும். அனைத்தும் தனிப்பட்டதாக இருக்கும் — எதுவும் பொதுவில் பகிரப்படாது.";
+
+"Pressure" = "அழுத்தம்";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "காணொளியைத் திற...";
+"Choose a video to open in Snaploom editor" = "Snaploom திருத்தியில் திறக்க காணொளியைத் தேர்வுசெய்";
+"Click to add effects" = "விளைவுகளைச் சேர்க்க கிளிக் செய்";
+"Add Zoom" = "பெரிதாக்கலைச் சேர்";
+"Add Censor" = "மறைப்பைச் சேர்";
+"Add Cut" = "வெட்டைச் சேர்";
+"Add Speed" = "வேகத்தைச் சேர்";
+"Add Freeze" = "உறைவைச் சேர்";
+"Add Text" = "உரையைச் சேர்";
+"Delete Zoom" = "பெரிதாக்கலை நீக்கு";
+"Delete Censor" = "மறைப்பை நீக்கு";
+"Delete Cut" = "வெட்டை நீக்கு";
+"Delete Speed" = "வேகத்தை நீக்கு";
+"Delete Freeze" = "உறைவை நீக்கு";
+"Delete Text" = "உரையை நீக்கு";
+"Edit Text…" = "உரையைத் திருத்து…";
+"Huge" = "மிகப்பெரியது";
+"Bold" = "தடித்த";
+"Italic" = "சாய்வான";
+"Alignment" = "சீரமைப்பு";
+"Left" = "இடது";
+"Center" = "மையம்";
+"Right" = "வலது";
+"Text Color" = "உரை நிறம்";
+"Background Color" = "பின்னணி நிறம்";
+"Rounded" = "வட்டமான";
+"Custom…" = "தனிப்பயன்…";
+"Transparent" = "ஒளி கசிவான";
+"Black" = "கருப்பு";
+"White" = "வெள்ளை";
+"Yellow" = "மஞ்சள்";
+"Red" = "சிவப்பு";
+"Green" = "பச்சை";
+"Blue" = "நீலம்";
+"Untitled" = "தலைப்பு இல்லை";
+"Add effect" = "விளைவைச் சேர்";
+"Fade" = "மங்கல்";
+"High" = "உயர்";
+"Low" = "குறைந்த";
+"Not enough room here" = "இங்கே போதுமான இடம் இல்லை";
+"Copied!" = "நகலெடுக்கப்பட்டது!";
+"Converting to GIF…" = "GIF ஆக மாற்றுகிறது…";
+"GIF conversion failed" = "GIF மாற்றம் தோல்வியடைந்தது";
+"No video track found" = "காணொளி தடம் எதுவும் கிடைக்கவில்லை";
+"Preview:" = "முன்னோட்டம்:";
+"Copy Screen Info" = "திரை தகவலை நகலெடு";
+"Copies display and capture diagnostics to clipboard" = "திரை மற்றும் பிடிப்பு கண்டறிதல்களை ஒட்டுப்பலகையில் நகலெடுக்கிறது";
+"Accent" = "முதன்மை";
+"Icon" = "ஐகான்";
+"Background" = "பின்னணி";
+"Custom" = "தனிப்பயன்";
+"Theme:" = "தீம்:";
+"Application" = "பயன்பாடு";
+"Capture area and extract text" = "பகுதியைப் பிடித்து உரையைப் பிரித்தெடு";
+"Capture the full screen" = "முழுத் திரையையும் பிடி";
+"Counter for multi-screen captures" = "பல-திரை பிடிப்புகளுக்கான எண்ணி";
+"8-character random string (e.g. k3j7x9q2)" = "8-எழுத்து சீரற்ற சரம் (எ.கா. k3j7x9q2)";
+"Filename Template Tokens" = "கோப்புப்பெயர் வார்ப்புரு டோக்கன்கள்";
+"Filename tokens" = "கோப்புப்பெயர் டோக்கன்கள்";
+"Filename:" = "கோப்புப்பெயர்:";
+"Open an image file in the editor" = "திருத்தியில் ஒரு படக் கோப்பைத் திற";
+"Open the recent captures overlay" = "சமீபத்திய பிடிப்புகள் மேலடுக்கைத் திற";
+"Open this settings window" = "இந்த அமைப்புகள் சாளரத்தைத் திற";
+"Quick capture (uses your Enter action)" = "விரைவு பிடிப்பு (உங்கள் Enter செயலைப் பயன்படுத்துகிறது)";
+"Re-capture the last selected area" = "கடைசியாக தேர்ந்தெடுத்த பகுதியை மீண்டும் பிடி";
+"Screenshots only — captured window title (blank otherwise)" = "திரைப்பிடிப்புகள் மட்டும் — பிடிக்கப்பட்ட சாளரத் தலைப்பு (இல்லையெனில் காலி)";
+"Show available filename tokens" = "கிடைக்கும் கோப்புப்பெயர் டோக்கன்களைக் காட்டு";
+"Enable snaploom:// URL scheme" = "snaploom:// URL திட்டத்தை இயக்கு";
+"Show supported URL scheme commands" = "ஆதரிக்கப்படும் URL திட்ட கட்டளைகளைக் காட்டு";
+"Start area capture" = "பகுதி பிடிப்பைத் தொடங்கு";
+"Start area recording" = "பகுதி பதிவைத் தொடங்கு";
+"Start full-screen recording" = "முழுத்-திரை பதிவைத் தொடங்கு";
+"Start scroll capture" = "உருள் பிடிப்பைத் தொடங்கு";
+"Stop the current recording" = "தற்போதைய பதிவை நிறுத்து";
+"Supported URL Scheme Commands" = "ஆதரிக்கப்படும் URL திட்ட கட்டளைகள்";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "கோப்பு நீட்டிப்பு தானாகவே சேர்க்கப்படும். {window} இல் உள்ள சாய்வுக் கோடுகள் மற்றும் முக்காற்புள்ளிகள் இடைக்கோடுகளாக மாறும்.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Raycast, Alfred, Shortcuts அல்லது URL-களைத் திறக்கும் எந்தக் கருவியிலிருந்தும் Snaploom-ஐத் தூண்டவும்.";
+"URL scheme info" = "URL திட்ட தகவல்";
+"sec (0 = never)" = "வி (0 = ஒருபோதும் இல்லை)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "அமைப்புகள் காப்புப்பிரதி";
+"Export Settings…" = "அமைப்புகளை ஏற்றுமதி செய்…";
+"Import Settings…" = "அமைப்புகளை இறக்குமதி செய்…";
+"Reveal Settings File in Finder" = "அமைப்புகள் கோப்பை Finder இல் காட்டு";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "உங்கள் விருப்பங்களை மற்றொரு Mac அல்லது புதிய நிறுவலுக்கு நகர்த்த ஒரு கோப்பிற்கு ஏற்றுமதி செய்யுங்கள். பதிவேற்ற சான்றுகள், உங்கள் சேமிப்புக் கோப்புறை மற்றும் திரைப்பிடிப்பு வரலாறு சேர்க்கப்படவில்லை. அமைப்புகள் Snaploom இன் ஆப் கன்டெய்னருக்குள் சேமிக்கப்படுகின்றன.";
+"Export Settings" = "அமைப்புகளை ஏற்றுமதி செய்";
+"Import Settings" = "அமைப்புகளை இறக்குமதி செய்";
+"Import failed" = "இறக்குமதி தோல்வியடைந்தது";
+"Settings exported" = "அமைப்புகள் ஏற்றுமதி செய்யப்பட்டன";
+"Settings imported" = "அமைப்புகள் இறக்குமதி செய்யப்பட்டன";
+"Import" = "இறக்குமதி";
+"Later" = "பிறகு";
+"Relaunch Now" = "இப்போதே மீண்டும் தொடங்கு";
+"Replace your current settings?" = "உங்கள் தற்போதைய அமைப்புகளை மாற்றவா?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "இறக்குமதி செய்வது உங்கள் தற்போதைய விருப்பங்களை இந்தக் கோப்பில் உள்ளவற்றால் மாற்றிவிடும். உங்கள் சேமிப்புக் கோப்புறை, பதிவேற்ற சான்றுகள் மற்றும் திரைப்பிடிப்பு வரலாறு தக்கவைக்கப்படும். இதைச் செயல்தவிர்க்க முடியாது.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d அமைப்புகள் பயன்படுத்தப்பட்டன. அனைத்து மாற்றங்களையும் பயன்படுத்த Snaploom ஐ மீண்டும் தொடங்குங்கள்.";
+"A few large items were too big to include. Everything else was saved." = "சில பெரிய உருப்படிகள் சேர்க்க முடியாத அளவுக்குப் பெரியதாக இருந்தன. மற்ற அனைத்தும் சேமிக்கப்பட்டன.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "உங்கள் தனிப்பயன் Beautify பின்னணிப் படம் சேர்க்க முடியாத அளவுக்குப் பெரியதாக இருந்தது. மற்ற அனைத்தும் சேமிக்கப்பட்டன.";
+"This file is not a valid Snaploom settings file." = "இந்தக் கோப்பு செல்லுபடியாகும் Snaploom அமைப்புகள் கோப்பு அல்ல.";
+"This settings file contains no settings." = "இந்த அமைப்புகள் கோப்பில் எந்த அமைப்புகளும் இல்லை.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "இந்த அமைப்புகள் கோப்பு Snaploom இன் புதிய பதிப்பால் உருவாக்கப்பட்டது. முதலில் Snaploom ஐப் புதுப்பிக்கவும்.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "படத்தைப் பிடித்து, மொழிபெயர்த்து, உரையைப் படத்தின் மேல் இடுக";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "வரலாற்று உள்ளீட்டைத் தொகுப்பாளரில் திற (எழுத்துக்குறிப்புகளைத் திருத்தக்கூடியதாக வைத்திருக்கும்)";

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect x="64" y="64" width="896" height="896" rx="210" fill="#171B1E"/>
+  <g fill="none" stroke="#F7F3EA" stroke-width="46" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M332 196H244a48 48 0 0 0-48 48v88"/>
+    <path d="M692 196h88a48 48 0 0 1 48 48v88"/>
+    <path d="M332 828H244a48 48 0 0 1-48-48v-88"/>
+    <path d="M692 828h88a48 48 0 0 0 48-48v-88"/>
+  </g>
+  <rect x="356" y="300" width="112" height="424" rx="56" fill="#2EC4B6"/>
+  <rect x="556" y="300" width="112" height="424" rx="56" fill="#2EC4B6"/>
+  <rect x="300" y="356" width="424" height="112" rx="56" fill="#FF6B5E"/>
+  <rect x="300" y="556" width="424" height="112" rx="56" fill="#FF6B5E"/>
+  <rect x="356" y="356" width="112" height="112" rx="28" fill="#2EC4B6"/>
+  <rect x="556" y="356" width="112" height="112" rx="28" fill="#FF6B5E"/>
+  <rect x="356" y="556" width="112" height="112" rx="28" fill="#FF6B5E"/>
+  <rect x="556" y="556" width="112" height="112" rx="28" fill="#2EC4B6"/>
+</svg>

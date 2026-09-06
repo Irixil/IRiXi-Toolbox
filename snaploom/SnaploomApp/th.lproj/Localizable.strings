@@ -1,0 +1,671 @@
+/* ไทย — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "จับภาพพื้นที่";
+"Capture Screen" = "จับภาพหน้าจอ";
+"Capture OCR" = "จับภาพ OCR";
+"Capture OCR & QR" = "จับภาพ OCR และ QR";
+"Capture area and read text/QR codes" = "จับภาพพื้นที่และอ่านข้อความ/รหัส QR";
+"Quick Capture" = "จับภาพด่วน";
+"Scroll Capture" = "จับภาพแบบเลื่อน";
+"Capture Last Area" = "จับภาพพื้นที่ล่าสุด";
+"Capture Delay" = "หน่วงเวลาจับภาพ";
+"None" = "ไม่มี";
+"%d seconds" = "%d วินาที";
+"Record Area" = "บันทึกพื้นที่";
+"Record Screen" = "บันทึกหน้าจอ";
+"Recent Captures" = "ภาพที่จับล่าสุด";
+"Show History Panel" = "แสดงแผงประวัติ";
+"Open Image..." = "เปิดรูปภาพ...";
+"Open from Clipboard" = "เปิดจากคลิปบอร์ด";
+"Pin from Clipboard" = "ปักหมุดจากคลิปบอร์ด";
+"Preferences..." = "การตั้งค่า...";
+"Check for Updates..." = "ตรวจสอบอัปเดต...";
+"Quit Snaploom" = "ออกจาก Snaploom";
+"No recent captures" = "ไม่มีภาพที่จับล่าสุด";
+"Clear History" = "ล้างประวัติ";
+
+/* History Panel */
+"Copy" = "คัดลอก";
+"Save As..." = "บันทึกเป็น...";
+"Open in Editor" = "เปิดในตัวแก้ไข";
+"Pin to Screen" = "ปักหมุดบนหน้าจอ";
+"Quick Look" = "ดูตัวอย่าง";
+"Delete" = "ลบ";
+"All" = "ทั้งหมด";
+"Screenshots" = "ภาพหน้าจอ";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "คลิกเพื่อคัดลอก · ลากไปยังแอป";
+"No captures yet" = "ยังไม่มีภาพที่จับ";
+
+/* Floating Thumbnail */
+"Close All" = "ปิดทั้งหมด";
+"Save All to Folder…" = "บันทึกทั้งหมดไปยังโฟลเดอร์…";
+"Save" = "บันทึก";
+
+/* Editor Top Bar */
+"Zoom In" = "ขยาย";
+"Zoom Out" = "ย่อ";
+"Zoom" = "ซูม";
+"Fit Canvas" = "พอดีกับผืนผ้าใบ";
+"Crop" = "ครอบตัด";
+"Flip Horizontal" = "พลิกแนวนอน";
+"Flip Vertical" = "พลิกแนวตั้ง";
+"Rotate Left" = "หมุนซ้าย";
+"Rotate Right" = "หมุนขวา";
+"Add Capture" = "เพิ่มภาพจับ";
+
+/* Toolbar - Tools */
+"Arrow" = "ลูกศร";
+"Line" = "เส้น";
+"Rectangle" = "สี่เหลี่ยม";
+"Ellipse" = "วงรี";
+"Pencil" = "ดินสอ";
+"Pencil (Draw)" = "ดินสอ (วาด)";
+"Marker" = "ปากกาไฮไลต์";
+"Text" = "ข้อความ";
+"Number" = "ตัวเลข";
+"Number / Counter" = "ตัวเลข / ตัวนับ";
+"Stamp / Emoji" = "แสตมป์ / อิโมจิ";
+"Censor" = "ปิดบัง";
+"Censor (Pixelate / Blur / Solid)" = "ปิดบัง (พิกเซล / เบลอ / ทึบ)";
+"Measure" = "วัด";
+"Measure (px)" = "วัด (px)";
+"Magnify (Loupe)" = "ขยาย (แว่นขยาย)";
+"Highlight" = "เน้นจุด";
+"Highlight (Spotlight)" = "เน้นจุด (สปอตไลต์)";
+"Dim" = "หรี่แสง";
+"Color Sampler" = "ตัวดูดสี";
+"Color Picker" = "ตัวเลือกสี";
+"Select & Edit" = "เลือกและแก้ไข";
+"Color" = "สี";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "คัดลอกไปยังคลิปบอร์ด";
+"Save to File" = "บันทึกเป็นไฟล์";
+"Save to" = "บันทึกไปยัง";
+"Open in Editor Window" = "เปิดในหน้าต่างตัวแก้ไข";
+"Pin on Screen" = "ปักหมุดบนหน้าจอ";
+"Pin" = "ปักหมุด";
+"Pin (floating window)" = "ปักหมุด (หน้าต่างลอย)";
+"OCR" = "OCR";
+"OCR Text" = "OCR ข้อความ";
+"OCR (extract text)" = "OCR (ดึงข้อความ)";
+"OCR & QR" = "OCR และ QR";
+"Run OCR & QR" = "เรียกใช้ OCR และ QR";
+"Open Link" = "เปิดลิงก์";
+"Open With" = "เปิดด้วย";
+"No Apps Available" = "ไม่มีแอปที่ใช้ได้";
+"No Share Services" = "ไม่มีบริการแชร์";
+"QR Code" = "รหัส QR";
+"QR Codes" = "รหัส QR";
+"Upload" = "อัปโหลด";
+"Share" = "แชร์";
+"Undo" = "เลิกทำ";
+"Redo" = "ทำซ้ำ";
+"Close" = "ปิด";
+"Remove Background" = "ลบพื้นหลัง";
+"Beautify" = "ตกแต่ง";
+"Adjust" = "ปรับแต่ง";
+"Adjust (Image Effects)" = "ปรับแต่ง (เอฟเฟกต์ภาพ)";
+"Invert Colors" = "กลับสี";
+"Record" = "บันทึก";
+"Record screen" = "บันทึกหน้าจอ";
+"Translate" = "แปลภาษา";
+"Auto-Redact sensitive data" = "ปกปิดข้อมูลอ่อนไหวอัตโนมัติ";
+"Move Selection" = "ย้ายส่วนที่เลือก";
+
+/* Toolbar - Recording */
+"Start Recording" = "เริ่มบันทึก";
+"Cancel Recording" = "ยกเลิกการบันทึก";
+"Highlight Mouse Clicks" = "ไฮไลต์การคลิกเมาส์";
+"Record System Audio" = "บันทึกเสียงระบบ";
+"Record Microphone" = "บันทึกไมโครโฟน";
+"Recording Settings" = "ตั้งค่าการบันทึก";
+
+/* Tool Options */
+"Size" = "ขนาด";
+"Stroke" = "เส้นขีด";
+"Radius" = "รัศมี";
+"Start:" = "เริ่ม:";
+"Draw:" = "วาด:";
+"Auto:" = "อัตโนมัติ:";
+"Fill" = "เติม";
+"Outline" = "เส้นกรอบ";
+"More Emojis" = "อิโมจิเพิ่มเติม";
+"Load Image" = "โหลดรูปภาพ";
+"Gradient Style" = "รูปแบบไล่สี";
+"On" = "เปิด";
+"Text Only" = "ข้อความเท่านั้น";
+"All Text" = "ข้อความทั้งหมด";
+"PII" = "ข้อมูลส่วนบุคคล";
+"Faces" = "ใบหน้า";
+"People" = "ผู้คน";
+"Confirm before upload" = "ยืนยันก่อนอัปโหลด";
+"Flip" = "พลิก";
+"Smooth" = "เรียบ";
+"Refined" = "ประณีต";
+"Smart" = "อัจฉริยะ";
+"Padding" = "ระยะห่าง";
+"Shadow" = "เงา";
+"Right-click to add points" = "คลิกขวาเพื่อเพิ่มจุด";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "กด 1 แนวตั้งอัตโนมัติ  ·  กด 2 แนวนอนอัตโนมัติ";
+"Limit to selection" = "จำกัดในส่วนที่เลือก";
+"Effect" = "เอฟเฟ็กต์";
+"Font" = "แบบอักษร";
+"System" = "ระบบ";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "คลิกที่หน้าต่าง  ·  ลากเพื่อเลือกพื้นที่  ·  F เพื่อเต็มจอ";
+"Drag to select  ·  Click for full screen" = "ลากเพื่อเลือก  ·  คลิกเพื่อเต็มจอ";
+"Release to annotate and edit" = "ปล่อยเพื่อใส่คำอธิบายและแก้ไข";
+"Release to finish" = "ปล่อยเพื่อเสร็จสิ้น";
+"Hold Space to move. Release to annotate and edit" = "กด Space ค้างเพื่อย้าย ปล่อยเพื่อใส่คำอธิบายและแก้ไข";
+"Hold Space to move. Release to finish" = "กด Space ค้างเพื่อย้าย ปล่อยเพื่อเสร็จสิ้น";
+"Space" = "Space";
+"Window snap: " = "จับหน้าต่าง: ";
+"ON" = "เปิด";
+"OFF" = "ปิด";
+"  (Tab to toggle)" = "  (Tab เพื่อสลับ)";
+"Right-click to copy" = "คลิกขวาเพื่อคัดลอก";
+"Copied %@" = "คัดลอก %@ แล้ว";
+"Set color %@" = "ตั้งสี %@";
+"Draw something first to use the move tool." = "วาดบางอย่างก่อนเพื่อใช้เครื่องมือย้าย";
+"Drag to reposition" = "ลากเพื่อจัดตำแหน่งใหม่";
+
+/* Resolution / Aspect Ratio Presets */
+"Aspect ratio & resolution presets" = "ค่าที่ตั้งไว้ของอัตราส่วนภาพและความละเอียด";
+"Aspect ratio" = "อัตราส่วนภาพ";
+"Resolution" = "ความละเอียด";
+"Freeform" = "อิสระ";
+"Units" = "หน่วย";
+"Keep ratio for next captures" = "คงอัตราส่วนสำหรับการจับภาพครั้งถัดไป";
+"Custom · %@" = "กำหนดเอง · %@";
+"Order history by last edit" = "จัดเรียงประวัติตามการแก้ไขล่าสุด";
+"Edited screenshots move to the top. Off keeps them in capture order." = "ภาพหน้าจอที่แก้ไขจะย้ายไปด้านบน ปิดไว้เพื่อคงลำดับตามการจับภาพ";
+
+/* Overlay - Popovers */
+"Format:" = "รูปแบบ:";
+"FPS:" = "FPS:";
+"When done:" = "เมื่อเสร็จ:";
+"Open editor" = "เปิดตัวแก้ไข";
+"Show in Finder" = "แสดงใน Finder";
+"Copy to clipboard" = "คัดลอกไปยังคลิปบอร์ด";
+
+/* Preferences - General */
+"Snaploom Preferences" = "การตั้งค่า Snaploom";
+"General" = "ทั่วไป";
+"Tools" = "เครื่องมือ";
+"Recording" = "การบันทึก";
+"About" = "เกี่ยวกับ";
+"Shortcuts" = "ปุ่มลัด";
+"Uploads" = "อัปโหลด";
+"Language" = "ภาษา";
+"Language:" = "ภาษา:";
+"Restart the app to fully apply the new language." = "เริ่มแอปใหม่เพื่อใช้ภาษาใหม่อย่างสมบูรณ์";
+"Capture" = "การจับภาพ";
+"Play sound on capture" = "เล่นเสียงเมื่อจับภาพ";
+"Play sound on copy" = "เล่นเสียงเมื่อคัดลอก";
+"Remember last selected tool" = "จำเครื่องมือที่เลือกล่าสุด";
+"Show floating thumbnail after capture" = "แสดงภาพขนาดย่อลอยหลังจับภาพ";
+"Launch at login" = "เปิดเมื่อเข้าสู่ระบบ";
+"Show snap alignment guides" = "แสดงเส้นจัดแนว";
+"Snap selection edges to image boundaries" = "ดูดขอบพื้นที่เลือกเข้ากับขอบเขตของภาพ";
+"Capture mouse cursor in screenshot" = "จับภาพเคอร์เซอร์เมาส์ในภาพหน้าจอ";
+"Double-click selection to copy" = "ดับเบิลคลิกที่พื้นที่ที่เลือกเพื่อคัดลอก";
+"Hide capture instructions" = "ซ่อนคำแนะนำการจับภาพหน้าจอ";
+"Disable shadow outside selection" = "ปิดเงานอกพื้นที่ที่เลือก";
+"Show shortcuts in tooltips" = "แสดงปุ่มลัดในคำแนะนำเครื่องมือ";
+"Use window title in saved filename" = "ใช้ชื่อหน้าต่างในชื่อไฟล์ที่บันทึก";
+"Hide menu bar icon" = "ซ่อนไอคอนแถบเมนู";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "ปุ่มลัดยังใช้งานได้ เปิด Snaploom ใหม่เพื่อแสดงไอคอนอีกครั้ง";
+"Menu bar icon:" = "ไอคอนแถบเมนู:";
+"Default" = "ค่าเริ่มต้น";
+"Custom symbol" = "สัญลักษณ์กำหนดเอง";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "ป้อนชื่อ SF Symbol ใดก็ได้ (เช่น camera.fill) หรือเลือกค่าที่ตั้งไว้ ดูชื่อได้ในแอป SF Symbols ของ Apple ชื่อที่ไม่ถูกต้องจะกลับไปใช้ไอคอนเริ่มต้น";
+"Menu Bar Order" = "ลำดับแถบเมนู";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "เลือกลำดับของการดำเนินการจับภาพในเมนูแถบเมนูของ Snaploom";
+"Move up" = "เลื่อนขึ้น";
+"Move down" = "เลื่อนลง";
+"Check for updates automatically" = "ตรวจสอบอัปเดตอัตโนมัติ";
+"Check for beta updates" = "ตรวจสอบอัปเดตเบต้า";
+"Thumbnail" = "ภาพขนาดย่อ";
+"  Dismiss after:" = "  ปิดหลังจาก:";
+"seconds before auto-dismiss (0 = never)" = "วินาทีก่อนปิดอัตโนมัติ (0 = ไม่ปิด)";
+"  Multiple previews:" = "  ตัวอย่างหลายรายการ:";
+"Stack (keep all)" = "ซ้อน (เก็บทั้งหมด)";
+"Replace (show only latest)" = "แทนที่ (แสดงล่าสุดเท่านั้น)";
+"Output" = "ผลลัพธ์";
+"Image format:" = "รูปแบบภาพ:";
+"Quality:" = "คุณภาพ:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "บันทึกที่ความละเอียดมาตรฐาน (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "ลดขนาดครึ่งหนึ่งบนจอ Retina ไฟล์เล็กลง ~4 เท่า";
+"Embed sRGB color profile" = "ฝังโปรไฟล์สี sRGB";
+"Ensures consistent colors across different displays" = "ทำให้สีสม่ำเสมอบนจอแสดงผลต่าง ๆ";
+"Screenshot History" = "ประวัติภาพหน้าจอ";
+"History size:" = "ขนาดประวัติ:";
+"screenshots kept on disk (0 = off)" = "ภาพหน้าจอที่เก็บในดิสก์ (0 = ปิด)";
+"Save Directory" = "โฟลเดอร์บันทึก";
+"Save folder:" = "โฟลเดอร์บันทึก:";
+"Browse…" = "เรียกดู…";
+"Appearance" = "รูปลักษณ์";
+"Accent color:" = "สีเน้น:";
+"Icon color:" = "สีไอคอน:";
+"Background color:" = "สีพื้นหลัง:";
+"Reset" = "รีเซ็ต";
+"OCR Capture:" = "การจับภาพ OCR:";
+"OCR & QR Capture:" = "การจับภาพ OCR และ QR:";
+"Show window + copy to clipboard" = "แสดงหน้าต่าง + คัดลอกไปยังคลิปบอร์ด";
+"Show window only" = "แสดงหน้าต่างเท่านั้น";
+"Copy to clipboard only" = "คัดลอกไปยังคลิปบอร์ดเท่านั้น";
+"Enter / Quick Capture:" = "Enter / จับภาพด่วน:";
+"Save to file" = "บันทึกเป็นไฟล์";
+"Save + copy to clipboard" = "บันทึก + คัดลอกไปยังคลิปบอร์ด";
+"Save action:" = "การดำเนินการบันทึก:";
+"Save to default folder" = "บันทึกไปยังโฟลเดอร์เริ่มต้น";
+"Ask where to save" = "ถามตำแหน่งที่จะบันทึก";
+"OCR Action" = "การดำเนินการ OCR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "ปุ่มลัดแป้นพิมพ์";
+"Hotkeys" = "ปุ่มลัด";
+"Clear shortcut" = "ล้างปุ่มลัด";
+"Press keys..." = "กดปุ่ม...";
+"Waiting..." = "กำลังรอ...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "เครื่องมือคำอธิบาย";
+"Hidden tools are removed from the bottom toolbar." = "เครื่องมือที่ซ่อนจะถูกลบออกจากแถบเครื่องมือด้านล่าง";
+"Capture Actions" = "การดำเนินการจับภาพ";
+"Bottom Toolbar Actions" = "การดำเนินการแถบเครื่องมือด้านล่าง";
+"Hidden actions are removed from the bottom toolbar." = "การดำเนินการที่ซ่อนจะถูกลบออกจากแถบเครื่องมือด้านล่าง";
+"Editor Actions" = "การดำเนินการตัวแก้ไข";
+"Right Toolbar Actions" = "การดำเนินการแถบเครื่องมือด้านขวา";
+"Hidden actions are removed from the right toolbar." = "การดำเนินการที่ซ่อนจะถูกลบออกจากแถบเครื่องมือด้านขวา";
+
+/* Preferences - Recording */
+"Frame rate:" = "อัตราเฟรม:";
+"After recording:" = "หลังบันทึก:";
+"Save recording to:" = "บันทึกวิดีโอไปยัง:";
+"Save Recording" = "บันทึกวิดีโอ";
+"Clear" = "ล้าง";
+"Max height:" = "ความสูงสูงสุด:";
+"px (0 = unlimited)" = "px (0 = ไม่จำกัด)";
+"Behavior" = "พฤติกรรม";
+"Auto-scroll (sends synthetic scroll events)" = "เลื่อนอัตโนมัติ (ส่งเหตุการณ์เลื่อนสังเคราะห์)";
+"Detect fixed/sticky headers" = "ตรวจจับส่วนหัวที่ตรึงไว้";
+"Scroll speed:" = "ความเร็วเลื่อน:";
+"Slow" = "ช้า";
+"Medium" = "ปานกลาง";
+"Fast" = "เร็ว";
+"Very fast" = "เร็วมาก";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "บริการอัปโหลด";
+"Upload Provider" = "ผู้ให้บริการอัปโหลด";
+"Provider:" = "ผู้ให้บริการ:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (รูปภาพ + วิดีโอ)";
+"imgbb (images only)" = "imgbb (รูปภาพเท่านั้น)";
+"S3-Compatible (images + videos)" = "S3-Compatible (รูปภาพ + วิดีโอ)";
+"S3-Compatible Storage" = "พื้นที่จัดเก็บ S3-Compatible";
+"Sign In with Google" = "ลงชื่อเข้าใช้ด้วย Google";
+"Sign Out" = "ออกจากระบบ";
+"Signed in" = "เข้าสู่ระบบแล้ว";
+"Not signed in" = "ยังไม่ได้เข้าสู่ระบบ";
+"Account:" = "บัญชี:";
+"Test Connection" = "ทดสอบการเชื่อมต่อ";
+"Fill in endpoint, bucket, and credentials first" = "กรอก endpoint, bucket และข้อมูลรับรองก่อน";
+"Testing..." = "กำลังทดสอบ...";
+"Connection successful!" = "เชื่อมต่อสำเร็จ!";
+"Leave empty to use default" = "ปล่อยว่างเพื่อใช้ค่าเริ่มต้น";
+"Endpoint:" = "Endpoint:";
+"Region:" = "ภูมิภาค:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Access Key:";
+"Secret Key:" = "Secret Key:";
+"Public URL:" = "Public URL:";
+"Path Prefix:" = "Path Prefix:";
+"API key:" = "API key:";
+"Upload History" = "ประวัติการอัปโหลด";
+"No uploads yet." = "ยังไม่มีการอัปโหลด";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "URL พื้นฐานสำหรับการเข้าถึงสาธารณะ หากปล่อยว่าง จะใช้ URL ของ S3 endpoint (อาจไม่สามารถเข้าถึงแบบสาธารณะได้)";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "มีคีย์สาธารณะให้ใช้ — รับคีย์ฟรีของคุณเองที่ imgbb.com/api หากถึงขีดจำกัดอัตรา รองรับเฉพาะรูปภาพ (ไม่รองรับวิดีโอ)";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "ใช้งานได้กับ AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 และบริการอื่นที่เข้ากันได้กับ S3 รองรับรูปภาพและวิดีโอ";
+"Configure S3 in Preferences" = "ตั้งค่า S3 ในการตั้งค่า";
+"Sign in to Google Drive in Preferences" = "ลงชื่อเข้าใช้ Google Drive ในการตั้งค่า";
+"Video upload requires Google Drive or S3" = "การอัปโหลดวิดีโอต้องใช้ Google Drive หรือ S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "เวอร์ชัน %@ (%@)";
+"Made by" = "สร้างโดย";
+"Licensed under the GPLv3" = "อนุญาตภายใต้ GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "เครื่องมือจับภาพหน้าจอและบันทึกหน้าจอฟรีแบบโอเพนซอร์สสำหรับ macOS\nเนทีฟเต็มรูปแบบ — สร้างด้วย Swift และ AppKit";
+
+/* Alerts */
+"No Image on Clipboard" = "ไม่มีรูปภาพในคลิปบอร์ด";
+"No Image or Text on Clipboard" = "ไม่มีรูปภาพหรือข้อความในคลิปบอร์ด";
+"Copy an image to the clipboard first, then try again." = "คัดลอกรูปภาพไปยังคลิปบอร์ดก่อน แล้วลองอีกครั้ง";
+"Copy an image or text to the clipboard first, then try again." = "คัดลอกรูปภาพหรือข้อความไปยังคลิปบอร์ดก่อน แล้วลองอีกครั้ง";
+"OK" = "ตกลง";
+"Accessibility Access Required" = "ต้องการสิทธิ์การเข้าถึง";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom ต้องการสิทธิ์การเข้าถึงเพื่อเลื่อนแอปอื่นอัตโนมัติ กรุณาอนุญาตในการตั้งค่าระบบ แล้วลองอีกครั้ง";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom ต้องการสิทธิ์การช่วยการเข้าถึงสำหรับการจับภาพแบบเลื่อน กรุณาให้สิทธิ์ในการตั้งค่าระบบ แล้วลองอีกครั้ง";
+"Open Settings" = "เปิดการตั้งค่า";
+"Cancel" = "ยกเลิก";
+"Microphone Access Required" = "ต้องการสิทธิ์ไมโครโฟน";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom ต้องการสิทธิ์ไมโครโฟนเพื่อบันทึกเสียง เปิดการตั้งค่าระบบเพื่ออนุญาต";
+"Upload to Google Drive?" = "อัปโหลดไปยัง Google Drive?";
+"Upload to S3?" = "อัปโหลดไปยัง S3?";
+"Upload to imgbb.com?" = "อัปโหลดไปยัง imgbb.com?";
+"Your screenshot will be uploaded." = "ภาพหน้าจอของคุณจะถูกอัปโหลด";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "ยินดีต้อนรับสู่ Snaploom";
+"Snaploom needs one permission" = "Snaploom ต้องการสิทธิ์หนึ่งอย่าง";
+"Screen Recording not yet granted" = "ยังไม่ได้อนุญาตการบันทึกหน้าจอ";
+"Screen Recording granted!" = "อนุญาตการบันทึกหน้าจอแล้ว!";
+"Enable Snaploom, then try taking a screenshot" = "เปิดใช้งาน Snaploom แล้วลองจับภาพหน้าจอ";
+"Open Screen Recording Settings" = "เปิดการตั้งค่าการบันทึกหน้าจอ";
+"Continue" = "ดำเนินการต่อ";
+
+/* OCR Window */
+"Text Recognition" = "การรู้จำข้อความ";
+"Text & QR Recognition" = "การรู้จำข้อความและ QR";
+"Translate to:" = "แปลเป็น:";
+"%d chars · %d words" = "%d ตัวอักษร · %d คำ";
+"Copy  ⌘↩" = "คัดลอก  ⌘↩";
+"AI Search" = "ค้นหา AI";
+"Show Original" = "แสดงต้นฉบับ";
+"Translation Failed" = "แปลภาษาล้มเหลว";
+"Translation" = "การแปลภาษา";
+"(No text detected in the selected area)" = "(ไม่พบข้อความในพื้นที่ที่เลือก)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "คัดลอก URL ไปยังคลิปบอร์ดแล้ว";
+"Uploading... %d%%" = "กำลังอัปโหลด... %d%%";
+"Upload failed: %@" = "อัปโหลดล้มเหลว: %@";
+"Uploaded! Link copied." = "อัปโหลดแล้ว! คัดลอกลิงก์แล้ว";
+"Uploading to %@... %d%%" = "กำลังอัปโหลดไปยัง %@... %d%%";
+"Open" = "เปิด";
+
+/* Recording Toast */
+"Recording saved" = "บันทึกการอัดแล้ว";
+"%@ • Recording saved" = "%@ • บันทึกการอัดแล้ว";
+"Copy Path" = "คัดลอกเส้นทาง";
+"Path copied!" = "คัดลอกเส้นทางแล้ว!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "ตัวแก้ไขวิดีโอ Snaploom";
+"%@ selected" = "เลือก %@ แล้ว";
+"Exporting..." = "กำลังส่งออก...";
+"Export failed" = "ส่งออกล้มเหลว";
+"Saved to %@" = "บันทึกไปยัง %@";
+"Save failed" = "บันทึกล้มเหลว";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "บันทึกเป็น...";
+"Choose a folder" = "เลือกโฟลเดอร์";
+"Save All to Folder…" = "บันทึกทั้งหมดไปยังโฟลเดอร์…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "เลื่อนอัตโนมัติ";
+"Stop" = "หยุด";
+"Scrolling..." = "กำลังเลื่อน...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "ค่าที่ตั้งไว้";
+"Adjustments" = "การปรับแต่ง";
+"Brightness" = "ความสว่าง";
+"Contrast" = "ความคมชัด";
+"Saturation" = "ความอิ่มตัวของสี";
+"Sharpness" = "ความคม";
+
+/* Time Ago */
+"just now" = "เมื่อสักครู่";
+"%ds ago" = "%d วินาทีที่แล้ว";
+"%dm ago" = "%d นาทีที่แล้ว";
+"%dh ago" = "%d ชั่วโมงที่แล้ว";
+
+/* Hotkey Labels */
+"History" = "ประวัติ";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "คลิก \"บันทึก\" แล้วกดปุ่มพร้อมตัวดัดแปลงอย่างน้อยหนึ่งตัว (⌘, ⌥, ⌃, ⇧) เพื่อตั้งปุ่มลัด";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "กำลังประมวลผล GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "ต้องการสิทธิ์การตรวจสอบอินพุต";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom ต้องการสิทธิ์การตรวจสอบอินพุตเพื่อแสดงการกดปุ่มขณะบันทึก กรุณาอนุญาตใน System Settings แล้วลองอีกครั้ง";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom ต้องการสิทธิ์การช่วยการเข้าถึงเพื่อแสดงการกดปุ่มขณะบันทึก กรุณาอนุญาตใน System Settings แล้วลองอีกครั้ง";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "แสดงการกดปุ่ม";
+"Shortcuts Only" = "เฉพาะปุ่มลัด";
+"All Keystrokes" = "การกดปุ่มทั้งหมด";
+
+/* Recording — Settings Popover */
+"Delay:" = "หน่วงเวลา:";
+
+/* Video Editor */
+"Copied to clipboard!" = "คัดลอกไปยังคลิปบอร์ดแล้ว!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "ซ้อนทับเว็บแคม";
+"Camera Access Required" = "ต้องการสิทธิ์กล้อง";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom ต้องการสิทธิ์กล้องสำหรับการซ้อนทับเว็บแคม เปิดการตั้งค่าระบบเพื่ออนุญาต";
+"Webcam" = "เว็บแคม";
+"Bottom Right" = "ล่างขวา";
+"Bottom Left" = "ล่างซ้าย";
+"Top Right" = "บนขวา";
+"Top Left" = "บนซ้าย";
+"Small" = "เล็ก";
+"Large" = "ใหญ่";
+"Webcam Size Small" = "เล็ก";
+"Webcam Size Medium" = "ปานกลาง";
+"Webcam Size Large" = "ใหญ่";
+"Webcam Size Extra Large" = "ใหญ่พิเศษ";
+"Circle" = "วงกลม";
+"Rounded Rectangle" = "สี่เหลี่ยมมุมมน";
+"Cam pos:" = "ตำแหน่งกล้อง:";
+"Cam size:" = "ขนาดกล้อง:";
+"Cam shape:" = "รูปทรงกล้อง:";
+
+/* New Strings */
+"Settings" = "การตั้งค่า";
+"Settings..." = "การตั้งค่า...";
+"Snaploom Settings" = "การตั้งค่า Snaploom";
+"Also open in Editor" = "เปิดในตัวแก้ไขด้วย";
+"Hide controls" = "ซ่อนตัวควบคุม";
+"Hide recording controls" = "ซ่อนตัวควบคุมการบันทึก";
+"Stop recording from the menu bar icon instead." = "หยุดบันทึกจากไอคอนแถบเมนูแทน";
+"Pixelate" = "พิกเซล";
+"Blur" = "เบลอ";
+"Solid" = "ทึบ";
+"Erase" = "ลบ";
+"Done" = "เสร็จ";
+"Do nothing" = "ไม่ทำอะไร";
+"Overlay / Editor Shortcuts" = "ปุ่มลัดโอเวอร์เลย์ / ตัวแก้ไข";
+"Set" = "ตั้ง";
+"Press..." = "กด...";
+"Reset to default" = "รีเซ็ตเป็นค่าเริ่มต้น";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "กดปุ่มเดียวเพื่อกำหนดเป็นปุ่มลัดสำหรับเครื่องมือนั้น ใช้งานได้เมื่อโอเวอร์เลย์หรือตัวแก้ไขทำงานอยู่";
+"Keep Separate" = "แยกไว้";
+"Merge Audio" = "รวมเสียง";
+"Audio Tracks" = "แทร็กเสียง";
+"Adjust volume for each audio track:" = "ปรับระดับเสียงสำหรับแต่ละแทร็กเสียง:";
+"Microphone:" = "ไมโครโฟน:";
+"System audio:" = "เสียงระบบ:";
+"Loupe" = "แว่นขยาย";
+"Stamp" = "แสตมป์";
+"Unlimited" = "ไม่จำกัด";
+"Save changes?" = "บันทึกการเปลี่ยนแปลง?";
+"Your annotations will be lost if you close without saving." = "คำอธิบายประกอบของคุณจะหายไปหากปิดโดยไม่บันทึก";
+"Save & Close" = "บันทึกและปิด";
+"Discard" = "ยกเลิก";
+"Stop Recording" = "หยุดบันทึก";
+"Pause" = "หยุดชั่วคราว";
+"Resume" = "ดำเนินการต่อ";
+"Engine:" = "เครื่องมือ:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (บนอุปกรณ์)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "การแปลของ Apple เร็วกว่าและใช้งานได้แบบออฟไลน์ Google Translate รองรับภาษาได้มากกว่า";
+"Download language packs in System Settings…" = "ดาวน์โหลดชุดภาษาในการตั้งค่าระบบ…";
+"Configure S3 in Settings" = "ตั้งค่า S3 ในการตั้งค่า";
+"Sign in to Google Drive in Settings" = "ลงชื่อเข้าใช้ Google Drive ในการตั้งค่า";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "บิลด์ออฟไลน์: การเชื่อมต่อการอัปโหลดและที่เก็บข้อมูลบนคลาวด์ถูกนำออกแล้ว การตรวจสอบอัปเดตอาจยังเชื่อมต่อกับเซิร์ฟเวอร์อัปเดตของ Snaploom ภาพหน้าจอและการบันทึกจะยังคงอยู่ในเครื่อง เว้นแต่คุณจะแชร์หรือบันทึกด้วยตนเอง";
+"Position:" = "ตำแหน่ง:";
+"  Position:" = "  ตำแหน่ง:";
+"Size:" = "ขนาด:";
+"Shape:" = "รูปร่าง:";
+
+"Same as screenshots" = "เหมือนกับภาพหน้าจอ";
+"  Preview size:" = "  ขนาดตัวอย่าง:";
+"(0 = off)" = "(0 = ปิด)";
+"Clear All" = "ล้างทั้งหมด";
+"Clear History?" = "ล้างประวัติ?";
+"This will permanently delete all screenshots from history." = "การดำเนินการนี้จะลบภาพหน้าจอทั้งหมดออกจากประวัติอย่างถาวร";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "คลิก \"ตั้งค่า\" แล้วกดคีย์ผสมที่มีปุ่มตัวแก้ไขอย่างน้อยหนึ่งปุ่ม (⌘, ⌥, ⌃, ⇧) เพื่อตั้งค่าทางลัด";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "ไฟล์จะถูกอัปโหลดไปยังโฟลเดอร์ \"Snaploom\" ใน Google Drive ของคุณ ทุกอย่างเป็นส่วนตัว — ไม่มีการแชร์สาธารณะ";
+
+"Pressure" = "แรงกด";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "เปิดวิดีโอ...";
+"Choose a video to open in Snaploom editor" = "เลือกวิดีโอเพื่อเปิดในตัวแก้ไข Snaploom";
+"Click to add effects" = "คลิกเพื่อเพิ่มเอฟเฟกต์";
+"Add Zoom" = "เพิ่มการซูม";
+"Add Censor" = "เพิ่มการปิดบัง";
+"Add Cut" = "เพิ่มการตัด";
+"Add Speed" = "เพิ่มความเร็ว";
+"Add Freeze" = "เพิ่มการหยุดภาพ";
+"Add Text" = "เพิ่มข้อความ";
+"Delete Zoom" = "ลบการซูม";
+"Delete Censor" = "ลบการปิดบัง";
+"Delete Cut" = "ลบการตัด";
+"Delete Speed" = "ลบความเร็ว";
+"Delete Freeze" = "ลบการหยุดภาพ";
+"Delete Text" = "ลบข้อความ";
+"Edit Text…" = "แก้ไขข้อความ…";
+"Huge" = "ใหญ่มาก";
+"Bold" = "ตัวหนา";
+"Italic" = "ตัวเอียง";
+"Alignment" = "การจัดแนว";
+"Left" = "ซ้าย";
+"Center" = "กึ่งกลาง";
+"Right" = "ขวา";
+"Text Color" = "สีข้อความ";
+"Background Color" = "สีพื้นหลัง";
+"Rounded" = "มุมมน";
+"Custom…" = "กำหนดเอง…";
+"Transparent" = "โปร่งใส";
+"Black" = "ดำ";
+"White" = "ขาว";
+"Yellow" = "เหลือง";
+"Red" = "แดง";
+"Green" = "เขียว";
+"Blue" = "น้ำเงิน";
+"Untitled" = "ไม่มีชื่อ";
+"Add effect" = "เพิ่มเอฟเฟกต์";
+"Fade" = "เฟด";
+"High" = "สูง";
+"Low" = "ต่ำ";
+"Not enough room here" = "พื้นที่ไม่เพียงพอที่นี่";
+"Copied!" = "คัดลอกแล้ว!";
+"Converting to GIF…" = "กำลังแปลงเป็น GIF…";
+"GIF conversion failed" = "การแปลง GIF ล้มเหลว";
+"No video track found" = "ไม่พบแทร็กวิดีโอ";
+"Preview:" = "ตัวอย่าง:";
+"Copy Screen Info" = "คัดลอกข้อมูลหน้าจอ";
+"Copies display and capture diagnostics to clipboard" = "คัดลอกข้อมูลวินิจฉัยการแสดงผลและการจับภาพไปยังคลิปบอร์ด";
+"Accent" = "สีเน้น";
+"Icon" = "ไอคอน";
+"Background" = "พื้นหลัง";
+"Custom" = "กำหนดเอง";
+"Theme:" = "ธีม:";
+"Application" = "แอปพลิเคชัน";
+"Capture area and extract text" = "จับภาพพื้นที่และดึงข้อความ";
+"Capture the full screen" = "จับภาพเต็มหน้าจอ";
+"Counter for multi-screen captures" = "ตัวนับสำหรับการจับภาพหลายหน้าจอ";
+"8-character random string (e.g. k3j7x9q2)" = "สตริงสุ่ม 8 อักขระ (เช่น k3j7x9q2)";
+"Filename Template Tokens" = "โทเคนเทมเพลตชื่อไฟล์";
+"Filename tokens" = "โทเคนชื่อไฟล์";
+"Filename:" = "ชื่อไฟล์:";
+"Open an image file in the editor" = "เปิดไฟล์รูปภาพในตัวแก้ไข";
+"Open the recent captures overlay" = "เปิดโอเวอร์เลย์ภาพที่จับล่าสุด";
+"Open this settings window" = "เปิดหน้าต่างการตั้งค่านี้";
+"Quick capture (uses your Enter action)" = "จับภาพด่วน (ใช้การดำเนินการ Enter ของคุณ)";
+"Re-capture the last selected area" = "จับภาพพื้นที่ที่เลือกล่าสุดอีกครั้ง";
+"Screenshots only — captured window title (blank otherwise)" = "เฉพาะภาพหน้าจอ — ชื่อหน้าต่างที่จับภาพ (ว่างในกรณีอื่น)";
+"Show available filename tokens" = "แสดงโทเคนชื่อไฟล์ที่ใช้ได้";
+"Show supported URL scheme commands" = "แสดงคำสั่ง URL scheme ที่รองรับ";
+"Start area capture" = "เริ่มจับภาพพื้นที่";
+"Start area recording" = "เริ่มบันทึกพื้นที่";
+"Start full-screen recording" = "เริ่มบันทึกเต็มหน้าจอ";
+"Start scroll capture" = "เริ่มจับภาพแบบเลื่อน";
+"Stop the current recording" = "หยุดการบันทึกปัจจุบัน";
+"Supported URL Scheme Commands" = "คำสั่ง URL Scheme ที่รองรับ";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "นามสกุลไฟล์จะถูกเพิ่มโดยอัตโนมัติ เครื่องหมายทับและโคลอนใน {window} จะกลายเป็นเครื่องหมายขีด";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "เรียกใช้ Snaploom จาก Raycast, Alfred, Shortcuts หรือเครื่องมือใดก็ตามที่เปิด URL";
+"URL scheme info" = "ข้อมูล URL scheme";
+"Enable snaploom:// URL scheme" = "เปิดใช้งาน URL scheme snaploom://";
+"sec (0 = never)" = "วินาที (0 = ไม่เลย)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "การสำรองข้อมูลการตั้งค่า";
+"Export Settings…" = "ส่งออกการตั้งค่า…";
+"Import Settings…" = "นำเข้าการตั้งค่า…";
+"Reveal Settings File in Finder" = "แสดงไฟล์การตั้งค่าใน Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "ส่งออกการกำหนดค่าของคุณไปยังไฟล์เพื่อย้ายไปยัง Mac เครื่องอื่นหรือการติดตั้งใหม่ ข้อมูลรับรองการอัปโหลด โฟลเดอร์บันทึก และประวัติภาพหน้าจอจะไม่รวมอยู่ด้วย การตั้งค่าจะถูกจัดเก็บไว้ภายในคอนเทนเนอร์แอปของ Snaploom";
+"Export Settings" = "ส่งออกการตั้งค่า";
+"Import Settings" = "นำเข้าการตั้งค่า";
+"Import failed" = "นำเข้าไม่สำเร็จ";
+"Settings exported" = "ส่งออกการตั้งค่าแล้ว";
+"Settings imported" = "นำเข้าการตั้งค่าแล้ว";
+"Import" = "นำเข้า";
+"Later" = "ภายหลัง";
+"Relaunch Now" = "เปิดใหม่ตอนนี้";
+"Replace your current settings?" = "แทนที่การตั้งค่าปัจจุบันของคุณหรือไม่?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "การนำเข้าจะแทนที่การกำหนดค่าปัจจุบันของคุณด้วยค่าในไฟล์นี้ โฟลเดอร์บันทึก ข้อมูลรับรองการอัปโหลด และประวัติภาพหน้าจอของคุณจะยังคงอยู่ การดำเนินการนี้ไม่สามารถเลิกทำได้";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "นำการตั้งค่า %d รายการไปใช้แล้ว เปิด Snaploom ใหม่เพื่อนำการเปลี่ยนแปลงทั้งหมดไปใช้";
+"A few large items were too big to include. Everything else was saved." = "รายการขนาดใหญ่บางรายการมีขนาดเกินกว่าที่จะรวมได้ ส่วนอื่นทั้งหมดถูกบันทึกแล้ว";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "ภาพพื้นหลัง Beautify ที่คุณกำหนดเองมีขนาดใหญ่เกินกว่าที่จะรวมได้ ส่วนอื่นทั้งหมดถูกบันทึกแล้ว";
+"This file is not a valid Snaploom settings file." = "ไฟล์นี้ไม่ใช่ไฟล์การตั้งค่า Snaploom ที่ถูกต้อง";
+"This settings file contains no settings." = "ไฟล์การตั้งค่านี้ไม่มีการตั้งค่าใดๆ";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "ไฟล์การตั้งค่านี้สร้างขึ้นโดย Snaploom เวอร์ชันที่ใหม่กว่า โปรดอัปเดต Snaploom ก่อน";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "จับภาพ แปล และวางข้อความซ้อนทับบนภาพ";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "เปิดรายการประวัติในตัวแก้ไข (ยังแก้ไขคำอธิบายประกอบได้)";

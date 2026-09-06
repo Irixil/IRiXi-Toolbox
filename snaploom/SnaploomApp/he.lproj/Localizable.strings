@@ -1,0 +1,673 @@
+/* עברית — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "לכידת אזור";
+"Capture Screen" = "לכידת מסך";
+"Capture OCR" = "לכידת OCR";
+"Quick Capture" = "לכידה מהירה";
+"Scroll Capture" = "לכידת גלילה";
+"Capture Last Area" = "לכוד אזור אחרון";
+"Capture Delay" = "השהיית לכידה";
+"None" = "ללא";
+"%d seconds" = "%d שניות";
+"Record Area" = "הקלטת אזור";
+"Record Screen" = "הקלטת מסך";
+"Recent Captures" = "לכידות אחרונות";
+"Show History Panel" = "הצג חלונית היסטוריה";
+"Open Image..." = "פתח תמונה...";
+"Open from Clipboard" = "פתח מהלוח";
+"Pin from Clipboard" = "הצמד מהלוח";
+"Preferences..." = "העדפות...";
+"Check for Updates..." = "בדוק עדכונים...";
+"Quit Snaploom" = "צא מ-Snaploom";
+"No recent captures" = "אין לכידות אחרונות";
+"Clear History" = "נקה היסטוריה";
+
+/* History Panel */
+"Copy" = "העתק";
+"Save As..." = "שמור בשם...";
+"Open in Editor" = "פתח בעורך";
+"Open With" = "פתח באמצעות";
+"Open Link" = "פתח קישור";
+"No Apps Available" = "אין יישומים זמינים";
+"No Share Services" = "אין שירותי שיתוף";
+"Pin to Screen" = "הצמד למסך";
+"Quick Look" = "הצצה מהירה";
+"Delete" = "מחק";
+"All" = "הכל";
+"Screenshots" = "צילומי מסך";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "לחץ להעתקה · גרור לאפליקציה";
+"No captures yet" = "אין לכידות עדיין";
+
+/* Floating Thumbnail */
+"Close All" = "סגור הכל";
+"Save All to Folder…" = "שמור הכל לתיקייה…";
+"Save" = "שמור";
+
+/* Editor Top Bar */
+"Zoom" = "מרחק מתצוגה";
+"Zoom In" = "הגדל";
+"Zoom Out" = "הקטן";
+"Fit Canvas" = "התאם לקנבס";
+"Crop" = "חתוך";
+"Rotate Left" = "סובב שמאלה";
+"Rotate Right" = "סובב ימינה";
+"Flip Horizontal" = "הפוך אופקית";
+"Flip Vertical" = "הפוך אנכית";
+"Add Capture" = "הוסף לכידה";
+
+/* Toolbar - Tools */
+"Arrow" = "חץ";
+"Line" = "קו";
+"Rectangle" = "מלבן";
+"Ellipse" = "אליפסה";
+"Pencil" = "עיפרון";
+"Pencil (Draw)" = "עיפרון (ציור)";
+"Marker" = "מרקר";
+"Text" = "טקסט";
+"Number" = "מספר";
+"Number / Counter" = "מספר / מונה";
+"Stamp / Emoji" = "חותמת / אמוג'י";
+"Censor" = "צנזור";
+"Censor (Pixelate / Blur / Solid)" = "צנזור (פיקסול / טשטוש / מילוי)";
+"Measure" = "מדידה";
+"Measure (px)" = "מדידה (px)";
+"Magnify (Loupe)" = "הגדלה (זכוכית מגדלת)";
+"Highlight" = "הדגשה";
+"Highlight (Spotlight)" = "הדגשה (זרקור)";
+"Dim" = "עמעום";
+"Color Sampler" = "דוגם צבע";
+"Color Picker" = "בורר צבעים";
+"Select & Edit" = "בחר וערוך";
+"Color" = "צבע";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "העתק ללוח";
+"Save to File" = "שמור לקובץ";
+"Save to" = "שמור אל";
+"Open in Editor Window" = "פתח בחלון עריכה";
+"Pin on Screen" = "הצמד למסך";
+"Pin" = "הצמד";
+"Pin (floating window)" = "הצמד (חלון צף)";
+"OCR" = "OCR";
+"OCR Text" = "טקסט OCR";
+"OCR (extract text)" = "OCR (חילוץ טקסט)";
+"Upload" = "העלאה";
+"Share" = "שתף";
+"Undo" = "בטל";
+"Redo" = "בצע שוב";
+"Close" = "סגור";
+"Remove Background" = "הסר רקע";
+"Beautify" = "ייפוי";
+"Adjust" = "התאמה";
+"Adjust (Image Effects)" = "התאמה (אפקטי תמונה)";
+"Invert Colors" = "הפוך צבעים";
+"Record" = "הקלט";
+"Record screen" = "הקלט מסך";
+"Translate" = "תרגם";
+"Auto-Redact sensitive data" = "השחרה אוטומטית של מידע רגיש";
+"Move Selection" = "הזז בחירה";
+
+/* Toolbar - Recording */
+"Start Recording" = "התחל הקלטה";
+"Cancel Recording" = "בטל הקלטה";
+"Highlight Mouse Clicks" = "הדגש לחיצות עכבר";
+"Record System Audio" = "הקלט שמע מערכת";
+"Record Microphone" = "הקלט מיקרופון";
+"Recording Settings" = "הגדרות הקלטה";
+
+/* Tool Options */
+"Size" = "גודל";
+"Stroke" = "קו מתאר";
+"Radius" = "רדיוס";
+"Start:" = "התחלה:";
+"Draw:" = "ציור:";
+"Auto:" = "אוטומטי:";
+"Fill" = "מילוי";
+"Outline" = "קו מתאר";
+"More Emojis" = "עוד אמוג'ים";
+"Load Image" = "טען תמונה";
+"Gradient Style" = "סגנון מעבר צבע";
+"On" = "פעיל";
+"Text Only" = "טקסט בלבד";
+"All Text" = "כל הטקסט";
+"PII" = "PII";
+"Faces" = "פנים";
+"People" = "אנשים";
+"Confirm before upload" = "אשר לפני העלאה";
+"Flip" = "הפוך";
+"Smooth" = "החלקה";
+"Refined" = "מעודן";
+"Smart" = "חכם";
+"Padding" = "ריפוד";
+"Shadow" = "צל";
+"Right-click to add points" = "לחץ ימני להוספת נקודות";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "החזק 1 אנכי-אוטומטי  ·  החזק 2 אופקי-אוטומטי";
+"Limit to selection" = "הגבל לבחירה";
+"Effect" = "אפקט";
+"Font" = "גופן";
+"System" = "מערכת";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "לחץ על חלון  ·  גרור לאזור מותאם  ·  F למסך מלא";
+"Drag to select  ·  Click for full screen" = "גרור לבחירה  ·  לחץ למסך מלא";
+"Release to annotate and edit" = "שחרר להוספת הערות ועריכה";
+"Release to finish" = "שחרר לסיום";
+"Hold Space to move. Release to annotate and edit" = "החזק רווח להזזה. שחרר להוספת הערות ועריכה";
+"Hold Space to move. Release to finish" = "החזק רווח להזזה. שחרר לסיום";
+"Window snap: " = "הצמדה לחלון: ";
+"ON" = "פעיל";
+"OFF" = "כבוי";
+"  (Tab to toggle)" = "  (Tab להחלפה)";
+"Right-click to copy" = "לחץ ימני להעתקה";
+"Copied %@" = "הועתק %@";
+"Set color %@" = "הגדר צבע %@";
+"Draw something first to use the move tool." = "צייר משהו קודם כדי להשתמש בכלי ההזזה.";
+"Drag to reposition" = "גרור למיקום מחדש";
+
+/* Overlay - Popovers */
+"Format:" = "פורמט:";
+"FPS:" = "FPS:";
+"When done:" = "בסיום:";
+"Open editor" = "פתח עורך";
+"Show in Finder" = "הצג ב-Finder";
+"Copy to clipboard" = "העתק ללוח";
+
+/* Preferences - General */
+"Snaploom Preferences" = "העדפות Snaploom";
+"General" = "כללי";
+"Tools" = "כלים";
+"Recording" = "הקלטה";
+"About" = "אודות";
+"Shortcuts" = "קיצורי דרך";
+"Uploads" = "העלאות";
+"Language" = "שפה";
+"Language:" = "שפה:";
+"Restart the app to fully apply the new language." = "הפעל מחדש את האפליקציה להחלת השפה החדשה במלואה.";
+"Capture" = "לכידה";
+"Play sound on capture" = "השמע צליל בעת לכידה";
+"Play sound on copy" = "נגן צליל בהעתקה";
+"Remember last selected tool" = "זכור כלי שנבחר אחרון";
+"Show floating thumbnail after capture" = "הצג תמונה ממוזערת צפה לאחר לכידה";
+"Launch at login" = "הפעל בהתחברות";
+"Show snap alignment guides" = "הצג קווי הצמדה";
+"Snap selection edges to image boundaries" = "הצמד את קצות הבחירה לגבולות התמונה";
+"Capture mouse cursor in screenshot" = "לכוד סמן עכבר בצילום מסך";
+"Double-click selection to copy" = "לחיצה כפולה על הבחירה להעתקה";
+"Hide capture instructions" = "הסתר הוראות צילום";
+"Disable shadow outside selection" = "השבת הצללה מחוץ לבחירה";
+"Show shortcuts in tooltips" = "הצג קיצורים בתיאורי כלים";
+"Use window title in saved filename" = "השתמש בכותרת חלון בשם הקובץ";
+"Hide menu bar icon" = "הסתר סמל שורת התפריטים";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "מקשי קיצור עדיין פועלים. להצגת הסמל שוב, הפעל מחדש את Snaploom.";
+"Menu bar icon:" = "סמל שורת התפריטים:";
+"Default" = "ברירת מחדל";
+"Custom symbol" = "סמל מותאם אישית";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "הזן שם SF Symbol כלשהו (למשל camera.fill) או בחר ערכה מוגדרת מראש. עיין בשמות באפליקציית SF Symbols של Apple. שמות לא חוקיים חוזרים לסמל ברירת המחדל.";
+"Check for updates automatically" = "בדוק עדכונים באופן אוטומטי";
+"Check for beta updates" = "בדוק עדכוני בטא";
+"Thumbnail" = "תמונה ממוזערת";
+"  Dismiss after:" = "  סגור אחרי:";
+"seconds before auto-dismiss (0 = never)" = "שניות לסגירה אוטומטית (0 = אף פעם)";
+"  Multiple previews:" = "  תצוגות מקדימות מרובות:";
+"  Position:" = "  מיקום:";
+"Stack (keep all)" = "ערום (שמור הכל)";
+"Replace (show only latest)" = "החלף (הצג רק אחרון)";
+"Menu Bar Order" = "סדר שורת התפריטים";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "בחר את סדר פעולות הלכידה בתפריט שורת התפריטים של Snaploom.";
+"Move up" = "הזז למעלה";
+"Move down" = "הזז למטה";
+"Output" = "פלט";
+"Image format:" = "פורמט תמונה:";
+"Quality:" = "איכות:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "שמור ברזולוציה רגילה (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "מחצית מידות בצגי Retina, קבצים קטנים פי ~4";
+"Embed sRGB color profile" = "הטמע פרופיל צבע sRGB";
+"Ensures consistent colors across different displays" = "מבטיח צבעים עקביים בין צגים שונים";
+"Screenshot History" = "היסטוריית צילומי מסך";
+"History size:" = "גודל היסטוריה:";
+"screenshots kept on disk (0 = off)" = "צילומי מסך נשמרים בדיסק (0 = כבוי)";
+"Order history by last edit" = "מיין היסטוריה לפי עריכה אחרונה";
+"Edited screenshots move to the top. Off keeps them in capture order." = "צילומי מסך שנערכו עוברים לראש. כיבוי משאיר אותם בסדר הצילום.";
+"Custom · %@" = "מותאם אישית · %@";
+"Space" = "רווח";
+"Save Directory" = "תיקיית שמירה";
+"Save folder:" = "תיקיית שמירה:";
+"Browse…" = "עיין…";
+"Save action:" = "פעולת שמירה:";
+"Save to default folder" = "שמור לתיקיית ברירת המחדל";
+"Ask where to save" = "שאל היכן לשמור";
+"Appearance" = "מראה";
+"Accent color:" = "צבע הדגשה:";
+"Icon color:" = "צבע סמל:";
+"Background color:" = "צבע רקע:";
+"Reset" = "איפוס";
+"OCR Capture:" = "לכידת OCR:";
+"Show window + copy to clipboard" = "הצג חלון + העתק ללוח";
+"Show window only" = "הצג חלון בלבד";
+"Copy to clipboard only" = "העתק ללוח בלבד";
+"Enter / Quick Capture:" = "Enter / לכידה מהירה:";
+"Save to file" = "שמור לקובץ";
+"Save + copy to clipboard" = "שמור + העתק ללוח";
+"OCR Action" = "פעולת OCR";
+"OCR & QR Capture:" = "לכידת OCR ו-QR:";
+"OCR & QR" = "OCR ו-QR";
+"Text & QR Recognition" = "זיהוי טקסט ו-QR";
+"Capture OCR & QR" = "לכידת OCR ו-QR";
+"Capture area and read text/QR codes" = "לכוד אזור וקרא טקסט/קודי QR";
+"Run OCR & QR" = "הפעל OCR ו-QR";
+"QR Code" = "קוד QR";
+"QR Codes" = "קודי QR";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "קיצורי מקלדת";
+"Hotkeys" = "מקשי קיצור";
+"Clear shortcut" = "נקה קיצור";
+"Press keys..." = "לחץ על מקשים...";
+"Waiting..." = "ממתין...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "כלי הערות";
+"Hidden tools are removed from the bottom toolbar." = "כלים מוסתרים מוסרים מסרגל הכלים התחתון.";
+"Capture Actions" = "פעולות לכידה";
+"Bottom Toolbar Actions" = "פעולות סרגל כלים תחתון";
+"Hidden actions are removed from the bottom toolbar." = "פעולות מוסתרות מוסרות מסרגל הכלים התחתון.";
+"Editor Actions" = "פעולות עורך";
+"Right Toolbar Actions" = "פעולות סרגל כלים ימני";
+"Hidden actions are removed from the right toolbar." = "פעולות מוסתרות מוסרות מסרגל הכלים הימני.";
+
+/* Preferences - Recording */
+"Frame rate:" = "קצב פריימים:";
+"After recording:" = "לאחר הקלטה:";
+"Save recording to:" = "שמור הקלטה אל:";
+"Save Recording" = "שמור הקלטה";
+"Clear" = "נקה";
+"Max height:" = "גובה מקסימלי:";
+"px (0 = unlimited)" = "px (0 = ללא הגבלה)";
+"Behavior" = "התנהגות";
+"Auto-scroll (sends synthetic scroll events)" = "גלילה אוטומטית (שולח אירועי גלילה סינתטיים)";
+"Detect fixed/sticky headers" = "זהה כותרות קבועות/דביקות";
+"Scroll speed:" = "מהירות גלילה:";
+"Slow" = "איטי";
+"Medium" = "בינוני";
+"Fast" = "מהיר";
+"Very fast" = "מהיר מאוד";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "שירות העלאה";
+"Upload Provider" = "ספק העלאה";
+"Provider:" = "ספק:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (תמונות + סרטונים)";
+"imgbb (images only)" = "imgbb (תמונות בלבד)";
+"S3-Compatible (images + videos)" = "S3-Compatible (תמונות + סרטונים)";
+"S3-Compatible Storage" = "אחסון תואם S3";
+"Sign In with Google" = "התחבר עם Google";
+"Sign Out" = "התנתק";
+"Signed in" = "מחובר";
+"Not signed in" = "לא מחובר";
+"Account:" = "חשבון:";
+"Test Connection" = "בדוק חיבור";
+"Fill in endpoint, bucket, and credentials first" = "מלא קודם כתובת שרת, bucket ופרטי גישה";
+"Testing..." = "בודק...";
+"Connection successful!" = "החיבור הצליח!";
+"Leave empty to use default" = "השאר ריק לשימוש בברירת מחדל";
+"Endpoint:" = "כתובת שרת:";
+"Region:" = "אזור:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "מפתח גישה:";
+"Secret Key:" = "מפתח סודי:";
+"Public URL:" = "כתובת URL ציבורית:";
+"Path Prefix:" = "קידומת נתיב:";
+"API key:" = "מפתח API:";
+"Upload History" = "היסטוריית העלאות";
+"No uploads yet." = "אין העלאות עדיין.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "כתובת URL בסיסית לגישה ציבורית. אם ריק, נעשה שימוש בכתובת שרת S3 (ייתכן שלא נגיש לציבור).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "מפתח משותף כלול — קבל מפתח חינמי משלך ב-imgbb.com/api אם הגעת למגבלת קצב. תמונות בלבד (ללא תמיכה בווידאו).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "עובד עם AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 ושירותים תואמי S3 אחרים. תומך בתמונות וסרטונים.";
+"Configure S3 in Preferences" = "הגדר S3 בהעדפות";
+"Sign in to Google Drive in Preferences" = "התחבר ל-Google Drive בהעדפות";
+"Video upload requires Google Drive or S3" = "העלאת וידאו דורשת Google Drive או S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "גרסה %@ (%@)";
+"Made by" = "נוצר על ידי";
+"Licensed under the GPLv3" = "מורשה תחת GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "כלי חינמי וקוד פתוח לצילום מסך והקלטת מסך עבור macOS.\nנייטיב לחלוטין — בנוי עם Swift ו-AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "אין תמונה בלוח";
+"No Image or Text on Clipboard" = "אין תמונה או טקסט בלוח";
+"Copy an image to the clipboard first, then try again." = "העתק תמונה ללוח קודם, ואז נסה שוב.";
+"Copy an image or text to the clipboard first, then try again." = "העתק תמונה או טקסט ללוח קודם, ואז נסה שוב.";
+"OK" = "אישור";
+"Accessibility Access Required" = "נדרשת גישת נגישות";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom זקוק להרשאת נגישות לגלילה אוטומטית באפליקציות אחרות. אנא אשר גישה בהגדרות המערכת ונסה שוב.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom זקוק להרשאת נגישות ללכידת גלילה. אנא הענק גישה בהגדרות המערכת ונסה שוב.";
+"Open Settings" = "פתח הגדרות";
+"Cancel" = "ביטול";
+"Microphone Access Required" = "נדרשת גישה למיקרופון";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom זקוק להרשאת מיקרופון להקלטת שמע קולי. פתח את הגדרות המערכת לאישור גישה.";
+"Upload to Google Drive?" = "להעלות ל-Google Drive?";
+"Upload to S3?" = "להעלות ל-S3?";
+"Upload to imgbb.com?" = "להעלות ל-imgbb.com?";
+"Your screenshot will be uploaded." = "צילום המסך שלך יועלה.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "ברוכים הבאים ל-Snaploom";
+"Snaploom needs one permission" = "Snaploom זקוק להרשאה אחת";
+"Screen Recording not yet granted" = "הרשאת הקלטת מסך טרם ניתנה";
+"Screen Recording granted!" = "הרשאת הקלטת מסך אושרה!";
+"Enable Snaploom, then try taking a screenshot" = "הפעל את Snaploom ואז נסה לצלם מסך";
+"Open Screen Recording Settings" = "פתח הגדרות הקלטת מסך";
+"Continue" = "המשך";
+
+/* OCR Window */
+"Text Recognition" = "זיהוי טקסט";
+"Translate to:" = "תרגם ל:";
+"%d chars · %d words" = "%d תווים · %d מילים";
+"Copy  ⌘↩" = "העתק  ⌘↩";
+"AI Search" = "חיפוש AI";
+"Show Original" = "הצג מקור";
+"Translation Failed" = "התרגום נכשל";
+"Translation" = "תרגום";
+"(No text detected in the selected area)" = "(לא זוהה טקסט באזור הנבחר)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "הכתובת הועתקה ללוח";
+"Uploading... %d%%" = "מעלה... %d%%";
+"Upload failed: %@" = "ההעלאה נכשלה: %@";
+"Uploaded! Link copied." = "הועלה! הקישור הועתק.";
+"Uploading to %@... %d%%" = "מעלה ל-%@... %d%%";
+"Open" = "פתח";
+
+/* Recording Toast */
+"Recording saved" = "ההקלטה נשמרה";
+"%@ • Recording saved" = "%@ • ההקלטה נשמרה";
+"Copy Path" = "העתק נתיב";
+"Path copied!" = "הנתיב הועתק!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "עורך הווידאו של Snaploom";
+"%@ selected" = "%@ נבחר";
+"Exporting..." = "מייצא...";
+"Export failed" = "הייצוא נכשל";
+"Saved to %@" = "נשמר ב-%@";
+"Save failed" = "השמירה נכשלה";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "שמור בשם...";
+"Choose a folder" = "בחר תיקייה";
+"Save All to Folder…" = "שמור הכל לתיקייה…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "גלילה אוטומטית";
+"Stop" = "עצור";
+"Scrolling..." = "גולל...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "הגדרות קבועות מראש";
+"Adjustments" = "התאמות";
+"Brightness" = "בהירות";
+"Contrast" = "ניגודיות";
+"Saturation" = "רוויה";
+"Sharpness" = "חדות";
+
+/* Time Ago */
+"just now" = "הרגע";
+"%ds ago" = "לפני %ds";
+"%dm ago" = "לפני %dm";
+"%dh ago" = "לפני %dh";
+
+/* Hotkey Labels */
+"History" = "היסטוריה";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "לחץ על \"הקלט\" ולחץ על צירוף מקשים עם לפחות מקש שינוי אחד (⌘, ⌥, ⌃, ⇧) כדי להגדיר קיצור.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "מעבד GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "נדרש ניטור קלט";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom זקוק להרשאת ניטור קלט כדי להציג הקשות מקשים בזמן הקלטה. אנא אשר גישה ב-System Settings ונסה שוב.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom זקוק להרשאת נגישות כדי להציג הקשות מקשים בזמן הקלטה. אנא אשר גישה ב-System Settings ונסה שוב.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "הצג הקשות מקשים";
+"Shortcuts Only" = "קיצורים בלבד";
+"All Keystrokes" = "כל ההקשות";
+
+/* Recording — Settings Popover */
+"Delay:" = "השהיה:";
+
+/* Video Editor */
+"Copied to clipboard!" = "הועתק ללוח!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "שכבת מצלמת רשת";
+"Camera Access Required" = "נדרשת גישה למצלמה";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom זקוק להרשאת מצלמה עבור שכבת מצלמת הרשת. פתח את הגדרות המערכת לאישור גישה.";
+"Webcam" = "מצלמת רשת";
+"Bottom Right" = "למטה מימין";
+"Bottom Left" = "למטה משמאל";
+"Top Right" = "למעלה מימין";
+"Top Left" = "למעלה משמאל";
+"Small" = "קטן";
+"Large" = "גדול";
+"Webcam Size Small" = "קטן";
+"Webcam Size Medium" = "בינוני";
+"Webcam Size Large" = "גדול";
+"Webcam Size Extra Large" = "גדול במיוחד";
+"Circle" = "עיגול";
+"Rounded Rectangle" = "מלבן מעוגל";
+"Cam pos:" = "מיקום מצלמה:";
+"Cam size:" = "גודל מצלמה:";
+"Cam shape:" = "צורת מצלמה:";
+
+/* Settings */
+"Settings..." = "הגדרות...";
+"Snaploom Settings" = "הגדרות Snaploom";
+"Also open in Editor" = "פתח גם בעורך";
+"Hide controls" = "הסתר פקדים";
+"Hide recording controls" = "הסתר פקדי הקלטה";
+"Stop recording from the menu bar icon instead." = "עצור הקלטה מסמל שורת התפריטים במקום.";
+"Pixelate" = "פיקסול";
+"Blur" = "טשטוש";
+"Solid" = "מילוי";
+"Erase" = "מחיקה";
+"Done" = "סיום";
+"Do nothing" = "אל תעשה כלום";
+"Overlay / Editor Shortcuts" = "קיצורי דרך בשכבת העל / עורך";
+"Set" = "הגדר";
+"Press..." = "לחץ...";
+"Reset to default" = "אפס לברירת מחדל";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "לחץ על מקש בודד כדי להקצות אותו כקיצור עבור אותו כלי. אלה פועלים כשהשכבה או העורך פעילים.";
+"Keep Separate" = "שמור בנפרד";
+"Merge Audio" = "מזג שמע";
+"Audio Tracks" = "רצועות שמע";
+"Adjust volume for each audio track:" = "כוונן עוצמה לכל רצועת שמע:";
+"Microphone:" = "מיקרופון:";
+"System audio:" = "שמע מערכת:";
+"Loupe" = "זכוכית מגדלת";
+"Stamp" = "חותמת";
+"Unlimited" = "ללא הגבלה";
+
+/* Save/Discard, Recording, Translation Engine, Upload, Inspector */
+"Save changes?" = "לשמור שינויים?";
+"Your annotations will be lost if you close without saving." = "ההערות שלך יאבדו אם תסגור בלי לשמור.";
+"Save & Close" = "שמור וסגור";
+"Discard" = "בטל";
+"Stop Recording" = "הפסק הקלטה";
+"Pause" = "השהה";
+"Resume" = "המשך";
+"Engine:" = "מנוע:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (על המכשיר)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "התרגום של Apple מהיר יותר ועובד ללא חיבור. Google Translate תומך ביותר שפות.";
+"Download language packs in System Settings…" = "הורד חבילות שפה בהגדרות המערכת…";
+"Configure S3 in Settings" = "הגדר S3 בהגדרות";
+"Sign in to Google Drive in Settings" = "התחבר ל-Google Drive בהגדרות";
+"Position:" = "מיקום:";
+"Size:" = "גודל:";
+"Shape:" = "צורה:";
+
+"Same as screenshots" = "זהה לצילומי המסך";
+"  Preview size:" = "  גודל תצוגה מקדימה:";
+"(0 = off)" = "(0 = כבוי)";
+"Clear All" = "נקה הכל";
+"Clear History?" = "לנקות את ההיסטוריה?";
+"This will permanently delete all screenshots from history." = "פעולה זו תמחק לצמיתות את כל צילומי המסך מההיסטוריה.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "לחץ על \"הגדר\" ולחץ על צירוף מקשים עם לפחות משנה אחד (⌘, ⌥, ⌃, ⇧) כדי להגדיר קיצור דרך.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "הקבצים מועלים לתיקייה \"Snaploom\" ב-Google Drive שלך. הכל נשאר פרטי — שום דבר אינו משותף באופן ציבורי.";
+
+"Pressure" = "לחץ";
+
+/* Aspect ratio & resolution presets */
+"Aspect ratio & resolution presets" = "ערכות יחס גובה-רוחב ורזולוציה מוגדרות מראש";
+"Aspect ratio" = "יחס גובה-רוחב";
+"Resolution" = "רזולוציה";
+"Freeform" = "חופשי";
+"Units" = "יחידות";
+"Keep ratio for next captures" = "שמור יחס ללכידות הבאות";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "פתח וידאו...";
+"Choose a video to open in Snaploom editor" = "בחר וידאו לפתיחה בעורך Snaploom";
+"Click to add effects" = "לחץ להוספת אפקטים";
+"Add Zoom" = "הוסף זום";
+"Add Censor" = "הוסף צנזור";
+"Add Cut" = "הוסף חיתוך";
+"Add Speed" = "הוסף מהירות";
+"Add Freeze" = "הוסף הקפאה";
+"Add Text" = "הוסף טקסט";
+"Delete Zoom" = "מחק זום";
+"Delete Censor" = "מחק צנזור";
+"Delete Cut" = "מחק חיתוך";
+"Delete Speed" = "מחק מהירות";
+"Delete Freeze" = "מחק הקפאה";
+"Delete Text" = "מחק טקסט";
+"Edit Text…" = "ערוך טקסט…";
+"Huge" = "ענק";
+"Bold" = "מודגש";
+"Italic" = "נטוי";
+"Alignment" = "יישור";
+"Left" = "שמאל";
+"Center" = "מרכז";
+"Right" = "ימין";
+"Text Color" = "צבע טקסט";
+"Background Color" = "צבע רקע";
+"Rounded" = "מעוגל";
+"Custom…" = "מותאם אישית…";
+"Transparent" = "שקוף";
+"Black" = "שחור";
+"White" = "לבן";
+"Yellow" = "צהוב";
+"Red" = "אדום";
+"Green" = "ירוק";
+"Blue" = "כחול";
+"Untitled" = "ללא שם";
+"Add effect" = "הוסף אפקט";
+"Fade" = "עמעום";
+"High" = "גבוה";
+"Low" = "נמוך";
+"Not enough room here" = "אין מספיק מקום כאן";
+"Copied!" = "הועתק!";
+"Converting to GIF…" = "ממיר ל-GIF…";
+"GIF conversion failed" = "המרת ה-GIF נכשלה";
+"No video track found" = "לא נמצאה רצועת וידאו";
+"Preview:" = "תצוגה מקדימה:";
+"Copy Screen Info" = "העתק מידע על המסך";
+"Copies display and capture diagnostics to clipboard" = "מעתיק אבחוני תצוגה ולכידה ללוח";
+"Accent" = "הדגשה";
+"Icon" = "סמל";
+"Background" = "רקע";
+"Custom" = "מותאם אישית";
+"Theme:" = "ערכת נושא:";
+"Application" = "אפליקציה";
+"Capture area and extract text" = "לכוד אזור וחלץ טקסט";
+"Capture the full screen" = "לכוד את המסך המלא";
+"Counter for multi-screen captures" = "מונה ללכידות מרובות-מסך";
+"8-character random string (e.g. k3j7x9q2)" = "מחרוזת אקראית בת 8 תווים (למשל k3j7x9q2)";
+"Filename Template Tokens" = "אסימוני תבנית שם קובץ";
+"Filename tokens" = "אסימוני שם קובץ";
+"Filename:" = "שם קובץ:";
+"Open an image file in the editor" = "פתח קובץ תמונה בעורך";
+"Open the recent captures overlay" = "פתח את שכבת הלכידות האחרונות";
+"Open this settings window" = "פתח חלון הגדרות זה";
+"Quick capture (uses your Enter action)" = "לכידה מהירה (משתמשת בפעולת Enter שלך)";
+"Re-capture the last selected area" = "לכוד שוב את האזור שנבחר אחרון";
+"Screenshots only — captured window title (blank otherwise)" = "צילומי מסך בלבד — כותרת החלון שנלכד (ריק אחרת)";
+"Show available filename tokens" = "הצג אסימוני שם קובץ זמינים";
+"Enable snaploom:// URL scheme" = "הפעל סכמת URL של snaploom://";
+"Show supported URL scheme commands" = "הצג פקודות סכמת URL נתמכות";
+"Start area capture" = "התחל לכידת אזור";
+"Start area recording" = "התחל הקלטת אזור";
+"Start full-screen recording" = "התחל הקלטת מסך מלא";
+"Start scroll capture" = "התחל לכידת גלילה";
+"Stop the current recording" = "עצור את ההקלטה הנוכחית";
+"Supported URL Scheme Commands" = "פקודות סכמת URL נתמכות";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "סיומת הקובץ מתווספת אוטומטית. קווים נטויים ונקודתיים ב-{window} הופכים למקפים.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "הפעל את Snaploom מ-Raycast, Alfred, Shortcuts, או כל כלי שפותח כתובות URL.";
+"URL scheme info" = "מידע על סכמת URL";
+"sec (0 = never)" = "שניות (0 = אף פעם)";
+"Settings" = "הגדרות";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "גרסה לא מקוונת: שילובי ההעלאה ואחסון הענן הוסרו. בדיקות עדכונים עדיין עשויות להתחבר לשרת העדכונים של Snaploom. צילומי המסך וההקלטות נשארים מקומיים אלא אם תשתף או תשמור אותם בעצמך.";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "גיבוי הגדרות";
+"Export Settings…" = "ייצוא הגדרות…";
+"Import Settings…" = "ייבוא הגדרות…";
+"Reveal Settings File in Finder" = "הצג את קובץ ההגדרות ב-Finder";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "ייצא את ההעדפות שלך לקובץ כדי להעביר אותן ל-Mac אחר או להתקנה נקייה. פרטי ההתחברות להעלאה, תיקיית השמירה שלך והיסטוריית צילומי המסך אינם כלולים. ההגדרות נשמרות בתוך מכל האפליקציה של Snaploom.";
+"Export Settings" = "ייצוא הגדרות";
+"Import Settings" = "ייבוא הגדרות";
+"Import failed" = "הייבוא נכשל";
+"Settings exported" = "ההגדרות יוצאו";
+"Settings imported" = "ההגדרות יובאו";
+"Import" = "ייבוא";
+"Later" = "מאוחר יותר";
+"Relaunch Now" = "הפעל מחדש עכשיו";
+"Replace your current settings?" = "להחליף את ההגדרות הנוכחיות שלך?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "ייבוא יחליף את ההעדפות הנוכחיות שלך באלה שבקובץ זה. תיקיית השמירה, פרטי ההתחברות להעלאה והיסטוריית צילומי המסך שלך יישמרו. לא ניתן לבטל פעולה זו.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "%d הגדרות הוחלו. הפעל מחדש את Snaploom כדי להחיל את כל השינויים.";
+"A few large items were too big to include. Everything else was saved." = "כמה פריטים גדולים היו גדולים מדי לכלול. כל השאר נשמר.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "תמונת הרקע המותאמת אישית של Beautify הייתה גדולה מדי לכלול. כל השאר נשמר.";
+"This file is not a valid Snaploom settings file." = "קובץ זה אינו קובץ הגדרות תקין של Snaploom.";
+"This settings file contains no settings." = "קובץ הגדרות זה אינו מכיל הגדרות.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "קובץ הגדרות זה נוצר על ידי גרסה חדשה יותר של Snaploom. אנא עדכן תחילה את Snaploom.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "צלמו, תרגמו והוסיפו את הטקסט על גבי התמונה";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "פתח רשומת היסטוריה בעורך (שומר על הערות ניתנות לעריכה)";

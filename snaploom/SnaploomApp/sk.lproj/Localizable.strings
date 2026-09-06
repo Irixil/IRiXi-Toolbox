@@ -1,0 +1,671 @@
+/* Slovenčina — Snaploom localization
+ *
+ * To add a new language:
+ * 1. Create a new folder: SnaploomApp/<lang-code>.lproj/
+ * 2. Copy this file into that folder
+ * 3. Translate all values (right side of = sign)
+ * 4. Add the language to LanguageManager.availableLanguages in Services/LanguageManager.swift
+ * 5. Add the language code to knownRegions in Snaploom.xcodeproj/project.pbxproj
+ * 6. Submit a pull request!
+ *
+ * Keys use the English text. Values should be the translation.
+ * Format strings use %@ for strings, %d for integers.
+ * Keep keyboard shortcuts (like ⌘C) untranslated.
+ * Keep brand names (Snaploom, Google Drive, imgbb, S3) untranslated.
+ */
+
+/* Menu Bar */
+"Capture Area" = "Zachytit oblast";
+"Capture Screen" = "Zachytit obrazovku";
+"Capture OCR" = "Zachytit OCR";
+"Capture OCR & QR" = "Zachytiť OCR a QR";
+"Capture area and read text/QR codes" = "Zachytiť oblasť a načítať text/QR kódy";
+"Quick Capture" = "Rychle zachytit";
+"Scroll Capture" = "Zachytit posun";
+"Capture Last Area" = "Zachytiť poslednú oblasť";
+"Capture Delay" = "Oneskorenie zachytenia";
+"None" = "Ziadne";
+"%d seconds" = "%d sekund";
+"Record Area" = "Nahrat oblast";
+"Record Screen" = "Nahrat obrazovku";
+"Recent Captures" = "Posledne zachytenia";
+"Show History Panel" = "Zobrazit panel historie";
+"Open Image..." = "Otvorit obrazok...";
+"Open from Clipboard" = "Otvorit zo schranky";
+"Pin from Clipboard" = "Pripnut zo schranky";
+"Preferences..." = "Predvolby...";
+"Check for Updates..." = "Skontrolovat aktualizacie...";
+"Quit Snaploom" = "Ukoncit Snaploom";
+"No recent captures" = "Ziadne posledne zachytenia";
+"Clear History" = "Vymazat historiu";
+
+/* History Panel */
+"Copy" = "Kopirovat";
+"Save As..." = "Ulozit ako...";
+"Open in Editor" = "Otvorit v editore";
+"Pin to Screen" = "Pripnut na obrazovku";
+"Quick Look" = "Rychly nahlad";
+"Delete" = "Vymazat";
+"All" = "Vsetko";
+"Screenshots" = "Snimky obrazovky";
+"GIFs" = "GIFs";
+"Click to copy · Drag to app" = "Kliknutim kopirovat · Potiahnutim do aplikacie";
+"No captures yet" = "Zatial ziadne zachytenia";
+
+/* Floating Thumbnail */
+"Close All" = "Zavriet vsetko";
+"Save All to Folder…" = "Ulozit vsetko do priecinka…";
+"Save" = "Ulozit";
+
+/* Editor Top Bar */
+"Zoom In" = "Priblizit";
+"Zoom Out" = "Oddialit";
+"Fit Canvas" = "Prisposobit platno";
+"Crop" = "Orezat";
+"Flip Horizontal" = "Preklopit vodorovne";
+"Flip Vertical" = "Preklopit zvisle";
+"Rotate Left" = "Otočiť doľava";
+"Rotate Right" = "Otočiť doprava";
+"Zoom" = "Priblíženie";
+"Add Capture" = "Pridat zachytenie";
+
+/* Toolbar - Tools */
+"Arrow" = "Sipka";
+"Line" = "Ciara";
+"Rectangle" = "Obdlznik";
+"Ellipse" = "Elipsa";
+"Pencil" = "Ceruzka";
+"Pencil (Draw)" = "Ceruzka (Kreslit)";
+"Marker" = "Zvyraznovac";
+"Text" = "Text";
+"Number" = "Cislo";
+"Number / Counter" = "Cislo / Pocitadlo";
+"Stamp / Emoji" = "Peciatka / Emoji";
+"Censor" = "Cenzura";
+"Censor (Pixelate / Blur / Solid)" = "Cenzura (Pixelovanie / Rozostrenie / Plna)";
+"Measure" = "Merat";
+"Measure (px)" = "Merat (px)";
+"Magnify (Loupe)" = "Zvacsit (Lupa)";
+"Highlight" = "Zvyraznit";
+"Highlight (Spotlight)" = "Zvyraznit (Reflektor)";
+"Dim" = "Stmavit";
+"Color Sampler" = "Vzorkovac farieb";
+"Color Picker" = "Vyber farby";
+"Select & Edit" = "Vybrat a upravit";
+"Color" = "Farba";
+
+/* Aspect ratio & resolution presets */
+"Aspect ratio & resolution presets" = "Predvoľby pomeru strán a rozlíšenia";
+"Aspect ratio" = "Pomer strán";
+"Resolution" = "Rozlíšenie";
+"Freeform" = "Voľný tvar";
+"Units" = "Jednotky";
+"Keep ratio for next captures" = "Zachovať pomer pre ďalšie snímky";
+"Custom · %@" = "Vlastné · %@";
+
+/* Toolbar - Actions */
+"Copy to Clipboard" = "Kopirovat do schranky";
+"Save to File" = "Ulozit do suboru";
+"Save to" = "Ulozit do";
+"Open in Editor Window" = "Otvorit v okne editora";
+"Pin on Screen" = "Pripnut na obrazovku";
+"Pin" = "Pripnut";
+"Pin (floating window)" = "Pripnut (plavajuce okno)";
+"OCR" = "OCR";
+"OCR Text" = "OCR text";
+"OCR (extract text)" = "OCR (extrahovat text)";
+"OCR & QR" = "OCR a QR";
+"Run OCR & QR" = "Spustiť OCR a QR";
+"Text & QR Recognition" = "Rozpoznávanie textu a QR";
+"QR Code" = "QR kód";
+"QR Codes" = "QR kódy";
+"Open Link" = "Otvoriť odkaz";
+"Open With" = "Otvoriť pomocou";
+"No Apps Available" = "Žiadne dostupné aplikácie";
+"No Share Services" = "Žiadne služby zdieľania";
+"Upload" = "Nahrat";
+"Share" = "Zdielat";
+"Undo" = "Spat";
+"Redo" = "Znovu";
+"Close" = "Zavriet";
+"Remove Background" = "Odstranit pozadie";
+"Beautify" = "Skraslit";
+"Adjust" = "Upravit";
+"Adjust (Image Effects)" = "Upravit (Efekty obrazka)";
+"Invert Colors" = "Invertovat farby";
+"Record" = "Nahravat";
+"Record screen" = "Nahrat obrazovku";
+"Translate" = "Prelozit";
+"Auto-Redact sensitive data" = "Automaticky zakryt citlive udaje";
+"Move Selection" = "Presunnut vyber";
+"Move up" = "Presunut nahor";
+"Move down" = "Presunut nadol";
+"Menu Bar Order" = "Poradie v liste menu";
+"Choose the order of capture actions in the Snaploom menu bar menu." = "Vyberte poradie akcii snimania v menu Snaploom v liste menu.";
+
+/* Toolbar - Recording */
+"Start Recording" = "Spustit nahravanie";
+"Cancel Recording" = "Zrusit nahravanie";
+"Highlight Mouse Clicks" = "Zvyraznit kliknutia mysi";
+"Record System Audio" = "Nahravat systemovy zvuk";
+"Record Microphone" = "Nahravat mikrofon";
+"Recording Settings" = "Nastavenia nahravania";
+
+/* Tool Options */
+"Size" = "Velkost";
+"Stroke" = "Tah";
+"Radius" = "Polomer";
+"Start:" = "Start:";
+"Draw:" = "Kreslit:";
+"Auto:" = "Auto:";
+"Fill" = "Vyplna";
+"Outline" = "Obrys";
+"More Emojis" = "Viac Emoji";
+"Load Image" = "Nacitat obrazok";
+"Gradient Style" = "Styl gradientu";
+"On" = "Zapnute";
+"Text Only" = "Len text";
+"All Text" = "Vsetok text";
+"PII" = "Osobne udaje";
+"Faces" = "Tvare";
+"People" = "Ludia";
+"Confirm before upload" = "Potvrdit pred nahranim";
+"Flip" = "Preklopit";
+"Smooth" = "Vyhladenie";
+"Refined" = "Zjemnené";
+"Smart" = "Inteligentne";
+"Padding" = "Odsadenie";
+"Shadow" = "Tien";
+"Right-click to add points" = "Kliknutim pravym tlacidlom pridajte body";
+"Hold 1 auto-vertical  ·  Hold 2 auto-horizontal" = "Drzte 1 auto-vertikalne  ·  Drzte 2 auto-horizontalne";
+"Limit to selection" = "Obmedziť na výber";
+"Effect" = "Efekt";
+"Font" = "Písmo";
+"System" = "Systémové";
+
+/* Overlay / Canvas */
+"Click a window  ·  Drag for custom area  ·  F for full screen" = "Kliknite na okno  ·  Potiahnite pre vlastnu oblast  ·  F pre celu obrazovku";
+"Drag to select  ·  Click for full screen" = "Potiahnite pre vyber  ·  Kliknite pre celu obrazovku";
+"Release to annotate and edit" = "Pustite pre anotaciu a upravu";
+"Release to finish" = "Pustite pre dokončenie";
+"Hold Space to move. Release to annotate and edit" = "Podržte Medzerník pre presun. Pustite pre anotáciu a úpravu";
+"Hold Space to move. Release to finish" = "Podržte Medzerník pre presun. Pustite pre dokončenie";
+"Window snap: " = "Prichytenie okna: ";
+"ON" = "ZAP";
+"OFF" = "VYP";
+"  (Tab to toggle)" = "  (Tab pre prepnutie)";
+"Space" = "Medzerník";
+"Right-click to copy" = "Kliknite pravym tlacidlom pre kopirovanie";
+"Copied %@" = "Skopirovane %@";
+"Set color %@" = "Nastavit farbu %@";
+"Draw something first to use the move tool." = "Najprv nieco nakreslite, aby ste mohli pouzit nastroj presunu.";
+"Drag to reposition" = "Potiahnutim zmente polohu";
+
+/* Overlay - Popovers */
+"Format:" = "Format:";
+"FPS:" = "FPS:";
+"When done:" = "Po dokonceni:";
+"Open editor" = "Otvorit editor";
+"Show in Finder" = "Zobrazit vo Finder";
+"Copy to clipboard" = "Kopirovat do schranky";
+
+/* Preferences - General */
+"Snaploom Preferences" = "Predvolby Snaploom";
+"General" = "Vseobecne";
+"Tools" = "Nastroje";
+"Recording" = "Nahravanie";
+"About" = "O aplikacii";
+"Shortcuts" = "Skratky";
+"Uploads" = "Nahravania";
+"Language" = "Jazyk";
+"Language:" = "Jazyk:";
+"Restart the app to fully apply the new language." = "Restartujte aplikaciu pre uplne pouzitie noveho jazyka.";
+"Capture" = "Zachytenie";
+"Play sound on capture" = "Prehrať zvuk pri snímaní";
+"Play sound on copy" = "Prehrat zvuk pri kopirovani";
+"Remember last selected tool" = "Pamatat si posledny vybrany nastroj";
+"Show floating thumbnail after capture" = "Zobrazit plavajuci nahlad po zachyteni";
+"Launch at login" = "Spustit pri prihlaseni";
+"Show snap alignment guides" = "Zobrazit vodiace ciary zarovnania";
+"Snap selection edges to image boundaries" = "Prichytit okraje vyberu k hraniciam obrazka";
+"Capture mouse cursor in screenshot" = "Zachytit kurzor mysi na snimke obrazovky";
+"Double-click selection to copy" = "Kopirovat dvojklikom na vyber";
+"Hide capture instructions" = "Skryt pokyny pri snimani";
+"Use window title in saved filename" = "Pouzit nazov okna v nazve suboru";
+"Hide menu bar icon" = "Skryt ikonu v liste menu";
+"Hotkeys still work. To show the icon again, re-launch Snaploom." = "Klavesove skratky stale funguju. Pre opetovne zobrazenie ikony znovu spustte Snaploom.";
+"Check for updates automatically" = "Automaticky kontrolovat aktualizacie";
+"Check for beta updates" = "Kontrolovať beta aktualizácie";
+"Thumbnail" = "Nahlad";
+"  Dismiss after:" = "  Skryt po:";
+"seconds before auto-dismiss (0 = never)" = "sekund pred automatickym skrytim (0 = nikdy)";
+"  Multiple previews:" = "  Viacero nahladov:";
+"Stack (keep all)" = "Vrstvit (ponechat vsetky)";
+"Replace (show only latest)" = "Nahradit (zobrazit len posledny)";
+"Output" = "Vystup";
+"Image format:" = "Format obrazka:";
+"Quality:" = "Kvalita:";
+"%d%%" = "%d%%";
+"Save at standard resolution (1x)" = "Ulozit v standardnom rozliseni (1x)";
+"Halves dimensions on Retina displays, ~4x smaller files" = "Polovicne rozmery na Retina displejoch, ~4x mensie subory";
+"Embed sRGB color profile" = "Vlozit sRGB farebny profil";
+"Ensures consistent colors across different displays" = "Zabezpecuje konzistentne farby na roznych displejoch";
+"Screenshot History" = "Historia snimok obrazovky";
+"History size:" = "Velkost historie:";
+"screenshots kept on disk (0 = off)" = "snimok obrazovky uchovananych na disku (0 = vyp)";
+"Order history by last edit" = "Zoradiť históriu podľa poslednej úpravy";
+"Edited screenshots move to the top. Off keeps them in capture order." = "Upravené snímky sa presunú nahor. Vypnuté zachová poradie zachytenia.";
+"Save Directory" = "Priecinok ulozenia";
+"Save folder:" = "Priecinok ulozenia:";
+"Browse…" = "Prehladavat…";
+"Appearance" = "Vzhled";
+"Accent color:" = "Farba akcentu:";
+"Icon color:" = "Farba ikony:";
+"Background color:" = "Farba pozadia:";
+"Reset" = "Resetovat";
+"OCR Capture:" = "OCR zachytenie:";
+"OCR & QR Capture:" = "OCR a QR zachytenie:";
+"Show window + copy to clipboard" = "Zobrazit okno + kopirovat do schranky";
+"Show window only" = "Zobrazit len okno";
+"Copy to clipboard only" = "Kopirovat len do schranky";
+"Enter / Quick Capture:" = "Enter / Rychle zachytenie:";
+"Save to file" = "Ulozit do suboru";
+"Save + copy to clipboard" = "Ulozit + kopirovat do schranky";
+"OCR Action" = "OCR akcia";
+"Save action:" = "Akcia uloženia:";
+"Save to default folder" = "Uložiť do predvoleného priečinka";
+"Ask where to save" = "Spýtať sa, kam uložiť";
+"Show shortcuts in tooltips" = "Zobraziť skratky v popisoch";
+"Disable shadow outside selection" = "Vypnúť tieň mimo výberu";
+"Menu bar icon:" = "Ikona v lište menu:";
+"Default" = "Predvolené";
+"Custom symbol" = "Vlastný symbol";
+"Enter any SF Symbol name (e.g. camera.fill) or pick a preset. Browse names in Apple's SF Symbols app. Invalid names fall back to the default icon." = "Zadajte ľubovoľný názov SF Symbol (napr. camera.fill) alebo vyberte predvoľbu. Prehliadajte názvy v aplikácii Apple SF Symbols. Neplatné názvy sa vrátia k predvolenej ikone.";
+
+/* Preferences - Shortcuts */
+"Keyboard Shortcuts" = "Klavesove skratky";
+"Hotkeys" = "Klavesove skratky";
+"Clear shortcut" = "Vymazat skratku";
+"Press keys..." = "Stlacte klavesy...";
+"Waiting..." = "Cakanie...";
+
+/* Preferences - Tools */
+"Annotation Tools" = "Nastroje anotacie";
+"Hidden tools are removed from the bottom toolbar." = "Skryte nastroje su odstranene zo spodnej listy nastrojov.";
+"Capture Actions" = "Akcie zachytenia";
+"Bottom Toolbar Actions" = "Akcie spodnej listy nastrojov";
+"Hidden actions are removed from the bottom toolbar." = "Skryte akcie su odstranene zo spodnej listy nastrojov.";
+"Editor Actions" = "Akcie editora";
+"Right Toolbar Actions" = "Akcie pravej listy nastrojov";
+"Hidden actions are removed from the right toolbar." = "Skryte akcie su odstranene z pravej listy nastrojov.";
+
+/* Preferences - Recording */
+"Frame rate:" = "Snimkova frekvencia:";
+"After recording:" = "Po nahravani:";
+"Save recording to:" = "Ulozit nahravku do:";
+"Save Recording" = "Uložiť nahrávku";
+"Clear" = "Vymazat";
+"Max height:" = "Max. vyska:";
+"px (0 = unlimited)" = "px (0 = neobmedzene)";
+"Behavior" = "Spravanie";
+"Auto-scroll (sends synthetic scroll events)" = "Automaticke posuvanie (odosiela synteticke udalosti posunu)";
+"Detect fixed/sticky headers" = "Detekovat fixne/prilnave hlavicky";
+"Scroll speed:" = "Rychlost posunu:";
+"Slow" = "Pomaly";
+"Medium" = "Stredny";
+"Fast" = "Rychly";
+"Very fast" = "Velmi rychly";
+"5 fps" = "5 fps";
+"10 fps" = "10 fps";
+"15 fps" = "15 fps";
+"24 fps" = "24 fps";
+"30 fps" = "30 fps";
+"60 fps" = "60 fps";
+"120 fps" = "120 fps";
+"MP4 (H.264)" = "MP4 (H.264)";
+"GIF" = "GIF";
+
+/* Preferences - Upload */
+"Upload Service" = "Sluzba nahravania";
+"Upload Provider" = "Poskytovatel nahravania";
+"Provider:" = "Poskytovatel:";
+"Google Drive" = "Google Drive";
+"Google Drive (images + videos)" = "Google Drive (obrazky + videa)";
+"imgbb (images only)" = "imgbb (len obrazky)";
+"S3-Compatible (images + videos)" = "S3-Compatible (obrazky + videa)";
+"S3-Compatible Storage" = "S3-Compatible ulozisko";
+"Sign In with Google" = "Prihlasit sa cez Google";
+"Sign Out" = "Odhlasit sa";
+"Signed in" = "Prihlaseny";
+"Not signed in" = "Neprihlaseny";
+"Account:" = "Ucet:";
+"Test Connection" = "Otestovat pripojenie";
+"Fill in endpoint, bucket, and credentials first" = "Najprv vyplnte endpoint, bucket a prihlasovacie udaje";
+"Testing..." = "Testovanie...";
+"Connection successful!" = "Pripojenie uspesne!";
+"Leave empty to use default" = "Nechajte prazdne pre pouzitie predvolenej hodnoty";
+"Endpoint:" = "Endpoint:";
+"Region:" = "Region:";
+"Bucket:" = "Bucket:";
+"Access Key:" = "Pristupovy kluc:";
+"Secret Key:" = "Tajny kluc:";
+"Public URL:" = "Verejna URL:";
+"Path Prefix:" = "Prefix cesty:";
+"API key:" = "API kluc:";
+"Upload History" = "Historia nahravani";
+"No uploads yet." = "Zatial ziadne nahravania.";
+"Base URL for public access. If empty, the S3 endpoint URL is used (may not be publicly accessible)." = "Zakladna URL pre verejny pristup. Ak je prazdna, pouzije sa S3 endpoint URL (nemusi byt verejne pristupna).";
+"A shared key is included — get your own free key at imgbb.com/api if you hit rate limits. Images only (no video support)." = "Zdielany kluc je zahrnuty — ziskajte vlastny bezplatny kluc na imgbb.com/api, ak narazite na limity. Len obrazky (bez podpory videa).";
+"Works with AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2, and other S3-compatible services. Supports images and videos." = "Funguje s AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces, Backblaze B2 a dalsimi S3-compatible sluzbami. Podporuje obrazky a videa.";
+"Configure S3 in Preferences" = "Nastavit S3 v Predvolbach";
+"Sign in to Google Drive in Preferences" = "Prihlaste sa do Google Drive v Predvolbach";
+"Video upload requires Google Drive or S3" = "Nahravanie videa vyzaduje Google Drive alebo S3";
+
+/* Preferences - About */
+"Snaploom" = "Snaploom";
+"Version %@ (%@)" = "Verzia %@ (%@)";
+"Made by" = "Vytvoril";
+"Licensed under the GPLv3" = "Licencovane pod GPLv3";
+"A free, open-source screenshot & screen recording tool for macOS.\nFully native — built with Swift and AppKit." = "Bezplatny, open-source nastroj na snimky obrazovky a nahravanie obrazovky pre macOS.\nPlne nativny — postaveny na Swift a AppKit.";
+
+/* Alerts */
+"No Image on Clipboard" = "Ziadny obrazok v schranke";
+"No Image or Text on Clipboard" = "Ziadny obrazok ani text v schranke";
+"Copy an image to the clipboard first, then try again." = "Najprv skopiujte obrazok do schranky a skuste to znova.";
+"Copy an image or text to the clipboard first, then try again." = "Najprv skopiujte obrazok alebo text do schranky a skuste to znova.";
+"OK" = "OK";
+"Accessibility Access Required" = "Vyzaduje sa pristup k pristupnosti";
+"Snaploom needs Accessibility permission to auto-scroll other apps. Please grant access in System Settings, then try again." = "Snaploom potrebuje povolenie pristupnosti na automaticke posuvanie v inych aplikaciach. Udelite pristup v Nastaveniach systemu a skuste to znova.";
+"Snaploom needs Accessibility permission for scroll capture. Please grant access in System Settings, then try again." = "Snaploom potrebuje povolenie Prístupnosti pre snímanie posúvaním. Udeľte prístup v Nastaveniach systému a skúste to znova.";
+"Open Settings" = "Otvorit nastavenia";
+"Cancel" = "Zrusit";
+"Microphone Access Required" = "Vyzaduje sa pristup k mikrofonu";
+"Snaploom needs microphone permission to record voice audio. Open System Settings to grant access." = "Snaploom potrebuje povolenie mikrofonu na nahravanie hlasoveho zvuku. Otvorte Nastavenia systemu pre udelenie pristupu.";
+"Upload to Google Drive?" = "Nahrat na Google Drive?";
+"Upload to S3?" = "Nahrat na S3?";
+"Upload to imgbb.com?" = "Nahrat na imgbb.com?";
+"Your screenshot will be uploaded." = "Vasa snimka obrazovky bude nahrana.";
+
+/* Permission Onboarding */
+"Welcome to Snaploom" = "Vitajte v Snaploom";
+"Snaploom needs one permission" = "Snaploom potrebuje jedno povolenie";
+"Screen Recording not yet granted" = "Nahravanie obrazovky este nie je povolene";
+"Screen Recording granted!" = "Nahravanie obrazovky povolene!";
+"Enable Snaploom, then try taking a screenshot" = "Povolte Snaploom a skuste urobit snimku obrazovky";
+"Open Screen Recording Settings" = "Otvorit nastavenia nahravania obrazovky";
+"Continue" = "Pokracovat";
+
+/* OCR Window */
+"Text Recognition" = "Rozpoznavanie textu";
+"Translate to:" = "Prelozit do:";
+"%d chars · %d words" = "%d znakov · %d slov";
+"Copy  ⌘↩" = "Kopirovat  ⌘↩";
+"AI Search" = "AI vyhladavanie";
+"Show Original" = "Zobrazit original";
+"Translation Failed" = "Preklad zlyhal";
+"Translation" = "Preklad";
+"(No text detected in the selected area)" = "(V oznacenej oblasti nebol detegovany ziadny text)";
+
+/* Upload Toast */
+"URL copied to the clipboard" = "URL skopirovana do schranky";
+"Uploading... %d%%" = "Nahravanie... %d%%";
+"Upload failed: %@" = "Nahravanie zlyhalo: %@";
+"Uploaded! Link copied." = "Nahrane! Odkaz skopirovany.";
+"Uploading to %@... %d%%" = "Nahravanie na %@... %d%%";
+"Open" = "Otvorit";
+
+/* Recording Toast */
+"Recording saved" = "Nahravka ulozena";
+"%@ • Recording saved" = "%@ • Nahravka ulozena";
+"Copy Path" = "Kopirovat cestu";
+"Path copied!" = "Cesta skopirovana!";
+
+/* Video Editor */
+"Snaploom Video Editor" = "Snaploom Video Editor";
+"%@ selected" = "%@ vybranych";
+"Exporting..." = "Exportovanie...";
+"Export failed" = "Export zlyhal";
+"Saved to %@" = "Ulozene do %@";
+"Save failed" = "Ulozenie zlyhalo";
+
+/* Barcode Detector */
+/* "Open" and "Copy" are shared with other sections */
+
+/* Save Panel */
+"Save As..." = "Ulozit ako...";
+"Choose a folder" = "Vyberte priecinok";
+"Save All to Folder…" = "Ulozit vsetko do priecinka…";
+
+/* Scroll Capture HUD */
+"Auto Scroll" = "Automaticke posuvanie";
+"Stop" = "Zastavit";
+"Scrolling..." = "Posuvanie...";
+
+/* Effects Picker (Adjust popover) */
+"Presets" = "Predvolby";
+"Adjustments" = "Upravy";
+"Brightness" = "Jas";
+"Contrast" = "Kontrast";
+"Saturation" = "Saturacia";
+"Sharpness" = "Ostrost";
+
+/* Time Ago */
+"just now" = "prave teraz";
+"%ds ago" = "pred %ds";
+"%dm ago" = "pred %dm";
+"%dh ago" = "pred %dh";
+
+/* Hotkey Labels */
+"History" = "Historia";
+
+/* Preferences - Shortcuts note */
+"Click \"Record\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Kliknite na \"Record\" a stlacte kombinaciu klaves s aspon jednym modifikatorom (⌘, ⌥, ⌃, ⇧) pre nastavenie skratky.";
+
+/* Recording — GIF Processing */
+"Processing GIF…" = "Spracovanie GIF…";
+
+/* Recording — Input Monitoring Permission */
+"Input Monitoring Required" = "Vyzaduje sa monitorovanie vstupu";
+"Snaploom needs Input Monitoring permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom potrebuje povolenie na monitorovanie vstupu pre zobrazenie stlaceni klaves pocas nahravania. Udelite pristup v System Settings a skuste to znova.";
+"Snaploom needs Accessibility permission to show keystrokes during recording. Please grant access in System Settings, then try again." = "Snaploom potrebuje povolenie pristupnosti pre zobrazenie stlaceni klaves pocas nahravania. Udelite pristup v System Settings a skuste to znova.";
+
+/* Recording — Keystroke Overlay */
+"Show Keystrokes" = "Zobrazit stlacenia klaves";
+"Shortcuts Only" = "Len skratky";
+"All Keystrokes" = "Vsetky stlacenia klaves";
+
+/* Recording — Settings Popover */
+"Delay:" = "Oneskorenie:";
+
+/* Video Editor */
+"Copied to clipboard!" = "Skopirovane do schranky!";
+
+/* Webcam Overlay */
+"Webcam Overlay" = "Prekrytie webkamery";
+"Camera Access Required" = "Vyzaduje sa pristup ku kamere";
+"Snaploom needs camera permission for the webcam overlay. Open System Settings to grant access." = "Snaploom potrebuje povolenie kamery pre prekrytie webkamery. Otvorte Nastavenia systemu pre udelenie pristupu.";
+"Webcam" = "Webkamera";
+"Bottom Right" = "Vpravo dole";
+"Bottom Left" = "Vlavo dole";
+"Top Right" = "Vpravo hore";
+"Top Left" = "Vlavo hore";
+"Small" = "Male";
+"Large" = "Velke";
+"Webcam Size Small" = "Male";
+"Webcam Size Medium" = "Stredné";
+"Webcam Size Large" = "Velke";
+"Webcam Size Extra Large" = "Extra velke";
+"Circle" = "Kruh";
+"Rounded Rectangle" = "Zaobleny obdlznik";
+"Cam pos:" = "Poz. kam.:";
+"Cam size:" = "Velk. kam.:";
+"Cam shape:" = "Tvar kam.:";
+
+/* New Strings */
+"Settings..." = "Nastavenia...";
+"Settings" = "Nastavenia";
+"Snaploom Settings" = "Nastavenia Snaploom";
+"Also open in Editor" = "Otvorit aj v editore";
+"Hide controls" = "Skryt ovladacie prvky";
+"Hide recording controls" = "Skryt ovladacie prvky nahravania";
+"Stop recording from the menu bar icon instead." = "Zastavte nahravanie pomocou ikony v liste menu.";
+"Pixelate" = "Pixelovanie";
+"Blur" = "Rozostrenie";
+"Solid" = "Plna";
+"Erase" = "Vymazat";
+"Done" = "Hotovo";
+"Do nothing" = "Nerobit nic";
+"Overlay / Editor Shortcuts" = "Skratky prekrytia / editora";
+"Set" = "Nastavit";
+"Press..." = "Stlacte...";
+"Reset to default" = "Obnovit predvolene";
+"Press a single key to assign it as the shortcut for that tool. These work when the overlay or editor is active." = "Stlacte jednu klavesu pre priradenie ako skratku pre dany nastroj. Funguju, ked je aktivne prekrytie alebo editor.";
+"Keep Separate" = "Ponechat oddelene";
+"Merge Audio" = "Zlucit zvuk";
+"Audio Tracks" = "Zvukove stopy";
+"Adjust volume for each audio track:" = "Upravte hlasitost pre kazdu zvukovu stopu:";
+"Microphone:" = "Mikrofon:";
+"System audio:" = "Systemovy zvuk:";
+"Loupe" = "Lupa";
+"Stamp" = "Peciatka";
+"Unlimited" = "Neobmedzene";
+"Save changes?" = "Ulozit zmeny?";
+"Your annotations will be lost if you close without saving." = "Vase anotacie budu stratene, ak zavriete bez ulozenia.";
+"Save & Close" = "Ulozit a zavriet";
+"Discard" = "Zahodit";
+"Stop Recording" = "Zastavit nahravanie";
+"Pause" = "Pozastavit";
+"Resume" = "Pokracovat";
+"Engine:" = "Engine:";
+"Google Translate" = "Google Translate";
+"Apple (on-device)" = "Apple (na zariadeni)";
+"Apple translation is faster and works offline. Google Translate supports more languages." = "Preklad Apple je rychlejsi a funguje offline. Google Translate podporuje viac jazykov.";
+"Download language packs in System Settings…" = "Stiahnite jazykove balicky v Nastaveniach systemu…";
+"Configure S3 in Settings" = "Nastavte S3 v Nastaveniach";
+"Sign in to Google Drive in Settings" = "Prihlaste sa do Google Drive v Nastaveniach";
+"Offline build: upload and cloud storage integrations are removed. Update checks may still connect to Snaploom's update server. Screenshots and recordings stay local unless you share or save them yourself." = "Offline zostava: integrácie nahrávania a cloudového úložiska sú odstránené. Kontrola aktualizácií sa stále môže pripájať k aktualizačnému serveru Snaploomu. Snímky obrazovky a nahrávky zostávajú lokálne, kým ich sami nezdieľate alebo neuložíte.";
+"Position:" = "Pozicia:";
+"  Position:" = "  Pozicia:";
+"Size:" = "Velkost:";
+"Shape:" = "Tvar:";
+
+"Same as screenshots" = "Rovnaké ako snímky obrazovky";
+"  Preview size:" = "  Veľkosť náhľadu:";
+"(0 = off)" = "(0 = vypnuté)";
+"Clear All" = "Vymazať všetko";
+"Clear History?" = "Vymazať históriu?";
+"This will permanently delete all screenshots from history." = "Týmto sa natrvalo odstránia všetky snímky obrazovky z histórie.";
+"Click \"Set\" and press a key combination with at least one modifier (⌘, ⌥, ⌃, ⇧) to set a shortcut." = "Kliknite na \"Nastaviť\" a stlačte kombináciu klávesov s aspoň jedným modifikátorom (⌘, ⌥, ⌃, ⇧) na nastavenie skratky.";
+"Files are uploaded to a \"Snaploom\" folder in your Google Drive. Everything stays private — nothing is shared publicly." = "Súbory sa nahrajú do priečinka \"Snaploom\" na vašom Google Drive. Všetko zostáva súkromné — nič nie je verejne zdieľané.";
+
+"Pressure" = "Tlak";
+
+/* Added for v4.1.0-beta.3 — video editor, effects, open-video, shortcuts help */
+"Open Video..." = "Otvoriť video...";
+"Choose a video to open in Snaploom editor" = "Vyberte video na otvorenie v editore Snaploom";
+"Click to add effects" = "Kliknutím pridáte efekty";
+"Add Zoom" = "Pridať priblíženie";
+"Add Censor" = "Pridať cenzúru";
+"Add Cut" = "Pridať strih";
+"Add Speed" = "Pridať rýchlosť";
+"Add Freeze" = "Pridať zastavený snímok";
+"Add Text" = "Pridať text";
+"Delete Zoom" = "Odstrániť priblíženie";
+"Delete Censor" = "Odstrániť cenzúru";
+"Delete Cut" = "Odstrániť strih";
+"Delete Speed" = "Odstrániť rýchlosť";
+"Delete Freeze" = "Odstrániť zastavený snímok";
+"Delete Text" = "Odstrániť text";
+"Edit Text…" = "Upraviť text…";
+"Huge" = "Obrovský";
+"Bold" = "Tučné";
+"Italic" = "Kurzíva";
+"Alignment" = "Zarovnanie";
+"Left" = "Vľavo";
+"Center" = "Na stred";
+"Right" = "Vpravo";
+"Text Color" = "Farba textu";
+"Background Color" = "Farba pozadia";
+"Rounded" = "Zaoblené";
+"Custom…" = "Vlastné…";
+"Transparent" = "Priehľadná";
+"Black" = "Čierna";
+"White" = "Biela";
+"Yellow" = "Žltá";
+"Red" = "Červená";
+"Green" = "Zelená";
+"Blue" = "Modrá";
+"Untitled" = "Bez názvu";
+"Add effect" = "Pridať efekt";
+"Fade" = "Prelínanie";
+"High" = "Vysoká";
+"Low" = "Nízka";
+"Not enough room here" = "Tu nie je dosť miesta";
+"Copied!" = "Skopírované!";
+"Converting to GIF…" = "Konvertovanie na GIF…";
+"GIF conversion failed" = "Konverzia GIF zlyhala";
+"No video track found" = "Nenašla sa žiadna video stopa";
+"Preview:" = "Náhľad:";
+"Copy Screen Info" = "Kopírovať informácie o obrazovke";
+"Copies display and capture diagnostics to clipboard" = "Skopíruje diagnostiku displeja a snímania do schránky";
+"Accent" = "Akcent";
+"Icon" = "Ikona";
+"Background" = "Pozadie";
+"Custom" = "Vlastné";
+"Theme:" = "Téma:";
+"Application" = "Aplikácia";
+"Capture area and extract text" = "Zachytiť oblasť a extrahovať text";
+"Capture the full screen" = "Zachytiť celú obrazovku";
+"Counter for multi-screen captures" = "Počítadlo pre snímky z viacerých obrazoviek";
+"8-character random string (e.g. k3j7x9q2)" = "8-znakový náhodný reťazec (napr. k3j7x9q2)";
+"Filename Template Tokens" = "Tokeny šablóny názvu súboru";
+"Filename tokens" = "Tokeny názvu súboru";
+"Filename:" = "Názov súboru:";
+"Open an image file in the editor" = "Otvoriť obrázkový súbor v editore";
+"Open the recent captures overlay" = "Otvoriť prekrytie posledných snímok";
+"Open this settings window" = "Otvoriť toto okno nastavení";
+"Quick capture (uses your Enter action)" = "Rýchle zachytenie (použije vašu akciu Enter)";
+"Re-capture the last selected area" = "Znovu zachytiť poslednú vybranú oblasť";
+"Screenshots only — captured window title (blank otherwise)" = "Len snímky obrazovky — zachytený názov okna (inak prázdne)";
+"Show available filename tokens" = "Zobraziť dostupné tokeny názvu súboru";
+"Show supported URL scheme commands" = "Zobraziť podporované príkazy URL schémy";
+"Start area capture" = "Spustiť zachytenie oblasti";
+"Start area recording" = "Spustiť nahrávanie oblasti";
+"Start full-screen recording" = "Spustiť nahrávanie celej obrazovky";
+"Start scroll capture" = "Spustiť zachytenie posunu";
+"Stop the current recording" = "Zastaviť aktuálne nahrávanie";
+"Supported URL Scheme Commands" = "Podporované príkazy URL schémy";
+"The file extension is appended automatically. Slashes and colons in {window} become dashes." = "Prípona súboru sa pridá automaticky. Lomky a dvojbodky v {window} sa zmenia na pomlčky.";
+"Trigger Snaploom from Raycast, Alfred, Shortcuts, or any tool that opens URLs." = "Spustite Snaploom z Raycast, Alfred, Shortcuts alebo akéhokoľvek nástroja, ktorý otvára URL.";
+"Enable snaploom:// URL scheme" = "Povoliť URL schému snaploom://";
+"URL scheme info" = "Informácie o URL schéme";
+"sec (0 = never)" = "sek (0 = nikdy)";
+
+/* Settings import/export (issues #265, #280) */
+"Settings Backup" = "Záloha nastavení";
+"Export Settings…" = "Exportovať nastavenia…";
+"Import Settings…" = "Importovať nastavenia…";
+"Reveal Settings File in Finder" = "Zobraziť súbor nastavení vo Finderi";
+"Export your preferences to a file to move them to another Mac or a clean install. Upload credentials, your save folder, and screenshot history are not included. Settings are stored inside Snaploom's app container." = "Exportujte svoje predvoľby do súboru, aby ste ich preniesli na iný Mac alebo do čistej inštalácie. Prihlasovacie údaje na nahrávanie, priečinok na ukladanie a história snímok obrazovky nie sú zahrnuté. Nastavenia sú uložené v kontajneri aplikácie Snaploom.";
+"Export Settings" = "Exportovať nastavenia";
+"Import Settings" = "Importovať nastavenia";
+"Import failed" = "Import zlyhal";
+"Settings exported" = "Nastavenia exportované";
+"Settings imported" = "Nastavenia importované";
+"Import" = "Importovať";
+"Later" = "Neskôr";
+"Relaunch Now" = "Reštartovať teraz";
+"Replace your current settings?" = "Nahradiť aktuálne nastavenia?";
+"Importing will replace your current preferences with the ones in this file. Your save folder, upload credentials, and screenshot history are kept. This cannot be undone." = "Import nahradí vaše aktuálne predvoľby tými zo súboru. Priečinok na ukladanie, prihlasovacie údaje na nahrávanie a história snímok obrazovky zostanú zachované. Túto akciu nie je možné vrátiť späť.";
+"%d settings were applied. Relaunch Snaploom to apply all changes." = "Počet použitých nastavení: %d. Reštartujte Snaploom, aby sa prejavili všetky zmeny.";
+"A few large items were too big to include. Everything else was saved." = "Niekoľko veľkých položiek bolo príliš veľkých na zahrnutie. Všetko ostatné bolo uložené.";
+"Your custom Beautify background image was too large to include. Everything else was saved." = "Váš vlastný obrázok pozadia Beautify bol príliš veľký na zahrnutie. Všetko ostatné bolo uložené.";
+"This file is not a valid Snaploom settings file." = "Tento súbor nie je platným súborom nastavení Snaploom.";
+"This settings file contains no settings." = "Tento súbor nastavení neobsahuje žiadne nastavenia.";
+"This settings file was made by a newer version of Snaploom. Please update Snaploom first." = "Tento súbor nastavení bol vytvorený novšou verziou aplikácie Snaploom. Najprv aktualizujte Snaploom.";
+
+/* URL scheme: ocr-translate (issue #283) */
+"Capture, translate, and overlay the text on the image" = "Zachytiť, preložiť a prekryť text na obrázku";
+
+/* URL scheme: edit (PR #272) */
+"Open a history entry in the editor (keeps annotations editable)" = "Otvoriť položku histórie v editore (anotácie zostanú upraviteľné)";
