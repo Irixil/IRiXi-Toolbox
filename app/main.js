@@ -3115,13 +3115,18 @@ function publicTranscriptionConfig() {
   const config = resolveTranscriptionConfig();
   const llmConfig = resolveLlmConfig();
   const settings = readStoredTranscriptionSettings();
+  const hasStoredEncryptedSecret = Boolean(settings.encryptedApiKey || settings.encryptedLlmApiKey);
   return {
     configured: Boolean(config.apiKey),
     asrNeedsReentry: Boolean(settings.encryptedApiKey && !config.apiKey),
     workspaceId: config.workspaceId,
     region: config.region,
     provider: 'qwen3-asr-flash-realtime',
-    secureStorage: safeStorage.isEncryptionAvailable(),
+    // Merely rendering Settings must not unlock Chromium's Safe Storage key.
+    // With no stored secret, availability is checked only when the user saves one.
+    secureStorage: hasStoredEncryptedSecret
+      ? safeStorage.isEncryptionAvailable()
+      : process.platform === 'darwin',
     llmConfigured: Boolean(llmConfig.apiKey),
     llmNeedsReentry: Boolean(settings.encryptedLlmApiKey && !llmConfig.apiKey),
     llmBaseUrl: String(settings.llmBaseUrl || 'https://api.deepseek.com'),

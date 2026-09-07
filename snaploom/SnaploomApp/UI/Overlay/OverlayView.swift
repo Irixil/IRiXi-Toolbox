@@ -12,6 +12,7 @@ protocol OverlayViewDelegate: AnyObject {
     func overlayViewDidRequestSaveAs()
     func overlayViewDidRequestPin()
     func overlayViewDidRequestOCR()
+    func overlayViewDidRequestTranslation()
     func overlayViewDidRequestQuickSave()
     func overlayViewDidRequestFileSave()
     func overlayViewDidRequestUpload()
@@ -726,6 +727,7 @@ class OverlayView: NSView {
     var autoOCRMode: Bool = false  // set by "Capture OCR & QR" menu — triggers OCR immediately after selection
     var autoTranslateOverlayMode: Bool = false  // set by snaploom://ocr-translate — OCR + translate + overlay after selection
     var autoTranslateOverlayLang: String?  // target language for autoTranslateOverlayMode (nil = saved default)
+    var usesExternalTranslationWindow: Bool = false
     var autoQuickSaveMode: Bool = false  // set by "Quick Capture" menu — quick-saves immediately after selection
     var autoScrollCaptureMode: Bool = false  // set by "Scroll Capture" menu — triggers scroll capture immediately after selection
     var autoConfirmMode: Bool = false  // set by "Add Capture" — auto-confirms selection (no toolbars, no save)
@@ -8051,6 +8053,10 @@ class OverlayView: NSView {
         case .delayCapture:
             break
         case .translate:
+            if usesExternalTranslationWindow {
+                overlayDelegate?.overlayViewDidRequestTranslation()
+                return
+            }
             if translateEnabled {
                 // Toggle off: remove overlays, restore original
                 translateEnabled = false

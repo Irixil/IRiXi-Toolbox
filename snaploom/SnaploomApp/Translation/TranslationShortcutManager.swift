@@ -161,7 +161,22 @@ final class TranslationShortcutManager {
         let status = InstallEventHandler(
             GetApplicationEventTarget(),
             { _, event, userData in
-                guard let userData, event != nil else {
+                guard let userData, let event else {
+                    return OSStatus(eventNotHandledErr)
+                }
+                var hotKeyID = EventHotKeyID()
+                let parameterStatus = GetEventParameter(
+                    event,
+                    EventParamName(kEventParamDirectObject),
+                    EventParamType(typeEventHotKeyID),
+                    nil,
+                    MemoryLayout<EventHotKeyID>.size,
+                    nil,
+                    &hotKeyID
+                )
+                guard parameterStatus == noErr,
+                      hotKeyID.signature == TranslationShortcutManager.signature,
+                      hotKeyID.id == 1 else {
                     return OSStatus(eventNotHandledErr)
                 }
                 let manager = Unmanaged<TranslationShortcutManager>

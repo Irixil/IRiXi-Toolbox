@@ -66,6 +66,7 @@ protocol OverlayWindowControllerDelegate: AnyObject {
     func overlayDidConfirm(_ controller: OverlayWindowController, capturedImage: NSImage?, annotationData: CaptureAnnotationData?)
     func overlayDidRequestPin(_ controller: OverlayWindowController, image: NSImage, annotationData: CaptureAnnotationData?)
     func overlayDidRequestOCR(_ controller: OverlayWindowController, result: OCRScanResult, image: NSImage?)
+    func overlayDidRequestTranslation(_ controller: OverlayWindowController, image: NSImage)
     func overlayDidRequestUpload(_ controller: OverlayWindowController, image: NSImage, annotationData: CaptureAnnotationData?)
     func overlayDidRequestStartRecording(
         _ controller: OverlayWindowController, rect: NSRect, screen: NSScreen)
@@ -83,6 +84,10 @@ protocol OverlayWindowControllerDelegate: AnyObject {
     func overlayDidFinishRemoteResize(_ controller: OverlayWindowController, globalRect: NSRect)
     func overlayCrossScreenImage(_ controller: OverlayWindowController) -> NSImage?
     func overlayDidChangeWindowSnapState(_ controller: OverlayWindowController)
+}
+
+extension OverlayWindowControllerDelegate {
+    func overlayDidRequestTranslation(_ controller: OverlayWindowController, image: NSImage) {}
 }
 
 /// Manages one fullscreen overlay per screen.
@@ -300,6 +305,12 @@ class OverlayWindowController {
     /// Set flag so overlay triggers OCR immediately after user makes a selection.
     func setAutoOCRMode() {
         overlayView?.autoOCRMode = true
+    }
+
+    /// Embedded hosts can route the Translate toolbar action to their own
+    /// translation window while standalone Snaploom keeps its in-place overlay.
+    func setExternalTranslationWindowEnabled() {
+        overlayView?.usesExternalTranslationWindow = true
     }
 
     /// Set flag so overlay runs OCR + translate + in-place overlay immediately
@@ -635,6 +646,13 @@ extension OverlayWindowController: OverlayViewDelegate {
                 }
             }
         }
+    }
+
+    func overlayViewDidRequestTranslation() {
+        guard let image = captureRegion() else { return }
+        playCopySound()
+        dismiss()
+        overlayDelegate?.overlayDidRequestTranslation(self, image: image)
     }
 
     func overlayViewDidRequestUpload() {

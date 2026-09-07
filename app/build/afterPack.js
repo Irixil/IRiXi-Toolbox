@@ -1,6 +1,7 @@
 // electron-builder afterPack hook
-// 因为 electron-builder + identity:null 跳过签名，apsar:false 又关闭了 integrity 校验，
-// 这里手动给整个 .app bundle 做 ad-hoc 签名，从内到外，保证 macOS 14+ 启动校验通过。
+// 因为 electron-builder + identity:null 跳过签名，asar:false 又关闭了 integrity 校验，
+// 这里手动从内到外签名。公开构建默认使用 ad-hoc；本机更新可通过
+// IRIXI_CODESIGN_IDENTITY 使用与已安装 App 相同的稳定身份，避免权限身份漂移。
 const { execFileSync } = require('child_process');
 const crypto = require('crypto');
 const path = require('path');
@@ -48,7 +49,9 @@ exports.default = async function afterPack(context) {
   execFileSync('codesign', ['--verify', '--strict', nativeModulePath], { stdio: 'pipe' });
   execFileSync('codesign', ['--verify', '--strict', nativeFrameworkPath], { stdio: 'pipe' });
 
-  console.log(`  • ad-hoc 签名 ${appPath}`);
+  const signingIdentity = String(process.env.IRIXI_CODESIGN_IDENTITY || '-').trim() || '-';
+  const stableLocalSigning = signingIdentity !== '-';
+  console.log(`  • ${stableLocalSigning ? '稳定本机身份' : 'ad-hoc'}签名 ${appPath}`);
 
   // 依次签：所有 dylib → Framework 内 Helpers → Framework binary → Helper apps → Frameworks → 主 bundle
   const entitlementsPath = path.join(projectRoot, 'build', 'entitlements.mac.plist');
@@ -57,7 +60,7 @@ exports.default = async function afterPack(context) {
   const signFailures = [];
   const cs = (file, executable = false) => {
     try {
-      const args = ['--force', '--sign', '-', '--timestamp=none'];
+      const args = ['--force', '--sign', signingIdentity, '--timestamp=none'];
       if (executable) args.push('--options', 'runtime', '--entitlements', entitlementsPath);
       args.push(file);
       execFileSync('codesign', args, { stdio: 'pipe' });
@@ -80,6 +83,21 @@ exports.default = async function afterPack(context) {
   };
 
   const fwDir = path.join(appPath, 'Contents', 'Frameworks');
+
+  // 稳定身份更新时，原生组件也必须先用同一身份签名；签名会改变二进制摘要，
+  // 因此随即刷新包内清单，再由后续外层签名把新清单封住。
+  if (stableLocalSigning) {
+    execFileSync('codesign', [
+      '--force', '--sign', signingIdentity, '--timestamp=none', '--options', 'runtime', nativeModulePath,
+    ], { stdio: 'pipe' });
+    execFileSync('codesign', [
+      '--force', '--sign', signingIdentity, '--timestamp=none', '--options', 'runtime', nativeFrameworkPath,
+    ], { stdio: 'pipe' });
+    nativeModuleManifest.moduleSha256 = digest(nativeModulePath);
+    nativeModuleManifest.frameworkBinarySha256 = digest(nativeFrameworkBinaryPath);
+    nativeModuleManifest.signature = 'stable-local';
+    fs.writeFileSync(nativeModuleManifestPath, `${JSON.stringify(nativeModuleManifest, null, 2)}\n`);
+  }
 
   // 1) 所有 dylib
   walk(fwDir, (n) => n.endsWith('.dylib'), cs);
@@ -138,6 +156,6 @@ exports.default = async function afterPack(context) {
       console.error(`  ✗ 期间有 ${signFailures.length} 个文件签名失败：`);
       for (const failure of signFailures) console.error(`      ${failure}`);
     }
-    throw new Error(`ad-hoc 签名校验失败，产物不可分发：${e.message}`);
+    throw new Error(`${stableLocalSigning ? '稳定本机身份' : 'ad-hoc'}签名校验失败，产物不可分发：${e.message}`);
   }
 };

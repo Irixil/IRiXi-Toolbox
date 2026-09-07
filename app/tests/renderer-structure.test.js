@@ -10,6 +10,18 @@ const effectsJs = fs.readFileSync(path.join(__dirname, '..', 'renderer', 'effect
 const toolsJs = fs.readFileSync(path.join(__dirname, '..', 'renderer', 'tools.js'), 'utf8');
 const preloadJs = fs.readFileSync(path.join(__dirname, '..', 'preload.js'), 'utf8');
 const mainJs = fs.readFileSync(path.join(__dirname, '..', 'main.js'), 'utf8');
+const translationShortcutSwift = fs.readFileSync(
+  path.join(__dirname, '..', '..', 'snaploom', 'SnaploomApp', 'Translation', 'TranslationShortcutManager.swift'),
+  'utf8'
+);
+const nativeCaptureSwift = fs.readFileSync(
+  path.join(__dirname, '..', '..', 'snaploom', 'SnaploomApp', 'IRiXiNative', 'IRiXiRegionCapture.swift'),
+  'utf8'
+);
+const overlayViewSwift = fs.readFileSync(
+  path.join(__dirname, '..', '..', 'snaploom', 'SnaploomApp', 'UI', 'Overlay', 'OverlayView.swift'),
+  'utf8'
+);
 const packageConfig = require(path.join(__dirname, '..', 'package.json'));
 
 test('IRiXi tools is a first-class page backed by narrow preload methods', () => {
@@ -70,6 +82,13 @@ test('IRiXi tools is a first-class page backed by narrow preload methods', () =>
   assert.match(mainJs, /DEFAULT_CAPTURE_SHORTCUT = 'Command\+Shift\+X'/);
   assert.match(mainJs, /globalShortcut\.register\(shortcut, runAreaCaptureShortcut\)/);
   assert.match(mainJs, /function runAreaCaptureShortcut\(\) \{\s*const result = nativeModule\.startAreaCapture\(\)/);
+  assert.match(mainJs, /hasStoredEncryptedSecret[\s\S]*\? safeStorage\.isEncryptionAvailable\(\)[\s\S]*: process\.platform === 'darwin'/);
+  assert.match(translationShortcutSwift, /GetEventParameter\(/);
+  assert.match(translationShortcutSwift, /hotKeyID\.signature == TranslationShortcutManager\.signature/);
+  assert.match(translationShortcutSwift, /hotKeyID\.id == 1/);
+  assert.match(nativeCaptureSwift, /overlay\.setExternalTranslationWindowEnabled\(\)/);
+  assert.match(nativeCaptureSwift, /overlayDidRequestTranslation[\s\S]*IRiXiImageTranslationController\.shared\.translate\(image\)/);
+  assert.match(overlayViewSwift, /usesExternalTranslationWindow[\s\S]*overlayViewDidRequestTranslation\(\)/);
   assert.match(html, /id="settings-capture-shortcut-value"/);
   assert.match(html, /id="settings-capture-shortcut-status"/);
   assert.match(mainJs, /ipcMain\.handle\('native-module:capture-window'/);

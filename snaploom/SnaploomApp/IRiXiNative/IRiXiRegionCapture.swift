@@ -624,6 +624,7 @@ private final class IRiXiCaptureController {
         let capture = captures.first(where: { $0.screen === preferredScreen }) ?? captures[0]
         let overlay = OverlayWindowController(capture: capture)
         overlay.overlayDelegate = self
+        overlay.setExternalTranslationWindowEnabled()
         snaploomOverlays = [overlay]
 
         switch mode {
@@ -907,6 +908,11 @@ extension IRiXiCaptureController: OverlayWindowControllerDelegate {
             text: result.copyText.isEmpty ? "没有识别到文字或二维码。" : result.copyText,
             canCopy: !result.copyText.isEmpty
         )
+    }
+
+    func overlayDidRequestTranslation(_ controller: OverlayWindowController, image: NSImage) {
+        finish()
+        IRiXiImageTranslationController.shared.translate(image)
     }
 
     func overlayDidRequestUpload(

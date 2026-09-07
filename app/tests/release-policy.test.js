@@ -115,6 +115,7 @@ test('local package uses the IRiXi identity and contains no Agent executor resou
   assert.equal(packageConfig.version, '0.4.1');
   assert.equal(packageConfig.build.appId, 'com.irixi.toolbox');
   assert.equal(packageConfig.build.productName, 'IRiXi的小工具库');
+  assert.equal(packageConfig.build.mac.identity, null);
   assert.equal(packageConfig.build.artifactName, 'IRiXi-Toolbox-${version}-${arch}.${ext}');
   assert.deepEqual(packageConfig.build.extraFiles.map((entry) => entry.to), [
     'Frameworks/IRiXiNativeKit.framework',

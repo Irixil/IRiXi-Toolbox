@@ -73,6 +73,7 @@
       "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}"
     ],
     "mac": {
+      "identity": null,
       "category": "public.app-category.productivity",
       "minimumSystemVersion": "13.0",
       "target": [
