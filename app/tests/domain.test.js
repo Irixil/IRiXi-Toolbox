@@ -448,11 +448,18 @@ test('settings stays at the far right when optional tabs are hidden', () => {
 test('settings summary combines safe API status with local device settings', () => {
   assert.equal(typeof settingsSummary, 'function', 'settingsSummary must exist');
   assert.deepEqual(settingsSummary({
-    appSettings: { shortcut: 'Command+Shift+P', autoLaunch: true },
+    appSettings: {
+      shortcut: 'Command+Shift+P',
+      captureShortcut: 'Command+Shift+X',
+      captureShortcutActive: true,
+      autoLaunch: true,
+    },
     workspace: { path: '/Users/test/Panel', portable: true },
     transcription: { configured: true, llmConfigured: false },
   }), {
     shortcut: 'Command+Shift+P',
+    captureShortcut: 'Command+Shift+X',
+    captureShortcutActive: true,
     autoLaunch: true,
     workspacePath: '/Users/test/Panel',
     workspaceLabel: '自定义文件夹',

@@ -103,9 +103,9 @@
         </header>
 
         <div class="shortcut-recorder" id="shortcut-recorder" tabindex="-1" hidden>
-          <span>按下新的唤出快捷键</span>
+          <span id="shortcut-recorder-title">按下新的唤出快捷键</span>
           <kbd id="shortcut-recorder-value">等待输入…</kbd>
-          <small>可直接使用空格；其他按键建议搭配 ⌘ / ⌥ / ⌃ / ⇧</small>
+          <small id="shortcut-recorder-note">可直接使用空格；其他按键建议搭配 ⌘ / ⌥ / ⌃ / ⇧</small>
           <button id="shortcut-recorder-cancel" type="button">取消</button>
         </div>
 
@@ -659,6 +659,10 @@
                   <div class="settings-device-row">
                     <div><span>唤出快捷键</span><strong id="settings-shortcut-value">Space</strong></div>
                     <button id="settings-shortcut-change" type="button">重新设置</button>
+                  </div>
+                  <div class="settings-device-row">
+                    <div><span>区域截图快捷键 · <em id="settings-capture-shortcut-status">读取中…</em></span><strong id="settings-capture-shortcut-value">⌘⇧X</strong></div>
+                    <button id="settings-capture-shortcut-change" type="button">重新设置</button>
                   </div>
                   <div class="settings-device-row settings-workspace-row">
                     <div><span>数据文件夹 · <em id="settings-workspace-kind">默认文件夹</em></span><strong id="settings-workspace-path">读取中…</strong></div>

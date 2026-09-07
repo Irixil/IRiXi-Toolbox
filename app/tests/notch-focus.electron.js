@@ -210,6 +210,7 @@ async function main() {
             features: document.querySelectorAll('[data-settings-feature]').length,
             homeModules: document.querySelectorAll('[data-settings-home-module]').length,
             shortcut: Boolean(document.getElementById('settings-shortcut-change')),
+            captureShortcut: Boolean(document.getElementById('settings-capture-shortcut-change')),
             workspace: Boolean(document.getElementById('settings-workspace-choose')),
             autoLaunch: Boolean(document.getElementById('settings-auto-launch')),
           });
@@ -229,6 +230,7 @@ async function main() {
       features: 4,
       homeModules: 7,
       shortcut: true,
+      captureShortcut: true,
       workspace: false,
       autoLaunch: true,
     });

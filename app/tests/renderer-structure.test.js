@@ -35,6 +35,7 @@ test('IRiXi tools is a first-class page backed by narrow preload methods', () =>
   assert.match(preloadJs, /openNativeTestWindow: \(\) => ipcRenderer\.invoke\('native-module:test-window-open'\)/);
   assert.match(preloadJs, /closeNativeTestWindow: \(\) => ipcRenderer\.invoke\('native-module:test-window-close'\)/);
   assert.match(preloadJs, /startNativeAreaCapture: \(\) => ipcRenderer\.invoke\('native-module:capture-area'\)/);
+  assert.match(preloadJs, /setCaptureShortcut: \(accelerator\) => ipcRenderer\.invoke\('settings:set-capture-shortcut', accelerator\)/);
   assert.match(preloadJs, /startNativeWindowCapture: \(\) => ipcRenderer\.invoke\('native-module:capture-window'\)/);
   assert.match(preloadJs, /startNativeFullscreenCapture: \(\) => ipcRenderer\.invoke\('native-module:capture-fullscreen'\)/);
   assert.match(preloadJs, /startNativeOCRCapture: \(\) => ipcRenderer\.invoke\('native-module:capture-ocr'\)/);
@@ -66,6 +67,11 @@ test('IRiXi tools is a first-class page backed by narrow preload methods', () =>
   assert.match(toolsJs, /currentStatus\.textContent = toolStateLabel\(tool\)/);
   assert.doesNotMatch(mainJs, /app\.whenReady\(\)[\s\S]*nativeHelper\.start\(\)/);
   assert.match(mainJs, /ipcMain\.handle\('native-module:capture-area'/);
+  assert.match(mainJs, /DEFAULT_CAPTURE_SHORTCUT = 'Command\+Shift\+X'/);
+  assert.match(mainJs, /globalShortcut\.register\(shortcut, runAreaCaptureShortcut\)/);
+  assert.match(mainJs, /function runAreaCaptureShortcut\(\) \{\s*const result = nativeModule\.startAreaCapture\(\)/);
+  assert.match(html, /id="settings-capture-shortcut-value"/);
+  assert.match(html, /id="settings-capture-shortcut-status"/);
   assert.match(mainJs, /ipcMain\.handle\('native-module:capture-window'/);
   assert.match(mainJs, /ipcMain\.handle\('native-module:capture-fullscreen'/);
   assert.match(mainJs, /ipcMain\.handle\('native-module:capture-ocr'/);

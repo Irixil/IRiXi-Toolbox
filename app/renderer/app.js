@@ -684,6 +684,13 @@ if (window.notchAPI && typeof window.notchAPI.onOpenClip === 'function') {
   });
 }
 
+if (window.notchAPI && typeof window.notchAPI.onOpenTools === 'function') {
+  window.notchAPI.onOpenTools(async () => {
+    await setActiveTab('tools');
+    if (!isExpanded) await setMode(true);
+  });
+}
+
 // 布局度量（主进程按屏计算下发）：折叠条高 / 菜单栏占位高 / 各 Tab 目标尺寸
 let layoutMetrics = null;
 
@@ -879,9 +886,12 @@ Array.from(document.querySelectorAll('.tab[data-tab]')).forEach((btn) => {
 // 托盘里的“设置快捷键…”会把设置入口以内联浮层放到面板中。
 // 这里绑定所有 Tab（包括启动时隐藏的剪贴板），避免功能启用后按钮仍没有事件。
 const shortcutRecorder = document.getElementById('shortcut-recorder');
+const shortcutRecorderTitle = document.getElementById('shortcut-recorder-title');
 const shortcutRecorderValue = document.getElementById('shortcut-recorder-value');
+const shortcutRecorderNote = document.getElementById('shortcut-recorder-note');
 const shortcutRecorderCancel = document.getElementById('shortcut-recorder-cancel');
 let shortcutRecorderActive = false;
+let shortcutRecorderKind = 'panel';
 
 function closeShortcutRecorder() {
   shortcutRecorderActive = false;
@@ -922,26 +932,47 @@ shortcutRecorder?.addEventListener('keydown', async (event) => {
     if (shortcutRecorderValue) shortcutRecorderValue.textContent = '单键仅支持空格';
     return;
   }
+  if (shortcutRecorderKind === 'capture' && accelerator === 'Space') {
+    if (shortcutRecorderValue) shortcutRecorderValue.textContent = '截图快捷键需要组合按键';
+    return;
+  }
   if (shortcutRecorderValue) shortcutRecorderValue.textContent = accelerator;
-  const result = await window.notchAPI?.setPanelShortcut?.(accelerator).catch(() => ({ ok: false }));
+  const setter = shortcutRecorderKind === 'capture'
+    ? window.notchAPI?.setCaptureShortcut
+    : window.notchAPI?.setPanelShortcut;
+  const result = await setter?.(accelerator).catch(() => ({ ok: false }));
   if (!result?.ok) {
     if (shortcutRecorderValue) shortcutRecorderValue.textContent = result?.error === 'occupied' ? '该快捷键已被占用' : '无法使用该快捷键';
     return;
   }
-  showStatusToast(`快捷键已设为 ${accelerator}`);
+  const label = shortcutRecorderKind === 'capture' ? '区域截图快捷键' : '唤出快捷键';
+  showStatusToast(`${label}已设为 ${accelerator}`);
   setTimeout(closeShortcutRecorder, 420);
 });
 
 shortcutRecorderCancel?.addEventListener('click', closeShortcutRecorder);
-function openShortcutRecorder() {
+function openShortcutRecorder(kind = 'panel') {
   if (!isExpanded) setMode(true);
+  shortcutRecorderKind = kind === 'capture' ? 'capture' : 'panel';
   shortcutRecorderActive = true;
   shortcutRecorder.hidden = false;
+  if (shortcutRecorderTitle) {
+    shortcutRecorderTitle.textContent = shortcutRecorderKind === 'capture'
+      ? '按下新的区域截图快捷键'
+      : '按下新的唤出快捷键';
+  }
+  if (shortcutRecorderNote) {
+    shortcutRecorderNote.textContent = shortcutRecorderKind === 'capture'
+      ? '请搭配 ⌘ / ⌥ / ⌃ / ⇧，避免输入文字时误触'
+      : '可直接使用空格；其他按键建议搭配 ⌘ / ⌥ / ⌃ / ⇧';
+  }
   shortcutRecorderValue.textContent = '等待输入…';
   requestAnimationFrame(() => shortcutRecorder.focus({ preventScroll: true }));
 }
-window.notchAPI?.onRecordShortcut?.(openShortcutRecorder);
-document.addEventListener('notch:record-shortcut', openShortcutRecorder);
+window.notchAPI?.onRecordShortcut?.(() => openShortcutRecorder('panel'));
+window.notchAPI?.onRecordCaptureShortcut?.(() => openShortcutRecorder('capture'));
+document.addEventListener('notch:record-shortcut', () => openShortcutRecorder('panel'));
+document.addEventListener('notch:record-capture-shortcut', () => openShortcutRecorder('capture'));
 document.addEventListener('notch:collapse-request', () => {
   if (isExpanded) setMode(false);
 });

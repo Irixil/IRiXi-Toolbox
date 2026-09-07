@@ -216,6 +216,7 @@ const RECORDINGS_DIR_NAME = 'recordings';
 const TRANSCRIPTION_SETTINGS_FILE = 'transcription-settings.json';
 const CREDENTIALS_VAULT_FILE = 'credentials.vault.json';
 const APP_SETTINGS_FILE = 'app-settings.json';
+const DEFAULT_CAPTURE_SHORTCUT = 'Command+Shift+X';
 const AGENT_REMINDER_SETTINGS_FILE = 'agent-reminder.json';
 const WORKSPACE_SETTINGS_FILE = 'workspace-settings.json';
 const WORKSPACE_DATA_FILE = 'workspace.json';
@@ -301,6 +302,7 @@ let clipPollingGeneration = 0;
 let spaceShortcutTimer = null;
 let spaceShortcutRegistered = false;
 let configuredShortcut = '';
+let configuredCaptureShortcut = '';
 let previousPasteTarget = null;
 let windowScanCache = new Map();
 const windowIconCache = new Map();
@@ -1253,11 +1255,20 @@ function readAppSettings() {
       credentials: false,
     },
     shortcut: isValidPanelShortcut(stored.shortcut) ? stored.shortcut : 'Space',
+    captureShortcut: isValidCaptureShortcut(stored.captureShortcut)
+      ? stored.captureShortcut
+      : DEFAULT_CAPTURE_SHORTCUT,
   };
 }
 
 function publicAppSettings() {
-  return { ...readAppSettings(), autoLaunch: isAutoLaunchEnabled() };
+  const settings = readAppSettings();
+  return {
+    ...settings,
+    autoLaunch: isAutoLaunchEnabled(),
+    captureShortcutActive: configuredCaptureShortcut === settings.captureShortcut
+      && globalShortcut.isRegistered(settings.captureShortcut),
+  };
 }
 
 function saveAppSettings(settings) {
@@ -1382,6 +1393,41 @@ function setPanelShortcut(shortcut) {
   return false;
 }
 
+function isValidCaptureShortcut(shortcut) {
+  return shortcut !== 'Space' && isValidPanelShortcut(shortcut);
+}
+
+function runAreaCaptureShortcut() {
+  const result = nativeModule.startAreaCapture();
+  if (result?.ok || result?.error === 'busy') return;
+  openRendererPanel('app:open-tools');
+}
+
+function registerCaptureShortcut(shortcut) {
+  try {
+    return globalShortcut.register(shortcut, runAreaCaptureShortcut);
+  } catch (error) {
+    return false;
+  }
+}
+
+function setCaptureShortcut(shortcut) {
+  if (!isValidCaptureShortcut(shortcut)) return false;
+  const previousShortcut = configuredCaptureShortcut;
+  if (previousShortcut && globalShortcut.isRegistered(previousShortcut)) {
+    globalShortcut.unregister(previousShortcut);
+  }
+  if (registerCaptureShortcut(shortcut)) {
+    configuredCaptureShortcut = shortcut;
+    return true;
+  }
+  configuredCaptureShortcut = '';
+  if (previousShortcut && registerCaptureShortcut(previousShortcut)) {
+    configuredCaptureShortcut = previousShortcut;
+  }
+  return false;
+}
+
 function applyAppSettings() {
   const settings = readAppSettings();
   applyFeatureServices(settings.features);
@@ -1390,6 +1436,7 @@ function applyAppSettings() {
     saveAppSettings(settings);
     setPanelShortcut('Space');
   }
+  setCaptureShortcut(settings.captureShortcut);
   if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('settings:changed', publicAppSettings());
 }
 
@@ -1576,6 +1623,21 @@ ipcMain.handle('settings:set-shortcut', (event, accelerator) => {
   if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('settings:changed', publicAppSettings());
   refreshTrayMenu();
   return { ok: true, shortcut: accelerator };
+});
+ipcMain.handle('settings:set-capture-shortcut', (event, accelerator) => {
+  if (!isValidCaptureShortcut(accelerator)) return { ok: false, error: 'invalid' };
+  const previousShortcut = readAppSettings().captureShortcut;
+  if (!setCaptureShortcut(accelerator)) return { ok: false, error: 'occupied' };
+  const next = readAppSettings();
+  next.captureShortcut = accelerator;
+  if (!saveAppSettings(next)) {
+    setCaptureShortcut(previousShortcut);
+    return { ok: false, error: 'save_failed' };
+  }
+  const settings = publicAppSettings();
+  if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('settings:changed', settings);
+  refreshTrayMenu();
+  return { ok: true, shortcut: accelerator, settings };
 });
 ipcMain.handle('workspace:get', () => ({ path: workspaceRoot(), portable: workspaceRoot() !== app.getPath('userData') }));
 ipcMain.handle('workspace:load-data', () => {

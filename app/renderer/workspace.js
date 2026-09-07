@@ -731,6 +731,9 @@
   const settingsMirrorChoose = document.getElementById('settings-mirror-choose');
   const settingsShortcutValue = document.getElementById('settings-shortcut-value');
   const settingsShortcutChange = document.getElementById('settings-shortcut-change');
+  const settingsCaptureShortcutValue = document.getElementById('settings-capture-shortcut-value');
+  const settingsCaptureShortcutStatus = document.getElementById('settings-capture-shortcut-status');
+  const settingsCaptureShortcutChange = document.getElementById('settings-capture-shortcut-change');
   const settingsWorkspaceKind = document.getElementById('settings-workspace-kind');
   const settingsWorkspacePath = document.getElementById('settings-workspace-path');
   const settingsWorkspaceOpen = document.getElementById('settings-workspace-open');
@@ -941,6 +944,10 @@
       settingsLlmStatus.dataset.state = summary.llm.state;
     }
     if (settingsShortcutValue) settingsShortcutValue.textContent = summary.shortcut;
+    if (settingsCaptureShortcutValue) settingsCaptureShortcutValue.textContent = summary.captureShortcut;
+    if (settingsCaptureShortcutStatus) {
+      settingsCaptureShortcutStatus.textContent = summary.captureShortcutActive ? '已启用' : '被其他软件占用';
+    }
     if (settingsWorkspaceKind) settingsWorkspaceKind.textContent = summary.workspaceLabel;
     if (settingsWorkspacePath) {
       settingsWorkspacePath.textContent = summary.workspacePath || '默认数据目录';
@@ -1700,6 +1707,9 @@
   });
   settingsShortcutChange?.addEventListener('click', () => {
     document.dispatchEvent(new CustomEvent('notch:record-shortcut'));
+  });
+  settingsCaptureShortcutChange?.addEventListener('click', () => {
+    document.dispatchEvent(new CustomEvent('notch:record-capture-shortcut'));
   });
   settingsWorkspaceOpen?.addEventListener('click', () => {
     window.notchAPI?.openWorkspace?.().catch(() => setSettingsNote('无法打开数据文件夹。', true));
