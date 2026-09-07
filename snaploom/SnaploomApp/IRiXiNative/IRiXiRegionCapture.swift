@@ -1,11 +1,7 @@
 import AppKit
-import Combine
 import CoreGraphics
-import NaturalLanguage
-import SwiftUI
 import UniformTypeIdentifiers
 import Vision
-@preconcurrency import Translation
 
 private enum IRiXiCaptureMode: Sendable {
     case area
@@ -524,121 +520,27 @@ private final class IRiXiOCRResultController {
     }
 }
 
-@available(macOS 15.0, *)
-@MainActor
-private final class IRiXiAppleTranslationBridge: ObservableObject {
-    static let shared = IRiXiAppleTranslationBridge()
-
-    @Published var configuration: TranslationSession.Configuration?
-    private var hostingView: NSView?
-    private var pendingText = ""
-    private var pendingCompletion: ((Result<String, Error>) -> Void)?
-    private var translationID: UUID?
-
-    func translate(
-        text: String,
-        configuration: TranslationSession.Configuration,
-        completion: @escaping (Result<String, Error>) -> Void
-    ) {
-        cleanup()
-        let requestID = UUID()
-        translationID = requestID
-        pendingText = text
-        pendingCompletion = completion
-
-        let hosting = NSHostingView(rootView: IRiXiTranslationBridgeView(bridge: self))
-        hosting.frame = NSRect(x: -2, y: -2, width: 1, height: 1)
-        NSApp.windows.first(where: { $0.isVisible })?.contentView?.addSubview(hosting)
-        hostingView = hosting
-        self.configuration = configuration
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 120) { [weak self] in
-            guard let self, self.translationID == requestID, let completion = self.pendingCompletion else { return }
-            self.cleanup()
-            completion(.failure(IRiXiTranslationError.failed("Apple 本机翻译等待超时，请确认语言包可用后重试。")))
-        }
-    }
-
-    func sessionReady(_ session: TranslationSession) {
-        guard let completion = pendingCompletion else { return }
-        let text = pendingText
-        let requestID = translationID
-        Task {
-            do {
-                try await session.prepareTranslation()
-                let response = try await session.translate(text)
-                await MainActor.run {
-                    guard self.translationID == requestID else { return }
-                    self.cleanup()
-                    completion(.success(response.targetText))
-                }
-            } catch {
-                await MainActor.run {
-                    guard self.translationID == requestID else { return }
-                    self.cleanup()
-                    completion(.failure(IRiXiTranslationError.failed(error.localizedDescription)))
-                }
-            }
-        }
-    }
-
-    private func cleanup() {
-        hostingView?.removeFromSuperview()
-        hostingView = nil
-        pendingText = ""
-        pendingCompletion = nil
-        configuration = nil
-        translationID = nil
-    }
-}
-
-@available(macOS 15.0, *)
-private struct IRiXiTranslationBridgeView: View {
-    @ObservedObject var bridge: IRiXiAppleTranslationBridge
-
-    var body: some View {
-        Color.clear
-            .frame(width: 1, height: 1)
-            .translationTask(bridge.configuration) { session in
-                await MainActor.run {
-                    bridge.sessionReady(session)
-                }
-            }
-    }
-}
-
-private enum IRiXiTranslationError: LocalizedError {
-    case failed(String)
-
-    var errorDescription: String? {
-        switch self {
-        case .failed(let message): return message
-        }
-    }
-}
-
 @MainActor
 private final class IRiXiImageTranslationController {
     static let shared = IRiXiImageTranslationController()
 
     func translate(_ image: NSImage) {
+        let translationCoordinator = IRiXiTranslationCoordinator.shared
+        let requestID = translationCoordinator.beginImageTranslation()
         guard #available(macOS 15.0, *) else {
-            IRiXiOCRResultController.shared.show(
-                title: "IRiXi 图片翻译",
-                text: "图片翻译需要 macOS 15 或更高版本。",
-                canCopy: false
+            translationCoordinator.failImageTranslation(
+                requestID: requestID,
+                message: "截图翻译需要 macOS 15 或更高版本。"
             )
             return
         }
 
-        IRiXiOCRResultController.shared.show(
-            title: "IRiXi 图片翻译",
-            text: "正在识别图片文字…",
-            canCopy: false
-        )
         var proposedRect = NSRect(origin: .zero, size: image.size)
         guard let cgImage = image.cgImage(forProposedRect: &proposedRect, context: nil, hints: nil) else {
-            showFailure("没有读到截图内容，请重新选择。")
+            translationCoordinator.failImageTranslation(
+                requestID: requestID,
+                message: "没有读到截图内容，请重新选择。"
+            )
             return
         }
 
@@ -659,66 +561,25 @@ private final class IRiXiImageTranslationController {
                     .compactMap { $0.topCandidates(1).first?.string }
                     .joined(separator: "\n")
                     .trimmingCharacters(in: .whitespacesAndNewlines)
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
+                DispatchQueue.main.async {
                     guard !text.isEmpty else {
-                        self.showFailure("没有识别到可翻译的文字。")
+                        translationCoordinator.failImageTranslation(
+                            requestID: requestID,
+                            message: "没有识别到可翻译的文字。"
+                        )
                         return
                     }
-                    self.startAppleTranslation(text)
+                    translationCoordinator.finishImageTranslation(requestID: requestID, text: text)
                 }
             } catch {
-                DispatchQueue.main.async { [weak self] in
-                    self?.showFailure("文字识别没有完成，请重新选择清晰一些的区域。")
+                DispatchQueue.main.async {
+                    translationCoordinator.failImageTranslation(
+                        requestID: requestID,
+                        message: "文字识别没有完成，请重新选择清晰一些的区域。"
+                    )
                 }
             }
         }
-    }
-
-    @available(macOS 15.0, *)
-    private func startAppleTranslation(_ sourceText: String) {
-        let recognizer = NLLanguageRecognizer()
-        recognizer.processString(sourceText)
-        guard let detected = recognizer.dominantLanguage else {
-            showFailure("文字太短，无法判断语言，请选择更完整的一段。")
-            return
-        }
-
-        let isChinese = detected == .simplifiedChinese || detected == .traditionalChinese
-        let source = Locale.Language(identifier: detected.rawValue)
-        let target = Locale.Language(identifier: isChinese ? "en" : "zh-Hans")
-        let direction = isChinese ? "中文 → 英文" : "自动识别 → 简体中文"
-
-        IRiXiOCRResultController.shared.show(
-            title: "IRiXi 图片翻译",
-            text: "正在使用 Apple 本机翻译（\(direction)）…",
-            canCopy: false
-        )
-        let configuration = TranslationSession.Configuration(source: source, target: target)
-        IRiXiAppleTranslationBridge.shared.translate(
-            text: sourceText,
-            configuration: configuration
-        ) { [weak self] result in
-            switch result {
-            case .success(let translated):
-                let output = "原文\n\(sourceText)\n\n译文（\(direction)）\n\(translated)"
-                IRiXiOCRResultController.shared.show(
-                    title: "IRiXi 图片翻译",
-                    text: output,
-                    canCopy: true
-                )
-            case .failure(let error):
-                self?.showFailure("Apple 本机翻译没有完成：\(error.localizedDescription)")
-            }
-        }
-    }
-
-    private func showFailure(_ message: String) {
-        IRiXiOCRResultController.shared.show(
-            title: "IRiXi 图片翻译",
-            text: message,
-            canCopy: false
-        )
     }
 }
 

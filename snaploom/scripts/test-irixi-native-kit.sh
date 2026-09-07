@@ -47,6 +47,23 @@ grep 'overlay.setAutoTranslateOverlayMode' "$project_root/SnaploomApp/IRiXiNativ
 grep 'return \[.pin, .ocr, .translate\]' "$project_root/SnaploomApp/UI/Toolbar/ToolbarDefinitions.swift" >/dev/null
 grep 'SnaploomApp/UI/Overlay/' "$project_root/scripts/build-irixi-native-kit.sh" >/dev/null
 
+# Screenshot translation must reuse the full translation/speech window. A
+# second OCR result window or translation bridge would split the feature again.
+region_capture="$project_root/SnaploomApp/IRiXiNative/IRiXiRegionCapture.swift"
+translation_coordinator="$project_root/SnaploomApp/IRiXiNative/IRiXiTranslationCoordinator.swift"
+grep 'beginImageTranslation()' "$region_capture" >/dev/null
+grep 'finishImageTranslation(requestID: requestID, text: text)' "$region_capture" >/dev/null
+grep 'failImageTranslation(' "$region_capture" >/dev/null
+grep 'showImageRecognitionPending' "$translation_coordinator" >/dev/null
+if sed -n '/private final class IRiXiImageTranslationController/,/^}/p' "$region_capture" | grep 'IRiXiOCRResultController' >/dev/null; then
+  echo 'screenshot translation must not use the standalone OCR result window' >&2
+  exit 1
+fi
+if grep 'IRiXiAppleTranslationBridge' "$region_capture" >/dev/null; then
+  echo 'unexpected duplicate screenshot translation bridge' >&2
+  exit 1
+fi
+
 if nm -gU "$binary" | grep 'NativeHelperServer' >/dev/null; then
   echo 'unexpected helper server symbol' >&2
   exit 1

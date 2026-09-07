@@ -2,8 +2,8 @@ import AppKit
 import NaturalLanguage
 @preconcurrency import Translation
 
-/// Input translation stays entirely inside the native helper. Source text and
-/// translated text are never returned through the helper's JSONL status pipe.
+/// Translation stays entirely inside the IRiXi host process. Source text and
+/// translated text never leave the application.
 @MainActor
 final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, NSTextViewDelegate {
     static let partnerDefaultsKey = "irixi.translation.partner"
@@ -23,6 +23,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     private let copyButton = NSButton(title: "复制译文", target: nil, action: nil)
     private let shortcutRecorder: TranslationShortcutRecorderButton
     private let speechController = TranslationSpeechPlaybackController()
+    private let onUserTextChange: () -> Void
 
     private var partner = "en"
     private var translationID = UUID()
@@ -31,9 +32,11 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     private var pendingAutomaticTranslation: DispatchWorkItem?
 
     init(
-        onShortcutChange: @escaping (TranslationShortcutDefinition) -> Bool
+        onShortcutChange: @escaping (TranslationShortcutDefinition) -> Bool,
+        onUserTextChange: @escaping () -> Void = {}
     ) {
         shortcutRecorder = TranslationShortcutRecorderButton()
+        self.onUserTextChange = onUserTextChange
         window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 620, height: 500),
             styleMask: [.titled, .closable, .miniaturizable, .resizable],
@@ -55,6 +58,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
 
     func show(partner: String) {
         setPartner(partner)
+        translateButton.isEnabled = true
         NSApp.activate(ignoringOtherApps: true)
         window.makeKeyAndOrderFront(nil)
         window.center()
@@ -65,6 +69,21 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         show(partner: partner)
         sourceTextView.string = text
         translate()
+    }
+
+    func showImageRecognitionPending(partner: String) {
+        show(partner: partner)
+        resetForImageRecognition()
+        translateButton.isEnabled = false
+        setSteadyStatus("正在识别截图中的文字…")
+    }
+
+    func showImageRecognitionFailure(_ message: String, partner: String) {
+        show(partner: partner)
+        resetForImageRecognition()
+        setSteadyStatus(message + "可以在上方手动输入或粘贴后重试。")
+        window.makeFirstResponder(sourceTextView)
+        NSSound.beep()
     }
 
     func showSelectionError(_ error: TranslationSelectionError, partner: String) {
@@ -87,7 +106,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     }
 
     private func configureWindow() {
-        window.title = "IRiXi 输入翻译"
+        window.title = "IRiXi 翻译与朗读"
         window.isReleasedWhenClosed = false
         window.minSize = NSSize(width: 520, height: 430)
         window.delegate = self
@@ -205,6 +224,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
 
     func textDidChange(_ notification: Notification) {
         guard (notification.object as? NSTextView) === sourceTextView else { return }
+        onUserTextChange()
         pendingAutomaticTranslation?.cancel()
         translationID = UUID()
 
@@ -335,7 +355,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
                 ) == "en"
                 self.englishSpeechText = sourceIsEnglish ? text : targetIsEnglish ? translated : ""
                 self.speechButton.isEnabled = !self.englishSpeechText.isEmpty
-                self.setSteadyStatus("翻译完成 · 文字只在本机助手中处理")
+                self.setSteadyStatus("翻译完成 · 文字只在 IRiXi 本机处理")
             case .failure:
                 self.resultTextView.string = ""
                 self.englishSpeechText = ""
@@ -383,6 +403,21 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
 
     private func stopSpeech() {
         speechController.stop()
+    }
+
+    private func resetForImageRecognition() {
+        pendingAutomaticTranslation?.cancel()
+        pendingAutomaticTranslation = nil
+        translationID = UUID()
+        if #available(macOS 15.0, *) {
+            TranslationBridge.shared.cancel()
+        }
+        stopSpeech()
+        sourceTextView.string = ""
+        resultTextView.string = ""
+        englishSpeechText = ""
+        copyButton.isEnabled = false
+        speechButton.isEnabled = false
     }
 
     private func setSteadyStatus(_ value: String) {
