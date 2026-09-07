@@ -51,8 +51,8 @@ const {
   screenRecordingProbePolicy,
   taskNotificationWindowPolicy,
   updateFeaturePreference,
-  controlSodaMusic,
-  sodaShortcutSpec,
+  controlNeteaseMusic,
+  neteaseMenuSpec,
   selectTranscriptionSettings,
   createWorkspacePersistenceGate,
   hoverSpacePollingPolicy,
@@ -232,7 +232,7 @@ const nativeModule = createNativeModuleManager({
   execPath: process.execPath,
 });
 const BUNDLED_COUNTER_PATH = path.join(__dirname, 'bundled-tools', 'sample-counter.irixi-tool');
-const SODA_MUSIC_APP = '/Applications/汽水音乐.app';
+const NETEASE_MUSIC_APP = '/Applications/NeteaseMusic.app';
 const TRANSCRIPTION_MODEL = 'qwen3-asr-flash-realtime';
 const TRANSCRIPTION_SAMPLE_RATE = 16000;
 const TRANSCRIPTION_FINISH_TIMEOUT_MS = 7000;
@@ -267,7 +267,7 @@ let isQuitting = false;
 let mediaPermissionRequests = 0;
 let transientSystemInteractionRequests = 0;
 let cameraBlurDeferred = false;
-let sodaMusicPlaying = false;
+let neteaseMusicPlaying = false;
 
 let notificationWindow = null;
 let notificationWindowReady = false;
@@ -2181,7 +2181,7 @@ ipcMain.handle('shell:open-privacy-settings', (event, pane) => {
 // ============ 启动时的权限自检 ============
 // DMG 装的是全新二进制，TCC 授权不会从开发版继承，而这几项缺失时的表现都是「静默失效」：
 // 缺「屏幕录制」→ CGWindowList 照样返回窗口但标题全空，当前窗口看起来像真的没窗口；
-// 缺「辅助功能」→ 枚举、聚焦窗口和汽水音乐发按键全部无效。
+// 缺「辅助功能」→ 枚举、聚焦窗口和网易云音乐菜单控制全部无效。
 // 系统对前者根本不弹提示，所以只能由应用自己说，否则用户完全无从下手。
 const PERMISSION_PROMPT_SKIP_FILE = 'permission-prompt-skipped';
 
@@ -2220,7 +2220,7 @@ async function promptForMissingPermissions() {
     type: 'info',
     message: `IRiXi的小工具库需要「${names.join('」和「')}」权限`,
     detail: [
-      '缺少这些权限时，「当前窗口」会读不到任何窗口，汽水音乐的播放控制也不会生效。',
+      '缺少这些权限时，「当前窗口」会读不到任何窗口，网易云音乐的播放控制也不会生效。',
       '',
       '授权后需要重新启动 IRiXi的小工具库才会生效。',
       'ad-hoc 签名的应用每次重新打包都要重新授权一次，这是没有开发者账号分发的固有限制。',
@@ -2952,89 +2952,104 @@ ipcMain.handle('credentials:copy', async (event, payload) => {
   return true;
 });
 
-function sodaMusicRunning() {
+function neteaseMusicRunning() {
   return new Promise((resolve) => {
-    execFile('/usr/bin/pgrep', ['-f', '^/Applications/汽水音乐\\.app/Contents/MacOS/汽水音乐$'], { timeout: 1500 }, (error) => resolve(!error));
+    execFile('/usr/bin/pgrep', ['-f', '^/Applications/NeteaseMusic\\.app/Contents/MacOS/NeteaseMusic$'], { timeout: 1500 }, (error) => resolve(!error));
   });
 }
 
-function launchSodaMusic() {
+function launchNeteaseMusic() {
   return new Promise((resolve) => {
     const cleanEnvironment = { ...process.env };
     delete cleanEnvironment.ELECTRON_RUN_AS_NODE;
     cleanEnvironment.XPC_SERVICE_NAME = '0';
     execFile(
       '/usr/bin/open',
-      [SODA_MUSIC_APP],
+      [NETEASE_MUSIC_APP],
       { timeout: 4000, env: cleanEnvironment },
       (error) => resolve(!error)
     );
   });
 }
 
-const SODA_SHORTCUT_JXA = `
+const NETEASE_CONTROL_JXA = `
 function run(argv) {
-  const keyCode = Number(argv[0]);
-  const usesCommand = String(argv[1] || '') === '1';
-  const dismissOverlays = String(argv[2] || '') === '1';
-  const processes = Application('System Events').applicationProcesses.whose({ bundleIdentifier: 'com.soda.music' })();
+  const action = String(argv[0] || '');
+  const processes = Application('System Events').applicationProcesses.whose({ bundleIdentifier: 'com.netease.163music' })();
   if (!processes.length) return 'missing';
-  processes[0].frontmost = true;
-  delay(0.35);
-  const systemEvents = Application('System Events');
-  if (!Number.isFinite(keyCode)) return 'invalid';
-  if (dismissOverlays) {
-    systemEvents.keyCode(53);
-    delay(0.15);
+  const process = processes[0];
+  const menus = ['控制', 'Control'];
+  let controlMenu = null;
+  for (let index = 0; index < menus.length; index += 1) {
+    const menuBarItem = process.menuBars[0].menuBarItems.byName(menus[index]);
+    if (menuBarItem.exists()) {
+      controlMenu = menuBarItem.menus[0];
+      break;
+    }
   }
-  if (usesCommand) systemEvents.keyCode(keyCode, { using: 'command down' });
-  else systemEvents.keyCode(keyCode);
-  return 'ok';
+  if (!controlMenu) return 'menu_missing';
+
+  const specs = {
+    play: { trigger: ['播放', 'Play'], already: ['暂停', 'Pause'], playing: '1' },
+    pause: { trigger: ['暂停', 'Pause'], already: ['播放', 'Play'], playing: '0' },
+    next: { trigger: ['下一个', 'Next'], already: [], playing: '1' },
+    previous: { trigger: ['上一个', 'Previous'], already: [], playing: '1' },
+  };
+  const spec = specs[action];
+  if (!spec) return 'invalid';
+  for (let index = 0; index < spec.trigger.length; index += 1) {
+    const item = controlMenu.menuItems.byName(spec.trigger[index]);
+    if (item.exists()) {
+      item.click();
+      return 'ok:' + spec.playing;
+    }
+  }
+  for (let index = 0; index < spec.already.length; index += 1) {
+    if (controlMenu.menuItems.byName(spec.already[index]).exists()) return 'ok:' + spec.playing;
+  }
+  return 'item_missing';
 }`;
 
-async function sendSodaShortcut(action) {
+async function sendNeteaseControl(action) {
   if (process.platform !== 'darwin') return { ok: false, error: 'unsupported' };
   if (!systemPreferences.isTrustedAccessibilityClient(true)) {
     return { ok: false, error: 'accessibility_permission_required' };
   }
-  const shortcut = sodaShortcutSpec(action);
-  if (!shortcut) return { ok: false, error: 'invalid_action' };
+  if (!neteaseMenuSpec(action)) return { ok: false, error: 'invalid_action' };
   try {
-    const result = await runJxa(SODA_SHORTCUT_JXA, [
-      shortcut.keyCode,
-      shortcut.command ? '1' : '0',
-      shortcut.dismissOverlays ? '1' : '0',
-    ]);
-    return result === 'ok' ? { ok: true } : { ok: false, error: 'soda_control_failed' };
+    const result = await runJxa(NETEASE_CONTROL_JXA, [action]);
+    if (result === 'ok:1') return { ok: true, playing: true };
+    if (result === 'ok:0') return { ok: true, playing: false };
+    return { ok: false, error: 'netease_control_failed' };
   } catch (error) {
-    console.warn('[music] failed to send Soda Music shortcut', error && error.message || error);
-    return { ok: false, error: 'soda_control_failed' };
+    console.warn('[music] failed to control NetEase Music', error && error.message || error);
+    return { ok: false, error: 'netease_control_failed' };
   }
 }
 
 ipcMain.handle('music:status', async () => {
-  const installed = fs.existsSync(SODA_MUSIC_APP);
-  const running = installed ? await sodaMusicRunning() : false;
-  if (!running) sodaMusicPlaying = false;
+  const installed = fs.existsSync(NETEASE_MUSIC_APP);
+  const running = installed ? await neteaseMusicRunning() : false;
+  if (!running) neteaseMusicPlaying = false;
   return {
     installed,
     running,
     sessionActive: running,
-    playing: running && sodaMusicPlaying,
+    playing: running && neteaseMusicPlaying,
     title: '',
     artist: '',
-    icon: installed ? await readSystemAppIconNow(SODA_MUSIC_APP) : null,
+    icon: installed ? await readSystemAppIconNow(NETEASE_MUSIC_APP) : null,
   };
 });
 
 ipcMain.handle('music:control', async (event, action) => {
-  if (!fs.existsSync(SODA_MUSIC_APP)) return { ok: false, error: 'not_installed' };
-  const result = await controlSodaMusic(action, {
-    isRunning: sodaMusicRunning,
-    launch: launchSodaMusic,
-    sendShortcut: sendSodaShortcut,
-  }, sodaMusicPlaying);
-  if (result && result.ok) sodaMusicPlaying = result.playing;
+  if (!fs.existsSync(NETEASE_MUSIC_APP)) return { ok: false, error: 'not_installed' };
+  const result = await controlNeteaseMusic(action, {
+    isRunning: neteaseMusicRunning,
+    launch: launchNeteaseMusic,
+    sendControl: sendNeteaseControl,
+  }, neteaseMusicPlaying);
+  if (result && result.ok) neteaseMusicPlaying = result.playing;
   if (result && result.ok && mainWindow && !mainWindow.isDestroyed() && currentMode === 'expanded') {
     if (!mainWindow.isVisible()) mainWindow.show();
     mainWindow.focus();

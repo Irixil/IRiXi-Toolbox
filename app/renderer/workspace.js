@@ -2243,7 +2243,7 @@
   });
   document.addEventListener('notch:recording-state-changed', renderHomeModuleSettings);
 
-  // ============ 本地汽水音乐 ============
+  // ============ 本地网易云音乐 ============
   const homeMusic = document.getElementById('home-music');
   const musicArtwork = document.getElementById('music-artwork');
   const musicTitle = document.getElementById('music-title');
@@ -2277,7 +2277,7 @@
       image.alt = '';
       musicArtwork.appendChild(image);
     }
-    if (musicTitle) musicTitle.textContent = status && status.installed ? '汽水音乐' : '未安装汽水音乐';
+    if (musicTitle) musicTitle.textContent = status && status.installed ? '网易云音乐' : '未安装网易云音乐';
     if (musicStatus) musicStatus.textContent = status && status.running ? (musicPlaying ? '正在播放' : '已连接') : status && status.installed ? '轻触即播' : '需要本地客户端';
   }
 
@@ -2292,7 +2292,7 @@
     try { result = await window.notchAPI.controlMusic(action); } catch (error) { result = { ok: false }; }
     control.disabled = false;
     if (!result || !result.ok) {
-      const needsSession = result && ['no_active_session', 'soda_session_inactive'].includes(result.error);
+      const needsSession = result && result.error === 'no_active_session';
       const needsPermission = result && result.error === 'accessibility_permission_required';
       if (musicStatus) musicStatus.textContent = result && result.error === 'not_installed'
         ? '需要本地客户端'
@@ -2300,9 +2300,9 @@
           : needsSession ? '请先点播放' : '控制暂不可用';
       if (typeof showStatusToast === 'function') {
         showStatusToast(result && result.error === 'not_installed'
-          ? '未安装汽水音乐'
+          ? '未安装网易云音乐'
           : needsPermission ? '请在系统设置中允许 IRiXi的小工具库使用辅助功能'
-            : needsSession ? '请先点击播放，再使用切歌控制' : '汽水音乐控制暂不可用');
+            : needsSession ? '请先点击播放，再使用切歌控制' : '网易云音乐控制暂不可用');
       }
     } else {
       if (typeof result.playing === 'boolean') musicPlaying = result.playing;

@@ -3206,7 +3206,7 @@ body {
   align-items: center;
   padding: 15px;
   background:
-    radial-gradient(90% 120% at 8% 100%, rgba(99, 255, 171, .105), transparent 58%),
+    radial-gradient(90% 120% at 8% 100%, rgba(255, 76, 90, .14), transparent 58%),
     radial-gradient(100% 100% at 100% 0%, rgba(132, 160, 255, .085), transparent 62%),
     linear-gradient(150deg, rgba(30,31,34,.97), rgba(13,14,16,.97));
   cursor: pointer;
@@ -3229,7 +3229,7 @@ body {
 }
 .music-artwork img { width: 78%; height: 78%; object-fit: contain; border-radius: 13px; }
 .music-pulse { position: absolute; inset: -8px; display: flex; align-items: flex-end; justify-content: center; gap: 3px; opacity: 0; filter: blur(.1px); transition: opacity 220ms var(--ease); }
-.music-pulse i { width: 3px; height: 12px; border-radius: 99px; background: linear-gradient(#baffd1, #55e68a); transform-origin: center bottom; animation: music-pulse 760ms ease-in-out infinite alternate; }
+.music-pulse i { width: 3px; height: 12px; border-radius: 99px; background: linear-gradient(#ffb6bc, #ec4141); transform-origin: center bottom; animation: music-pulse 760ms ease-in-out infinite alternate; }
 .music-pulse i:nth-child(2) { height: 19px; animation-delay: -420ms; }
 .music-pulse i:nth-child(3) { height: 15px; animation-delay: -180ms; }
 .music-pulse i:nth-child(4) { height: 9px; animation-delay: -590ms; }
@@ -3238,7 +3238,7 @@ body {
 .music-copy { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 2px; }
 .music-copy strong,
 .music-copy > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.music-kicker { color: rgba(177,255,207,.62); font: 7px/1.2 var(--font-mono); letter-spacing: 1.15px; }
+.music-kicker { color: rgba(255,182,188,.7); font: 7px/1.2 var(--font-mono); letter-spacing: 1.15px; }
 .music-copy strong { color: var(--text-1); font-size: 14px; font-weight: 640; letter-spacing: -.2px; }
 .music-copy > span:last-child { color: var(--text-3); font-size: 9px; }
 .music-controls { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
@@ -3731,16 +3731,16 @@ body {
   bottom: 7px;
 }
 
-/* 汽水音乐：同一视觉语言的四套裁切资产，按钮始终可见。 */
+/* 网易云音乐：同一视觉语言的四套裁切资产，按钮始终可见。 */
 .home-music {
   isolation: isolate;
-  background-image: radial-gradient(circle at 28% 20%, rgba(66,214,189,.24), transparent 48%), linear-gradient(145deg, #152526, #091011);
+  background-image: radial-gradient(circle at 28% 20%, rgba(236,65,65,.3), transparent 48%), linear-gradient(145deg, #32191c, #10090a);
   background-size: cover;
   background-position: center;
 }
-.home-music[data-widget-size='mini'] { background-image: linear-gradient(145deg, #17302d, #091011); }
-.home-music[data-widget-size='small'] { background-image: radial-gradient(circle at 28% 20%, rgba(66,214,189,.2), transparent 48%), linear-gradient(145deg, #152526, #091011); }
-.home-music[data-widget-size='large'] { background-image: radial-gradient(circle at 28% 20%, rgba(66,214,189,.28), transparent 52%), linear-gradient(145deg, #152526, #091011); }
+.home-music[data-widget-size='mini'] { background-image: linear-gradient(145deg, #38191d, #10090a); }
+.home-music[data-widget-size='small'] { background-image: radial-gradient(circle at 28% 20%, rgba(236,65,65,.25), transparent 48%), linear-gradient(145deg, #32191c, #10090a); }
+.home-music[data-widget-size='large'] { background-image: radial-gradient(circle at 28% 20%, rgba(236,65,65,.36), transparent 52%), linear-gradient(145deg, #32191c, #10090a); }
 .home-music::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(0,0,0,.3),transparent 55%); pointer-events:none; }
 .home-music .music-controls button,
 .home-music[data-widget-size='small'] .music-controls button:not(.music-play),
@@ -3833,7 +3833,7 @@ body {
 .shortcut-recorder small { color: var(--text-4); font-size: 8px; line-height: 1.4; }
 .shortcut-recorder button { border: 0; background: transparent; color: var(--text-3); font: 9px var(--font); cursor: pointer; }
 
-/* 汽水音乐在四档尺寸中保持完全相同的信息顺序：Logo、名称、三枚控制键。 */
+/* 网易云音乐在四档尺寸中保持完全相同的信息顺序：Logo、名称、三枚控制键。 */
 .home-music,
 .home-music[data-widget-size='mini'],
 .home-music[data-widget-size='small'],
@@ -3847,7 +3847,7 @@ body {
   padding: 10px 12px;
   text-align: center;
 }
-.home-music::after { background: radial-gradient(circle at 50% 42%, rgba(78,235,156,.09), transparent 56%), linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.25)); }
+.home-music::after { background: radial-gradient(circle at 50% 42%, rgba(236,65,65,.14), transparent 56%), linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.25)); }
 .home-music .music-artwork-shell,
 .home-music .music-artwork,
 .home-music[data-widget-size='mini'] .music-artwork-shell,
@@ -4349,7 +4349,7 @@ body {
   height: 24px;
 }
 
-/* 汽水音乐：放弃封面，动态背景上只保留左下标题与右下毛玻璃控制组。 */
+/* 网易云音乐：放弃封面，动态背景上只保留左下标题与右下毛玻璃控制组。 */
 .home-music,
 .home-music[data-widget-size='mini'],
 .home-music[data-widget-size='small'],
@@ -4743,7 +4743,7 @@ body {
 .home-pomodoro[data-widget-size='large'] > .pomodoro-toggle,
 .home-pomodoro[data-widget-size='large'] > .pomodoro-reset { width: 68px; height: 68px; }
 
-/* 汽水音乐：四个比例各自匹配标题层级，并明确区分三枚控制图标。 */
+/* 网易云音乐：四个比例各自匹配标题层级，并明确区分三枚控制图标。 */
 .home-music[data-widget-size] > .music-copy { display: block !important; }
 .home-music[data-widget-size] .music-controls button { display: grid !important; }
 .home-music .music-controls svg { width: 15px; height: 15px; }

@@ -452,27 +452,26 @@ function updateFeaturePreference(features, featureId, enabled) {
   return { ...source, [featureId]: enabled, home: true };
 }
 
-// 汽水音乐没有「控制 / 播放」菜单，辅助功能树也读不出窗口与菜单项名，
-// 所以只能往应用内发按键。Space(49) 是播放/暂停切换键，play 与 pause 共用它。
-// 原实现里 play 用的是 Cmd+Right——那和 next 完全同一个键，
-// 所以「点播放」实际发出的是「下一曲」，歌不会开始播，这正是状态错乱的根因。
-function sodaShortcutSpec(action) {
-  if (action === 'play' || action === 'pause') return { keyCode: 49, command: false, dismissOverlays: true };
-  if (action === 'next') return { keyCode: 124, command: true, dismissOverlays: true };
-  if (action === 'previous') return { keyCode: 123, command: true, dismissOverlays: true };
+// 网易云音乐提供稳定的「控制」菜单。优先按菜单名称点击，避免依赖用户可修改的
+// 全局快捷键；中英文名称同时保留，系统语言变化后仍能工作。
+function neteaseMenuSpec(action) {
+  if (action === 'play') return { trigger: ['播放', 'Play'], already: ['暂停', 'Pause'], playing: true };
+  if (action === 'pause') return { trigger: ['暂停', 'Pause'], already: ['播放', 'Play'], playing: false };
+  if (action === 'next') return { trigger: ['下一个', 'Next'], already: [], playing: true };
+  if (action === 'previous') return { trigger: ['上一个', 'Previous'], already: [], playing: true };
   return null;
 }
 
-async function controlSodaMusic(action, dependencies = {}, currentPlaying = false) {
+async function controlNeteaseMusic(action, dependencies = {}, currentPlaying = false) {
   if (!['play', 'pause', 'next', 'previous'].includes(action)) {
     return { ok: false, error: 'invalid_action', running: false, playing: false };
   }
 
   const isRunning = dependencies.isRunning;
   const launch = dependencies.launch;
-  const sendShortcut = dependencies.sendShortcut;
+  const sendControl = dependencies.sendControl;
   const sleep = dependencies.sleep || ((milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds)));
-  if (![isRunning, launch, sendShortcut].every((dependency) => typeof dependency === 'function')) {
+  if (![isRunning, launch, sendControl].every((dependency) => typeof dependency === 'function')) {
     return { ok: false, error: 'music_control_unavailable', running: false, playing: false };
   }
 
@@ -492,16 +491,18 @@ async function controlSodaMusic(action, dependencies = {}, currentPlaying = fals
     await sleep(3000);
   }
 
-  const shortcutResult = await sendShortcut(action);
-  if (!shortcutResult || shortcutResult.ok !== true) {
+  const controlResult = await sendControl(action);
+  if (!controlResult || controlResult.ok !== true) {
     return {
       ok: false,
-      error: shortcutResult && shortcutResult.error || 'soda_control_failed',
+      error: controlResult && controlResult.error || 'netease_control_failed',
       running: true,
       playing: Boolean(currentPlaying),
     };
   }
-  const playing = action === 'pause' ? false : true;
+  const playing = typeof controlResult.playing === 'boolean'
+    ? controlResult.playing
+    : action !== 'pause';
   return { ok: true, running: true, playing, bootstrapped };
 }
 
@@ -531,6 +532,6 @@ module.exports = {
   createWorkspacePersistenceGate,
   hoverSpacePollingPolicy,
   updateFeaturePreference,
-  sodaShortcutSpec,
-  controlSodaMusic,
+  neteaseMenuSpec,
+  controlNeteaseMusic,
 };

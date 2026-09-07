@@ -24,6 +24,16 @@ const overlayViewSwift = fs.readFileSync(
 );
 const packageConfig = require(path.join(__dirname, '..', 'package.json'));
 
+test('the packaged app uses the owl icon and the homepage targets NetEase Music only', () => {
+  assert.equal(packageConfig.build.mac.icon, 'build/AppIcon.png');
+  assert.match(html, /aria-label="网易云音乐播放器"/);
+  assert.match(html, /id="music-title">网易云音乐</);
+  assert.match(workspaceJs, /未安装网易云音乐/);
+  assert.match(mainJs, /\/Applications\/NeteaseMusic\.app/);
+  assert.match(mainJs, /com\.netease\.163music/);
+  assert.doesNotMatch(`${html}\n${workspaceJs}\n${mainJs}`, /汽水音乐|com\.soda\.music/);
+});
+
 test('IRiXi tools is a first-class page backed by narrow preload methods', () => {
   assert.match(html, /<title>IRiXi的小工具库<\/title>/);
   assert.match(html, /data-tab="tools"/);

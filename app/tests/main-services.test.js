@@ -22,8 +22,8 @@ const {
   taskNotificationWindowPolicy,
   prepareClipboardImagePayload,
   updateFeaturePreference,
-  controlSodaMusic,
-  sodaShortcutSpec,
+  controlNeteaseMusic,
+  neteaseMenuSpec,
   selectTranscriptionSettings,
   createWorkspacePersistenceGate,
   hoverSpacePollingPolicy,
@@ -431,10 +431,10 @@ test('feature preferences only update configurable tabs and keep permanent tabs 
   assert.equal(updateFeaturePreference({ todo: true }, 'todo', 'false'), null);
 });
 
-test('first Soda Music play launches the app and starts its restored song', async () => {
+test('first NetEase Music play launches the app and starts its restored song', async () => {
   const events = [];
   let running = false;
-  const result = await controlSodaMusic('play', {
+  const result = await controlNeteaseMusic('play', {
     isRunning: async () => {
       events.push('running');
       return running;
@@ -444,66 +444,71 @@ test('first Soda Music play launches the app and starts its restored song', asyn
       running = true;
       return true;
     },
-    sendShortcut: async (action) => {
-      events.push(`shortcut:${action}`);
-      return { ok: true };
+    sendControl: async (action) => {
+      events.push(`control:${action}`);
+      return { ok: true, playing: true };
     },
     sleep: async () => {},
   });
 
-  assert.deepEqual(events, ['running', 'launch', 'running', 'shortcut:play']);
+  assert.deepEqual(events, ['running', 'launch', 'running', 'control:play']);
   assert.equal(result.ok, true);
   assert.equal(result.running, true);
   assert.equal(result.playing, true);
   assert.equal(result.bootstrapped, true);
 });
 
-test('running Soda Music uses its own shortcuts because native media status can stay empty', async () => {
+test('running NetEase Music uses its own Control menu', async () => {
   const events = [];
-  const result = await controlSodaMusic('play', {
+  const result = await controlNeteaseMusic('play', {
     isRunning: async () => true,
     launch: async () => {
       events.push('launch');
       return true;
     },
-    sendShortcut: async (action) => {
-      events.push(`shortcut:${action}`);
-      return { ok: true };
+    sendControl: async (action) => {
+      events.push(`control:${action}`);
+      return { ok: true, playing: true };
     },
     sleep: async () => {},
   });
 
-  assert.deepEqual(events, ['shortcut:play']);
+  assert.deepEqual(events, ['control:play']);
   assert.equal(result.ok, true);
   assert.equal(result.playing, true);
   assert.equal(result.bootstrapped, false);
 });
 
-test('Soda Music pause and track navigation preserve explicit playback state', async () => {
-  const shortcuts = [];
+test('NetEase Music pause and track navigation preserve explicit playback state', async () => {
+  const controls = [];
   const dependencies = {
     isRunning: async () => true,
     launch: async () => true,
-    sendShortcut: async (action) => {
-      shortcuts.push(action);
-      return { ok: true };
+    sendControl: async (action) => {
+      controls.push(action);
+      return { ok: true, playing: action !== 'pause' };
     },
     sleep: async () => {},
   };
 
-  assert.equal((await controlSodaMusic('pause', dependencies)).playing, false);
-  assert.equal((await controlSodaMusic('next', dependencies, false)).playing, true);
-  assert.equal((await controlSodaMusic('previous', dependencies, false)).playing, true);
-  assert.deepEqual(shortcuts, ['pause', 'next', 'previous']);
+  assert.equal((await controlNeteaseMusic('pause', dependencies)).playing, false);
+  assert.equal((await controlNeteaseMusic('next', dependencies, false)).playing, true);
+  assert.equal((await controlNeteaseMusic('previous', dependencies, false)).playing, true);
+  assert.deepEqual(controls, ['pause', 'next', 'previous']);
 });
 
-test('Soda Music play uses the play/pause toggle instead of the next-track key', () => {
-  // play 曾经和 next 撞成同一个键（Cmd+Right），点播放实际是切歌、歌不会开始播。
-  // Space 是播放/暂停切换键，play 与 pause 共用它，next / previous 必须与之不同。
-  assert.deepEqual(sodaShortcutSpec('play'), { keyCode: 49, command: false, dismissOverlays: true });
-  assert.deepEqual(sodaShortcutSpec('pause'), { keyCode: 49, command: false, dismissOverlays: true });
-  assert.deepEqual(sodaShortcutSpec('next'), { keyCode: 124, command: true, dismissOverlays: true });
-  assert.deepEqual(sodaShortcutSpec('previous'), { keyCode: 123, command: true, dismissOverlays: true });
-  assert.notDeepEqual(sodaShortcutSpec('play'), sodaShortcutSpec('next'));
-  assert.equal(sodaShortcutSpec('invalid'), null);
+test('NetEase Music controls map to its localized Control menu', () => {
+  assert.deepEqual(neteaseMenuSpec('play'), {
+    trigger: ['播放', 'Play'], already: ['暂停', 'Pause'], playing: true,
+  });
+  assert.deepEqual(neteaseMenuSpec('pause'), {
+    trigger: ['暂停', 'Pause'], already: ['播放', 'Play'], playing: false,
+  });
+  assert.deepEqual(neteaseMenuSpec('next'), {
+    trigger: ['下一个', 'Next'], already: [], playing: true,
+  });
+  assert.deepEqual(neteaseMenuSpec('previous'), {
+    trigger: ['上一个', 'Previous'], already: [], playing: true,
+  });
+  assert.equal(neteaseMenuSpec('invalid'), null);
 });

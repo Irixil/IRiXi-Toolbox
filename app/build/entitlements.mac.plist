@@ -12,7 +12,7 @@
   <true/>
   <key>com.apple.security.device.audio-input</key>
   <true/>
-  <!-- 窗口枚举与聚焦、汽水音乐快捷键、剪贴板粘贴都要经 osascript 驱动 System Events，
+  <!-- 窗口枚举与聚焦、网易云音乐菜单控制、剪贴板粘贴都要经 osascript 驱动 System Events，
        hardenedRuntime 下缺这项会在打包后静默失效（开发期未打包所以看不出来）。 -->
   <key>com.apple.security.automation.apple-events</key>
   <true/>
