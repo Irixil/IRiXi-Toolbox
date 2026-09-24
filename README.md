@@ -76,8 +76,3 @@ npm run pack
 
 `prepare.sh` 会先构建 `snaploom/` 中的原生模块，再将它放入 Electron 应用的打包目录。公开分发需要发布者自己的 Apple Developer ID 和公证。
 
-## 来源与许可证
-
-本项目使用 [GNU GPL v3](LICENSE)。主程序由 MIT 许可的 TO-DO Panel 演进而来；原生截图部分基于 GPLv3 的 Snaploom/macshot。原作者版权与许可声明均已保留，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
-
-IRiXi的小工具库是独立修改版，与上游项目不存在官方隶属或背书关系。
