@@ -14,6 +14,8 @@ source_files=(
   "$project_root/SnaploomApp/Translation/TranslationShortcutManager.swift"
   "$project_root/SnaploomApp/Translation/TranslationShortcutRecorderButton.swift"
   "$project_root/SnaploomApp/Translation/SpeechPlaybackController.swift"
+  "$project_root/SnaploomApp/Translation/TranslationKnowledgeService.swift"
+  "$project_root/SnaploomApp/Translation/CodexTranslationService.swift"
   "$project_root/SnaploomApp/Translation/NativeInputTranslationWindowController.swift"
   "$project_root/SnaploomApp/IRiXiNative/IRiXiTranslationCoordinator.swift"
   "$project_root/SnaploomApp/Model/Annotation.swift"

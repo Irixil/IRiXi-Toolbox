@@ -28,6 +28,7 @@ const REQUIRED_METHODS = [
   'startImageTranslationCapture',
   'cancelAreaCapture',
   'isAreaCaptureActive',
+  'setAreaCaptureShortcut',
   'initializeTranslation',
   'openInputTranslation',
   'translateCurrentSelection',
@@ -123,6 +124,7 @@ function createNativeModuleManager(options = {}) {
   let state = 'not_loaded';
   let bundleId = null;
   let screenPermission = 'unknown';
+  let captureShortcut = '';
 
   function publicStatus() {
     return { state, bundleId, screenPermission };
@@ -300,6 +302,25 @@ function createNativeModuleManager(options = {}) {
     }
   }
 
+  function setAreaCaptureShortcut(shortcut) {
+    try {
+      const code = ensureLoaded().setAreaCaptureShortcut(shortcut);
+      if (code === 0) {
+        captureShortcut = shortcut;
+        return { ok: true };
+      }
+      if (code === 1) return { ok: false, error: 'occupied' };
+      if (code === 2) return { ok: false, error: 'invalid' };
+      return { ok: false, error: 'unavailable' };
+    } catch (error) {
+      return { ok: false, error: error.code || 'unavailable' };
+    }
+  }
+
+  function isAreaCaptureShortcutRegistered(shortcut) {
+    return Boolean(api) && captureShortcut === shortcut;
+  }
+
   function openInputTranslation(partner = 'en') {
     try {
       const normalized = ['en', 'ja', 'ko'].includes(partner) ? partner : 'en';
@@ -333,6 +354,8 @@ function createNativeModuleManager(options = {}) {
     startImageTranslationCapture,
     cancelAreaCapture,
     isAreaCaptureActive,
+    setAreaCaptureShortcut,
+    isAreaCaptureShortcutRegistered,
     openInputTranslation,
     translateCurrentSelection,
   };

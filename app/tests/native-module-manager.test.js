@@ -26,6 +26,7 @@ function fakeNativeApi(overrides = {}) {
     startImageTranslationCapture: () => 0,
     cancelAreaCapture: () => {},
     isAreaCaptureActive: () => false,
+    setAreaCaptureShortcut: () => 0,
     initializeTranslation: () => {},
     openInputTranslation: () => 0,
     translateCurrentSelection: () => 0,
@@ -48,7 +49,7 @@ test('the native module path is fixed inside Contents/Frameworks', () => {
   assert.equal(resolvePackagedPaths({ platform: 'darwin', isPackaged: false, execPath: '/app' }).error, 'missing');
 });
 
-test('only the fixed fifteen-function native interface is accepted', () => {
+test('only the fixed native interface is accepted', () => {
   assert.equal(validateNativeApi(fakeNativeApi()).getHostBundleIdentifier(), HOST_BUNDLE_ID);
   for (const method of [
     'getHostBundleIdentifier',
@@ -63,6 +64,7 @@ test('only the fixed fifteen-function native interface is accepted', () => {
     'startImageTranslationCapture',
     'cancelAreaCapture',
     'isAreaCaptureActive',
+    'setAreaCaptureShortcut',
     'initializeTranslation',
     'openInputTranslation',
     'translateCurrentSelection',
@@ -71,6 +73,25 @@ test('only the fixed fifteen-function native interface is accepted', () => {
     delete api[method];
     assert.throws(() => validateNativeApi(api), /原生模块缺少固定方法/);
   }
+});
+
+test('capture shortcut registration stays inside the native module and reports conflicts', () => {
+  const manager = createNativeModuleManager({
+    inspector: () => ({ ok: true, modulePath: '/fixed/irixi-native.node' }),
+    loader: () => fakeNativeApi({ setAreaCaptureShortcut: () => 0 }),
+  });
+  assert.deepEqual(manager.setAreaCaptureShortcut('Command+Shift+X'), { ok: true });
+  assert.equal(manager.isAreaCaptureShortcutRegistered('Command+Shift+X'), true);
+
+  const conflict = createNativeModuleManager({
+    inspector: () => ({ ok: true, modulePath: '/fixed/irixi-native.node' }),
+    loader: () => fakeNativeApi({ setAreaCaptureShortcut: () => 1 }),
+  });
+  assert.deepEqual(conflict.setAreaCaptureShortcut('Command+Shift+X'), {
+    ok: false,
+    error: 'occupied',
+  });
+  assert.equal(conflict.isAreaCaptureShortcutRegistered('Command+Shift+X'), false);
 });
 
 test('area capture stays inside the native module and maps bounded result codes', () => {

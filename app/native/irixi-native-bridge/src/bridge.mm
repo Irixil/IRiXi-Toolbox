@@ -17,12 +17,13 @@ extern "C" int32_t irixi_native_start_ocr_capture(void);
 extern "C" int32_t irixi_native_start_image_translation_capture(void);
 extern "C" void irixi_native_cancel_area_capture(void);
 extern "C" bool irixi_native_is_area_capture_active(void);
+extern "C" int32_t irixi_native_set_area_capture_shortcut(const char* accelerator);
 extern "C" void irixi_native_initialize_translation(void);
 extern "C" int32_t irixi_native_open_input_translation(const char* partner);
 extern "C" int32_t irixi_native_translate_current_selection(void);
 
 namespace {
-constexpr int32_t kExpectedAbiVersion = 6;
+constexpr int32_t kExpectedAbiVersion = 7;
 
 bool RequireNoArguments(napi_env env, napi_callback_info info) {
   size_t argc = 1;
@@ -53,6 +54,29 @@ bool ReadPartnerArgument(napi_env env, napi_callback_info info, std::string* par
     return false;
   }
   partner->assign(buffer.data(), length);
+  return true;
+}
+
+bool ReadShortcutArgument(napi_env env, napi_callback_info info, std::string* shortcut) {
+  size_t argc = 1;
+  napi_value argv[1];
+  napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr);
+  napi_valuetype type = napi_undefined;
+  if (argc != 1 || napi_typeof(env, argv[0], &type) != napi_ok || type != napi_string) {
+    napi_throw_type_error(env, nullptr, "A capture shortcut string is required.");
+    return false;
+  }
+  size_t length = 0;
+  if (napi_get_value_string_utf8(env, argv[0], nullptr, 0, &length) != napi_ok || length > 80) {
+    napi_throw_type_error(env, nullptr, "The capture shortcut is invalid.");
+    return false;
+  }
+  std::vector<char> buffer(length + 1, 0);
+  if (napi_get_value_string_utf8(env, argv[0], buffer.data(), buffer.size(), &length) != napi_ok) {
+    napi_throw_type_error(env, nullptr, "The capture shortcut is invalid.");
+    return false;
+  }
+  shortcut->assign(buffer.data(), length);
   return true;
 }
 
@@ -155,6 +179,14 @@ napi_value IsAreaCaptureActive(napi_env env, napi_callback_info info) {
   return result;
 }
 
+napi_value SetAreaCaptureShortcut(napi_env env, napi_callback_info info) {
+  std::string shortcut;
+  if (!ReadShortcutArgument(env, info, &shortcut)) return nullptr;
+  napi_value result;
+  napi_create_int32(env, irixi_native_set_area_capture_shortcut(shortcut.c_str()), &result);
+  return result;
+}
+
 napi_value InitializeTranslation(napi_env env, napi_callback_info info) {
   if (!RequireNoArguments(env, info)) return nullptr;
   irixi_native_initialize_translation();
@@ -177,6 +209,7 @@ napi_value TranslateCurrentSelection(napi_env env, napi_callback_info info) {
   napi_create_int32(env, irixi_native_translate_current_selection(), &result);
   return result;
 }
+
 }  // namespace
 
 NAPI_MODULE_INIT() {
@@ -198,6 +231,7 @@ NAPI_MODULE_INIT() {
       {"startImageTranslationCapture", nullptr, StartImageTranslationCapture, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"cancelAreaCapture", nullptr, CancelAreaCapture, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"isAreaCaptureActive", nullptr, IsAreaCaptureActive, nullptr, nullptr, nullptr, napi_default, nullptr},
+      {"setAreaCaptureShortcut", nullptr, SetAreaCaptureShortcut, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"initializeTranslation", nullptr, InitializeTranslation, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"openInputTranslation", nullptr, OpenInputTranslation, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"translateCurrentSelection", nullptr, TranslateCurrentSelection, nullptr, nullptr, nullptr, napi_default, nullptr},

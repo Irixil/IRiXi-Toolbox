@@ -24,9 +24,14 @@ const {
   updateFeaturePreference,
   controlNeteaseMusic,
   neteaseMenuSpec,
+  neteaseTrackIdFromOpenFiles,
+  normalizeNeteaseTrackMetadata,
+  normalizeNeteaseLyricsPayload,
+  clampNeteasePosition,
   selectTranscriptionSettings,
   createWorkspacePersistenceGate,
   hoverSpacePollingPolicy,
+  panelBlurPolicy,
   reduceClipboardObservation,
 } = require('../main-services');
 
@@ -50,6 +55,14 @@ test('Hover + Space polls only while the collapsed strip is visible', () => {
   assert.equal(hoverSpacePollingPolicy({ shortcut: 'Space', visible: true, mode: 'expanded' }).enabled, false);
   assert.equal(hoverSpacePollingPolicy({ shortcut: 'Space', visible: false, mode: 'collapsed' }).enabled, false);
   assert.equal(hoverSpacePollingPolicy({ shortcut: 'Command+Shift+P', visible: true, mode: 'collapsed' }).enabled, false);
+});
+
+test('panel blur keeps same-app native windows open but collapses after leaving the app', () => {
+  assert.equal(panelBlurPolicy({ appActive: true }), 'retain');
+  assert.equal(panelBlurPolicy({ appActive: false, cursorInside: true }), 'retain');
+  assert.equal(panelBlurPolicy({ appActive: false }), 'collapse');
+  assert.equal(panelBlurPolicy({ appActive: false, mediaPermissionRequests: 1 }), 'defer');
+  assert.equal(panelBlurPolicy({ appActive: false, transientSystemInteractionRequests: 1 }), 'defer');
 });
 
 test('isPrivateAddress blocks loopback, private, link-local and unique-local ranges', () => {
@@ -511,4 +524,38 @@ test('NetEase Music controls map to its localized Control menu', () => {
     trigger: ['上一个', 'Previous'], already: [], playing: true,
   });
   assert.equal(neteaseMenuSpec('invalid'), null);
+});
+
+test('NetEase Music media helpers read the active cache id and normalize song data', () => {
+  assert.equal(neteaseTrackIdFromOpenFiles([
+    'p123',
+    'n/Users/test/online_play_cache/111-_-_first.uc!',
+    'n/Users/test/online_play_cache/222-_-_current.uc',
+  ].join('\n')), '222');
+  assert.deepEqual(normalizeNeteaseTrackMetadata({
+    id: 222,
+    name: '测试歌曲',
+    duration: 123456,
+    artists: [{ name: '歌手甲' }, { name: '歌手乙' }],
+    album: { name: '测试专辑', picUrl: 'http://p1.music.126.net/cover.jpg' },
+  }), {
+    id: '222',
+    title: '测试歌曲',
+    artist: '歌手甲 / 歌手乙',
+    album: '测试专辑',
+    durationMs: 123456,
+    artworkUrl: 'https://p1.music.126.net/cover.jpg',
+  });
+});
+
+test('NetEase Music lyrics keep timestamps and matching translations', () => {
+  assert.deepEqual(normalizeNeteaseLyricsPayload({
+    lrc: { lyric: '[00:01.20]第一句\n[00:03.000]第二句' },
+    tlyric: { lyric: '[00:01.200]First line' },
+  }), [
+    { timeMs: 1200, text: '第一句', translation: 'First line' },
+    { timeMs: 3000, text: '第二句' },
+  ]);
+  assert.equal(clampNeteasePosition(9000, 5000), 5000);
+  assert.equal(clampNeteasePosition(-10, 5000), 0);
 });

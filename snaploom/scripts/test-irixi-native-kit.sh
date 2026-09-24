@@ -28,12 +28,14 @@ nm -gU "$binary" | grep '_irixi_native_start_ocr_capture' >/dev/null
 nm -gU "$binary" | grep '_irixi_native_start_image_translation_capture' >/dev/null
 nm -gU "$binary" | grep '_irixi_native_cancel_area_capture' >/dev/null
 nm -gU "$binary" | grep '_irixi_native_is_area_capture_active' >/dev/null
+nm -gU "$binary" | grep '_irixi_native_set_area_capture_shortcut' >/dev/null
 nm -gU "$binary" | grep '_irixi_native_initialize_translation' >/dev/null
 nm -gU "$binary" | grep '_irixi_native_open_input_translation' >/dev/null
 nm -gU "$binary" | grep '_irixi_native_translate_current_selection' >/dev/null
 nm "$binary" | grep 'IRiXiImageEditorController' >/dev/null
 nm "$binary" | grep 'IRiXiPinManager' >/dev/null
 nm "$binary" | grep 'IRiXiTranslationCoordinator' >/dev/null
+nm "$binary" | grep 'IRiXiAIExplanationService' >/dev/null
 nm "$binary" | grep 'OverlayWindowController' >/dev/null
 nm "$binary" | grep 'OverlayView' >/dev/null
 nm "$binary" | grep 'AnnotationToolHandler' >/dev/null
@@ -63,6 +65,13 @@ if grep 'IRiXiAppleTranslationBridge' "$region_capture" >/dev/null; then
   echo 'unexpected duplicate screenshot translation bridge' >&2
   exit 1
 fi
+
+grep 'TranslationKnowledgeService.swift' "$project_root/scripts/build-irixi-native-kit.sh" >/dev/null
+grep 'CodexTranslationService()' "$project_root/SnaploomApp/Translation/NativeInputTranslationWindowController.swift" >/dev/null
+grep 'web_search' "$project_root/SnaploomApp/Translation/TranslationKnowledgeService.swift" >/dev/null
+grep 'kSecClassGenericPassword' "$project_root/SnaploomApp/Translation/TranslationKnowledgeService.swift" >/dev/null
+"$project_root/scripts/test-translation-knowledge.sh"
+zsh "$project_root/scripts/test-codex-translation.sh"
 
 if nm -gU "$binary" | grep 'NativeHelperServer' >/dev/null; then
   echo 'unexpected helper server symbol' >&2

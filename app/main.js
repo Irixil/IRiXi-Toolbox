@@ -53,9 +53,16 @@ const {
   updateFeaturePreference,
   controlNeteaseMusic,
   neteaseMenuSpec,
+  classifyNeteaseControlError,
+  neteaseTrackIdFromOpenFiles,
+  normalizeNeteaseTrackMetadata,
+  normalizeNeteaseLyricsPayload,
+  clampNeteasePosition,
+  fetchBoundedBytes,
   selectTranscriptionSettings,
   createWorkspacePersistenceGate,
   hoverSpacePollingPolicy,
+  panelBlurPolicy,
   reduceClipboardObservation,
 } = require('./main-services');
 const { createToolPlatform, ToolPackageError } = require('./tool-platform');
@@ -233,6 +240,15 @@ const nativeModule = createNativeModuleManager({
 });
 const BUNDLED_COUNTER_PATH = path.join(__dirname, 'bundled-tools', 'sample-counter.irixi-tool');
 const NETEASE_MUSIC_APP = '/Applications/NeteaseMusic.app';
+const NETEASE_DATA_ROOT = path.join(
+  app.getPath('home'),
+  'Library',
+  'Containers',
+  'com.netease.163music',
+  'Data'
+);
+const NETEASE_TRACK_DB = path.join(NETEASE_DATA_ROOT, 'Documents', 'storage', 'sqlite_storage.sqlite3');
+const NETEASE_MEDIA_CACHE_MS = 5 * 60 * 1000;
 const TRANSCRIPTION_MODEL = 'qwen3-asr-flash-realtime';
 const TRANSCRIPTION_SAMPLE_RATE = 16000;
 const TRANSCRIPTION_FINISH_TIMEOUT_MS = 7000;
@@ -267,7 +283,14 @@ let isQuitting = false;
 let mediaPermissionRequests = 0;
 let transientSystemInteractionRequests = 0;
 let cameraBlurDeferred = false;
+let blurCollapseTimer = null;
 let neteaseMusicPlaying = false;
+let neteaseMediaCache = { trackId: '', metadata: null, artwork: '', lyrics: [], updatedAt: 0 };
+let neteasePlaybackTrackId = '';
+let neteasePlaybackPositionMs = 0;
+let neteasePlaybackStartedAt = 0;
+let neteaseMediaLoad = null;
+let captureShortcutError = '';
 
 let notificationWindow = null;
 let notificationWindowReady = false;
@@ -438,10 +461,38 @@ function beginNativeCollapse() {
   }, COLLAPSE_WATCHDOG_MS);
 }
 
-function requestRendererCollapse() {
+// Bounded, local diagnostics only: no note, clipboard, window title or lyric data.
+function recordPanelEvent(event, details = {}) {
+  try {
+    const file = path.join(app.getPath('userData'), 'panel-events.jsonl');
+    if (fs.existsSync(file) && fs.statSync(file).size > 128 * 1024) fs.truncateSync(file, 0);
+    fs.appendFileSync(file, JSON.stringify({ at: new Date().toISOString(), event, mode: currentMode, tab: currentTab, ...details }) + '\n', { mode: 0o600 });
+  } catch (_error) { /* Diagnostics must never break the panel. */ }
+}
+
+function requestRendererCollapse(reason = 'requested') {
   if (!mainWindow || currentMode !== 'expanded') return;
+  recordPanelEvent('collapse-request', { reason });
   beginNativeCollapse();
   mainWindow.webContents.send('window:request-collapse');
+}
+
+function cancelBlurCollapseTimer() {
+  if (!blurCollapseTimer) return;
+  clearTimeout(blurCollapseTimer);
+  blurCollapseTimer = null;
+}
+
+function isCursorInsideMainWindow() {
+  if (!mainWindow || mainWindow.isDestroyed() || !mainWindow.isVisible()) return false;
+  try {
+    const point = screen.getCursorScreenPoint();
+    const bounds = mainWindow.getBounds();
+    return point.x >= bounds.x && point.x < bounds.x + bounds.width
+      && point.y >= bounds.y && point.y < bounds.y + bounds.height;
+  } catch (_error) {
+    return false;
+  }
 }
 
 function hideWindowAfterCollapse() {
@@ -746,6 +797,7 @@ function createTaskNotificationWindow() {
       nodeIntegration: false,
       sandbox: true,
       backgroundThrottling: false,
+      backgroundThrottling: false,
     },
   });
 
@@ -1032,6 +1084,10 @@ function createWindow() {
   });
 
   installLocalWebContentsGuards(mainWindow.webContents);
+  mainWindow.webContents.on('render-process-gone', (_event, details) => {
+    recordPanelEvent('renderer-exited', { reason: details.reason, exitCode: details.exitCode });
+  });
+  mainWindow.on('unresponsive', () => recordPanelEvent('unresponsive'));
 
   mainWindow.setAlwaysOnTop(true, 'screen-saver');
   mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
@@ -1044,16 +1100,32 @@ function createWindow() {
     }
   });
 
-  // 失焦时让渲染层走完整退场动画，再由渲染层请求缩小原生窗口。
+  // BrowserWindow 失焦不一定代表用户离开应用：输入翻译等原生窗口也属于 IRiXi。
+  // 给 macOS 一个很短的焦点交接时间，再根据整个应用是否仍活跃决定是否收起。
   mainWindow.on('blur', () => {
-    if (mediaPermissionRequests > 0 || transientSystemInteractionRequests > 0) {
-      cameraBlurDeferred = true;
-      return;
-    }
-    requestRendererCollapse();
+    const targetWindow = mainWindow;
+    cancelBlurCollapseTimer();
+    blurCollapseTimer = setTimeout(() => {
+      blurCollapseTimer = null;
+      if (mainWindow !== targetWindow || !targetWindow || targetWindow.isDestroyed()) return;
+      const policy = panelBlurPolicy({
+        appActive: process.platform === 'darwin' ? app.isActive() : targetWindow.isFocused(),
+        cursorInside: isCursorInsideMainWindow(),
+        mediaPermissionRequests,
+        transientSystemInteractionRequests,
+      });
+      if (policy === 'defer') {
+        cameraBlurDeferred = true;
+        return;
+      }
+      recordPanelEvent('blur-policy', { policy });
+      if (policy === 'collapse') requestRendererCollapse('blur');
+    }, 80);
   });
 
   mainWindow.on('focus', () => {
+    recordPanelEvent('focus');
+    cancelBlurCollapseTimer();
     cameraBlurDeferred = false;
   });
   mainWindow.on('show', syncHoverSpacePolling);
@@ -1067,6 +1139,7 @@ function createWindow() {
   });
 
   mainWindow.on('closed', () => {
+    cancelBlurCollapseTimer();
     cancelCollapseWatchdog();
     hideWhenCollapsed = false;
     mainWindow = null;
@@ -1267,7 +1340,8 @@ function publicAppSettings() {
     ...settings,
     autoLaunch: isAutoLaunchEnabled(),
     captureShortcutActive: configuredCaptureShortcut === settings.captureShortcut
-      && globalShortcut.isRegistered(settings.captureShortcut),
+      && nativeModule.isAreaCaptureShortcutRegistered(settings.captureShortcut),
+    captureShortcutError,
   };
 }
 
@@ -1397,34 +1471,21 @@ function isValidCaptureShortcut(shortcut) {
   return shortcut !== 'Space' && isValidPanelShortcut(shortcut);
 }
 
-function runAreaCaptureShortcut() {
-  const result = nativeModule.startAreaCapture();
-  if (result?.ok || result?.error === 'busy') return;
-  openRendererPanel('app:open-tools');
-}
-
 function registerCaptureShortcut(shortcut) {
-  try {
-    return globalShortcut.register(shortcut, runAreaCaptureShortcut);
-  } catch (error) {
-    return false;
-  }
+  return nativeModule.setAreaCaptureShortcut(shortcut);
 }
 
 function setCaptureShortcut(shortcut) {
   if (!isValidCaptureShortcut(shortcut)) return false;
   const previousShortcut = configuredCaptureShortcut;
-  if (previousShortcut && globalShortcut.isRegistered(previousShortcut)) {
-    globalShortcut.unregister(previousShortcut);
-  }
-  if (registerCaptureShortcut(shortcut)) {
+  const result = registerCaptureShortcut(shortcut);
+  if (result.ok) {
     configuredCaptureShortcut = shortcut;
+    captureShortcutError = '';
     return true;
   }
-  configuredCaptureShortcut = '';
-  if (previousShortcut && registerCaptureShortcut(previousShortcut)) {
-    configuredCaptureShortcut = previousShortcut;
-  }
+  configuredCaptureShortcut = previousShortcut;
+  captureShortcutError = result.error || 'unavailable';
   return false;
 }
 
@@ -1627,7 +1688,9 @@ ipcMain.handle('settings:set-shortcut', (event, accelerator) => {
 ipcMain.handle('settings:set-capture-shortcut', (event, accelerator) => {
   if (!isValidCaptureShortcut(accelerator)) return { ok: false, error: 'invalid' };
   const previousShortcut = readAppSettings().captureShortcut;
-  if (!setCaptureShortcut(accelerator)) return { ok: false, error: 'occupied' };
+  if (!setCaptureShortcut(accelerator)) {
+    return { ok: false, error: captureShortcutError || 'unavailable' };
+  }
   const next = readAppSettings();
   next.captureShortcut = accelerator;
   if (!saveAppSettings(next)) {
@@ -1862,6 +1925,7 @@ ipcMain.handle('window:metrics', () => {
 // Tab 仅改变内容；固定展开尺寸下不再触发原生窗口 resize。
 ipcMain.handle('window:set-tab', (event, tab) => {
   currentTab = Object.prototype.hasOwnProperty.call(TAB_SIZES, tab) ? tab : 'home';
+  recordPanelEvent('tab');
 });
 
 // macOS 渲染层 getUserMedia 不会自动弹 TCC 授权，必须由主进程申请摄像头权限
@@ -2843,7 +2907,7 @@ function readFrontmostApp() {
 
 async function rememberPasteTarget() {
   const current = await readFrontmostApp();
-  if (current && !['com.github.Electron', 'com.vibecoding.notch-todo', 'com.dynamicpanel.app', 'ai.clockout.island'].includes(current.bundleId)) {
+  if (current && !['com.irixi.toolbox', 'com.github.Electron', 'com.vibecoding.notch-todo', 'com.dynamicpanel.app', 'ai.clockout.island'].includes(current.bundleId)) {
     previousPasteTarget = current;
   }
   return previousPasteTarget;
@@ -2989,6 +3053,18 @@ function run(argv) {
   }
   if (!controlMenu) return 'menu_missing';
 
+  if (action === 'status') {
+    const pauseNames = ['暂停', 'Pause'];
+    const playNames = ['播放', 'Play'];
+    for (let index = 0; index < pauseNames.length; index += 1) {
+      if (controlMenu.menuItems.byName(pauseNames[index]).exists()) return 'ok:1';
+    }
+    for (let index = 0; index < playNames.length; index += 1) {
+      if (controlMenu.menuItems.byName(playNames[index]).exists()) return 'ok:0';
+    }
+    return 'state_missing';
+  }
+
   const specs = {
     play: { trigger: ['播放', 'Play'], already: ['暂停', 'Pause'], playing: '1' },
     pause: { trigger: ['暂停', 'Pause'], already: ['播放', 'Play'], playing: '0' },
@@ -3010,12 +3086,49 @@ function run(argv) {
   return 'item_missing';
 }`;
 
+// macOS 15.4+ only exposes complete Now Playing data to platform-signed callers.
+// Running this narrow read through Apple's own osascript returns the real current
+// song and elapsed time without reading网易云的界面、缓存顺序或进程内存。
+const NETEASE_NOW_PLAYING_JXA = `
+ObjC.import('Foundation');
+function unwrap(value) {
+  if (value === undefined || value === null) return null;
+  try { return ObjC.unwrap(value); } catch (error) { return null; }
+}
+function run() {
+  const framework = $.NSBundle.bundleWithPath('/System/Library/PrivateFrameworks/MediaRemote.framework/');
+  framework.load;
+  const request = $.NSClassFromString('MRNowPlayingRequest');
+  const item = request.localNowPlayingItem;
+  const info = item && item.nowPlayingInfo;
+  const playerPath = request.localNowPlayingPlayerPath;
+  const client = playerPath && playerPath.client;
+  const bundleIdentifier = client ? String(unwrap(client.bundleIdentifier) || '') : '';
+  if (!info || bundleIdentifier !== 'com.netease.163music') return '{}';
+  const value = (key) => unwrap(info.valueForKey(key));
+  const duration = Number(value('kMRMediaRemoteNowPlayingInfoDuration')) || 0;
+  const elapsed = Number(value('kMRMediaRemoteNowPlayingInfoElapsedTime')) || 0;
+  const rate = Number(value('kMRMediaRemoteNowPlayingInfoPlaybackRate')) || 0;
+  const timestampValue = info.valueForKey('kMRMediaRemoteNowPlayingInfoTimestamp');
+  const timestampSeconds = timestampValue ? Number(timestampValue.timeIntervalSince1970) : Date.now() / 1000;
+  const elapsedNow = Math.max(0, Math.min(duration || Infinity,
+    elapsed + Math.max(0, Date.now() / 1000 - timestampSeconds) * rate));
+  return JSON.stringify({
+    bundleIdentifier,
+    title: String(value('kMRMediaRemoteNowPlayingInfoTitle') || ''),
+    artist: String(value('kMRMediaRemoteNowPlayingInfoArtist') || ''),
+    album: String(value('kMRMediaRemoteNowPlayingInfoAlbum') || ''),
+    durationMs: Math.round(duration * 1000),
+    positionMs: Math.round(elapsedNow * 1000),
+    playing: rate > 0,
+    contentItemIdentifier: String(value('kMRMediaRemoteNowPlayingInfoContentItemIdentifier') || ''),
+  });
+}`;
+
 async function sendNeteaseControl(action) {
   if (process.platform !== 'darwin') return { ok: false, error: 'unsupported' };
-  if (!systemPreferences.isTrustedAccessibilityClient(true)) {
-    return { ok: false, error: 'accessibility_permission_required' };
-  }
   if (!neteaseMenuSpec(action)) return { ok: false, error: 'invalid_action' };
+  try { systemPreferences.isTrustedAccessibilityClient(true); } catch (error) {}
   try {
     const result = await runJxa(NETEASE_CONTROL_JXA, [action]);
     if (result === 'ok:1') return { ok: true, playing: true };
@@ -3023,21 +3136,222 @@ async function sendNeteaseControl(action) {
     return { ok: false, error: 'netease_control_failed' };
   } catch (error) {
     console.warn('[music] failed to control NetEase Music', error && error.message || error);
-    return { ok: false, error: 'netease_control_failed' };
+    return { ok: false, error: classifyNeteaseControlError(error) };
+  }
+}
+
+async function readNeteasePlayingState() {
+  try {
+    const result = await runJxa(NETEASE_CONTROL_JXA, ['status']);
+    if (result === 'ok:1') return true;
+    if (result === 'ok:0') return false;
+  } catch (error) {}
+  return null;
+}
+
+async function readNeteaseNowPlaying() {
+  try {
+    const value = JSON.parse(await runJxa(NETEASE_NOW_PLAYING_JXA));
+    return value && value.bundleIdentifier === 'com.netease.163music' && value.title ? value : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function comparableMusicText(value) {
+  return String(value || '')
+    .normalize('NFKC')
+    .toLocaleLowerCase()
+    .replace(/[\s\p{P}\p{S}]+/gu, '');
+}
+
+function mediaMatchesNowPlaying(metadata, nowPlaying) {
+  if (!metadata || !nowPlaying) return false;
+  const title = comparableMusicText(metadata.title);
+  const nowTitle = comparableMusicText(nowPlaying.title);
+  if (!title || !nowTitle || title !== nowTitle) return false;
+  const artist = comparableMusicText(metadata.artist);
+  const nowArtist = comparableMusicText(nowPlaying.artist);
+  return !artist || !nowArtist || artist.includes(nowArtist) || nowArtist.includes(artist);
+}
+
+function runCommandText(command, args, options = {}) {
+  return new Promise((resolve, reject) => {
+    execFile(
+      command,
+      args,
+      { timeout: options.timeout || 3500, maxBuffer: options.maxBuffer || 2 * 1024 * 1024 },
+      (error, stdout) => error ? reject(error) : resolve(String(stdout || '').trim())
+    );
+  });
+}
+
+async function currentNeteaseTrackId() {
+  if (process.platform !== 'darwin') return '';
+  try {
+    const openFiles = await runCommandText(
+      '/usr/sbin/lsof',
+      ['-n', '-Fn', '-c', 'NeteaseMusic'],
+      { timeout: 2500, maxBuffer: 4 * 1024 * 1024 }
+    );
+    return neteaseTrackIdFromOpenFiles(openFiles);
+  } catch (error) {
+    return '';
+  }
+}
+
+function localNeteasePosition(durationMs = 0) {
+  const duration = Math.max(0, Number(durationMs) || 0);
+  let position = neteasePlaybackPositionMs;
+  if (neteaseMusicPlaying && neteasePlaybackStartedAt > 0) {
+    position += Date.now() - neteasePlaybackStartedAt;
+  }
+  return clampNeteasePosition(position, duration);
+}
+
+function setLocalNeteasePosition(positionMs, durationMs = 0, playing = neteaseMusicPlaying) {
+  neteasePlaybackPositionMs = clampNeteasePosition(positionMs, durationMs);
+  neteasePlaybackStartedAt = playing ? Date.now() : 0;
+}
+
+async function readNeteaseTrackMetadata(trackId) {
+  if (!/^\d+$/.test(String(trackId || ''))) return null;
+  if (fs.existsSync(NETEASE_TRACK_DB)) {
+    const query = `SELECT jsonStr FROM dbTrack WHERE id='${trackId}' LIMIT 1;`;
+    try {
+      const value = await runCommandText(
+        '/usr/bin/sqlite3',
+        ['-readonly', '-batch', '-noheader', NETEASE_TRACK_DB, query],
+        { timeout: 2500, maxBuffer: 2 * 1024 * 1024 }
+      );
+      const local = normalizeNeteaseTrackMetadata(value);
+      if (local) return local;
+    } catch (error) {}
+  }
+  try {
+    const url = `https://music.163.com/api/song/detail?ids=%5B${encodeURIComponent(trackId)}%5D`;
+    const { bytes } = await fetchBoundedBytes(url, {
+      timeout: 6500,
+      maxBytes: 512 * 1024,
+      headers: {
+        Accept: 'application/json',
+        Referer: 'https://music.163.com/',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X) IRiXi-Toolbox',
+      },
+    });
+    const payload = JSON.parse(bytes.toString('utf8'));
+    return normalizeNeteaseTrackMetadata(payload && Array.isArray(payload.songs) ? payload.songs[0] : null);
+  } catch (error) {
+    return null;
+  }
+}
+
+async function fetchNeteaseArtworkDataUrl(artworkUrl) {
+  if (!artworkUrl) return '';
+  let parsed;
+  try { parsed = new URL(artworkUrl); } catch (error) { return ''; }
+  if (parsed.protocol !== 'https:' || !/(^|\.)music\.126\.net$/i.test(parsed.hostname)) return '';
+  try {
+    const { bytes, contentType } = await fetchBoundedBytes(parsed.toString(), {
+      timeout: 6000,
+      maxBytes: 5 * 1024 * 1024,
+    });
+    const mimeType = String(contentType || 'image/jpeg').split(';')[0].trim();
+    if (!mimeType.startsWith('image/') || !bytes.length) return '';
+    return `data:${mimeType};base64,${bytes.toString('base64')}`;
+  } catch (error) {
+    return '';
+  }
+}
+
+async function fetchNeteaseLyrics(trackId) {
+  if (!/^\d+$/.test(String(trackId || ''))) return [];
+  try {
+    const url = `https://music.163.com/api/song/lyric?id=${trackId}&lv=-1&tv=-1`;
+    const { bytes } = await fetchBoundedBytes(url, {
+      timeout: 6500,
+      maxBytes: 1024 * 1024,
+      headers: {
+        Accept: 'application/json',
+        Referer: 'https://music.163.com/',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X) IRiXi-Toolbox',
+      },
+    });
+    return normalizeNeteaseLyricsPayload(JSON.parse(bytes.toString('utf8')));
+  } catch (error) {
+    return [];
+  }
+}
+
+async function loadNeteaseMedia(trackId) {
+  const now = Date.now();
+  if (neteaseMediaCache.trackId === trackId && now - neteaseMediaCache.updatedAt < NETEASE_MEDIA_CACHE_MS) {
+    return neteaseMediaCache;
+  }
+  if (neteaseMediaLoad && neteaseMediaLoad.trackId === trackId) return neteaseMediaLoad.promise;
+  const promise = (async () => {
+    const metadata = await readNeteaseTrackMetadata(trackId);
+    if (!metadata) return { trackId, metadata: null, artwork: '', lyrics: [], updatedAt: Date.now() };
+    const [artwork, lyrics] = await Promise.all([
+      fetchNeteaseArtworkDataUrl(metadata.artworkUrl),
+      fetchNeteaseLyrics(trackId),
+    ]);
+    return { trackId, metadata, artwork, lyrics, updatedAt: Date.now() };
+  })();
+  neteaseMediaLoad = { trackId, promise };
+  try {
+    neteaseMediaCache = await promise;
+    return neteaseMediaCache;
+  } finally {
+    if (neteaseMediaLoad && neteaseMediaLoad.promise === promise) neteaseMediaLoad = null;
   }
 }
 
 ipcMain.handle('music:status', async () => {
   const installed = fs.existsSync(NETEASE_MUSIC_APP);
   const running = installed ? await neteaseMusicRunning() : false;
-  if (!running) neteaseMusicPlaying = false;
+  const nowPlaying = running ? await readNeteaseNowPlaying() : null;
+  if (!running) {
+    neteaseMusicPlaying = false;
+    setLocalNeteasePosition(0);
+  } else if (nowPlaying) {
+    neteaseMusicPlaying = nowPlaying.playing;
+  } else {
+    const detectedPlaying = await readNeteasePlayingState();
+    if (typeof detectedPlaying === 'boolean' && detectedPlaying !== neteaseMusicPlaying) {
+      const durationMs = neteaseMediaCache.metadata && neteaseMediaCache.metadata.durationMs || 0;
+      setLocalNeteasePosition(localNeteasePosition(durationMs), durationMs, detectedPlaying);
+      neteaseMusicPlaying = detectedPlaying;
+    }
+  }
+  const candidateTrackId = running ? await currentNeteaseTrackId() : '';
+  const candidateMedia = candidateTrackId ? await loadNeteaseMedia(candidateTrackId) : null;
+  const matchedMedia = mediaMatchesNowPlaying(candidateMedia && candidateMedia.metadata, nowPlaying)
+    ? candidateMedia
+    : null;
+  const metadata = nowPlaying || matchedMedia && matchedMedia.metadata;
+  const durationMs = metadata && metadata.durationMs || 0;
+  const trackId = nowPlaying
+    ? String(nowPlaying.contentItemIdentifier || `${nowPlaying.title}\u0000${nowPlaying.artist}`)
+    : candidateTrackId;
+  if (!nowPlaying && trackId !== neteasePlaybackTrackId) {
+    neteasePlaybackTrackId = trackId;
+    setLocalNeteasePosition(0, durationMs, neteaseMusicPlaying);
+  }
   return {
     installed,
     running,
     sessionActive: running,
     playing: running && neteaseMusicPlaying,
-    title: '',
-    artist: '',
+    trackId,
+    title: metadata && metadata.title || '',
+    artist: metadata && metadata.artist || '',
+    album: metadata && metadata.album || '',
+    durationMs,
+    positionMs: nowPlaying ? nowPlaying.positionMs : localNeteasePosition(durationMs),
+    artwork: matchedMedia && matchedMedia.artwork || '',
+    lyrics: matchedMedia && matchedMedia.lyrics || [],
+    lyricsPending: Boolean(nowPlaying && !matchedMedia),
     icon: installed ? await readSystemAppIconNow(NETEASE_MUSIC_APP) : null,
   };
 });
@@ -3049,7 +3363,19 @@ ipcMain.handle('music:control', async (event, action) => {
     launch: launchNeteaseMusic,
     sendControl: sendNeteaseControl,
   }, neteaseMusicPlaying);
-  if (result && result.ok) neteaseMusicPlaying = result.playing;
+  if (result && result.ok) {
+    const durationMs = neteaseMediaCache.metadata && neteaseMediaCache.metadata.durationMs || 0;
+    if (action === 'next' || action === 'previous') {
+      neteasePlaybackTrackId = '';
+      neteaseMediaCache.updatedAt = 0;
+      setLocalNeteasePosition(0, durationMs, result.playing);
+    } else if (action === 'pause') {
+      setLocalNeteasePosition(localNeteasePosition(durationMs), durationMs, false);
+    } else if (action === 'play') {
+      setLocalNeteasePosition(localNeteasePosition(durationMs), durationMs, true);
+    }
+    neteaseMusicPlaying = result.playing;
+  }
   if (result && result.ok && mainWindow && !mainWindow.isDestroyed() && currentMode === 'expanded') {
     if (!mainWindow.isVisible()) mainWindow.show();
     mainWindow.focus();

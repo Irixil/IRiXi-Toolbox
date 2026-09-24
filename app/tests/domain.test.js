@@ -460,6 +460,7 @@ test('settings summary combines safe API status with local device settings', () 
     shortcut: 'Command+Shift+P',
     captureShortcut: 'Command+Shift+X',
     captureShortcutActive: true,
+    captureShortcutError: '',
     autoLaunch: true,
     workspacePath: '/Users/test/Panel',
     workspaceLabel: '自定义文件夹',

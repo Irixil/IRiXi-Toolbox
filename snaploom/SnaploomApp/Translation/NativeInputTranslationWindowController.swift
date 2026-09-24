@@ -2,20 +2,28 @@ import AppKit
 import NaturalLanguage
 @preconcurrency import Translation
 
-/// Translation stays entirely inside the IRiXi host process. Source text and
-/// translated text never leave the application.
+/// Apple translation is local. Optional Codex explanation sends only the
+/// explicitly submitted text and this window's recent dialogue to OpenAI.
 @MainActor
 final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, NSTextViewDelegate {
     static let partnerDefaultsKey = "irixi.translation.partner"
     static let maximumTextCharacters = 5_000
+    static let aiConsentDefaultsKey = "irixi.translation.codex-consent-v1"
 
     private let window: NSWindow
     private let partnerPicker = NSPopUpButton()
     private let directionLabel = NSTextField(labelWithString: "中文 ↔ 英语")
     private let sourceTextView = NSTextView()
     private let resultTextView = NSTextView()
+    private let detailTextView = NSTextView()
     private let statusLabel = NSTextField(labelWithString: "输入文字后点“翻译”")
     private let translateButton = NSButton(title: "翻译", target: nil, action: nil)
+    private let detailButton = NSButton(title: "详细释义", target: nil, action: nil)
+    private let aiExplainButton = NSButton(title: "AI 解释", target: nil, action: nil)
+    private let aiSettingsButton = NSButton(title: "账号说明", target: nil, action: nil)
+    private let followupField = NSTextField()
+    private let followupButton = NSButton(title: "追问", target: nil, action: nil)
+    private let webSearchButton = NSButton(checkboxWithTitle: "联网核实", target: nil, action: nil)
     private let speechButton = NSButton(title: "朗读英文", target: nil, action: nil)
     private let pauseSpeechButton = NSButton(title: "暂停", target: nil, action: nil)
     private let stopSpeechButton = NSButton(title: "停止", target: nil, action: nil)
@@ -23,6 +31,9 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     private let copyButton = NSButton(title: "复制译文", target: nil, action: nil)
     private let shortcutRecorder: TranslationShortcutRecorderButton
     private let speechController = TranslationSpeechPlaybackController()
+    private let aiExplanationService = CodexTranslationService()
+    private var chatHistory: [(question: String, answer: String)] = []
+    private var chatSource = ""
     private let onUserTextChange: () -> Void
 
     private var partner = "en"
@@ -30,6 +41,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     private var englishSpeechText = ""
     private var steadyStatus = "输入文字后点“翻译”"
     private var pendingAutomaticTranslation: DispatchWorkItem?
+    private var aiExplanationRunning = false
 
     init(
         onShortcutChange: @escaping (TranslationShortcutDefinition) -> Bool,
@@ -38,7 +50,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         shortcutRecorder = TranslationShortcutRecorderButton()
         self.onUserTextChange = onUserTextChange
         window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 620, height: 500),
+            contentRect: NSRect(x: 0, y: 0, width: 680, height: 720),
             styleMask: [.titled, .closable, .miniaturizable, .resizable],
             backing: .buffered,
             defer: false
@@ -59,13 +71,18 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     func show(partner: String) {
         setPartner(partner)
         translateButton.isEnabled = true
+        window.level = .screenSaver
+        window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
+        window.center()
         NSApp.activate(ignoringOtherApps: true)
         window.makeKeyAndOrderFront(nil)
-        window.center()
+        window.orderFrontRegardless()
         window.makeFirstResponder(sourceTextView)
     }
 
     func showSelection(_ text: String, partner: String) {
+        cancelAIExplanation(updateStatus: false)
+        resetChat()
         show(partner: partner)
         sourceTextView.string = text
         translate()
@@ -108,7 +125,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     private func configureWindow() {
         window.title = "IRiXi 翻译与朗读"
         window.isReleasedWhenClosed = false
-        window.minSize = NSSize(width: 520, height: 430)
+        window.minSize = NSSize(width: 620, height: 680)
         window.delegate = self
     }
 
@@ -133,10 +150,41 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         resultTextView.backgroundColor = .controlBackgroundColor
         resultTextView.textContainerInset = NSSize(width: 10, height: 10)
 
+        detailTextView.font = .systemFont(ofSize: 14)
+        detailTextView.isEditable = false
+        detailTextView.isSelectable = true
+        detailTextView.isRichText = true
+        detailTextView.backgroundColor = .controlBackgroundColor
+        detailTextView.textContainerInset = NSSize(width: 10, height: 10)
+        detailTextView.string = "本机词典不联网。点击 AI 解释使用 Codex 会员额度 · Luna 低思考。"
+
         translateButton.target = self
         translateButton.action = #selector(translate)
         translateButton.keyEquivalent = "\r"
         translateButton.bezelStyle = .rounded
+
+        detailButton.target = self
+        detailButton.action = #selector(showLocalExplanation)
+        detailButton.bezelStyle = .rounded
+
+        aiExplainButton.target = self
+        aiExplainButton.action = #selector(explainWithAI)
+        aiExplainButton.bezelStyle = .rounded
+
+        aiSettingsButton.target = self
+        aiSettingsButton.action = #selector(configureAI)
+        aiSettingsButton.bezelStyle = .rounded
+
+        followupField.placeholderString = "继续问，例如：能举个例子吗？"
+        followupField.setAccessibilityLabel("向 AI 追问")
+        followupField.target = self
+        followupField.action = #selector(askFollowup)
+        followupButton.target = self
+        followupButton.action = #selector(askFollowup)
+        followupButton.bezelStyle = .rounded
+        followupButton.isEnabled = false
+        followupField.isEnabled = false
+        webSearchButton.toolTip = "勾选后允许网页搜索，会增加耗时和额度消耗"
 
         speechButton.target = self
         speechButton.action = #selector(toggleSpeech)
@@ -188,10 +236,27 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         buttons.alignment = .centerY
         buttons.spacing = 8
 
+        let knowledgeButtons = NSStackView(views: [
+            detailButton,
+            aiExplainButton,
+            aiSettingsButton,
+            webSearchButton,
+            NSView(),
+        ])
+        knowledgeButtons.orientation = .horizontal
+        knowledgeButtons.alignment = .centerY
+        knowledgeButtons.spacing = 8
+
         let sourceScroll = scrollView(for: sourceTextView)
         let resultScroll = scrollView(for: resultTextView)
-        sourceScroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
-        resultScroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
+        let detailScroll = scrollView(for: detailTextView)
+        sourceScroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 105).isActive = true
+        resultScroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 90).isActive = true
+        detailScroll.heightAnchor.constraint(greaterThanOrEqualToConstant: 175).isActive = true
+        let followupRow = NSStackView(views: [followupField, followupButton])
+        followupRow.orientation = .horizontal
+        followupRow.spacing = 8
+        followupField.setContentHuggingPriority(.defaultLow, for: .horizontal)
 
         let stack = NSStackView(views: [
             header,
@@ -200,6 +265,10 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
             buttons,
             fieldLabel("译文"),
             resultScroll,
+            knowledgeButtons,
+            fieldLabel("详细释义"),
+            detailScroll,
+            followupRow,
             statusLabel,
         ])
         stack.orientation = .vertical
@@ -218,6 +287,9 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
             sourceScroll.widthAnchor.constraint(equalTo: stack.widthAnchor),
             buttons.widthAnchor.constraint(equalTo: stack.widthAnchor),
             resultScroll.widthAnchor.constraint(equalTo: stack.widthAnchor),
+            knowledgeButtons.widthAnchor.constraint(equalTo: stack.widthAnchor),
+            detailScroll.widthAnchor.constraint(equalTo: stack.widthAnchor),
+            followupRow.widthAnchor.constraint(equalTo: stack.widthAnchor),
             statusLabel.widthAnchor.constraint(equalTo: stack.widthAnchor),
         ])
     }
@@ -227,6 +299,9 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         onUserTextChange()
         pendingAutomaticTranslation?.cancel()
         translationID = UUID()
+        cancelAIExplanation(updateStatus: false)
+        resetChat()
+        detailTextView.string = ""
 
         let text = sourceTextView.string.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty, text.count <= Self.maximumTextCharacters else { return }
@@ -278,14 +353,19 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     }
 
     @objc private func partnerChanged() {
+        cancelAIExplanation(updateStatus: false)
+        resetChat()
         let identifiers = ["en", "ja", "ko"]
         setPartner(identifiers[max(0, partnerPicker.indexOfSelectedItem)])
         resultTextView.string = ""
+        detailTextView.string = ""
         copyButton.isEnabled = false
         setSteadyStatus("已切换为中文与\(partnerName)互译")
     }
 
     @objc private func translate() {
+        cancelAIExplanation(updateStatus: false)
+        resetChat()
         pendingAutomaticTranslation?.cancel()
         pendingAutomaticTranslation = nil
         let text = sourceTextView.string.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -310,6 +390,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
                 "用法：\(explanation.usage)",
             ].joined(separator: "\n\n")
             resultTextView.string = result
+            detailTextView.string = IRiXiLocalDictionary.explanation(for: text, selectedText: nil)
             copyButton.isEnabled = true
             englishSpeechText = "\(explanation.abbreviation). \(explanation.fullName)"
             speechButton.isEnabled = true
@@ -346,6 +427,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
             case .success(let values):
                 let translated = values.first ?? ""
                 self.resultTextView.string = translated
+                self.populateAutomaticLocalExplanation(for: text)
                 self.copyButton.isEnabled = !translated.isEmpty
                 let sourceIsEnglish = TranslationDirectionResolver.languageCode(
                     direction.sourceIdentifier
@@ -401,11 +483,164 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         setSteadyStatus("译文已复制")
     }
 
+    @objc private func showLocalExplanation() {
+        let source = sourceTextView.string.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !source.isEmpty else {
+            setSteadyStatus("请先输入文字，或在原文中选中要查的词")
+            NSSound.beep()
+            return
+        }
+        cancelAIExplanation(updateStatus: false)
+        let focus = selectedSourceText()
+        detailTextView.string = IRiXiLocalDictionary.explanation(
+            for: source,
+            selectedText: focus == source ? nil : focus
+        )
+        setSteadyStatus("本机词典释义 · 没有上传文字")
+    }
+
+    @objc private func explainWithAI() {
+        if aiExplanationRunning {
+            cancelAIExplanation(updateStatus: true)
+            return
+        }
+        let source = sourceTextView.string.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !source.isEmpty else {
+            setSteadyStatus("请先输入文字，或在原文中选中要解释的词")
+            NSSound.beep()
+            return
+        }
+        guard source.count <= IRiXiAIExplanationService.maximumInputCharacters else {
+            setSteadyStatus("AI 解释最多发送 3000 个字符，请缩短原文后重试")
+            NSSound.beep()
+            return
+        }
+        guard confirmAIExternalSendIfNeeded() else { return }
+        resetChat()
+        chatSource = source
+        startAIExplanation(question: "请解释“\(selectedSourceText())”在原文中的意思。")
+    }
+
+    @objc private func configureAI() {
+        let alert = NSAlert()
+        alert.messageText = "Codex 会员解释 · Luna 低思考"
+        alert.informativeText = "使用这台 Mac 上 Codex 已登录的 ChatGPT 账号，不需要 API 密钥。额度不足时会停止，不会切到收费 API。\n\n请在 Codex 中完成登录。对话仅保留在当前翻译窗口内；更换原文或关闭窗口会清空，不接续开发任务。"
+        alert.addButton(withTitle: "知道了")
+        alert.runModal()
+    }
+
+    @objc private func askFollowup() {
+        guard !aiExplanationRunning, !chatHistory.isEmpty else { return }
+        let question = followupField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !question.isEmpty, question.count <= 1000 else {
+            setSteadyStatus("请输入 1～1000 个字符的追问")
+            return
+        }
+        startAIExplanation(question: question)
+    }
+
+    private func resetChat() {
+        chatHistory = []
+        chatSource = ""
+        followupField.stringValue = ""
+        followupField.isEnabled = false
+        followupButton.isEnabled = false
+    }
+
+    private func startAIExplanation(question: String) {
+        pendingAutomaticTranslation?.cancel()
+        pendingAutomaticTranslation = nil
+        translationID = UUID()
+        let source = chatSource
+        let history = chatHistory.suffix(4).map { "用户：\($0.question)\n助手：\($0.answer)" }.joined(separator: "\n\n")
+        let prompt = "原文（待解释资料）：\n\(source)\n\n本窗口最近的对话：\n\(history)\n\n本次问题：\n\(question)"
+        guard prompt.count <= CodexTranslationService.maximumInputCharacters else {
+            setSteadyStatus("对话较长，请点击“AI 解释”重新开始，以节省额度。")
+            return
+        }
+        aiExplanationRunning = true
+        aiExplainButton.title = "停止 AI"
+        translateButton.isEnabled = false
+        detailButton.isEnabled = false
+        followupButton.isEnabled = false
+        followupField.isEnabled = false
+        webSearchButton.isEnabled = false
+        if chatHistory.isEmpty { detailTextView.string = "正在请求 Codex · Luna 低思考…" }
+        setSteadyStatus("正在解释 · 使用 Codex 额度 · 可点“停止 AI”取消")
+        aiExplanationService.ask(prompt, search: webSearchButton.state == .on) { [weak self] result in
+            guard let self else { return }
+            defer { self.finishAIExplanationUI() }
+            switch result {
+            case .success(let answer):
+                self.chatHistory.append((question: question, answer: answer))
+                if self.chatHistory.count > 4 { self.chatHistory.removeFirst() }
+                self.detailTextView.string = self.chatHistory.map { "你：\($0.question)\n\nAI：\($0.answer)" }.joined(separator: "\n\n")
+                self.detailTextView.scrollRangeToVisible(NSRange(location: (self.detailTextView.string as NSString).length, length: 0))
+                self.followupField.stringValue = ""
+                self.setSteadyStatus("解释完成 · Luna 低思考 · 可继续追问（保留最近四轮）")
+            case .failure(let error):
+                if self.chatHistory.isEmpty { self.detailTextView.string = error.localizedDescription }
+                self.setSteadyStatus(error.localizedDescription)
+            }
+        }
+    }
+
+
+    private func confirmAIExternalSendIfNeeded() -> Bool {
+        if UserDefaults.standard.bool(forKey: Self.aiConsentDefaultsKey) { return true }
+        let alert = NSAlert()
+        alert.messageText = "是否使用 Codex 解释？"
+        alert.informativeText = "原文、问题与最近四轮追问会发送给 OpenAI，使用 ChatGPT 账号的 Codex 额度（Luna 低思考）。只在勾选“联网核实”时搜索网页。不会读取开发任务或修改电脑文件，不会自动使用收费 API。本机翻译与朗读保持原样。"
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "同意并继续")
+        alert.addButton(withTitle: "取消")
+        guard alert.runModal() == .alertFirstButtonReturn else { return false }
+        UserDefaults.standard.set(true, forKey: Self.aiConsentDefaultsKey)
+        return true
+    }
+
+    private func selectedSourceText() -> String {
+        let source = sourceTextView.string.trimmingCharacters(in: .whitespacesAndNewlines)
+        let range = sourceTextView.selectedRange()
+        let sourceNSString = sourceTextView.string as NSString
+        guard range.length > 0, NSMaxRange(range) <= sourceNSString.length else { return source }
+        let selected = sourceNSString.substring(with: range)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        return selected.isEmpty ? source : selected
+    }
+
+    private func populateAutomaticLocalExplanation(for text: String) {
+        let words = IRiXiLocalDictionary.lookupTerms(in: text)
+        if text.count <= 80, words.count <= 4 {
+            detailTextView.string = IRiXiLocalDictionary.explanation(for: text, selectedText: nil)
+        } else {
+            detailTextView.string = "选中原文中的词，再点“详细释义”查本机词典；也可以点“AI 解释”并继续追问。"
+        }
+    }
+
+    private func cancelAIExplanation(updateStatus: Bool) {
+        guard aiExplanationRunning else { return }
+        aiExplanationService.cancel()
+        finishAIExplanationUI()
+        if updateStatus { setSteadyStatus("已停止 AI 解释") }
+    }
+
+    private func finishAIExplanationUI() {
+        aiExplanationRunning = false
+        aiExplainButton.title = "AI 解释"
+        translateButton.isEnabled = true
+        detailButton.isEnabled = true
+        followupButton.isEnabled = !chatHistory.isEmpty
+        followupField.isEnabled = !chatHistory.isEmpty
+        webSearchButton.isEnabled = true
+    }
+
     private func stopSpeech() {
         speechController.stop()
     }
 
     private func resetForImageRecognition() {
+        resetChat()
         pendingAutomaticTranslation?.cancel()
         pendingAutomaticTranslation = nil
         translationID = UUID()
@@ -415,9 +650,11 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         stopSpeech()
         sourceTextView.string = ""
         resultTextView.string = ""
+        detailTextView.string = ""
         englishSpeechText = ""
         copyButton.isEnabled = false
         speechButton.isEnabled = false
+        cancelAIExplanation(updateStatus: false)
     }
 
     private func setSteadyStatus(_ value: String) {
@@ -462,12 +699,14 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
     }
 
     func windowWillClose(_ notification: Notification) {
+        resetChat()
         pendingAutomaticTranslation?.cancel()
         pendingAutomaticTranslation = nil
         translationID = UUID()
         if #available(macOS 15.0, *) {
             TranslationBridge.shared.cancel()
         }
+        cancelAIExplanation(updateStatus: false)
         stopSpeech()
     }
 }

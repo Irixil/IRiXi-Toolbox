@@ -112,7 +112,7 @@ test('the fork preserves upstream attribution and records release blockers', () 
 
 test('local package uses the IRiXi identity and contains no Agent executor resource', () => {
   assert.equal(packageConfig.name, 'irixi-toolbox');
-  assert.equal(packageConfig.version, '0.4.1');
+  assert.equal(packageConfig.version, '0.4.17');
   assert.equal(packageConfig.build.appId, 'com.irixi.toolbox');
   assert.equal(packageConfig.build.productName, 'IRiXi的小工具库');
   assert.equal(packageConfig.build.mac.identity, null);

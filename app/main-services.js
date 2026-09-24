@@ -2,6 +2,35 @@ const net = require('net');
 const path = require('path');
 const crypto = require('crypto');
 
+// Keep the deadline active until the entire bounded body has been consumed.
+async function fetchBoundedBytes(url, { timeout = 6000, maxBytes, headers = {} }) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  let reader;
+  try {
+    const response = await fetch(url, { headers, signal: controller.signal });
+    if (!response.ok) throw new Error(`http_${response.status}`);
+    if (Number(response.headers.get('content-length')) > maxBytes) throw new Error('response_too_large');
+    reader = response.body?.getReader();
+    const chunks = [];
+    let size = 0;
+    if (reader) {
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        size += value.byteLength;
+        if (size > maxBytes) throw new Error('response_too_large');
+        chunks.push(value);
+      }
+    }
+    return { bytes: Buffer.concat(chunks, size), contentType: response.headers.get('content-type') || '' };
+  } finally {
+    clearTimeout(timer);
+    controller.abort();
+    reader?.releaseLock();
+  }
+}
+
 function isPrivateAddress(address) {
   const value = String(address || '').trim().toLowerCase().split('%', 1)[0];
   if (!value) return true;
@@ -111,6 +140,19 @@ function selectTranscriptionSettings(current, legacy) {
   const currentSettings = current && typeof current === 'object' && !Array.isArray(current) ? current : {};
   if (Object.keys(currentSettings).length) return currentSettings;
   return legacy && typeof legacy === 'object' && !Array.isArray(legacy) ? legacy : {};
+}
+
+function panelBlurPolicy({
+  appActive = false,
+  cursorInside = false,
+  mediaPermissionRequests = 0,
+  transientSystemInteractionRequests = 0,
+} = {}) {
+  if (mediaPermissionRequests > 0 || transientSystemInteractionRequests > 0) return 'defer';
+  // 交互发生在面板内部时，macOS 可能先发 blur 再发点击事件（尤其是
+  // 自绘控件和 AX 自动化）。不要把一次内部点击误判成用户离开。
+  if (cursorInside) return 'retain';
+  return appActive ? 'retain' : 'collapse';
 }
 
 function recordingExtension(mimeType) {
@@ -462,6 +504,87 @@ function neteaseMenuSpec(action) {
   return null;
 }
 
+function classifyNeteaseControlError(error) {
+  const message = String(error && (error.stderr || error.message) || error || '');
+  if (/(-1743)|not (?:authori[sz]ed|permitted) to send apple events|automation permission/i.test(message)) {
+    return 'automation_permission_required';
+  }
+  if (/(-1719)|(-25211)|assistive access|accessibility permission/i.test(message)) {
+    return 'accessibility_permission_required';
+  }
+  return 'netease_control_failed';
+}
+
+function neteaseTrackIdFromOpenFiles(output) {
+  const matches = String(output || '').matchAll(/\/online_play_cache\/(\d+)-_-_[^\n]*\.uc!?/g);
+  let trackId = '';
+  for (const match of matches) trackId = match[1];
+  return trackId;
+}
+
+function normalizeNeteaseTrackMetadata(value) {
+  let track = value;
+  if (typeof value === 'string') {
+    try { track = JSON.parse(value); } catch (error) { return null; }
+  }
+  if (!track || typeof track !== 'object' || Array.isArray(track)) return null;
+  const id = String(track.id || '').trim();
+  const title = String(track.name || track.title || '').trim();
+  if (!/^\d+$/.test(id) || !title) return null;
+  const artists = Array.isArray(track.artists)
+    ? track.artists.map((artist) => String(artist && artist.name || '').trim()).filter(Boolean)
+    : [];
+  const albumValue = track.album && typeof track.album === 'object' ? track.album : {};
+  const artworkValue = String(albumValue.picUrl || albumValue.cover || '').trim();
+  return {
+    id,
+    title,
+    artist: artists.join(' / '),
+    album: String(albumValue.name || albumValue.albumName || '').trim(),
+    durationMs: Math.max(0, Number(track.duration) || 0),
+    artworkUrl: /^https?:\/\//i.test(artworkValue)
+      ? artworkValue.replace(/^http:\/\//i, 'https://')
+      : '',
+  };
+}
+
+function parseNeteaseLrc(text) {
+  const lines = [];
+  for (const rawLine of String(text || '').split(/\r?\n/)) {
+    const timestamps = [...rawLine.matchAll(/\[(\d{1,3}):(\d{2})(?:[.:](\d{1,3}))?\]/g)];
+    if (!timestamps.length) continue;
+    const lyric = rawLine.replace(/\[[^\]]+\]/g, '').trim();
+    if (!lyric) continue;
+    for (const stamp of timestamps) {
+      const fraction = String(stamp[3] || '0').padEnd(3, '0').slice(0, 3);
+      const timeMs = (Number(stamp[1]) * 60 + Number(stamp[2])) * 1000 + Number(fraction);
+      if (Number.isFinite(timeMs)) lines.push({ timeMs, text: lyric });
+    }
+  }
+  return lines.sort((left, right) => left.timeMs - right.timeMs);
+}
+
+function normalizeNeteaseLyricsPayload(payload) {
+  let value = payload;
+  if (typeof payload === 'string') {
+    try { value = JSON.parse(payload); } catch (error) { return []; }
+  }
+  if (!value || typeof value !== 'object' || value.nolyric === true || value.uncollected === true) return [];
+  const original = parseNeteaseLrc(value.lrc && value.lrc.lyric);
+  const translated = parseNeteaseLrc(value.tlyric && value.tlyric.lyric);
+  const translationsByTime = new Map(translated.map((line) => [line.timeMs, line.text]));
+  return original.slice(0, 600).map((line) => {
+    const translation = translationsByTime.get(line.timeMs) || '';
+    return translation && translation !== line.text ? { ...line, translation } : line;
+  });
+}
+
+function clampNeteasePosition(value, durationMs = 0) {
+  const duration = Math.max(0, Number(durationMs) || 0);
+  const position = Math.max(0, Number(value) || 0);
+  return duration > 0 ? Math.min(position, duration) : position;
+}
+
 async function controlNeteaseMusic(action, dependencies = {}, currentPlaying = false) {
   if (!['play', 'pause', 'next', 'previous'].includes(action)) {
     return { ok: false, error: 'invalid_action', running: false, playing: false };
@@ -507,6 +630,7 @@ async function controlNeteaseMusic(action, dependencies = {}, currentPlaying = f
 }
 
 module.exports = {
+  fetchBoundedBytes,
   isPrivateAddress,
   decodeHtmlEntities,
   extractPageTitle,
@@ -520,6 +644,7 @@ module.exports = {
   parseSmartLinkMetadata,
   parseSmartMaterialMetadata,
   selectTranscriptionSettings,
+  panelBlurPolicy,
   clipboardServicePolicy,
   createClipboardImageFingerprint,
   prepareClipboardImagePayload,
@@ -533,5 +658,11 @@ module.exports = {
   hoverSpacePollingPolicy,
   updateFeaturePreference,
   neteaseMenuSpec,
+  classifyNeteaseControlError,
+  neteaseTrackIdFromOpenFiles,
+  normalizeNeteaseTrackMetadata,
+  parseNeteaseLrc,
+  normalizeNeteaseLyricsPayload,
+  clampNeteasePosition,
   controlNeteaseMusic,
 };

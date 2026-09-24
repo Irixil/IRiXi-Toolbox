@@ -1,4 +1,5 @@
 import AppKit
+import Carbon.HIToolbox
 import CoreGraphics
 import UniformTypeIdentifiers
 import Vision
@@ -41,6 +42,159 @@ private final class IRiXiCaptureGate: @unchecked Sendable {
         defer { lock.unlock() }
         return active
     }
+}
+
+private struct IRiXiCaptureShortcutDefinition: Equatable {
+    let accelerator: String
+    let keyCode: UInt32
+    let modifiers: UInt32
+
+    init?(accelerator: String) {
+        let parts = accelerator.split(separator: "+").map(String.init)
+        guard parts.count >= 2, let keyName = parts.last,
+              let keyCode = Self.keyCodes[keyName] else { return nil }
+
+        var modifiers: UInt32 = 0
+        for modifier in parts.dropLast() {
+            switch modifier {
+            case "Command", "CommandOrControl": modifiers |= UInt32(cmdKey)
+            case "Control": modifiers |= UInt32(controlKey)
+            case "Alt", "Option": modifiers |= UInt32(optionKey)
+            case "Shift": modifiers |= UInt32(shiftKey)
+            default: return nil
+            }
+        }
+        guard modifiers != 0 else { return nil }
+        self.accelerator = accelerator
+        self.keyCode = keyCode
+        self.modifiers = modifiers
+    }
+
+    private static let keyCodes: [String: UInt32] = [
+        "A": UInt32(kVK_ANSI_A), "B": UInt32(kVK_ANSI_B),
+        "C": UInt32(kVK_ANSI_C), "D": UInt32(kVK_ANSI_D),
+        "E": UInt32(kVK_ANSI_E), "F": UInt32(kVK_ANSI_F),
+        "G": UInt32(kVK_ANSI_G), "H": UInt32(kVK_ANSI_H),
+        "I": UInt32(kVK_ANSI_I), "J": UInt32(kVK_ANSI_J),
+        "K": UInt32(kVK_ANSI_K), "L": UInt32(kVK_ANSI_L),
+        "M": UInt32(kVK_ANSI_M), "N": UInt32(kVK_ANSI_N),
+        "O": UInt32(kVK_ANSI_O), "P": UInt32(kVK_ANSI_P),
+        "Q": UInt32(kVK_ANSI_Q), "R": UInt32(kVK_ANSI_R),
+        "S": UInt32(kVK_ANSI_S), "T": UInt32(kVK_ANSI_T),
+        "U": UInt32(kVK_ANSI_U), "V": UInt32(kVK_ANSI_V),
+        "W": UInt32(kVK_ANSI_W), "X": UInt32(kVK_ANSI_X),
+        "Y": UInt32(kVK_ANSI_Y), "Z": UInt32(kVK_ANSI_Z),
+        "0": UInt32(kVK_ANSI_0), "1": UInt32(kVK_ANSI_1),
+        "2": UInt32(kVK_ANSI_2), "3": UInt32(kVK_ANSI_3),
+        "4": UInt32(kVK_ANSI_4), "5": UInt32(kVK_ANSI_5),
+        "6": UInt32(kVK_ANSI_6), "7": UInt32(kVK_ANSI_7),
+        "8": UInt32(kVK_ANSI_8), "9": UInt32(kVK_ANSI_9),
+        "Space": UInt32(kVK_Space), "Tab": UInt32(kVK_Tab),
+        "Enter": UInt32(kVK_Return), "Return": UInt32(kVK_Return),
+        "Escape": UInt32(kVK_Escape), "Backspace": UInt32(kVK_Delete),
+        "Delete": UInt32(kVK_ForwardDelete), "Left": UInt32(kVK_LeftArrow),
+        "Right": UInt32(kVK_RightArrow), "Up": UInt32(kVK_UpArrow),
+        "Down": UInt32(kVK_DownArrow), "Home": UInt32(kVK_Home),
+        "End": UInt32(kVK_End), "PageUp": UInt32(kVK_PageUp),
+        "PageDown": UInt32(kVK_PageDown), "F1": UInt32(kVK_F1),
+        "F2": UInt32(kVK_F2), "F3": UInt32(kVK_F3),
+        "F4": UInt32(kVK_F4), "F5": UInt32(kVK_F5),
+        "F6": UInt32(kVK_F6), "F7": UInt32(kVK_F7),
+        "F8": UInt32(kVK_F8), "F9": UInt32(kVK_F9),
+        "F10": UInt32(kVK_F10), "F11": UInt32(kVK_F11),
+        "F12": UInt32(kVK_F12), "F13": UInt32(kVK_F13),
+        "F14": UInt32(kVK_F14), "F15": UInt32(kVK_F15),
+        "F16": UInt32(kVK_F16), "F17": UInt32(kVK_F17),
+        "F18": UInt32(kVK_F18), "F19": UInt32(kVK_F19),
+        "F20": UInt32(kVK_F20),
+    ]
+}
+
+@MainActor
+private final class IRiXiCaptureShortcutManager {
+    static let shared = IRiXiCaptureShortcutManager()
+
+    nonisolated(unsafe) private var eventHandler: EventHandlerRef?
+    nonisolated(unsafe) private var hotKey: EventHotKeyRef?
+    private var current: IRiXiCaptureShortcutDefinition?
+
+    func register(accelerator: String) -> Int32 {
+        guard let shortcut = IRiXiCaptureShortcutDefinition(accelerator: accelerator) else { return 2 }
+        guard installHandlerIfNeeded() else { return 3 }
+        if shortcut == current, hotKey != nil { return 0 }
+
+        var nextHotKey: EventHotKeyRef?
+        let identifier = EventHotKeyID(signature: Self.signature, id: 1)
+        let status = RegisterEventHotKey(
+            shortcut.keyCode,
+            shortcut.modifiers,
+            identifier,
+            GetApplicationEventTarget(),
+            0,
+            &nextHotKey
+        )
+        guard status == noErr, let nextHotKey else {
+            return status == eventHotKeyExistsErr ? 1 : 3
+        }
+
+        if let hotKey { UnregisterEventHotKey(hotKey) }
+        hotKey = nextHotKey
+        current = shortcut
+        return 0
+    }
+
+    private func installHandlerIfNeeded() -> Bool {
+        if eventHandler != nil { return true }
+        var eventType = EventTypeSpec(
+            eventClass: OSType(kEventClassKeyboard),
+            eventKind: UInt32(kEventHotKeyPressed)
+        )
+        let pointer = Unmanaged.passUnretained(self).toOpaque()
+        let status = InstallEventHandler(
+            GetApplicationEventTarget(),
+            { _, event, userData in
+                guard let event, let userData else { return OSStatus(eventNotHandledErr) }
+                var hotKeyID = EventHotKeyID()
+                let parameterStatus = GetEventParameter(
+                    event,
+                    EventParamName(kEventParamDirectObject),
+                    EventParamType(typeEventHotKeyID),
+                    nil,
+                    MemoryLayout<EventHotKeyID>.size,
+                    nil,
+                    &hotKeyID
+                )
+                guard parameterStatus == noErr,
+                      hotKeyID.signature == IRiXiCaptureShortcutManager.signature,
+                      hotKeyID.id == 1 else { return OSStatus(eventNotHandledErr) }
+                let manager = Unmanaged<IRiXiCaptureShortcutManager>
+                    .fromOpaque(userData)
+                    .takeUnretainedValue()
+                Task { @MainActor in manager.startCapture() }
+                return noErr
+            },
+            1,
+            &eventType,
+            pointer,
+            &eventHandler
+        )
+        return status == noErr && eventHandler != nil
+    }
+
+    private func startCapture() {
+        let result = irixiNativeStartAreaCapture()
+        guard result != 0, result != 1 else { return }
+        let alert = NSAlert()
+        alert.messageText = "截图没有启动"
+        alert.informativeText = result == 2
+            ? "请在系统设置中允许“IRiXi的小工具库”录制屏幕，然后重新打开应用。"
+            : "截图组件暂时不可用，请重新打开 IRiXi的小工具库后再试。"
+        alert.addButton(withTitle: "知道了")
+        NSApp.activate(ignoringOtherApps: true)
+        alert.runModal()
+    }
+
+    private static let signature: OSType = 0x4952_5843 // IRXC
 }
 
 private final class IRiXiCapturePanel: NSPanel {
@@ -990,4 +1144,12 @@ public func irixiNativeCancelAreaCapture() {
 @_cdecl("irixi_native_is_area_capture_active")
 public func irixiNativeIsAreaCaptureActive() -> Bool {
     IRiXiCaptureGate.shared.isActive()
+}
+
+/// Return values: 0 = registered, 1 = occupied, 2 = invalid, 3 = unavailable.
+@_cdecl("irixi_native_set_area_capture_shortcut")
+@MainActor
+public func irixiNativeSetAreaCaptureShortcut(_ accelerator: UnsafePointer<CChar>?) -> Int32 {
+    guard let accelerator else { return 2 }
+    return IRiXiCaptureShortcutManager.shared.register(accelerator: String(cString: accelerator))
 }

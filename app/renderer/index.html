@@ -296,10 +296,20 @@
             <div class="home-bento" id="home-bento" aria-label="可长按拖动调整的首页布局">
               <!-- 本地网易云音乐控制 -->
               <section class="tile home-music" id="home-music" data-home-module="music" data-widget-size="medium" aria-label="网易云音乐播放器">
+                <div class="music-backdrop" id="music-backdrop" aria-hidden="true"></div>
                 <canvas class="module-effect-canvas" id="music-color-bends" aria-hidden="true"></canvas>
+                <div class="music-artwork-shell" aria-hidden="true">
+                  <div class="music-artwork" id="music-artwork"></div>
+                </div>
                 <div class="music-copy">
                   <strong id="music-title">网易云音乐</strong>
+                  <span class="music-artist" id="music-artist">本机播放器</span>
+                  <span class="music-album" id="music-album"></span>
                 </div>
+                <div class="music-lyrics" id="music-lyric" aria-live="polite">
+                  <p class="music-lyric-empty">播放歌曲后自动显示歌词</p>
+                </div>
+                <span class="music-status" id="music-status">轻触即播</span>
                 <div class="music-controls" role="group" aria-label="网易云音乐控制">
                   <button type="button" data-music-action="previous" aria-label="上一首"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 9 12l9 6V6Z" /><path d="M6 6v12" /></svg></button>
                   <button class="music-play" id="music-play-toggle" type="button" data-music-action="play" aria-label="播放"><svg viewBox="0 0 24 24"><path d="m9 7 8 5-8 5z" /></svg></button>

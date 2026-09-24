@@ -24,6 +24,26 @@ function collectLocalStorageSnapshot() {
   return result;
 }
 
+let workspaceSaveInFlight = false;
+let workspaceSaveFailed = false;
+async function savePortableWorkspace() {
+  if (workspaceSaveInFlight || !window.notchAPI?.saveWorkspaceData) return false;
+  workspaceSaveInFlight = true;
+  try {
+    const saved = await window.notchAPI.saveWorkspaceData(collectLocalStorageSnapshot());
+    if (saved !== true) throw new Error('workspace_save_failed');
+    if (workspaceSaveFailed) showStatusToast('工作目录已恢复保存');
+    workspaceSaveFailed = false;
+    return true;
+  } catch (error) {
+    if (!workspaceSaveFailed) showStatusToast('未能保存到工作目录，内容仍在本机；将自动重试', { duration: 6000 });
+    workspaceSaveFailed = true;
+    return false;
+  } finally {
+    workspaceSaveInFlight = false;
+  }
+}
+
 async function hydratePortableWorkspace() {
   if (!window.notchAPI?.loadWorkspaceData) return;
   try {
@@ -42,13 +62,17 @@ async function hydratePortableWorkspace() {
       location.reload();
       return;
     }
-    setInterval(() => window.notchAPI.saveWorkspaceData(collectLocalStorageSnapshot()).catch(() => {}), 2000);
-  } catch (error) {}
+  } catch (error) {
+    showStatusToast('工作目录暂时无法读取，本机内容未清除', { duration: 6000 });
+  }
+  setInterval(savePortableWorkspace, 2000);
 }
 hydratePortableWorkspace();
-window.notchAPI?.onWorkspaceChanged?.(() => {
-  sessionStorage.removeItem('notch-workspace-hydrated');
-  window.notchAPI.saveWorkspaceData(collectLocalStorageSnapshot()).finally(() => location.reload());
+window.notchAPI?.onWorkspaceChanged?.(async () => {
+  if (await savePortableWorkspace()) {
+    sessionStorage.removeItem('notch-workspace-hydrated');
+    location.reload();
+  }
 });
 
 let statusToastTimer = null;
@@ -463,7 +487,12 @@ const OPENING_SETTLE_MS = 360;
 const HEAVY_LOAD_AFTER_OPEN_MS = 360;
 
 function nextAnimationFrame() {
-  return new Promise((resolve) => requestAnimationFrame(resolve));
+  // Occlusion can suspend rAF on macOS. Never leave the mode transaction
+  // waiting forever while the main process has already collapsed the window.
+  return new Promise((resolve) => {
+    const timer = setTimeout(() => { cancelAnimationFrame(frame); resolve(); }, 50);
+    const frame = requestAnimationFrame(() => { clearTimeout(timer); resolve(); });
+  });
 }
 
 function waitForPanelMotion() {
@@ -818,6 +847,7 @@ async function setActiveTab(name) {
     // renderClipList 延后只是缩略图晚一点出现，可接受。
     const _tabNameForDeferred = name; // 闭包捕获当前目标 Tab
     const runHeavyLoads = () => {
+      if (activeTab !== _tabNameForDeferred) return;
       if (_tabNameForDeferred === 'clip') renderClipList();
       if (_tabNameForDeferred === 'notes') renderNotesLibrary();
     };
@@ -855,6 +885,7 @@ async function setActiveTab(name) {
 }
 
 window.irixiOpenToolTab = (tabName) => setActiveTab(tabName);
+window.irixiCollapsePanel = () => setMode(false);
 
 // 胶囊滑动结束后兜底再校准一次（窗口变形期间布局可能回流）
 if (tabIndicator) {
@@ -942,7 +973,9 @@ shortcutRecorder?.addEventListener('keydown', async (event) => {
     : window.notchAPI?.setPanelShortcut;
   const result = await setter?.(accelerator).catch(() => ({ ok: false }));
   if (!result?.ok) {
-    if (shortcutRecorderValue) shortcutRecorderValue.textContent = result?.error === 'occupied' ? '该快捷键已被占用' : '无法使用该快捷键';
+    if (shortcutRecorderValue) shortcutRecorderValue.textContent = result?.error === 'occupied'
+      ? '该快捷键已被占用'
+      : '截图组件没有启动，请重新打开小工具库';
     return;
   }
   const label = shortcutRecorderKind === 'capture' ? '区域截图快捷键' : '唤出快捷键';

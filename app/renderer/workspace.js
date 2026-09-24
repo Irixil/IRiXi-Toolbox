@@ -946,7 +946,11 @@
     if (settingsShortcutValue) settingsShortcutValue.textContent = summary.shortcut;
     if (settingsCaptureShortcutValue) settingsCaptureShortcutValue.textContent = summary.captureShortcut;
     if (settingsCaptureShortcutStatus) {
-      settingsCaptureShortcutStatus.textContent = summary.captureShortcutActive ? '已启用' : '被其他软件占用';
+      settingsCaptureShortcutStatus.textContent = summary.captureShortcutActive
+        ? '已启用'
+        : summary.captureShortcutError === 'occupied'
+          ? '被其他软件占用'
+          : '截图组件未连接';
     }
     if (settingsWorkspaceKind) settingsWorkspaceKind.textContent = summary.workspaceLabel;
     if (settingsWorkspacePath) {
@@ -2245,11 +2249,88 @@
 
   // ============ 本地网易云音乐 ============
   const homeMusic = document.getElementById('home-music');
+  const musicBackdrop = document.getElementById('music-backdrop');
   const musicArtwork = document.getElementById('music-artwork');
   const musicTitle = document.getElementById('music-title');
+  const musicArtist = document.getElementById('music-artist');
+  const musicAlbum = document.getElementById('music-album');
+  const musicLyric = document.getElementById('music-lyric');
   const musicStatus = document.getElementById('music-status');
   const musicPlayToggle = document.getElementById('music-play-toggle');
   let musicPlaying = false;
+  let musicTrackId = '';
+  let musicLyrics = [];
+  let musicLyricsPending = false;
+  let musicLyricsSignature = '';
+  let musicArtworkSource = '';
+  let musicRefreshInFlight = false;
+  let musicPositionMs = 0;
+  let musicPositionSampledAt = 0;
+  let activeMusicLyricIndex = -1;
+
+  function musicIsVisible() {
+    return workspaceExpanded && workspaceTab === 'home' && !document.hidden
+      && window.NotchHome?.isVisible?.('music') !== false;
+  }
+
+  function currentMusicPosition() {
+    return Math.max(0, musicPositionMs + (musicPlaying && musicPositionSampledAt
+      ? Date.now() - musicPositionSampledAt
+      : 0));
+  }
+
+  function renderMusicLyric() {
+    if (!musicLyric) return;
+    musicLyric.replaceChildren();
+    activeMusicLyricIndex = -1;
+    if (!musicLyrics.length) {
+      const empty = document.createElement('p');
+      empty.className = 'music-lyric-empty';
+      empty.textContent = musicLyricsPending
+        ? '正在匹配这首歌的歌词'
+        : musicTrackId ? '这首歌暂无可用歌词' : '播放歌曲后自动显示歌词';
+      musicLyric.appendChild(empty);
+      return;
+    }
+    musicLyrics.forEach((line) => {
+      const row = document.createElement('p');
+      row.className = 'music-lyric-line';
+      const original = document.createElement('span');
+      original.textContent = line.text;
+      row.appendChild(original);
+      if (line.translation) {
+        const translation = document.createElement('small');
+        translation.textContent = line.translation;
+        row.appendChild(translation);
+      }
+      musicLyric.appendChild(row);
+    });
+    musicLyric.scrollTop = 0;
+  }
+
+  function renderActiveMusicLyric() {
+    if (!musicLyric || !musicLyrics.length) return;
+    const positionMs = currentMusicPosition();
+    let active = -1;
+    musicLyrics.forEach((line, index) => {
+      if (Number(line.timeMs) <= positionMs) active = index;
+    });
+    const rows = [...musicLyric.children];
+    rows.forEach((row, index) => row.classList.toggle('is-active', index === active));
+    if (active < 0 || active === activeMusicLyricIndex) return;
+    activeMusicLyricIndex = active;
+    const row = rows[active];
+    if (!row) return;
+    const top = Math.max(0, row.offsetTop - musicLyric.clientHeight / 2 + row.offsetHeight / 2);
+    if (typeof musicLyric.scrollTo === 'function') {
+      musicLyric.scrollTo({
+        top,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      });
+    } else {
+      musicLyric.scrollTop = top;
+    }
+  }
 
   function renderMusicPlaybackState() {
     if (!homeMusic || !musicPlayToggle) return;
@@ -2262,27 +2343,56 @@
   }
 
   async function refreshMusicStatus() {
-    if (!homeMusic || !window.notchAPI || typeof window.notchAPI.getMusicStatus !== 'function') return;
+    if (!homeMusic || !musicIsVisible() || musicRefreshInFlight || !window.notchAPI || typeof window.notchAPI.getMusicStatus !== 'function') return;
+    musicRefreshInFlight = true;
     let status;
     try { status = await window.notchAPI.getMusicStatus(); } catch (error) { status = null; }
+    finally { musicRefreshInFlight = false; }
+    if (!musicIsVisible() || !status) return;
     homeMusic.classList.toggle('music-running', Boolean(status && status.running));
+    homeMusic.classList.toggle('music-has-metadata', Boolean(status && status.title));
     if (status && typeof status.playing === 'boolean') {
       musicPlaying = status.playing;
       renderMusicPlaybackState();
     }
-    if (status && status.icon && musicArtwork) {
+    const artwork = status && (status.artwork || status.icon) || '';
+    if (musicArtwork && artwork !== musicArtworkSource) {
+      musicArtworkSource = artwork;
       musicArtwork.replaceChildren();
-      const image = document.createElement('img');
-      image.src = status.icon;
-      image.alt = '';
-      musicArtwork.appendChild(image);
+      if (artwork) {
+        const image = document.createElement('img');
+        image.src = artwork;
+        image.alt = '';
+        musicArtwork.appendChild(image);
+      }
     }
-    if (musicTitle) musicTitle.textContent = status && status.installed ? '网易云音乐' : '未安装网易云音乐';
+    if (musicBackdrop) musicBackdrop.style.backgroundImage = status.artwork ? `url("${status.artwork}")` : '';
+    const nextTrackId = String(status.trackId || '');
+    const trackChanged = nextTrackId !== musicTrackId;
+    musicTrackId = nextTrackId;
+    musicPositionMs = Math.max(0, Number(status.positionMs) || 0);
+    musicPositionSampledAt = Date.now();
+    musicLyricsPending = status.lyricsPending === true;
+    const receivedLyrics = Array.isArray(status.lyrics) ? status.lyrics.filter((line) => line && line.text) : [];
+    const songLines = receivedLyrics.filter((line) => !/^(?:作词|作曲|编曲|制作人|监制|混音|母带|录音|翻译|歌词|词曲|composer|lyricist|lyrics|written by|produced by)\s*[:：]/i.test(line.text));
+    musicLyrics = songLines.length ? songLines : receivedLyrics;
+    if (musicTitle) musicTitle.textContent = status.title || (status.installed ? '网易云音乐' : '未安装网易云音乐');
+    if (musicArtist) musicArtist.textContent = status.artist || (status.running ? '正在读取歌曲信息' : '本机播放器');
+    if (musicAlbum) {
+      musicAlbum.textContent = status.album || '';
+      musicAlbum.hidden = !musicAlbum.textContent;
+    }
+    const signature = JSON.stringify([musicLyricsPending, musicLyrics]);
+    if (trackChanged || signature !== musicLyricsSignature) {
+      musicLyricsSignature = signature;
+      renderMusicLyric();
+    }
+    renderActiveMusicLyric();
     if (musicStatus) musicStatus.textContent = status && status.running ? (musicPlaying ? '正在播放' : '已连接') : status && status.installed ? '轻触即播' : '需要本地客户端';
   }
 
   homeMusic?.addEventListener('click', async (event) => {
-    if (event.target.closest('[data-widget-size-cycle]') || !window.notchAPI) return;
+    if (event.target.closest('[data-widget-size-cycle], .music-lyrics') || !window.notchAPI) return;
     const control = event.target.closest('[data-music-action]') || musicPlayToggle;
     if (!control) return;
     event.stopPropagation();
@@ -2311,10 +2421,16 @@
       renderMusicPlaybackState();
       if (musicStatus) musicStatus.textContent = action === 'next' ? '下一首' : action === 'previous' ? '上一首' : musicPlaying ? '正在播放' : '已暂停';
     }
-    setTimeout(refreshMusicStatus, 500);
+    setTimeout(refreshMusicStatus, action === 'next' || action === 'previous' ? 900 : 500);
   });
 
   renderMusicPlaybackState();
+  renderMusicLyric();
+  const musicStatusTimer = setInterval(refreshMusicStatus, 2000);
+  const musicLyricTimer = setInterval(renderActiveMusicLyric, 500);
+  for (const eventName of ['notch:tabchange', 'notch:modechange', 'notch:home-modules-changed', 'visibilitychange']) {
+    document.addEventListener(eventName, refreshMusicStatus);
+  }
 
   // ============ 本机加密密钥库 ============
   const credentialService = document.getElementById('credential-service');
@@ -2614,6 +2730,8 @@
   setInterval(() => refreshWindows(), 6000);
 
   window.addEventListener('beforeunload', () => {
+    clearInterval(musicStatusTimer);
+    clearInterval(musicLyricTimer);
     stopSpeechRecognition();
     stopTranscriptionAudioPipeline();
     if (transcriptionStartPromise && window.notchAPI) window.notchAPI.finishTranscription().catch(() => {});

@@ -1,11 +1,38 @@
 // electron-builder afterPack hook
 // 因为 electron-builder + identity:null 跳过签名，asar:false 又关闭了 integrity 校验，
-// 这里手动从内到外签名。公开构建默认使用 ad-hoc；本机更新可通过
-// IRIXI_CODESIGN_IDENTITY 使用与已安装 App 相同的稳定身份，避免权限身份漂移。
+// 这里手动从内到外签名。优先使用显式指定的稳定身份，其次自动发现本机
+// 的 IRiXi Local Code Signing；权限敏感的正式包没有稳定身份就直接中止。
 const { execFileSync } = require('child_process');
 const crypto = require('crypto');
 const path = require('path');
 const fs = require('fs');
+
+function pickSigningIdentity(securityOutput, requestedName = '') {
+  const identities = String(securityOutput || '').split(/\r?\n/)
+    .map((line) => {
+      const match = /^\s*\d+\)\s+([A-F0-9]{40})\s+"([^"]+)"\s*$/.exec(line);
+      return match ? { hash: match[1], name: match[2].trim() } : null;
+    })
+    .filter(Boolean);
+  const matches = identities.filter(({ name }) => requestedName
+    ? name === requestedName
+    : /^IRiXi Local Code Signing(?: \d{4})?$/.test(name));
+  return matches[0]?.hash || null;
+}
+
+function resolveSigningIdentity() {
+  const configured = String(process.env.IRIXI_CODESIGN_IDENTITY || '').trim();
+  if (configured && /^[A-F0-9]{40}$/i.test(configured)) return configured;
+  try {
+    const output = execFileSync('/usr/bin/security', ['find-identity', '-v', '-p', 'codesigning'], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+    return pickSigningIdentity(output, configured);
+  } catch (error) {
+    return null;
+  }
+}
 
 exports.default = async function afterPack(context) {
   if (context.electronPlatformName !== 'darwin') return;
@@ -49,9 +76,12 @@ exports.default = async function afterPack(context) {
   execFileSync('codesign', ['--verify', '--strict', nativeModulePath], { stdio: 'pipe' });
   execFileSync('codesign', ['--verify', '--strict', nativeFrameworkPath], { stdio: 'pipe' });
 
-  const signingIdentity = String(process.env.IRIXI_CODESIGN_IDENTITY || '-').trim() || '-';
-  const stableLocalSigning = signingIdentity !== '-';
-  console.log(`  • ${stableLocalSigning ? '稳定本机身份' : 'ad-hoc'}签名 ${appPath}`);
+  const signingIdentity = resolveSigningIdentity();
+  if (!signingIdentity || signingIdentity === '-') {
+    throw new Error('IRiXi 是权限敏感应用，找不到固定的 IRiXi Local Code Signing 身份，停止生成临时签名包。');
+  }
+  const stableLocalSigning = true;
+  console.log(`  • 稳定本机身份签名 ${appPath}`);
 
   // 依次签：所有 dylib → Framework 内 Helpers → Framework binary → Helper apps → Frameworks → 主 bundle
   const entitlementsPath = path.join(projectRoot, 'build', 'entitlements.mac.plist');
@@ -159,3 +189,6 @@ exports.default = async function afterPack(context) {
     throw new Error(`${stableLocalSigning ? '稳定本机身份' : 'ad-hoc'}签名校验失败，产物不可分发：${e.message}`);
   }
 };
+
+exports.pickSigningIdentity = pickSigningIdentity;
+exports.resolveSigningIdentity = resolveSigningIdentity;

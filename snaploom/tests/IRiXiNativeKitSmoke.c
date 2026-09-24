@@ -41,13 +41,14 @@ int main(int argc, char **argv) {
     required_symbol(handle, "irixi_native_start_ocr_capture");
     required_symbol(handle, "irixi_native_start_image_translation_capture");
     required_symbol(handle, "irixi_native_cancel_area_capture");
+    required_symbol(handle, "irixi_native_set_area_capture_shortcut");
     required_symbol(handle, "irixi_native_initialize_translation");
     required_symbol(handle, "irixi_native_open_input_translation");
     required_symbol(handle, "irixi_native_translate_current_selection");
     screen_access_fn is_area_capture_active = (screen_access_fn)required_symbol(
         handle, "irixi_native_is_area_capture_active");
 
-    if (abi_version() != 6) {
+    if (abi_version() != 7) {
         fprintf(stderr, "unexpected ABI version\n");
         return 1;
     }
@@ -64,7 +65,7 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    printf("abi=6 bundle_id=%s screen_access=%s capture=inactive\n",
+    printf("abi=7 bundle_id=%s screen_access=%s capture=inactive\n",
            bundle_id[0] == '\0' ? "<none-for-cli-host>" : bundle_id,
            has_screen_access() ? "granted" : "not-granted");
     dlclose(handle);

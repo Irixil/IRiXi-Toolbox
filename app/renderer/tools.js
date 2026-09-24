@@ -471,6 +471,7 @@
     document.getElementById(buttonId)?.addEventListener('click', async () => {
       setNativeHelperBusy(true);
       announce(progress);
+      await window.irixiCollapsePanel?.();
       const result = await api[method]().catch(() => null);
       const tool = tools.find((candidate) => candidate.id === 'builtin.capture');
       if (tool) tool.helperState = result?.ok ? 'ready' : (result?.error || 'failed');

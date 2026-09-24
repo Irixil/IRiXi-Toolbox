@@ -17,11 +17,13 @@ async function main() {
   assert.equal(typeof nativeModule.startFullscreenCapture, 'function');
   assert.equal(typeof nativeModule.startOCRCapture, 'function');
   assert.equal(typeof nativeModule.startImageTranslationCapture, 'function');
+  assert.equal(typeof nativeModule.setAreaCaptureShortcut, 'function');
   assert.equal(typeof nativeModule.initializeTranslation, 'function');
   assert.equal(typeof nativeModule.openInputTranslation, 'function');
   assert.equal(typeof nativeModule.translateCurrentSelection, 'function');
 
   nativeModule.initializeTranslation();
+  assert.equal(nativeModule.setAreaCaptureShortcut('Command+Option+Shift+F20'), 0);
   assert.equal(nativeModule.openInputTranslation('en'), 0);
   await new Promise((resolve) => setTimeout(resolve, 250));
 
@@ -33,6 +35,7 @@ async function main() {
     ok: true,
     bundleId,
     permission,
+    captureShortcut: 'registered_natively',
     translationWindow: 'opened',
     testWindow: 'opened_and_closed',
   }));

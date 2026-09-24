@@ -10,7 +10,7 @@ const FRAMEWORK_NAME = 'IRiXiNativeKit.framework';
 const FRAMEWORK_BINARY = 'IRiXiNativeKit';
 const FRAMEWORK_BUNDLE_ID = 'com.irixi.toolbox.native-kit';
 const MODULE_NAME = 'irixi-native.node';
-const EXPECTED_ABI = 6;
+const EXPECTED_ABI = 7;
 
 function fail(message) {
   throw new Error(message);

@@ -477,6 +477,7 @@
       shortcut: String(appSettings.shortcut || 'Space'),
       captureShortcut: String(appSettings.captureShortcut || 'Command+Shift+X'),
       captureShortcutActive: appSettings.captureShortcutActive === true,
+      captureShortcutError: String(appSettings.captureShortcutError || ''),
       autoLaunch: appSettings.autoLaunch === true,
       workspacePath: String(workspace.path || ''),
       workspaceLabel: workspace.portable ? '自定义文件夹' : '默认文件夹',

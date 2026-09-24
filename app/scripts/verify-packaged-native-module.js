@@ -54,7 +54,7 @@ function main() {
   assertNoSymlinks(frameworkPath);
 
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-  if (manifest.schemaVersion !== 1 || manifest.abiVersion !== 6) fail('原生模块清单版本不正确。');
+  if (manifest.schemaVersion !== 1 || manifest.abiVersion !== 7) fail('原生模块清单版本不正确。');
   if (manifest.moduleFile !== 'irixi-native.node' || manifest.frameworkName !== 'IRiXiNativeKit.framework') {
     fail('原生模块清单路径不正确。');
   }

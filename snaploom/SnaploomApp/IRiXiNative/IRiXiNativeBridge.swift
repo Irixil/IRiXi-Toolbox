@@ -2,7 +2,7 @@ import AppKit
 import CoreGraphics
 import Foundation
 
-private let irixiNativeCurrentABIVersion: Int32 = 6
+private let irixiNativeCurrentABIVersion: Int32 = 7
 
 @MainActor
 private final class IRiXiNativeTestWindowController {

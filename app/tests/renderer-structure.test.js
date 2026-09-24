@@ -18,6 +18,14 @@ const nativeCaptureSwift = fs.readFileSync(
   path.join(__dirname, '..', '..', 'snaploom', 'SnaploomApp', 'IRiXiNative', 'IRiXiRegionCapture.swift'),
   'utf8'
 );
+const nativeTranslationWindowSwift = fs.readFileSync(
+  path.join(__dirname, '..', '..', 'snaploom', 'SnaploomApp', 'Translation', 'NativeInputTranslationWindowController.swift'),
+  'utf8'
+);
+const translationKnowledgeSwift = fs.readFileSync(
+  path.join(__dirname, '..', '..', 'snaploom', 'SnaploomApp', 'Translation', 'TranslationKnowledgeService.swift'),
+  'utf8'
+);
 const overlayViewSwift = fs.readFileSync(
   path.join(__dirname, '..', '..', 'snaploom', 'SnaploomApp', 'UI', 'Overlay', 'OverlayView.swift'),
   'utf8'
@@ -32,6 +40,20 @@ test('the packaged app uses the owl icon and the homepage targets NetEase Music 
   assert.match(mainJs, /\/Applications\/NeteaseMusic\.app/);
   assert.match(mainJs, /com\.netease\.163music/);
   assert.doesNotMatch(`${html}\n${workspaceJs}\n${mainJs}`, /汽水音乐|com\.soda\.music/);
+});
+
+test('music shows cover and timed lyrics without fake seek interactions', () => {
+  assert.match(html, /id="music-artwork"/);
+  assert.match(html, /id="music-lyric"/);
+  assert.match(workspaceJs, /renderActiveMusicLyric/);
+  assert.match(workspaceJs, /classList\.toggle\('is-active'/);
+  assert.match(workspaceJs, /musicLyric\.scrollTo/);
+  assert.match(mainJs, /MRNowPlayingRequest/);
+  assert.match(mainJs, /mediaMatchesNowPlaying/);
+  assert.match(mainJs, /lyricsPending/);
+  assert.doesNotMatch(html, /id="music-progress"/);
+  assert.doesNotMatch(`${preloadJs}\n${mainJs}`, /music:seek/);
+  assert.doesNotMatch(workspaceJs, /seekMusic|点击跳到这里|musicLyric\?\.addEventListener\('click'/);
 });
 
 test('IRiXi tools is a first-class page backed by narrow preload methods', () => {
@@ -90,14 +112,35 @@ test('IRiXi tools is a first-class page backed by narrow preload methods', () =>
   assert.doesNotMatch(mainJs, /app\.whenReady\(\)[\s\S]*nativeHelper\.start\(\)/);
   assert.match(mainJs, /ipcMain\.handle\('native-module:capture-area'/);
   assert.match(mainJs, /DEFAULT_CAPTURE_SHORTCUT = 'Command\+Shift\+X'/);
-  assert.match(mainJs, /globalShortcut\.register\(shortcut, runAreaCaptureShortcut\)/);
-  assert.match(mainJs, /function runAreaCaptureShortcut\(\) \{\s*const result = nativeModule\.startAreaCapture\(\)/);
+  assert.match(mainJs, /nativeModule\.setAreaCaptureShortcut\(shortcut\)/);
+  assert.doesNotMatch(mainJs, /function runAreaCaptureShortcut\(/);
+  assert.doesNotMatch(mainJs, /openRendererPanel\('app:open-tools'\)/);
   assert.match(mainJs, /hasStoredEncryptedSecret[\s\S]*\? safeStorage\.isEncryptionAvailable\(\)[\s\S]*: process\.platform === 'darwin'/);
   assert.match(translationShortcutSwift, /GetEventParameter\(/);
   assert.match(translationShortcutSwift, /hotKeyID\.signature == TranslationShortcutManager\.signature/);
   assert.match(translationShortcutSwift, /hotKeyID\.id == 1/);
   assert.match(nativeCaptureSwift, /overlay\.setExternalTranslationWindowEnabled\(\)/);
   assert.match(nativeCaptureSwift, /overlayDidRequestTranslation[\s\S]*IRiXiImageTranslationController\.shared\.translate\(image\)/);
+  assert.match(nativeCaptureSwift, /RegisterEventHotKey[\s\S]*IRiXiCaptureShortcutManager\.signature/);
+  assert.match(nativeCaptureSwift, /irixiNativeStartAreaCapture\(\)/);
+  assert.match(nativeCaptureSwift, /beginImageTranslation\(\)[\s\S]*finishImageTranslation/);
+  assert.match(nativeTranslationWindowSwift, /window\.level = \.screenSaver/);
+  assert.match(nativeTranslationWindowSwift, /window\.orderFrontRegardless\(\)/);
+  assert.match(nativeTranslationWindowSwift, /NSButton\(title: "详细释义"/);
+  assert.match(nativeTranslationWindowSwift, /NSButton\(title: "AI 解释"/);
+  assert.match(nativeTranslationWindowSwift, /NSButton\(title: "账号说明"/);
+  assert.match(nativeTranslationWindowSwift, /IRiXiLocalDictionary\.explanation/);
+  assert.match(nativeTranslationWindowSwift, /confirmAIExternalSendIfNeeded\(\)/);
+  assert.match(nativeTranslationWindowSwift, /CodexTranslationService\(\)/);
+  assert.match(nativeTranslationWindowSwift, /#selector\(askFollowup\)/);
+  assert.doesNotMatch(nativeTranslationWindowSwift, /loadAPIKey|apiKey:/);
+  assert.doesNotMatch(nativeTranslationWindowSwift, /textDidChange\([^)]*\)\s*\{[^}]*startAIExplanation\(/);
+  assert.match(translationKnowledgeSwift, /DCSCopyTextDefinition/);
+  assert.match(translationKnowledgeSwift, /kSecClassGenericPassword/);
+  assert.match(translationKnowledgeSwift, /https:\/\/api\.openai\.com\/v1\/responses/);
+  assert.match(translationKnowledgeSwift, /"type": "web_search"/);
+  assert.match(translationKnowledgeSwift, /"store": false/);
+  assert.match(translationKnowledgeSwift, /web_search_call\.action\.sources/);
   assert.match(overlayViewSwift, /usesExternalTranslationWindow[\s\S]*overlayViewDidRequestTranslation\(\)/);
   assert.match(html, /id="settings-capture-shortcut-value"/);
   assert.match(html, /id="settings-capture-shortcut-status"/);
@@ -109,6 +152,9 @@ test('IRiXi tools is a first-class page backed by narrow preload methods', () =>
   assert.match(mainJs, /ipcMain\.handle\('native-module:translation-selection'/);
   assert.match(mainJs, /id: 'builtin\.translation'[\s\S]*nativeAction: 'translation\.input'/);
   assert.match(toolsJs, /const result = await api\[method\]\(\)/);
+  assert.match(appJs, /window\.irixiCollapsePanel = \(\) => setMode\(false\)/);
+  assert.match(toolsJs, /await window\.irixiCollapsePanel\?\.\(\);[\s\S]*const result = await api\[method\]\(\)/);
+  assert.match(mainJs, /appActive: process\.platform === 'darwin' \? app\.isActive\(\)/);
 });
 
 test('old Agent, link inspection, credential editing and workspace switching are disconnected', () => {
