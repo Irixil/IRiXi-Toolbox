@@ -1,0 +1,178 @@
+{
+  "schema": "owl-focus-default-layout/v2",
+  "status": "Parent visually reviewed layout candidate; frozen PNG assets unchanged",
+  "world": [
+    1024,
+    1536
+  ],
+  "visibleRoom": [
+    0,
+    260,
+    1024,
+    1000
+  ],
+  "coreAssets": {
+    "libraryFileId": "project-source-record",
+    "version": 4
+  },
+  "extensionAssets": {
+    "libraryFileId": "project-source-record",
+    "version": 1
+  },
+  "positionMigrationPolicy": "Apply only to missing or explicitly uncustomized/default transforms. Preserve user-custom positions and scales. If customization provenance is unknown, preserve saved values and expose an explicit reset-to-new-default action.",
+  "equipmentSelectionPolicy": "Do not change equipped selections. previewEquippedIds describe the example only; other new objects are not all enabled by default.",
+  "previewEquippedIds": [
+    "wall-owl-mona",
+    "side-table",
+    "tabletop-teapot",
+    "floor-light-small"
+  ],
+  "defaultsBySlot": {
+    "wallart": {
+      "ids": [
+        "wall-owl-mona",
+        "wall-owl-pearl"
+      ],
+      "sourceAnchor": [
+        256,
+        320
+      ],
+      "roomAnchor": [
+        365,
+        405
+      ],
+      "renderSize": [
+        280,
+        350
+      ]
+    },
+    "sidefurniture": {
+      "ids": [
+        "side-table",
+        "low-bookcase"
+      ],
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "roomAnchor": [
+        790,
+        1252
+      ],
+      "renderSize": [
+        250,
+        250
+      ]
+    },
+    "tabletop": {
+      "ids": [
+        "tabletop-teapot",
+        "tabletop-books"
+      ],
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "renderSize": [
+        100,
+        100
+      ],
+      "parentId": "side-table",
+      "parentTargetSource": [
+        256,
+        210
+      ],
+      "derivedInitialRoomAnchor": [
+        790,
+        1120.1640625
+      ],
+      "positionIsDerivedFromParent": true
+    },
+    "floorlight": {
+      "ids": [
+        "floor-light-small"
+      ],
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "roomAnchor": [
+        150,
+        1244
+      ],
+      "renderSize": [
+        190,
+        190
+      ]
+    }
+  },
+  "previewVisibleBounds": {
+    "wall-owl-mona": {
+      "x": 253,
+      "y": 274,
+      "width": 225,
+      "height": 262,
+      "rightExclusive": 478,
+      "bottomExclusive": 536
+    },
+    "side-table": {
+      "x": 671,
+      "y": 1089,
+      "width": 238,
+      "height": 164,
+      "rightExclusive": 909,
+      "bottomExclusive": 1253
+    },
+    "tabletop-teapot": {
+      "x": 751,
+      "y": 1070,
+      "width": 78,
+      "height": 51,
+      "rightExclusive": 829,
+      "bottomExclusive": 1121
+    },
+    "floor-light-small": {
+      "x": 85,
+      "y": 1104,
+      "width": 131,
+      "height": 141,
+      "rightExclusive": 216,
+      "bottomExclusive": 1245
+    }
+  },
+  "collisionChecks": [
+    {
+      "pair": "wallart-vs-tall-lamp",
+      "visibleAlphaGt16OverlapPixels": 0
+    },
+    {
+      "pair": "table-vs-chair",
+      "visibleAlphaGt16OverlapPixels": 0
+    },
+    {
+      "pair": "table-vs-main-pot",
+      "visibleAlphaGt16OverlapPixels": 0
+    },
+    {
+      "pair": "teapot-vs-main-pot",
+      "visibleAlphaGt16OverlapPixels": 0
+    },
+    {
+      "pair": "teapot-vs-chair",
+      "visibleAlphaGt16OverlapPixels": 0
+    },
+    {
+      "pair": "small-vs-tall-lamp",
+      "visibleAlphaGt16OverlapPixels": 0
+    },
+    {
+      "pair": "small-lamp-vs-chair",
+      "visibleAlphaGt16OverlapPixels": 0
+    }
+  ],
+  "collisionThreshold": "alpha>16/255 visible-paint measurement only; no mask alteration",
+  "unchangedCore": "Original owl, chair, background, legacy lamp/plant/rug placement unchanged",
+  "interactionGuidance": "Use the anchor range and actual visible bounds separately. Do not force full transparent canvases into narrow270/168px bands; enlarged objects would lose meaningful drag freedom.",
+  "unshownAccessoryWarning": "The old foreground-plant-small default at(160,1220) overlaps the new small-floor-light default. The plant is not selected in this preview. If users equip both, resolve or prompt repositioning instead of silently using both conflicting defaults; never overwrite an existing custom transform.",
+  "installedOrAssetPackagesChanged": false
+}

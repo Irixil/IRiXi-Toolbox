@@ -1,0 +1,764 @@
+{
+  "schema": "owl-focus-portrait-tall-lamp-increment/v1",
+  "revision": "2026-10-07-v1",
+  "assetCount": 6,
+  "mainPngCount": 6,
+  "thumbnailPngCount": 6,
+  "totalPngCount": 12,
+  "world": [
+    1024,
+    1536
+  ],
+  "styleBaseline": {
+    "libraryFileId": "project-source-record",
+    "version": 3
+  },
+  "mutation": "additive; no old PNG replaced",
+  "backgroundIncluded": false,
+  "originalOwlChanged": false,
+  "legacyAliasMap": {
+    "lamp-cream-drum": "lamp-linen",
+    "lamp-sage-arc": "lamp-brass"
+  },
+  "aliasesAreNotExtraChoices": true,
+  "assets": [
+    {
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 85178,
+      "sha256": "1e1a456ea1eb8425948e477bb62f6230f29616f6ebbeae7ae01b1c22ad11f821",
+      "alphaBounds": {
+        "x": 22,
+        "y": 383,
+        "width": 211,
+        "height": 702,
+        "rightExclusive": 233,
+        "bottomExclusive": 1085
+      },
+      "visualBounds": {
+        "x": 23,
+        "y": 383,
+        "width": 210,
+        "height": 700,
+        "rightExclusive": 233,
+        "bottomExclusive": 1083
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        254
+      ],
+      "id": "lamp-lilac-torchiere",
+      "runtimeId": "lamp-lilac-torchiere",
+      "displayName": "淡紫花碗高落地灯",
+      "slot": "lamp",
+      "logicalSlot": "lamp",
+      "collectionCategory": "高落地灯",
+      "file": "lamps/lamp-lilac-torchiere.png",
+      "thumbnail": "thumbs/lamp-lilac-torchiere.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        130,
+        1082
+      ],
+      "sourceAnchor": [
+        130,
+        1082
+      ],
+      "coordinateSpace": "room",
+      "recommendedRenderScale": 1,
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "renderSizePolicy": "inherit current slot sizing and saved user transform; never apply historical room defaults",
+      "collisionBounds": {
+        "x": 71,
+        "y": 970,
+        "width": 119,
+        "height": 113,
+        "rightExclusive": 190,
+        "bottomExclusive": 1083
+      },
+      "collisionBoundsScope": "actual visible lower hardware at y>=970",
+      "reviewStatus": "static artist review passed; actual app load/interaction verification remains engineering",
+      "sourceBatch": "lamp-batch-a",
+      "groundContactY": 1082
+    },
+    {
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 105824,
+      "sha256": "a1f01471ebcc8aa03f7a3b9aab38f0a0d5d398d4bca7a54dbfd05942b0dc34b6",
+      "alphaBounds": {
+        "x": 21,
+        "y": 399,
+        "width": 213,
+        "height": 684,
+        "rightExclusive": 234,
+        "bottomExclusive": 1083
+      },
+      "visualBounds": {
+        "x": 21,
+        "y": 399,
+        "width": 213,
+        "height": 684,
+        "rightExclusive": 234,
+        "bottomExclusive": 1083
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "id": "lamp-pleated-tripod",
+      "runtimeId": "lamp-pleated-tripod",
+      "displayName": "奶油褶罩三脚高落地灯",
+      "slot": "lamp",
+      "logicalSlot": "lamp",
+      "collectionCategory": "高落地灯",
+      "file": "lamps/lamp-pleated-tripod.png",
+      "thumbnail": "thumbs/lamp-pleated-tripod.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        130,
+        1082
+      ],
+      "sourceAnchor": [
+        130,
+        1082
+      ],
+      "coordinateSpace": "room",
+      "recommendedRenderScale": 1,
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "renderSizePolicy": "inherit current slot sizing and saved user transform; never apply historical room defaults",
+      "collisionBounds": {
+        "x": 21,
+        "y": 970,
+        "width": 213,
+        "height": 113,
+        "rightExclusive": 234,
+        "bottomExclusive": 1083
+      },
+      "collisionBoundsScope": "actual visible lower hardware at y>=970",
+      "reviewStatus": "static artist review passed; actual app load/interaction verification remains engineering",
+      "sourceBatch": "lamp-batch-a",
+      "groundContactY": 1082
+    },
+    {
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 84616,
+      "sha256": "ca4c1b200039c568ea6ae2af7414422a2c47048239048060fb0655203ccfd776",
+      "alphaBounds": {
+        "x": 46,
+        "y": 383,
+        "width": 169,
+        "height": 702,
+        "rightExclusive": 215,
+        "bottomExclusive": 1085
+      },
+      "visualBounds": {
+        "x": 47,
+        "y": 383,
+        "width": 166,
+        "height": 700,
+        "rightExclusive": 213,
+        "bottomExclusive": 1083
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "id": "lamp-paper-oval",
+      "runtimeId": "lamp-paper-oval",
+      "displayName": "椭圆纸罩高落地灯",
+      "slot": "lamp",
+      "logicalSlot": "lamp",
+      "collectionCategory": "高落地灯",
+      "file": "lamps/lamp-paper-oval.png",
+      "thumbnail": "thumbs/lamp-paper-oval.png",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        130,
+        1082
+      ],
+      "sourceAnchor": [
+        130,
+        1082
+      ],
+      "coordinateSpace": "room",
+      "recommendedRenderScale": 1,
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "renderSizePolicy": "inherit current slot sizing and saved user transform; never apply historical room defaults",
+      "collisionBounds": {
+        "x": 72,
+        "y": 970,
+        "width": 116,
+        "height": 113,
+        "rightExclusive": 188,
+        "bottomExclusive": 1083
+      },
+      "collisionBoundsScope": "actual visible lower hardware at y>=970",
+      "reviewStatus": "static artist review passed; actual app load/interaction verification remains engineering",
+      "sourceBatch": "lamp-batch-b",
+      "groundContactY": 1082
+    },
+    {
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 401954,
+      "sha256": "d9c3919c9931fb0e2cb415868d893dce19a348fdae3f4abdee01a81d76e05f6c",
+      "alphaBounds": {
+        "x": 42,
+        "y": 71,
+        "width": 430,
+        "height": 517,
+        "rightExclusive": 472,
+        "bottomExclusive": 588
+      },
+      "visualBounds": {
+        "x": 44,
+        "y": 73,
+        "width": 425,
+        "height": 495,
+        "rightExclusive": 469,
+        "bottomExclusive": 568
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "id": "wall-owl-vangogh",
+      "runtimeId": "wall-owl-vangogh",
+      "displayName": "梵高猫头鹰自画像",
+      "slot": "wallart",
+      "logicalSlot": "wallart",
+      "collectionCategory": "人物名画",
+      "file": "wallart/wall-owl-vangogh.png",
+      "thumbnail": "thumbs/wall-owl-vangogh.png",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "sourceAnchor": [
+        256,
+        320
+      ],
+      "coordinateSpace": "asset",
+      "recommendedRenderScale": 1,
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "renderSizePolicy": "inherit current slot sizing and saved user transform; never apply historical room defaults",
+      "collisionBounds": {
+        "x": 44,
+        "y": 73,
+        "width": 425,
+        "height": 495,
+        "rightExclusive": 469,
+        "bottomExclusive": 568
+      },
+      "collisionBoundsScope": "visible frame silhouette",
+      "reviewStatus": "static artist review passed; actual app load/interaction verification remains engineering",
+      "sourceBatch": "portrait-batch-a"
+    },
+    {
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 384262,
+      "sha256": "87a5b5b903543a0b335a492eba4dbdf1c4fe759b1c1a74cf906d4e67d726faee",
+      "alphaBounds": {
+        "x": 41,
+        "y": 72,
+        "width": 433,
+        "height": 499,
+        "rightExclusive": 474,
+        "bottomExclusive": 571
+      },
+      "visualBounds": {
+        "x": 45,
+        "y": 74,
+        "width": 422,
+        "height": 492,
+        "rightExclusive": 467,
+        "bottomExclusive": 566
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "id": "wall-owl-red-chaperon",
+      "runtimeId": "wall-owl-red-chaperon",
+      "displayName": "红褶帽猫头鹰肖像",
+      "slot": "wallart",
+      "logicalSlot": "wallart",
+      "collectionCategory": "人物名画",
+      "file": "wallart/wall-owl-red-chaperon.png",
+      "thumbnail": "thumbs/wall-owl-red-chaperon.png",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "sourceAnchor": [
+        256,
+        320
+      ],
+      "coordinateSpace": "asset",
+      "recommendedRenderScale": 1,
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "renderSizePolicy": "inherit current slot sizing and saved user transform; never apply historical room defaults",
+      "collisionBounds": {
+        "x": 45,
+        "y": 74,
+        "width": 422,
+        "height": 492,
+        "rightExclusive": 467,
+        "bottomExclusive": 566
+      },
+      "collisionBoundsScope": "visible frame silhouette",
+      "reviewStatus": "static artist review passed; actual app load/interaction verification remains engineering",
+      "sourceBatch": "portrait-batch-a"
+    },
+    {
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 373334,
+      "sha256": "00b4f240beda1d72ab148b3d7cc03499f7a3f155bf39161866f5b98a5f85e63a",
+      "alphaBounds": {
+        "x": 45,
+        "y": 0,
+        "width": 420,
+        "height": 585,
+        "rightExclusive": 465,
+        "bottomExclusive": 585
+      },
+      "visualBounds": {
+        "x": 48,
+        "y": 74,
+        "width": 415,
+        "height": 491,
+        "rightExclusive": 463,
+        "bottomExclusive": 565
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "id": "wall-owl-rembrandt",
+      "runtimeId": "wall-owl-rembrandt",
+      "displayName": "伦勃朗猫头鹰自画像",
+      "slot": "wallart",
+      "logicalSlot": "wallart",
+      "collectionCategory": "人物名画",
+      "file": "wallart/wall-owl-rembrandt.png",
+      "thumbnail": "thumbs/wall-owl-rembrandt.png",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "sourceAnchor": [
+        256,
+        320
+      ],
+      "coordinateSpace": "asset",
+      "recommendedRenderScale": 1,
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "renderSizePolicy": "inherit current slot sizing and saved user transform; never apply historical room defaults",
+      "collisionBounds": {
+        "x": 48,
+        "y": 74,
+        "width": 415,
+        "height": 491,
+        "rightExclusive": 463,
+        "bottomExclusive": 565
+      },
+      "collisionBoundsScope": "visible frame silhouette",
+      "reviewStatus": "static artist review passed; actual app load/interaction verification remains engineering",
+      "sourceBatch": "portrait-batch-b"
+    }
+  ],
+  "files": [
+    {
+      "file": "lamps/lamp-lilac-torchiere.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 85178,
+      "sha256": "1e1a456ea1eb8425948e477bb62f6230f29616f6ebbeae7ae01b1c22ad11f821",
+      "alphaBounds": {
+        "x": 22,
+        "y": 383,
+        "width": 211,
+        "height": 702,
+        "rightExclusive": 233,
+        "bottomExclusive": 1085
+      },
+      "visualBounds": {
+        "x": 23,
+        "y": 383,
+        "width": 210,
+        "height": 700,
+        "rightExclusive": 233,
+        "bottomExclusive": 1083
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        254
+      ]
+    },
+    {
+      "file": "thumbs/lamp-lilac-torchiere.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 10809,
+      "sha256": "3aee59a83d86616f89a0d2376cd6589cdbea861551bd88421359b0fc642dd700",
+      "alphaBounds": {
+        "x": 94,
+        "y": 16,
+        "width": 67,
+        "height": 224,
+        "rightExclusive": 161,
+        "bottomExclusive": 240
+      },
+      "visualBounds": {
+        "x": 94,
+        "y": 16,
+        "width": 67,
+        "height": 224,
+        "rightExclusive": 161,
+        "bottomExclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lamps/lamp-pleated-tripod.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 105824,
+      "sha256": "a1f01471ebcc8aa03f7a3b9aab38f0a0d5d398d4bca7a54dbfd05942b0dc34b6",
+      "alphaBounds": {
+        "x": 21,
+        "y": 399,
+        "width": 213,
+        "height": 684,
+        "rightExclusive": 234,
+        "bottomExclusive": 1083
+      },
+      "visualBounds": {
+        "x": 21,
+        "y": 399,
+        "width": 213,
+        "height": 684,
+        "rightExclusive": 234,
+        "bottomExclusive": 1083
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/lamp-pleated-tripod.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 15714,
+      "sha256": "de95bf1b63ba29a7ad7bbb643d93ef32113a7a774abed945cca438c462d6ce16",
+      "alphaBounds": {
+        "x": 93,
+        "y": 16,
+        "width": 70,
+        "height": 224,
+        "rightExclusive": 163,
+        "bottomExclusive": 240
+      },
+      "visualBounds": {
+        "x": 93,
+        "y": 16,
+        "width": 70,
+        "height": 224,
+        "rightExclusive": 163,
+        "bottomExclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lamps/lamp-paper-oval.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bytes": 84616,
+      "sha256": "ca4c1b200039c568ea6ae2af7414422a2c47048239048060fb0655203ccfd776",
+      "alphaBounds": {
+        "x": 46,
+        "y": 383,
+        "width": 169,
+        "height": 702,
+        "rightExclusive": 215,
+        "bottomExclusive": 1085
+      },
+      "visualBounds": {
+        "x": 47,
+        "y": 383,
+        "width": 166,
+        "height": 700,
+        "rightExclusive": 213,
+        "bottomExclusive": 1083
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/lamp-paper-oval.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 10941,
+      "sha256": "58bfe57e48914efdbfa8d4889a68f45055f315daace6fda777565dbd72197d14",
+      "alphaBounds": {
+        "x": 101,
+        "y": 16,
+        "width": 53,
+        "height": 224,
+        "rightExclusive": 154,
+        "bottomExclusive": 240
+      },
+      "visualBounds": {
+        "x": 101,
+        "y": 16,
+        "width": 53,
+        "height": 224,
+        "rightExclusive": 154,
+        "bottomExclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "wallart/wall-owl-vangogh.png",
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 401954,
+      "sha256": "d9c3919c9931fb0e2cb415868d893dce19a348fdae3f4abdee01a81d76e05f6c",
+      "alphaBounds": {
+        "x": 42,
+        "y": 71,
+        "width": 430,
+        "height": 517,
+        "rightExclusive": 472,
+        "bottomExclusive": 588
+      },
+      "visualBounds": {
+        "x": 44,
+        "y": 73,
+        "width": 425,
+        "height": 495,
+        "rightExclusive": 469,
+        "bottomExclusive": 568
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/wall-owl-vangogh.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 63689,
+      "sha256": "a46db1d9e1568d7fef8fd47145396689437701eacf7eecc6af2499e2c6cabfaf",
+      "alphaBounds": {
+        "x": 42,
+        "y": 28,
+        "width": 171,
+        "height": 200,
+        "rightExclusive": 213,
+        "bottomExclusive": 228
+      },
+      "visualBounds": {
+        "x": 42,
+        "y": 29,
+        "width": 171,
+        "height": 198,
+        "rightExclusive": 213,
+        "bottomExclusive": 227
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "wallart/wall-owl-red-chaperon.png",
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 384262,
+      "sha256": "87a5b5b903543a0b335a492eba4dbdf1c4fe759b1c1a74cf906d4e67d726faee",
+      "alphaBounds": {
+        "x": 41,
+        "y": 72,
+        "width": 433,
+        "height": 499,
+        "rightExclusive": 474,
+        "bottomExclusive": 571
+      },
+      "visualBounds": {
+        "x": 45,
+        "y": 74,
+        "width": 422,
+        "height": 492,
+        "rightExclusive": 467,
+        "bottomExclusive": 566
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/wall-owl-red-chaperon.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 59622,
+      "sha256": "13a84b171a671354364481ebb9b8ed1481a705b7b2b1ae6981002f6feb7c7a82",
+      "alphaBounds": {
+        "x": 42,
+        "y": 29,
+        "width": 171,
+        "height": 198,
+        "rightExclusive": 213,
+        "bottomExclusive": 227
+      },
+      "visualBounds": {
+        "x": 42,
+        "y": 29,
+        "width": 171,
+        "height": 198,
+        "rightExclusive": 213,
+        "bottomExclusive": 227
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "wallart/wall-owl-rembrandt.png",
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 373334,
+      "sha256": "00b4f240beda1d72ab148b3d7cc03499f7a3f155bf39161866f5b98a5f85e63a",
+      "alphaBounds": {
+        "x": 45,
+        "y": 0,
+        "width": 420,
+        "height": 585,
+        "rightExclusive": 465,
+        "bottomExclusive": 585
+      },
+      "visualBounds": {
+        "x": 48,
+        "y": 74,
+        "width": 415,
+        "height": 491,
+        "rightExclusive": 463,
+        "bottomExclusive": 565
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/wall-owl-rembrandt.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 57852,
+      "sha256": "7794bd896b614f693ec6b1201b457ba6514faae5ce53972e3049c38b0c6fe8e2",
+      "alphaBounds": {
+        "x": 43,
+        "y": 29,
+        "width": 168,
+        "height": 197,
+        "rightExclusive": 211,
+        "bottomExclusive": 226
+      },
+      "visualBounds": {
+        "x": 44,
+        "y": 29,
+        "width": 167,
+        "height": 197,
+        "rightExclusive": 211,
+        "bottomExclusive": 226
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    }
+  ],
+  "alphaPolicy": "Model-native alpha retained through ImageMagick uniform resizing, RGBA8 conversion and canvas placement. Visual/collision alpha thresholds are read-only measurements. Raw sources kept in provenance package."
+}

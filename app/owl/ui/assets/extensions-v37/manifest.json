@@ -1,0 +1,1054 @@
+{
+  "schema": "owl-focus-extension-runtime/v1",
+  "status": "13 generated extension assets artist-reviewed; no application install performed",
+  "world": [
+    1024,
+    1536
+  ],
+  "visibleRoom": [
+    0,
+    260,
+    1024,
+    1000
+  ],
+  "assetCount": 13,
+  "mainPngCount": 13,
+  "thumbnailPngCount": 13,
+  "auxiliaryPngCount": 1,
+  "allNewSlotsDefault": null,
+  "backgroundIncluded": false,
+  "old19PngContractChanged": false,
+  "originalOwlChanged": false,
+  "styleBaseline": {
+    "libraryFileId": "project-source-record",
+    "originalApprovedVersion": 1,
+    "approvedMinimalDoubleLineVersion": 3
+  },
+  "layerOrder": [
+    "background",
+    "wallart",
+    "pendant",
+    "rugs",
+    "legacyLamp",
+    "legacyPlant",
+    "floorlight",
+    "sidefurniture",
+    "tabletop",
+    "chairBack",
+    "originalOwl",
+    "chairFront",
+    "foregroundplant"
+  ],
+  "alphaPolicy": "Native generated alpha retained through standard proportional resize and canvas placement. Raw sources preserved. No threshold masks or manual alpha repaint. Faint native alpha remnants can make exact alphaBounds wider than visualBounds.",
+  "license": "AI-generated project artwork via OpenAI image generation; applicable service terms govern outputs. Original owl adaptations of public-domain painting compositions; no museum photographs, third-party stock or user reference originals bundled.",
+  "assets": [
+    {
+      "id": "wall-owl-mona",
+      "slot": "wallart",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "defaultRoomAnchor": [
+        512,
+        380
+      ],
+      "renderSize": [
+        190,
+        237.5
+      ],
+      "moveArea": [
+        0,
+        260,
+        1024,
+        270
+      ],
+      "mode": "RGBA",
+      "sha256": "5a6d79c28c898086e666180da476b486433d9d180dd59ff6766a75db1da7087e",
+      "bytes": 315127,
+      "alphaBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 463,
+        "height": 636,
+        "rightExclusive": 463,
+        "bottomExclusive": 636
+      },
+      "alphaBounds8Bit": {
+        "x": 0,
+        "y": 0,
+        "width": 463,
+        "height": 636,
+        "rightExclusive": 463,
+        "bottomExclusive": 636
+      },
+      "visualBounds": {
+        "x": 51,
+        "y": 81,
+        "width": 410,
+        "height": 478,
+        "rightExclusive": 461,
+        "bottomExclusive": 559
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 131289,
+      "alphaMax8Bit": 255,
+      "file": "wallart/wall-owl-mona.png",
+      "thumbnail": "thumbs/wall-owl-mona.png",
+      "sourceFile": "paintings-samples/refinement-v2/wallart/wall-owl-mona.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 51,
+        "y": 81,
+        "width": 410,
+        "height": 478,
+        "rightExclusive": 461,
+        "bottomExclusive": 559
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "exclusiveWithinSlot": true,
+      "width": 512,
+      "height": 640
+    },
+    {
+      "id": "wall-owl-pearl",
+      "slot": "wallart",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "defaultRoomAnchor": [
+        512,
+        380
+      ],
+      "renderSize": [
+        190,
+        237.5
+      ],
+      "moveArea": [
+        0,
+        260,
+        1024,
+        270
+      ],
+      "mode": "RGBA",
+      "sha256": "a0404c8bb25016caa7abadbac090077c071948399ec5093f836b9ad517a99376",
+      "bytes": 323411,
+      "alphaBounds": {
+        "x": 0,
+        "y": 61,
+        "width": 478,
+        "height": 553,
+        "rightExclusive": 478,
+        "bottomExclusive": 614
+      },
+      "alphaBounds8Bit": {
+        "x": 0,
+        "y": 61,
+        "width": 478,
+        "height": 553,
+        "rightExclusive": 478,
+        "bottomExclusive": 614
+      },
+      "visualBounds": {
+        "x": 38,
+        "y": 63,
+        "width": 436,
+        "height": 515,
+        "rightExclusive": 474,
+        "bottomExclusive": 578
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 104300,
+      "alphaMax8Bit": 255,
+      "file": "wallart/wall-owl-pearl.png",
+      "thumbnail": "thumbs/wall-owl-pearl.png",
+      "sourceFile": "paintings-samples/refinement-v2/wallart/wall-owl-pearl.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 38,
+        "y": 63,
+        "width": 436,
+        "height": 515,
+        "rightExclusive": 474,
+        "bottomExclusive": 578
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "exclusiveWithinSlot": true,
+      "width": 512,
+      "height": 640
+    },
+    {
+      "id": "floor-light-small",
+      "slot": "floorlight",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "defaultRoomAnchor": [
+        725,
+        1225
+      ],
+      "renderSize": [
+        100,
+        100
+      ],
+      "moveArea": [
+        0,
+        1088,
+        1024,
+        168
+      ],
+      "mode": "RGBA",
+      "sha256": "91c47f4ec04f00a7e039960ab6e0797218c6eff7af4c7882db55fafa97eca124",
+      "bytes": 159203,
+      "alphaBounds": {
+        "x": 80,
+        "y": 101,
+        "width": 354,
+        "height": 383,
+        "rightExclusive": 434,
+        "bottomExclusive": 484
+      },
+      "alphaBounds8Bit": {
+        "x": 80,
+        "y": 101,
+        "width": 354,
+        "height": 383,
+        "rightExclusive": 434,
+        "bottomExclusive": 484
+      },
+      "visualBounds": {
+        "x": 82,
+        "y": 104,
+        "width": 352,
+        "height": 377,
+        "rightExclusive": 434,
+        "bottomExclusive": 481
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 168038,
+      "alphaMax8Bit": 255,
+      "file": "floorlight/floor-light-small.png",
+      "thumbnail": "thumbs/floor-light-small.png",
+      "sourceFile": "lights/floorlight/floor-light-small.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 82,
+        "y": 104,
+        "width": 352,
+        "height": 377,
+        "rightExclusive": 434,
+        "bottomExclusive": 481
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "id": "foreground-plant-small",
+      "slot": "foregroundplant",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "defaultRoomAnchor": [
+        160,
+        1220
+      ],
+      "renderSize": [
+        110,
+        110
+      ],
+      "moveArea": [
+        0,
+        1088,
+        1024,
+        168
+      ],
+      "mode": "RGBA",
+      "sha256": "7b154c3d9cc71629f4adf5eb8da5b65629ac316a5c26aaeecbe37d40cbfea600",
+      "bytes": 146138,
+      "alphaBounds": {
+        "x": 24,
+        "y": 103,
+        "width": 437,
+        "height": 380,
+        "rightExclusive": 461,
+        "bottomExclusive": 483
+      },
+      "alphaBounds8Bit": {
+        "x": 24,
+        "y": 103,
+        "width": 437,
+        "height": 380,
+        "rightExclusive": 461,
+        "bottomExclusive": 483
+      },
+      "visualBounds": {
+        "x": 25,
+        "y": 103,
+        "width": 434,
+        "height": 378,
+        "rightExclusive": 459,
+        "bottomExclusive": 481
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 185589,
+      "alphaMax8Bit": 255,
+      "file": "foregroundplant/foreground-plant-small.png",
+      "thumbnail": "thumbs/foreground-plant-small.png",
+      "sourceFile": "plant-bookcase/foregroundplant/foreground-plant-small.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 156,
+        "y": 326,
+        "width": 198,
+        "height": 156,
+        "rightExclusive": 354,
+        "bottomExclusive": 482
+      },
+      "collisionBoundsScope": "pot hardware rectangle, manually inspected; crown may extend within visualBounds",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "id": "side-table",
+      "slot": "sidefurniture",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "defaultRoomAnchor": [
+        925,
+        1244
+      ],
+      "renderSize": [
+        164,
+        164
+      ],
+      "moveArea": [
+        0,
+        1088,
+        1024,
+        168
+      ],
+      "mode": "RGBA",
+      "sha256": "4fbee54420d48cca428f60c1056fd9491be8e8a0482754309b0091da1ad44d80",
+      "bytes": 146146,
+      "alphaBounds": {
+        "x": 12,
+        "y": 142,
+        "width": 489,
+        "height": 338,
+        "rightExclusive": 501,
+        "bottomExclusive": 480
+      },
+      "alphaBounds8Bit": {
+        "x": 12,
+        "y": 142,
+        "width": 489,
+        "height": 338,
+        "rightExclusive": 501,
+        "bottomExclusive": 480
+      },
+      "visualBounds": {
+        "x": 13,
+        "y": 146,
+        "width": 485,
+        "height": 334,
+        "rightExclusive": 498,
+        "bottomExclusive": 480
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 176779,
+      "alphaMax8Bit": 255,
+      "file": "sidefurniture/side-table.png",
+      "thumbnail": "thumbs/side-table.png",
+      "sourceFile": "side-table-sample/refinement-v2/side-table.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 13,
+        "y": 146,
+        "width": 485,
+        "height": 334,
+        "rightExclusive": 498,
+        "bottomExclusive": 480
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "tableSurface": [
+        120,
+        185,
+        272,
+        50
+      ],
+      "tabletopAnchor": [
+        256,
+        210
+      ],
+      "exclusiveWith": [
+        "low-bookcase"
+      ],
+      "width": 512,
+      "height": 512
+    },
+    {
+      "id": "low-bookcase",
+      "slot": "sidefurniture",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "defaultRoomAnchor": [
+        925,
+        1244
+      ],
+      "renderSize": [
+        164,
+        164
+      ],
+      "moveArea": [
+        0,
+        1088,
+        1024,
+        168
+      ],
+      "mode": "RGBA",
+      "sha256": "8d1dcac38c66cea3df95c37e061be6a15e206257c526a9d1d067a67bab5eddf9",
+      "bytes": 146391,
+      "alphaBounds": {
+        "x": 31,
+        "y": 162,
+        "width": 450,
+        "height": 319,
+        "rightExclusive": 481,
+        "bottomExclusive": 481
+      },
+      "alphaBounds8Bit": {
+        "x": 31,
+        "y": 162,
+        "width": 450,
+        "height": 319,
+        "rightExclusive": 481,
+        "bottomExclusive": 481
+      },
+      "visualBounds": {
+        "x": 31,
+        "y": 220,
+        "width": 448,
+        "height": 260,
+        "rightExclusive": 479,
+        "bottomExclusive": 480
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 154140,
+      "alphaMax8Bit": 255,
+      "file": "sidefurniture/low-bookcase.png",
+      "thumbnail": "thumbs/low-bookcase.png",
+      "sourceFile": "plant-bookcase/sidefurniture/low-bookcase-refinement-v2.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 31,
+        "y": 220,
+        "width": 448,
+        "height": 260,
+        "rightExclusive": 479,
+        "bottomExclusive": 480
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "exclusiveWith": [
+        "side-table"
+      ],
+      "width": 512,
+      "height": 512
+    },
+    {
+      "id": "tabletop-teapot",
+      "slot": "tabletop",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "defaultRoomAnchor": [
+        925,
+        1157.515625
+      ],
+      "renderSize": [
+        78,
+        78
+      ],
+      "moveArea": null,
+      "mode": "RGBA",
+      "sha256": "99e81618b6891b711a46c7eb77549648339e4c25c091852626dad35b07ab2f3a",
+      "bytes": 405370,
+      "alphaBounds": {
+        "x": 55,
+        "y": 139,
+        "width": 400,
+        "height": 373,
+        "rightExclusive": 455,
+        "bottomExclusive": 512
+      },
+      "alphaBounds8Bit": {
+        "x": 59,
+        "y": 200,
+        "width": 396,
+        "height": 283,
+        "rightExclusive": 455,
+        "bottomExclusive": 483
+      },
+      "visualBounds": {
+        "x": 61,
+        "y": 228,
+        "width": 390,
+        "height": 253,
+        "rightExclusive": 451,
+        "bottomExclusive": 481
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 202034,
+      "alphaMax8Bit": 255,
+      "file": "tabletop/tabletop-teapot.png",
+      "thumbnail": "thumbs/tabletop-teapot.png",
+      "sourceFile": "tabletop/runtime/tabletop/tabletop-teapot.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 61,
+        "y": 228,
+        "width": 390,
+        "height": 253,
+        "rightExclusive": 451,
+        "bottomExclusive": 481
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "parentId": "side-table",
+      "preservePositionWhenHidden": true,
+      "visibleOnlyWhenParentSelected": true,
+      "exclusiveWithinSlot": true,
+      "width": 512,
+      "height": 512
+    },
+    {
+      "id": "tabletop-books",
+      "slot": "tabletop",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "defaultRoomAnchor": [
+        925,
+        1157.515625
+      ],
+      "renderSize": [
+        78,
+        78
+      ],
+      "moveArea": null,
+      "mode": "RGBA",
+      "sha256": "c56110bc5e6029ec61e210635dbb51586037dcf9a2a81b39485f7424ad22ad40",
+      "bytes": 488822,
+      "alphaBounds": {
+        "x": 18,
+        "y": 145,
+        "width": 387,
+        "height": 367,
+        "rightExclusive": 405,
+        "bottomExclusive": 512
+      },
+      "alphaBounds8Bit": {
+        "x": 20,
+        "y": 248,
+        "width": 382,
+        "height": 236,
+        "rightExclusive": 402,
+        "bottomExclusive": 484
+      },
+      "visualBounds": {
+        "x": 22,
+        "y": 250,
+        "width": 378,
+        "height": 232,
+        "rightExclusive": 400,
+        "bottomExclusive": 482
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 192455,
+      "alphaMax8Bit": 255,
+      "file": "tabletop/tabletop-books.png",
+      "thumbnail": "thumbs/tabletop-books.png",
+      "sourceFile": "tabletop/runtime/tabletop/tabletop-books.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 22,
+        "y": 250,
+        "width": 378,
+        "height": 232,
+        "rightExclusive": 400,
+        "bottomExclusive": 482
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "parentId": "side-table",
+      "preservePositionWhenHidden": true,
+      "visibleOnlyWhenParentSelected": true,
+      "exclusiveWithinSlot": true,
+      "width": 512,
+      "height": 512
+    },
+    {
+      "id": "pendant-small",
+      "slot": "pendant",
+      "canvas": [
+        512,
+        768
+      ],
+      "anchor": [
+        256,
+        24
+      ],
+      "defaultRoomAnchor": [
+        850,
+        280
+      ],
+      "renderSize": [
+        128,
+        192
+      ],
+      "moveArea": [
+        0,
+        260,
+        1024,
+        650
+      ],
+      "mode": "RGBA",
+      "sha256": "033c421ccbf395bfa8e7e2d758217d6ec8146c9447039fe6705b3d9bd7e8f2b8",
+      "bytes": 61003,
+      "alphaBounds": {
+        "x": 121,
+        "y": 23,
+        "width": 270,
+        "height": 577,
+        "rightExclusive": 391,
+        "bottomExclusive": 600
+      },
+      "alphaBounds8Bit": {
+        "x": 121,
+        "y": 23,
+        "width": 270,
+        "height": 577,
+        "rightExclusive": 391,
+        "bottomExclusive": 600
+      },
+      "visualBounds": {
+        "x": 121,
+        "y": 23,
+        "width": 270,
+        "height": 575,
+        "rightExclusive": 391,
+        "bottomExclusive": 598
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 363756,
+      "alphaMax8Bit": 254,
+      "file": "pendant/pendant-small.png",
+      "thumbnail": "thumbs/pendant-small.png",
+      "sourceFile": "lights/pendant/pendant-small.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 121,
+        "y": 23,
+        "width": 270,
+        "height": 575,
+        "rightExclusive": 391,
+        "bottomExclusive": 598
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "ceilingY": 260,
+      "connectionLine": "pendant/pendant-line-patch.png",
+      "connectionLineRender": [
+        5,
+        20
+      ],
+      "connectionLineDefaultTopLeft": [
+        848,
+        260
+      ],
+      "connectionLinePolicy": "Use genuine raster patch; repeat/crop for added distance, not a synthetic ruler-straight stroke",
+      "width": 512,
+      "height": 768
+    },
+    {
+      "id": "rug-cloud",
+      "slot": "rugs",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        1120
+      ],
+      "defaultRoomAnchor": [
+        512,
+        1120
+      ],
+      "renderSize": [
+        1024,
+        1536
+      ],
+      "moveArea": null,
+      "mode": "RGBA",
+      "sha256": "0a73a2aaa98010e65a73fd0e8bdd9451578d4d9f29374f165ee0d9c0e3cdbaa5",
+      "bytes": 135425,
+      "alphaBounds": {
+        "x": 102,
+        "y": 1035,
+        "width": 821,
+        "height": 173,
+        "rightExclusive": 923,
+        "bottomExclusive": 1208
+      },
+      "alphaBounds8Bit": {
+        "x": 102,
+        "y": 1035,
+        "width": 821,
+        "height": 173,
+        "rightExclusive": 923,
+        "bottomExclusive": 1208
+      },
+      "visualBounds": {
+        "x": 102,
+        "y": 1035,
+        "width": 821,
+        "height": 170,
+        "rightExclusive": 923,
+        "bottomExclusive": 1205
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 1464330,
+      "alphaMax8Bit": 255,
+      "file": "rugs/rug-cloud.png",
+      "thumbnail": "thumbs/rug-cloud.png",
+      "sourceFile": "rugs-batch-a/rugs/rug-cloud.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 102,
+        "y": 1035,
+        "width": 821,
+        "height": 170,
+        "rightExclusive": 923,
+        "bottomExclusive": 1205
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "exclusiveWithinSlot": true,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "rug-check",
+      "slot": "rugs",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        1120
+      ],
+      "defaultRoomAnchor": [
+        512,
+        1120
+      ],
+      "renderSize": [
+        1024,
+        1536
+      ],
+      "moveArea": null,
+      "mode": "RGBA",
+      "sha256": "b0aafa03ef4ae71a34ab7398586d8013135331cb6e934aaae63ec8fb1e984e2a",
+      "bytes": 175543,
+      "alphaBounds": {
+        "x": 100,
+        "y": 1019,
+        "width": 823,
+        "height": 195,
+        "rightExclusive": 923,
+        "bottomExclusive": 1214
+      },
+      "alphaBounds8Bit": {
+        "x": 100,
+        "y": 1019,
+        "width": 823,
+        "height": 195,
+        "rightExclusive": 923,
+        "bottomExclusive": 1214
+      },
+      "visualBounds": {
+        "x": 102,
+        "y": 1031,
+        "width": 821,
+        "height": 178,
+        "rightExclusive": 923,
+        "bottomExclusive": 1209
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 1442247,
+      "alphaMax8Bit": 255,
+      "file": "rugs/rug-check.png",
+      "thumbnail": "thumbs/rug-check.png",
+      "sourceFile": "rugs-batch-a/rugs/rug-check.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 102,
+        "y": 1031,
+        "width": 821,
+        "height": 178,
+        "rightExclusive": 923,
+        "bottomExclusive": 1209
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "exclusiveWithinSlot": true,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "rug-petal",
+      "slot": "rugs",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        1120
+      ],
+      "defaultRoomAnchor": [
+        512,
+        1120
+      ],
+      "renderSize": [
+        1024,
+        1536
+      ],
+      "moveArea": null,
+      "mode": "RGBA",
+      "sha256": "86c5468ac4b33bbf6c8be52eaf57acd799ef457cd3fb8b1592dc719e0826dcea",
+      "bytes": 146845,
+      "alphaBounds": {
+        "x": 101,
+        "y": 1032,
+        "width": 822,
+        "height": 180,
+        "rightExclusive": 923,
+        "bottomExclusive": 1212
+      },
+      "alphaBounds8Bit": {
+        "x": 101,
+        "y": 1032,
+        "width": 822,
+        "height": 180,
+        "rightExclusive": 923,
+        "bottomExclusive": 1212
+      },
+      "visualBounds": {
+        "x": 102,
+        "y": 1032,
+        "width": 821,
+        "height": 177,
+        "rightExclusive": 923,
+        "bottomExclusive": 1209
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 1470777,
+      "alphaMax8Bit": 255,
+      "file": "rugs/rug-petal.png",
+      "thumbnail": "thumbs/rug-petal.png",
+      "sourceFile": "rugs-batch-b/rugs/rug-petal.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 102,
+        "y": 1032,
+        "width": 821,
+        "height": 177,
+        "rightExclusive": 923,
+        "bottomExclusive": 1209
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "exclusiveWithinSlot": true,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "rug-stripe",
+      "slot": "rugs",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        512,
+        1120
+      ],
+      "defaultRoomAnchor": [
+        512,
+        1120
+      ],
+      "renderSize": [
+        1024,
+        1536
+      ],
+      "moveArea": null,
+      "mode": "RGBA",
+      "sha256": "138031b76010709196ce687b1a84ea4a5bf5e4d2250a48ba66428a92faab9695",
+      "bytes": 128872,
+      "alphaBounds": {
+        "x": 99,
+        "y": 967,
+        "width": 824,
+        "height": 223,
+        "rightExclusive": 923,
+        "bottomExclusive": 1190
+      },
+      "alphaBounds8Bit": {
+        "x": 99,
+        "y": 967,
+        "width": 824,
+        "height": 223,
+        "rightExclusive": 923,
+        "bottomExclusive": 1190
+      },
+      "visualBounds": {
+        "x": 102,
+        "y": 1050,
+        "width": 821,
+        "height": 139,
+        "rightExclusive": 923,
+        "bottomExclusive": 1189
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 1472377,
+      "alphaMax8Bit": 255,
+      "file": "rugs/rug-stripe.png",
+      "thumbnail": "thumbs/rug-stripe.png",
+      "sourceFile": "rugs-batch-b/rugs/rug-stripe.png",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "collisionBounds": {
+        "x": 102,
+        "y": 1050,
+        "width": 821,
+        "height": 139,
+        "rightExclusive": 923,
+        "bottomExclusive": 1189
+      },
+      "collisionBoundsScope": "conservative visible silhouette unless a hardware override follows",
+      "reviewStatus": "Artist reviewed on gray/cream and intended room display size; engine interaction verification pending",
+      "exclusiveWithinSlot": true,
+      "width": 1024,
+      "height": 1536
+    }
+  ],
+  "auxiliary": [
+    {
+      "id": "pendant-line-patch",
+      "file": "pendant/pendant-line-patch.png",
+      "canvas": [
+        20,
+        80
+      ],
+      "mode": "RGBA",
+      "sha256": "58962908a607fe3ee5e845d7d5708b629a978968e94d749a356f2261e5286147",
+      "bytes": 2842,
+      "alphaBounds": {
+        "x": 1,
+        "y": 0,
+        "width": 13,
+        "height": 80,
+        "rightExclusive": 14,
+        "bottomExclusive": 80
+      },
+      "alphaBounds8Bit": {
+        "x": 1,
+        "y": 0,
+        "width": 13,
+        "height": 80,
+        "rightExclusive": 14,
+        "bottomExclusive": 80
+      },
+      "visualBounds": {
+        "x": 4,
+        "y": 0,
+        "width": 8,
+        "height": 80,
+        "rightExclusive": 12,
+        "bottomExclusive": 80
+      },
+      "visualBoundsThreshold": "alpha > 4/255 after 8-bit measurement only; alpha pixels not changed",
+      "alphaZeroPixels8Bit": 1092,
+      "alphaMax8Bit": 250,
+      "width": 20,
+      "height": 80
+    }
+  ],
+  "reviewLimits": [
+    "Static art, alpha, nominal placement and exact display-size QA completed; live dragging, attached tabletop motion, mutual exclusion, unlocking, persistence and maximum owl animations require actual renderer validation",
+    "A few frame/cabinet edges remain mildly orderly; accepted after one bounded style refinement at intended display size",
+    "No item is implicitly equipped; suggested default positions are QA inputs, not evidence of every drag location being collision-free"
+  ],
+  "offlineRoomChecks": "Four distinct equipped test scenes reviewed at actual engineer render sizes; archived in extension provenance. Default selections remain null."
+}

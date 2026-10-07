@@ -1,0 +1,1153 @@
+{
+  "schema": "owl-focus-production-assets/v1",
+  "createdUtc": "2026-10-06",
+  "revision": "v4-faithful",
+  "stage": "Complete legacy19 art revision. Static visual and alpha review done; real renderer full-action integration pending.",
+  "assetPngCount": 19,
+  "canvas": {
+    "room": [
+      1024,
+      1536
+    ],
+    "chairRig": [
+      1254,
+      1254
+    ],
+    "thumbnail": [
+      256,
+      256
+    ],
+    "owlOriginal": [
+      900,
+      1000
+    ]
+  },
+  "coordinates": {
+    "owlDisplayScale": 0.64,
+    "owlOffset": [
+      224,
+      458
+    ],
+    "chairTransform": {
+      "scale": 0.681,
+      "offset": [
+        85,
+        300
+      ]
+    },
+    "chairTargetSeat": [
+      629,
+      874
+    ],
+    "chairTargetFeet": [
+      [
+        342,
+        1148
+      ],
+      [
+        912,
+        1148
+      ]
+    ],
+    "groundY": 1082
+  },
+  "layerOrder": [
+    "background",
+    "rug",
+    "lamp and plant",
+    "chair-back",
+    "original owl unchanged",
+    "chair-front"
+  ],
+  "approvedStyle": {
+    "libraryFileId": "project-source-record",
+    "originalVersion": 1,
+    "approvedMinimalCorrectionVersion": 3
+  },
+  "backgroundByteIdenticalToV1": true,
+  "owlRegenerated": false,
+  "frontLayerPolicy": {
+    "intentionalEmpty": true,
+    "emptyReason": "whole-chair-behind-owl",
+    "agreedWithParent": true,
+    "maximumAnimationOcclusionStillRequiresActualRenderer": true
+  },
+  "fidelityMethod": "A chair/lamp/plant preserve approved source RGB with imagegen-derived alpha. A rug retains source RGB outside six small originally furniture-occluded reconstruction rectangles. B variants use the same approved visual references and native generated alpha. Standard ImageMagick uniform registration/formatting only; no Python painting or threshold alpha cleanup.",
+  "importantIntegration": [
+    "lamp-sage-arc / engine alias lamp-brass is already sized: renderScale1; remove old extra1.18 scaling",
+    "chair front files are real1254x1254 RGBA8 fully transparent resources, declared intentionalEmpty; never treat them as missing/failed images",
+    "original background and owl rig remain unchanged; owl display.64 and hit/gaze sync stay as current engineering implementation"
+  ],
+  "reviewLimits": [
+    "Transparent extraction cannot mathematically undo original paper compositing. Fine pale fringes and weaker few lamp pixels remain on gray, without a rectangular matte at normal display size.",
+    "LampB is a visibly larger mass variant (228px shade/body width,731px height); columns are slightly stronger than A but are separate, lightly bent and not black rails.",
+    "RugA localized reconstructed lines have minor close-up connection/lightness differences; source RGB outside the declared rectangles remains unchanged.",
+    "Do not replace actual-renderer QA with this offline snapshot; maximum motion, hit areas, gaze and persistence still need application checks."
+  ],
+  "license": {
+    "type": "Generated project artwork",
+    "terms": "Generated with OpenAI image generation for the user project; applicable service terms govern output use. User reference originals and third-party stock are not redistributed."
+  },
+  "assets": [
+    {
+      "file": "backgrounds/cream-paper.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "bitDepth": 8,
+      "pngColorType": 2,
+      "sha256": "dfa6fdc1e2bbf4e1c588b486687ba573b04517fadb379fd874a4465b2f9b4dfd",
+      "bytes": 2041156,
+      "alphaBounds8Bit": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1536,
+        "rightExclusive": 1024,
+        "bottomExclusive": 1536
+      },
+      "visualBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1536,
+        "rightExclusive": 1024,
+        "bottomExclusive": 1536,
+        "rightInclusive": 1023,
+        "bottomInclusive": 1535
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 255,
+      "alphaMax": 255,
+      "id": "background-cream",
+      "category": "background",
+      "thumbnail": null,
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "room",
+      "alphaBounds": null,
+      "alphaNonzeroBounds": null,
+      "alphaRange8Bit": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "chairs/chair-a-back.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "062c146de467f38e44ab95c33daf5104b9de4ebba0b675237344257eea061ab8",
+      "bytes": 441004,
+      "alphaBounds8Bit": {
+        "x": 289,
+        "y": 435,
+        "width": 664,
+        "height": 714,
+        "rightExclusive": 953,
+        "bottomExclusive": 1149
+      },
+      "visualBounds": {
+        "x": 290,
+        "y": 449,
+        "width": 662,
+        "height": 700,
+        "rightExclusive": 952,
+        "bottomExclusive": 1149,
+        "rightInclusive": 951,
+        "bottomInclusive": 1148
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "chair-a-back",
+      "category": "chair-back",
+      "thumbnail": "thumbs/chair-a.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "chairRig",
+      "alphaBounds": {
+        "x": 289,
+        "y": 435,
+        "width": 664,
+        "height": 714,
+        "rightInclusive": 952,
+        "bottomInclusive": 1148
+      },
+      "alphaNonzeroBounds": {
+        "x": 289,
+        "y": 435,
+        "width": 664,
+        "height": 714,
+        "rightInclusive": 952,
+        "bottomInclusive": 1148
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "registration": "chairs/registration.json"
+    },
+    {
+      "file": "chairs/chair-a-front.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "91e962d0a911b39943fc3da84cfa3f2a97e95059e49f863170ce68f953cb813e",
+      "bytes": 6387,
+      "alphaBounds8Bit": null,
+      "visualBounds": null,
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 0,
+      "id": "chair-a-front",
+      "category": "chair-front",
+      "thumbnail": "thumbs/chair-a.png",
+      "recommendedRenderScale": 1,
+      "intentionalEmpty": true,
+      "emptyReason": "whole-chair-behind-owl",
+      "coordinateSpace": "chairRig",
+      "alphaBounds": null,
+      "alphaNonzeroBounds": null,
+      "alphaRange8Bit": [
+        0,
+        0
+      ],
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "registration": "chairs/registration.json"
+    },
+    {
+      "file": "chairs/chair-b-back.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "704840f309ec6d6aee31090dbe7f4346ad6f9d98f7e5e154293fc743a96f1068",
+      "bytes": 449287,
+      "alphaBounds8Bit": {
+        "x": 293,
+        "y": 335,
+        "width": 656,
+        "height": 814,
+        "rightExclusive": 949,
+        "bottomExclusive": 1149
+      },
+      "visualBounds": {
+        "x": 293,
+        "y": 449,
+        "width": 656,
+        "height": 700,
+        "rightExclusive": 949,
+        "bottomExclusive": 1149,
+        "rightInclusive": 948,
+        "bottomInclusive": 1148
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "chair-b-back",
+      "category": "chair-back",
+      "thumbnail": "thumbs/chair-b.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "chairRig",
+      "alphaBounds": {
+        "x": 293,
+        "y": 335,
+        "width": 656,
+        "height": 814,
+        "rightInclusive": 948,
+        "bottomInclusive": 1148
+      },
+      "alphaNonzeroBounds": {
+        "x": 293,
+        "y": 335,
+        "width": 656,
+        "height": 814,
+        "rightInclusive": 948,
+        "bottomInclusive": 1148
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "registration": "chairs/registration.json"
+    },
+    {
+      "file": "chairs/chair-b-front.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "91e962d0a911b39943fc3da84cfa3f2a97e95059e49f863170ce68f953cb813e",
+      "bytes": 6387,
+      "alphaBounds8Bit": null,
+      "visualBounds": null,
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 0,
+      "id": "chair-b-front",
+      "category": "chair-front",
+      "thumbnail": "thumbs/chair-b.png",
+      "recommendedRenderScale": 1,
+      "intentionalEmpty": true,
+      "emptyReason": "whole-chair-behind-owl",
+      "coordinateSpace": "chairRig",
+      "alphaBounds": null,
+      "alphaNonzeroBounds": null,
+      "alphaRange8Bit": [
+        0,
+        0
+      ],
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "registration": "chairs/registration.json"
+    },
+    {
+      "file": "lamps/lamp-cream-drum.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "59719daee80d9ef36603011fb74069ac513f2e400bcfdcd874d95b2c2b3290c3",
+      "bytes": 89901,
+      "alphaBounds8Bit": {
+        "x": 28,
+        "y": 391,
+        "width": 197,
+        "height": 692,
+        "rightExclusive": 225,
+        "bottomExclusive": 1083
+      },
+      "visualBounds": {
+        "x": 28,
+        "y": 391,
+        "width": 197,
+        "height": 691,
+        "rightExclusive": 225,
+        "bottomExclusive": 1082,
+        "rightInclusive": 224,
+        "bottomInclusive": 1081
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "lamp-cream-drum",
+      "category": "lamp",
+      "thumbnail": "thumbs/lamp-cream-drum.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "room",
+      "collisionBounds": {
+        "x": 48,
+        "y": 970,
+        "width": 146,
+        "height": 112,
+        "rightExclusive": 194,
+        "bottomExclusive": 1082,
+        "rightInclusive": 193,
+        "bottomInclusive": 1081
+      },
+      "collisionBoundsScope": "visible lower stem and base at room y>=970",
+      "alphaBounds": {
+        "x": 28,
+        "y": 391,
+        "width": 197,
+        "height": 692,
+        "rightInclusive": 224,
+        "bottomInclusive": 1082
+      },
+      "alphaNonzeroBounds": {
+        "x": 28,
+        "y": 391,
+        "width": 197,
+        "height": 692,
+        "rightInclusive": 224,
+        "bottomInclusive": 1082
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lamps/lamp-sage-arc.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "af9e23201f200177448424176373fe9aaf28981161241a389a2f87fca87255b0",
+      "bytes": 93777,
+      "alphaBounds8Bit": {
+        "x": 35,
+        "y": 346,
+        "width": 230,
+        "height": 740,
+        "rightExclusive": 265,
+        "bottomExclusive": 1086
+      },
+      "visualBounds": {
+        "x": 37,
+        "y": 351,
+        "width": 228,
+        "height": 731,
+        "rightExclusive": 265,
+        "bottomExclusive": 1082,
+        "rightInclusive": 264,
+        "bottomInclusive": 1081
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "id": "lamp-sage-arc",
+      "category": "lamp",
+      "thumbnail": "thumbs/lamp-sage-arc.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "room",
+      "collisionBounds": {
+        "x": 65,
+        "y": 970,
+        "width": 163,
+        "height": 112,
+        "rightExclusive": 228,
+        "bottomExclusive": 1082,
+        "rightInclusive": 227,
+        "bottomInclusive": 1081
+      },
+      "collisionBoundsScope": "visible lower stem and base at room y>=970",
+      "engineAlias": "lamp-brass",
+      "bakedSize": true,
+      "removeLegacyExtraScale1_18": true,
+      "actualVisualHeight": 731,
+      "actualVisualWidth": 228,
+      "alphaBounds": {
+        "x": 35,
+        "y": 346,
+        "width": 230,
+        "height": 740,
+        "rightInclusive": 264,
+        "bottomInclusive": 1085
+      },
+      "alphaNonzeroBounds": {
+        "x": 35,
+        "y": 346,
+        "width": 230,
+        "height": 740,
+        "rightInclusive": 264,
+        "bottomInclusive": 1085
+      },
+      "alphaRange8Bit": [
+        0,
+        254
+      ]
+    },
+    {
+      "file": "plants/plant-a-fiddle-fig.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "a3cc46a00239e43b42995bd27564c5dd7e91def0c73a76b156b4ffb6fdf61e77",
+      "bytes": 199500,
+      "alphaBounds8Bit": {
+        "x": 705,
+        "y": 454,
+        "width": 308,
+        "height": 631,
+        "rightExclusive": 1013,
+        "bottomExclusive": 1085
+      },
+      "visualBounds": {
+        "x": 705,
+        "y": 455,
+        "width": 304,
+        "height": 627,
+        "rightExclusive": 1009,
+        "bottomExclusive": 1082,
+        "rightInclusive": 1008,
+        "bottomInclusive": 1081
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "plant-a-fiddle-fig",
+      "category": "plant",
+      "thumbnail": "thumbs/plant-a-fiddle-fig.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "room",
+      "collisionBounds": {
+        "x": 829,
+        "y": 920,
+        "width": 148,
+        "height": 162,
+        "rightExclusive": 977,
+        "bottomExclusive": 1082,
+        "rightInclusive": 976,
+        "bottomInclusive": 1081
+      },
+      "collisionBoundsScope": "floor hardware only; foliage excluded",
+      "alphaBounds": {
+        "x": 705,
+        "y": 454,
+        "width": 308,
+        "height": 631,
+        "rightInclusive": 1012,
+        "bottomInclusive": 1084
+      },
+      "alphaNonzeroBounds": {
+        "x": 705,
+        "y": 454,
+        "width": 308,
+        "height": 631,
+        "rightInclusive": 1012,
+        "bottomInclusive": 1084
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "plants/plant-b-round-leaf.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "7a98952a1b67fc8a4f602008e6b149db6645436c66b16e2ebdd2979859c94e7c",
+      "bytes": 154459,
+      "alphaBounds8Bit": {
+        "x": 715,
+        "y": 467,
+        "width": 288,
+        "height": 621,
+        "rightExclusive": 1003,
+        "bottomExclusive": 1088
+      },
+      "visualBounds": {
+        "x": 715,
+        "y": 467,
+        "width": 288,
+        "height": 616,
+        "rightExclusive": 1003,
+        "bottomExclusive": 1083,
+        "rightInclusive": 1002,
+        "bottomInclusive": 1082
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "plant-b-round-leaf",
+      "category": "plant",
+      "thumbnail": "thumbs/plant-b-round-leaf.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "room",
+      "collisionBounds": {
+        "x": 835,
+        "y": 920,
+        "width": 141,
+        "height": 163,
+        "rightExclusive": 976,
+        "bottomExclusive": 1083,
+        "rightInclusive": 975,
+        "bottomInclusive": 1082
+      },
+      "collisionBoundsScope": "floor hardware only; foliage excluded",
+      "alphaBounds": {
+        "x": 715,
+        "y": 467,
+        "width": 288,
+        "height": 621,
+        "rightInclusive": 1002,
+        "bottomInclusive": 1087
+      },
+      "alphaNonzeroBounds": {
+        "x": 715,
+        "y": 467,
+        "width": 288,
+        "height": 621,
+        "rightInclusive": 1002,
+        "bottomInclusive": 1087
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "rugs/rug-diamond.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "116edf28fa4405f9b1855df6ebf89cf9572c6d50395ce80a04511b6feb97127c",
+      "bytes": 184990,
+      "alphaBounds8Bit": {
+        "x": 117,
+        "y": 1023,
+        "width": 789,
+        "height": 194,
+        "rightExclusive": 906,
+        "bottomExclusive": 1217
+      },
+      "visualBounds": {
+        "x": 117,
+        "y": 1024,
+        "width": 789,
+        "height": 193,
+        "rightExclusive": 906,
+        "bottomExclusive": 1217,
+        "rightInclusive": 905,
+        "bottomInclusive": 1216
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 254,
+      "id": "rug-diamond",
+      "category": "rug",
+      "thumbnail": "thumbs/rug-diamond.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "room",
+      "alphaBounds": {
+        "x": 117,
+        "y": 1023,
+        "width": 789,
+        "height": 194,
+        "rightInclusive": 905,
+        "bottomInclusive": 1216
+      },
+      "alphaNonzeroBounds": {
+        "x": 117,
+        "y": 1023,
+        "width": 789,
+        "height": 194,
+        "rightInclusive": 905,
+        "bottomInclusive": 1216
+      },
+      "alphaRange8Bit": [
+        0,
+        254
+      ]
+    },
+    {
+      "file": "rugs/rug-sage-oval.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "062c6e9cf36b6e093f2e121fb78e9b3c844d5ec53597f71ae8a7706ee6d0d1bd",
+      "bytes": 151407,
+      "alphaBounds8Bit": {
+        "x": 128,
+        "y": 1029,
+        "width": 767,
+        "height": 184,
+        "rightExclusive": 895,
+        "bottomExclusive": 1213
+      },
+      "visualBounds": {
+        "x": 129,
+        "y": 1030,
+        "width": 766,
+        "height": 181,
+        "rightExclusive": 895,
+        "bottomExclusive": 1211,
+        "rightInclusive": 894,
+        "bottomInclusive": 1210
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "rug-sage-oval",
+      "category": "rug",
+      "thumbnail": "thumbs/rug-sage-oval.png",
+      "recommendedRenderScale": 1,
+      "coordinateSpace": "room",
+      "alphaBounds": {
+        "x": 128,
+        "y": 1029,
+        "width": 767,
+        "height": 184,
+        "rightInclusive": 894,
+        "bottomInclusive": 1212
+      },
+      "alphaNonzeroBounds": {
+        "x": 128,
+        "y": 1029,
+        "width": 767,
+        "height": 184,
+        "rightInclusive": 894,
+        "bottomInclusive": 1212
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/chair-a.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "507f261c793b2e8893840996242c58b1c372197655bca4f0fa296ea383a4ed2f",
+      "bytes": 53259,
+      "alphaBounds8Bit": {
+        "x": 21,
+        "y": 12,
+        "width": 214,
+        "height": 229,
+        "rightExclusive": 235,
+        "bottomExclusive": 241
+      },
+      "visualBounds": {
+        "x": 21,
+        "y": 15,
+        "width": 214,
+        "height": 226,
+        "rightExclusive": 235,
+        "bottomExclusive": 241,
+        "rightInclusive": 234,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "chair-a-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 21,
+        "y": 12,
+        "width": 214,
+        "height": 229,
+        "rightInclusive": 234,
+        "bottomInclusive": 240
+      },
+      "alphaNonzeroBounds": {
+        "x": 21,
+        "y": 12,
+        "width": 214,
+        "height": 229,
+        "rightInclusive": 234,
+        "bottomInclusive": 240
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    },
+    {
+      "file": "thumbs/chair-b.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "bfa33226bfe0d962aa1efed99e165b879265b5ed7687525361e05362ae4f0efd",
+      "bytes": 53756,
+      "alphaBounds8Bit": {
+        "x": 22,
+        "y": 15,
+        "width": 212,
+        "height": 225,
+        "rightExclusive": 234,
+        "bottomExclusive": 240
+      },
+      "visualBounds": {
+        "x": 23,
+        "y": 15,
+        "width": 211,
+        "height": 225,
+        "rightExclusive": 234,
+        "bottomExclusive": 240,
+        "rightInclusive": 233,
+        "bottomInclusive": 239
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "chair-b-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 22,
+        "y": 15,
+        "width": 212,
+        "height": 225,
+        "rightInclusive": 233,
+        "bottomInclusive": 239
+      },
+      "alphaNonzeroBounds": {
+        "x": 22,
+        "y": 15,
+        "width": 212,
+        "height": 225,
+        "rightInclusive": 233,
+        "bottomInclusive": 239
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    },
+    {
+      "file": "thumbs/lamp-cream-drum.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "68ce7548e082ff55b375dee3e8275361c33d85ec0c003489f9883fb208ab8e74",
+      "bytes": 11034,
+      "alphaBounds8Bit": {
+        "x": 95,
+        "y": 15,
+        "width": 66,
+        "height": 226,
+        "rightExclusive": 161,
+        "bottomExclusive": 241
+      },
+      "visualBounds": {
+        "x": 95,
+        "y": 15,
+        "width": 65,
+        "height": 226,
+        "rightExclusive": 160,
+        "bottomExclusive": 241,
+        "rightInclusive": 159,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "lamp-cream-drum-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 95,
+        "y": 15,
+        "width": 66,
+        "height": 226,
+        "rightInclusive": 160,
+        "bottomInclusive": 240
+      },
+      "alphaNonzeroBounds": {
+        "x": 95,
+        "y": 15,
+        "width": 66,
+        "height": 226,
+        "rightInclusive": 160,
+        "bottomInclusive": 240
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    },
+    {
+      "file": "thumbs/lamp-sage-arc.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "28052c6c4d1854728e9d0a9ddd6fe86c3f978cc44ff6855bba375a84120a80b2",
+      "bytes": 11428,
+      "alphaBounds8Bit": {
+        "x": 92,
+        "y": 14,
+        "width": 71,
+        "height": 227,
+        "rightExclusive": 163,
+        "bottomExclusive": 241
+      },
+      "visualBounds": {
+        "x": 92,
+        "y": 15,
+        "width": 71,
+        "height": 226,
+        "rightExclusive": 163,
+        "bottomExclusive": 241,
+        "rightInclusive": 162,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "lamp-sage-arc-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 92,
+        "y": 14,
+        "width": 71,
+        "height": 227,
+        "rightInclusive": 162,
+        "bottomInclusive": 240
+      },
+      "alphaNonzeroBounds": {
+        "x": 92,
+        "y": 14,
+        "width": 71,
+        "height": 227,
+        "rightInclusive": 162,
+        "bottomInclusive": 240
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    },
+    {
+      "file": "thumbs/plant-a-fiddle-fig.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "68823015c4c51dee77eb05d64924fd1b6e1ab266734c19942b6e287dfa2bafb9",
+      "bytes": 29668,
+      "alphaBounds8Bit": {
+        "x": 73,
+        "y": 16,
+        "width": 109,
+        "height": 224,
+        "rightExclusive": 182,
+        "bottomExclusive": 240
+      },
+      "visualBounds": {
+        "x": 73,
+        "y": 16,
+        "width": 109,
+        "height": 224,
+        "rightExclusive": 182,
+        "bottomExclusive": 240,
+        "rightInclusive": 181,
+        "bottomInclusive": 239
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "plant-a-fiddle-fig-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 73,
+        "y": 16,
+        "width": 109,
+        "height": 224,
+        "rightInclusive": 181,
+        "bottomInclusive": 239
+      },
+      "alphaNonzeroBounds": {
+        "x": 73,
+        "y": 16,
+        "width": 109,
+        "height": 224,
+        "rightInclusive": 181,
+        "bottomInclusive": 239
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    },
+    {
+      "file": "thumbs/plant-b-round-leaf.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "aeb243032bcd3f0997c6986afd9300aa0f80a07cf034ad238d0bfe573d3bbf81",
+      "bytes": 24043,
+      "alphaBounds8Bit": {
+        "x": 75,
+        "y": 16,
+        "width": 105,
+        "height": 224,
+        "rightExclusive": 180,
+        "bottomExclusive": 240
+      },
+      "visualBounds": {
+        "x": 75,
+        "y": 16,
+        "width": 105,
+        "height": 224,
+        "rightExclusive": 180,
+        "bottomExclusive": 240,
+        "rightInclusive": 179,
+        "bottomInclusive": 239
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "plant-b-round-leaf-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 75,
+        "y": 16,
+        "width": 105,
+        "height": 224,
+        "rightInclusive": 179,
+        "bottomInclusive": 239
+      },
+      "alphaNonzeroBounds": {
+        "x": 75,
+        "y": 16,
+        "width": 105,
+        "height": 224,
+        "rightInclusive": 179,
+        "bottomInclusive": 239
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    },
+    {
+      "file": "thumbs/rug-diamond.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "9cefe27f13df57d461d5b76515310b340d32aa141b45a2cc3666378e8be47427",
+      "bytes": 17927,
+      "alphaBounds8Bit": {
+        "x": 15,
+        "y": 100,
+        "width": 226,
+        "height": 56,
+        "rightExclusive": 241,
+        "bottomExclusive": 156
+      },
+      "visualBounds": {
+        "x": 15,
+        "y": 100,
+        "width": 226,
+        "height": 56,
+        "rightExclusive": 241,
+        "bottomExclusive": 156,
+        "rightInclusive": 240,
+        "bottomInclusive": 155
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "rug-diamond-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 15,
+        "y": 100,
+        "width": 226,
+        "height": 56,
+        "rightInclusive": 240,
+        "bottomInclusive": 155
+      },
+      "alphaNonzeroBounds": {
+        "x": 15,
+        "y": 100,
+        "width": 226,
+        "height": 56,
+        "rightInclusive": 240,
+        "bottomInclusive": 155
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    },
+    {
+      "file": "thumbs/rug-sage-oval.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "sha256": "230e2eb6d30c23a8754a6937e25b3e32ad872a4927ad4860f4dbcfa432b192f0",
+      "bytes": 15572,
+      "alphaBounds8Bit": {
+        "x": 15,
+        "y": 101,
+        "width": 226,
+        "height": 54,
+        "rightExclusive": 241,
+        "bottomExclusive": 155
+      },
+      "visualBounds": {
+        "x": 15,
+        "y": 101,
+        "width": 226,
+        "height": 54,
+        "rightExclusive": 241,
+        "bottomExclusive": 155,
+        "rightInclusive": 240,
+        "bottomInclusive": 154
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only",
+      "alphaMin": 0,
+      "alphaMax": 255,
+      "id": "rug-sage-oval-thumb",
+      "category": "thumbnail",
+      "alphaBounds": {
+        "x": 15,
+        "y": 101,
+        "width": 226,
+        "height": 54,
+        "rightInclusive": 240,
+        "bottomInclusive": 154
+      },
+      "alphaNonzeroBounds": {
+        "x": 15,
+        "y": 101,
+        "width": 226,
+        "height": 54,
+        "rightInclusive": 240,
+        "bottomInclusive": 154
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "coordinateSpace": "thumbnail"
+    }
+  ],
+  "metadataCompatibility": "Preserves legacy coordinateSpace enums, roomTransform, alphaRange8Bit and alphaNonzeroBounds aliases; adds full-native alphaBounds. The19PNG bytes are unchanged from the preceding release."
+}

@@ -1,0 +1,49 @@
+{
+  "newRuntimeIdsEqualResourceIds": [
+    "lamp-lilac-torchiere",
+    "lamp-pleated-tripod",
+    "lamp-paper-oval",
+    "wall-owl-vangogh",
+    "wall-owl-red-chaperon",
+    "wall-owl-rembrandt"
+  ],
+  "legacyAliases": {
+    "lamp-cream-drum": "lamp-linen",
+    "lamp-sage-arc": "lamp-brass"
+  },
+  "requiredCounts": {
+    "tallFloorLamp": 5,
+    "portraitPainting": 5
+  },
+  "retainedExtras": {
+    "lowFloorLight": 2,
+    "pendant": 1,
+    "landscapePainting": 3
+  },
+  "doNotOverwriteExisting": true,
+  "preserveSavedUserTransforms": true,
+  "newAssetsDefaultSelected": false,
+  "lampSourceCanvas": [
+    1024,
+    1536
+  ],
+  "lampSourceAnchor": [
+    130,
+    1082
+  ],
+  "lampRenderTransform": "Same as existing room-layer lamp, scale1 initially; artwork already registered. Do not apply old lamp-brass 1.18 multiplier to new lamps.",
+  "portraitSourceCanvas": [
+    512,
+    640
+  ],
+  "portraitSourceAnchor": [
+    256,
+    320
+  ],
+  "thumbnailCanvas": [
+    256,
+    256
+  ],
+  "collisionMeasurement": "Use per-asset collisionBounds for lower lamp hardware; do not substitute full shade visualBounds for floor collisions. Actual new lower hardware does not overlap any of five chairs at recorded default art placement.",
+  "uiGrouping": "Show five tall floor lamps independently; keep small floor lights and pendant separate. Portrait group contains five owl reinterpretations. Old landscape stable IDs continue loading."
+}

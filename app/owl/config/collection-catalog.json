@@ -1,0 +1,3600 @@
+{
+  "version": "room-layout-v51-free-decor",
+  "categories": [
+    {
+      "id": "lamp",
+      "name": "高落地灯"
+    },
+    {
+      "id": "rug",
+      "name": "地毯"
+    },
+    {
+      "id": "chair",
+      "name": "椅子"
+    },
+    {
+      "id": "plant",
+      "name": "盆栽"
+    },
+    {
+      "id": "accessory",
+      "name": "配饰"
+    },
+    {
+      "id": "wall-art",
+      "name": "挂画"
+    },
+    {
+      "id": "floor-light",
+      "name": "小地灯"
+    },
+    {
+      "id": "foreground-plant",
+      "name": "前景盆栽"
+    },
+    {
+      "id": "pendant",
+      "name": "吊灯"
+    },
+    {
+      "id": "side-furniture",
+      "name": "桌柜"
+    },
+    {
+      "id": "tabletop",
+      "name": "桌面摆件"
+    },
+    {
+      "id": "portable-light",
+      "name": "手提灯"
+    },
+    {
+      "id": "corner-vine-left",
+      "name": "左藤蔓"
+    },
+    {
+      "id": "corner-vine-right",
+      "name": "右藤蔓"
+    },
+    {
+      "id": "corner-curtain-left",
+      "name": "左帘饰"
+    },
+    {
+      "id": "corner-curtain-right",
+      "name": "右帘饰"
+    },
+    {
+      "id": "string-lights",
+      "name": "花串灯"
+    }
+  ],
+  "futureCategories": [
+    "wallpaper",
+    "floor-tile"
+  ],
+  "items": [
+    {
+      "id": "stool",
+      "category": "chair",
+      "name": "初始凳子",
+      "starter": true,
+      "unlockMinutes": 0,
+      "assetState": "legacy",
+      "thumbnail": {
+        "sprite": "assets/motion-v7/body-parts.png",
+        "crop": [
+          793,
+          629,
+          450,
+          303
+        ]
+      },
+      "scene": {
+        "legacy": "stool"
+      }
+    },
+    {
+      "id": "reading-chair",
+      "category": "chair",
+      "name": "原阅读椅",
+      "unlockMinutes": 10,
+      "assetState": "legacy",
+      "thumbnail": {
+        "layers": [
+          "assets/outfit/reading-chair-back.png",
+          "assets/outfit/reading-chair-front.png"
+        ]
+      },
+      "scene": {
+        "legacy": "reading-chair"
+      }
+    },
+    {
+      "id": "round-glasses",
+      "category": "accessory",
+      "name": "圆眼镜",
+      "unlockMinutes": 5,
+      "assetState": "legacy",
+      "thumbnail": {
+        "src": "assets/outfit/glasses-front.png"
+      },
+      "scene": {
+        "legacy": "round-glasses"
+      }
+    },
+    {
+      "id": "lamp-linen",
+      "category": "lamp",
+      "name": "布罩落地灯",
+      "unlockMinutes": 15,
+      "proposedMinutes": 15,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/lamp-linen-thumb.png"
+      },
+      "scene": {
+        "src": "assets/room-v30/lamp-linen.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            130,
+            1082
+          ]
+        ],
+        "layer": "lamp",
+        "collisionBounds": [
+          48,
+          970,
+          146,
+          112
+        ],
+        "visualBounds": [
+          28,
+          391,
+          197,
+          691
+        ],
+        "display": {
+          "scale": 1,
+          "anchor": [
+            130,
+            1082
+          ]
+        },
+        "assetSha256": "59719daee80d9ef36603011fb74069ac513f2e400bcfdcd874d95b2c2b3290c3"
+      }
+    },
+    {
+      "id": "lamp-brass",
+      "category": "lamp",
+      "name": "弧形落地灯",
+      "unlockMinutes": 40,
+      "proposedMinutes": 40,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/lamp-brass-thumb.png"
+      },
+      "scene": {
+        "src": "assets/room-v30/lamp-brass.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            130,
+            1082
+          ]
+        ],
+        "layer": "lamp",
+        "collisionBounds": [
+          65,
+          970,
+          163,
+          112
+        ],
+        "visualBounds": [
+          37,
+          351,
+          228,
+          731
+        ],
+        "display": {
+          "scale": 1,
+          "anchor": [
+            130,
+            1082
+          ]
+        },
+        "assetSha256": "af9e23201f200177448424176373fe9aaf28981161241a389a2f87fca87255b0"
+      }
+    },
+    {
+      "id": "rug-cream",
+      "category": "rug",
+      "name": "菱纹地毯",
+      "unlockMinutes": 20,
+      "proposedMinutes": 20,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/rug-cream-thumb.png"
+      },
+      "scene": {
+        "src": "assets/room-v30/rug-cream.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "layer": "rug",
+        "groundLayer": true,
+        "collisionBounds": [
+          117,
+          1024,
+          789,
+          193
+        ],
+        "visualBounds": [
+          117,
+          1024,
+          789,
+          193
+        ],
+        "assetSha256": "116edf28fa4405f9b1855df6ebf89cf9572c6d50395ce80a04511b6feb97127c"
+      }
+    },
+    {
+      "id": "rug-pattern",
+      "category": "rug",
+      "name": "椭圆地毯",
+      "unlockMinutes": 55,
+      "proposedMinutes": 55,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/rug-pattern-thumb.png"
+      },
+      "scene": {
+        "src": "assets/room-v30/rug-pattern.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "layer": "rug",
+        "groundLayer": true,
+        "collisionBounds": [
+          129,
+          1030,
+          766,
+          181
+        ],
+        "visualBounds": [
+          129,
+          1030,
+          766,
+          181
+        ],
+        "assetSha256": "062c6e9cf36b6e093f2e121fb78e9b3c844d5ec53597f71ae8a7706ee6d0d1bd"
+      }
+    },
+    {
+      "id": "chair-lilac",
+      "category": "chair",
+      "name": "紫色扶手椅",
+      "unlockMinutes": 25,
+      "proposedMinutes": 25,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/chair-lilac-thumb.png"
+      },
+      "scene": {
+        "back": "assets/room-v30/chair-lilac-back.png",
+        "front": "assets/room-v30/chair-lilac-front.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "contacts": [
+          [
+            317.90200000000004,
+            1082.469
+          ],
+          [
+            706.072,
+            1082.469
+          ]
+        ],
+        "seat": [
+          512,
+          895
+        ],
+        "layer": "chair",
+        "collisionBounds": [
+          282.49,
+          605.769,
+          450.82200000000006,
+          476.70000000000005
+        ],
+        "visualBounds": [
+          282.49,
+          605.769,
+          450.82200000000006,
+          476.70000000000005
+        ],
+        "observedSeat": [
+          513.349,
+          895.1940000000001
+        ],
+        "registrationResidual": "Whole visible chair behind owl; explicit transparent front retained. Fixed original rig and ground; actual back contact1082.469; source seat registered895.194.",
+        "sourceVisualBounds": [
+          290,
+          449,
+          662,
+          700
+        ],
+        "frontIntentionalEmpty": true,
+        "emptyReason": "whole-chair-behind-owl",
+        "assetSha256": "062c146de467f38e44ab95c33daf5104b9de4ebba0b675237344257eea061ab8"
+      }
+    },
+    {
+      "id": "chair-sage",
+      "category": "chair",
+      "name": "绿色扶手椅",
+      "unlockMinutes": 70,
+      "proposedMinutes": 70,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/chair-sage-thumb.png"
+      },
+      "scene": {
+        "back": "assets/room-v30/chair-sage-back.png",
+        "front": "assets/room-v30/chair-sage-front.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "contacts": [
+          [
+            317.90200000000004,
+            1082.469
+          ],
+          [
+            706.072,
+            1082.469
+          ]
+        ],
+        "seat": [
+          512,
+          895
+        ],
+        "layer": "chair",
+        "collisionBounds": [
+          284.533,
+          605.769,
+          446.73600000000005,
+          476.70000000000005
+        ],
+        "visualBounds": [
+          284.533,
+          605.769,
+          446.73600000000005,
+          476.70000000000005
+        ],
+        "observedSeat": [
+          513.349,
+          895.1940000000001
+        ],
+        "registrationResidual": "Whole visible chair behind owl; explicit transparent front retained. Fixed original rig and ground; actual back contact1082.469; source seat registered895.194.",
+        "sourceVisualBounds": [
+          293,
+          449,
+          656,
+          700
+        ],
+        "frontIntentionalEmpty": true,
+        "emptyReason": "whole-chair-behind-owl",
+        "assetSha256": "704840f309ec6d6aee31090dbe7f4346ad6f9d98f7e5e154293fc743a96f1068"
+      }
+    },
+    {
+      "id": "plant-leaf",
+      "category": "plant",
+      "name": "阔叶盆栽",
+      "unlockMinutes": 30,
+      "proposedMinutes": 30,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/plant-leaf-thumb.png"
+      },
+      "scene": {
+        "src": "assets/room-v30/plant-leaf.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            903.0,
+            1082
+          ]
+        ],
+        "layer": "plant",
+        "collisionBounds": [
+          829,
+          920,
+          148,
+          162
+        ],
+        "visualBounds": [
+          705,
+          455,
+          304,
+          627
+        ],
+        "assetSha256": "a3cc46a00239e43b42995bd27564c5dd7e91def0c73a76b156b4ffb6fdf61e77"
+      }
+    },
+    {
+      "id": "plant-flower",
+      "category": "plant",
+      "name": "圆叶盆栽",
+      "unlockMinutes": 85,
+      "proposedMinutes": 85,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/room-v30/plant-flower-thumb.png"
+      },
+      "scene": {
+        "src": "assets/room-v30/plant-flower.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            905.5,
+            1082
+          ]
+        ],
+        "layer": "plant",
+        "collisionBounds": [
+          835,
+          920,
+          141,
+          163
+        ],
+        "visualBounds": [
+          715,
+          467,
+          288,
+          616
+        ],
+        "assetSha256": "7a98952a1b67fc8a4f602008e6b149db6645436c66b16e2ebdd2979859c94e7c"
+      }
+    },
+    {
+      "id": "wall-owl-mona",
+      "category": "wall-art",
+      "name": "猫头鹰蒙娜丽莎",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/wallart/wall-owl-mona.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          51,
+          81,
+          410,
+          478
+        ],
+        "sourceCollisionBounds": [
+          51,
+          81,
+          410,
+          478
+        ],
+        "sourceAlphaBounds": [
+          0,
+          0,
+          463,
+          636
+        ],
+        "visualBounds": [
+          403.89453125,
+          253.96484375,
+          216.2109375,
+          252.0703125
+        ],
+        "collisionBounds": [
+          403.89453125,
+          253.96484375,
+          216.2109375,
+          252.0703125
+        ],
+        "contacts": [],
+        "assetSha256": "5a6d79c28c898086e666180da476b486433d9d180dd59ff6766a75db1da7087e",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 16
+        },
+        "originalDisplaySize": [
+          190,
+          237.5
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/wall-owl-mona.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "wall-owl-pearl",
+      "category": "wall-art",
+      "name": "猫头鹰珍珠耳环少女",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/wallart/wall-owl-pearl.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          38,
+          63,
+          436,
+          515
+        ],
+        "sourceCollisionBounds": [
+          38,
+          63,
+          436,
+          515
+        ],
+        "sourceAlphaBounds": [
+          0,
+          61,
+          478,
+          553
+        ],
+        "visualBounds": [
+          397.0390625,
+          244.47265625,
+          229.921875,
+          271.58203125
+        ],
+        "collisionBounds": [
+          397.0390625,
+          244.47265625,
+          229.921875,
+          271.58203125
+        ],
+        "contacts": [],
+        "assetSha256": "a0404c8bb25016caa7abadbac090077c071948399ec5093f836b9ad517a99376",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 16
+        },
+        "originalDisplaySize": [
+          190,
+          237.5
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/wall-owl-pearl.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "floor-light-small",
+      "category": "floor-light",
+      "name": "小地灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/floorlight/floor-light-small.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "floor-light",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            725,
+            1225
+          ],
+          "displaySize": [
+            160,
+            160
+          ]
+        },
+        "sourceVisualBounds": [
+          82,
+          104,
+          352,
+          377
+        ],
+        "sourceCollisionBounds": [
+          82,
+          104,
+          352,
+          377
+        ],
+        "sourceAlphaBounds": [
+          80,
+          101,
+          354,
+          383
+        ],
+        "visualBounds": [
+          670.625,
+          1107.5,
+          110.0,
+          117.8125
+        ],
+        "collisionBounds": [
+          670.625,
+          1107.5,
+          110.0,
+          117.8125
+        ],
+        "contacts": [],
+        "assetSha256": "91c47f4ec04f00a7e039960ab6e0797218c6eff7af4c7882db55fafa97eca124",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "defaultOffset": {
+          "x": -575,
+          "y": 31
+        },
+        "originalDisplaySize": [
+          100,
+          100
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/floor-light-small.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "foreground-plant-small",
+      "category": "foreground-plant",
+      "name": "前景小盆栽",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/foregroundplant/foreground-plant-small.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "foreground-plant",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            160,
+            1220
+          ],
+          "displaySize": [
+            130,
+            130
+          ]
+        },
+        "sourceVisualBounds": [
+          25,
+          103,
+          434,
+          378
+        ],
+        "sourceCollisionBounds": [
+          156,
+          326,
+          198,
+          156
+        ],
+        "sourceAlphaBounds": [
+          24,
+          103,
+          437,
+          380
+        ],
+        "visualBounds": [
+          101.34765625,
+          1124.27734375,
+          110.1953125,
+          95.9765625
+        ],
+        "collisionBounds": [
+          134.609375,
+          1180.8984375,
+          50.2734375,
+          39.609375
+        ],
+        "contacts": [],
+        "assetSha256": "7b154c3d9cc71629f4adf5eb8da5b65629ac316a5c26aaeecbe37d40cbfea600",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "defaultOffset": {
+          "x": 130,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          110,
+          110
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/foreground-plant-small.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "pendant-small",
+      "category": "pendant",
+      "name": "小吊灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/pendant/pendant-small.png",
+        "size": [
+          512,
+          768
+        ],
+        "layer": "pendant",
+        "placement": {
+          "anchor": [
+            256,
+            24
+          ],
+          "position": [
+            850,
+            280
+          ],
+          "displaySize": [
+            192,
+            288
+          ]
+        },
+        "sourceVisualBounds": [
+          121,
+          23,
+          270,
+          575
+        ],
+        "sourceCollisionBounds": [
+          121,
+          23,
+          270,
+          575
+        ],
+        "sourceAlphaBounds": [
+          121,
+          23,
+          270,
+          577
+        ],
+        "visualBounds": [
+          799.375,
+          279.625,
+          101.25,
+          215.625
+        ],
+        "collisionBounds": [
+          799.375,
+          279.625,
+          101.25,
+          215.625
+        ],
+        "contacts": [],
+        "assetSha256": "033c421ccbf395bfa8e7e2d758217d6ec8146c9447039fe6705b3d9bd7e8f2b8",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          650
+        ],
+        "hanging": {
+          "ceilingY": 260,
+          "attachment": [
+            850,
+            280
+          ],
+          "src": "assets/extensions-v37/pendant/pendant-line-patch.png",
+          "size": [
+            20,
+            80
+          ],
+          "displaySize": [
+            5,
+            20
+          ],
+          "topLeft": [
+            848,
+            260
+          ],
+          "policy": "repeat-crop"
+        },
+        "defaultOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          128,
+          192
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/pendant-small.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "rug-cloud",
+      "category": "rug",
+      "name": "云朵地毯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/rugs/rug-cloud.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "rug",
+        "placement": {
+          "anchor": [
+            512,
+            1120
+          ],
+          "position": [
+            512,
+            1120
+          ],
+          "displaySize": [
+            1024,
+            1536
+          ]
+        },
+        "sourceVisualBounds": [
+          102,
+          1035,
+          821,
+          170
+        ],
+        "sourceCollisionBounds": [
+          102,
+          1035,
+          821,
+          170
+        ],
+        "sourceAlphaBounds": [
+          102,
+          1035,
+          821,
+          173
+        ],
+        "visualBounds": [
+          102.0,
+          1035.0,
+          821.0,
+          170.0
+        ],
+        "collisionBounds": [
+          102.0,
+          1035.0,
+          821.0,
+          170.0
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "assetSha256": "0a73a2aaa98010e65a73fd0e8bdd9451578d4d9f29374f165ee0d9c0e3cdbaa5",
+        "originalDisplaySize": [
+          1024,
+          1536
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/rug-cloud.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "rug-check",
+      "category": "rug",
+      "name": "方格地毯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/rugs/rug-check.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "rug",
+        "placement": {
+          "anchor": [
+            512,
+            1120
+          ],
+          "position": [
+            512,
+            1120
+          ],
+          "displaySize": [
+            1024,
+            1536
+          ]
+        },
+        "sourceVisualBounds": [
+          102,
+          1031,
+          821,
+          178
+        ],
+        "sourceCollisionBounds": [
+          102,
+          1031,
+          821,
+          178
+        ],
+        "sourceAlphaBounds": [
+          100,
+          1019,
+          823,
+          195
+        ],
+        "visualBounds": [
+          102.0,
+          1031.0,
+          821.0,
+          178.0
+        ],
+        "collisionBounds": [
+          102.0,
+          1031.0,
+          821.0,
+          178.0
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "assetSha256": "b0aafa03ef4ae71a34ab7398586d8013135331cb6e934aaae63ec8fb1e984e2a",
+        "originalDisplaySize": [
+          1024,
+          1536
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/rug-check.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "rug-petal",
+      "category": "rug",
+      "name": "花瓣地毯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/rugs/rug-petal.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "rug",
+        "placement": {
+          "anchor": [
+            512,
+            1120
+          ],
+          "position": [
+            512,
+            1120
+          ],
+          "displaySize": [
+            1024,
+            1536
+          ]
+        },
+        "sourceVisualBounds": [
+          102,
+          1032,
+          821,
+          177
+        ],
+        "sourceCollisionBounds": [
+          102,
+          1032,
+          821,
+          177
+        ],
+        "sourceAlphaBounds": [
+          101,
+          1032,
+          822,
+          180
+        ],
+        "visualBounds": [
+          102.0,
+          1032.0,
+          821.0,
+          177.0
+        ],
+        "collisionBounds": [
+          102.0,
+          1032.0,
+          821.0,
+          177.0
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "assetSha256": "86c5468ac4b33bbf6c8be52eaf57acd799ef457cd3fb8b1592dc719e0826dcea",
+        "originalDisplaySize": [
+          1024,
+          1536
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/rug-petal.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "rug-stripe",
+      "category": "rug",
+      "name": "条纹地毯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/rugs/rug-stripe.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "rug",
+        "placement": {
+          "anchor": [
+            512,
+            1120
+          ],
+          "position": [
+            512,
+            1120
+          ],
+          "displaySize": [
+            1024,
+            1536
+          ]
+        },
+        "sourceVisualBounds": [
+          102,
+          1050,
+          821,
+          139
+        ],
+        "sourceCollisionBounds": [
+          102,
+          1050,
+          821,
+          139
+        ],
+        "sourceAlphaBounds": [
+          99,
+          967,
+          824,
+          223
+        ],
+        "visualBounds": [
+          102.0,
+          1050.0,
+          821.0,
+          139.0
+        ],
+        "collisionBounds": [
+          102.0,
+          1050.0,
+          821.0,
+          139.0
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "assetSha256": "138031b76010709196ce687b1a84ea4a5bf5e4d2250a48ba66428a92faab9695",
+        "originalDisplaySize": [
+          1024,
+          1536
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/rug-stripe.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "side-table",
+      "category": "side-furniture",
+      "name": "小边桌",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/sidefurniture/side-table.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "side-furniture",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1244
+          ],
+          "displaySize": [
+            250,
+            250
+          ]
+        },
+        "sourceVisualBounds": [
+          13,
+          146,
+          485,
+          334
+        ],
+        "sourceCollisionBounds": [
+          13,
+          146,
+          485,
+          334
+        ],
+        "sourceAlphaBounds": [
+          12,
+          142,
+          489,
+          338
+        ],
+        "visualBounds": [
+          806.34765625,
+          1080.9140625,
+          236.81640625,
+          163.0859375
+        ],
+        "collisionBounds": [
+          806.34765625,
+          1080.9140625,
+          236.81640625,
+          163.0859375
+        ],
+        "contacts": [],
+        "assetSha256": "4fbee54420d48cca428f60c1056fd9491be8e8a0482754309b0091da1ad44d80",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "sourceTabletopArea": [
+          120,
+          185,
+          272,
+          50
+        ],
+        "tabletopArea": [
+          858.59375,
+          1099.95703125,
+          132.8125,
+          24.4140625
+        ],
+        "tabletopAnchor": [
+          925,
+          1112.1640625
+        ],
+        "defaultOffset": {
+          "x": -160,
+          "y": 8
+        },
+        "originalDisplaySize": [
+          164,
+          164
+        ],
+        "sourceTabletopAnchor": [
+          256,
+          210
+        ]
+      },
+      "supportsTabletop": true,
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/side-table.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "tabletop-teapot",
+      "category": "tabletop",
+      "name": "桌面小茶壶",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/tabletop/tabletop-teapot.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "tabletop",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1112.1640625
+          ],
+          "displaySize": [
+            100,
+            100
+          ]
+        },
+        "sourceVisualBounds": [
+          61,
+          228,
+          390,
+          253
+        ],
+        "sourceCollisionBounds": [
+          61,
+          228,
+          390,
+          253
+        ],
+        "sourceAlphaBounds": [
+          55,
+          139,
+          400,
+          373
+        ],
+        "visualBounds": [
+          886.9140625,
+          1062.9453125,
+          76.171875,
+          49.4140625
+        ],
+        "collisionBounds": [
+          886.9140625,
+          1062.9453125,
+          76.171875,
+          49.4140625
+        ],
+        "contacts": [],
+        "assetSha256": "99e81618b6891b711a46c7eb77549648339e4c25c091852626dad35b07ab2f3a",
+        "defaultOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          78,
+          78
+        ]
+      },
+      "requiresTabletop": true,
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/tabletop-teapot.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "tabletop-books",
+      "category": "tabletop",
+      "name": "桌面小书堆",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/tabletop/tabletop-books.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "tabletop",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1112.1640625
+          ],
+          "displaySize": [
+            100,
+            100
+          ]
+        },
+        "sourceVisualBounds": [
+          22,
+          250,
+          378,
+          232
+        ],
+        "sourceCollisionBounds": [
+          22,
+          250,
+          378,
+          232
+        ],
+        "sourceAlphaBounds": [
+          18,
+          145,
+          387,
+          367
+        ],
+        "visualBounds": [
+          879.296875,
+          1067.2421875,
+          73.828125,
+          45.3125
+        ],
+        "collisionBounds": [
+          879.296875,
+          1067.2421875,
+          73.828125,
+          45.3125
+        ],
+        "contacts": [],
+        "assetSha256": "c56110bc5e6029ec61e210635dbb51586037dcf9a2a81b39485f7424ad22ad40",
+        "defaultOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          78,
+          78
+        ]
+      },
+      "requiresTabletop": true,
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/tabletop-books.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "low-bookcase",
+      "category": "side-furniture",
+      "name": "矮书柜",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/extensions-v37/sidefurniture/low-bookcase.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "side-furniture",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1244
+          ],
+          "displaySize": [
+            250,
+            250
+          ]
+        },
+        "sourceVisualBounds": [
+          31,
+          220,
+          448,
+          260
+        ],
+        "sourceCollisionBounds": [
+          31,
+          220,
+          448,
+          260
+        ],
+        "sourceAlphaBounds": [
+          31,
+          162,
+          450,
+          319
+        ],
+        "visualBounds": [
+          815.13671875,
+          1117.046875,
+          218.75,
+          126.953125
+        ],
+        "collisionBounds": [
+          815.13671875,
+          1117.046875,
+          218.75,
+          126.953125
+        ],
+        "contacts": [],
+        "assetSha256": "8d1dcac38c66cea3df95c37e061be6a15e206257c526a9d1d067a67bab5eddf9",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "defaultOffset": {
+          "x": -135,
+          "y": 8
+        },
+        "originalDisplaySize": [
+          164,
+          164
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/extensions-v37/thumbs/low-bookcase.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "side-table-tall",
+      "category": "side-furniture",
+      "name": "小高边几",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "supportsTabletop": true,
+      "thumbnail": {
+        "src": "assets/tall-table-v42/thumbs/side-table-tall.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/tall-table-v42/sidefurniture/side-table-tall.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "side-furniture",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1244
+          ],
+          "displaySize": [
+            250,
+            250
+          ]
+        },
+        "sourceVisualBounds": [
+          100,
+          73,
+          313,
+          407
+        ],
+        "sourceCollisionBounds": [
+          100,
+          73,
+          313,
+          407
+        ],
+        "sourceAlphaBounds": [
+          100,
+          72,
+          313,
+          409
+        ],
+        "visualBounds": [
+          848.828125,
+          1045.26953125,
+          152.83203125,
+          198.73046875
+        ],
+        "collisionBounds": [
+          848.828125,
+          1045.26953125,
+          152.83203125,
+          198.73046875
+        ],
+        "contacts": [],
+        "assetSha256": "00bcdbaf077d2dbfb1df33d3a07f8286fe68f4c68cb9996e55c240abb7521305",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "sourceTabletopArea": [
+          160,
+          102,
+          192,
+          44
+        ],
+        "tabletopArea": [
+          878.125,
+          1059.4296875,
+          93.75,
+          21.484375
+        ],
+        "sourceTabletopAnchor": [
+          256,
+          124
+        ],
+        "tabletopAnchor": [
+          925.0,
+          1070.171875
+        ],
+        "defaultOffset": {
+          "x": -105,
+          "y": 8
+        },
+        "originalDisplaySize": [
+          250,
+          250
+        ]
+      }
+    },
+    {
+      "id": "wall-owl-vangogh",
+      "category": "wall-art",
+      "name": "梵高猫头鹰自画像",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "inheritSlotTransform": true,
+      "thumbnail": {
+        "src": "assets/portrait-lamps-v48/thumbs/wall-owl-vangogh.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/portrait-lamps-v48/wallart/wall-owl-vangogh.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          44,
+          73,
+          425,
+          495
+        ],
+        "sourceCollisionBounds": [
+          44,
+          73,
+          425,
+          495
+        ],
+        "sourceAlphaBounds": [
+          42,
+          71,
+          430,
+          517
+        ],
+        "visualBounds": [
+          400.203125,
+          249.74609375,
+          224.12109375,
+          261.03515625
+        ],
+        "collisionBounds": [
+          400.203125,
+          249.74609375,
+          224.12109375,
+          261.03515625
+        ],
+        "contacts": [],
+        "assetSha256": "d9c3919c9931fb0e2cb415868d893dce19a348fdae3f4abdee01a81d76e05f6c",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 16
+        },
+        "originalDisplaySize": [
+          270,
+          337.5
+        ]
+      },
+      "series": "classic-portrait"
+    },
+    {
+      "id": "wall-owl-red-chaperon",
+      "category": "wall-art",
+      "name": "红褶帽猫头鹰肖像",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "inheritSlotTransform": true,
+      "thumbnail": {
+        "src": "assets/portrait-lamps-v48/thumbs/wall-owl-red-chaperon.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/portrait-lamps-v48/wallart/wall-owl-red-chaperon.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          45,
+          74,
+          422,
+          492
+        ],
+        "sourceCollisionBounds": [
+          45,
+          74,
+          422,
+          492
+        ],
+        "sourceAlphaBounds": [
+          41,
+          72,
+          433,
+          499
+        ],
+        "visualBounds": [
+          400.73046875,
+          250.2734375,
+          222.5390625,
+          259.453125
+        ],
+        "collisionBounds": [
+          400.73046875,
+          250.2734375,
+          222.5390625,
+          259.453125
+        ],
+        "contacts": [],
+        "assetSha256": "87a5b5b903543a0b335a492eba4dbdf1c4fe759b1c1a74cf906d4e67d726faee",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 16
+        },
+        "originalDisplaySize": [
+          270,
+          337.5
+        ]
+      },
+      "series": "classic-portrait"
+    },
+    {
+      "id": "wall-owl-rembrandt",
+      "category": "wall-art",
+      "name": "伦勃朗猫头鹰自画像",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "inheritSlotTransform": true,
+      "thumbnail": {
+        "src": "assets/portrait-lamps-v48/thumbs/wall-owl-rembrandt.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/portrait-lamps-v48/wallart/wall-owl-rembrandt.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          48,
+          74,
+          415,
+          491
+        ],
+        "sourceCollisionBounds": [
+          48,
+          74,
+          415,
+          491
+        ],
+        "sourceAlphaBounds": [
+          45,
+          0,
+          420,
+          585
+        ],
+        "visualBounds": [
+          402.3125,
+          250.2734375,
+          218.84765625,
+          258.92578125
+        ],
+        "collisionBounds": [
+          402.3125,
+          250.2734375,
+          218.84765625,
+          258.92578125
+        ],
+        "contacts": [],
+        "assetSha256": "00b4f240beda1d72ab148b3d7cc03499f7a3f155bf39161866f5b98a5f85e63a",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 16
+        },
+        "originalDisplaySize": [
+          270,
+          337.5
+        ]
+      },
+      "series": "classic-portrait"
+    },
+    {
+      "id": "wall-landscape-mountains",
+      "category": "wall-art",
+      "name": "山间小路",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/wallart/wall-landscape-mountains.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          50,
+          75,
+          412,
+          499
+        ],
+        "sourceCollisionBounds": [
+          50,
+          75,
+          412,
+          499
+        ],
+        "sourceAlphaBounds": [
+          22,
+          34,
+          444,
+          594
+        ],
+        "visualBounds": [
+          403.3671875,
+          250.80078125,
+          217.265625,
+          263.14453125
+        ],
+        "collisionBounds": [
+          403.3671875,
+          250.80078125,
+          217.265625,
+          263.14453125
+        ],
+        "contacts": [],
+        "assetSha256": "bc2f8a47dfaa0fb7936be192aad6b59d1d6c3631f839ac7c33bd5f10f681d8de",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 24
+        },
+        "originalDisplaySize": [
+          270,
+          337.5
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/wall-landscape-mountains.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "wall-landscape-pond",
+      "category": "wall-art",
+      "name": "池畔小景",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/wallart/wall-landscape-pond.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          49,
+          79,
+          415,
+          485
+        ],
+        "sourceCollisionBounds": [
+          49,
+          79,
+          415,
+          485
+        ],
+        "sourceAlphaBounds": [
+          42,
+          0,
+          428,
+          599
+        ],
+        "visualBounds": [
+          402.83984375,
+          252.91015625,
+          218.84765625,
+          255.76171875
+        ],
+        "collisionBounds": [
+          402.83984375,
+          252.91015625,
+          218.84765625,
+          255.76171875
+        ],
+        "contacts": [],
+        "assetSha256": "cc1df90ef95a4833b6bcc36121d41f58d4fc9c812573185adc38eca4290ab060",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 24
+        },
+        "originalDisplaySize": [
+          270,
+          337.5
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/wall-landscape-pond.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "wall-landscape-coast",
+      "category": "wall-art",
+      "name": "海边帆船",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/wallart/wall-landscape-coast.png",
+        "size": [
+          512,
+          640
+        ],
+        "layer": "wall-art",
+        "placement": {
+          "anchor": [
+            256,
+            320
+          ],
+          "position": [
+            512,
+            380
+          ],
+          "displaySize": [
+            270,
+            337.5
+          ]
+        },
+        "sourceVisualBounds": [
+          37,
+          53,
+          439,
+          534
+        ],
+        "sourceCollisionBounds": [
+          37,
+          53,
+          439,
+          534
+        ],
+        "sourceAlphaBounds": [
+          34,
+          51,
+          444,
+          540
+        ],
+        "visualBounds": [
+          396.51171875,
+          239.19921875,
+          231.50390625,
+          281.6015625
+        ],
+        "collisionBounds": [
+          396.51171875,
+          239.19921875,
+          231.50390625,
+          281.6015625
+        ],
+        "contacts": [],
+        "assetSha256": "f1b875bffe03c91defe41916939196acfbd0982be3880838b94842f58c574ab8",
+        "moveArea": [
+          0,
+          260,
+          1024,
+          350
+        ],
+        "defaultOffset": {
+          "x": -147,
+          "y": 24
+        },
+        "originalDisplaySize": [
+          270,
+          337.5
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/wall-landscape-coast.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "floor-light-tripod",
+      "category": "floor-light",
+      "name": "三脚小地灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/floorlight/floor-light-tripod.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "floor-light",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            725,
+            1225
+          ],
+          "displaySize": [
+            160,
+            160
+          ]
+        },
+        "sourceVisualBounds": [
+          108,
+          56,
+          295,
+          425
+        ],
+        "sourceCollisionBounds": [
+          108,
+          56,
+          295,
+          425
+        ],
+        "sourceAlphaBounds": [
+          107,
+          54,
+          296,
+          427
+        ],
+        "visualBounds": [
+          678.75,
+          1092.5,
+          92.1875,
+          132.8125
+        ],
+        "collisionBounds": [
+          678.75,
+          1092.5,
+          92.1875,
+          132.8125
+        ],
+        "contacts": [],
+        "assetSha256": "eae0664c160ce9efcb630ba17283cdf93250c4ed2d68691f8d75a728978267fa",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "defaultOffset": {
+          "x": -575,
+          "y": 31
+        },
+        "originalDisplaySize": [
+          160,
+          160
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/floor-light-tripod.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "foreground-plant-trailing",
+      "category": "foreground-plant",
+      "name": "垂叶小盆栽",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/foregroundplant/foreground-plant-trailing.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "foreground-plant",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            160,
+            1220
+          ],
+          "displaySize": [
+            130,
+            130
+          ]
+        },
+        "sourceVisualBounds": [
+          36,
+          223,
+          438,
+          258
+        ],
+        "sourceCollisionBounds": [
+          36,
+          223,
+          438,
+          258
+        ],
+        "sourceAlphaBounds": [
+          33,
+          223,
+          443,
+          261
+        ],
+        "visualBounds": [
+          104.140625,
+          1154.74609375,
+          111.2109375,
+          65.5078125
+        ],
+        "collisionBounds": [
+          104.140625,
+          1154.74609375,
+          111.2109375,
+          65.5078125
+        ],
+        "contacts": [],
+        "assetSha256": "81649dfeb2b351fa390b9cac4fef25ee6e2e6d4a63e55f4b70bf64ae9c86739f",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "defaultOffset": {
+          "x": 130,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          130,
+          130
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/foreground-plant-trailing.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "plant-c-olive",
+      "category": "plant",
+      "name": "细枝橄榄树",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/plant-c-olive.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/expansion-v43/plants/plant-c-olive.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "plant",
+        "contacts": [
+          [
+            905,
+            1082
+          ]
+        ],
+        "visualBounds": [
+          778,
+          495,
+          242,
+          588
+        ],
+        "collisionBounds": [
+          846,
+          994,
+          118,
+          89
+        ],
+        "assetSha256": "66f828844f76be66805769f0ecd93c453ec1a22d9a23c2e42eaab807de4f9361"
+      }
+    },
+    {
+      "id": "side-cabinet-drawer",
+      "category": "side-furniture",
+      "name": "小抽屉柜",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "supportsTabletop": true,
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/side-cabinet-drawer.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/expansion-v43/sidefurniture/side-cabinet-drawer.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "side-furniture",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1244
+          ],
+          "displaySize": [
+            250,
+            250
+          ]
+        },
+        "sourceVisualBounds": [
+          71,
+          70,
+          371,
+          410
+        ],
+        "sourceCollisionBounds": [
+          71,
+          70,
+          371,
+          410
+        ],
+        "sourceAlphaBounds": [
+          71,
+          70,
+          371,
+          410
+        ],
+        "visualBounds": [
+          834.66796875,
+          1043.8046875,
+          181.15234375,
+          200.1953125
+        ],
+        "collisionBounds": [
+          834.66796875,
+          1043.8046875,
+          181.15234375,
+          200.1953125
+        ],
+        "contacts": [],
+        "assetSha256": "db20d08a79c8fab99515db98e6af38e1e58ff0060d5c562b0c63e57bd620efbf",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "sourceTabletopArea": [
+          160,
+          88,
+          192,
+          24
+        ],
+        "tabletopArea": [
+          878.125,
+          1052.59375,
+          93.75,
+          11.71875
+        ],
+        "sourceTabletopAnchor": [
+          256,
+          100
+        ],
+        "tabletopAnchor": [
+          925.0,
+          1058.453125
+        ],
+        "defaultOffset": {
+          "x": -35,
+          "y": 8
+        },
+        "originalDisplaySize": [
+          250,
+          250
+        ]
+      }
+    },
+    {
+      "id": "side-cart-two-tier",
+      "category": "side-furniture",
+      "name": "双层小推架",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "supportsTabletop": true,
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/side-cart-two-tier.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/expansion-v43/sidefurniture/side-cart-two-tier.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "side-furniture",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1244
+          ],
+          "displaySize": [
+            250,
+            250
+          ]
+        },
+        "sourceVisualBounds": [
+          72,
+          165,
+          372,
+          315
+        ],
+        "sourceCollisionBounds": [
+          72,
+          165,
+          372,
+          315
+        ],
+        "sourceAlphaBounds": [
+          72,
+          163,
+          372,
+          318
+        ],
+        "visualBounds": [
+          835.15625,
+          1090.19140625,
+          181.640625,
+          153.80859375
+        ],
+        "collisionBounds": [
+          835.15625,
+          1090.19140625,
+          181.640625,
+          153.80859375
+        ],
+        "contacts": [],
+        "assetSha256": "717b53b11910f8b715d2c2bc2b16243ac44cb346a90fdddb93c8d6804a123c61",
+        "moveArea": [
+          0,
+          990,
+          1024,
+          270
+        ],
+        "sourceTabletopArea": [
+          134,
+          175,
+          245,
+          28
+        ],
+        "tabletopArea": [
+          865.4296875,
+          1095.07421875,
+          119.62890625,
+          13.671875
+        ],
+        "sourceTabletopAnchor": [
+          256,
+          195
+        ],
+        "tabletopAnchor": [
+          925.0,
+          1104.83984375
+        ],
+        "defaultOffset": {
+          "x": -135,
+          "y": 8
+        },
+        "originalDisplaySize": [
+          250,
+          250
+        ]
+      }
+    },
+    {
+      "id": "tabletop-candle",
+      "category": "tabletop",
+      "name": "小蜡烛",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/tabletop/tabletop-candle.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "tabletop",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1112.1640625
+          ],
+          "displaySize": [
+            100,
+            100
+          ]
+        },
+        "sourceVisualBounds": [
+          91,
+          81,
+          332,
+          402
+        ],
+        "sourceCollisionBounds": [
+          91,
+          81,
+          332,
+          402
+        ],
+        "sourceAlphaBounds": [
+          89,
+          79,
+          336,
+          406
+        ],
+        "visualBounds": [
+          892.7734375,
+          1034.234375,
+          64.84375,
+          78.515625
+        ],
+        "collisionBounds": [
+          892.7734375,
+          1034.234375,
+          64.84375,
+          78.515625
+        ],
+        "contacts": [],
+        "assetSha256": "29be59c97b86d5ac9ac5ef357b7e05913d7adf02b38b6ac1d08ad0365c8b59ce",
+        "defaultOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          100,
+          100
+        ]
+      },
+      "requiresTabletop": true,
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/tabletop-candle.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "tabletop-hourglass",
+      "category": "tabletop",
+      "name": "小沙漏",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/tabletop/tabletop-hourglass.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "tabletop",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1112.1640625
+          ],
+          "displaySize": [
+            100,
+            100
+          ]
+        },
+        "sourceVisualBounds": [
+          139,
+          81,
+          234,
+          400
+        ],
+        "sourceCollisionBounds": [
+          139,
+          81,
+          234,
+          400
+        ],
+        "sourceAlphaBounds": [
+          138,
+          79,
+          237,
+          404
+        ],
+        "visualBounds": [
+          902.1484375,
+          1034.234375,
+          45.703125,
+          78.125
+        ],
+        "collisionBounds": [
+          902.1484375,
+          1034.234375,
+          45.703125,
+          78.125
+        ],
+        "contacts": [],
+        "assetSha256": "7212aa49fc63c67bc212dbf63a6145661911747839fa17c192476a233cc0f9ea",
+        "defaultOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          100,
+          100
+        ]
+      },
+      "requiresTabletop": true,
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/tabletop-hourglass.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "tabletop-pear-dish",
+      "category": "tabletop",
+      "name": "小梨果盘",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "scene": {
+        "src": "assets/expansion-v43/tabletop/tabletop-pear-dish.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "tabletop",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            925,
+            1112.1640625
+          ],
+          "displaySize": [
+            100,
+            100
+          ]
+        },
+        "sourceVisualBounds": [
+          62,
+          81,
+          391,
+          401
+        ],
+        "sourceCollisionBounds": [
+          62,
+          81,
+          391,
+          401
+        ],
+        "sourceAlphaBounds": [
+          59,
+          79,
+          395,
+          410
+        ],
+        "visualBounds": [
+          887.109375,
+          1034.234375,
+          76.3671875,
+          78.3203125
+        ],
+        "collisionBounds": [
+          887.109375,
+          1034.234375,
+          76.3671875,
+          78.3203125
+        ],
+        "contacts": [],
+        "assetSha256": "969d761f1f4a45af8fbd240f931e75b14443aee671da43eeb35ac951d8a7f6a2",
+        "defaultOffset": {
+          "x": 0,
+          "y": 0
+        },
+        "originalDisplaySize": [
+          100,
+          100
+        ]
+      },
+      "requiresTabletop": true,
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/tabletop-pear-dish.png",
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "id": "chair-c-spindle",
+      "category": "chair",
+      "name": "木条扶手椅",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/chair-c-spindle.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "back": "assets/expansion-v43/chairs/chair-c-spindle-back.png",
+        "front": "assets/expansion-v43/chairs/chair-c-spindle-front.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "contacts": [
+          [
+            317.90200000000004,
+            1081.788
+          ],
+          [
+            706.072,
+            1081.788
+          ]
+        ],
+        "seat": [
+          512,
+          895
+        ],
+        "observedSeat": [
+          513.349,
+          895.194
+        ],
+        "layer": "chair",
+        "visualBounds": [
+          283.852,
+          603.0450000000001,
+          455.58900000000006,
+          480.78600000000006
+        ],
+        "collisionBounds": [
+          283.852,
+          603.0450000000001,
+          455.58900000000006,
+          480.78600000000006
+        ],
+        "sourceVisualBounds": [
+          292,
+          445,
+          669,
+          706
+        ],
+        "frontIntentionalEmpty": true,
+        "emptyReason": "whole-chair-behind-owl",
+        "assetSha256": "b3f35770c8f5fbb4135b6d67f39742dabb11f0bdcf88227bb0563c86ea395059"
+      }
+    },
+    {
+      "id": "chair-d-club",
+      "category": "chair",
+      "name": "软垫俱乐部椅",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/chair-d-club.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "back": "assets/expansion-v43/chairs/chair-d-club-back.png",
+        "front": "assets/expansion-v43/chairs/chair-d-club-front.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "contacts": [
+          [
+            317.90200000000004,
+            1081.788
+          ],
+          [
+            706.072,
+            1081.788
+          ]
+        ],
+        "seat": [
+          512,
+          895
+        ],
+        "observedSeat": [
+          513.349,
+          895.194
+        ],
+        "layer": "chair",
+        "visualBounds": [
+          241.63000000000002,
+          619.389,
+          542.076,
+          463.761
+        ],
+        "collisionBounds": [
+          241.63000000000002,
+          619.389,
+          542.076,
+          463.761
+        ],
+        "sourceVisualBounds": [
+          230,
+          469,
+          796,
+          681
+        ],
+        "frontIntentionalEmpty": true,
+        "emptyReason": "whole-chair-behind-owl",
+        "assetSha256": "18f90727b0865252b0aaacfe16f7115b5be8ea1b32d7e42577174c713ee0a3fb"
+      }
+    },
+    {
+      "id": "chair-e-wing",
+      "category": "chair",
+      "name": "紫背小椅",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/expansion-v43/thumbs/chair-e-wing.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "back": "assets/expansion-v43/chairs/chair-e-wing-back.png",
+        "front": "assets/expansion-v43/chairs/chair-e-wing-front.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "contacts": [
+          [
+            317.90200000000004,
+            1081.788
+          ],
+          [
+            706.072,
+            1081.788
+          ]
+        ],
+        "seat": [
+          512,
+          895
+        ],
+        "observedSeat": [
+          513.349,
+          895.194
+        ],
+        "layer": "chair",
+        "visualBounds": [
+          286.576,
+          605.769,
+          450.141,
+          476.70000000000005
+        ],
+        "collisionBounds": [
+          286.576,
+          605.769,
+          450.141,
+          476.70000000000005
+        ],
+        "sourceVisualBounds": [
+          296,
+          449,
+          661,
+          700
+        ],
+        "frontIntentionalEmpty": true,
+        "emptyReason": "whole-chair-behind-owl",
+        "assetSha256": "f7bcbf72c8a7d2a6da1a5f00895d2cb5f1e11cbdcdca9cb05fbca13aef3558d4"
+      }
+    },
+    {
+      "id": "lamp-lilac-torchiere",
+      "category": "lamp",
+      "name": "淡紫花碗高落地灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "inheritSlotTransform": true,
+      "thumbnail": {
+        "src": "assets/portrait-lamps-v48/thumbs/lamp-lilac-torchiere.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/portrait-lamps-v48/lamps/lamp-lilac-torchiere.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "lamp",
+        "contacts": [
+          [
+            130,
+            1082
+          ]
+        ],
+        "collisionBounds": [
+          71,
+          970,
+          119,
+          113
+        ],
+        "visualBounds": [
+          23,
+          383,
+          210,
+          700
+        ],
+        "display": {
+          "scale": 1,
+          "anchor": [
+            130,
+            1082
+          ]
+        },
+        "assetSha256": "1e1a456ea1eb8425948e477bb62f6230f29616f6ebbeae7ae01b1c22ad11f821"
+      }
+    },
+    {
+      "id": "lamp-pleated-tripod",
+      "category": "lamp",
+      "name": "奶油褶罩三脚高落地灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "inheritSlotTransform": true,
+      "thumbnail": {
+        "src": "assets/portrait-lamps-v48/thumbs/lamp-pleated-tripod.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/portrait-lamps-v48/lamps/lamp-pleated-tripod.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "lamp",
+        "contacts": [
+          [
+            130,
+            1082
+          ]
+        ],
+        "collisionBounds": [
+          21,
+          970,
+          213,
+          113
+        ],
+        "visualBounds": [
+          21,
+          399,
+          213,
+          684
+        ],
+        "display": {
+          "scale": 1,
+          "anchor": [
+            130,
+            1082
+          ]
+        },
+        "assetSha256": "a1f01471ebcc8aa03f7a3b9aab38f0a0d5d398d4bca7a54dbfd05942b0dc34b6"
+      }
+    },
+    {
+      "id": "lamp-paper-oval",
+      "category": "lamp",
+      "name": "椭圆纸罩高落地灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "inheritSlotTransform": true,
+      "thumbnail": {
+        "src": "assets/portrait-lamps-v48/thumbs/lamp-paper-oval.png",
+        "size": [
+          256,
+          256
+        ]
+      },
+      "scene": {
+        "src": "assets/portrait-lamps-v48/lamps/lamp-paper-oval.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "layer": "lamp",
+        "contacts": [
+          [
+            130,
+            1082
+          ]
+        ],
+        "collisionBounds": [
+          72,
+          970,
+          116,
+          113
+        ],
+        "visualBounds": [
+          47,
+          383,
+          166,
+          700
+        ],
+        "display": {
+          "scale": 1,
+          "anchor": [
+            130,
+            1082
+          ]
+        },
+        "assetSha256": "ca4c1b200039c568ea6ae2af7414422a2c47048239048060fb0655203ccfd776"
+      }
+    },
+    {
+      "id": "floor-light-handheld",
+      "category": "portable-light",
+      "name": "手提小灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/layer-decor-v51/thumbs/floor-light-handheld.png"
+      },
+      "scene": {
+        "src": "assets/layer-decor-v51/portable-light/floor-light-handheld.png",
+        "size": [
+          512,
+          512
+        ],
+        "layer": "portable-light",
+        "placement": {
+          "anchor": [
+            256,
+            480
+          ],
+          "position": [
+            405,
+            1230
+          ],
+          "displaySize": [
+            200,
+            200
+          ],
+          "mirrorX": false
+        },
+        "sourceAlphaBounds": [
+          148,
+          73,
+          216,
+          409
+        ],
+        "sourceVisualBounds": [
+          151,
+          75,
+          211,
+          406
+        ],
+        "sourceCollisionBounds": [
+          151,
+          235,
+          211,
+          246
+        ],
+        "visualBounds": [
+          363.984375,
+          1071.796875,
+          82.421875,
+          158.59375
+        ],
+        "collisionBounds": [
+          363.984375,
+          1134.296875,
+          82.421875,
+          96.09375
+        ],
+        "contacts": []
+      },
+      "assetProvenance": {
+        "libraryFileId": "project-source-record",
+        "version": 0,
+        "assetId": "floor-light-handheld",
+        "sourceSha256": "a2bce139e9059c662dac1c48ffbe2d47dec92e590379e0a8a6d6af8675619569"
+      }
+    },
+    {
+      "id": "corner-vine-left",
+      "category": "corner-vine-left",
+      "name": "左上角垂藤",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/layer-decor-v51/thumbs/corner-vine.png"
+      },
+      "scene": {
+        "src": "assets/layer-decor-v51/corner-vine-left/corner-vine.png",
+        "size": [
+          512,
+          768
+        ],
+        "layer": "corner-vine-left",
+        "placement": {
+          "anchor": [
+            32,
+            32
+          ],
+          "position": [
+            40,
+            285
+          ],
+          "displaySize": [
+            235,
+            352.5
+          ],
+          "mirrorX": false
+        },
+        "sourceAlphaBounds": [
+          3,
+          29,
+          308,
+          562
+        ],
+        "sourceVisualBounds": [
+          7,
+          30,
+          304,
+          561
+        ],
+        "sourceCollisionBounds": [
+          7,
+          30,
+          304,
+          561
+        ],
+        "visualBounds": [
+          28.525390625,
+          284.08203125,
+          139.53125,
+          257.490234375
+        ],
+        "collisionBounds": [
+          28.525390625,
+          284.08203125,
+          139.53125,
+          257.490234375
+        ],
+        "contacts": []
+      },
+      "assetProvenance": {
+        "libraryFileId": "project-source-record",
+        "version": 0,
+        "assetId": "corner-vine",
+        "sourceSha256": "8d6029b60becd9f2e9d8a2ada92bfae1391fafc03b7fc9e2a34655e13337076c"
+      }
+    },
+    {
+      "id": "corner-vine-right",
+      "category": "corner-vine-right",
+      "name": "右上角垂藤",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/layer-decor-v51/thumbs/corner-vine.png"
+      },
+      "scene": {
+        "src": "assets/layer-decor-v51/corner-vine-left/corner-vine.png",
+        "size": [
+          512,
+          768
+        ],
+        "layer": "corner-vine-right",
+        "placement": {
+          "anchor": [
+            480,
+            32
+          ],
+          "position": [
+            984,
+            285
+          ],
+          "displaySize": [
+            235,
+            352.5
+          ],
+          "mirrorX": true
+        },
+        "sourceAlphaBounds": [
+          201,
+          29,
+          308,
+          562
+        ],
+        "sourceVisualBounds": [
+          201,
+          30,
+          304,
+          561
+        ],
+        "sourceCollisionBounds": [
+          201,
+          30,
+          304,
+          561
+        ],
+        "visualBounds": [
+          855.943359375,
+          284.08203125,
+          139.53125,
+          257.490234375
+        ],
+        "collisionBounds": [
+          855.943359375,
+          284.08203125,
+          139.53125,
+          257.490234375
+        ],
+        "contacts": []
+      },
+      "assetProvenance": {
+        "libraryFileId": "project-source-record",
+        "version": 0,
+        "assetId": "corner-vine",
+        "sourceSha256": "8d6029b60becd9f2e9d8a2ada92bfae1391fafc03b7fc9e2a34655e13337076c"
+      }
+    },
+    {
+      "id": "corner-curtain-left",
+      "category": "corner-curtain-left",
+      "name": "左上角轻帘",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/layer-decor-v51/thumbs/corner-curtain.png"
+      },
+      "scene": {
+        "src": "assets/layer-decor-v51/corner-curtain-left/corner-curtain.png",
+        "size": [
+          512,
+          768
+        ],
+        "layer": "corner-curtain-left",
+        "placement": {
+          "anchor": [
+            32,
+            32
+          ],
+          "position": [
+            30,
+            280
+          ],
+          "displaySize": [
+            250,
+            375
+          ],
+          "mirrorX": false
+        },
+        "sourceAlphaBounds": [
+          1,
+          13,
+          328,
+          535
+        ],
+        "sourceVisualBounds": [
+          10,
+          25,
+          316,
+          523
+        ],
+        "sourceCollisionBounds": [
+          10,
+          25,
+          316,
+          523
+        ],
+        "visualBounds": [
+          19.2578125,
+          276.58203125,
+          154.296875,
+          255.37109375
+        ],
+        "collisionBounds": [
+          19.2578125,
+          276.58203125,
+          154.296875,
+          255.37109375
+        ],
+        "contacts": []
+      },
+      "assetProvenance": {
+        "libraryFileId": "project-source-record",
+        "version": 0,
+        "assetId": "corner-curtain",
+        "sourceSha256": "c3f3f33cb16d24c9082cf7426cf1abf1fa5a77d3d4879934f2148468bee37e88"
+      }
+    },
+    {
+      "id": "corner-curtain-right",
+      "category": "corner-curtain-right",
+      "name": "右上角轻帘",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/layer-decor-v51/thumbs/corner-curtain.png"
+      },
+      "scene": {
+        "src": "assets/layer-decor-v51/corner-curtain-left/corner-curtain.png",
+        "size": [
+          512,
+          768
+        ],
+        "layer": "corner-curtain-right",
+        "placement": {
+          "anchor": [
+            480,
+            32
+          ],
+          "position": [
+            994,
+            280
+          ],
+          "displaySize": [
+            250,
+            375
+          ],
+          "mirrorX": true
+        },
+        "sourceAlphaBounds": [
+          183,
+          13,
+          328,
+          535
+        ],
+        "sourceVisualBounds": [
+          186,
+          25,
+          316,
+          523
+        ],
+        "sourceCollisionBounds": [
+          186,
+          25,
+          316,
+          523
+        ],
+        "visualBounds": [
+          850.4453125,
+          276.58203125,
+          154.296875,
+          255.37109375
+        ],
+        "collisionBounds": [
+          850.4453125,
+          276.58203125,
+          154.296875,
+          255.37109375
+        ],
+        "contacts": []
+      },
+      "assetProvenance": {
+        "libraryFileId": "project-source-record",
+        "version": 0,
+        "assetId": "corner-curtain",
+        "sourceSha256": "c3f3f33cb16d24c9082cf7426cf1abf1fa5a77d3d4879934f2148468bee37e88"
+      }
+    },
+    {
+      "id": "flower-string-lights",
+      "category": "string-lights",
+      "name": "柔和花形串灯",
+      "unlockMinutes": null,
+      "assetState": "ready",
+      "thumbnail": {
+        "src": "assets/layer-decor-v51/thumbs/flower-string-lights.png"
+      },
+      "scene": {
+        "src": "assets/layer-decor-v51/string-lights/flower-string-lights.png",
+        "size": [
+          1024,
+          384
+        ],
+        "layer": "string-lights",
+        "placement": {
+          "anchor": [
+            512,
+            48
+          ],
+          "position": [
+            512,
+            295
+          ],
+          "displaySize": [
+            600,
+            225
+          ],
+          "mirrorX": false
+        },
+        "sourceAlphaBounds": [
+          28,
+          44,
+          968,
+          215
+        ],
+        "sourceVisualBounds": [
+          28,
+          45,
+          967,
+          213
+        ],
+        "sourceCollisionBounds": [
+          28,
+          45,
+          967,
+          213
+        ],
+        "visualBounds": [
+          228.40625,
+          293.2421875,
+          566.6015625,
+          124.8046875
+        ],
+        "collisionBounds": [
+          228.40625,
+          293.2421875,
+          566.6015625,
+          124.8046875
+        ],
+        "contacts": []
+      },
+      "assetProvenance": {
+        "libraryFileId": "project-source-record",
+        "version": 0,
+        "assetId": "flower-string-lights",
+        "sourceSha256": "3379f695b4748d54ce7b3d0fcc349fd5530a1dd0af8c990d30f4eaa6ebb88cbb"
+      }
+    }
+  ],
+  "room": {
+    "src": "assets/room-v30/room-base.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "assetState": "ready",
+    "floorY": 1082,
+    "sourceOffset": [
+      62,
+      190
+    ],
+    "rigOffset": [
+      85,
+      300
+    ],
+    "rigScale": 0.681,
+    "roleDisplay": {
+      "scale": 0.64,
+      "offset": [
+        224,
+        458.2
+      ],
+      "seatSource": [
+        450,
+        745
+      ],
+      "seatWorld": [
+        512,
+        935
+      ]
+    }
+  },
+  "thresholdPolicy": "可调整初始门槛；非用户冻结的经济规则"
+}

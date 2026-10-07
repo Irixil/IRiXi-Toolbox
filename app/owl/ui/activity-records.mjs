@@ -1,0 +1,17 @@
+const LABELS={'unknown':'待确认','video':'看视频','vibe-coding':'Vibe Coding','chatgpt-learning':'ChatGPT 学习','writing':'写文章'};
+const duration=ms=>{const seconds=Math.floor(ms/1000);return seconds>=60?`${Math.floor(seconds/60)}分${seconds%60}秒`:`${seconds}秒`;};
+export function bindActivityRecords(bridge){
+ const el=id=>document.getElementById(id);let state,busy=false,disposed=false,commandError='';
+ function render(value){
+  if(disposed)return;state=value;el('activity-toggle').textContent=value.enabled?'停止记录':'开始记录前台 APP';el('activity-toggle').disabled=busy||Boolean(value.fault)||value.available===false;el('activity-status').textContent=value.reason;el('activity-error').textContent=value.fault||commandError;
+  el('activity-apps').replaceChildren(...(value.apps.length?value.apps.map(app=>{const li=document.createElement('li'),title=document.createElement('strong'),detail=document.createElement('span');title.textContent=app.app.name+' · '+duration(app.durationMs);detail.textContent=Object.entries(app.categories).map(([key,time])=>LABELS[key]+' '+duration(time)).join(' · ');li.append(title,detail);return li;}):[Object.assign(document.createElement('li'),{textContent:value.available===false?'独立版尚未接入真实 APP 查询。':'尚无 APP 时间记录。主动开启后从现在开始。'})]));
+  // Preserve focused selects while the host sends periodic checkpoints.
+  if(document.activeElement?.matches('[data-activity-category]'))return;
+  const rows=value.segments.slice(-40).reverse().map(row=>{const li=document.createElement('li'),title=document.createElement('strong'),time=document.createElement('span'),label=document.createElement('label'),select=document.createElement('select');title.textContent=row.app.name+' · '+duration(row.durationMs)+(row.id===value.activeId?' · 当前':'');time.textContent=new Date(row.startedAt).toLocaleString('zh-CN')+' → '+new Date(row.endedAt).toLocaleTimeString('zh-CN');label.textContent='活动类别';select.dataset.activityCategory=row.id;select.setAttribute('aria-label',row.app.name+'的活动类别');for(const [key,text]of Object.entries(LABELS)){const option=document.createElement('option');option.value=key;option.textContent=text;select.append(option);}select.value=row.category;select.disabled=busy||Boolean(value.fault);select.addEventListener('change',()=>command({type:'classify',id:row.id,category:select.value}));label.append(select);li.append(title,time,label);return li;});
+  if(!rows.length)rows.push(Object.assign(document.createElement('li'),{textContent:'尚无时间段；不会补写过去的活动。'}));el('activity-segments').replaceChildren(...rows);
+ }
+ async function command(value){if(busy||disposed)return;busy=true;commandError='';if(state)render(state);try{render(await bridge.activityCommand(value));}catch(error){commandError=error.message;}finally{busy=false;if(state)render(state);}}
+ const toggle=event=>{if(!state)return;if(!state.enabled&&!event.isTrusted){el('activity-error').textContent='请手动点击开始记录。';return;}void command({type:state.enabled?'stop':'start'});};el('activity-toggle').addEventListener('click',toggle);
+ let off=()=>{};if(bridge?.activitySnapshot&&bridge?.subscribeActivity){off=bridge.subscribeActivity(render);bridge.activitySnapshot().then(render).catch(error=>{el('activity-status').textContent='APP 记录暂不可用。';el('activity-error').textContent=error.message;el('activity-toggle').disabled=true;});}else{el('activity-status').textContent='当前入口暂不支持 APP 记录，请使用隔离工具箱入口。';el('activity-toggle').disabled=true;}
+ return ()=>{disposed=true;off();el('activity-toggle').removeEventListener('click',toggle);};
+}

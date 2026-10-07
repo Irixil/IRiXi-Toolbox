@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IRiXi的小工具库</title>
     <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="owl-embedded.css" />
   </head>
   <body>
     <div id="app" class="collapsed">
@@ -317,26 +318,7 @@
                 </div>
               </section>
 
-              <section class="tile home-pomodoro" id="home-pomodoro" data-home-module="pomodoro" data-widget-size="mini" aria-label="番茄钟">
-                <button class="pomodoro-toggle" id="pomodoro-toggle" type="button" aria-label="开始番茄钟">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7 8 5-8 5z" /></svg>
-                </button>
-                <div class="pomodoro-readout">
-                  <div class="pomodoro-status" aria-label="预计结束时间">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM9.7 19a2.5 2.5 0 0 0 4.6 0H9.7Z" /></svg>
-                    <time id="pomodoro-end-time">--:--</time>
-                  </div>
-                  <div class="pomodoro-dial" id="pomodoro-dial" aria-label="设置番茄钟时长">
-                    <input id="pomodoro-minutes" value="05" inputmode="numeric" maxlength="2" aria-label="分钟" />
-                    <span>:</span>
-                    <input id="pomodoro-seconds" value="00" inputmode="numeric" maxlength="2" aria-label="秒" />
-                  </div>
-                  <span class="pomodoro-caption">Timer</span>
-                </div>
-                <button class="pomodoro-reset" id="pomodoro-reset" type="button" aria-label="重置番茄钟" hidden>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" /></svg>
-                </button>
-              </section>
+              <section class="tile home-pomodoro owl-focus-embedded" id="home-pomodoro" data-home-module="pomodoro" data-widget-size="mini" aria-label="猫头鹰专注（原番茄钟模块）"><span id="owl-embed-error" role="alert"></span></section>
 
               <!-- 快速录音与实时转写 -->
               <section class="tile home-recorder" id="home-recorder" data-home-module="recorder" data-widget-size="medium">
@@ -793,5 +775,6 @@
     <script src="workspace.js"></script>
     <script src="tools.js"></script>
     <script src="icon-motion.js"></script>
+    <script type="module" src="owl-embedded.mjs"></script>
   </body>
 </html>

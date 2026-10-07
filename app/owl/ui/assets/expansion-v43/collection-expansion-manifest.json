@@ -1,0 +1,1894 @@
+{
+  "schema": "owl-focus-collection-increment/v1",
+  "stage": "15 additional generated choices; artist static and real-scale QA completed, actual app integration pending",
+  "newChoiceCount": 15,
+  "runtimePngCount": 33,
+  "existingChoicesRetained": 21,
+  "totalChoiceCountAfterMerge": 36,
+  "targetNote": "Seven classes at least5 each; retain existing6 rugs rather than deleting the extra one",
+  "countsAfterMerge": {
+    "挂画": 5,
+    "灯具": 5,
+    "植物": 5,
+    "椅子": 5,
+    "地毯": 6,
+    "侧边家具": 5,
+    "桌面摆件": 5
+  },
+  "basePackages": {
+    "core": {
+      "libraryFileId": "project-source-record",
+      "version": 4
+    },
+    "extension": {
+      "libraryFileId": "project-source-record",
+      "version": 1
+    }
+  },
+  "assetFilesAreAdditive": true,
+  "highTableAlreadyDeliveredSeparately": "The same side-table-tall id and identical PNG bytes are included here; upsert by stableID, do not create a second choice",
+  "defaultLayoutPolicy": "Do not change equipped selections, user-custom positions or scales. Inherit current slot settings; QA positions are not defaults.",
+  "assets": [
+    {
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 272775,
+      "sha256": "bc2f8a47dfaa0fb7936be192aad6b59d1d6c3631f839ac7c33bd5f10f681d8de",
+      "alphaBounds": {
+        "x": 22,
+        "y": 34,
+        "width": 444,
+        "height": 594,
+        "rightExclusive": 466,
+        "bottomExclusive": 628
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 50,
+        "y": 75,
+        "width": 412,
+        "height": 499,
+        "rightExclusive": 462,
+        "bottomExclusive": 574,
+        "rightInclusive": 461,
+        "bottomInclusive": 573
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "wall-landscape-mountains",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-mountains.png",
+      "thumbnail": "thumbs/wall-landscape-mountains.png",
+      "sourceAnchor": [
+        256,
+        320
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "landscapes-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending"
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 45247,
+      "sha256": "f8ea621f99fcba8d451ee3f0827657c4fc7dc438d3fd9dba6a491dbec7169183",
+      "alphaBounds": {
+        "x": 34,
+        "y": 28,
+        "width": 178,
+        "height": 204,
+        "rightExclusive": 212,
+        "bottomExclusive": 232
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 45,
+        "y": 30,
+        "width": 165,
+        "height": 200,
+        "rightExclusive": 210,
+        "bottomExclusive": 230,
+        "rightInclusive": 209,
+        "bottomInclusive": 229
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "wall-landscape-mountains-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/wall-landscape-mountains.png"
+    },
+    {
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 268821,
+      "sha256": "cc1df90ef95a4833b6bcc36121d41f58d4fc9c812573185adc38eca4290ab060",
+      "alphaBounds": {
+        "x": 42,
+        "y": 0,
+        "width": 428,
+        "height": 599,
+        "rightExclusive": 470,
+        "bottomExclusive": 599
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 49,
+        "y": 79,
+        "width": 415,
+        "height": 485,
+        "rightExclusive": 464,
+        "bottomExclusive": 564,
+        "rightInclusive": 463,
+        "bottomInclusive": 563
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "wall-landscape-pond",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-pond.png",
+      "thumbnail": "thumbs/wall-landscape-pond.png",
+      "sourceAnchor": [
+        256,
+        320
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "landscapes-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending"
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 44347,
+      "sha256": "fdc52c47ece55a0d9b7118da470b889827bda9a31e52ac7f45c066261312abf5",
+      "alphaBounds": {
+        "x": 42,
+        "y": 0,
+        "width": 171,
+        "height": 240,
+        "rightExclusive": 213,
+        "bottomExclusive": 240
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 44,
+        "y": 31,
+        "width": 169,
+        "height": 196,
+        "rightExclusive": 213,
+        "bottomExclusive": 227,
+        "rightInclusive": 212,
+        "bottomInclusive": 226
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "wall-landscape-pond-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/wall-landscape-pond.png"
+    },
+    {
+      "width": 512,
+      "height": 640,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 297333,
+      "sha256": "f1b875bffe03c91defe41916939196acfbd0982be3880838b94842f58c574ab8",
+      "alphaBounds": {
+        "x": 34,
+        "y": 51,
+        "width": 444,
+        "height": 540,
+        "rightExclusive": 478,
+        "bottomExclusive": 591
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 37,
+        "y": 53,
+        "width": 439,
+        "height": 534,
+        "rightExclusive": 476,
+        "bottomExclusive": 587,
+        "rightInclusive": 475,
+        "bottomInclusive": 586
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "wall-landscape-coast",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-coast.png",
+      "thumbnail": "thumbs/wall-landscape-coast.png",
+      "sourceAnchor": [
+        256,
+        320
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "landscapes-batch-b",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending"
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 47775,
+      "sha256": "1666e114744151966b8efd71552acd1d4c40533b0242a96e59e87d2e9bd51122",
+      "alphaBounds": {
+        "x": 37,
+        "y": 19,
+        "width": 181,
+        "height": 218,
+        "rightExclusive": 218,
+        "bottomExclusive": 237
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 39,
+        "y": 21,
+        "width": 177,
+        "height": 214,
+        "rightExclusive": 216,
+        "bottomExclusive": 235,
+        "rightInclusive": 215,
+        "bottomInclusive": 234
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "wall-landscape-coast-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/wall-landscape-coast.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 110330,
+      "sha256": "eae0664c160ce9efcb630ba17283cdf93250c4ed2d68691f8d75a728978267fa",
+      "alphaBounds": {
+        "x": 107,
+        "y": 54,
+        "width": 296,
+        "height": 427,
+        "rightExclusive": 403,
+        "bottomExclusive": 481
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 108,
+        "y": 56,
+        "width": 295,
+        "height": 425,
+        "rightExclusive": 403,
+        "bottomExclusive": 481,
+        "rightInclusive": 402,
+        "bottomInclusive": 480
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "floor-light-tripod",
+      "collectionCategory": "灯具",
+      "slot": "floorlight",
+      "file": "floorlight/floor-light-tripod.png",
+      "thumbnail": "thumbs/floor-light-tripod.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "lamp-plant-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending"
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 31501,
+      "sha256": "f82ce21fcc126465130e4173d625f861dd755569d986c85edd7d57bfbf9bd23e",
+      "alphaBounds": {
+        "x": 53,
+        "y": 27,
+        "width": 149,
+        "height": 214,
+        "rightExclusive": 202,
+        "bottomExclusive": 241
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 53,
+        "y": 27,
+        "width": 149,
+        "height": 214,
+        "rightExclusive": 202,
+        "bottomExclusive": 241,
+        "rightInclusive": 201,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "floor-light-tripod-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/floor-light-tripod.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 95280,
+      "sha256": "81649dfeb2b351fa390b9cac4fef25ee6e2e6d4a63e55f4b70bf64ae9c86739f",
+      "alphaBounds": {
+        "x": 33,
+        "y": 223,
+        "width": 443,
+        "height": 261,
+        "rightExclusive": 476,
+        "bottomExclusive": 484
+      },
+      "alphaRange8Bit": [
+        0,
+        254
+      ],
+      "visualBounds": {
+        "x": 36,
+        "y": 223,
+        "width": 438,
+        "height": 258,
+        "rightExclusive": 474,
+        "bottomExclusive": 481,
+        "rightInclusive": 473,
+        "bottomInclusive": 480
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "foreground-plant-trailing",
+      "collectionCategory": "植物",
+      "slot": "foregroundplant",
+      "file": "foregroundplant/foreground-plant-trailing.png",
+      "thumbnail": "thumbs/foreground-plant-trailing.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "lamp-plant-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending"
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 27480,
+      "sha256": "6a5287113e9ba885885976fc32c375db738d7da8d4bc13173efbf06b7313b921",
+      "alphaBounds": {
+        "x": 18,
+        "y": 111,
+        "width": 220,
+        "height": 130,
+        "rightExclusive": 238,
+        "bottomExclusive": 241
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 18,
+        "y": 111,
+        "width": 220,
+        "height": 130,
+        "rightExclusive": 238,
+        "bottomExclusive": 241,
+        "rightInclusive": 237,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "foreground-plant-trailing-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/foreground-plant-trailing.png"
+    },
+    {
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 73361,
+      "sha256": "66f828844f76be66805769f0ecd93c453ec1a22d9a23c2e42eaab807de4f9361",
+      "alphaBounds": {
+        "x": 778,
+        "y": 495,
+        "width": 242,
+        "height": 592,
+        "rightExclusive": 1020,
+        "bottomExclusive": 1087
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 778,
+        "y": 495,
+        "width": 242,
+        "height": 588,
+        "rightExclusive": 1020,
+        "bottomExclusive": 1083,
+        "rightInclusive": 1019,
+        "bottomInclusive": 1082
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "plant-c-olive",
+      "collectionCategory": "植物",
+      "slot": "plant",
+      "file": "plants/plant-c-olive.png",
+      "thumbnail": "thumbs/plant-c-olive.png",
+      "sourceAnchor": [
+        905,
+        1082
+      ],
+      "anchor": [
+        905,
+        1082
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "plant-batch-b",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending",
+      "coordinateSpace": "room",
+      "roomTransform": {
+        "scale": 1,
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "groundY": 1082,
+      "hardwarePotBounds": {
+        "x": 846,
+        "y": 994,
+        "width": 118,
+        "height": 89,
+        "rightExclusive": 964,
+        "bottomExclusive": 1083
+      },
+      "reviewNote": "Sparse7-leaf thin tree; crown rightmost1018, not clipped",
+      "sourceSlotAsDelivered": "plants",
+      "hardwarePotBoundsMeasurement": "alpha>8/255 in the actual planter region, measurement only"
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 13506,
+      "sha256": "dba226b3f5f246f2bfc3e8608378b2fbbcd7fa3b5d9791999465aff22253b672",
+      "alphaBounds": {
+        "x": 81,
+        "y": 13,
+        "width": 96,
+        "height": 230,
+        "rightExclusive": 177,
+        "bottomExclusive": 243
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 82,
+        "y": 13,
+        "width": 95,
+        "height": 230,
+        "rightExclusive": 177,
+        "bottomExclusive": 243,
+        "rightInclusive": 176,
+        "bottomInclusive": 242
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "plant-c-olive-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/plant-c-olive.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 105100,
+      "sha256": "00bcdbaf077d2dbfb1df33d3a07f8286fe68f4c68cb9996e55c240abb7521305",
+      "alphaBounds": {
+        "x": 100,
+        "y": 72,
+        "width": 313,
+        "height": 409,
+        "rightExclusive": 413,
+        "bottomExclusive": 481
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 100,
+        "y": 73,
+        "width": 313,
+        "height": 407,
+        "rightExclusive": 413,
+        "bottomExclusive": 480,
+        "rightInclusive": 412,
+        "bottomInclusive": 479
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "side-table-tall",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-table-tall.png",
+      "thumbnail": "thumbs/side-table-tall.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "sidefurniture-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending",
+      "tableSurface": [
+        160,
+        102,
+        192,
+        44
+      ],
+      "tabletopAnchor": [
+        256,
+        124
+      ],
+      "supportsTabletop": true,
+      "capabilities": [
+        "tabletopSurface"
+      ]
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 31961,
+      "sha256": "4b33b426d802252a640182983031a4c0b6f62064d89a9a8d50a595e61183ea6d",
+      "alphaBounds": {
+        "x": 50,
+        "y": 36,
+        "width": 157,
+        "height": 205,
+        "rightExclusive": 207,
+        "bottomExclusive": 241
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 50,
+        "y": 36,
+        "width": 157,
+        "height": 205,
+        "rightExclusive": 207,
+        "bottomExclusive": 241,
+        "rightInclusive": 206,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "side-table-tall-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/side-table-tall.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 171669,
+      "sha256": "db20d08a79c8fab99515db98e6af38e1e58ff0060d5c562b0c63e57bd620efbf",
+      "alphaBounds": {
+        "x": 71,
+        "y": 70,
+        "width": 371,
+        "height": 410,
+        "rightExclusive": 442,
+        "bottomExclusive": 480
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 71,
+        "y": 70,
+        "width": 371,
+        "height": 410,
+        "rightExclusive": 442,
+        "bottomExclusive": 480,
+        "rightInclusive": 441,
+        "bottomInclusive": 479
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "side-cabinet-drawer",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-cabinet-drawer.png",
+      "thumbnail": "thumbs/side-cabinet-drawer.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "sidefurniture-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending",
+      "tableSurface": [
+        160,
+        88,
+        192,
+        24
+      ],
+      "tabletopAnchor": [
+        256,
+        100
+      ],
+      "supportsTabletop": true,
+      "capabilities": [
+        "tabletopSurface"
+      ]
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 44557,
+      "sha256": "6d27ab77d35af3031667917b4425276404d7011addeb0d4a86f9eb1f855a3d5c",
+      "alphaBounds": {
+        "x": 35,
+        "y": 34,
+        "width": 186,
+        "height": 207,
+        "rightExclusive": 221,
+        "bottomExclusive": 241
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 35,
+        "y": 34,
+        "width": 186,
+        "height": 207,
+        "rightExclusive": 221,
+        "bottomExclusive": 241,
+        "rightInclusive": 220,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "side-cabinet-drawer-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/side-cabinet-drawer.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 92948,
+      "sha256": "717b53b11910f8b715d2c2bc2b16243ac44cb346a90fdddb93c8d6804a123c61",
+      "alphaBounds": {
+        "x": 72,
+        "y": 163,
+        "width": 372,
+        "height": 318,
+        "rightExclusive": 444,
+        "bottomExclusive": 481
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 72,
+        "y": 165,
+        "width": 372,
+        "height": 315,
+        "rightExclusive": 444,
+        "bottomExclusive": 480,
+        "rightInclusive": 443,
+        "bottomInclusive": 479
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "side-cart-two-tier",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-cart-two-tier.png",
+      "thumbnail": "thumbs/side-cart-two-tier.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "sidefurniture-batch-b",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending",
+      "tableSurface": [
+        134,
+        175,
+        245,
+        28
+      ],
+      "tabletopAnchor": [
+        256,
+        195
+      ],
+      "supportsTabletop": true,
+      "capabilities": [
+        "tabletopSurface"
+      ]
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 29993,
+      "sha256": "bb232617345c027584d787299ec557144946d4ee91e0973b1fc169e364eb708e",
+      "alphaBounds": {
+        "x": 35,
+        "y": 82,
+        "width": 187,
+        "height": 159,
+        "rightExclusive": 222,
+        "bottomExclusive": 241
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 35,
+        "y": 82,
+        "width": 187,
+        "height": 159,
+        "rightExclusive": 222,
+        "bottomExclusive": 241,
+        "rightInclusive": 221,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "side-cart-two-tier-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/side-cart-two-tier.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 143385,
+      "sha256": "29be59c97b86d5ac9ac5ef357b7e05913d7adf02b38b6ac1d08ad0365c8b59ce",
+      "alphaBounds": {
+        "x": 89,
+        "y": 79,
+        "width": 336,
+        "height": 406,
+        "rightExclusive": 425,
+        "bottomExclusive": 485
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 91,
+        "y": 81,
+        "width": 332,
+        "height": 402,
+        "rightExclusive": 423,
+        "bottomExclusive": 483,
+        "rightInclusive": 422,
+        "bottomInclusive": 482
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "tabletop-candle",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-candle.png",
+      "thumbnail": "thumbs/tabletop-candle.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "tabletop-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending",
+      "parentSlot": "sidefurniture",
+      "requiresParentCapability": "tabletopSurface",
+      "followCurrentParent": true,
+      "attachmentTarget": "parent.tabletopAnchor",
+      "persistOffsetsRelativeToSurface": true,
+      "hideWhenNoCapableParent": true,
+      "preserveSelectionWhileHidden": true
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 46177,
+      "sha256": "c03c065867df42922c544d3fc954d53904a4cd89a240284c94b56b52650cb428",
+      "alphaBounds": {
+        "x": 43,
+        "y": 38,
+        "width": 171,
+        "height": 205,
+        "rightExclusive": 214,
+        "bottomExclusive": 243
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 45,
+        "y": 40,
+        "width": 167,
+        "height": 201,
+        "rightExclusive": 212,
+        "bottomExclusive": 241,
+        "rightInclusive": 211,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "tabletop-candle-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/tabletop-candle.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 150407,
+      "sha256": "7212aa49fc63c67bc212dbf63a6145661911747839fa17c192476a233cc0f9ea",
+      "alphaBounds": {
+        "x": 138,
+        "y": 79,
+        "width": 237,
+        "height": 404,
+        "rightExclusive": 375,
+        "bottomExclusive": 483
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 139,
+        "y": 81,
+        "width": 234,
+        "height": 400,
+        "rightExclusive": 373,
+        "bottomExclusive": 481,
+        "rightInclusive": 372,
+        "bottomInclusive": 480
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "tabletop-hourglass",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-hourglass.png",
+      "thumbnail": "thumbs/tabletop-hourglass.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "tabletop-batch-a",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending",
+      "parentSlot": "sidefurniture",
+      "requiresParentCapability": "tabletopSurface",
+      "followCurrentParent": true,
+      "attachmentTarget": "parent.tabletopAnchor",
+      "persistOffsetsRelativeToSurface": true,
+      "hideWhenNoCapableParent": true,
+      "preserveSelectionWhileHidden": true
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 53189,
+      "sha256": "420b950195407cdded91774018c2858336bca849d23287f2fba192bf12d2b9ef",
+      "alphaBounds": {
+        "x": 68,
+        "y": 38,
+        "width": 121,
+        "height": 205,
+        "rightExclusive": 189,
+        "bottomExclusive": 243
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 70,
+        "y": 40,
+        "width": 117,
+        "height": 201,
+        "rightExclusive": 187,
+        "bottomExclusive": 241,
+        "rightInclusive": 186,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "tabletop-hourglass-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/tabletop-hourglass.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 178200,
+      "sha256": "969d761f1f4a45af8fbd240f931e75b14443aee671da43eeb35ac951d8a7f6a2",
+      "alphaBounds": {
+        "x": 59,
+        "y": 79,
+        "width": 395,
+        "height": 410,
+        "rightExclusive": 454,
+        "bottomExclusive": 489
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 62,
+        "y": 81,
+        "width": 391,
+        "height": 401,
+        "rightExclusive": 453,
+        "bottomExclusive": 482,
+        "rightInclusive": 452,
+        "bottomInclusive": 481
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "tabletop-pear-dish",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-pear-dish.png",
+      "thumbnail": "thumbs/tabletop-pear-dish.png",
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "sourceFolder": "tabletop-batch-b",
+      "renderSizePolicy": "inherit current slot/user sizing; do not reapply historical default positions",
+      "reviewStatus": "artist-reviewed-static; actual renderer interactions pending",
+      "parentSlot": "sidefurniture",
+      "requiresParentCapability": "tabletopSurface",
+      "followCurrentParent": true,
+      "attachmentTarget": "parent.tabletopAnchor",
+      "persistOffsetsRelativeToSurface": true,
+      "hideWhenNoCapableParent": true,
+      "preserveSelectionWhileHidden": true
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 55641,
+      "sha256": "8bc7ecb01cdb1178bce2b234b650516dca2bf99c3e268bf52af496691d193a12",
+      "alphaBounds": {
+        "x": 29,
+        "y": 38,
+        "width": 199,
+        "height": 205,
+        "rightExclusive": 228,
+        "bottomExclusive": 243
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 31,
+        "y": 40,
+        "width": 196,
+        "height": 201,
+        "rightExclusive": 227,
+        "bottomExclusive": 241,
+        "rightInclusive": 226,
+        "bottomInclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "tabletop-pear-dish-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/tabletop-pear-dish.png"
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 501062,
+      "sha256": "b3f35770c8f5fbb4135b6d67f39742dabb11f0bdcf88227bb0563c86ea395059",
+      "alphaBounds": {
+        "x": 29,
+        "y": 19,
+        "width": 1203,
+        "height": 1202,
+        "rightExclusive": 1232,
+        "bottomExclusive": 1221
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 292,
+        "y": 445,
+        "width": 669,
+        "height": 706,
+        "rightExclusive": 961,
+        "bottomExclusive": 1151,
+        "rightInclusive": 960,
+        "bottomInclusive": 1150
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-c-spindle-back",
+      "choiceId": "chair-c-spindle",
+      "category": "chair-back",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "file": "chairs/chair-c-spindle-back.png",
+      "thumbnail": "thumbs/chair-c-spindle.png",
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "sourceFolder": "chairs-batch-a",
+      "reviewStatus": "artist-reviewed-static; maximum animation still requires actual renderer"
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 6406,
+      "sha256": "d3dc42ed4738163578766fc148ecc65fea1192a97329562558e32d55b9d9196e",
+      "alphaBounds": null,
+      "alphaRange8Bit": [
+        0,
+        0
+      ],
+      "visualBounds": null,
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-c-spindle-front",
+      "choiceId": "chair-c-spindle",
+      "category": "chair-front",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "file": "chairs/chair-c-spindle-front.png",
+      "thumbnail": "thumbs/chair-c-spindle.png",
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "sourceFolder": "chairs-batch-a",
+      "reviewStatus": "artist-reviewed-static; maximum animation still requires actual renderer",
+      "intentionalEmpty": true,
+      "emptyReason": "whole-chair-behind-owl"
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 52951,
+      "sha256": "976f35a43405d0663912162be57c012b4101856e60654698e5b72e6ade79b155",
+      "alphaBounds": {
+        "x": 22,
+        "y": 13,
+        "width": 212,
+        "height": 229,
+        "rightExclusive": 234,
+        "bottomExclusive": 242
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 22,
+        "y": 16,
+        "width": 212,
+        "height": 224,
+        "rightExclusive": 234,
+        "bottomExclusive": 240
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-c-spindle-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/chair-c-spindle.png",
+      "thumbnailNormalization": "Crop surrounding transparent rig space from the unchanged back image, then proportional contain to232x232 and center in256 square; no mask rewriting"
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 710258,
+      "sha256": "18f90727b0865252b0aaacfe16f7115b5be8ea1b32d7e42577174c713ee0a3fb",
+      "alphaBounds": {
+        "x": 226,
+        "y": 271,
+        "width": 812,
+        "height": 881,
+        "rightExclusive": 1038,
+        "bottomExclusive": 1152
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 230,
+        "y": 469,
+        "width": 796,
+        "height": 681,
+        "rightExclusive": 1026,
+        "bottomExclusive": 1150,
+        "rightInclusive": 1025,
+        "bottomInclusive": 1149
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-d-club-back",
+      "choiceId": "chair-d-club",
+      "category": "chair-back",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "file": "chairs/chair-d-club-back.png",
+      "thumbnail": "thumbs/chair-d-club.png",
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "sourceFolder": "chairs-batch-a",
+      "reviewStatus": "artist-reviewed-static; maximum animation still requires actual renderer",
+      "approvedWideVariant": true,
+      "geometryException": "Realroom core bbox242.311,620.751 to783.025,1082.469; width540.714; fixed feet/ground, only2.7px beyond prior left guide accepted by parent. Do not squeeze back into450px nominal width.",
+      "maximumAnimationCheckPending": true
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 6406,
+      "sha256": "bd5769b4559dd4a7d0415155d2479beb3888f28a5a2bdaa08cc17b0ed15158f2",
+      "alphaBounds": null,
+      "alphaRange8Bit": [
+        0,
+        0
+      ],
+      "visualBounds": null,
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-d-club-front",
+      "choiceId": "chair-d-club",
+      "category": "chair-front",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "file": "chairs/chair-d-club-front.png",
+      "thumbnail": "thumbs/chair-d-club.png",
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "sourceFolder": "chairs-batch-a",
+      "reviewStatus": "artist-reviewed-static; maximum animation still requires actual renderer",
+      "intentionalEmpty": true,
+      "emptyReason": "whole-chair-behind-owl",
+      "approvedWideVariant": true,
+      "geometryException": "Realroom core bbox242.311,620.751 to783.025,1082.469; width540.714; fixed feet/ground, only2.7px beyond prior left guide accepted by parent. Do not squeeze back into450px nominal width.",
+      "maximumAnimationCheckPending": true
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 53710,
+      "sha256": "3a2e7772b1451c7c815458d2f4423b63277a8b776b5459270cf9aa8a17a632f2",
+      "alphaBounds": {
+        "x": 15,
+        "y": 29,
+        "width": 226,
+        "height": 195,
+        "rightExclusive": 241,
+        "bottomExclusive": 224
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 15,
+        "y": 31,
+        "width": 226,
+        "height": 193,
+        "rightExclusive": 241,
+        "bottomExclusive": 224
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-d-club-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/chair-d-club.png",
+      "thumbnailNormalization": "Crop surrounding transparent rig space from the unchanged back image, then proportional contain to232x232 and center in256 square; no mask rewriting"
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 517098,
+      "sha256": "f7bcbf72c8a7d2a6da1a5f00895d2cb5f1e11cbdcdca9cb05fbca13aef3558d4",
+      "alphaBounds": {
+        "x": 134,
+        "y": 348,
+        "width": 997,
+        "height": 842,
+        "rightExclusive": 1131,
+        "bottomExclusive": 1190
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 296,
+        "y": 449,
+        "width": 661,
+        "height": 700,
+        "rightExclusive": 957,
+        "bottomExclusive": 1149,
+        "rightInclusive": 956,
+        "bottomInclusive": 1148
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-e-wing-back",
+      "choiceId": "chair-e-wing",
+      "category": "chair-back",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "file": "chairs/chair-e-wing-back.png",
+      "thumbnail": "thumbs/chair-e-wing.png",
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "sourceFolder": "chairs-batch-b",
+      "reviewStatus": "artist-reviewed-static; maximum animation still requires actual renderer",
+      "seatNote": "Nominal seat point lies within actual cream support surface; drawn front-edge line is about20room px lower than nominal point and is not a floating-seat defect."
+    },
+    {
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 6406,
+      "sha256": "34b59ef1a11c526c633ceae8349b993e626aef84ef5bb06a8de09075e0c1e88a",
+      "alphaBounds": null,
+      "alphaRange8Bit": [
+        0,
+        0
+      ],
+      "visualBounds": null,
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-e-wing-front",
+      "choiceId": "chair-e-wing",
+      "category": "chair-front",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "file": "chairs/chair-e-wing-front.png",
+      "thumbnail": "thumbs/chair-e-wing.png",
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "sourceFolder": "chairs-batch-b",
+      "reviewStatus": "artist-reviewed-static; maximum animation still requires actual renderer",
+      "intentionalEmpty": true,
+      "emptyReason": "whole-chair-behind-owl",
+      "seatNote": "Nominal seat point lies within actual cream support surface; drawn front-edge line is about20room px lower than nominal point and is not a floating-seat defect."
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "pngColorType": 6,
+      "bytes": 53284,
+      "sha256": "be5eda2337153000dcb68021ccd4efac23b3b5fb9999e5a87e685fea5336285b",
+      "alphaBounds": {
+        "x": 21,
+        "y": 15,
+        "width": 214,
+        "height": 226,
+        "rightExclusive": 235,
+        "bottomExclusive": 241
+      },
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "visualBounds": {
+        "x": 21,
+        "y": 15,
+        "width": 213,
+        "height": 226,
+        "rightExclusive": 234,
+        "bottomExclusive": 241
+      },
+      "visualBoundsThreshold": "alpha>4/255, measurement only",
+      "id": "chair-e-wing-thumb",
+      "category": "thumbnail",
+      "file": "thumbs/chair-e-wing.png",
+      "thumbnailNormalization": "Crop surrounding transparent rig space from the unchanged back image, then proportional contain to232x232 and center in256 square; no mask rewriting"
+    }
+  ],
+  "choices": [
+    {
+      "id": "wall-landscape-mountains",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-mountains.png",
+      "thumbnail": "thumbs/wall-landscape-mountains.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "wallart"
+    },
+    {
+      "id": "wall-landscape-pond",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-pond.png",
+      "thumbnail": "thumbs/wall-landscape-pond.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "wallart"
+    },
+    {
+      "id": "wall-landscape-coast",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-coast.png",
+      "thumbnail": "thumbs/wall-landscape-coast.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "wallart"
+    },
+    {
+      "id": "floor-light-tripod",
+      "collectionCategory": "灯具",
+      "slot": "floorlight",
+      "file": "floorlight/floor-light-tripod.png",
+      "thumbnail": "thumbs/floor-light-tripod.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "floorlight"
+    },
+    {
+      "id": "foreground-plant-trailing",
+      "collectionCategory": "植物",
+      "slot": "foregroundplant",
+      "file": "foregroundplant/foreground-plant-trailing.png",
+      "thumbnail": "thumbs/foreground-plant-trailing.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "foregroundplant"
+    },
+    {
+      "id": "plant-c-olive",
+      "collectionCategory": "植物",
+      "slot": "plant",
+      "file": "plants/plant-c-olive.png",
+      "thumbnail": "thumbs/plant-c-olive.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        905,
+        1082
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "plant",
+      "sourceSlotAsDelivered": "plants"
+    },
+    {
+      "id": "side-table-tall",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-table-tall.png",
+      "thumbnail": "thumbs/side-table-tall.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        160,
+        102,
+        192,
+        44
+      ],
+      "tabletopAnchor": [
+        256,
+        124
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "logicalSlot": "sidefurniture"
+    },
+    {
+      "id": "side-cabinet-drawer",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-cabinet-drawer.png",
+      "thumbnail": "thumbs/side-cabinet-drawer.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        160,
+        88,
+        192,
+        24
+      ],
+      "tabletopAnchor": [
+        256,
+        100
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "logicalSlot": "sidefurniture"
+    },
+    {
+      "id": "side-cart-two-tier",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-cart-two-tier.png",
+      "thumbnail": "thumbs/side-cart-two-tier.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        134,
+        175,
+        245,
+        28
+      ],
+      "tabletopAnchor": [
+        256,
+        195
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "logicalSlot": "sidefurniture"
+    },
+    {
+      "id": "tabletop-candle",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-candle.png",
+      "thumbnail": "thumbs/tabletop-candle.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "tabletop"
+    },
+    {
+      "id": "tabletop-hourglass",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-hourglass.png",
+      "thumbnail": "thumbs/tabletop-hourglass.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "tabletop"
+    },
+    {
+      "id": "tabletop-pear-dish",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-pear-dish.png",
+      "thumbnail": "thumbs/tabletop-pear-dish.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "tabletop"
+    },
+    {
+      "id": "chair-c-spindle",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "files": {
+        "back": "chairs/chair-c-spindle-back.png",
+        "front": "chairs/chair-c-spindle-front.png"
+      },
+      "thumbnail": "thumbs/chair-c-spindle.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "nominalSeat": [
+        629,
+        874
+      ],
+      "feet": [
+        [
+          342,
+          1148
+        ],
+        [
+          912,
+          1148
+        ]
+      ],
+      "intentionalEmptyFront": true,
+      "logicalSlot": "chair"
+    },
+    {
+      "id": "chair-d-club",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "files": {
+        "back": "chairs/chair-d-club-back.png",
+        "front": "chairs/chair-d-club-front.png"
+      },
+      "thumbnail": "thumbs/chair-d-club.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "nominalSeat": [
+        629,
+        874
+      ],
+      "feet": [
+        [
+          342,
+          1148
+        ],
+        [
+          912,
+          1148
+        ]
+      ],
+      "intentionalEmptyFront": true,
+      "logicalSlot": "chair"
+    },
+    {
+      "id": "chair-e-wing",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "files": {
+        "back": "chairs/chair-e-wing-back.png",
+        "front": "chairs/chair-e-wing-front.png"
+      },
+      "thumbnail": "thumbs/chair-e-wing.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "nominalSeat": [
+        629,
+        874
+      ],
+      "feet": [
+        [
+          342,
+          1148
+        ],
+        [
+          912,
+          1148
+        ]
+      ],
+      "intentionalEmptyFront": true,
+      "logicalSlot": "chair"
+    }
+  ],
+  "originalOwlChanged": false,
+  "backgroundChanged": false,
+  "frontLayerPolicy": "All new chair fronts are real 1254x1254 RGBA8 fully transparent resources declared intentionalEmpty. Complete chair behind original owl.",
+  "sourcePolicy": "New bitmap artwork generated by built-in imagegen from the approved project style. Standard proportional ImageMagick registration, no hand alpha repaint or threshold cleanup. Raw and prompts retained.",
+  "license": "AI-generated project artwork under applicable OpenAI service terms. No museum photos, private original style reference images or third-party stock redistributed.",
+  "reviewNote": "New chair thumbnails are normalized to comparable object coverage; all18 main PNGs and all scene anchors remain unchanged."
+}

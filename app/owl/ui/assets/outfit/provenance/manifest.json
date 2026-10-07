@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "name": "Owl P0 equipment",
+  "created": "2026-10-04",
+  "finalAssets": [
+    {
+      "path": "assets/glasses-front.png",
+      "dimensions": [
+        800,
+        520
+      ],
+      "role": "head-local transparent overlay",
+      "pose": "front",
+      "eyeCenters": [
+        [
+          308,
+          270
+        ],
+        [
+          507.5,
+          269.5
+        ]
+      ]
+    },
+    {
+      "path": "assets/glasses-up.png",
+      "dimensions": [
+        800,
+        520
+      ],
+      "role": "head-local transparent overlay",
+      "pose": "up",
+      "eyeCenters": [
+        [
+          308,
+          248
+        ],
+        [
+          507.5,
+          247.5
+        ]
+      ]
+    },
+    {
+      "path": "assets/glasses-left30.png",
+      "dimensions": [
+        800,
+        520
+      ],
+      "role": "head-local transparent overlay",
+      "pose": "left30",
+      "eyeCenters": [
+        [
+          240.64395000000002,
+          250.3
+        ],
+        [
+          431.30679999999995,
+          279.78
+        ]
+      ]
+    },
+    {
+      "path": "assets/glasses-left60.png",
+      "dimensions": [
+        800,
+        520
+      ],
+      "role": "head-local transparent overlay",
+      "pose": "left60",
+      "eyeCenters": [
+        [
+          167.02895,
+          257.67
+        ],
+        [
+          272.2984,
+          267.72
+        ]
+      ]
+    },
+    {
+      "path": "assets/glasses-right30.png",
+      "dimensions": [
+        800,
+        520
+      ],
+      "role": "head-local transparent overlay",
+      "pose": "right30",
+      "eyeCenters": [
+        [
+          411.43075,
+          277.77
+        ],
+        [
+          585.16215,
+          241.59
+        ]
+      ]
+    },
+    {
+      "path": "assets/glasses-right60.png",
+      "dimensions": [
+        800,
+        520
+      ],
+      "role": "head-local transparent overlay",
+      "pose": "right60",
+      "eyeCenters": [
+        [
+          549.0908,
+          253.65
+        ],
+        [
+          649.2072000000001,
+          244.27
+        ]
+      ]
+    },
+    {
+      "path": "assets/reading-chair-back.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "world-space layer behind body"
+    },
+    {
+      "path": "assets/reading-chair-front.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "role": "world-space layer after body before owl legs"
+    }
+  ],
+  "files": {
+    "assets/glasses-front.png": {
+      "bytes": 60208,
+      "sha256": "8dfcb29cbd88278516ec6b9be4fd74d98ace6a59420ebc1b94ad7666cf8f1ad6"
+    },
+    "assets/glasses-left30.png": {
+      "bytes": 93731,
+      "sha256": "41154459d4f333b3bfa2cc750e5db8e13b9d78aa04217dd23fcf9b34c0a5a158"
+    },
+    "assets/glasses-left60.png": {
+      "bytes": 44809,
+      "sha256": "2f418ad8aeaaccac7af4b32dbf8b22ccfcca089296d7efaf1acbc6cbb2be36e6"
+    },
+    "assets/glasses-right30.png": {
+      "bytes": 82330,
+      "sha256": "1e99750f8a7775ab38faa67eb9d2a015d810ad55c5c1b29b513ad32f63ca5b4e"
+    },
+    "assets/glasses-right60.png": {
+      "bytes": 50777,
+      "sha256": "20fcc919dace1942f3f1bac7c0639b23309b7189403542c2f81a6a169374b8f5"
+    },
+    "assets/glasses-up.png": {
+      "bytes": 63393,
+      "sha256": "ae4220672d9d57c5273628cce51c20c0de07de8012f46e6bb8a284a1520256c7"
+    },
+    "assets/reading-chair-back.png": {
+      "bytes": 594159,
+      "sha256": "67e4d35be233234116e4e158cc6a325902c99730b5062d0067c339df8f46fbec"
+    },
+    "assets/reading-chair-front.png": {
+      "bytes": 209117,
+      "sha256": "14148faa28d84e6c8c639446347aa2470035806b31562b391139097da1d8396f"
+    }
+  }
+}

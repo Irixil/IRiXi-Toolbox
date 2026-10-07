@@ -1,0 +1,54 @@
+{
+  "schema": "owl-focus-default-layout/v3",
+  "basis": "User17:31 feedback supersedes parent layout-v2 defaults; engineer chosen reasonable defaults, no repeated confirmation",
+  "world": [
+    1024,
+    1536
+  ],
+  "wall": {
+    "anchor": [
+      365,
+      396
+    ],
+    "displaySize": [
+      270,
+      337.5
+    ],
+    "reason": "raise painting while preserving full visible bounds; slight proportional reduction avoids clipping pearl frame"
+  },
+  "floor-light": {
+    "anchor": [
+      150,
+      1256
+    ],
+    "displaySize": [
+      160,
+      160
+    ],
+    "reason": "smaller and lower; stays in visible room"
+  },
+  "side-table": {
+    "anchor": [
+      765,
+      1252
+    ],
+    "displaySize": [
+      250,
+      250
+    ],
+    "reason": "closer to chair; existing lowtable retained"
+  },
+  "tabletop": {
+    "anchor": [
+      765,
+      1120.1640625
+    ],
+    "displaySize": [
+      100,
+      100
+    ]
+  },
+  "optionalHighTable": "pending artist delivery; no fake geometry or redrawing",
+  "preserve": "all saved custom positions and sizes;new defaults only missing keys/reset;no auto-equip",
+  "art": "all PNG frozen"
+}

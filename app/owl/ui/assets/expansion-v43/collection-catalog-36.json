@@ -1,0 +1,662 @@
+{
+  "schema": "owl-focus-choice-catalog/v1",
+  "choiceCount": 36,
+  "counts": {
+    "挂画": 5,
+    "灯具": 5,
+    "植物": 5,
+    "椅子": 5,
+    "地毯": 6,
+    "侧边家具": 5,
+    "桌面摆件": 5
+  },
+  "basePackages": {
+    "core": {
+      "libraryFileId": "project-source-record",
+      "version": 4
+    },
+    "extension": {
+      "libraryFileId": "project-source-record",
+      "version": 1
+    }
+  },
+  "collectionGroupingIsNotSlotMutualExclusion": "Lamp group spans2 high-floor choices,2 low-floor choices and1 pendant; plant group spans3 large-room and2 foreground choices. Keep existing renderer slots, do not equip all choices or collapse them into a single incompatible canvas.",
+  "choices": [
+    {
+      "id": "chair-a",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "sourcePackage": "core",
+      "files": {
+        "back": "chairs/chair-a-back.png",
+        "front": "chairs/chair-a-front.png"
+      },
+      "thumbnail": "thumbs/chair-a.png",
+      "logicalSlot": "chair",
+      "displayName": "淡紫木扶手椅"
+    },
+    {
+      "id": "chair-b",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "sourcePackage": "core",
+      "files": {
+        "back": "chairs/chair-b-back.png",
+        "front": "chairs/chair-b-front.png"
+      },
+      "thumbnail": "thumbs/chair-b.png",
+      "logicalSlot": "chair",
+      "displayName": "灰绿木扶手椅"
+    },
+    {
+      "id": "lamp-cream-drum",
+      "collectionCategory": "灯具",
+      "slot": "lamp",
+      "sourcePackage": "core",
+      "file": "lamps/lamp-cream-drum.png",
+      "thumbnail": "thumbs/lamp-cream-drum.png",
+      "logicalSlot": "lamp",
+      "displayName": "奶油高落地灯"
+    },
+    {
+      "id": "lamp-sage-arc",
+      "collectionCategory": "灯具",
+      "slot": "lamp",
+      "sourcePackage": "core",
+      "file": "lamps/lamp-sage-arc.png",
+      "thumbnail": "thumbs/lamp-sage-arc.png",
+      "logicalSlot": "lamp",
+      "displayName": "灰绿弯杆灯"
+    },
+    {
+      "id": "plant-a-fiddle-fig",
+      "collectionCategory": "植物",
+      "slot": "plant",
+      "sourcePackage": "core",
+      "file": "plants/plant-a-fiddle-fig.png",
+      "thumbnail": "thumbs/plant-a-fiddle-fig.png",
+      "logicalSlot": "plant",
+      "displayName": "浅叶盆栽"
+    },
+    {
+      "id": "plant-b-round-leaf",
+      "collectionCategory": "植物",
+      "slot": "plant",
+      "sourcePackage": "core",
+      "file": "plants/plant-b-round-leaf.png",
+      "thumbnail": "thumbs/plant-b-round-leaf.png",
+      "logicalSlot": "plant",
+      "displayName": "圆叶盆栽"
+    },
+    {
+      "id": "rug-diamond",
+      "collectionCategory": "地毯",
+      "slot": "rug",
+      "sourcePackage": "core",
+      "file": "rugs/rug-diamond.png",
+      "thumbnail": "thumbs/rug-diamond.png",
+      "logicalSlot": "rug",
+      "displayName": "轻菱格毯"
+    },
+    {
+      "id": "rug-sage-oval",
+      "collectionCategory": "地毯",
+      "slot": "rug",
+      "sourcePackage": "core",
+      "file": "rugs/rug-sage-oval.png",
+      "thumbnail": "thumbs/rug-sage-oval.png",
+      "logicalSlot": "rug",
+      "displayName": "柔双圈毯"
+    },
+    {
+      "id": "wall-owl-mona",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "sourcePackage": "extension",
+      "file": "wallart/wall-owl-mona.png",
+      "thumbnail": "thumbs/wall-owl-mona.png",
+      "logicalSlot": "wallart",
+      "displayName": "猫头鹰·蒙娜丽莎"
+    },
+    {
+      "id": "wall-owl-pearl",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "sourcePackage": "extension",
+      "file": "wallart/wall-owl-pearl.png",
+      "thumbnail": "thumbs/wall-owl-pearl.png",
+      "logicalSlot": "wallart",
+      "displayName": "猫头鹰·珍珠耳环"
+    },
+    {
+      "id": "floor-light-small",
+      "collectionCategory": "灯具",
+      "slot": "floorlight",
+      "sourcePackage": "extension",
+      "file": "floorlight/floor-light-small.png",
+      "thumbnail": "thumbs/floor-light-small.png",
+      "logicalSlot": "floorlight",
+      "displayName": "小纸地灯"
+    },
+    {
+      "id": "foreground-plant-small",
+      "collectionCategory": "植物",
+      "slot": "foregroundplant",
+      "sourcePackage": "extension",
+      "file": "foregroundplant/foreground-plant-small.png",
+      "thumbnail": "thumbs/foreground-plant-small.png",
+      "logicalSlot": "foregroundplant",
+      "displayName": "前景圆叶盆栽"
+    },
+    {
+      "id": "side-table",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "sourcePackage": "extension",
+      "file": "sidefurniture/side-table.png",
+      "thumbnail": "thumbs/side-table.png",
+      "tableSurface": [
+        120,
+        185,
+        272,
+        50
+      ],
+      "tabletopAnchor": [
+        256,
+        210
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "logicalSlot": "sidefurniture",
+      "displayName": "低圆边桌"
+    },
+    {
+      "id": "low-bookcase",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "sourcePackage": "extension",
+      "file": "sidefurniture/low-bookcase.png",
+      "thumbnail": "thumbs/low-bookcase.png",
+      "logicalSlot": "sidefurniture",
+      "displayName": "矮书柜"
+    },
+    {
+      "id": "tabletop-teapot",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "sourcePackage": "extension",
+      "file": "tabletop/tabletop-teapot.png",
+      "thumbnail": "thumbs/tabletop-teapot.png",
+      "logicalSlot": "tabletop",
+      "displayName": "奶油茶壶"
+    },
+    {
+      "id": "tabletop-books",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "sourcePackage": "extension",
+      "file": "tabletop/tabletop-books.png",
+      "thumbnail": "thumbs/tabletop-books.png",
+      "logicalSlot": "tabletop",
+      "displayName": "三本书"
+    },
+    {
+      "id": "pendant-small",
+      "collectionCategory": "灯具",
+      "slot": "pendant",
+      "sourcePackage": "extension",
+      "file": "pendant/pendant-small.png",
+      "thumbnail": "thumbs/pendant-small.png",
+      "logicalSlot": "pendant",
+      "displayName": "小纸吊灯"
+    },
+    {
+      "id": "rug-cloud",
+      "collectionCategory": "地毯",
+      "slot": "rugs",
+      "sourcePackage": "extension",
+      "file": "rugs/rug-cloud.png",
+      "thumbnail": "thumbs/rug-cloud.png",
+      "sourceSlotAsDelivered": "rugs",
+      "logicalSlot": "rug",
+      "displayName": "云边毯"
+    },
+    {
+      "id": "rug-check",
+      "collectionCategory": "地毯",
+      "slot": "rugs",
+      "sourcePackage": "extension",
+      "file": "rugs/rug-check.png",
+      "thumbnail": "thumbs/rug-check.png",
+      "sourceSlotAsDelivered": "rugs",
+      "logicalSlot": "rug",
+      "displayName": "疏格毯"
+    },
+    {
+      "id": "rug-petal",
+      "collectionCategory": "地毯",
+      "slot": "rugs",
+      "sourcePackage": "extension",
+      "file": "rugs/rug-petal.png",
+      "thumbnail": "thumbs/rug-petal.png",
+      "sourceSlotAsDelivered": "rugs",
+      "logicalSlot": "rug",
+      "displayName": "花瓣毯"
+    },
+    {
+      "id": "rug-stripe",
+      "collectionCategory": "地毯",
+      "slot": "rugs",
+      "sourcePackage": "extension",
+      "file": "rugs/rug-stripe.png",
+      "thumbnail": "thumbs/rug-stripe.png",
+      "sourceSlotAsDelivered": "rugs",
+      "logicalSlot": "rug",
+      "displayName": "轻条纹毯"
+    },
+    {
+      "id": "wall-landscape-mountains",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-mountains.png",
+      "thumbnail": "thumbs/wall-landscape-mountains.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "wallart",
+      "displayName": "远山小径"
+    },
+    {
+      "id": "wall-landscape-pond",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-pond.png",
+      "thumbnail": "thumbs/wall-landscape-pond.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "wallart",
+      "displayName": "树影池水"
+    },
+    {
+      "id": "wall-landscape-coast",
+      "collectionCategory": "挂画",
+      "slot": "wallart",
+      "file": "wallart/wall-landscape-coast.png",
+      "thumbnail": "thumbs/wall-landscape-coast.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        640
+      ],
+      "anchor": [
+        256,
+        320
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "wallart",
+      "displayName": "海边小帆"
+    },
+    {
+      "id": "floor-light-tripod",
+      "collectionCategory": "灯具",
+      "slot": "floorlight",
+      "file": "floorlight/floor-light-tripod.png",
+      "thumbnail": "thumbs/floor-light-tripod.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "floorlight",
+      "displayName": "三脚布罩灯"
+    },
+    {
+      "id": "foreground-plant-trailing",
+      "collectionCategory": "植物",
+      "slot": "foregroundplant",
+      "file": "foregroundplant/foreground-plant-trailing.png",
+      "thumbnail": "thumbs/foreground-plant-trailing.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "foregroundplant",
+      "displayName": "垂叶小盆栽"
+    },
+    {
+      "id": "plant-c-olive",
+      "collectionCategory": "植物",
+      "slot": "plant",
+      "file": "plants/plant-c-olive.png",
+      "thumbnail": "thumbs/plant-c-olive.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "anchor": [
+        905,
+        1082
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "plant",
+      "displayName": "细叶树",
+      "sourceSlotAsDelivered": "plants"
+    },
+    {
+      "id": "side-table-tall",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-table-tall.png",
+      "thumbnail": "thumbs/side-table-tall.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        160,
+        102,
+        192,
+        44
+      ],
+      "tabletopAnchor": [
+        256,
+        124
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "logicalSlot": "sidefurniture",
+      "displayName": "高边几"
+    },
+    {
+      "id": "side-cabinet-drawer",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-cabinet-drawer.png",
+      "thumbnail": "thumbs/side-cabinet-drawer.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        160,
+        88,
+        192,
+        24
+      ],
+      "tabletopAnchor": [
+        256,
+        100
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "logicalSlot": "sidefurniture",
+      "displayName": "单抽屉边柜"
+    },
+    {
+      "id": "side-cart-two-tier",
+      "collectionCategory": "侧边家具",
+      "slot": "sidefurniture",
+      "file": "sidefurniture/side-cart-two-tier.png",
+      "thumbnail": "thumbs/side-cart-two-tier.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        134,
+        175,
+        245,
+        28
+      ],
+      "tabletopAnchor": [
+        256,
+        195
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "logicalSlot": "sidefurniture",
+      "displayName": "双层小推架"
+    },
+    {
+      "id": "tabletop-candle",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-candle.png",
+      "thumbnail": "thumbs/tabletop-candle.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "tabletop",
+      "displayName": "陶座蜡烛"
+    },
+    {
+      "id": "tabletop-hourglass",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-hourglass.png",
+      "thumbnail": "thumbs/tabletop-hourglass.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "tabletop",
+      "displayName": "木架沙漏"
+    },
+    {
+      "id": "tabletop-pear-dish",
+      "collectionCategory": "桌面摆件",
+      "slot": "tabletop",
+      "file": "tabletop/tabletop-pear-dish.png",
+      "thumbnail": "thumbs/tabletop-pear-dish.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": null,
+      "tabletopAnchor": null,
+      "capabilities": [],
+      "logicalSlot": "tabletop",
+      "displayName": "梨碟"
+    },
+    {
+      "id": "chair-c-spindle",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "files": {
+        "back": "chairs/chair-c-spindle-back.png",
+        "front": "chairs/chair-c-spindle-front.png"
+      },
+      "thumbnail": "thumbs/chair-c-spindle.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "nominalSeat": [
+        629,
+        874
+      ],
+      "feet": [
+        [
+          342,
+          1148
+        ],
+        [
+          912,
+          1148
+        ]
+      ],
+      "intentionalEmptyFront": true,
+      "logicalSlot": "chair",
+      "displayName": "木条靠背椅"
+    },
+    {
+      "id": "chair-d-club",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "files": {
+        "back": "chairs/chair-d-club-back.png",
+        "front": "chairs/chair-d-club-front.png"
+      },
+      "thumbnail": "thumbs/chair-d-club.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "nominalSeat": [
+        629,
+        874
+      ],
+      "feet": [
+        [
+          342,
+          1148
+        ],
+        [
+          912,
+          1148
+        ]
+      ],
+      "intentionalEmptyFront": true,
+      "logicalSlot": "chair",
+      "displayName": "软包圆扶手椅"
+    },
+    {
+      "id": "chair-e-wing",
+      "collectionCategory": "椅子",
+      "slot": "chair",
+      "files": {
+        "back": "chairs/chair-e-wing-back.png",
+        "front": "chairs/chair-e-wing-front.png"
+      },
+      "thumbnail": "thumbs/chair-e-wing.png",
+      "sourcePackage": "increment",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "coordinateSpace": "chairRig",
+      "roomTransform": {
+        "scale": 0.681,
+        "offset": [
+          85,
+          300
+        ]
+      },
+      "nominalSeat": [
+        629,
+        874
+      ],
+      "feet": [
+        [
+          342,
+          1148
+        ],
+        [
+          912,
+          1148
+        ]
+      ],
+      "intentionalEmptyFront": true,
+      "logicalSlot": "chair",
+      "displayName": "翼背阅读椅"
+    }
+  ]
+}

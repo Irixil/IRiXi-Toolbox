@@ -1,0 +1,108 @@
+{
+  "newAssetIds": [
+    "floor-light-handheld",
+    "corner-vine",
+    "flower-string-lights",
+    "corner-curtain"
+  ],
+  "slots": {
+    "portable-light": {
+      "assetId": "floor-light-handheld",
+      "file": "portable-light/floor-light-handheld.png",
+      "anchor": [
+        256,
+        480
+      ],
+      "mirrorX": false,
+      "default": null
+    },
+    "corner-vine-left": {
+      "assetId": "corner-vine",
+      "file": "corner-vine-left/corner-vine.png",
+      "anchor": [
+        32,
+        32
+      ],
+      "mirrorX": false,
+      "default": null
+    },
+    "corner-vine-right": {
+      "assetId": "corner-vine",
+      "file": "corner-vine-left/corner-vine.png",
+      "anchor": [
+        480,
+        32
+      ],
+      "mirrorX": true,
+      "default": null
+    },
+    "string-lights": {
+      "assetId": "flower-string-lights",
+      "file": "string-lights/flower-string-lights.png",
+      "anchor": [
+        512,
+        48
+      ],
+      "mirrorX": false,
+      "default": null
+    },
+    "corner-curtain-left": {
+      "assetId": "corner-curtain",
+      "file": "corner-curtain-left/corner-curtain.png",
+      "anchor": [
+        32,
+        32
+      ],
+      "mirrorX": false,
+      "default": null
+    },
+    "corner-curtain-right": {
+      "assetId": "corner-curtain",
+      "file": "corner-curtain-left/corner-curtain.png",
+      "anchor": [
+        480,
+        32
+      ],
+      "mirrorX": true,
+      "default": null
+    }
+  },
+  "sameLeftPngForBothCorners": true,
+  "leftRightSaveIndependently": true,
+  "portableLightIndependentOfFloorlight": true,
+  "allNewSlotsCanCoexist": true,
+  "noMoveAreaOverride": true,
+  "doNotResetUserTransforms": true,
+  "suggestedLayerOrder": [
+    "background",
+    "corner vines/curtains and flower string",
+    "wallart/pendant",
+    "rug",
+    "existing lamps/plants",
+    "chair-back",
+    "original owl",
+    "chair-front",
+    "small floor/portable lights and foreground plants"
+  ],
+  "layerOrderNote": "Keep upper decoration behind room subjects; existing z-order may be retained where its equivalent groups already exist.",
+  "recommendedScaleReference": {
+    "floor-light-handheld": [
+      170,
+      170
+    ],
+    "corner-vine": [
+      140,
+      210
+    ],
+    "flower-string-lights": [
+      560,
+      210
+    ],
+    "corner-curtain": [
+      240,
+      360
+    ]
+  },
+  "referenceScaleNotUserDefaults": true,
+  "reviewLimit": "Static art composites are not actual app screenshots and do not verify interactive drag/scale/save."
+}

@@ -1,0 +1,652 @@
+{
+  "schema": "owl-focus-layer-decoration-increment/v1",
+  "revision": "2026-10-07-v1",
+  "status": "artwork, final coordinate registration and static visual QA complete; app integration pending",
+  "assetCount": 4,
+  "mainPngCount": 4,
+  "thumbnailPngCount": 4,
+  "totalPngCount": 8,
+  "world": [
+    1024,
+    1536
+  ],
+  "visibleRoom": [
+    0,
+    260,
+    1024,
+    1000
+  ],
+  "newSlotCount": 6,
+  "approvedStyle": {
+    "libraryFileId": "project-source-record",
+    "version": 3
+  },
+  "assets": [
+    {
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 115960,
+      "sha256": "a2bce139e9059c662dac1c48ffbe2d47dec92e590379e0a8a6d6af8675619569",
+      "alphaBounds": {
+        "x": 148,
+        "y": 73,
+        "width": 216,
+        "height": 409,
+        "rightExclusive": 364,
+        "bottomExclusive": 482
+      },
+      "visualBounds": {
+        "x": 151,
+        "y": 75,
+        "width": 211,
+        "height": 406,
+        "rightExclusive": 362,
+        "bottomExclusive": 481
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "id": "floor-light-handheld",
+      "runtimeId": "floor-light-handheld",
+      "displayName": "手提小灯",
+      "file": "portable-light/floor-light-handheld.png",
+      "thumbnail": "thumbs/floor-light-handheld.png",
+      "slot": "portable-light",
+      "supportedSlots": [
+        "portable-light"
+      ],
+      "canvas": [
+        512,
+        512
+      ],
+      "anchor": [
+        256,
+        480
+      ],
+      "sourceAnchor": [
+        256,
+        480
+      ],
+      "coordinateSpace": "asset",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "positionPolicy": "preserve existing selections and saved user transforms; new slots start empty; positions can be adjusted by user",
+      "visualBoundsPolicy": "alpha>4/255 measurement only",
+      "style": "approved pale gouache / gentle irregular children drawing",
+      "runtimeInteractionStatus": "requires engineering integration verification",
+      "finalFormatting": "ImageMagick -depth8 PNG32 if source registration was16bit; no threshold or repaint",
+      "registeredSourceFile": "lantern-vine-batch/assets/floorlight/floor-light-handheld.png",
+      "collisionBounds": {
+        "x": 151,
+        "y": 235,
+        "width": 211,
+        "height": 246,
+        "rightExclusive": 362,
+        "bottomExclusive": 481
+      },
+      "collisionBoundsScope": "lower physical lantern body/base, excluding carry-handle opening",
+      "canCoexistWithExistingFloorlight": true,
+      "previewRenderSize": [
+        170,
+        170
+      ],
+      "previewRenderSizePolicy": "visual review example only; useful initial size reference, not a saved layout override"
+    },
+    {
+      "width": 512,
+      "height": 768,
+      "mode": "RGBA",
+      "bytes": 113146,
+      "sha256": "8d6029b60becd9f2e9d8a2ada92bfae1391fafc03b7fc9e2a34655e13337076c",
+      "alphaBounds": {
+        "x": 3,
+        "y": 29,
+        "width": 308,
+        "height": 562,
+        "rightExclusive": 311,
+        "bottomExclusive": 591
+      },
+      "visualBounds": {
+        "x": 7,
+        "y": 30,
+        "width": 304,
+        "height": 561,
+        "rightExclusive": 311,
+        "bottomExclusive": 591
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ],
+      "id": "corner-vine",
+      "runtimeId": "corner-vine",
+      "displayName": "上角垂藤",
+      "file": "corner-vine-left/corner-vine.png",
+      "thumbnail": "thumbs/corner-vine.png",
+      "slot": "corner-vine-left",
+      "supportedSlots": [
+        "corner-vine-left",
+        "corner-vine-right"
+      ],
+      "canvas": [
+        512,
+        768
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "sourceAnchor": [
+        32,
+        32
+      ],
+      "coordinateSpace": "asset",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "positionPolicy": "preserve existing selections and saved user transforms; new slots start empty; positions can be adjusted by user",
+      "visualBoundsPolicy": "alpha>4/255 measurement only",
+      "style": "approved pale gouache / gentle irregular children drawing",
+      "runtimeInteractionStatus": "requires engineering integration verification",
+      "finalFormatting": "ImageMagick -depth8 PNG32 if source registration was16bit; no threshold or repaint",
+      "registeredSourceFile": "lantern-vine-batch/assets/cornervine/corner-vine.png",
+      "instanceOverrides": {
+        "corner-vine-left": {
+          "mirrorX": false,
+          "effectiveSourceAnchor": [
+            32,
+            32
+          ]
+        },
+        "corner-vine-right": {
+          "mirrorX": true,
+          "effectiveSourceAnchor": [
+            480,
+            32
+          ]
+        }
+      },
+      "mirrorPolicy": "Use same delivered left artwork in both slots; continuous canvas x becomes512-x. Save left/right transforms independently.",
+      "collisionBounds": {
+        "x": 7,
+        "y": 30,
+        "width": 304,
+        "height": 561,
+        "rightExclusive": 311,
+        "bottomExclusive": 591
+      },
+      "collisionBoundsScope": "conservative visual selection extent for upper decoration; not a ground obstacle",
+      "previewRenderSize": [
+        140,
+        210
+      ],
+      "previewRenderSizePolicy": "visual review example only; useful initial size reference, not a saved layout override"
+    },
+    {
+      "width": 1024,
+      "height": 384,
+      "mode": "RGBA",
+      "bytes": 98751,
+      "sha256": "3379f695b4748d54ce7b3d0fcc349fd5530a1dd0af8c990d30f4eaa6ebb88cbb",
+      "alphaBounds": {
+        "x": 28,
+        "y": 44,
+        "width": 968,
+        "height": 215,
+        "rightExclusive": 996,
+        "bottomExclusive": 259
+      },
+      "visualBounds": {
+        "x": 28,
+        "y": 45,
+        "width": 967,
+        "height": 213,
+        "rightExclusive": 995,
+        "bottomExclusive": 258
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        254
+      ],
+      "id": "flower-string-lights",
+      "runtimeId": "flower-string-lights",
+      "displayName": "柔和花形串灯",
+      "file": "string-lights/flower-string-lights.png",
+      "thumbnail": "thumbs/flower-string-lights.png",
+      "slot": "string-lights",
+      "supportedSlots": [
+        "string-lights"
+      ],
+      "canvas": [
+        1024,
+        384
+      ],
+      "anchor": [
+        512,
+        48
+      ],
+      "sourceAnchor": [
+        512,
+        48
+      ],
+      "coordinateSpace": "asset",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "positionPolicy": "preserve existing selections and saved user transforms; new slots start empty; positions can be adjusted by user",
+      "visualBoundsPolicy": "alpha>4/255 measurement only",
+      "style": "approved pale gouache / gentle irregular children drawing",
+      "runtimeInteractionStatus": "requires engineering integration verification",
+      "finalFormatting": "ImageMagick -depth8 PNG32 if source registration was16bit; no threshold or repaint",
+      "registeredSourceFile": "string-curtain-batch/flower-string-lights.png",
+      "attachmentPoints": {
+        "left": [
+          32,
+          48
+        ],
+        "right": [
+          992,
+          48
+        ]
+      },
+      "collisionBounds": {
+        "x": 28,
+        "y": 45,
+        "width": 967,
+        "height": 213,
+        "rightExclusive": 995,
+        "bottomExclusive": 258
+      },
+      "collisionBoundsScope": "conservative visual selection extent for upper decoration; not a ground obstacle",
+      "previewRenderSize": [
+        560,
+        210
+      ],
+      "previewRenderSizePolicy": "visual review example only; useful initial size reference, not a saved layout override"
+    },
+    {
+      "width": 512,
+      "height": 768,
+      "mode": "RGBA",
+      "bytes": 95661,
+      "sha256": "c3f3f33cb16d24c9082cf7426cf1abf1fa5a77d3d4879934f2148468bee37e88",
+      "alphaBounds": {
+        "x": 1,
+        "y": 13,
+        "width": 328,
+        "height": 535,
+        "rightExclusive": 329,
+        "bottomExclusive": 548
+      },
+      "visualBounds": {
+        "x": 10,
+        "y": 25,
+        "width": 316,
+        "height": 523,
+        "rightExclusive": 326,
+        "bottomExclusive": 548
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        254
+      ],
+      "id": "corner-curtain",
+      "runtimeId": "corner-curtain",
+      "displayName": "上角轻帘",
+      "file": "corner-curtain-left/corner-curtain.png",
+      "thumbnail": "thumbs/corner-curtain.png",
+      "slot": "corner-curtain-left",
+      "supportedSlots": [
+        "corner-curtain-left",
+        "corner-curtain-right"
+      ],
+      "canvas": [
+        512,
+        768
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "sourceAnchor": [
+        32,
+        32
+      ],
+      "coordinateSpace": "asset",
+      "defaultSelected": false,
+      "recommendedRenderScale": 1,
+      "positionPolicy": "preserve existing selections and saved user transforms; new slots start empty; positions can be adjusted by user",
+      "visualBoundsPolicy": "alpha>4/255 measurement only",
+      "style": "approved pale gouache / gentle irregular children drawing",
+      "runtimeInteractionStatus": "requires engineering integration verification",
+      "finalFormatting": "ImageMagick -depth8 PNG32 if source registration was16bit; no threshold or repaint",
+      "registeredSourceFile": "string-curtain-batch/corner-curtain.png",
+      "instanceOverrides": {
+        "corner-curtain-left": {
+          "mirrorX": false,
+          "effectiveSourceAnchor": [
+            32,
+            32
+          ]
+        },
+        "corner-curtain-right": {
+          "mirrorX": true,
+          "effectiveSourceAnchor": [
+            480,
+            32
+          ]
+        }
+      },
+      "mirrorPolicy": "Use same delivered left artwork in both slots; continuous canvas x becomes512-x. Save left/right transforms independently.",
+      "collisionBounds": {
+        "x": 10,
+        "y": 25,
+        "width": 316,
+        "height": 523,
+        "rightExclusive": 326,
+        "bottomExclusive": 548
+      },
+      "collisionBoundsScope": "conservative visual selection extent for upper decoration; not a ground obstacle",
+      "previewRenderSize": [
+        240,
+        360
+      ],
+      "previewRenderSizePolicy": "visual review example only; useful initial size reference, not a saved layout override"
+    }
+  ],
+  "files": [
+    {
+      "file": "portable-light/floor-light-handheld.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 115960,
+      "sha256": "a2bce139e9059c662dac1c48ffbe2d47dec92e590379e0a8a6d6af8675619569",
+      "alphaBounds": {
+        "x": 148,
+        "y": 73,
+        "width": 216,
+        "height": 409,
+        "rightExclusive": 364,
+        "bottomExclusive": 482
+      },
+      "visualBounds": {
+        "x": 151,
+        "y": 75,
+        "width": 211,
+        "height": 406,
+        "rightExclusive": 362,
+        "bottomExclusive": 481
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/floor-light-handheld.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 35100,
+      "sha256": "5bebbb8c4b45a4bbeeef4883f15165ac4ae610d6fb56f2a9839cf0e5b17ded71",
+      "alphaBounds": {
+        "x": 75,
+        "y": 37,
+        "width": 107,
+        "height": 204,
+        "rightExclusive": 182,
+        "bottomExclusive": 241
+      },
+      "visualBounds": {
+        "x": 75,
+        "y": 37,
+        "width": 106,
+        "height": 204,
+        "rightExclusive": 181,
+        "bottomExclusive": 241
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "corner-vine-left/corner-vine.png",
+      "width": 512,
+      "height": 768,
+      "mode": "RGBA",
+      "bytes": 113146,
+      "sha256": "8d6029b60becd9f2e9d8a2ada92bfae1391fafc03b7fc9e2a34655e13337076c",
+      "alphaBounds": {
+        "x": 3,
+        "y": 29,
+        "width": 308,
+        "height": 562,
+        "rightExclusive": 311,
+        "bottomExclusive": 591
+      },
+      "visualBounds": {
+        "x": 7,
+        "y": 30,
+        "width": 304,
+        "height": 561,
+        "rightExclusive": 311,
+        "bottomExclusive": 591
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "thumbs/corner-vine.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 18395,
+      "sha256": "04463a3864fa8f9a0c1c8d2a47267a24981aad4d543a01dfb62e098f2469c54c",
+      "alphaBounds": {
+        "x": 44,
+        "y": 10,
+        "width": 103,
+        "height": 187,
+        "rightExclusive": 147,
+        "bottomExclusive": 197
+      },
+      "visualBounds": {
+        "x": 44,
+        "y": 10,
+        "width": 102,
+        "height": 187,
+        "rightExclusive": 146,
+        "bottomExclusive": 197
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "string-lights/flower-string-lights.png",
+      "width": 1024,
+      "height": 384,
+      "mode": "RGBA",
+      "bytes": 98751,
+      "sha256": "3379f695b4748d54ce7b3d0fcc349fd5530a1dd0af8c990d30f4eaa6ebb88cbb",
+      "alphaBounds": {
+        "x": 28,
+        "y": 44,
+        "width": 968,
+        "height": 215,
+        "rightExclusive": 996,
+        "bottomExclusive": 259
+      },
+      "visualBounds": {
+        "x": 28,
+        "y": 45,
+        "width": 967,
+        "height": 213,
+        "rightExclusive": 995,
+        "bottomExclusive": 258
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        254
+      ]
+    },
+    {
+      "file": "thumbs/flower-string-lights.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 15840,
+      "sha256": "b249e7e4e7b2a93a8be2fbd5e1440eb1d66d389b2cabf3975089f23c8ee46f18",
+      "alphaBounds": {
+        "x": 5,
+        "y": 89,
+        "width": 246,
+        "height": 58,
+        "rightExclusive": 251,
+        "bottomExclusive": 147
+      },
+      "visualBounds": {
+        "x": 7,
+        "y": 91,
+        "width": 242,
+        "height": 54,
+        "rightExclusive": 249,
+        "bottomExclusive": 145
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "corner-curtain-left/corner-curtain.png",
+      "width": 512,
+      "height": 768,
+      "mode": "RGBA",
+      "bytes": 95661,
+      "sha256": "c3f3f33cb16d24c9082cf7426cf1abf1fa5a77d3d4879934f2148468bee37e88",
+      "alphaBounds": {
+        "x": 1,
+        "y": 13,
+        "width": 328,
+        "height": 535,
+        "rightExclusive": 329,
+        "bottomExclusive": 548
+      },
+      "visualBounds": {
+        "x": 10,
+        "y": 25,
+        "width": 316,
+        "height": 523,
+        "rightExclusive": 326,
+        "bottomExclusive": 548
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        254
+      ]
+    },
+    {
+      "file": "thumbs/corner-curtain.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 18014,
+      "sha256": "5bd923423afcfb532d57020818c22bef593a15b89b232913b609eec56a972f60",
+      "alphaBounds": {
+        "x": 44,
+        "y": 4,
+        "width": 110,
+        "height": 180,
+        "rightExclusive": 154,
+        "bottomExclusive": 184
+      },
+      "visualBounds": {
+        "x": 46,
+        "y": 8,
+        "width": 106,
+        "height": 174,
+        "rightExclusive": 152,
+        "bottomExclusive": 182
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha never rewritten",
+      "alphaRange8Bit": [
+        0,
+        255
+      ]
+    }
+  ],
+  "reusedExistingAssets": [
+    {
+      "id": "floor-light-small",
+      "role": "rounded-paper-floor-light",
+      "file": "floorlight/floor-light-small.png",
+      "sha256": "91c47f4ec04f00a7e039960ab6e0797218c6eff7af4c7882db55fafa97eca124",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/floor-light-small.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset"
+    },
+    {
+      "id": "foreground-plant-small",
+      "role": "small-upright-pot",
+      "file": "foregroundplant/foreground-plant-small.png",
+      "sha256": "7b154c3d9cc71629f4adf5eb8da5b65629ac316a5c26aaeecbe37d40cbfea600",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/foreground-plant-small.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset"
+    },
+    {
+      "id": "foreground-plant-trailing",
+      "role": "small-trailing-pot",
+      "file": "foregroundplant/foreground-plant-trailing.png",
+      "sha256": "81649dfeb2b351fa390b9cac4fef25ee6e2e6d4a63e55f4b70bf64ae9c86739f",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/foreground-plant-trailing.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset"
+    },
+    {
+      "id": "pendant-small",
+      "role": "small-pendant",
+      "file": "pendant/pendant-small.png",
+      "sha256": "033c421ccbf395bfa8e7e2d758217d6ec8146c9447039fe6705b3d9bd7e8f2b8",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/pendant-small.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset",
+      "requiredAuxiliaryFiles": [
+        {
+          "file": "pendant/pendant-line-patch.png",
+          "sha256": "58962908a607fe3ee5e845d7d5708b629a978968e94d749a356f2261e5286147"
+        }
+      ]
+    }
+  ],
+  "backgroundIncluded": false,
+  "originalOwlChanged": false,
+  "existingPngsReplaced": 0,
+  "alphaPolicy": "Native model alpha retained through standard ImageMagick proportional/similarity registration and PNG8 formatting. Thresholds only measure bounds, never mask image pixels.",
+  "license": "New AI-generated project illustrations using built-in image generation; applicable service terms apply. Private style references and original owl are not redistributed in this increment."
+}

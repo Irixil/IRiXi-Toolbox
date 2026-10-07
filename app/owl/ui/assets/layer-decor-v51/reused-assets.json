@@ -1,0 +1,56 @@
+{
+  "assets": [
+    {
+      "id": "floor-light-small",
+      "role": "rounded-paper-floor-light",
+      "file": "floorlight/floor-light-small.png",
+      "sha256": "91c47f4ec04f00a7e039960ab6e0797218c6eff7af4c7882db55fafa97eca124",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/floor-light-small.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset"
+    },
+    {
+      "id": "foreground-plant-small",
+      "role": "small-upright-pot",
+      "file": "foregroundplant/foreground-plant-small.png",
+      "sha256": "7b154c3d9cc71629f4adf5eb8da5b65629ac316a5c26aaeecbe37d40cbfea600",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/foreground-plant-small.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset"
+    },
+    {
+      "id": "foreground-plant-trailing",
+      "role": "small-trailing-pot",
+      "file": "foregroundplant/foreground-plant-trailing.png",
+      "sha256": "81649dfeb2b351fa390b9cac4fef25ee6e2e6d4a63e55f4b70bf64ae9c86739f",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/foreground-plant-trailing.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset"
+    },
+    {
+      "id": "pendant-small",
+      "role": "small-pendant",
+      "file": "pendant/pendant-small.png",
+      "sha256": "033c421ccbf395bfa8e7e2d758217d6ec8146c9447039fe6705b3d9bd7e8f2b8",
+      "sourcePackageLibraryId": "project-source-record",
+      "sourcePackageVersion": 1,
+      "regenerated": false,
+      "thumbnail": "thumbs/pendant-small.png",
+      "action": "reuse byte-identical existing resource, no new generation and no saved transform reset",
+      "requiredAuxiliaryFiles": [
+        {
+          "file": "pendant/pendant-line-patch.png",
+          "sha256": "58962908a607fe3ee5e845d7d5708b629a978968e94d749a356f2261e5286147"
+        }
+      ]
+    }
+  ],
+  "oldSmallTripodRetained": "floor-light-tripod",
+  "doNotRegenerate": true
+}

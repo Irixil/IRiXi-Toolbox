@@ -1,0 +1,111 @@
+{
+  "schema": "owl-focus-asset-increment/v1",
+  "status": "One additional tall-table choice; add only, preserve low table and all frozen bundles",
+  "newChoiceCount": 1,
+  "runtimePngCount": 2,
+  "assets": [
+    {
+      "id": "side-table-tall",
+      "slot": "sidefurniture",
+      "collectionCategory": "sidefurniture",
+      "file": "sidefurniture/side-table-tall.png",
+      "thumbnail": "thumbs/side-table-tall.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        160,
+        102,
+        192,
+        44
+      ],
+      "tabletopAnchor": [
+        256,
+        124
+      ],
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "supportsTabletop": true,
+      "exclusiveWithinSlot": true,
+      "defaultSelected": false,
+      "initialPlacement": "Inherit sidefurniture slot current anchor; do not overwrite a user-custom placement",
+      "recommendedRenderSize": [
+        250,
+        250
+      ],
+      "previewOnly": {
+        "roomAnchor": [
+          810,
+          1140
+        ],
+        "tabletopWorldAnchor": [
+          810,
+          966.171875
+        ],
+        "omittedLegacyPlant": "Small-scope chair/table scale check only, not a proposed default room layout"
+      },
+      "alphaBounds": {
+        "x": 100,
+        "y": 72,
+        "width": 313,
+        "height": 409,
+        "rightExclusive": 413,
+        "bottomExclusive": 481
+      },
+      "visualBounds": {
+        "x": 100,
+        "y": 73,
+        "width": 313,
+        "height": 407,
+        "rightExclusive": 413,
+        "bottomExclusive": 480
+      },
+      "visualBoundsThreshold": "alpha>4/255 measurement only; alpha not changed",
+      "sha256": "00bcdbaf077d2dbfb1df33d3a07f8286fe68f4c68cb9996e55c240abb7521305",
+      "thumbnailSha256": "4b33b426d802252a640182983031a4c0b6f62064d89a9a8d50a595e61183ea6d",
+      "generation": {
+        "tool": "built-in image_gen",
+        "calls": 1,
+        "sourceFile": "side-table-tall/raw.png",
+        "prompt": "side-table-tall/prompt.txt",
+        "originalDesign": "New tall four-leg rounded-square table; existing low table was a style reference, never vertically stretched"
+      },
+      "registration": {
+        "tool": "ImageMagick",
+        "requestedUniformScale": 0.3835,
+        "effectiveRasterScale": 0.3835725677830941,
+        "translate": [
+          16,
+          33
+        ],
+        "sourcePhysicalContactApprox": [
+          627,
+          1165
+        ],
+        "registeredPhysicalContactApprox": [
+          256.5,
+          479.8620414673046
+        ],
+        "nativeAlpha": "Preserved through ordinary resize and placement; no threshold cleanup; raw preserved"
+      },
+      "attachmentCompatibility": "Tabletop children must resolve current sidefurniture asset by tabletopSurface capability and use its own tabletopAnchor. Do not reuse low-table sourceY210 or hard-code parentId=side-table.",
+      "review": "Cream/gray actual alpha and250px room-scale reviewed; tabletop rectangle and source point independently checked inside the actual empty surface. Original owl/chair unchanged.",
+      "frozenBundlesModified": false
+    }
+  ],
+  "files": [
+    "sidefurniture/side-table-tall.png",
+    "thumbs/side-table-tall.png"
+  ],
+  "integrationNotes": [
+    "Append to sidefurniture same-slot choices, not a new independent slot",
+    "Resolve attached tabletop objects from current parent capabilities and own surface point",
+    "No default-position approval requested; existing customized positions remain untouched"
+  ]
+}

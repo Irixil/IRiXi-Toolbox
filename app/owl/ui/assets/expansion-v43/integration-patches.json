@@ -1,0 +1,97 @@
+{
+  "tabletopParentRule": {
+    "parentSlot": "sidefurniture",
+    "requiredCapability": "tabletopSurface",
+    "resolve": "selected parent with tableSurface andtabletopAnchor; never hard-code old side-table id/sourceY210",
+    "parentAnchorFormula": "room(parent)+[source(tabletopAnchor)-source(parent.anchor)]*actualParentScale",
+    "persistUserOffsetRelativeToSurface": true,
+    "hideButPreserveWhenParentIncapable": true
+  },
+  "existingDescriptorOverlays": [
+    {
+      "id": "side-table",
+      "capabilities": [
+        "tabletopSurface"
+      ],
+      "supportsTabletop": true
+    },
+    {
+      "id": "low-bookcase",
+      "supportsTabletop": false
+    },
+    {
+      "id": "tabletop-teapot",
+      "parentSlot": "sidefurniture",
+      "requiresParentCapability": "tabletopSurface",
+      "parentIdDeprecated": true
+    },
+    {
+      "id": "tabletop-books",
+      "parentSlot": "sidefurniture",
+      "requiresParentCapability": "tabletopSurface",
+      "parentIdDeprecated": true
+    }
+  ],
+  "newParentSurfaces": {
+    "side-table-tall": {
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        160,
+        102,
+        192,
+        44
+      ],
+      "tabletopAnchor": [
+        256,
+        124
+      ]
+    },
+    "side-cabinet-drawer": {
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        160,
+        88,
+        192,
+        24
+      ],
+      "tabletopAnchor": [
+        256,
+        100
+      ]
+    },
+    "side-cart-two-tier": {
+      "anchor": [
+        256,
+        480
+      ],
+      "tableSurface": [
+        134,
+        175,
+        245,
+        28
+      ],
+      "tabletopAnchor": [
+        256,
+        195
+      ]
+    }
+  },
+  "sameSlotExclusive": "Use slot-level one-of selection, not the old pairwise list that only names lowtable/bookcase",
+  "normalization": "Use logicalSlot rug for the existing rugs folder family and logicalSlot plant for all large room-space plants, including plant-c-olive. Foreground plants keep their separate foregroundplant slot.",
+  "preserveUserState": true,
+  "chairWideVariantAccepted": "D has real room width540.714; useactualvisual/collisionbounds, do not compress to old 450 px width. Both feet remain rig342/912,1148.",
+  "stillNeedsActualEngineTests": [
+    "all 36 choices load",
+    "five chairs maximum animation/cup/feet",
+    "switch low/high/drawer/cart while each of 5 tabletop objects is selected",
+    "parent drag/scale follow and persisted child local offset",
+    "switch to bookcase hides tableprops and switching back restores",
+    "current user-custom transform and unlock state retained"
+  ]
+}

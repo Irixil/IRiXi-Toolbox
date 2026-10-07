@@ -60,6 +60,7 @@
       "tool-platform.js",
       "native-module-manager.js",
       "preload.js",
+      "owl/**/*",
       "renderer/**/*",
       "bundled-tools/**/*",
       "LICENSE",

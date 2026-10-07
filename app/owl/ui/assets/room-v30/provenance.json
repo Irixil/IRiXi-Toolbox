@@ -1,0 +1,472 @@
+{
+  "schema": "owl-focus-room-provenance/v30",
+  "sourceLibrary": "project-source-record",
+  "sourceFileId": "project-source-record",
+  "generation": "Built-in image_gen; generated original alpha preserved. Art worker format/placement only. Local copies are byte-identical.",
+  "license": {
+    "type": "Generated project artwork",
+    "terms": "Generated with OpenAI image generation for the user project; applicable service terms govern output use.",
+    "references": "Private user-supplied style references and existing project character/rig assets were inspected. No reference originals are redistributed in these packages.",
+    "thirdPartyStockBundled": false
+  },
+  "runtimeMapping": [
+    {
+      "id": "lamp-linen",
+      "name": "布罩落地灯",
+      "scene": {
+        "src": "assets/room-v30/lamp-linen.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            130,
+            1082
+          ]
+        ],
+        "layer": "lamp",
+        "collisionBounds": [
+          32,
+          413,
+          184,
+          670
+        ],
+        "visualBounds": [
+          32,
+          413,
+          184,
+          670
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/lamp-linen-thumb.png"
+      }
+    },
+    {
+      "id": "lamp-brass",
+      "name": "弧形落地灯",
+      "scene": {
+        "src": "assets/room-v30/lamp-brass.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            130,
+            1082
+          ]
+        ],
+        "layer": "lamp",
+        "collisionBounds": [
+          32,
+          463,
+          184,
+          620
+        ],
+        "visualBounds": [
+          32,
+          462,
+          184,
+          621
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/lamp-brass-thumb.png"
+      }
+    },
+    {
+      "id": "rug-cream",
+      "name": "菱纹地毯",
+      "scene": {
+        "src": "assets/room-v30/rug-cream.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "layer": "rug",
+        "groundLayer": true,
+        "collisionBounds": [
+          117,
+          1003,
+          790,
+          193
+        ],
+        "visualBounds": [
+          117,
+          1003,
+          790,
+          193
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/rug-cream-thumb.png"
+      }
+    },
+    {
+      "id": "rug-pattern",
+      "name": "椭圆地毯",
+      "scene": {
+        "src": "assets/room-v30/rug-pattern.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            512,
+            1082
+          ]
+        ],
+        "layer": "rug",
+        "groundLayer": true,
+        "collisionBounds": [
+          128,
+          1002,
+          768,
+          238
+        ],
+        "visualBounds": [
+          128,
+          1002,
+          768,
+          238
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/rug-pattern-thumb.png"
+      }
+    },
+    {
+      "id": "chair-lilac",
+      "name": "紫色扶手椅",
+      "scene": {
+        "back": "assets/room-v30/chair-lilac-back.png",
+        "front": "assets/room-v30/chair-lilac-front.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "contacts": [
+          [
+            317.5615,
+            1082.469
+          ],
+          [
+            706.1996875000001,
+            1082.469
+          ]
+        ],
+        "seat": [
+          512,
+          895
+        ],
+        "layer": "chair",
+        "collisionBounds": [
+          287.938,
+          618.027,
+          448.098,
+          465.80400000000003
+        ],
+        "visualBounds": [
+          287.938,
+          618.027,
+          448.098,
+          465.80400000000003
+        ],
+        "observedSeat": [
+          513.349,
+          902.004
+        ],
+        "registrationResidual": "Original-role composite reviewed locally; front feet measured +0.469 world px from ground1082, seat seam +6..7px retained without changing role."
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/chair-lilac-thumb.png"
+      }
+    },
+    {
+      "id": "chair-sage",
+      "name": "绿色扶手椅",
+      "scene": {
+        "back": "assets/room-v30/chair-sage-back.png",
+        "front": "assets/room-v30/chair-sage-front.png",
+        "size": [
+          1254,
+          1254
+        ],
+        "contacts": [
+          [
+            318.09315789473686,
+            1082.469
+          ],
+          [
+            705.9260714285715,
+            1082.469
+          ]
+        ],
+        "seat": [
+          512,
+          895
+        ],
+        "layer": "chair",
+        "collisionBounds": [
+          288.619,
+          612.579,
+          447.41700000000003,
+          472.61400000000003
+        ],
+        "visualBounds": [
+          288.619,
+          612.579,
+          447.41700000000003,
+          472.61400000000003
+        ],
+        "observedSeat": [
+          513.349,
+          901.3230000000001
+        ],
+        "registrationResidual": "Original-role composite reviewed locally; front feet measured +0.469 world px from ground1082, seat seam +6..7px retained without changing role."
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/chair-sage-thumb.png"
+      }
+    },
+    {
+      "id": "plant-leaf",
+      "name": "阔叶盆栽",
+      "scene": {
+        "src": "assets/room-v30/plant-leaf.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            914,
+            1082
+          ]
+        ],
+        "layer": "plant",
+        "collisionBounds": [
+          832,
+          929,
+          148,
+          154
+        ],
+        "visualBounds": [
+          677,
+          450,
+          343,
+          633
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/plant-leaf-thumb.png"
+      }
+    },
+    {
+      "id": "plant-flower",
+      "name": "圆叶盆栽",
+      "scene": {
+        "src": "assets/room-v30/plant-flower.png",
+        "size": [
+          1024,
+          1536
+        ],
+        "contacts": [
+          [
+            914,
+            1082
+          ]
+        ],
+        "layer": "plant",
+        "collisionBounds": [
+          827,
+          921,
+          171,
+          162
+        ],
+        "visualBounds": [
+          671,
+          418,
+          330,
+          667
+        ]
+      },
+      "thumbnail": {
+        "src": "assets/room-v30/plant-flower-thumb.png"
+      }
+    }
+  ],
+  "sourceHashes": [
+    {
+      "file": "backgrounds/cream-paper.png",
+      "sha256": "dfa6fdc1e2bbf4e1c588b486687ba573b04517fadb379fd874a4465b2f9b4dfd",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB"
+    },
+    {
+      "file": "lamps/lamp-cream-drum.png",
+      "sha256": "ece068f266c6c05ade972e97d42250b47b42ca6f25e89c9e71768d4bf86b750d",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "file": "lamps/lamp-sage-arc.png",
+      "sha256": "028919957e4d43295c310463ace7093f957366ca0522419ad4d1b22ba2d4c0b2",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "file": "rugs/rug-diamond.png",
+      "sha256": "57cfc4019efe0336a8f9c63ac1387c6e7394f4ef3ac2b085720ed988c1dd7275",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "file": "rugs/rug-sage-oval.png",
+      "sha256": "515bb94bf8927e17413eb0ddf47542904b8a8c2ed3456b0b896e5bf12fdfa669",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "file": "chairs/chair-a-back.png",
+      "sha256": "b89c50898f428397847d51cb4f2981e66537067ab61c75c8b33d0d00fa1568a0",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA"
+    },
+    {
+      "file": "chairs/chair-a-front.png",
+      "sha256": "dfcdb32bd1ca63119416fe769f08b167195b315d56bed4bc9fc94072be3cc191",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA"
+    },
+    {
+      "file": "chairs/chair-b-back.png",
+      "sha256": "65a0e2d5bbdb7d1ad01ee03871ea5ecd88031856bf59925e7873287e3b99ada4",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA"
+    },
+    {
+      "file": "chairs/chair-b-front.png",
+      "sha256": "0b3f55af5770ee9eae326b7adad77db61016c225430929a4217aa913b617f3b5",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA"
+    },
+    {
+      "file": "plants/plant-a-fiddle-fig.png",
+      "sha256": "5441005e9bc278c23faaac8802a22ec4dce6f14c3ca0fa7915bfe7a3eea9d543",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "file": "plants/plant-b-round-leaf.png",
+      "sha256": "b32bd6305afd72ae42bb2e1a833927ecc3fc8ab4b1f5b6d51c82321b56740163",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/chair-a.png",
+      "sha256": "c7ba7629bd0cdada421e4db740825e5d42ff11820a7cb7e2430f2df5e66dcdc8",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/chair-b.png",
+      "sha256": "fb8f630d358007a00e786d8f32a5d069fbafc7b29b9a6286b03b0fae6b0b542d",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/lamp-cream-drum.png",
+      "sha256": "7e5e88eab905c12bbf594b4488c535a02788d9ba900955734a0a17d112ddfb6f",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/lamp-sage-arc.png",
+      "sha256": "7943f3a16f3ecbe0f11fdb34d388c62e96ceae31218365be96e096caac592a8a",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/plant-a-fiddle-fig.png",
+      "sha256": "42fa7bde031177d2c6fea477b32204670d614681e61fd67d1844b7e1d56ecfa5",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/plant-b-round-leaf.png",
+      "sha256": "b4ddabb589deb8c479e6d918bace3cecdb44a600e10727b05dba90a6590e32c9",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/rug-diamond.png",
+      "sha256": "e5f03e59c7d87bdabccb180e619a98d07cc3ea71d9a0fd1518ad583efb1b0c54",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "file": "thumbs/rug-sage-oval.png",
+      "sha256": "e3432306873a8d6d553263c8aa07b620ba82bf23fc9a99b66a1aae824b76b456",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    }
+  ],
+  "knownLimits": [
+    "Original owl artwork is intentionally not regenerated or included here; the runtime must reuse the existing 900x1000 owl renderer/layers.",
+    "Chair seat seam centers are y883–884 rather than target874; foreground feet y1149–1150 instead of1148. These small visible registration residuals are recorded in chairs/registration.json and need original-owl integration acceptance.",
+    "Sparse alpha=1/255 specks remain in generated chair/plant images; visual/collision bounds use declared measurement thresholds, not alpha cleaning.",
+    "Lamp B top y462 is lower than approximate390 to preserve its native aspect ratio and keep the fixed horizontal slot.",
+    "Plant foliage may extend behind the chair; collisionBounds concern only pot solids."
+  ],
+  "portraitReferenceComparison": "Pinned front-chair-v5 actually viewed locally; reference uses cream paper without fixed window or curtain.",
+  "roomDisplayCorrection": {
+    "source": "Parent cloud actual16 review: oversized owl corrected at seat anchor without changing role rig/art or furniture",
+    "scale": 0.64,
+    "offset": [
+      224,
+      458.2
+    ],
+    "drawSize": [
+      576,
+      640
+    ],
+    "seatSource": [
+      450,
+      745
+    ],
+    "seatWorld": [
+      512,
+      935
+    ],
+    "status": "Offscreen native-input/16combinations passed; new v1 sent for cloud visual review, not yet accepted"
+  }
+}

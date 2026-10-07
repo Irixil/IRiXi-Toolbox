@@ -13,6 +13,9 @@ const {
   safeStorage,
   dialog,
   desktopCapturer,
+  powerMonitor,
+  session,
+  WebContentsView,
   ClipboardItem,
 } = require('electron');
 const WebSocket = require('ws');
@@ -73,8 +76,12 @@ const {
 
 // 第一版沿用旧数据目录，保证原有待办、笔记、录音和设置都留在原处。
 // 这只是内部兼容路径；对用户显示的产品名已经统一为 IRiXi的小工具库。
-const CLOCKOUT_USER_DATA_PATH = path.join(app.getPath('appData'), '准点下班');
-app.setName('IRiXi的小工具库');
+const OWL_ISOLATED = process.argv.includes('--owl-isolated');
+const CLOCKOUT_USER_DATA_PATH = OWL_ISOLATED ? path.resolve(__dirname, '../../toolbox-copy-data') : path.join(app.getPath('appData'), '准点下班');
+let owlHost;
+const {createOwlHost}=require('./owl/owl-host.cjs');
+app.setName(OWL_ISOLATED ? 'IRiXi Toolbox Owl Isolated' : 'IRiXi的小工具库');
+if(OWL_ISOLATED)fs.mkdirSync(CLOCKOUT_USER_DATA_PATH,{recursive:true});
 app.setPath('userData', CLOCKOUT_USER_DATA_PATH);
 
 // ============ 托盘图标 PNG 生成 ============
@@ -336,7 +343,9 @@ const gotTheLock = app.requestSingleInstanceLock();
 if (!gotTheLock) {
   app.quit();
 } else {
-  app.on('second-instance', () => {
+  app.on('second-instance', (_event, args) => {
+    if(args.includes('--owl-open-standalone')&&owlHost){owlHost.openStandalone();return;}
+    if(args.includes('--owl-open-toolbox')&&owlHost){openRendererPanel('owl:show-card');return;}
     if (mainWindow) {
       hideWhenCollapsed = false;
       repositionWindow(getTargetDisplay());
@@ -426,6 +435,7 @@ function cancelCollapseWatchdog() {
 }
 
 function applyMode(mode, display) {
+  if(mode==='collapsed')owlHost?.hideEmbedded();else owlHost?.allowEmbedded();
   if (!mainWindow || mainWindow.isDestroyed()) return;
   cancelCollapseWatchdog();
   mainWindow.setBounds(getBoundsForMode(mode, display));
@@ -471,6 +481,7 @@ function recordPanelEvent(event, details = {}) {
 }
 
 function requestRendererCollapse(reason = 'requested') {
+  owlHost?.hideEmbedded();
   if (!mainWindow || currentMode !== 'expanded') return;
   recordPanelEvent('collapse-request', { reason });
   beginNativeCollapse();
@@ -933,6 +944,7 @@ function sendTaskNotificationResponse(response, statusCode, body) {
 }
 
 function startTaskNotificationServer() {
+  if(OWL_ISOLATED)return;
   if (notificationServer) return;
   const server = http.createServer((request, response) => {
     let requestUrl;
@@ -1084,6 +1096,8 @@ function createWindow() {
   });
 
   installLocalWebContentsGuards(mainWindow.webContents);
+  owlHost?.register(mainWindow);
+  owlHost?.attach(mainWindow);
   mainWindow.webContents.on('render-process-gone', (_event, details) => {
     recordPanelEvent('renderer-exited', { reason: details.reason, exitCode: details.exitCode });
   });
@@ -1350,6 +1364,7 @@ function saveAppSettings(settings) {
 }
 
 function workspaceRoot() {
+  if(OWL_ISOLATED)return app.getPath('userData');
   const settings = readJsonFile(getJsonSettingsPath(WORKSPACE_SETTINGS_FILE));
   const configured = String(settings.path || '').trim();
   return configured && path.isAbsolute(configured) ? configured : app.getPath('userData');
@@ -1419,6 +1434,7 @@ async function chooseWorkspaceFolder() {
 }
 
 function applyFeatureServices(features) {
+  if(OWL_ISOLATED)return;
   const policy = clipboardServicePolicy(features);
   if (policy.recordHistory) startClipboardPolling();
   else stopClipboardPolling();
@@ -1437,6 +1453,7 @@ function isValidPanelShortcut(shortcut) {
 }
 
 function setPanelShortcut(shortcut) {
+  if(OWL_ISOLATED)return true;
   if (!isValidPanelShortcut(shortcut)) return false;
   const previousShortcut = configuredShortcut || 'Space';
   stopHoverSpaceShortcut();
@@ -1476,6 +1493,7 @@ function registerCaptureShortcut(shortcut) {
 }
 
 function setCaptureShortcut(shortcut) {
+  if(OWL_ISOLATED)return true;
   if (!isValidCaptureShortcut(shortcut)) return false;
   const previousShortcut = configuredCaptureShortcut;
   const result = registerCaptureShortcut(shortcut);
@@ -1490,6 +1508,7 @@ function setCaptureShortcut(shortcut) {
 }
 
 function applyAppSettings() {
+  if(OWL_ISOLATED)return;
   const settings = readAppSettings();
   applyFeatureServices(settings.features);
   if (!setPanelShortcut(settings.shortcut)) {
@@ -1930,6 +1949,7 @@ ipcMain.handle('window:set-tab', (event, tab) => {
 
 // macOS 渲染层 getUserMedia 不会自动弹 TCC 授权，必须由主进程申请摄像头权限
 ipcMain.handle('media:camera', async () => {
+  if(OWL_ISOLATED){console.log('[owl-isolated] original camera route reached; no permission requested');return false;}
   if (process.platform !== 'darwin') return true;
   if (systemPreferences.getMediaAccessStatus('camera') === 'granted') return true;
   mediaPermissionRequests++;
@@ -1955,6 +1975,7 @@ ipcMain.handle('media:camera', async () => {
 });
 
 ipcMain.handle('media:microphone', async () => {
+  if(OWL_ISOLATED)return false;
   if (process.platform !== 'darwin') return true;
   if (systemPreferences.getMediaAccessStatus('microphone') === 'granted') return true;
   mediaPermissionRequests++;
@@ -2668,6 +2689,7 @@ async function scanCurrentWindows() {
 }
 
 ipcMain.handle('windows:list', async () => {
+  if(OWL_ISOLATED)return {items:[],error:'isolated_test'};
   return scanCurrentWindows();
 });
 
@@ -2906,6 +2928,7 @@ function readFrontmostApp() {
 }
 
 async function rememberPasteTarget() {
+  if(OWL_ISOLATED)return null;
   const current = await readFrontmostApp();
   if (current && !['com.irixi.toolbox', 'com.github.Electron', 'com.vibecoding.notch-todo', 'com.dynamicpanel.app', 'ai.clockout.island'].includes(current.bundleId)) {
     previousPasteTarget = current;
@@ -3308,6 +3331,7 @@ async function loadNeteaseMedia(trackId) {
 }
 
 ipcMain.handle('music:status', async () => {
+  if(OWL_ISOLATED)return {installed:false,running:false,playing:false};
   const installed = fs.existsSync(NETEASE_MUSIC_APP);
   const running = installed ? await neteaseMusicRunning() : false;
   const nowPlaying = running ? await readNeteaseNowPlaying() : null;
@@ -3389,6 +3413,7 @@ function getTranscriptionSettingsPath() {
 }
 
 function readStoredTranscriptionSettings() {
+  if(OWL_ISOLATED)return {};
   const currentPath = getTranscriptionSettingsPath();
   const legacyPath = path.join(app.getPath('appData'), 'notch-todo', TRANSCRIPTION_SETTINGS_FILE);
   const readSettings = (settingsPath) => {
@@ -3937,6 +3962,7 @@ async function pollClipboard() {
 }
 
 function startClipboardPolling() {
+  if(OWL_ISOLATED)return;
   // Electron 没有 NSPasteboard.changeCount，只能内容轮询：靠文本本身与
   // 图片 PNG 内容哈希指纹去重（见 pollClipboard）。
   if (clipPollingEnabled) return;
@@ -3998,6 +4024,7 @@ function setHoverSpaceShortcut(enabled) {
 }
 
 function startHoverSpaceShortcut() {
+  if(OWL_ISOLATED)return;
   const policy = hoverSpacePollingPolicy({
     shortcut: configuredShortcut,
     visible: Boolean(mainWindow && !mainWindow.isDestroyed() && mainWindow.isVisible()),
@@ -4030,6 +4057,7 @@ function stopHoverSpaceShortcut() {
 }
 
 function syncHoverSpacePolling() {
+  if(OWL_ISOLATED)return;
   const policy = hoverSpacePollingPolicy({
     shortcut: configuredShortcut,
     visible: Boolean(mainWindow && !mainWindow.isDestroyed() && mainWindow.isVisible()),
@@ -4220,14 +4248,16 @@ app.whenReady().then(() => {
     app.dock.hide();
   }
 
+  if(OWL_ISOLATED){session.defaultSession.setPermissionRequestHandler((_w,_p,done)=>done(false));session.defaultSession.setPermissionCheckHandler(()=>false);}
+  try{owlHost=createOwlHost({app,BrowserWindow,ipcMain,powerMonitor,WebContentsView,isExpanded:()=>currentMode==='expanded',readForeground:readFrontmostApp,dataDir:path.join(app.getPath('userData'),'owl-focus'),frontendRoot:OWL_ISOLATED?path.resolve(__dirname,'../../../ui'):path.join(__dirname,'owl/ui'),watchFrontend:OWL_ISOLATED,showCard:()=>openRendererPanel('owl:show-card'),showHome:()=>openRendererPanel('owl:show-card')});}catch(error){dialog.showErrorBox('专注存档未覆盖',error.message);app.quit();return;}
   createWindow();
-  createTray();
+  if(!OWL_ISOLATED)createTray();
   watchDisplayChanges();
   ensureClipImagesDir();
   ensureRecordingsDir();
   applyAppSettings();
   // 只加载并读取当前状态；这里绝不触发系统录屏授权请求。
-  if (app.isPackaged && process.platform === 'darwin') {
+  if (!OWL_ISOLATED && app.isPackaged && process.platform === 'darwin') {
     const nativeModuleStartup = nativeModule.load();
     if (isExactW19PermissionTestInvocation(process.argv)) {
       runW19ScreenPermissionTest(nativeModuleStartup).catch(() => {});
@@ -4236,6 +4266,22 @@ app.whenReady().then(() => {
   // 旧助手只在尚未迁移的功能被用户主动点击时按需启动。
   // 区域截图已经由进程内模块处理，普通启动不会再产生第二个权限进程。
 
+  if(process.argv.includes('--owl-open-standalone'))owlHost.openStandalone();
+  if(OWL_ISOLATED&&process.argv.includes('--owl-open-toolbox'))mainWindow.once('ready-to-show',()=>{openRendererPanel('owl:show-card');});
+  if(OWL_ISOLATED && process.argv.includes('--owl-copy-check'))require(path.resolve(__dirname,'../../../integration/toolbox/native-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-preview-check'))require(path.resolve(__dirname,'../../../integration/toolbox/embedded-preview.cjs')).run({mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-embedded-check'))require(path.resolve(__dirname,'../../../integration/toolbox/embedded-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-drag-check'))require(path.resolve(__dirname,'../../../integration/toolbox/drag-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-layout-diagnose'))require(path.resolve(__dirname,'../../../integration/toolbox/layout-diagnose.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-focus-diagnose'))require(path.resolve(__dirname,'../../../integration/toolbox/focus-diagnose.cjs')).run({app,mainWindow,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-activity-ui-check'))require(path.resolve(__dirname,'../../../integration/toolbox/activity-ui-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-activity-flow-check'))require(path.resolve(__dirname,'../../../integration/toolbox/activity-flow-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-focus-live-check'))require(path.resolve(__dirname,'../../../integration/toolbox/focus-live-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-final22-check'))require(path.resolve(__dirname,'../../../integration/toolbox/final-native22-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-final22-essential'))require(path.resolve(__dirname,'../../../integration/toolbox/final-native22-essential.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && (process.argv.includes('--owl-final22-flow')||process.argv.includes('--owl-final22-flow-reopen')))require(path.resolve(__dirname,'../../../integration/toolbox/final-native22-flow.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(OWL_ISOLATED && process.argv.includes('--owl-drag22-check'))require(path.resolve(__dirname,'../../../integration/toolbox/drag22-physical-check.cjs')).run({app,mainWindow,owlHost,root:path.resolve(__dirname,'../../..')});
+  if(!OWL_ISOLATED && process.argv.includes('--owl-local23-check'))require('./owl/local-installed23-check.cjs').run({app,mainWindow,owlHost});
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
       createWindow();
@@ -4247,6 +4293,7 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {});
 
 app.on('before-quit', () => {
+  try{owlHost?.dispose();}catch(error){console.error(error.message);}
   isQuitting = true;
   hideWhenCollapsed = false;
 });
