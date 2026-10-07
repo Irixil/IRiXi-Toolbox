@@ -24,3 +24,13 @@ The MIT notice is preserved at `app/THIRD_PARTY_LICENSES/TO-DO-Panel-MIT.txt`.
 ## Removed unverified material
 
 Before this public source release, the unverified Vue Bits Color Bends-derived shader, imported mirror portrait, generated decorative backgrounds, and local product icons were removed. They are not included in this repository. The public source uses dependency-free fallback effects and original neutral placeholders instead.
+
+## Owl module fonts
+
+The integrated Owl Focus module includes ZCOOL KuaiLe and LXGW WenKai. Each font remains under its own SIL Open Font License 1.1, independently of the application source license.
+
+- ZCOOL KuaiLe copyright and license: `app/owl/ui/assets/fonts/ZCOOLKuaiLe-OFL.txt`.
+- LXGW WenKai copyright and license: `app/owl/ui/assets/fonts/OFL.txt`.
+- Module artwork and provenance: `app/owl/docs/assets.md` and the adjacent asset manifests.
+
+The separate Owl Focus repository and its artwork are not granted an additional license by this notice.
