@@ -1,10 +1,11 @@
 import {containedCanvasRect} from './seat-ground.mjs';
+import {canvasRoomPoint} from './room-viewport.mjs';
 export function bindPlacementInput({root,draft,onChange,onMessage}){
  const scene=root.querySelector('.scene'),canvas=root.querySelector('#owl-canvas'),controls=root.querySelector('#placement-controls'),toggle=root.querySelector('#placement-mode'),highlight=root.querySelector('#placement-highlight'),percent=root.querySelector('#placement-percent');
  let mode=false,selected,gesture;
  const rows=()=>draft.equipment?globalThis.owlPlacementRules.bindings(draft.catalog,draft.equipment,draft.positions):[];
  const camera=()=>{const r=containedCanvasRect(canvas),crop=JSON.parse(canvas.dataset.sourceCrop||'{}');return{...r,crop};};
- const world=e=>{const c=camera();return{x:(e.clientX-c.x)/c.scale+c.crop.x,y:(e.clientY-c.y)/c.scale+c.crop.y};};
+ const world=e=>canvasRoomPoint(canvas,e.clientX,e.clientY);
  function clearGesture(){const old=gesture;gesture=null;if(old&&scene.hasPointerCapture?.(old.id))scene.releasePointerCapture(old.id);}
  function repaint(){
   const item=rows().find(r=>r.id===selected),c=camera();highlight.hidden=!mode||!item;
@@ -21,14 +22,14 @@ export function bindPlacementInput({root,draft,onChange,onMessage}){
  function choose(id){selected=id;repaint();}
  function apply(id,next){try{draft.move(id,next);onChange();const warnings=globalThis.owlPlacementRules.arrangementWarnings(draft.catalog,draft.equipment,draft.positions),row=rows().find(r=>r.id===id);onMessage(warnings.length?warnings[0]+'；可以继续摆放或保存。':row?.category==='tabletop'?'摆件随桌子移动，也可调整相对位置。':'拖动虚线框或点箭头调整，放好才保存。');repaint();return true;}catch(e){onMessage(e.message);return false;}}
  const down=e=>{
-  if(!mode||e.button!==0||e.isPrimary===false||e.target.closest('button,input,label'))return;const p=world(e),priority=r=>draft.layerOrder.indexOf(globalThis.owlLayerOrder.groupFor(r.category))+(r.category==='tabletop'?.1:0);
+  if(!mode||e.button!==0||e.isPrimary===false||e.target.closest('button,input,label'))return;const p=world(e);if(!p)return;const priority=r=>draft.layerOrder.indexOf(globalThis.owlLayerOrder.groupFor(r.category))+(r.category==='tabletop'?.1:0);
   const contains=r=>p.x>=r.worldBounds[0]&&p.y>=r.worldBounds[1]&&p.x<=r.worldBounds[0]+r.worldBounds[2]&&p.y<=r.worldBounds[1]+r.worldBounds[3],items=rows();
   // The selected outline is a drag handle, including transparent artwork
   // padding. Overlapping items must not steal a deliberate selection.
   const found=items.find(r=>r.id===selected&&contains(r))||items.sort((a,b)=>priority(b)-priority(a)).find(contains);
   e.stopPropagation();e.preventDefault();if(!found)return;selected=found.id;gesture={id:e.pointerId,item:found.id,start:p,offset:{...found.offset},before:structuredClone(draft.positions)};scene.setPointerCapture?.(e.pointerId);repaint();
  };
- const move=e=>{if(!gesture||gesture.id!==e.pointerId)return;e.preventDefault();e.stopPropagation();const p=world(e);apply(gesture.item,{x:gesture.offset.x+p.x-gesture.start.x,y:gesture.offset.y+p.y-gesture.start.y});};
+ const move=e=>{if(!gesture||gesture.id!==e.pointerId)return;e.preventDefault();e.stopPropagation();const p=world(e);if(p)apply(gesture.item,{x:gesture.offset.x+p.x-gesture.start.x,y:gesture.offset.y+p.y-gesture.start.y});};
  const up=e=>{if(!gesture||gesture.id!==e.pointerId)return;e.preventDefault();e.stopPropagation();clearGesture();};
  const cancel=()=>{if(gesture){draft.positions=gesture.before;clearGesture();onChange();repaint();}};
  const key=e=>{if(!mode||!selected||e.target.closest('input,textarea,select'))return;const delta={ArrowLeft:[-8,0],ArrowRight:[8,0],ArrowUp:[0,-8],ArrowDown:[0,8]}[e.key];if(delta){e.preventDefault();e.stopPropagation();const r=rows().find(r=>r.id===selected);if(r)apply(selected,{x:r.offset.x+delta[0],y:r.offset.y+delta[1]});}else if(e.key==='Escape')cancel();};

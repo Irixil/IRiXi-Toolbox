@@ -7,6 +7,7 @@ import { measureSeatGround, paintSeatGround, containedCanvasRect } from './seat-
 import { loadRoomAssets,composeRoom } from './room-assets.mjs';
 import { ROLE_DISPLAY,roomToSource } from './role-placement.mjs';
 import './room-geometry.js';
+import { canvasRoomPoint } from './room-viewport.mjs';
 
 const loadImage = src => new Promise((resolve,reject)=>{
   const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>reject(new Error('动画素材无法读取'));
@@ -20,11 +21,11 @@ export function createOwlScene({canvas,fallback,notice,onAppearance=()=>{},outfi
   let crop,previewEquipment=null,previewPositions=null,previewLayerOrder=null,roomPack={items:{}},roomSignature,bodyAtlasImage,roomLoading=false;
   function layoutRoomCamera(){
     if(!roomPack.base)return false;
-    const scene=canvas.closest?.('.scene'),reference=(scene||interactionElement||canvas).getBoundingClientRect();if(!reference||reference.width<=0||reference.height<=0)return false;
-    const controls=scene?.querySelector('#placement-controls'),bar=controls&&!controls.hidden?parseFloat(getComputedStyle(scene).gridTemplateRows.split(' ').at(-1))||0:0;
-    if(interactionElement){interactionElement.style.left=`${reference.left}px`;interactionElement.style.width=`${reference.width}px`;}
+    const scene=canvas.closest?.('.scene'),reference=(roomElement||canvas.closest?.('main')||interactionElement||canvas).getBoundingClientRect();if(!reference||reference.width<=0||reference.height<=0)return false;
+    const pane=(scene||roomElement||canvas).getBoundingClientRect();
+    if(interactionElement)Object.assign(interactionElement.style,{left:`${reference.left}px`,top:`${reference.top}px`,width:`${reference.width}px`,height:`${reference.height}px`,bottom:'auto'});
     const box=(interactionElement||canvas).getBoundingClientRect();if(box.width<=0||box.height<=0)return false;
-    const next=globalThis.owlRoomGeometry.roomCamera(box.width,box.height,{x:reference.left-box.left,y:reference.top-box.top,width:reference.width,height:Math.max(1,reference.height-bar)}),ratio=Math.min(window.devicePixelRatio||1,2),width=Math.max(1,Math.round(box.width*ratio)),height=Math.max(1,Math.round(box.height*ratio));
+    const next=globalThis.owlRoomGeometry.roomCamera(box.width,box.height,{x:pane.left-box.left,y:0,width:pane.width,height:box.height}),ratio=Math.min(window.devicePixelRatio||1,2),width=Math.max(1,Math.round(box.width*ratio)),height=Math.max(1,Math.round(box.height*ratio));
     const changed=JSON.stringify(next)!==JSON.stringify(crop)||canvas.width!==width||canvas.height!==height;
     if(changed){crop=next;canvas.width=width;canvas.height=height;canvas.dataset.sourceCrop=JSON.stringify(crop);lastPose=undefined;}
     return changed;
@@ -33,8 +34,7 @@ export function createOwlScene({canvas,fallback,notice,onAppearance=()=>{},outfi
   function kick(){if(disposed||failed||!renderer||!latest)return;cancel();frame(performance.now(),true);}
   function locate(event){
     if(!crop||failed||canvas.hidden||interactionPaused)return;
-    const r=containedCanvasRect(canvas);if(!r.scale)return;
-    const worldPoint={x:(event.clientX-r.x)/r.scale+crop.x,y:(event.clientY-r.y)/r.scale+crop.y};
+    const worldPoint=canvasRoomPoint(canvas,event.clientX,event.clientY);if(!worldPoint)return;
     const pos=previewPositions||(latest.testAccess?.enabled?latest.testAccess.positions:latest.positions)||{},seat=pos[appearance?.equipment.chair]||{x:0,y:0},display=latest.collectionCatalog?.room?.roleDisplay||ROLE_DISPLAY;const effectiveDisplay={...display,offset:[display.offset[0]+seat.x,display.offset[1]+seat.y]};
     const {x,y}=roomPack.base?roomToSource(worldPoint,effectiveDisplay):worldPoint;
     if(x<0||y<0||x>=900||y>=1000)return;
@@ -56,7 +56,7 @@ export function createOwlScene({canvas,fallback,notice,onAppearance=()=>{},outfi
     canvas.dataset.ground=JSON.stringify({...metrics,floorLine:floor});
   }
   const resize=roomElement?new ResizeObserver(groundLayout):null;
-  if(resize){resize.observe(roomElement);resize.observe(canvas);if(interactionElement)resize.observe(interactionElement);}
+  if(resize){resize.observe(roomElement);resize.observe(canvas);if(interactionElement)resize.observe(interactionElement);const scene=canvas.closest('.scene');if(scene)resize.observe(scene);}
   function measureCrop(){
     let left=900,top=1000,right=0,bottom=0;
     const context=source.getContext('2d',{willReadFrequently:true});

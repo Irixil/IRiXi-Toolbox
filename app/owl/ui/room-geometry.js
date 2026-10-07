@@ -56,9 +56,14 @@ function validateRoomCatalog(c){
 // Preserve the old artwork registration while drawing beneath fixed UI.
 function roomCamera(width,height,reference={x:0,y:0,width,height}){
  if(!Number.isFinite(width)||!Number.isFinite(height)||width<=0||height<=0)throw Error('房间视口无效。');
- const crop={x:0,y:260,width:1024,height:1000};if(![reference.x,reference.y,reference.width,reference.height].every(Number.isFinite)||reference.width<=0||reference.height<=0)throw Error('房间注册视口无效。');const scale=Math.min(reference.width/crop.width,reference.height/crop.height);
- return {x:512-(reference.x+reference.width/2)/scale,y:760-(reference.y+reference.height/2)/scale,width:width/scale,height:height/scale,scale,offsetX:0,offsetY:0};
+ if(![reference.x,reference.y,reference.width,reference.height].every(Number.isFinite)||reference.width<=0||reference.height<=0)throw Error('房间注册视口无效。');
+ // Fit the original portrait world to the exposed pane and full window height,
+ // never the changing middle row. Controls do not change this registration.
+ const scale=Math.min(reference.width/WORLD[0],height/WORLD[1]);
+ return {x:WORLD[0]/2-(reference.x+reference.width/2)/scale,y:WORLD[1]/2-height/2/scale,
+  width:width/scale,height:height/scale,scale,offsetX:0,offsetY:0};
 }
 function mapPoint(p,c){return [c.offsetX+(p[0]-c.x)*c.scale,c.offsetY+(p[1]-c.y)*c.scale];}
-if(typeof module!=='undefined')module.exports={WORLD,FLOOR,rect,contains,intersects,renderedGeometry,validateRoomCatalog,roomCamera,mapPoint};
-globalThis.owlRoomGeometry={WORLD,FLOOR,rect,contains,intersects,renderedGeometry,validateRoomCatalog,roomCamera,mapPoint};
+function unmapPoint(p,c){return [c.x+(p[0]-c.offsetX)/c.scale,c.y+(p[1]-c.offsetY)/c.scale];}
+if(typeof module!=='undefined')module.exports={WORLD,FLOOR,rect,contains,intersects,renderedGeometry,validateRoomCatalog,roomCamera,mapPoint,unmapPoint};
+globalThis.owlRoomGeometry={WORLD,FLOOR,rect,contains,intersects,renderedGeometry,validateRoomCatalog,roomCamera,mapPoint,unmapPoint};

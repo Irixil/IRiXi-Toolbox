@@ -13,7 +13,12 @@ export async function loadRoomAssets(catalog){
  return {base,items,missing};
 }
 export function composeRoom(ctx,base,items,equipment,source,{legacyImages={},bodyAtlas,roleDisplay=ROLE_DISPLAY,positions={},catalog,layerOrder=globalThis.owlLayerOrder.DEFAULT_ORDER,camera}={}){
- ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);ctx.save();if(camera){const scale=ctx.canvas.width/camera.width;ctx.scale(scale,scale);ctx.translate(-camera.x,-camera.y);}ctx.drawImage(base,0,0);
+ ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);ctx.save();if(camera){
+  // Each backing axis rounds independently; after CSS display both axes use
+  // the same logical camera scale. The paper shares that exact world origin.
+  ctx.scale(ctx.canvas.width/camera.width,ctx.canvas.height/camera.height);ctx.translate(-camera.x,-camera.y);
+  ctx.fillStyle=ctx.createPattern(base,'repeat');ctx.fillRect(camera.x,camera.y,camera.width,camera.height);
+ }else ctx.drawImage(base,0,0);
  const lookup=id=>catalog?.items.find(i=>i.id===id),offset=(id,key=id)=>lookup(id)?globalThis.owlPlacementRules.resolvedOffset(lookup(id),equipment,positions,catalog):positions[key]||{x:0,y:0},table=offset(equipment['side-furniture']);
  const draw=category=>{if(category==='tabletop'&&!globalThis.owlPlacementRules.tabletopParent(equipment,catalog))return;const id=equipment[category],item=items[id],image=item?.image;if(!image)return;const key=category==='tabletop'?`${equipment['side-furniture']}--${id}`:id,p=offset(id,key),parent=category==='tabletop'?table:{x:0,y:0};const hanging=lookup(id)?.scene?.hanging;
  if(hanging&&item.cord){const [w,h]=hanging.displaySize,x=hanging.topLeft[0]+p.x,top=hanging.ceilingY,bottom=hanging.attachment[1]+p.y;for(let y=top;y<bottom;y+=h){const slice=Math.min(h,bottom-y);ctx.drawImage(item.cord,0,0,item.cord.naturalWidth,item.cord.naturalHeight*slice/h,x,y,w,slice);}}

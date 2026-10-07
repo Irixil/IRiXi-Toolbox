@@ -45,7 +45,7 @@ output{color:#55664D;-webkit-text-stroke:0!important}
 @media(min-width:300px){#collection-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.collection-preview-scene{height:190px}}
 
 .portrait-room .room-window,.portrait-room::before,.portrait-room::after{display:none}
-.portrait-room{background:url('./assets/room-v30/room-base.png') center/cover no-repeat}
+.portrait-room{background:#F6EDE6}
 /* The room remains one live scene while the collection drawer is open. */
 body.widget .timer{padding-right:72px}
 body main.dressing{--drawer-width:min(44%,280px);grid-template-columns:minmax(0,1fr) var(--drawer-width);grid-template-rows:54px minmax(0,1fr);align-content:stretch;padding:3px 0 7px}
@@ -84,9 +84,8 @@ body.widget main.dressing output{font-size:32px}
 .reward-actions button{font-size:12px}
 .dressing #collection-reward{display:none}
 @media(max-width:299px) and (min-height:181px){
- body main.dressing{--drawer-width:100%;grid-template-columns:1fr;grid-template-rows:28px minmax(0,1fr) 126px;padding:0}
+ body main.dressing{--drawer-width:44%;grid-template-columns:minmax(0,1fr) var(--drawer-width);grid-template-rows:28px minmax(0,1fr);padding:0}
  body.widget main.dressing output{font-size:24px}
- #collection-panel{top:auto;height:126px;width:100%;border-left:0;border-top:1px solid var(--line);border-radius:8px 5px 0 0}
 }
 @media(max-width:299px){
  #collection-panel{grid-template-rows:18px 24px minmax(0,1fr) 24px;gap:0;padding:2px 6px}
@@ -176,7 +175,20 @@ output{font-weight:400;white-space:nowrap}
 .placement-percent{flex:2 1 60px;min-width:38px}
 .placement-percent span{flex:0 0 auto}
 
-/* Decorations span the whole module behind its fixed controls in both modes.
-   Keep the role's original scene registration instead of fitting its bounds. */
+/* One portrait-world camera fills the whole module behind fixed controls.
+   Fit the exposed pane; no second background fit or hidden placement cage. */
 .portrait-room #owl-interaction{position:fixed;top:0;bottom:0;left:0;right:auto;width:100%}
 .portrait-room .timer{z-index:3;pointer-events:none}
+
+/* Keep a live room beside the compact shelf, with every placement action
+   reachable. No bottom sheet may cover the entire small room while editing. */
+@media(max-width:299px){
+ .arranging .scene{grid-template-rows:minmax(0,1fr) 60px}
+ .arranging #placement-controls{width:calc(100% - 2px);padding:1px;gap:1px}
+ .arranging #placement-controls button{height:18px;min-height:18px;padding:0;font-size:10px}
+ .placement-directions,.placement-sizing{gap:0}
+ .placement-percent{flex:2 1 24px;min-width:24px;font-size:8px}
+ #placement-percent{height:18px;min-height:18px;font-size:9px;padding:0}
+ .placement-sizing [data-size="reset"]{flex:1.3;font-size:9px}
+ #placement-controls .placement-tools button{font-size:10px}
+}
