@@ -180,7 +180,7 @@ test('todo reminder timers checkpoint far-future deadlines without overflowing N
 test('task notification identifies the repository and concrete finished work', () => {
   assert.deepEqual(taskNotificationIdentity({
     title: '新的任务已经完成',
-    cwd: '/Users/ahai/Documents/灵动岛',
+    cwd: '/Users/test/Documents/灵动岛',
     'last-assistant-message': '已完成 VS Code 工作区名称识别，并修复拖拽残留。\n测试已通过。',
   }, 'codex'), {
     project: '灵动岛',
@@ -194,7 +194,7 @@ test('task notification identifies the repository and concrete finished work', (
     title: '生成课程大纲',
   });
   assert.deepEqual(taskNotificationIdentity({
-    cwd: '/Users/ahai/Documents/灵动岛',
+    cwd: '/Users/test/Documents/灵动岛',
     last_assistant_message: '## 已接好 Claude Code 的 Stop 钩子\n测试全部通过。',
   }, 'claude'), {
     project: '灵动岛',
