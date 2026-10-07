@@ -1017,18 +1017,8 @@ if (collapseBtn) {
   });
 }
 
-// 顶栏空白处点按收起——黑条在展开态已退场，由顶栏接替这一角色。
-// 排除交互区（Tab / 按钮 / 输入 / 搜索框），品牌区与空白处都可收起（明确的收起热区）。
-// 注意：home/todo 下搜索框隐藏会让 .topbar-mid 高度塌成 0，点击其实落在 .topbar 上，
-// 所以必须挂在 .topbar 上并用 closest 排除，不能只认 .topbar-mid 本体。
-const topbarEl = document.querySelector('.topbar');
-if (topbarEl) {
-  topbarEl.addEventListener('click', (e) => {
-    if (e.target.closest('.tabs, button, input')) return;
-    e.stopPropagation();
-    setMode(false);
-  });
-}
+// 导航周围的空白也是工作台内部。近边缘的点击不应突然收起面板；
+// 展开态使用明确的收起按钮，外部失焦及既有快捷键仍按原规则收起。
 
 function initTab() {
   setActiveTab('home');
