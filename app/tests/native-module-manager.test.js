@@ -34,6 +34,17 @@ function fakeNativeApi(overrides = {}) {
   };
 }
 
+test('reading screen geometry does not register translation shortcuts, and normal startup initializes once afterwards', () => {
+  let starts=0;
+  const api=fakeNativeApi({ getDisplayTopGeometry:()=>JSON.stringify([{id:1,safeAreaTop:32}]),initializeTranslation:()=>starts++ });
+  const manager=createNativeModuleManager({inspector:()=>({ok:true,modulePath:'/test/owned.node'}),loader:()=>api});
+  assert.deepEqual(manager.getDisplayTopGeometry(),[{id:1,safeAreaTop:32}]);
+  assert.equal(starts,0);
+  assert(manager.load().ok);
+  assert(manager.load().ok);
+  assert.equal(starts,1);
+});
+
 test('the native module path is fixed inside Contents/Frameworks', () => {
   const result = resolvePackagedPaths({
     platform: 'darwin',

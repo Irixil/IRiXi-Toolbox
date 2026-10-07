@@ -69,6 +69,7 @@ const {
   reduceClipboardObservation,
 } = require('./main-services');
 const { createToolPlatform, ToolPackageError } = require('./tool-platform');
+const { resolveCollapsedStrip } = require('./display-top-geometry');
 const {
   createNativeModuleManager,
   isExactW19PermissionTestInvocation,
@@ -77,7 +78,9 @@ const {
 // 第一版沿用旧数据目录，保证原有待办、笔记、录音和设置都留在原处。
 // 这只是内部兼容路径；对用户显示的产品名已经统一为 IRiXi的小工具库。
 const OWL_ISOLATED = process.argv.includes('--owl-isolated');
-const CLOCKOUT_USER_DATA_PATH = OWL_ISOLATED ? path.resolve(__dirname, '../../toolbox-copy-data') : path.join(app.getPath('appData'), '准点下班');
+const CLOCKOUT_USER_DATA_PATH = OWL_ISOLATED
+  ? (app.commandLine.getSwitchValue('user-data-dir') || path.resolve(__dirname, '../../toolbox-copy-data'))
+  : path.join(app.getPath('appData'), '准点下班');
 let owlHost;
 const {createOwlHost}=require('./owl/owl-host.cjs');
 app.setName(OWL_ISOLATED ? 'IRiXi Toolbox Owl Isolated' : 'IRiXi的小工具库');
@@ -192,8 +195,6 @@ function createNotchTrayIcon() {
   return icon;
 }
 
-const COLLAPSED_WIDTH = 200;
-const COLLAPSED_MIN_HEIGHT = 38;
 // NOTCH_LIP（原 6px 唇边）已移除：折叠条高度现在恰好等于菜单栏高（≈物理刘海高），
 // 一个像素都不超出物理刘海。虽然折叠条完全在菜单栏拦截带内，
 // 但本项目窗口使用 setAlwaysOnTop(true,'screen-saver') 级别，
@@ -394,11 +395,11 @@ function getMenuBarHeight(display) {
 }
 
 function getCollapsedHeight(display) {
-  const mb = getMenuBarHeight(display);
-  // 折叠条高度恰好等于菜单栏带（≈物理刘海高），一个像素都不超出物理刘海。
-  // 无刘海的外接屏 menuBarHeight 仍是真实菜单栏高，能正常露头；
-  // 异常取到 0 才回退兜底（COLLAPSED_MIN_HEIGHT = 38px）。
-  return mb > 0 ? mb : COLLAPSED_MIN_HEIGHT;
+  return getCollapsedStrip(display).height;
+}
+
+function getCollapsedStrip(display) {
+  return resolveCollapsedStrip(display, nativeModule.getDisplayTopGeometry());
 }
 
 // 展开尺寸按当前 Tab 取值；宽度超出屏幕时 clamp 到工作区内。
@@ -423,7 +424,8 @@ function getBoundsForMode(mode, display) {
     const { width, height } = getExpandedSize(d);
     return getCenteredBounds(width, height, d);
   }
-  return getCenteredBounds(COLLAPSED_WIDTH, getCollapsedHeight(d), d);
+  const { x, y, width, height } = getCollapsedStrip(d);
+  return { x, y, width, height };
 }
 
 function cancelCollapseWatchdog() {
@@ -439,6 +441,7 @@ function applyMode(mode, display) {
   if (!mainWindow || mainWindow.isDestroyed()) return;
   cancelCollapseWatchdog();
   mainWindow.setBounds(getBoundsForMode(mode, display));
+  mainWindow.webContents.send('window:metrics-changed', getLayoutMetrics(display));
   mainWindow.setIgnoreMouseEvents(false);
   currentMode = mode;
   if (mode === 'expanded') hideWhenCollapsed = false;
@@ -1062,7 +1065,7 @@ ipcMain.on('task-notification:dismissed', (event, eventId) => {
 });
 
 function createWindow() {
-  const initial = getCenteredBounds(COLLAPSED_WIDTH, getCollapsedHeight(getTargetDisplay()));
+  const initial = getBoundsForMode('collapsed', getTargetDisplay());
 
   mainWindow = new BrowserWindow({
     width: initial.width,
@@ -1929,8 +1932,13 @@ ipcMain.handle('tools:uninstall', (event, payload) => toolResult(() => ({
 
 function getLayoutMetrics(display) {
   const d = display || getWindowDisplay();
+  const strip = getCollapsedStrip(d);
+  const bounds = mainWindow?.getBounds() || strip;
   return {
-    stripHeight: getCollapsedHeight(d), // 折叠黑条总高（= 菜单栏高 = 物理刘海高，不含唇边）
+    stripHeight: strip.height,
+    stripWidth: strip.width,
+    stripOffsetX: strip.x + strip.width / 2 - (bounds.x + bounds.width / 2),
+    stripGeometrySource: strip.source,
     menuBarHeight: getMenuBarHeight(d), // 折叠态菜单栏带高（折叠条上半部分被其拦截）
     chromeY: EXPANDED_CHROME_Y,
     tabSizes: TAB_SIZES,
@@ -4249,7 +4257,7 @@ app.whenReady().then(() => {
   }
 
   if(OWL_ISOLATED){session.defaultSession.setPermissionRequestHandler((_w,_p,done)=>done(false));session.defaultSession.setPermissionCheckHandler(()=>false);}
-  try{owlHost=createOwlHost({app,BrowserWindow,ipcMain,powerMonitor,WebContentsView,isExpanded:()=>currentMode==='expanded',readForeground:readFrontmostApp,dataDir:path.join(app.getPath('userData'),'owl-focus'),frontendRoot:OWL_ISOLATED?path.resolve(__dirname,'../../../ui'):path.join(__dirname,'owl/ui'),watchFrontend:OWL_ISOLATED,showCard:()=>openRendererPanel('owl:show-card'),showHome:()=>openRendererPanel('owl:show-card')});}catch(error){dialog.showErrorBox('专注存档未覆盖',error.message);app.quit();return;}
+  try{owlHost=createOwlHost({app,BrowserWindow,ipcMain,powerMonitor,WebContentsView,isExpanded:()=>currentMode==='expanded',readForeground:readFrontmostApp,dataDir:path.join(app.getPath('userData'),'owl-focus'),frontendRoot:OWL_ISOLATED&&!app.isPackaged?path.resolve(__dirname,'../../../ui'):path.join(__dirname,'owl/ui'),watchFrontend:OWL_ISOLATED&&!app.isPackaged,showCard:()=>openRendererPanel('owl:show-card'),showHome:()=>openRendererPanel('owl:show-card')});}catch(error){dialog.showErrorBox('专注存档未覆盖',error.message);app.quit();return;}
   createWindow();
   if(!OWL_ISOLATED)createTray();
   watchDisplayChanges();

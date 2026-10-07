@@ -125,6 +125,7 @@ function createNativeModuleManager(options = {}) {
   let bundleId = null;
   let screenPermission = 'unknown';
   let captureShortcut = '';
+  let translationInitialized = false;
 
   function publicStatus() {
     return { state, bundleId, screenPermission };
@@ -132,14 +133,18 @@ function createNativeModuleManager(options = {}) {
 
   function fail(code) {
     api = null;
+    translationInitialized = false;
     state = code;
     bundleId = null;
     screenPermission = 'unknown';
     return { ok: false, error: code, ...publicStatus() };
   }
 
-  function load() {
-    if (api) return { ok: true, ...publicStatus() };
+  function load({ initializeTranslation = true } = {}) {
+    if (api) {
+      if (initializeTranslation && !translationInitialized) { api.initializeTranslation(); translationInitialized = true; }
+      return { ok: true, ...publicStatus() };
+    }
     const inspection = inspector();
     if (!inspection || inspection.ok !== true || typeof inspection.modulePath !== 'string') {
       return fail(inspection?.error || 'missing');
@@ -151,7 +156,7 @@ function createNativeModuleManager(options = {}) {
       api = loaded;
       bundleId = reportedBundleId;
       screenPermission = normalizePermissionStatus(api.getScreenRecordingPermissionStatus());
-      api.initializeTranslation();
+      if (initializeTranslation) { api.initializeTranslation(); translationInitialized = true; }
       state = 'ready';
       return { ok: true, ...publicStatus() };
     } catch (error) {
@@ -340,6 +345,14 @@ function createNativeModuleManager(options = {}) {
     }
   }
 
+  function getDisplayTopGeometry() {
+    try {
+      if (!load({ initializeTranslation: false }).ok || typeof api?.getDisplayTopGeometry !== 'function') return [];
+      const rows = JSON.parse(api.getDisplayTopGeometry());
+      return Array.isArray(rows) ? rows : [];
+    } catch { return []; }
+  }
+
   return {
     load,
     status: publicStatus,
@@ -358,6 +371,7 @@ function createNativeModuleManager(options = {}) {
     isAreaCaptureShortcutRegistered,
     openInputTranslation,
     translateCurrentSelection,
+    getDisplayTopGeometry,
   };
 }
 

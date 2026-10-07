@@ -729,6 +729,13 @@ function applyLayoutMetrics(metrics) {
   if (metrics.stripHeight) {
     document.documentElement.style.setProperty('--notch-h', `${metrics.stripHeight}px`);
   }
+  if (metrics.stripWidth) {
+    document.documentElement.style.setProperty('--notch-w', `${metrics.stripWidth}px`);
+    document.documentElement.style.setProperty('--island-half-width', `${metrics.stripWidth / 2}px`);
+  }
+  if (Number.isFinite(metrics.stripOffsetX)) {
+    document.documentElement.style.setProperty('--notch-offset-x', `${metrics.stripOffsetX}px`);
+  }
   if (metrics.menuBarHeight) {
     document.documentElement.style.setProperty('--mb-h', `${metrics.menuBarHeight}px`);
   }

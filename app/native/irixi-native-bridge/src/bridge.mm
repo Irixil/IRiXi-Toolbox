@@ -6,6 +6,7 @@
 
 extern "C" int32_t irixi_native_abi_version(void);
 extern "C" int32_t irixi_native_copy_bundle_identifier(char* buffer, int32_t capacity);
+extern "C" int32_t irixi_native_copy_display_top_geometry(char* buffer, int32_t capacity);
 extern "C" bool irixi_native_has_screen_capture_access(void);
 extern "C" bool irixi_native_request_screen_capture_access(void);
 extern "C" void irixi_native_show_test_window(void);
@@ -103,6 +104,23 @@ napi_value GetScreenRecordingPermissionStatus(napi_env env, napi_callback_info i
   const char* status = irixi_native_has_screen_capture_access() ? "authorized" : "not_granted";
   napi_value result;
   napi_create_string_utf8(env, status, NAPI_AUTO_LENGTH, &result);
+  return result;
+}
+
+napi_value GetDisplayTopGeometry(napi_env env, napi_callback_info info) {
+  if (!RequireNoArguments(env, info)) return nullptr;
+  const int32_t required = irixi_native_copy_display_top_geometry(nullptr, 0);
+  if (required <= 1 || required > 65536) {
+    napi_throw_error(env, nullptr, "Display geometry is unavailable.");
+    return nullptr;
+  }
+  std::vector<char> buffer(static_cast<size_t>(required), 0);
+  if (irixi_native_copy_display_top_geometry(buffer.data(), required) != required) {
+    napi_throw_error(env, nullptr, "Display geometry changed while reading.");
+    return nullptr;
+  }
+  napi_value result;
+  napi_create_string_utf8(env, buffer.data(), NAPI_AUTO_LENGTH, &result);
   return result;
 }
 
@@ -220,6 +238,7 @@ NAPI_MODULE_INIT() {
 
   const napi_property_descriptor properties[] = {
       {"getHostBundleIdentifier", nullptr, GetHostBundleIdentifier, nullptr, nullptr, nullptr, napi_default, nullptr},
+      {"getDisplayTopGeometry", nullptr, GetDisplayTopGeometry, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"getScreenRecordingPermissionStatus", nullptr, GetScreenRecordingPermissionStatus, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"requestScreenRecordingPermission", nullptr, RequestScreenRecordingPermission, nullptr, nullptr, nullptr, napi_default, nullptr},
       {"openTestWindow", nullptr, OpenTestWindow, nullptr, nullptr, nullptr, napi_default, nullptr},

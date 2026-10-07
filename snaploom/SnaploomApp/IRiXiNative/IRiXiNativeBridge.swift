@@ -4,6 +4,37 @@ import Foundation
 
 private let irixiNativeCurrentABIVersion: Int32 = 7
 
+@MainActor private func irixiDisplayTopGeometryJSON() -> String {
+    let screens = NSScreen.screens
+    let primaryTop = screens.first?.frame.maxY ?? 0
+    func rect(_ value: NSRect) -> [String: CGFloat] {
+        ["x": value.minX, "y": primaryTop - value.maxY, "width": value.width, "height": value.height]
+    }
+    let rows: [[String: Any]] = screens.map { screen in
+        var row: [String: Any] = ["id": screen.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] ?? -1,
+            "frame": rect(screen.frame), "scale": screen.backingScaleFactor, "safeAreaTop": screen.safeAreaInsets.top]
+        if let left = screen.auxiliaryTopLeftArea { row["auxiliaryTopLeftArea"] = rect(left) }
+        if let right = screen.auxiliaryTopRightArea { row["auxiliaryTopRightArea"] = rect(right) }
+        return row
+    }
+    guard let data = try? JSONSerialization.data(withJSONObject: rows), let json = String(data: data, encoding: .utf8) else { return "[]" }
+    return json
+}
+
+/// Read-only display geometry. Does not inspect cameras or request any privacy permission.
+@_cdecl("irixi_native_copy_display_top_geometry")
+public func irixiNativeCopyDisplayTopGeometry(_ buffer: UnsafeMutablePointer<CChar>?, _ capacity: Int32) -> Int32 {
+    let value: String
+    if Thread.isMainThread { value = MainActor.assumeIsolated { irixiDisplayTopGeometryJSON() } }
+    else { value = DispatchQueue.main.sync { irixiDisplayTopGeometryJSON() } }
+    let bytes = Array(value.utf8CString)
+    guard let buffer, capacity > 0 else { return Int32(bytes.count) }
+    let count = min(bytes.count, Int(capacity))
+    for index in 0..<count { buffer[index] = bytes[index] }
+    if count == Int(capacity) { buffer[count - 1] = 0 }
+    return Int32(bytes.count)
+}
+
 @MainActor
 private final class IRiXiNativeTestWindowController {
     static let shared = IRiXiNativeTestWindowController()
