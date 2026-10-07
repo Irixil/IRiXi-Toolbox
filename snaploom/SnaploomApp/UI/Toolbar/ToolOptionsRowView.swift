@@ -838,7 +838,7 @@ class ToolOptionsRowView: NSView {
         btn.state = isOn ? .on : .off
         btn.font = NSFont.systemFont(ofSize: 10, weight: .medium)
         btn.contentTintColor = ToolbarLayout.iconColor.withAlphaComponent(0.7)
-        // Force white text regardless of system appearance (toolbar is always dark)
+        // Follow the toolbar's own foreground so both light and dark chrome remain readable.
         if let cell = btn.cell as? NSButtonCell {
             let attrTitle = NSAttributedString(string: title, attributes: [
                 .foregroundColor: ToolbarLayout.iconColor.withAlphaComponent(0.7),
