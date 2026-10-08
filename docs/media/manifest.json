@@ -1,0 +1,71 @@
+{
+  "sourceCommit": "2cd9414e3e94913903e7bbb0aba1fc362600f26e",
+  "productVersion": "0.4.17",
+  "capturedAt": "2026-10-08",
+  "method": "Actual production renderer captures with isolated synthetic service fixtures; production owl core and own empty store. Hidden window only. No real clipboard, foreground, media, or network access.",
+  "focusCrop": {
+    "x": 225,
+    "y": 60,
+    "width": 389,
+    "height": 564
+  },
+  "totalGifBytes": 1930870,
+  "files": [
+    {
+      "file": "clipboard.gif",
+      "dimensions": [
+        1240,
+        640
+      ],
+      "frames": 9,
+      "uniqueFrames": 9,
+      "durationMs": 11000,
+      "bytes": 195853,
+      "sha256": "0385bb7cc10ff7062c06be6154ec3cd57eeb1a605e342ff0a80a4455878bdcd3",
+      "staticPreview": "clipboard.png",
+      "staticPreviewSHA256": "c49ad08330378430533cf761cc33707f2ba7eb6412090fcdb4bfb066d9fcd2c5"
+    },
+    {
+      "file": "focus.gif",
+      "dimensions": [
+        389,
+        564
+      ],
+      "frames": 30,
+      "uniqueFrames": 30,
+      "durationMs": 11500,
+      "bytes": 749579,
+      "sha256": "212b38a10131bec2875d716e54d558e3445be8638a0b792ceb92bed77d7e7e03",
+      "staticPreview": "focus.png",
+      "staticPreviewSHA256": "d8f3958e33e0692aa714b24c708548bd7d1a9a3c0f20a7ec67ef2791bd64dd9c"
+    },
+    {
+      "file": "overview.gif",
+      "dimensions": [
+        1240,
+        640
+      ],
+      "frames": 18,
+      "uniqueFrames": 17,
+      "durationMs": 14250,
+      "bytes": 505439,
+      "sha256": "cfee0e3119daff4669a36852b1c50946edebcbfb9b5ad7d1da8f258dca54ceba",
+      "staticPreview": "overview.png",
+      "staticPreviewSHA256": "1bbd753cc6ee2495d91288784adc54898d71987b6a529a6eebe9167158cccdde"
+    },
+    {
+      "file": "workflow.gif",
+      "dimensions": [
+        1240,
+        640
+      ],
+      "frames": 28,
+      "uniqueFrames": 28,
+      "durationMs": 12750,
+      "bytes": 479999,
+      "sha256": "a8ee387c1c4124927014bd062360be51526099af905ed9443dcace760c21a5c5",
+      "staticPreview": "workflow.png",
+      "staticPreviewSHA256": "40779afd63651e2a3b2730d346c7864e93186b8e06ffeb81255dc9043fdc1386"
+    }
+  ]
+}
