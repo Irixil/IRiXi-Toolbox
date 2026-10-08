@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { resolveCollapsedStrip } = require('../display-top-geometry');
+const { resolveCollapsedStrip, resolveExpandedTopInset } = require('../display-top-geometry');
 const display = { id:1, scaleFactor:2, bounds:{x:0,y:0,width:1470,height:956}, workArea:{x:0,y:33,width:1470,height:866} };
 const native = { id:1, frame:{...display.bounds}, safeAreaTop:32,
   auxiliaryTopLeftArea:{x:0,width:646}, auxiliaryTopRightArea:{x:825,width:645} };
@@ -31,4 +31,13 @@ test('stale screen frames and malformed native gaps cannot position the panel on
   for(const s of [{...native,id:9},{...native,frame:{...native.frame,width:1280}}, {...native,auxiliaryTopRightArea:{x:NaN}}, {...native,safeAreaTop:500}]) {
     assert.equal(resolveCollapsedStrip(display,[s]).source,'menu-bar-fallback');
   }
+});
+
+test('expanded controls avoid the real menu input band and retain notch safety with an auto-hidden menu', () => {
+  assert.equal(resolveExpandedTopInset(display,[native]),33);
+  assert.equal(resolveExpandedTopInset({...display,workArea:{...display.workArea,y:0}},[native]),32);
+  assert.equal(resolveExpandedTopInset(display,[]),33);
+  assert.equal(resolveExpandedTopInset({...display,workArea:{...display.workArea,y:0}},[]),0);
+  const external={id:2,bounds:{x:-1800,y:-1100,width:1800,height:1100},workArea:{x:-1800,y:-1076,width:1800,height:1030}};
+  assert.equal(resolveExpandedTopInset(external,[]),24);
 });

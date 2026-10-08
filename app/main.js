@@ -69,7 +69,7 @@ const {
   reduceClipboardObservation,
 } = require('./main-services');
 const { createToolPlatform, ToolPackageError } = require('./tool-platform');
-const { resolveCollapsedStrip } = require('./display-top-geometry');
+const { resolveCollapsedStrip, resolveExpandedTopInset } = require('./display-top-geometry');
 const {
   createNativeModuleManager,
   isExactW19PermissionTestInvocation,
@@ -403,14 +403,15 @@ function getCollapsedStrip(display) {
 }
 
 // 展开尺寸按当前 Tab 取值；宽度超出屏幕时 clamp 到工作区内。
-// 窗口从屏幕最顶垂下（y=0），内容直接顶到最上沿，高度不含菜单栏带。
+// 保持原内容尺寸，展开窗口避开系统菜单栏/刘海的输入高度带。
 function getExpandedSize(display) {
   const size = TAB_SIZES[currentTab] || TAB_SIZES.home;
   return {
     width: Math.min(size.width, display.workArea.width - SCREEN_MARGIN),
     height: Math.min(
       EXPANDED_CHROME_Y + size.panelHeight,
-      Math.max(getCollapsedHeight(display), display.bounds.height - SCREEN_MARGIN)
+      Math.max(getCollapsedHeight(display), display.bounds.height - SCREEN_MARGIN
+        - resolveExpandedTopInset(display, nativeModule.getDisplayTopGeometry()))
     ),
   };
 }
@@ -422,7 +423,8 @@ function getBoundsForMode(mode, display) {
   const d = display || getWindowDisplay();
   if (mode === 'expanded') {
     const { width, height } = getExpandedSize(d);
-    return getCenteredBounds(width, height, d);
+    return { ...getCenteredBounds(width, height, d),
+      y: d.bounds.y + resolveExpandedTopInset(d, nativeModule.getDisplayTopGeometry()) };
   }
   const { x, y, width, height } = getCollapsedStrip(d);
   return { x, y, width, height };

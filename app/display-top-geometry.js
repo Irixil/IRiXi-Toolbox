@@ -21,4 +21,12 @@ function resolveCollapsedStrip(display, nativeScreens = []) {
     height: Math.round(height), source: 'system-notch-safe-area' };
 }
 
-module.exports = { resolveCollapsedStrip };
+// An expanded control must not sit in macOS's menu-bar input band. Keep
+// the existing content size; the collapsed window still uses the notch gap.
+function resolveExpandedTopInset(display, nativeScreens = []) {
+  const strip = resolveCollapsedStrip(display, nativeScreens);
+  return Math.max(0, display.workArea.y - display.bounds.y,
+    strip.source === 'system-notch-safe-area' ? strip.height : 0);
+}
+
+module.exports = { resolveCollapsedStrip, resolveExpandedTopInset };
