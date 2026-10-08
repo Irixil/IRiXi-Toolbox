@@ -1,0 +1,74 @@
+{
+  "source": "Actual production renderer frames in a never-shown isolated Electron window",
+  "payload": "Synthetic 25-minute completion preview, not a claim of running a 25-minute timer",
+  "composition": "Transparent capture composited over invented solid #e8e3d9 desktop; preview label added",
+  "size": [
+    1000,
+    640
+  ],
+  "fps": 8,
+  "gifDurationMs": 5500,
+  "gifs": {
+    "meteors": {
+      "file": "completion-meteors.gif",
+      "bytes": 256056,
+      "sha256": "ce2c4522a154c2a07d7a22cce26343fa7e56d24b562509bf936c5c471ec2dadf",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 34,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0012.png"
+    },
+    "fireworks": {
+      "file": "completion-fireworks.gif",
+      "bytes": 250146,
+      "sha256": "865350da80ff811f2f2c56569752fefcfa6e39c16d098fcf7efa544df70dba1d",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 33,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0017.png"
+    },
+    "ribbons": {
+      "file": "completion-ribbons.gif",
+      "bytes": 289308,
+      "sha256": "73e5b1b67c964e5a95a6e1ec2426dd70b7bfb636358fac708a91cfbe25be38cc",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 37,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0013.png"
+    },
+    "flowers": {
+      "file": "completion-flowers.gif",
+      "bytes": 230089,
+      "sha256": "1d36230d405894fe773b133475cc6c25a12360a93ee3469080aed36802403b18",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 36,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0012.png"
+    }
+  },
+  "naturalCompletion": {
+    "source": "Production host/service/file store heartbeat, genuine 3-second focus in isolated profile, module hidden and host collapsed",
+    "asarSha256": "4e9e5fd46448d5bcc8b88c0f7db97ffc4e88263d99f216e0ea981b24ae335294",
+    "rendererFrames": 12,
+    "file": "natural-completion.gif",
+    "sha256": "271d7dc7aba5fa348e821c68e7c6d29e2af88bffc105c622654bc93dabf4962d",
+    "composition": "Own transparent renderer pixels composited on simulated solid backdrop; no desktop pixels"
+  },
+  "originalAvatar": {
+    "source": "app/owl/ui/assets/motion-v7/head-poses.png",
+    "sourceDimensions": [
+      1254,
+      1254
+    ],
+    "sourceRect": [
+      0,
+      0,
+      418,
+      418
+    ],
+    "sha256": "196a1cb3faf9ee90fbb14ef02f70fe1551ea697986dd05d217953febc023fd3c",
+    "equalScale": true,
+    "originalPixelsMatch": true
+  },
+  "totalGifBytes": 1117251
+}

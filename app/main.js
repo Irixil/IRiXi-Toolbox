@@ -6,6 +6,7 @@ const {
   Tray,
   Menu,
   nativeImage,
+  nativeTheme,
   shell,
   systemPreferences,
   clipboard,
@@ -4260,7 +4261,7 @@ app.whenReady().then(() => {
   }
 
   if(OWL_ISOLATED){session.defaultSession.setPermissionRequestHandler((_w,_p,done)=>done(false));session.defaultSession.setPermissionCheckHandler(()=>false);}
-  try{owlHost=createOwlHost({app,BrowserWindow,ipcMain,powerMonitor,WebContentsView,isExpanded:()=>currentMode==='expanded',readForeground:readFrontmostApp,dataDir:path.join(app.getPath('userData'),'owl-focus'),frontendRoot:OWL_ISOLATED&&!app.isPackaged?path.resolve(__dirname,'../../../ui'):path.join(__dirname,'owl/ui'),watchFrontend:OWL_ISOLATED&&!app.isPackaged,showCard:()=>openRendererPanel('owl:show-card'),showHome:()=>openRendererPanel('owl:show-card')});}catch(error){dialog.showErrorBox('专注存档未覆盖',error.message);app.quit();return;}
+  try{owlHost=createOwlHost({app,BrowserWindow,ipcMain,powerMonitor,screen,nativeTheme,WebContentsView,isExpanded:()=>currentMode==='expanded',readForeground:readFrontmostApp,dataDir:path.join(app.getPath('userData'),'owl-focus'),frontendRoot:OWL_ISOLATED&&!app.isPackaged?path.resolve(__dirname,'../../../ui'):path.join(__dirname,'owl/ui'),watchFrontend:OWL_ISOLATED&&!app.isPackaged,showCard:()=>openRendererPanel('owl:show-card'),showHome:()=>openRendererPanel('owl:show-card')});}catch(error){dialog.showErrorBox('专注存档未覆盖',error.message);app.quit();return;}
   createWindow();
   if(!OWL_ISOLATED)createTray();
   watchDisplayChanges();

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <title>专注完成</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <div id="celebration" aria-hidden="true"></div>
+  <section id="completion-card" class="completion-card" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <canvas id="owl-avatar" class="owl-avatar" width="160" height="160" aria-hidden="true"></canvas>
+    <div class="completion-copy">
+      <p class="eyebrow">这一轮，完成啦</p>
+      <h1 id="completion-title"></h1>
+      <p class="completion-note">休息一下，再慢慢开始下一轮。</p>
+    </div>
+    <button id="dismiss" type="button" aria-label="关闭完成提示" title="关闭完成提示">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" /></svg>
+    </button>
+  </section>
+</body>
+</html>

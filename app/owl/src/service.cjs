@@ -20,7 +20,7 @@ class FocusService extends EventEmitter {
     if(changed||candidate.active)this.commit(candidate,this.last);
   }
   snapshot() { return { ...structuredClone(this.state), fault: this.fault, collectionCatalog:{version:this.catalog.version,room:structuredClone(this.catalog.room),categories:structuredClone(this.catalog.categories),items:itemStates(this.state,this.catalog)} }; }
-  commit(candidate, sample) {
+  commit(candidate, sample, completed = null) {
     candidate.revision = this.state.revision + 1;
     candidate.lastSavedAt = sample.wall;
     try { this.store.write(candidate); }
@@ -33,6 +33,23 @@ class FocusService extends EventEmitter {
     }
     this.state = candidate; this.last = sample;
     this.emit('change', this.snapshot());
+    if (completed) {
+      // A desktop notice is an observer of a saved round, never part of the
+      // storage transaction. One faulty observer must not stop the others.
+      const failed = error => console.error('专注已保存，但完成提示未能显示：', error);
+      for (const listener of this.rawListeners('completed')) {
+        try {
+          const result = listener.call(this, completed);
+          if (typeof result?.then === 'function') Promise.resolve(result).catch(failed);
+        } catch (error) { failed(error); }
+      }
+    }
+  }
+  completion(candidate, settled) {
+    const outcome = settled && !candidate.active && candidate.lastOutcome;
+    if (!outcome || outcome.kind !== 'focus' || outcome.outcome !== 'completed') return null;
+    return Object.freeze({ sessionId: outcome.sessionId, kind: 'focus', focusMs: outcome.focusMs,
+      durationMs: outcome.durationMs, startedAt: outcome.startedAt, completedAt: outcome.at });
   }
   settle(candidate, sample) {
     const delta = sample.mono - this.last.mono;
@@ -47,7 +64,8 @@ class FocusService extends EventEmitter {
     if (this.fault) return this.snapshot();
     const sample = this.clock();
     const candidate = structuredClone(this.state);
-    if (this.settle(candidate, sample)) this.commit(candidate, sample);
+    const settled = this.settle(candidate, sample);
+    if (settled) this.commit(candidate, sample, this.completion(candidate, settled));
     else this.last = sample;
     return this.snapshot();
   }
@@ -56,14 +74,16 @@ class FocusService extends EventEmitter {
     const sample = this.clock();
     const candidate = structuredClone(this.state);
     const settled = this.settle(candidate, sample);
+    // Capture before a command starts another round or clears lastOutcome.
+    const completed = this.completion(candidate, settled);
     // Settled time must survive a stale or rejected UI command too.
     let changed;
     // A click at the old round's natural endpoint still starts the next round.
     const value = c?.type === 'start-next' && settled && !candidate.active && c.sessionId === this.state.active?.id
       ? { ...c, sessionId: undefined } : c;
     try { changed = command(candidate, value, sample.wall, this.makeId,this.catalog); }
-    catch (e) { if (settled) this.commit(candidate, sample); else this.last = sample; throw e; }
-    if (settled || changed) this.commit(candidate, sample);
+    catch (e) { if (settled) this.commit(candidate, sample, completed); else this.last = sample; throw e; }
+    if (settled || changed) this.commit(candidate, sample, completed);
     else this.last = sample;
     return this.snapshot();
   }
@@ -72,8 +92,9 @@ class FocusService extends EventEmitter {
     const sample = this.clock();
     const candidate = structuredClone(this.state);
     const settled = this.settle(candidate, sample);
+    const completed = this.completion(candidate, settled);
     const changed = interrupt(candidate, reason, sample.wall);
-    if (settled || changed) this.commit(candidate, sample); else this.last = sample;
+    if (settled || changed) this.commit(candidate, sample, completed); else this.last = sample;
     return this.snapshot();
   }
   close() {

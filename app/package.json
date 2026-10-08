@@ -1,6 +1,6 @@
 {
   "name": "irixi-toolbox",
-  "version": "0.4.17",
+  "version": "0.4.18",
   "description": "IRiXi的小工具库 - a lightweight personal toolbox for macOS",
   "main": "main.js",
   "author": "IRiXi",
@@ -16,7 +16,8 @@
     "pack": "electron-builder --dir",
     "stage:native-module": "node scripts/stage-native-module.js",
     "verify:native-module": "node scripts/verify-packaged-native-module.js",
-    "test:native-module": "env -u ELECTRON_RUN_AS_NODE electron tests/native-module.electron.js"
+    "test:native-module": "env -u ELECTRON_RUN_AS_NODE electron tests/native-module.electron.js",
+    "test:owl-completion": "node --test tests/owl-completion.test.js tests/owl-completion-host.test.js && env -u ELECTRON_RUN_AS_NODE electron tests/owl-completion.electron.cjs"
   },
   "devDependencies": {
     "electron": "^44.0.0",

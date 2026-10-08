@@ -1,0 +1,26 @@
+{
+  "kind": "accepted-source-artwork-selection",
+  "productionAsset": "app/owl/ui/assets/motion-v7/head-poses.png",
+  "assetSha256": "196a1cb3faf9ee90fbb14ef02f70fe1551ea697986dd05d217953febc023fd3c",
+  "atlasSize": {
+    "width": 1254,
+    "height": 1254
+  },
+  "selectedCell": {
+    "x": 0,
+    "y": 0,
+    "width": 418,
+    "height": 418
+  },
+  "renderedDisplaySize": {
+    "width": 80,
+    "height": 80
+  },
+  "sourcePixelsUnchanged": true,
+  "aspectRatioPreserved": true,
+  "newSvgCharacterUsed": false,
+  "imageGenerationUsed": false,
+  "scope": "Existing production owl crop, original pixels/proportions verified by actual renderer in final exact candidate; no replacement character generated",
+  "formalAppUpdated": false,
+  "deployment": "waiting_for_safe_normal_restart"
+}
