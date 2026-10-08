@@ -190,7 +190,7 @@ private final class IRiXiCaptureShortcutManager {
             ? "请在系统设置中允许“IRiXi的小工具库”录制屏幕，然后重新打开应用。"
             : "截图组件暂时不可用，请重新打开 IRiXi的小工具库后再试。"
         alert.addButton(withTitle: "知道了")
-        IRiXiPaperTheme.apply(to: alert.window)
+        IRiXiPaperTheme.apply(to: alert)
         NSApp.activate(ignoringOtherApps: true)
         alert.runModal()
     }
@@ -967,7 +967,7 @@ private final class IRiXiCaptureController {
                 let alert = NSAlert()
                 alert.messageText = "截图没有保存成功"
                 alert.informativeText = "原文件和剪贴板没有被修改，请换一个位置重试。"
-                IRiXiPaperTheme.apply(to: alert.window)
+                IRiXiPaperTheme.apply(to: alert)
                 alert.runModal()
             }
             self.restoreCapturePanels()
@@ -1001,7 +1001,7 @@ private final class IRiXiCaptureController {
         alert.messageText = "截图没有开始"
         alert.informativeText = message
         alert.addButton(withTitle: "知道了")
-        IRiXiPaperTheme.apply(to: alert.window)
+        IRiXiPaperTheme.apply(to: alert)
         alert.runModal()
         finish()
     }

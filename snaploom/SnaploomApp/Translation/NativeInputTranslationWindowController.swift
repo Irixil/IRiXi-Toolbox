@@ -39,6 +39,12 @@ enum IRiXiPaperTheme {
         #endif
     }
 
+    @MainActor static func apply(to alert: NSAlert) {
+        // NSAlert constructs its final button views during layout.
+        alert.layout()
+        apply(to: alert.window)
+    }
+
     @MainActor private static func style(_ view: NSView) {
         if let text = view as? NSTextView {
             text.backgroundColor = surface
@@ -50,6 +56,14 @@ enum IRiXiPaperTheme {
         } else if let button = view as? NSButton {
             button.contentTintColor = ink
             button.bezelColor = surface
+            // AppKit can keep the white title of a tinted rounded bezel even
+            // with contentTintColor set. Give the title an explicit ink color.
+            let title = NSMutableAttributedString(attributedString: button.attributedTitle)
+            title.addAttribute(.foregroundColor, value: ink, range: NSRange(location: 0, length: title.length))
+            button.attributedTitle = title
+            let alternate = NSMutableAttributedString(attributedString: button.attributedAlternateTitle)
+            alternate.addAttribute(.foregroundColor, value: ink, range: NSRange(location: 0, length: alternate.length))
+            button.attributedAlternateTitle = alternate
         }
         if let scroll = view as? NSScrollView {
             scroll.backgroundColor = surface
@@ -589,7 +603,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         alert.messageText = "Codex 会员解释 · Luna 低思考"
         alert.informativeText = "使用这台 Mac 上 Codex 已登录的 ChatGPT 账号，不需要 API 密钥。额度不足时会停止，不会切到收费 API。\n\n请在 Codex 中完成登录。对话仅保留在当前翻译窗口内；更换原文或关闭窗口会清空，不接续开发任务。"
         alert.addButton(withTitle: "知道了")
-        IRiXiPaperTheme.apply(to: alert.window)
+        IRiXiPaperTheme.apply(to: alert)
         alert.runModal()
     }
 
@@ -658,7 +672,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         alert.alertStyle = .warning
         alert.addButton(withTitle: "同意并继续")
         alert.addButton(withTitle: "取消")
-        IRiXiPaperTheme.apply(to: alert.window)
+        IRiXiPaperTheme.apply(to: alert)
         guard alert.runModal() == .alertFirstButtonReturn else { return false }
         UserDefaults.standard.set(true, forKey: Self.aiConsentDefaultsKey)
         return true

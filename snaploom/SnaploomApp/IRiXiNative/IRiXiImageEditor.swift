@@ -28,7 +28,7 @@ enum IRiXiImageOutput {
                 alert.messageText = "图片没有保存成功"
                 alert.informativeText = "请换一个位置后重试；当前截图和标注仍然保留。"
                 alert.addButton(withTitle: "知道了")
-                IRiXiPaperTheme.apply(to: alert.window)
+                IRiXiPaperTheme.apply(to: alert)
                 if let window {
                     alert.beginSheetModal(for: window)
                 } else {
@@ -210,7 +210,7 @@ private final class IRiXiAnnotationCanvas: NSView {
         alert.accessoryView = field
         alert.addButton(withTitle: "添加")
         alert.addButton(withTitle: "取消")
-        IRiXiPaperTheme.apply(to: alert.window)
+        IRiXiPaperTheme.apply(to: alert)
         guard alert.runModal() == .alertFirstButtonReturn else { return }
         let text = field.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { return }
