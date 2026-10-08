@@ -4,7 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),{isUtf8}=require('node:buf
 const {FileStore}=require('./store.cjs'),{FocusService}=require('./service.cjs'),{FocusController}=require('./focus-controller.cjs');
 const {ActivityService,ActivityFileStore}=require('./activity.cjs');
 const root=path.resolve(__dirname,'..');
-const verification=process.argv.includes('--verify-placement-reopen')?'placement-reopen':process.argv.includes('--verify-placement')?'placement':process.argv.includes('--verify-drawer-reopen')?'drawer-reopen':process.argv.includes('--verify-drawer')?'drawer':process.argv.includes('--verify-test-access-off-reopen')?'test-access-off-reopen':process.argv.includes('--verify-test-access-reopen')?'test-access-reopen':process.argv.includes('--verify-test-access')?'test-access':process.argv.includes('--verify-collection-reopen')?'collection-reopen':process.argv.includes('--verify-collection')?'collection':process.argv.includes('--verify-room')?'room':process.argv.includes('--verify-headless')?'flow':process.argv.includes('--verify-reopen')?'reopen':null;
+const verification=process.argv.includes('--verify-duration-reopen')?'duration-reopen':process.argv.includes('--verify-duration')?'duration':process.argv.includes('--verify-placement-reopen')?'placement-reopen':process.argv.includes('--verify-placement')?'placement':process.argv.includes('--verify-drawer-reopen')?'drawer-reopen':process.argv.includes('--verify-drawer')?'drawer':process.argv.includes('--verify-test-access-off-reopen')?'test-access-off-reopen':process.argv.includes('--verify-test-access-reopen')?'test-access-reopen':process.argv.includes('--verify-test-access')?'test-access':process.argv.includes('--verify-collection-reopen')?'collection-reopen':process.argv.includes('--verify-collection')?'collection':process.argv.includes('--verify-room')?'room':process.argv.includes('--verify-headless')?'flow':process.argv.includes('--verify-reopen')?'reopen':null;
 if(verification&&process.platform==='darwin')app.setActivationPolicy('prohibited');
 let verificationData;
 if(verification&&!process.env.OWL_FOCUS_DATA_DIR){
@@ -17,21 +17,21 @@ app.setName('IRiXi Owl Focus');fs.mkdirSync(path.join(data,'electron-profile'),{
 let store,service,controller,activity,heartbeat,closing=false,defaults={seconds:1500};const views=new Map();
 const defaultsFile=path.join(data,'focus-defaults.json');
 function loadDefaults(){
- try{const bytes=fs.readFileSync(defaultsFile);if(!isUtf8(bytes))throw Error('设置不是有效 UTF-8');const value=JSON.parse(bytes.toString('utf8'));if(!value||Object.keys(value).some(k=>k!=='seconds')||!Number.isInteger(value.seconds)||value.seconds<1||value.seconds>10800)throw Error('设置内容无法识别');defaults=value;}
+ try{const bytes=fs.readFileSync(defaultsFile);if(!isUtf8(bytes))throw Error('设置不是有效 UTF-8');const value=JSON.parse(bytes.toString('utf8'));if(!value||Object.keys(value).some(k=>!['seconds','breakSeconds'].includes(k))||!Number.isInteger(value.seconds)||value.seconds<1||value.seconds>10800||(value.breakSeconds!==undefined&&(!Number.isInteger(value.breakSeconds)||value.breakSeconds<1||value.breakSeconds>3600)))throw Error('设置内容无法识别');defaults=value;}
  catch(e){if(e.code!=='ENOENT')throw Error('专注设置读取失败，原文件未覆盖：'+e.message);}
 }
 function saveDefaults(value){
- if(!value||typeof value!=='object'||Object.keys(value).some(k=>k!=='seconds')||!Number.isInteger(value.seconds)||value.seconds<1||value.seconds>10800)throw Error('专注时长需在1秒至180分钟内。');
+ if(!value||typeof value!=='object'||Object.keys(value).some(k=>!['seconds','breakSeconds'].includes(k))||!Number.isInteger(value.seconds)||value.seconds<1||value.seconds>10800||(value.breakSeconds!==undefined&&(!Number.isInteger(value.breakSeconds)||value.breakSeconds<1||value.breakSeconds>3600)))throw Error('专注时长需在1秒至180分钟内。');
  if(service.snapshot().active)throw Error('先结束当前一轮再设置时长。');
  const temp=defaultsFile+'.tmp';let fd,replaced=false;
- try{fd=fs.openSync(temp,'w',0o600);fs.writeFileSync(fd,JSON.stringify({seconds:value.seconds},null,2));fs.fsyncSync(fd);fs.closeSync(fd);fd=undefined;fs.renameSync(temp,defaultsFile);replaced=true;const dir=fs.openSync(data,'r');try{fs.fsyncSync(dir);}finally{fs.closeSync(dir);}}
+ try{fd=fs.openSync(temp,'w',0o600);fs.writeFileSync(fd,JSON.stringify({seconds:value.seconds,breakSeconds:value.breakSeconds??defaults.breakSeconds??300},null,2));fs.fsyncSync(fd);fs.closeSync(fd);fd=undefined;fs.renameSync(temp,defaultsFile);replaced=true;const dir=fs.openSync(data,'r');try{fs.fsyncSync(dir);}finally{fs.closeSync(dir);}}
  catch(e){throw Error((replaced?'设置文件已替换，但未能确认落盘：':'设置未确认保存：')+e.message);}
  finally{if(fd!==undefined)fs.closeSync(fd);}
- defaults={seconds:value.seconds};controller.changed(service.snapshot());return {...defaults};
+ defaults={seconds:value.seconds,breakSeconds:value.breakSeconds??defaults.breakSeconds??300};controller.changed(service.snapshot());return {...defaults};
 }
 function openView(mode='standalone'){
  const previous=views.get(mode);if(previous&&!previous.isDestroyed()){if(!verification){previous.show();previous.focus();}return previous;}
- const compact=mode==='compact',widget=mode==='widget'&&(['room','collection'].includes(verification)||verification?.startsWith('placement')||verification?.startsWith('test-access')||verification?.startsWith('drawer'));const win=new BrowserWindow({width:widget?386:compact?420:920,height:widget?538:compact?600:820,minWidth:widget?175:compact?350:700,minHeight:widget?120:compact?520:640,
+ const compact=mode==='compact',widget=mode==='widget'&&(['room','collection','duration','duration-reopen'].includes(verification)||verification?.startsWith('placement')||verification?.startsWith('test-access')||verification?.startsWith('drawer'));const win=new BrowserWindow({width:widget?386:compact?420:920,height:widget?538:compact?600:820,minWidth:widget?175:compact?350:700,minHeight:widget?120:compact?520:640,
   title:compact?'iRIXI 猫头鹰番茄钟 · 小窗口':'iRIXI 猫头鹰番茄钟',backgroundColor:'#F6EDE6',show:false,
   webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,sandbox:true,nodeIntegration:false,webSecurity:true,backgroundThrottling:!verification,offscreen:Boolean(verification)}});
  views.set(mode,win);const off=controller.registerView(win.webContents);win.webContents.setWindowOpenHandler(()=>({action:'deny'}));win.webContents.on('will-navigate',e=>e.preventDefault());
@@ -48,7 +48,7 @@ else{
  app.whenReady().then(async()=>{
   session.defaultSession.setPermissionRequestHandler((_w,_p,done)=>done(false));session.defaultSession.setPermissionCheckHandler(()=>false);
   try{
-   loadDefaults();store=new FileStore(path.join(data,'focus'));const development=process.argv.includes('--dev-layout-fixtures');if(development&&(!process.env.OWL_FOCUS_DATA_DIR||!data.startsWith(path.resolve(root,'..')+path.sep)))throw Error('开发占位只允许明确隔离存档路径。');service=new FocusService(store,development?{catalog:require('../tests/fixtures/placement-catalog.cjs')}:{});const snapshot=service.snapshot.bind(service);service.snapshot=()=>({...snapshot(),configuredFocusSeconds:defaults.seconds});controller=new FocusController(service);
+   loadDefaults();store=new FileStore(path.join(data,'focus'));const development=process.argv.includes('--dev-layout-fixtures');if(development&&(!process.env.OWL_FOCUS_DATA_DIR||!data.startsWith(path.resolve(root,'..')+path.sep)))throw Error('开发占位只允许明确隔离存档路径。');service=new FocusService(store,development?{catalog:require('../tests/fixtures/placement-catalog.cjs')}:{});const snapshot=service.snapshot.bind(service);service.snapshot=()=>({...snapshot(),configuredFocusSeconds:defaults.seconds,configuredBreakSeconds:defaults.breakSeconds??300});controller=new FocusController(service);
    activity=new ActivityService({store:new ActivityFileStore(path.join(data,'activity'))});
    ipcMain.handle('owl:snapshot',e=>controller.snapshot(e));ipcMain.handle('owl:command',(e,value)=>controller.command(e,value));
    ipcMain.handle('owl:defaults',(e,value)=>{checked(e);return value===undefined?{...defaults}:saveDefaults(value);});
@@ -61,7 +61,7 @@ else{
    powerMonitor.on('resume',()=>{try{service.tick();}catch(e){console.error(e.message);}});
    const dragEvents=[];
    if(verification==='room'||verification?.startsWith('placement'))ipcMain.handle('owl:drag',(e,value)=>{checked(e);dragEvents.push(value);return true;});
-   openView();if(verification)await require(verification.startsWith('placement')?'../tests/placement.electron.cjs':verification.startsWith('drawer')?'../tests/drawer.electron.cjs':verification.startsWith('test-access')?'../tests/test-access.electron.cjs':verification.startsWith('collection')?'../tests/collection.electron.cjs':verification==='room'?'../tests/room.electron.cjs':'../tests/native.electron.cjs').run({app,views,service,activity,root,data,phase:verification,openView,dragEvents});
+   openView();if(verification)await require(verification.startsWith('duration')?'../tests/duration.electron.cjs':verification.startsWith('placement')?'../tests/placement.electron.cjs':verification.startsWith('drawer')?'../tests/drawer.electron.cjs':verification.startsWith('test-access')?'../tests/test-access.electron.cjs':verification.startsWith('collection')?'../tests/collection.electron.cjs':verification==='room'?'../tests/room.electron.cjs':'../tests/native.electron.cjs').run({app,views,service,activity,root,data,phase:verification,openView,dragEvents});
   }catch(e){close();if(verification){fs.mkdirSync(path.join(root,'.runtime'),{recursive:true});fs.writeFileSync(path.join(root,'.runtime/verification-startup-failed.json'),JSON.stringify({error:e.stack}));console.error(e.stack);app.exit(1);}else{dialog.showErrorBox('专注存档未被覆盖',e.message);app.quit();}}
  });
  app.on('activate',()=>{if(service&&views.size===0&&!verification)openView();});

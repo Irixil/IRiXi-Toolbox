@@ -26,3 +26,5 @@ PROJECT.md
 app/build/native-module/
 app/build/native-module-manifest.json
 snaploom/build/
+
+app/dist-*.noindex/

@@ -42,12 +42,12 @@ test('expanded controls avoid the real menu input band and retain notch safety w
   assert.equal(resolveExpandedTopInset(external,[]),24);
 });
 
-test('notch paint moves one physical pixel inward while measured bounds stay unchanged', () => {
+test('notch paint moves three physical pixels inward while measured bounds stay unchanged', () => {
   for (const scaleFactor of [1, 1.5, 2, 2.5, 3]) {
     const d = { ...display, scaleFactor };
-    assert.equal(resolveNotchPaintInset(d, [native]) * scaleFactor, 1);
+    assert.equal(resolveNotchPaintInset(d, [native]) * scaleFactor, 3);
     assert.deepEqual(resolveCollapsedStrip(d, [native]), resolveCollapsedStrip(display, [native]));
   }
   assert.equal(resolveNotchPaintInset(display, []), 0);
-  assert.equal(resolveNotchPaintInset({ ...display, scaleFactor: NaN }, [native]), 1);
+  assert.equal(resolveNotchPaintInset({ ...display, scaleFactor: NaN }, [native]), 3);
 });

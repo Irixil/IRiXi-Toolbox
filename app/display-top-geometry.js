@@ -29,12 +29,12 @@ function resolveExpandedTopInset(display, nativeScreens = []) {
     strip.source === 'system-notch-safe-area' ? strip.height : 0);
 }
 
-// Keep integer native window bounds, but paint one physical pixel inward on
+// Keep integer native window bounds, but paint three physical pixels inward on
 // the sides and bottom. A Retina pixel is half a logical point, not two points.
 function resolveNotchPaintInset(display, nativeScreens = []) {
   if (resolveCollapsedStrip(display, nativeScreens).source !== 'system-notch-safe-area') return 0;
   const scale = Number.isFinite(display.scaleFactor) && display.scaleFactor > 0 ? display.scaleFactor : 1;
-  return 1 / scale;
+  return 3 / scale;
 }
 
 module.exports = { resolveCollapsedStrip, resolveExpandedTopInset, resolveNotchPaintInset };

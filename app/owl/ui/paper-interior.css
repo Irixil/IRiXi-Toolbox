@@ -1,13 +1,7 @@
-/* Texture only: original palette and PNG artwork remain unchanged. */
-.portrait-room::before {
-  display: block;
-  background: url('./assets/cream-grain.png') repeat;
-  opacity: .065;
-  mix-blend-mode: normal;
-  z-index: 0;
-  pointer-events: none;
-}
+/* Paper is composited behind original room art, not behind its opaque canvas. */
+.portrait-room::before { display: none; }
 #collection-panel, details[open], #placement-controls, #collection-reward {
-  background-image: linear-gradient(color-mix(in srgb, var(--paper) 94%, transparent), color-mix(in srgb, var(--paper) 94%, transparent)), url('./assets/cream-grain.png');
+  background-image: url('./assets/paper-fibers.svg');
+  background-size: 128px 128px;
 }
-/* No colour variables, surface colours, art filters or text tint overrides. */
+/* Original colour variables, art PNGs and filters are unchanged. */

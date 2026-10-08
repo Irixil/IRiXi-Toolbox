@@ -12,10 +12,10 @@ exports.createOwlHost=({app,BrowserWindow,WebContentsView,ipcMain,powerMonitor,d
   let defaults={seconds:1500,legacyRaw:null};
   if(fs.existsSync(defaultsFile)){
     const saved=JSON.parse(fs.readFileSync(defaultsFile,'utf8'));
-    if(!Number.isInteger(saved.seconds)||saved.seconds<1||saved.seconds>10800)throw Error('旧番茄钟设置无法识别，原字节已保留。');
+    if(!Number.isInteger(saved.seconds)||saved.seconds<1||saved.seconds>10800||(saved.breakSeconds!==undefined&&(!Number.isInteger(saved.breakSeconds)||saved.breakSeconds<1||saved.breakSeconds>3600)))throw Error('旧番茄钟设置无法识别，原字节已保留。');
     defaults=saved;
   }
-  try{store=new FileStore(dataDir);service=new FocusService(store);const snapshot=service.snapshot.bind(service);service.snapshot=()=>({...snapshot(),configuredFocusSeconds:defaults.seconds});controller=new FocusController(service);}
+  try{store=new FileStore(dataDir);service=new FocusService(store);const snapshot=service.snapshot.bind(service);service.snapshot=()=>({...snapshot(),configuredFocusSeconds:defaults.seconds,configuredBreakSeconds:defaults.breakSeconds??300});controller=new FocusController(service);}
   catch(error){store?.close();throw error;}
   const checked=event=>{if(!controller.allowed(event))throw Error('未授权窗口');};
   const activity=new ActivityService({store:new ActivityFileStore(path.join(dataDir,'activity')),foreground:readForeground});
@@ -99,11 +99,11 @@ exports.createOwlHost=({app,BrowserWindow,WebContentsView,ipcMain,powerMonitor,d
   ipcMain.handle('owl:defaults',(event,legacyRaw)=>{
     checked(event);
     if(legacyRaw&&typeof legacyRaw==='object'){
-      const seconds=legacyRaw.seconds;
-      if(!Number.isInteger(seconds)||seconds<1||seconds>10800)throw Error('专注时长无效。');
+      const seconds=legacyRaw.seconds,breakSeconds=legacyRaw.breakSeconds??defaults.breakSeconds??300;
+      if(!Number.isInteger(seconds)||seconds<1||seconds>10800||!Number.isInteger(breakSeconds)||breakSeconds<1||breakSeconds>3600)throw Error('专注时长无效。');
       if(service.snapshot().active)throw Error('先结束当前一轮再设置时长。');
-      const candidate={...defaults,seconds};
-      const temp=defaultsFile+'.tmp';fs.writeFileSync(temp,JSON.stringify(candidate,null,2),{mode:0o600});fs.renameSync(temp,defaultsFile);defaults=candidate;controller.changed(service.snapshot());
+      const candidate={...defaults,seconds,breakSeconds};
+      const temp=defaultsFile+'.tmp';const fd=fs.openSync(temp,'w',0o600);try{fs.writeFileSync(fd,JSON.stringify(candidate,null,2));fs.fsyncSync(fd);}finally{fs.closeSync(fd);}fs.renameSync(temp,defaultsFile);defaults=candidate;controller.changed(service.snapshot());
     }
     if(!fs.existsSync(defaultsFile)&&typeof legacyRaw==='string'&&legacyRaw.length<=256){
       let parts;try{parts=JSON.parse(legacyRaw);}catch{return {...defaults};}

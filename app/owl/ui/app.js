@@ -26,7 +26,7 @@ $('other-view').textContent = standaloneShell ? (compact?'打开主窗口':'打�
 $('widget-size').addEventListener('click',()=>window.owlFocus.resizeWidget().catch(e=>{$('error').textContent=e.message;}));
 const disposeWidgetDrag=widget?bindWidgetDrag(window.owlFocus):()=>{};
 const disposeActivityRecords=bindActivityRecords(window.owlFocus);
-let current, busy = false, unsubscribe, lastConfiguredSeconds;
+let current, busy = false, unsubscribe, lastConfiguredSeconds,lastConfiguredBreakSeconds,durationSave=Promise.resolve();
 collectionPanel=bindCollectionPanel({root:document,details:$('more'),onPreview:(equipment,positions,layerOrder)=>scene.setPreviewEquipment(equipment,positions,layerOrder),onSave:extra=>act('room-set',extra),onOpenChange:open=>{document.querySelector('main').classList.toggle('dressing',open);scene.setInteractionPaused(open);}});
 const fmt = ms => { const s = Math.ceil(ms / 1000); return String(Math.floor(s / 60)).padStart(2,'0') + ':' + String(s % 60).padStart(2,'0'); };
 function primaryType(s) {
@@ -38,6 +38,7 @@ function render(state) {
   current = state;
   $('development-art-note').hidden=!state.collectionCatalog?.room?.developmentPreview;
   if(state.configuredFocusSeconds&&state.configuredFocusSeconds!==lastConfiguredSeconds){lastConfiguredSeconds=state.configuredFocusSeconds;$('minutes').value=String(lastConfiguredSeconds/60);}
+  if(state.configuredBreakSeconds&&state.configuredBreakSeconds!==lastConfiguredBreakSeconds){lastConfiguredBreakSeconds=state.configuredBreakSeconds;$('break-minutes').value=String(lastConfiguredBreakSeconds/60);}
   scene.update(state);
   collectionPanel.update(state,busy);
   $('test-access').checked=Boolean(state.testAccess?.enabled);$('test-access').disabled=busy||Boolean(state.fault);
@@ -59,6 +60,8 @@ function render(state) {
   $('end').hidden = !a; $('start').hidden = Boolean(a) || type!=='break'; $('break').hidden = Boolean(a) || type==='break';
   for(const id of ['primary-action','start','end','break','accessory','room','reduced-motion']) $(id).disabled = busy || Boolean(state.fault);
   $('minutes').disabled = Boolean(a); $('break-minutes').disabled = Boolean(a);
+  $('save-duration').disabled=Boolean(a)||busy||Boolean(state.fault);
+  if(a){$('duration-note').dataset.locked='true';$('duration-note').textContent='当前一轮的时长已固定（暂停也一样）；完成或结束这一轮后可调整。';}else if($('duration-note').dataset.locked){delete $('duration-note').dataset.locked;$('duration-note').textContent='调整后保存，下一轮使用新设置。';}
   $('notice').textContent = state.fault || (a?.reason?.includes('上次退出') ? '上次进度已保留，确认后继续。' : a?.reason?.includes('中断') ? '检测到中断，确认后继续。' : '') || '';
   $('recovery-info').textContent = a?.reason || state.lastOutcome?.message || '';
   $('growth').textContent = state.creditedMinutes + ' 枚成长印记';
@@ -80,10 +83,18 @@ async function act(type, extra={}) {
   } catch(e) { $('error').textContent='操作未确认：'+e.message; }
   finally {busy=false;if(current)render(current);}
 }
+function saveDurationSettings() {
+  const seconds=Math.round(Number($('minutes').value)*60),breakSeconds=Math.round(Number($('break-minutes').value)*60);
+  if(!Number.isInteger(seconds)||seconds<1||seconds>10800||!Number.isInteger(breakSeconds)||breakSeconds<1||breakSeconds>3600){const error=Error('专注时长需在1秒至180分钟内，休息时长需在1秒至60分钟内。');$('duration-note').textContent=error.message;return Promise.reject(error);}
+  durationSave=durationSave.catch(()=>{}).then(()=>window.owlFocus.defaults({seconds,breakSeconds}));
+  return durationSave.then(value=>{$('duration-note').textContent='时长已保存，下一轮使用新设置。';return value;},error=>{$('duration-note').textContent=error.message;throw error;});
+}
+$('save-duration').addEventListener('click',()=>saveDurationSettings().catch(()=>{}));
+for(const id of ['minutes','break-minutes'])$(id).addEventListener('change',()=>{if(current&&!current.active)saveDurationSettings().catch(()=>{});});
 async function start() {
   if(!$('task').value.trim()) { if(widget)$('more').open=true; $('error').textContent='先写下这次的一件事。'; $('task-setup').hidden=false; $('task').focus();return; }
   const seconds=Math.round(Number($('minutes').value)*60);
-  if(window.owlFocus.defaults)try{await window.owlFocus.defaults({seconds});}catch(e){$('error').textContent=e.message;return;}
+  if(window.owlFocus.defaults)try{await saveDurationSettings();}catch(e){$('error').textContent=e.message;return;}
   return act('start',{task:$('task').value,seconds});
 }
 $('primary-action').addEventListener('click',()=>{
@@ -104,5 +115,5 @@ for(const id of ['minutes','break-minutes']) $(id).addEventListener('input',()=>
 $('other-view').addEventListener('click',()=>window.owlFocus.openOtherView());
 $('close-panel').addEventListener('click',()=>{$('more').open=false;});
 if(!window.owlFocus) $('error').textContent='请通过本地工程入口打开。';
-else { unsubscribe=window.owlFocus.subscribe(render);Promise.resolve(window.owlFocus.defaults?.()).then(defaults=>{if(defaults?.seconds)$('minutes').value=String(defaults.seconds/60);return window.owlFocus.snapshot();}).then(render).catch(e=>{$('error').textContent='读取存档失败：'+e.message;}); }
+else { unsubscribe=window.owlFocus.subscribe(render);Promise.resolve(window.owlFocus.defaults?.()).then(defaults=>{if(defaults?.seconds)$('minutes').value=String(defaults.seconds/60);if(defaults?.breakSeconds)$('break-minutes').value=String(defaults.breakSeconds/60);return window.owlFocus.snapshot();}).then(render).catch(e=>{$('error').textContent='读取存档失败：'+e.message;}); }
 window.addEventListener('beforeunload',()=>{collectionPanel.dispose();disposeActivityRecords();disposeWidgetDrag();unsubscribe?.();scene.dispose();});
