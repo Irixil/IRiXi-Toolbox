@@ -101,7 +101,6 @@ exports.createOwlHost=({app,BrowserWindow,WebContentsView,ipcMain,powerMonitor,d
     if(legacyRaw&&typeof legacyRaw==='object'){
       const seconds=legacyRaw.seconds,breakSeconds=legacyRaw.breakSeconds??defaults.breakSeconds??300;
       if(!Number.isInteger(seconds)||seconds<1||seconds>10800||!Number.isInteger(breakSeconds)||breakSeconds<1||breakSeconds>3600)throw Error('专注时长无效。');
-      if(service.snapshot().active)throw Error('先结束当前一轮再设置时长。');
       const candidate={...defaults,seconds,breakSeconds};
       const temp=defaultsFile+'.tmp';const fd=fs.openSync(temp,'w',0o600);try{fs.writeFileSync(fd,JSON.stringify(candidate,null,2));fs.fsyncSync(fd);}finally{fs.closeSync(fd);}fs.renameSync(temp,defaultsFile);defaults=candidate;controller.changed(service.snapshot());
     }

@@ -58,7 +58,10 @@ class FocusService extends EventEmitter {
     const settled = this.settle(candidate, sample);
     // Settled time must survive a stale or rejected UI command too.
     let changed;
-    try { changed = command(candidate, c, sample.wall, this.makeId,this.catalog); }
+    // A click at the old round's natural endpoint still starts the next round.
+    const value = c?.type === 'start-next' && settled && !candidate.active && c.sessionId === this.state.active?.id
+      ? { ...c, sessionId: undefined } : c;
+    try { changed = command(candidate, value, sample.wall, this.makeId,this.catalog); }
     catch (e) { if (settled) this.commit(candidate, sample); else this.last = sample; throw e; }
     if (settled || changed) this.commit(candidate, sample);
     else this.last = sample;

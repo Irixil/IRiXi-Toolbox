@@ -22,7 +22,6 @@ function loadDefaults(){
 }
 function saveDefaults(value){
  if(!value||typeof value!=='object'||Object.keys(value).some(k=>!['seconds','breakSeconds'].includes(k))||!Number.isInteger(value.seconds)||value.seconds<1||value.seconds>10800||(value.breakSeconds!==undefined&&(!Number.isInteger(value.breakSeconds)||value.breakSeconds<1||value.breakSeconds>3600)))throw Error('专注时长需在1秒至180分钟内。');
- if(service.snapshot().active)throw Error('先结束当前一轮再设置时长。');
  const temp=defaultsFile+'.tmp';let fd,replaced=false;
  try{fd=fs.openSync(temp,'w',0o600);fs.writeFileSync(fd,JSON.stringify({seconds:value.seconds,breakSeconds:value.breakSeconds??defaults.breakSeconds??300},null,2));fs.fsyncSync(fd);fs.closeSync(fd);fd=undefined;fs.renameSync(temp,defaultsFile);replaced=true;const dir=fs.openSync(data,'r');try{fs.fsyncSync(dir);}finally{fs.closeSync(dir);}}
  catch(e){throw Error((replaced?'设置文件已替换，但未能确认落盘：':'设置未确认保存：')+e.message);}

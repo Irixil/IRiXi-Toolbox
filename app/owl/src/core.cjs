@@ -111,10 +111,13 @@ function command(s, c, now, makeId, catalog=COLLECTION_CATALOG) {
   if (s.processed.includes(c.requestId)) return false;
   if (['pause', 'resume', 'end'].includes(c.type)
     && (!s.active || c.sessionId !== s.active.id)) throw new Error('这轮状态已改变，请使用当前窗口显示的这一轮。');
+  if (c.type === 'start-next' && c.sessionId !== s.active?.id)
+    throw new Error('这轮状态已改变，请使用当前窗口显示的这一轮。');
   switch (c.type) {
     case 'start':
+    case 'start-next':
     case 'break': {
-      if (s.active) throw new Error('已有一轮进行中；两个窗口共用这一轮，请先结束。');
+      if (s.active && c.type !== 'start-next') throw new Error('已有一轮进行中；两个窗口共用这一轮，请先结束。');
       const minutes = c.minutes ?? (c.type === 'break' ? 5 : 25);
       if (!Number.isInteger(minutes) || minutes < 1 || minutes > (c.type === 'break' ? 60 : 180))
         if (c.seconds === undefined) throw new Error('专注时长为1–180分钟，休息时长为1–60分钟。');
@@ -123,10 +126,13 @@ function command(s, c, now, makeId, catalog=COLLECTION_CATALOG) {
         throw new Error('时长为1秒至180分钟；休息最多60分钟。');
       const task = c.type === 'break' ? '休息' : (typeof c.task === 'string' ? c.task.trim().slice(0, 200) : '');
       if (!task) throw new Error('先写下这次想做的一件事。');
-      s.active = { id: makeId(), kind: c.type === 'break' ? 'break' : 'focus', status: 'running',
+      const next = { id: makeId(), kind: c.type === 'break' ? 'break' : 'focus', status: 'running',
         task, durationMs: durationSeconds * 1000, elapsedMs: 0, startedAt: now,
         startCreditedMinutes: s.creditedMinutes, reason: null };
-      s.lastOutcome = null;
+      const replacing = Boolean(s.active);
+      if (replacing) finish(s, now, 'ended');
+      s.active = next;
+      if (!replacing) s.lastOutcome = null;
       break;
     }
     case 'pause': s.active.status = 'paused'; s.active.reason = '你已暂停；暂停时间不计入成长。'; break;
