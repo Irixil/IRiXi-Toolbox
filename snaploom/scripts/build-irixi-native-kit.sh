@@ -57,7 +57,6 @@ mkdir -p "$framework/Resources"
 mkdir -p "$module_cache"
 cp "$plist_file" "$framework/Info.plist"
 cp "$plist_file" "$framework/Resources/Info.plist"
-cp "$project_root/../app/renderer/cream-paper.png" "$framework/Resources/cream-paper.png"
 
 xcrun swiftc \
   -parse-as-library \

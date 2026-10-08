@@ -95,11 +95,6 @@ class ColorPickerView: NSView {
     // MARK: - Drawing
 
     override func draw(_ dirtyRect: NSRect) {
-        #if IRIXI_HELPER
-        IRiXiPaperTheme.paper.setFill()
-        bounds.fill()
-        IRiXiPaperTheme.drawTexture(in: bounds)
-        #endif
         let pickerWidth = bounds.width
         var cursorY = bounds.maxY
 

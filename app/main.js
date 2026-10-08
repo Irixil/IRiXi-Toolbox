@@ -69,7 +69,7 @@ const {
   reduceClipboardObservation,
 } = require('./main-services');
 const { createToolPlatform, ToolPackageError } = require('./tool-platform');
-const { resolveCollapsedStrip, resolveExpandedTopInset } = require('./display-top-geometry');
+const { resolveCollapsedStrip, resolveExpandedTopInset, resolveNotchPaintInset } = require('./display-top-geometry');
 const {
   createNativeModuleManager,
   isExactW19PermissionTestInvocation,
@@ -1941,6 +1941,7 @@ function getLayoutMetrics(display) {
     stripWidth: strip.width,
     stripOffsetX: strip.x + strip.width / 2 - (bounds.x + bounds.width / 2),
     stripGeometrySource: strip.source,
+    stripPaintInset: resolveNotchPaintInset(d, nativeModule.getDisplayTopGeometry()),
     menuBarHeight: getMenuBarHeight(d), // 折叠态菜单栏带高（折叠条上半部分被其拦截）
     chromeY: EXPANDED_CHROME_Y,
     tabSizes: TAB_SIZES,

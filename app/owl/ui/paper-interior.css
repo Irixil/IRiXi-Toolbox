@@ -1,0 +1,19 @@
+/* Paper belongs to this owl document only. The original canvas/art is opaque
+   above the background layer; no texture/filter is applied over art or text. */
+:root { --paper: #f5efe3; }
+main { background-color: var(--paper); }
+.portrait-room { background-color: var(--paper); }
+.portrait-room::before {
+  display: block;
+  background: url('./assets/cream-grain.png') repeat;
+  opacity: .065;
+  mix-blend-mode: normal;
+  z-index: 0;
+  pointer-events: none;
+}
+#collection-panel, details[open], #placement-controls, #collection-reward {
+  background-color: var(--paper);
+  background-image: linear-gradient(#f5efe3ec, #f5efe3ec), url('./assets/cream-grain.png');
+}
+.collection-card { background-color: #fbf7ef; }
+/* Thumbnail canvases and the room canvas keep their original pixels. */

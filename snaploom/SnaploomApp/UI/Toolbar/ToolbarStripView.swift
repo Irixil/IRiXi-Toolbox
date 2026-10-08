@@ -131,9 +131,6 @@ class ToolbarStripView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         ToolbarLayout.bgColor.setFill()
         NSBezierPath(roundedRect: bounds, xRadius: 6, yRadius: 6).fill()
-        #if IRIXI_HELPER
-        IRiXiPaperTheme.drawTexture(in: bounds)
-        #endif
     }
 
     // Consume clicks on gaps between buttons so they don't fall through to OverlayView.

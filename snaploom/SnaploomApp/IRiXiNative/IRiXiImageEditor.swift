@@ -11,7 +11,6 @@ enum IRiXiImageOutput {
 
     static func save(_ image: NSImage, attachedTo window: NSWindow? = nil) {
         let panel = NSSavePanel()
-        IRiXiPaperTheme.apply(to: panel)
         panel.allowedContentTypes = [.png]
         panel.canCreateDirectories = true
         panel.nameFieldStringValue = filename()
@@ -28,7 +27,6 @@ enum IRiXiImageOutput {
                 alert.messageText = "图片没有保存成功"
                 alert.informativeText = "请换一个位置后重试；当前截图和标注仍然保留。"
                 alert.addButton(withTitle: "知道了")
-                IRiXiPaperTheme.apply(to: alert)
                 if let window {
                     alert.beginSheetModal(for: window)
                 } else {
@@ -107,7 +105,7 @@ private final class IRiXiAnnotationCanvas: NSView {
         let size = NSSize(width: max(1, image.size.width), height: max(1, image.size.height))
         super.init(frame: NSRect(origin: .zero, size: size))
         wantsLayer = true
-        layer?.backgroundColor = IRiXiPaperTheme.surface.cgColor
+        layer?.backgroundColor = NSColor.black.cgColor
     }
 
     @available(*, unavailable)
@@ -210,7 +208,6 @@ private final class IRiXiAnnotationCanvas: NSView {
         alert.accessoryView = field
         alert.addButton(withTitle: "添加")
         alert.addButton(withTitle: "取消")
-        IRiXiPaperTheme.apply(to: alert)
         guard alert.runModal() == .alertFirstButtonReturn else { return }
         let text = field.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { return }
@@ -371,7 +368,7 @@ final class IRiXiImageEditorController: NSObject, NSWindowDelegate {
         scroll.allowsMagnification = true
         scroll.minMagnification = 0.1
         scroll.maxMagnification = 5
-        scroll.backgroundColor = IRiXiPaperTheme.surface
+        scroll.backgroundColor = NSColor(white: 0.12, alpha: 1)
         scroll.drawsBackground = true
         scroll.documentView = editor
 
@@ -392,7 +389,6 @@ final class IRiXiImageEditorController: NSObject, NSWindowDelegate {
             scroll.bottomAnchor.constraint(equalTo: content.bottomAnchor),
         ])
         panel.contentView = content
-        IRiXiPaperTheme.apply(to: panel)
         panel.center()
         window = panel
         selectTool(.arrow)
@@ -668,10 +664,10 @@ private final class IRiXiPinnedImageView: NSView {
         button.bezelStyle = .circular
         button.isBordered = false
         button.image = NSImage(systemSymbolName: symbol, accessibilityDescription: nil)
-        button.contentTintColor = IRiXiPaperTheme.ink
+        button.contentTintColor = .white
         button.wantsLayer = true
         button.layer?.cornerRadius = 12
-        button.layer?.backgroundColor = IRiXiPaperTheme.paper.withAlphaComponent(0.96).cgColor
+        button.layer?.backgroundColor = NSColor.black.withAlphaComponent(0.65).cgColor
         button.target = self
         button.action = action
         button.isHidden = true

@@ -731,7 +731,10 @@ function applyLayoutMetrics(metrics) {
   }
   if (metrics.stripWidth) {
     document.documentElement.style.setProperty('--notch-w', `${metrics.stripWidth}px`);
-    document.documentElement.style.setProperty('--island-half-width', `${metrics.stripWidth / 2}px`);
+    document.documentElement.style.setProperty('--island-half-width', `${metrics.stripWidth / 2 - (metrics.stripPaintInset || 0)}px`);
+  }
+  if (Number.isFinite(metrics.stripPaintInset)) {
+    document.documentElement.style.setProperty('--notch-paint-inset', `${metrics.stripPaintInset}px`);
   }
   if (Number.isFinite(metrics.stripOffsetX)) {
     document.documentElement.style.setProperty('--notch-offset-x', `${metrics.stripOffsetX}px`);

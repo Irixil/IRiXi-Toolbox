@@ -258,37 +258,25 @@ class ToolbarLayout {
 
     // User-customizable colors — read from UserDefaults with defaults matching the original look
     static var accentColor: NSColor {
-        #if IRIXI_HELPER
-        return IRiXiPaperTheme.accent
-        #else
         if let data = UserDefaults.standard.data(forKey: "toolbarAccentColor"),
            let color = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: data) {
             return color
         }
         return defaultAccentColor
-        #endif
     }
     static var iconColor: NSColor {
-        #if IRIXI_HELPER
-        return IRiXiPaperTheme.ink
-        #else
         if let data = UserDefaults.standard.data(forKey: "toolbarIconColor"),
            let color = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: data) {
             return color
         }
         return defaultIconColor
-        #endif
     }
     static var bgColor: NSColor {
-        #if IRIXI_HELPER
-        return IRiXiPaperTheme.paper
-        #else
         if let data = UserDefaults.standard.data(forKey: "toolbarBgColor"),
            let color = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: data) {
             return color
         }
         return defaultBgColor
-        #endif
     }
     static var handleColor: NSColor { accentColor }
     static let cornerRadius: CGFloat = 6
