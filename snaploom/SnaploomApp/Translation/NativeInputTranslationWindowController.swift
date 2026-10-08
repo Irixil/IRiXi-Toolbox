@@ -36,7 +36,9 @@ enum IRiXiPaperTheme {
             if field.isEditable { field.backgroundColor = surface }
         } else if let button = view as? NSButton {
             button.contentTintColor = ink
-            button.bezelColor = surface
+            // A custom rounded bezel makes AppKit's disabled title nearly
+            // white. Keep its system bezel so disabled controls stay readable.
+            button.bezelColor = nil
             // AppKit can keep the white title of a tinted rounded bezel even
             // with contentTintColor set. Give the title an explicit ink color.
             let title = NSMutableAttributedString(attributedString: button.attributedTitle)
