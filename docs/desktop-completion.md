@@ -10,9 +10,9 @@
 
 [静态图](media/completion/natural-completion.png)
 
-## 四种小奖励
+## 七种小奖励
 
-每次随机选择一种，避免与上一次相邻重复。动画约 4 秒，文字卡片保留约 8 秒，也可点右上角关闭。没有新增声音，不会展开工具箱或抢走键盘焦点。下面是实际运行中的 UI 帧，使用合成 25 分钟完成文案；它们不代表跑完了四轮 25 分钟计时。
+每次随机选择一种，避免与上一次相邻重复。动画约 4 秒，文字卡片保留约 8 秒，也可点右上角关闭。没有新增声音，不会展开工具箱或抢走键盘焦点。下面是实际运行中的 UI 帧，使用合成 25 分钟完成文案；它们不代表跑完了七轮 25 分钟计时。
 
 | 纸流星，从右上角划过 | 小烟花，从屏幕下缘升起 |
 | --- | --- |
@@ -24,7 +24,14 @@
 | ![彩带实际界面预览](media/completion/completion-ribbons.gif) | ![礼盒花瓣实际界面预览](media/completion/completion-flowers.gif) |
 | [静态图](media/completion/completion-ribbons.png) | [静态图](media/completion/completion-flowers.png) |
 
-[四种效果静态总览](media/completion/four-effects.jpg) · [帧来源与文件摘要](media/completion/manifest.json)
+| 花瓣雨，轻轻飘落 | 纸星星，在边缘散开 |
+| --- | --- |
+| ![花瓣雨实际界面预览](media/completion/completion-petals.gif) | ![纸星星实际界面预览](media/completion/completion-paper-stars.gif) |
+| [静态图](media/completion/completion-petals.png) | [静态图](media/completion/completion-paper-stars.png) |
+
+![小花绽放实际界面预览](media/completion/completion-blooms.gif)
+
+[小花绽放静态图](media/completion/completion-blooms.png) · [七种效果静态总览](media/completion/seven-effects.jpg) · [帧来源与文件摘要](media/completion/manifest.json)
 
 ## 使用时的几个细节
 
@@ -39,7 +46,7 @@
 
 完成信息由唯一的主进程计时服务在保存成功后发出。每轮带有独立 ID 与准确时长，桌面浮层只消费这个事件，不写专注存档、不发放收藏、不创建第二套计时器。关闭浮层不会改变下一轮或累计进度。
 
-已完成 173 项 Node 回归，包括自然到点、到点同时换轮、提前换轮、失败保存、重复事件、减少动态效果、锁屏与休眠组合、多屏位置和加载竞态。最终签名包中的生产代码与 UI 还通过隔离 Electron 检查：模块隐藏后真实短轮自然完成、8 秒收起、关闭按钮与四种实际效果，以及头像像素与现有素材等比缩小结果完全一致。
+已完成 174 项 Node 回归，包括自然到点、到点同时换轮、提前换轮、失败保存、重复事件、七种随机效果与相邻去重、减少动态效果、锁屏与休眠组合、多屏位置和加载竞态。最终签名包中的生产代码与 UI 还通过隔离 Electron 检查：模块隐藏后真实短轮自然完成、8 秒收起、关闭按钮、七种实际效果及结束后的清理，以及头像像素与现有素材等比缩小结果完全一致。窄屏与矮屏会缩紧卡片，透明区域继续允许点击下面的应用；没有读取其他应用的输入位置。
 
 当前 Mac 上另做了一次原生可见性检查：系统窗口列表确认浮层在屏幕上，前台应用保持原样。Space、全屏应用、物理多屏、真实锁屏和整夜休眠没有在本次逐项实屏验收；相关事件与位置规则已做模拟回归，不能据此宣称全部设备和长期场景通过。接口依据：[Electron 窗口接口](https://www.electronjs.org/docs/latest/api/browser-window)、[系统电源与锁屏事件](https://www.electronjs.org/docs/latest/api/power-monitor)。
 

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-08T14:18:33.915Z",
+  "checkedAt": "2026-10-08T15:31:51.025870+00:00",
   "purpose": "Prevent unrelated removal of installed historical release inputs while keeping private local acceptance paths out of the public repository",
   "installedAsarSha256": "9ea1c0530e610a32384509bc8dba3bc7fb3dc17564794c5c2679a7aa72074f51",
   "historicalOnly": true,
@@ -12,24 +12,30 @@
       "sha256": "afc42615ecd9f89ce88ad8a3a9c35052d1aeee203f8604e3241caaa7ae8e4aae",
       "byteIdenticalToInstalled": true,
       "publication": "safe historical metadata restored in source",
-      "target": "app/owl/frontend-version.json"
+      "target": "app/owl/frontend-version.json",
+      "byteIdenticalInCurrentCandidate": true
     },
     {
       "file": "owl/release-manifest.json",
       "sha256": "69299f53a91feb7c16ff05f01383a81f9cfe6b327f2a8c6a2496f5323ebaa275",
       "byteIdenticalToInstalled": true,
       "publication": "safe historical metadata restored in source",
-      "target": "app/owl/release-manifest.json"
+      "target": "app/owl/release-manifest.json",
+      "byteIdenticalInCurrentCandidate": true
     },
     {
       "component": "private legacy installed acceptance helper",
       "sha256": "5a1575eb41271af0b4d5a1f673afd83f0978f91cebd70a2489aba4cec787f97a",
       "byteIdenticalToInstalled": true,
       "publication": "excluded from Git; retained only in local candidate source/package",
-      "gitExcluded": true
+      "gitExcluded": true,
+      "byteIdenticalInCurrentCandidate": true
     }
   ],
   "remainingRouting": "Resolved: exact legacy helper is preserved only in the local candidate source/package and explicitly excluded from Git; no public release binary requested",
   "sideEffects": "Only isolated clone metadata, ignored staging and this evidence file; no installed app or real profile reads/writes beyond application source archive",
-  "publicSourceBoundary": "The historical installed acceptance helper is private and optional. A fresh public checkout supports normal features but does not provide that legacy local acceptance command. No production feature or existing local check entry point was removed."
+  "publicSourceBoundary": "The historical installed acceptance helper is private and optional. A fresh public checkout supports normal features but does not provide that legacy local acceptance command. No production feature or existing local check entry point was removed.",
+  "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+  "candidateVersion": "0.4.18",
+  "currentCandidateHistoricalInputsPreserved": true
 }

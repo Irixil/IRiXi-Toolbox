@@ -15,7 +15,7 @@ originalHead.addEventListener('load', () => {
 originalHead.src = new URL('../ui/assets/motion-v7/head-poses.png', import.meta.url).href;
 const media = window.matchMedia('(prefers-reduced-motion: reduce)');
 const colors = ['#8c9c77', '#d3b779', '#cba299', '#b4a6bd', '#ead9b2'];
-const kinds = new Set(['meteors', 'fireworks', 'ribbons', 'flowers']);
+const kinds = new Set(['meteors', 'fireworks', 'ribbons', 'flowers', 'petals', 'paper-stars', 'blooms']);
 const animations = new Set();
 const timers = new Set();
 let entryFrame = null;
@@ -201,10 +201,98 @@ function flowers() {
       ], { duration: random(1900, 2850), delay: i * 33, easing: 'cubic-bezier(.25,.46,.45,.94)' });
     }
   }, 360);
-  later(() => animate(gift, [
-    { opacity: 1, transform: 'translateY(0)' },
-    { opacity: 0, transform: 'translateY(18px)' },
-  ], { duration: 250, easing: 'ease-out' }), 4200);
+  later(() => {
+    const exit = animate(gift, [
+      { opacity: 1, transform: 'translateY(0)' },
+      { opacity: 0, transform: 'translateY(18px)' },
+    ], { duration: 250, easing: 'ease-out' });
+    exit.finished.then(() => gift.remove()).catch(() => {});
+  }, 4200);
+}
+
+function effectSpace() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  // Only our own card is measured. Keep the new effects above its text without
+  // inspecting other apps, their input fields or the user's pointer location.
+  const floor = Math.max(24, card.getBoundingClientRect().top - 24);
+  return { width, height, floor, compact: width < 560 || height < 320 };
+}
+
+function petals() {
+  const { width, floor, compact } = effectSpace();
+  const count = compact ? 20 : 28;
+  for (let i = 0; i < count; i++) {
+    const size = random(compact ? 11 : 14, compact ? 18 : 25);
+    const x = width * random(.06, .94);
+    const y = -size - random(6, 36);
+    const element = particle(petal(color(i)), x, y, size, size * 1.4);
+    const dx = random(-1, 1) * Math.min(110, width * .12);
+    const dy = floor - y;
+    const turn = random(-75, 75);
+    animate(element, [
+      { opacity: 0, transform: `translate(0,0) rotate(${turn}deg)` },
+      { opacity: .95, transform: `translate(${dx * .15}px,${dy * .12}px) rotate(${turn + 30}deg)`, offset: .14 },
+      { opacity: .95, transform: `translate(${dx * .55 - 12}px,${dy * .52}px) rotate(${turn + 115}deg)`, offset: .52 },
+      { opacity: .85, transform: `translate(${dx * .86 + 9}px,${dy * .83}px) rotate(${turn + 205}deg)`, offset: .83 },
+      { opacity: 0, transform: `translate(${dx}px,${dy}px) rotate(${turn + 265}deg)` },
+    ], { duration: random(2600, 3250), delay: i * 25, easing: 'linear' });
+  }
+}
+
+function paperStars() {
+  const { width, floor, compact } = effectSpace();
+  const count = compact ? 14 : 20;
+  for (let i = 0; i < count; i++) {
+    const size = random(compact ? 17 : 20, compact ? 28 : 37);
+    const fromLeft = i % 2 === 0;
+    const x = width * (fromLeft ? random(.06, .29) : random(.71, .94));
+    const y = floor - size;
+    const fill = color(i);
+    const art = svg(34, 34, `<path d="m16 2 5 10 11 3-8 8 1 10-10-6-10 5 2-11-6-7 11-2Z" fill="${fill}" stroke="#a18d6e" stroke-width="1.3"/><path d="m16 3-1 14 9 6m-9-6-10-3m10 3 1 10" stroke="#fbf2df" stroke-width="1.1" opacity=".65"/>`);
+    const element = particle(art, x, y, size);
+    const dx = (fromLeft ? 1 : -1) * width * random(.06, .19);
+    const dy = -Math.min(floor * random(.48, .84), compact ? 150 : 300);
+    const turn = random(-35, 35);
+    animate(element, [
+      { opacity: 0, transform: `translate(0,0) rotate(${turn}deg) scale(.65)` },
+      { opacity: 1, transform: `translate(${dx * .16}px,${dy * .2}px) rotate(${turn + 20}deg) scale(1)`, offset: .2 },
+      { opacity: .96, transform: `translate(${dx * .75}px,${dy * .83}px) rotate(${turn + 105}deg) scale(.96)`, offset: .73 },
+      { opacity: 0, transform: `translate(${dx}px,${dy}px) rotate(${turn + 165}deg) scale(.72)` },
+    ], { duration: random(2300, 3000), delay: i * 42, easing: 'linear' });
+  }
+}
+
+function blooms() {
+  const { width, floor, compact } = effectSpace();
+  const clusters = compact ? [.18, .82] : [.12, .33, .67, .88];
+  const stalkHeight = Math.min(compact ? 58 : 82, Math.max(30, floor * .45));
+  const baseline = floor;
+  clusters.forEach((fraction, cluster) => {
+    const x = width * fraction;
+    const stem = particle(svg(54, 86, '<path d="M26 82q4-25 0-52m0 29C5 62 5 43 10 39c12 3 16 10 16 20Zm1-15c18 3 23-14 17-19-9 5-16 8-17 19Z" fill="#b6c19f" stroke="#8d9d78" stroke-width="1.4"/><path d="M26 61 12 45m15-1 13-12" stroke="#94a17e" stroke-width="1.1"/>'), x - stalkHeight * .31, baseline - stalkHeight, stalkHeight * .63, stalkHeight);
+    animate(stem, [
+      { opacity: 0, transform: 'translateY(12px) scale(.4)' },
+      { opacity: .94, transform: 'translateY(0) scale(1)', offset: .16 },
+      { opacity: .9, transform: 'translateY(0) scale(1)', offset: .8 },
+      { opacity: 0, transform: 'translateY(5px) scale(.95)' },
+    ], { duration: 3200, delay: cluster * 180, easing: 'linear' });
+    for (let bloom = 0; bloom < 3; bloom++) {
+      const index = cluster * 3 + bloom;
+      const size = random(compact ? 22 : 26, compact ? 31 : 42);
+      const offset = (bloom - 1) * size * .48;
+      const y = baseline - stalkHeight + (bloom === 1 ? -size * .22 : size * .14);
+      const element = particle(flower(color(index)), x + offset - size / 2, y, size);
+      const turn = random(-18, 18);
+      animate(element, [
+        { opacity: 0, transform: `translateY(9px) rotate(${turn - 12}deg) scale(.12)` },
+        { opacity: 1, transform: `translateY(-2px) rotate(${turn}deg) scale(1.08)`, offset: .18 },
+        { opacity: 1, transform: `translateY(0) rotate(${turn}deg) scale(1)`, offset: .34 },
+        { opacity: .96, transform: `translateY(-4px) rotate(${turn + 7}deg) scale(1)`, offset: .78 },
+        { opacity: 0, transform: `translateY(-10px) rotate(${turn + 12}deg) scale(.82)` },
+      ], { duration: random(2300, 2900), delay: index * 85, easing: 'linear' });
+    }
+  });
 }
 
 function show(payload) {
@@ -221,7 +309,7 @@ function show(payload) {
   entryFrame = requestAnimationFrame(() => {
     entryFrame = null;
     card.classList.add('visible');
-    if (!reducedMotion) ({ meteors, fireworks, ribbons, flowers })[current.kind]();
+    if (!reducedMotion) ({ meteors, fireworks, ribbons, flowers, petals, 'paper-stars': paperStars, blooms })[current.kind]();
   });
 }
 

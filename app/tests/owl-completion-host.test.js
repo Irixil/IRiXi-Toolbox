@@ -3,7 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { EventEmitter } = require('node:events');
-const { createCompletionHost } = require('../owl/completion-host.cjs');
+const { createCompletionHost, EFFECTS } = require('../owl/completion-host.cjs');
 
 // These fakes exercise host behaviour without starting Electron, reading a
 // user's timer store, changing a Space, or displaying a real desktop window.
@@ -166,8 +166,21 @@ test('break, unfinished, and malformed completion payloads never create a deskto
   assert.equal(f.messages().length, 0);
 });
 
-test('random celebrations use all four supported drawings and never repeat adjacent effects', async t => {
-  const choices = [0, 0, 0.5, 0.999, 0.999, 0, 0.5, 0];
+test('every one of the seven agreed drawings is reachable as a first random celebration', async t => {
+  assert.deepEqual(EFFECTS, ['meteors', 'fireworks', 'ribbons', 'flowers', 'petals', 'paper-stars', 'blooms']);
+  const actual = [];
+  for (let index = 0; index < EFFECTS.length; index++) {
+    const f = fixture({ random: () => (index + .5) / EFFECTS.length });
+    t.after(() => f.manager.dispose());
+    f.emitCompleted(`reachable-${index}`);
+    await f.settle();
+    actual.push(f.messages()[0].payload.kind);
+  }
+  assert.deepEqual(actual, EFFECTS);
+});
+
+test('random celebrations use all seven supported drawings and never repeat adjacent effects', async t => {
+  const choices = [0, 0, .17, .35, .52, .7, .87, .999, .17, 0, .35, .52, .7, .87, .999];
   let index = 0;
   const f = fixture({ random: () => choices[index++] });
   t.after(() => f.manager.dispose());
@@ -177,7 +190,7 @@ test('random celebrations use all four supported drawings and never repeat adjac
     f.advance(8_000);
   }
   const kinds = f.messages().map(message => message.payload.kind);
-  assert.deepEqual(new Set(kinds), new Set(['meteors', 'fireworks', 'ribbons', 'flowers']));
+  assert.deepEqual(new Set(kinds), new Set(EFFECTS));
   for (let round = 1; round < kinds.length; round++) assert.notEqual(kinds[round], kinds[round - 1]);
 });
 

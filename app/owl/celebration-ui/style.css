@@ -111,3 +111,11 @@ body.reduced-motion .completion-card.visible { transform: translate(-50%, 0); }
   .completion-note { font-size: 12px; }
   .gift { right: 17px; bottom: 147px; width: 107px; height: 116px; }
 }
+@media (max-height: 280px) {
+  .completion-card { bottom: 12px; min-height: 92px; gap: 13px; padding: 12px 42px 12px 13px; }
+  .owl-avatar { width: 56px; height: 56px; flex-basis: 56px; }
+  .eyebrow { font-size: 12px; margin-bottom: 4px; }
+  h1 { font-size: 19px; }
+  .completion-note { font-size: 12px; margin-top: 4px; }
+  .gift { width: 91px; height: 98px; bottom: 105px; }
+}

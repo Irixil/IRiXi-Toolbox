@@ -1,29 +1,34 @@
 {
   "kind": "scoped-node-component-applicability",
-  "revision": "app0.4.18-completion62-workingtree-54f73e8b1e2e",
+  "checkedAt": "2026-10-08T15:31:51.025870+00:00",
+  "revision": "app0.4.18-completion62-seven-effects-asarf86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+  "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
   "result": "passed",
   "nodeTests": {
-    "count": 173,
-    "passed": 173,
+    "count": 174,
+    "passed": 174,
     "failed": 0,
     "completionCore": 12,
-    "completionHost": 16,
-    "logSha256": "bb5c8522ee9b087b20c204cf2140e2e802137692ca6683aa627eefab067ca29c"
+    "completionHost": 17,
+    "logSha256": "4bb7efca0441a55617d6f43b875f840227da7880f8a5a32e3f5b28d4692c5e4b",
+    "environment": "Host rerun passed all tests; an earlier sandbox run denied four temporary loopback-server tests"
   },
-  "sourceBytesMatchPreviousNodeSnapshot": true,
   "sourceFilesSha256": {
     "app/main.js": "21066d0518e24aae4d85ba9098ca0aeb1847857c9004068e3bc2a17c493edc0b",
-    "app/owl/celebration-ui/app.js": "3333e6040a6f90911e40db5c35ca5b2346e053b623e3c7544f0667f1d6d1cdfc",
-    "app/owl/celebration-ui/index.html": "48382347eaea415d6ed437a1ac9502a431f9bee21eac1a9633dbdcad127f8e9a",
+    "app/owl/celebration-ui/app.js": "fad7665ef901a4ac89e3e24a4d5cbd2127c930dcbfdb15a138bc5935030979f5",
+    "app/owl/celebration-ui/index.html": "6b7ae4ebe024c2b64622fbf8050d8ba5171cd636c9f77d1606ce39dd6ede5938",
     "app/owl/celebration-ui/preload.cjs": "d071a022ce7fd851026dbfdf9c62eb71502b9de8a6f2edfe56b872ab30db8869",
-    "app/owl/celebration-ui/style.css": "72be71b87c98e3d804588e55c7507014ccb1f941b7c7ea1c444f62bb1c562914",
-    "app/owl/completion-host.cjs": "1b56a0e16c8400c7ebc10b47e54446c48333ef6e96d81fe50a75450316d2c175",
+    "app/owl/celebration-ui/style.css": "2dc23deb396963db6b426d4f4618884b45168a66dcb358ec88640288addfbd5a",
+    "app/owl/completion-host.cjs": "513b99974859792bfbe9ca5486b7b8b4b13ea38600b1dc1daf559823b2d4328c",
     "app/owl/owl-host.cjs": "348d26f51f2b01ab1b04388d0cd46d5031eb8550364dce49fcf3e0b68522a630",
     "app/owl/src/core.cjs": "ee1b4dbfdcb74d1d27591161ffe5988eb377727a690bfe0b90248ad20008424e",
     "app/owl/src/service.cjs": "4b195f096aade4ad4cde6e6a28ba93bb74acd971002553d34fcbfdb7d75d7dc2",
-    "app/package.json": "9005246b754777a4fca82b4642f2c03f65424ec3698f1f3ebd9312b244aca5f9"
+    "app/package.json": "1b7fdef433017a4750aee42576f05a333214174a8a5154af9f2f96d6672358c2"
   },
-  "claim": "173 Node checks including 12 natural-completion core and 16 host policy checks passed on applicable current component bytes; final signed app/native GUI visibility not certified",
+  "productionSourceBytesMatchCandidate": true,
+  "sourceSnapshotRecordedAfterPassingRun": true,
+  "claim": "174 Node checks, including 12 natural-completion core and 17 host-policy checks, passed on current source; package preflight separately confirms all production sources equal the candidate archive. Node checks alone do not certify native visibility or installation.",
   "permanentToggleNotInScope": true,
-  "actualGuiAndInstall": "pending separate evidence"
+  "actualGuiEvidence": "Separate current exact package receipts: 26 hidden checks/51 own-UI frames and 5 native-visible checks/12 own-UI frames.",
+  "formalAppUpdated": false
 }

@@ -1,5 +1,6 @@
 {
   "kind": "accepted-source-artwork-selection",
+  "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
   "productionAsset": "app/owl/ui/assets/motion-v7/head-poses.png",
   "assetSha256": "196a1cb3faf9ee90fbb14ef02f70fe1551ea697986dd05d217953febc023fd3c",
   "atlasSize": {
@@ -20,7 +21,12 @@
   "aspectRatioPreserved": true,
   "newSvgCharacterUsed": false,
   "imageGenerationUsed": false,
-  "scope": "Existing production owl crop, original pixels/proportions verified by actual renderer in final exact candidate; no replacement character generated",
+  "actualPackagePixelMatch": {
+    "hidden": true,
+    "nativeVisible": true,
+    "responsiveViewportCount": 3
+  },
+  "scope": "Existing production owl crop; exact current seven-effect candidate renders original pixels/proportions without a filter. No replacement character.",
   "formalAppUpdated": false,
-  "deployment": "waiting_for_safe_normal_restart"
+  "deployment": "waiting_for_parent_coordinated_normal_restart"
 }

@@ -1,7 +1,7 @@
 'use strict';
 const path = require('node:path');
 
-const EFFECTS = ['meteors', 'fireworks', 'ribbons', 'flowers'];
+const EFFECTS = Object.freeze(['meteors', 'fireworks', 'ribbons', 'flowers', 'petals', 'paper-stars', 'blooms']);
 
 // A presentation consumer only: never starts a timer, writes focus data or awards items.
 function createCompletionHost({ service, BrowserWindow, ipcMain, screen, powerMonitor, nativeTheme,
@@ -104,4 +104,4 @@ function createCompletionHost({ service, BrowserWindow, ipcMain, screen, powerMo
     dispose() { if (disposed) return; disposed = true; pending = null; dismiss(); bindings.splice(0).forEach(off => off()); },
   };
 }
-module.exports = { createCompletionHost };
+module.exports = { createCompletionHost, EFFECTS };

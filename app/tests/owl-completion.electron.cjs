@@ -11,6 +11,8 @@ const { app, BrowserWindow, WebContentsView, ipcMain, powerMonitor, screen, nati
 
 const source = path.resolve(process.env.TEST_APP_SOURCE || path.join(__dirname, '..'));
 const { createOwlHost } = require(path.join(source, 'owl/owl-host.cjs'));
+const { EFFECTS } = require(path.join(source, 'owl/completion-host.cjs'));
+assert.deepEqual(EFFECTS, ['meteors', 'fireworks', 'ribbons', 'flowers', 'petals', 'paper-stars', 'blooms']);
 const visible = process.env.IRIXI_COMPLETION_VISIBLE === '1';
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'irixi-completion-profile-'));
 const evidenceDir = process.env.IRIXI_COMPLETION_EVIDENCE_DIR
@@ -27,6 +29,8 @@ const result = { method: 'real Electron + production host, service, file store, 
 const overlayRecords = [];
 const naturalEvents = [];
 const syntheticIds = new Set();
+const visualFixtureWindows = [];
+const hiddenVisualFixtures = new WeakSet();
 let host;
 let mainWindow;
 let requestNumber = 0;
@@ -67,41 +71,76 @@ async function waitFor(predicate, message, timeout = 6_000) {
 function check(name, details = {}) { result.checks.push({ name, passed: true, ...details }); }
 function command(value) { return host.service.dispatch({ ...value, requestId: `electron-test-${++requestNumber}` }); }
 function snapshotDisk() { return JSON.parse(fs.readFileSync(path.join(profile, 'owl', 'focus-state.json'), 'utf8')); }
+const stayHidden = win => hiddenVisualFixtures.has(win) || !visible;
 async function readUi(win) {
   return win.webContents.executeJavaScript(`(() => {
     const card = document.querySelector('#completion-card');
     const box = card.getBoundingClientRect();
+    const close = document.querySelector('#dismiss');
+    const closeBox = close.getBoundingClientRect();
+    const stage = document.querySelector('#celebration');
+    const avatar = document.querySelector('#owl-avatar');
+    const avatarBox = avatar.getBoundingClientRect();
     return { title: document.querySelector('#completion-title').textContent,
       visible: !card.hidden && card.classList.contains('visible'),
       opacity: getComputedStyle(card).opacity, kind: document.body.dataset.kind,
       reducedMotion: document.body.classList.contains('reduced-motion'),
       particleCount: document.querySelectorAll('.particle, .launch, .gift').length,
+      stageChildCount: stage.children.length,
+      effectAnimations: stage.getAnimations({ subtree: true }).filter(animation => animation.playState === 'running').length,
       activeAnimations: document.getAnimations().filter(animation => animation.playState === 'running').length,
       viewport: { width: innerWidth, height: innerHeight },
       cardBounds: { x: box.x, y: box.y, width: box.width, height: box.height },
+      closeBounds: { x: closeBox.x, y: closeBox.y, width: closeBox.width, height: closeBox.height },
+      closeHitTarget: document.elementFromPoint(closeBox.x + closeBox.width / 2, closeBox.y + closeBox.height / 2)?.closest('#dismiss') === close,
+      avatarAspectRatio: avatarBox.width / avatarBox.height,
+      avatarFilter: getComputedStyle(avatar).filter,
       font: getComputedStyle(document.querySelector('#completion-title')).fontFamily };
   })()`);
+}
+async function readAvatar(win) {
+  return win.webContents.executeJavaScript(`(async () => {
+    const avatar = document.querySelector('#owl-avatar');
+    const image = new Image(); image.src = new URL('../ui/assets/motion-v7/head-poses.png', location.href).href;
+    await image.decode();
+    const reference = document.createElement('canvas'); reference.width = avatar.width; reference.height = avatar.height;
+    reference.getContext('2d').drawImage(image, 0, 0, 418, 418, 0, 0, reference.width, reference.height);
+    const actual = avatar.getContext('2d').getImageData(0, 0, avatar.width, avatar.height).data;
+    const expected = reference.getContext('2d').getImageData(0, 0, reference.width, reference.height).data;
+    const bounds = avatar.getBoundingClientRect();
+    return { source: avatar.dataset.source, sourceWidth: image.naturalWidth, sourceHeight: image.naturalHeight,
+      originalPixelsMatch: actual.every((value, index) => value === expected[index]),
+      aspectRatio: bounds.width / bounds.height, filter: getComputedStyle(avatar).filter };
+  })()`);
+}
+function assertVisibleControls(ui) {
+  for (const [name, box] of [['card', ui.cardBounds], ['close', ui.closeBounds]]) {
+    assert(box.x >= 0 && box.y >= 0, `${name} starts outside the viewport`);
+    assert(box.x + box.width <= ui.viewport.width + 1, `${name} overflows viewport width`);
+    assert(box.y + box.height <= ui.viewport.height + 1, `${name} overflows viewport height`);
+  }
+  assert.equal(ui.closeHitTarget, true, 'close control must be reachable at its visible centre');
+  assert.equal(ui.avatarAspectRatio, 1, 'the original owl avatar must retain square proportions');
+  assert.equal(ui.avatarFilter, 'none', 'the original owl avatar must not be recoloured');
 }
 async function waitForCard(win, title) {
   // A capture of this webContents only can wake a hidden renderer for its first
   // rAF. stayHidden prevents the test default from displaying desktop windows.
-  await win.webContents.capturePage(undefined, { stayHidden: !visible, stayAwake: true });
+  await win.webContents.capturePage(undefined, { stayHidden: stayHidden(win), stayAwake: true });
   await waitFor(async () => {
     const ui = await readUi(win);
     return ui.visible && Number(ui.opacity) > .98 && ui.title === title;
   }, `completion card did not render: ${title}`);
   await win.webContents.executeJavaScript('document.fonts.ready.then(() => true)');
   const ui = await readUi(win);
-  assert(ui.cardBounds.x >= 0 && ui.cardBounds.y >= 0);
-  assert(ui.cardBounds.x + ui.cardBounds.width <= ui.viewport.width + 1);
-  assert(ui.cardBounds.y + ui.cardBounds.height <= ui.viewport.height + 1);
+  assertVisibleControls(ui);
   return ui;
 }
 async function capture(win, group, count = 9, interval = 140) {
   const start = Date.now();
   for (let frame = 0; frame < count; frame++) {
     if (frame) await delay(interval);
-    const image = await win.webContents.capturePage(undefined, { stayHidden: !visible, stayAwake: true });
+    const image = await win.webContents.capturePage(undefined, { stayHidden: stayHidden(win), stayAwake: true });
     assert(!image.isEmpty(), 'capture must contain the actual renderer pixels');
     const filename = `${group}-${String(frame).padStart(3, '0')}.png`;
     fs.writeFileSync(path.join(evidenceDir, filename), image.toPNG());
@@ -158,19 +197,7 @@ async function main() {
   if (visible) assert.equal(win.isVisible(), true);
   else assert.equal(win.isVisible(), false);
   const naturalUi = await waitForCard(win, '刚刚成功专注 3 秒');
-  const originalAvatar = await win.webContents.executeJavaScript(`(async () => {
-    const avatar = document.querySelector('#owl-avatar');
-    const image = new Image(); image.src = new URL('../ui/assets/motion-v7/head-poses.png', location.href).href;
-    await image.decode();
-    const reference = document.createElement('canvas'); reference.width = avatar.width; reference.height = avatar.height;
-    reference.getContext('2d').drawImage(image, 0, 0, 418, 418, 0, 0, reference.width, reference.height);
-    const actual = avatar.getContext('2d').getImageData(0, 0, avatar.width, avatar.height).data;
-    const expected = reference.getContext('2d').getImageData(0, 0, reference.width, reference.height).data;
-    const bounds = avatar.getBoundingClientRect();
-    return { source: avatar.dataset.source, sourceWidth: image.naturalWidth, sourceHeight: image.naturalHeight,
-      originalPixelsMatch: actual.every((value, index) => value === expected[index]),
-      aspectRatio: bounds.width / bounds.height, filter: getComputedStyle(avatar).filter };
-  })()`);
+  const originalAvatar = await readAvatar(win);
   assert.equal(originalAvatar.originalPixelsMatch, true);
   assert.equal(originalAvatar.source, 'head-poses.png:0,0,418,418');
   assert.equal(originalAvatar.sourceWidth, 1254); assert.equal(originalAvatar.sourceHeight, 1254);
@@ -244,41 +271,105 @@ async function main() {
   result.syntheticVisualFixtures.push({ id: fixtureId, purpose: '65-second duration formatting + saved reduced motion', ui: reducedUi });
   check('saved reduced motion displays exact minute-and-second text with no particles or running animation');
 
-  // Emulation changes only this isolated renderer's CSS preference so all four
-  // drawings can be previewed even on a Mac with reduced motion enabled.
-  visualWindow.webContents.debugger.attach('1.3');
-  await visualWindow.webContents.debugger.sendCommand('Emulation.setEmulatedMedia', {
-    features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] });
-  for (const kind of ['meteors', 'fireworks', 'ribbons', 'flowers']) {
-    const payload = { sessionId: `${fixtureId}-${kind}`, kind, durationMs: 65_000,
-      completedAt: Date.now(), deferred: false, reducedMotion: false };
-    visualWindow.webContents.send('owl:completion-show', payload);
-    await waitForCard(visualWindow, '刚刚成功专注 1 分钟 5 秒');
-    await waitFor(async () => (await readUi(visualWindow)).particleCount > 0, `${kind} particles did not render`, 1_000);
-    const ui = await readUi(visualWindow);
-    assert.equal(ui.kind, kind);
-    assert.equal(ui.reducedMotion, false);
-    result.syntheticVisualFixtures.push({ id: payload.sessionId, purpose: 'production renderer visual fixture only', payload, ui,
-      mediaEmulation: 'renderer-local prefers-reduced-motion: no-preference' });
-    await capture(visualWindow, `synthetic-${kind}`, 7, 140);
-  }
-  assert.equal(fs.readFileSync(path.join(profile, 'owl', 'focus-state.json')).equals(diskBeforeFixtures), true,
-    'presentation fixtures must not change real file-backed timer state');
-  check('four actual renderer effects captured with synthetic visual fixtures; timer data remains byte-identical');
+  const visualOptions = overlayRecords[1].options;
+  const visualBounds = visualWindow.getBounds();
   await visualWindow.webContents.executeJavaScript("document.querySelector('#dismiss').click()");
   await waitFor(() => visualWindow.isDestroyed(), 'real renderer close button did not dismiss through checked IPC');
   check('real close button dismisses overlay through the production isolated preload and IPC');
+
+  // These presentation-only windows always stay hidden, including in visible
+  // mode. Seven independent production renderers run in parallel so natural
+  // cleanup can be observed without extending the real host's eight-second
+  // dismissal timer. There is no service completion event or timer store here.
+  const fixtures = await Promise.all(EFFECTS.map(async kind => {
+    const fixtureWindow = new BrowserWindow({ ...visualOptions, ...visualBounds,
+      title: `隔离视觉测试：${kind}`, show: false, focusable: false,
+      webPreferences: { ...visualOptions.webPreferences } });
+    visualFixtureWindows.push(fixtureWindow);
+    hiddenVisualFixtures.add(fixtureWindow);
+    await fixtureWindow.loadFile(path.join(source, 'owl/celebration-ui/index.html'));
+    fixtureWindow.webContents.debugger.attach('1.3');
+    // Renderer-local CSS emulation is explicit test data, not a system change.
+    await fixtureWindow.webContents.debugger.sendCommand('Emulation.setEmulatedMedia', {
+      features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] });
+    await fixtureWindow.webContents.executeJavaScript('document.fonts.ready.then(() => true)');
+    const payload = { sessionId: `${fixtureId}-${kind}`, kind, durationMs: 65_000,
+      completedAt: Date.now(), deferred: false, reducedMotion: false };
+    fixtureWindow.webContents.send('owl:completion-show', payload);
+    await waitForCard(fixtureWindow, '刚刚成功专注 1 分钟 5 秒');
+    await waitFor(async () => (await readUi(fixtureWindow)).particleCount > 0, `${kind} particles did not render`, 1_000);
+    const animatedUi = await readUi(fixtureWindow);
+    assert.equal(animatedUi.kind, kind);
+    assert.equal(animatedUi.reducedMotion, false);
+    assert(animatedUi.effectAnimations > 0, `${kind} must have a running effect animation`);
+    const motion = await fixtureWindow.webContents.executeJavaScript(`(async () => {
+      const animation = document.querySelector('#celebration').getAnimations({ subtree: true }).find(value => value.playState === 'running');
+      if (!animation) return null;
+      const before = animation.currentTime;
+      await new Promise(resolve => setTimeout(resolve, 160));
+      return { before, after: animation.currentTime };
+    })()`);
+    assert(motion && motion.after > motion.before, `${kind} animation clock must actually advance`);
+    await capture(fixtureWindow, `synthetic-${kind}`, 4, 160);
+    await waitFor(async () => {
+      const ui = await readUi(fixtureWindow);
+      return ui.stageChildCount === 0 && ui.effectAnimations === 0;
+    }, `${kind} effect did not naturally remove its nodes and animations`, 7_000);
+    const cleanupUi = await readUi(fixtureWindow);
+    assert.equal(cleanupUi.activeAnimations, 0);
+    assert.equal(cleanupUi.visible, true, 'completion text should remain after the short visual effect finishes');
+    check(`${kind}: real particle motion and natural cleanup`, { motion, remainingStageChildren: cleanupUi.stageChildCount });
+
+    const reducedPayload = { ...payload, sessionId: `${payload.sessionId}-reduced`, reducedMotion: true };
+    fixtureWindow.webContents.send('owl:completion-show', reducedPayload);
+    const reducedKindUi = await waitForCard(fixtureWindow, '刚刚成功专注 1 分钟 5 秒');
+    assert.equal(reducedKindUi.reducedMotion, true);
+    assert.equal(reducedKindUi.stageChildCount, 0);
+    assert.equal(reducedKindUi.activeAnimations, 0);
+    await delay(240);
+    const reducedLaterUi = await readUi(fixtureWindow);
+    assert.equal(reducedLaterUi.stageChildCount, 0, `${kind} must not start delayed particles in reduced motion`);
+    assert.equal(reducedLaterUi.activeAnimations, 0);
+    await capture(fixtureWindow, `synthetic-${kind}-reduced`, 1);
+    check(`${kind}: reduced motion remains static with no delayed particles`);
+    result.syntheticVisualFixtures.push({ id: payload.sessionId, purpose: 'production renderer visual fixture only',
+      payload, animatedUi, motion, cleanupUi, reducedUi: reducedLaterUi,
+      alwaysHidden: true, mediaEmulation: 'renderer-local prefers-reduced-motion: no-preference' });
+    return { kind, window: fixtureWindow };
+  }));
+
+  const responsiveWindow = fixtures[0].window;
+  for (const fixture of fixtures.slice(1)) fixture.window.destroy();
+  result.responsiveFixtures = [];
+  for (const size of [{ width: 320, height: 568 }, { width: 560, height: 240 }, { width: 1024, height: 220 }]) {
+    responsiveWindow.setContentSize(size.width, size.height);
+    responsiveWindow.webContents.send('owl:completion-show', { sessionId: `${fixtureId}-size-${size.width}x${size.height}`,
+      kind: 'blooms', durationMs: 10_799_000, completedAt: Date.now(), reducedMotion: true });
+    const ui = await waitForCard(responsiveWindow, '刚刚成功专注 179 分钟 59 秒');
+    assert.deepEqual(ui.viewport, size);
+    const avatar = await readAvatar(responsiveWindow);
+    assert.equal(avatar.originalPixelsMatch, true, 'small-screen layout must preserve original avatar pixels');
+    assert.equal(avatar.aspectRatio, 1);
+    assert.equal(avatar.filter, 'none');
+    await capture(responsiveWindow, `synthetic-size-${size.width}x${size.height}`, 1);
+    result.responsiveFixtures.push({ size, ui, avatar, alwaysHidden: true });
+    check(`${size.width}x${size.height}: card and close control stay visible; original avatar retains its proportions and pixels`);
+  }
+  responsiveWindow.destroy();
+  assert.equal(fs.readFileSync(path.join(profile, 'owl', 'focus-state.json')).equals(diskBeforeFixtures), true,
+    'presentation fixtures must not change real file-backed timer state');
+  check('all seven renderer effects, cleanup, reduced motion, and small-screen layouts preserve timer-store bytes');
   result.finishedAt = new Date().toISOString();
   result.passed = true;
 }
 
 const watchdog = setTimeout(() => {
   result.passed = false;
-  result.error = '35-second integration watchdog exceeded';
+  result.error = '60-second integration watchdog exceeded';
   fs.writeFileSync(path.join(evidenceDir, 'electron-evidence.json'), JSON.stringify(result, null, 2));
   console.error(result.error);
   app.exit(1);
-}, 35_000);
+}, 60_000);
 
 main().then(() => {
   console.log(JSON.stringify({ passed: true, checks: result.checks.length, capturedFrames: result.frames.length,
@@ -291,6 +382,7 @@ main().then(() => {
 }).finally(() => {
   clearTimeout(watchdog);
   try { host?.dispose(); } catch (error) { result.cleanupError = error.message; process.exitCode = 1; }
+  for (const fixtureWindow of visualFixtureWindows) if (!fixtureWindow.isDestroyed()) fixtureWindow.destroy();
   if (mainWindow && !mainWindow.isDestroyed()) mainWindow.destroy();
   fs.writeFileSync(path.join(evidenceDir, 'electron-evidence.json'), JSON.stringify(result, null, 2));
   fs.rmSync(profile, { recursive: true, force: true });

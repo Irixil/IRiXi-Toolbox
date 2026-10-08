@@ -54,7 +54,7 @@
 
 ![在内嵌番茄钟设置下一轮时长，开始、暂停并直接开启下一轮](docs/media/focus.gif)
 
-[查看静态预览](docs/media/focus.png) · [桌面完成反馈与四种效果](docs/desktop-completion.md)
+[查看静态预览](docs/media/focus.png) · [桌面完成反馈与七种效果](docs/desktop-completion.md)
 
 工具箱内的番茄钟与[独立猫头鹰番茄钟](https://github.com/Irixil/irixi-owl-focus)各用自己的存档。前台 APP 时间记录默认关闭，可在番茄钟「更多」中主动开启，仅保存应用与时长。
 

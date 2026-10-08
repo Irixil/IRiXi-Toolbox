@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "checkedAt": "2026-10-08T14:25:46.695Z",
+  "checkedAt": "2026-10-08T15:18:43.766Z",
   "method": "read-only final package/source/baseline comparison; no application launch, deployment or user-state access",
-  "artifactStatus": "ready candidate; corrected original Owl pixels/proportions verified in current real renderer; not deployed; deployment waits for a safe normal restart window",
+  "artifactStatus": "Ready seven-effect candidate: exact package, actual renderer and native-visible checks passed; formal application is not updated and installation awaits parent coordination",
   "result": "passed",
   "checks": {
     "archiveChangeScope": true,
@@ -18,7 +18,7 @@
     "nativeSignatures": true
   },
   "archive": {
-    "candidateAsarSha256": "4e9e5fd46448d5bcc8b88c0f7db97ffc4e88263d99f216e0ea981b24ae335294",
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
     "baselineAsarSha256": "9ea1c0530e610a32384509bc8dba3bc7fb3dc17564794c5c2679a7aa72074f51",
     "candidateFileCount": 237,
     "baselineFileCount": 232,
@@ -124,8 +124,8 @@
       },
       {
         "path": "owl/celebration-ui/app.js",
-        "archiveSha256": "52cb00a330a12bb79edec39ae6ff1245337b10ac8c03259a79f142ccad29c22e",
-        "sourceSha256": "52cb00a330a12bb79edec39ae6ff1245337b10ac8c03259a79f142ccad29c22e",
+        "archiveSha256": "fad7665ef901a4ac89e3e24a4d5cbd2127c930dcbfdb15a138bc5935030979f5",
+        "sourceSha256": "fad7665ef901a4ac89e3e24a4d5cbd2127c930dcbfdb15a138bc5935030979f5",
         "matches": true
       },
       {
@@ -142,14 +142,14 @@
       },
       {
         "path": "owl/celebration-ui/style.css",
-        "archiveSha256": "76afdc6e53e0d2e8445ec8fbdbbbb16cbd06dc8ef317f276e132c10af855d00e",
-        "sourceSha256": "76afdc6e53e0d2e8445ec8fbdbbbb16cbd06dc8ef317f276e132c10af855d00e",
+        "archiveSha256": "2dc23deb396963db6b426d4f4618884b45168a66dcb358ec88640288addfbd5a",
+        "sourceSha256": "2dc23deb396963db6b426d4f4618884b45168a66dcb358ec88640288addfbd5a",
         "matches": true
       },
       {
         "path": "owl/completion-host.cjs",
-        "archiveSha256": "1b56a0e16c8400c7ebc10b47e54446c48333ef6e96d81fe50a75450316d2c175",
-        "sourceSha256": "1b56a0e16c8400c7ebc10b47e54446c48333ef6e96d81fe50a75450316d2c175",
+        "archiveSha256": "513b99974859792bfbe9ca5486b7b8b4b13ea38600b1dc1daf559823b2d4328c",
+        "sourceSha256": "513b99974859792bfbe9ca5486b7b8b4b13ea38600b1dc1daf559823b2d4328c",
         "matches": true
       },
       {
@@ -1439,7 +1439,7 @@
   },
   "native": {
     "module": {
-      "candidateSignedSha256": "ec3be43af717e453ed2049ce886af7be4a859724b53ea2b5f0d4c0387a325d83",
+      "candidateSignedSha256": "9b2f3521b0ce9b386eed15dd3bffeb6865880a7693396b8241347fc73d3791ba",
       "baselineSignedSha256": "6c8381fc87837e2720a7f8476f4232f8074f0d02f6a12f4d89ef0708913c7e39",
       "signedBytesIdentical": false,
       "signatureRemovalMethod": "codesign --remove-signature on private copies only",
@@ -1448,7 +1448,7 @@
       "nativeCodePreserved": true
     },
     "framework": {
-      "candidateSignedSha256": "4596b9e6e4e81fa0c124d33cd54da6e5af7cca72e00a7e03cd47640e793524b0",
+      "candidateSignedSha256": "1832dd310e0bf9cb43d0c0d15c6054f7381caea8b4626342a0561ac0691ae1e8",
       "baselineSignedSha256": "22e988e92ece1d62be1fb2aab8afd86a3fce315c6a43b1258e17dfafbd1dd3fa",
       "signedBytesIdentical": false,
       "signatureRemovalMethod": "codesign --remove-signature on private copies only",
@@ -1474,28 +1474,46 @@
     "candidateNativeSignaturesVerified": true,
     "frameworkInfoPlistIdentical": true
   },
-  "deploymentStatus": "ready candidate; not deployed",
-  "deploymentGate": "Parent reports an active real focus round; deployment is deferred. This read-only package check does not inspect or alter focus state.",
-  "visualVerification": "Current exact candidate real Electron receipts verify original owl atlas crop pixels, 1:1 aspect ratio, no filter, four effect frames, real 3-second natural completion and native onscreen foreground preservation. This proves the isolated candidate, not the installed official application or real lock/Space/fullscreen/physical multiple-display sessions.",
-  "historicalCompatibilityInputs": {
-    "preservedByteIdentically": true,
-    "historicalOnly": true,
-    "currentCompletion62Certification": false,
-    "sourceBoundary": "Local candidate includes an unchanged Git-excluded legacy installed acceptance helper. Fresh public source supports normal features but does not provide that private optional legacy acceptance command."
+  "incrementalFromFourEffectCandidate": {
+    "previousAsarSha256": "4e9e5fd46448d5bcc8b88c0f7db97ffc4e88263d99f216e0ea981b24ae335294",
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+    "expectedChangedOnly": true,
+    "changed": [
+      "owl/celebration-ui/app.js",
+      "owl/celebration-ui/style.css",
+      "owl/completion-host.cjs"
+    ]
+  },
+  "visualVerification": {
+    "scope": "Current seven-effect candidate only; not an official installation or real lock/session/multiple-display verification",
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+    "checks": {
+      "originalAvatarPixelsAndProportions": true,
+      "allSevenEffectsCleanupAndReducedMotion": true,
+      "threeResponsiveViewports": true,
+      "realThreeSecondNaturalCompletion": true,
+      "nativeOwnOverlayOnScreen": true,
+      "foregroundApplicationPreserved": true,
+      "hostAndEmbeddedModuleHidden": true,
+      "automaticDismissal": true,
+      "manualClose": true
+    },
+    "privateDesktopPixelsCaptured": false,
+    "productionUserDataUsed": false
   },
   "visualRuntimeChecks": {
-    "sourceAsarSha256": "4e9e5fd46448d5bcc8b88c0f7db97ffc4e88263d99f216e0ea981b24ae335294",
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
     "hidden": {
       "passed": true,
-      "checks": 9,
-      "ownFrameCount": 41
+      "checks": 26,
+      "frames": 51,
+      "finishedAt": "2026-10-08T15:20:11.417Z"
     },
-    "visible": {
+    "nativeVisible": {
       "passed": true,
       "checks": 5,
-      "ownFrameCount": 12,
-      "nativeOwnOverlayOnScreen": true,
-      "foregroundPreserved": true
+      "frames": 12,
+      "finishedAt": "2026-10-08T15:26:02.017Z"
     },
     "originalAvatar": {
       "source": "head-poses.png:0,0,418,418",
@@ -1506,7 +1524,6 @@
       "filter": "none"
     },
     "desktopPixelsCaptured": false,
-    "productionUserDataUsed": false,
-    "completedAt": "2026-10-08T14:26:30.551Z"
+    "productionUserDataUsed": false
   }
 }
