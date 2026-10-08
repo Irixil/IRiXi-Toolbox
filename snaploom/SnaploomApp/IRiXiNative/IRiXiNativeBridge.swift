@@ -81,6 +81,7 @@ private final class IRiXiNativeTestWindowController {
             detail.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 12),
         ])
         panel.contentView = content
+        IRiXiPaperTheme.apply(to: panel)
         panel.center()
         window = panel
         panel.orderFrontRegardless()

@@ -1,0 +1,176 @@
+/* Flat cream-coloured toolbox chrome. No grain or paper texture outside owl. */
+:root {
+  color-scheme: light;
+  --paper-rgb: 247, 240, 227;
+  --paper-ink-rgb: 39, 34, 28;
+  --bg-base: #f7f0e3;
+  --surface-1: #fff9ee;
+  --surface-2: #f0e6d5;
+  --surface-3: #e4d7c1;
+  --hairline: rgba(86, 65, 38, .16);
+  --hairline-soft: rgba(86, 65, 38, .1);
+  --highlight-top: rgba(255, 255, 255, .55);
+  --tile-highlight: rgba(255, 255, 255, .35);
+  --squircle-highlight: rgba(255, 255, 255, .45);
+  --text-1: #27221c;
+  --text-2: #574e40;
+  --text-3: #746754;
+  --text-4: #746754;
+  --focus-ring: #765937;
+  --scrollbar-thumb: rgba(86, 65, 38, .22);
+  --scrollbar-thumb-hover: rgba(86, 65, 38, .38);
+  --tooltip-bg: rgba(247, 240, 227, .98);
+  --item-hover: rgba(86, 65, 38, .055);
+  --panel-shadow: rgba(63, 43, 20, .14);
+  --accent-green: #326c47;
+  --accent-orange: #925224;
+  --accent-blue: #3c6085;
+  --status-danger: #a34439;
+  --p0: var(--status-danger);
+  --p1: var(--accent-orange);
+  --p2: var(--accent-green);
+  --p3: var(--accent-blue);
+  --clip-text: rgba(86, 65, 38, .24);
+  --clip-border-text: rgba(86, 65, 38, .16);
+  --clip-border-url: rgba(60, 96, 133, .26);
+  --clip-border-image: rgba(146, 82, 36, .25);
+  --color-shell: var(--bg-base);
+  --color-shell-hover: var(--surface-2);
+  --color-surface: var(--surface-1);
+  --color-border: var(--hairline);
+  --color-border-strong: rgba(86, 65, 38, .24);
+  --color-text-primary: var(--text-1);
+  --color-text-secondary: var(--text-2);
+  --color-text-tertiary: var(--text-3);
+  --color-success: var(--accent-green);
+  --color-focus: var(--focus-ring);
+}
+
+.panel::before,
+.tile,
+.tool-detail,
+.tools-library,
+.tool-dialog,
+.todo-editor-card,
+.shortcut-recorder-card,
+.transcription-settings-card {
+  background-image: none;
+}
+
+.panel::before {
+  background-color: var(--bg-base);
+  box-shadow: 0 12px 36px var(--panel-shadow);
+}
+.home-bento > .tile, .sections > .tile {
+  background-color: var(--surface-1);
+}
+.tile-label { color: var(--text-2); }
+.notes-list-item.active {
+  background: var(--surface-2) ;
+  box-shadow: inset 0 0 0 var(--hairline-w) var(--hairline);
+}
+.tab-indicator { background: var(--surface-3); box-shadow: inset 0 0 0 1px var(--hairline); }
+.panel::after { background: linear-gradient(135deg, #d8c6a8, #efdfc5); }
+.tile::after { background: radial-gradient(ellipse at 50% 0%, rgba(86,65,38,.04), transparent 70%); }
+
+.tile { box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.tab.active { background: var(--surface-3); color: var(--text-1); }
+input, textarea, select { caret-color: var(--text-1); accent-color: var(--accent-green); }
+input::placeholder, textarea::placeholder { color: var(--text-3); opacity: 1; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+button:disabled { opacity: .55; }
+::selection { background: #d9c6a4; color: var(--text-1); }
+
+/* Keep the music frame paper-coloured; the original cover remains an image. */
+.home-music[data-widget-size], .home-bento > .home-music[data-layout-variant] {
+  background: var(--surface-1) ;
+}
+.home-music.music-has-metadata > .music-backdrop { opacity: .1; }
+.home-music > .module-effect-canvas { opacity: .08; }
+.home-music::after {
+  background: linear-gradient(90deg, rgba(247,240,227,.78), rgba(247,240,227,.48));
+}
+.home-music .music-artwork { background: var(--surface-2); }
+.home-music .music-copy strong,
+.home-music .music-lyric-line.is-active { color: var(--text-1); text-shadow: none; }
+.home-music .music-copy > .music-artist,
+.home-music .music-copy > .music-album,
+.home-music > .music-lyrics,
+.home-music .music-lyric-line,
+.home-music .music-lyric-line > small,
+.home-music .music-lyric-line.is-active > small,
+.home-music .music-lyric-empty,
+.home-music > .music-status { color: var(--text-2); text-shadow: none; }
+.home-music > .music-status { background: var(--surface-2); border-color: var(--hairline); }
+.music-controls button, .music-controls .music-play {
+  color: var(--text-1); background: var(--surface-3); box-shadow: none;
+}
+.music-controls button:hover { background: #d8c6a8; }
+
+/* Primary controls use deeper paper, with dark lettering. */
+.btn-primary,
+.status-toast button,
+.workspace-button.primary,
+.agent-primary-button,
+.agent-task-actions .agent-primary-button,
+.tool-counter button,
+.tool-native-helper button {
+  background: var(--surface-3); color: var(--text-1);
+}
+.btn-primary:hover, .agent-primary-button:hover,
+.tool-counter button:hover, .tool-native-helper button:hover { background: #d8c6a8; }
+.tool-row-icon, .tool-detail-icon { color: var(--text-2); }
+.tool-row-state[data-enabled='true'], .tool-detail-notice[data-tone='success'] { color: var(--accent-green); }
+.tool-detail-notice[data-tone='error'], .tool-dialog .tool-dialog-error,
+.workspace-button.danger, .agent-inline-notice[data-tone='error'] { color: var(--status-danger); }
+.settings-inline-note { color: var(--accent-green) !important; }
+.settings-inline-note.error { color: var(--status-danger) !important; }
+.tool-row-toggle i, .agent-switch i::after, .settings-auto-launch-row > i::after { background: #8f7e65; }
+.tool-row-toggle[aria-checked='true'] i, .agent-switch input:checked + i::after,
+.settings-auto-launch-row input:checked + i::after { background: var(--surface-1); }
+
+.notification-shell {
+  --notification-accent: var(--accent-green);
+  --notification-accent-rgb: 50, 108, 71;
+  background: var(--bg-base) ;
+  box-shadow: inset 0 0 0 1px var(--hairline), 0 12px 30px var(--panel-shadow);
+}
+.notification-shell[data-source='gpt'] { --notification-accent: #72507c; --notification-accent-rgb: 114, 80, 124; }
+.notification-shell[data-source='todo'] { --notification-accent: var(--accent-orange); --notification-accent-rgb: 146, 82, 36; }
+.notification-shell:hover { filter: none; background-color: var(--surface-2); }
+.notification-source, .notification-trailing, .notification-queue { background: var(--surface-2); }
+
+.settings-device-row em { color: var(--accent-blue); }
+.recording-library, .recording-detail {
+  background: var(--surface-1) ;
+  box-shadow: inset 0 0 0 1px var(--hairline-soft);
+}
+.recording-item, .record-control, .recording-library button,
+.settings-api-card button, .settings-mirror-card button,
+.home-music > .music-artwork-shell {
+  box-shadow: inset 0 0 0 1px var(--hairline-soft), 0 3px 9px rgba(63,43,20,.08);
+}
+.tool-dialog, .todo-editor-card, .shortcut-recorder,
+.credentials-form-card, .credentials-library, .transcription-settings-card {
+  background-color: var(--surface-1);
+  box-shadow: inset 0 0 0 1px var(--hairline), 0 12px 32px var(--panel-shadow);
+}
+.tool-dialog::backdrop { background: rgba(63,43,20,.18); }
+.shortcut-recorder kbd { color: var(--accent-blue); }
+.api-field-heading small[data-state='warning'] { color: var(--accent-orange); }
+.api-field-heading small[data-state='success'] { color: var(--accent-green); }
+.todo-inline-save { color: var(--accent-blue); }
+.agent-reminder-banner span, .agent-reminder-banner button,
+.agent-reminder-banner button:hover { color: var(--text-2); }
+.tools-brand span, .tool-dialog-kicker, .tool-detail-empty > span { color: var(--text-2); }
+.todo-calendar-grid button.today { box-shadow: inset 0 0 0 1px var(--focus-ring); }
+.todo-calendar-grid button.selected {
+  background: var(--surface-3); color: var(--text-1); box-shadow: inset 0 0 0 1px var(--hairline);
+}
+.settings-home-module-grid input:checked + i,
+.settings-feature-grid input:checked + i,
+.settings-auto-launch-row input:checked + i,
+.agent-switch input:checked + i { background: var(--accent-green); box-shadow: none; }

@@ -2,6 +2,57 @@ import AppKit
 import NaturalLanguage
 @preconcurrency import Translation
 
+/// Toolbox-owned chrome only; never changes system appearance or image pixels.
+enum IRiXiPaperTheme {
+    static let paper = NSColor(srgbRed: 247/255, green: 240/255, blue: 227/255, alpha: 1)
+    static let surface = NSColor(srgbRed: 255/255, green: 249/255, blue: 238/255, alpha: 1)
+    static let ink = NSColor(srgbRed: 39/255, green: 34/255, blue: 28/255, alpha: 1)
+    static let secondary = NSColor(srgbRed: 87/255, green: 78/255, blue: 64/255, alpha: 1)
+    static let accent = NSColor(srgbRed: 118/255, green: 89/255, blue: 55/255, alpha: 1)
+    @MainActor static func apply(to window: NSWindow) {
+        #if IRIXI_HELPER
+        window.appearance = NSAppearance(named: .aqua)
+        window.backgroundColor = paper
+        guard let content = window.contentView else { return }
+        content.wantsLayer = true
+        content.layer?.backgroundColor = paper.cgColor
+        style(content)
+        #endif
+    }
+
+    @MainActor static func apply(to alert: NSAlert) {
+        // NSAlert constructs its final button views during layout.
+        alert.layout()
+        apply(to: alert.window)
+    }
+
+    @MainActor private static func style(_ view: NSView) {
+        if let text = view as? NSTextView {
+            text.backgroundColor = surface
+            text.textColor = ink
+            text.insertionPointColor = ink
+        } else if let field = view as? NSTextField {
+            field.textColor = field.isEditable ? ink : secondary
+            if field.isEditable { field.backgroundColor = surface }
+        } else if let button = view as? NSButton {
+            button.contentTintColor = ink
+            button.bezelColor = surface
+            // AppKit can keep the white title of a tinted rounded bezel even
+            // with contentTintColor set. Give the title an explicit ink color.
+            let title = NSMutableAttributedString(attributedString: button.attributedTitle)
+            title.addAttribute(.foregroundColor, value: ink, range: NSRange(location: 0, length: title.length))
+            button.attributedTitle = title
+            let alternate = NSMutableAttributedString(attributedString: button.attributedAlternateTitle)
+            alternate.addAttribute(.foregroundColor, value: ink, range: NSRange(location: 0, length: alternate.length))
+            button.attributedAlternateTitle = alternate
+        }
+        if let scroll = view as? NSScrollView {
+            scroll.backgroundColor = surface
+        }
+        view.subviews.forEach(style)
+    }
+}
+
 /// Apple translation is local. Optional Codex explanation sends only the
 /// explicitly submitted text and this window's recent dialogue to OpenAI.
 @MainActor
@@ -292,6 +343,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
             followupRow.widthAnchor.constraint(equalTo: stack.widthAnchor),
             statusLabel.widthAnchor.constraint(equalTo: stack.widthAnchor),
         ])
+        IRiXiPaperTheme.apply(to: window)
     }
 
     func textDidChange(_ notification: Notification) {
@@ -526,6 +578,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         alert.messageText = "Codex 会员解释 · Luna 低思考"
         alert.informativeText = "使用这台 Mac 上 Codex 已登录的 ChatGPT 账号，不需要 API 密钥。额度不足时会停止，不会切到收费 API。\n\n请在 Codex 中完成登录。对话仅保留在当前翻译窗口内；更换原文或关闭窗口会清空，不接续开发任务。"
         alert.addButton(withTitle: "知道了")
+        IRiXiPaperTheme.apply(to: alert)
         alert.runModal()
     }
 
@@ -594,6 +647,7 @@ final class NativeInputTranslationWindowController: NSObject, NSWindowDelegate, 
         alert.alertStyle = .warning
         alert.addButton(withTitle: "同意并继续")
         alert.addButton(withTitle: "取消")
+        IRiXiPaperTheme.apply(to: alert)
         guard alert.runModal() == .alertFirstButtonReturn else { return false }
         UserDefaults.standard.set(true, forKey: Self.aiConsentDefaultsKey)
         return true

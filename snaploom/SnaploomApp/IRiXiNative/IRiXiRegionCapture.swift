@@ -190,6 +190,7 @@ private final class IRiXiCaptureShortcutManager {
             ? "请在系统设置中允许“IRiXi的小工具库”录制屏幕，然后重新打开应用。"
             : "截图组件暂时不可用，请重新打开 IRiXi的小工具库后再试。"
         alert.addButton(withTitle: "知道了")
+        IRiXiPaperTheme.apply(to: alert)
         NSApp.activate(ignoringOtherApps: true)
         alert.runModal()
     }
@@ -335,8 +336,8 @@ private final class IRiXiCaptureSelectionView: NSView {
     private func drawHint(_ text: String, above rect: NSRect? = nil) {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: NSFont.systemFont(ofSize: 13, weight: .medium),
-            .foregroundColor: NSColor.white,
-            .backgroundColor: NSColor.black.withAlphaComponent(0.72),
+            .foregroundColor: IRiXiPaperTheme.ink,
+            .backgroundColor: IRiXiPaperTheme.paper.withAlphaComponent(0.96),
         ]
         let attributed = NSAttributedString(string: "  \(text)  ", attributes: attributes)
         let size = attributed.size()
@@ -657,6 +658,7 @@ private final class IRiXiOCRResultController {
         ])
 
         panel.contentView = content
+        IRiXiPaperTheme.apply(to: panel)
         panel.center()
         window = panel
         textView = text
@@ -951,6 +953,7 @@ private final class IRiXiCaptureController {
     private func save(_ image: NSImage) {
         panels.forEach { $0.orderOut(nil) }
         let savePanel = NSSavePanel()
+        IRiXiPaperTheme.apply(to: savePanel)
         savePanel.allowedContentTypes = [.png]
         savePanel.canCreateDirectories = true
         savePanel.nameFieldStringValue = Self.defaultFilename()
@@ -964,6 +967,7 @@ private final class IRiXiCaptureController {
                 let alert = NSAlert()
                 alert.messageText = "截图没有保存成功"
                 alert.informativeText = "原文件和剪贴板没有被修改，请换一个位置重试。"
+                IRiXiPaperTheme.apply(to: alert)
                 alert.runModal()
             }
             self.restoreCapturePanels()
@@ -997,6 +1001,7 @@ private final class IRiXiCaptureController {
         alert.messageText = "截图没有开始"
         alert.informativeText = message
         alert.addButton(withTitle: "知道了")
+        IRiXiPaperTheme.apply(to: alert)
         alert.runModal()
         finish()
     }
