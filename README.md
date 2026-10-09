@@ -1,5 +1,7 @@
 # IRiXi的小工具库
 
+项目创作者：**[IRiXi](https://github.com/Irixil)**（GitHub：Irixil）。原始仓库：[Irixil/IRiXi-Toolbox](https://github.com/Irixil/IRiXi-Toolbox) · [作者与推荐署名](ATTRIBUTION.md)。
+
 一个放在 Mac 屏幕顶部的个人工具箱。点击顶部入口，展开奶油色工作台，就能记待办、写笔记、找剪贴内容、截图识字，或者让红围巾猫头鹰陪你专注一会儿。用完收起，继续手头的工作。
 
 工具箱外层采用平整的奶油米色与黑字。嵌入首页的猫头鹰番茄钟保留自己的原配色和细微纸纹。
@@ -146,4 +148,4 @@ IRiXi-Toolbox/
 
 GIF 展示的是当前真实页面在独立演示环境中的操作。权限、联网服务、长期后台运行以及所有设备兼容性没有通过这些 GIF 重新验收；已有本机计时与界面检查的具体边界保留在[历次验证记录](docs/validation-history.md)。
 
-项目采用 [GPL-3.0](LICENSE)。第三方代码、素材与字体说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)，原有许可证随源码保留。
+项目源码采用 [GPL-3.0-only](LICENSE)，与 `app/package.json` 的许可标识一致。[作者与推荐署名](ATTRIBUTION.md)、[猫头鹰素材与来源](app/owl/docs/assets.md)及[第三方说明](THIRD_PARTY_NOTICES.md)提供溯源入口，原有许可证随源码保留。

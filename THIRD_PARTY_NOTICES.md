@@ -1,5 +1,7 @@
 # Third-party notices
 
+Project creator: **IRiXi** (GitHub: [Irixil](https://github.com/Irixil)). Original project: [Irixil/IRiXi-Toolbox](https://github.com/Irixil/IRiXi-Toolbox). Recommended project attribution is described in [ATTRIBUTION.md](ATTRIBUTION.md); it does not replace the third-party notices below.
+
 ## Snaploom and macshot
 
 The native capture code in `snaploom/` is a modified version of Snaploom, which is itself based on macshot.
@@ -29,8 +31,8 @@ Before this public source release, the unverified Vue Bits Color Bends-derived s
 
 The integrated Owl Focus module includes ZCOOL KuaiLe and LXGW WenKai. Each font remains under its own SIL Open Font License 1.1, independently of the application source license.
 
-- ZCOOL KuaiLe copyright and license: `app/owl/ui/assets/fonts/ZCOOLKuaiLe-OFL.txt`.
-- LXGW WenKai copyright and license: `app/owl/ui/assets/fonts/OFL.txt`.
-- Module artwork and provenance: `app/owl/docs/assets.md` and the adjacent asset manifests.
+- ZCOOL KuaiLe copyright and license: [app/owl/ui/assets/fonts/ZCOOLKuaiLe-OFL.txt](app/owl/ui/assets/fonts/ZCOOLKuaiLe-OFL.txt).
+- LXGW WenKai copyright and license: [app/owl/ui/assets/fonts/OFL.txt](app/owl/ui/assets/fonts/OFL.txt).
+- Module artwork and provenance: [app/owl/docs/assets.md](app/owl/docs/assets.md) and the linked asset manifests.
 
 The separate Owl Focus repository and its artwork are not granted an additional license by this notice.
