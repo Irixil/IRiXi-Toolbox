@@ -1,0 +1,1529 @@
+{
+  "schema": 1,
+  "checkedAt": "2026-10-08T15:18:43.766Z",
+  "method": "read-only final package/source/baseline comparison; no application launch, deployment or user-state access",
+  "artifactStatus": "Ready seven-effect candidate: exact package, actual renderer and native-visible checks passed; formal application is not updated and installation awaits parent coordination",
+  "result": "passed",
+  "checks": {
+    "archiveChangeScope": true,
+    "sourceProductionHashes": true,
+    "appVersion": true,
+    "plistScope": true,
+    "privacyStrings": true,
+    "appIdentity": true,
+    "appSignature": true,
+    "entitlements": true,
+    "nativeCode": true,
+    "nativeManifest": true,
+    "nativeSignatures": true
+  },
+  "archive": {
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+    "baselineAsarSha256": "9ea1c0530e610a32384509bc8dba3bc7fb3dc17564794c5c2679a7aa72074f51",
+    "candidateFileCount": 237,
+    "baselineFileCount": 232,
+    "productionFileCount": 219,
+    "allowedChanged": [
+      "main.js",
+      "owl/owl-host.cjs",
+      "owl/src/core.cjs",
+      "owl/src/service.cjs",
+      "package.json"
+    ],
+    "expectedAdded": [
+      "owl/celebration-ui/app.js",
+      "owl/celebration-ui/index.html",
+      "owl/celebration-ui/preload.cjs",
+      "owl/celebration-ui/style.css",
+      "owl/completion-host.cjs"
+    ],
+    "changed": [
+      "main.js",
+      "owl/owl-host.cjs",
+      "owl/src/core.cjs",
+      "owl/src/service.cjs",
+      "package.json"
+    ],
+    "added": [
+      "owl/celebration-ui/app.js",
+      "owl/celebration-ui/index.html",
+      "owl/celebration-ui/preload.cjs",
+      "owl/celebration-ui/style.css",
+      "owl/completion-host.cjs"
+    ],
+    "removed": [],
+    "unexpectedChanged": [],
+    "changeScopeMatches": true,
+    "sourceProductionHashesMatch": true,
+    "sourceHashChecks": [
+      {
+        "path": "LICENSE",
+        "archiveSha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "sourceSha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "matches": true
+      },
+      {
+        "path": "THIRD_PARTY_LICENSES/Snaploom-GPL-3.0.txt",
+        "archiveSha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "sourceSha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "matches": true
+      },
+      {
+        "path": "THIRD_PARTY_LICENSES/TO-DO-Panel-MIT.txt",
+        "archiveSha256": "7ab44bafe3a01fcb339a41791facd9125e27113b2715ceada87ddaa81ebd0c47",
+        "sourceSha256": "7ab44bafe3a01fcb339a41791facd9125e27113b2715ceada87ddaa81ebd0c47",
+        "matches": true
+      },
+      {
+        "path": "THIRD_PARTY_NOTICES.md",
+        "archiveSha256": "5daf3c0118a0ec45fdacdb998bdaf98d5c3a84b7c746d0f107da02637537ac37",
+        "sourceSha256": "5daf3c0118a0ec45fdacdb998bdaf98d5c3a84b7c746d0f107da02637537ac37",
+        "matches": true
+      },
+      {
+        "path": "UPSTREAM.md",
+        "archiveSha256": "cdf631b33cc5e90c8005f71c8a3b16672df7005c4a1b9adecbac52b2fd1e6aba",
+        "sourceSha256": "cdf631b33cc5e90c8005f71c8a3b16672df7005c4a1b9adecbac52b2fd1e6aba",
+        "matches": true
+      },
+      {
+        "path": "agent-service.js",
+        "archiveSha256": "ee54b620d68a37f8af69b4f9793155a33d9030ad7ba5c9b282f348f6163b8692",
+        "sourceSha256": "ee54b620d68a37f8af69b4f9793155a33d9030ad7ba5c9b282f348f6163b8692",
+        "matches": true
+      },
+      {
+        "path": "bundled-tools/sample-counter.irixi-tool",
+        "archiveSha256": "ba4cb476bbb1544b2ae672a69add3009453eacd644f7a309998090c52d7fe84a",
+        "sourceSha256": "ba4cb476bbb1544b2ae672a69add3009453eacd644f7a309998090c52d7fe84a",
+        "matches": true
+      },
+      {
+        "path": "display-top-geometry.js",
+        "archiveSha256": "72d49f68aea6e848d3c8501a6aa1283cb0bd8f45b45e8b05dd901dd4dd13a8b0",
+        "sourceSha256": "72d49f68aea6e848d3c8501a6aa1283cb0bd8f45b45e8b05dd901dd4dd13a8b0",
+        "matches": true
+      },
+      {
+        "path": "main-services.js",
+        "archiveSha256": "cd008a2b1522b9cf66e973972742be698ea78e8ec953e50f877ad557901cb111",
+        "sourceSha256": "cd008a2b1522b9cf66e973972742be698ea78e8ec953e50f877ad557901cb111",
+        "matches": true
+      },
+      {
+        "path": "main.js",
+        "archiveSha256": "21066d0518e24aae4d85ba9098ca0aeb1847857c9004068e3bc2a17c493edc0b",
+        "sourceSha256": "21066d0518e24aae4d85ba9098ca0aeb1847857c9004068e3bc2a17c493edc0b",
+        "matches": true
+      },
+      {
+        "path": "native-module-manager.js",
+        "archiveSha256": "575d8d6f897246f98465e040f5dcf4a305ee5f32b420479e469d1b90a8bddea5",
+        "sourceSha256": "575d8d6f897246f98465e040f5dcf4a305ee5f32b420479e469d1b90a8bddea5",
+        "matches": true
+      },
+      {
+        "path": "owl/celebration-ui/app.js",
+        "archiveSha256": "fad7665ef901a4ac89e3e24a4d5cbd2127c930dcbfdb15a138bc5935030979f5",
+        "sourceSha256": "fad7665ef901a4ac89e3e24a4d5cbd2127c930dcbfdb15a138bc5935030979f5",
+        "matches": true
+      },
+      {
+        "path": "owl/celebration-ui/index.html",
+        "archiveSha256": "6b7ae4ebe024c2b64622fbf8050d8ba5171cd636c9f77d1606ce39dd6ede5938",
+        "sourceSha256": "6b7ae4ebe024c2b64622fbf8050d8ba5171cd636c9f77d1606ce39dd6ede5938",
+        "matches": true
+      },
+      {
+        "path": "owl/celebration-ui/preload.cjs",
+        "archiveSha256": "d071a022ce7fd851026dbfdf9c62eb71502b9de8a6f2edfe56b872ab30db8869",
+        "sourceSha256": "d071a022ce7fd851026dbfdf9c62eb71502b9de8a6f2edfe56b872ab30db8869",
+        "matches": true
+      },
+      {
+        "path": "owl/celebration-ui/style.css",
+        "archiveSha256": "2dc23deb396963db6b426d4f4618884b45168a66dcb358ec88640288addfbd5a",
+        "sourceSha256": "2dc23deb396963db6b426d4f4618884b45168a66dcb358ec88640288addfbd5a",
+        "matches": true
+      },
+      {
+        "path": "owl/completion-host.cjs",
+        "archiveSha256": "513b99974859792bfbe9ca5486b7b8b4b13ea38600b1dc1daf559823b2d4328c",
+        "sourceSha256": "513b99974859792bfbe9ca5486b7b8b4b13ea38600b1dc1daf559823b2d4328c",
+        "matches": true
+      },
+      {
+        "path": "owl/config/collection-catalog.json",
+        "archiveSha256": "82bfaf5ecdd7a5f216288090c4f65bb2de8fa9d9b329e2327db3d28e48ee9b22",
+        "sourceSha256": "82bfaf5ecdd7a5f216288090c4f65bb2de8fa9d9b329e2327db3d28e48ee9b22",
+        "matches": true
+      },
+      {
+        "path": "owl/config/layout-defaults-v38.json",
+        "archiveSha256": "ca21cfa34e3b6de74855d16556c37e25e672eabf3c3896095ee13dddb1379b0f",
+        "sourceSha256": "ca21cfa34e3b6de74855d16556c37e25e672eabf3c3896095ee13dddb1379b0f",
+        "matches": true
+      },
+      {
+        "path": "owl/config/layout-defaults-v39.json",
+        "archiveSha256": "7b56e14480d3d33187f60eccb989d38efa51af4ff81cc6eac091fb9c53924c6b",
+        "sourceSha256": "7b56e14480d3d33187f60eccb989d38efa51af4ff81cc6eac091fb9c53924c6b",
+        "matches": true
+      },
+      {
+        "path": "owl/docs/room-camera-v56.md",
+        "archiveSha256": "2a850109af8f32b2abefc27aaf4b41930bf034c84a24a1dbd5159f1273dcca05",
+        "sourceSha256": "2a850109af8f32b2abefc27aaf4b41930bf034c84a24a1dbd5159f1273dcca05",
+        "matches": true
+      },
+      {
+        "path": "owl/frontend-version.json",
+        "archiveSha256": "afc42615ecd9f89ce88ad8a3a9c35052d1aeee203f8604e3241caaa7ae8e4aae",
+        "sourceSha256": "afc42615ecd9f89ce88ad8a3a9c35052d1aeee203f8604e3241caaa7ae8e4aae",
+        "matches": true
+      },
+      {
+        "path": "owl/local-installed23-check.cjs",
+        "archiveSha256": "5a1575eb41271af0b4d5a1f673afd83f0978f91cebd70a2489aba4cec787f97a",
+        "sourceSha256": "5a1575eb41271af0b4d5a1f673afd83f0978f91cebd70a2489aba4cec787f97a",
+        "matches": true
+      },
+      {
+        "path": "owl/owl-host.cjs",
+        "archiveSha256": "348d26f51f2b01ab1b04388d0cd46d5031eb8550364dce49fcf3e0b68522a630",
+        "sourceSha256": "348d26f51f2b01ab1b04388d0cd46d5031eb8550364dce49fcf3e0b68522a630",
+        "matches": true
+      },
+      {
+        "path": "owl/release-manifest.json",
+        "archiveSha256": "69299f53a91feb7c16ff05f01383a81f9cfe6b327f2a8c6a2496f5323ebaa275",
+        "sourceSha256": "69299f53a91feb7c16ff05f01383a81f9cfe6b327f2a8c6a2496f5323ebaa275",
+        "matches": true
+      },
+      {
+        "path": "owl/src/activity.cjs",
+        "archiveSha256": "b4cd7a38ddf37844ccf25570ca17135a85294ccf30e2c6ec44f80707637393c4",
+        "sourceSha256": "b4cd7a38ddf37844ccf25570ca17135a85294ccf30e2c6ec44f80707637393c4",
+        "matches": true
+      },
+      {
+        "path": "owl/src/collection.cjs",
+        "archiveSha256": "4650b65f59e3d6755e195dba540fcdc844eb3a794e92179c4d80c44503f03f5d",
+        "sourceSha256": "4650b65f59e3d6755e195dba540fcdc844eb3a794e92179c4d80c44503f03f5d",
+        "matches": true
+      },
+      {
+        "path": "owl/src/core.cjs",
+        "archiveSha256": "ee1b4dbfdcb74d1d27591161ffe5988eb377727a690bfe0b90248ad20008424e",
+        "sourceSha256": "ee1b4dbfdcb74d1d27591161ffe5988eb377727a690bfe0b90248ad20008424e",
+        "matches": true
+      },
+      {
+        "path": "owl/src/focus-controller.cjs",
+        "archiveSha256": "f3730c6f0c79e0fc21f9e3e789cc17ce161f9a5ea92ee1bce557c491f4890c6c",
+        "sourceSha256": "f3730c6f0c79e0fc21f9e3e789cc17ce161f9a5ea92ee1bce557c491f4890c6c",
+        "matches": true
+      },
+      {
+        "path": "owl/src/main.cjs",
+        "archiveSha256": "eb9c812287f0e9a078f5976fccc9d9aaf69b9e0e4e6e45d44851299b7168aa20",
+        "sourceSha256": "eb9c812287f0e9a078f5976fccc9d9aaf69b9e0e4e6e45d44851299b7168aa20",
+        "matches": true
+      },
+      {
+        "path": "owl/src/preload.cjs",
+        "archiveSha256": "6adab9ce832dc917e7e062b117a70ff7fdc366e4f1ec7ce1502cdf3fd902907b",
+        "sourceSha256": "6adab9ce832dc917e7e062b117a70ff7fdc366e4f1ec7ce1502cdf3fd902907b",
+        "matches": true
+      },
+      {
+        "path": "owl/src/room-layout.cjs",
+        "archiveSha256": "641935426c20b94f6e46fdef01cd117668d9bfa271d26e8076235525780a444b",
+        "sourceSha256": "641935426c20b94f6e46fdef01cd117668d9bfa271d26e8076235525780a444b",
+        "matches": true
+      },
+      {
+        "path": "owl/src/room-layout.js",
+        "archiveSha256": "67f28948de4b25ac8cf0dc520480a1b6a49cf4ea9320e81663c5f14dec80edf2",
+        "sourceSha256": "67f28948de4b25ac8cf0dc520480a1b6a49cf4ea9320e81663c5f14dec80edf2",
+        "matches": true
+      },
+      {
+        "path": "owl/src/service.cjs",
+        "archiveSha256": "4b195f096aade4ad4cde6e6a28ba93bb74acd971002553d34fcbfdb7d75d7dc2",
+        "sourceSha256": "4b195f096aade4ad4cde6e6a28ba93bb74acd971002553d34fcbfdb7d75d7dc2",
+        "matches": true
+      },
+      {
+        "path": "owl/src/store.cjs",
+        "archiveSha256": "346c6f5d7dcee63f0197fe3c5bdc1482cf656b580591de0c6f65087336c2b05e",
+        "sourceSha256": "346c6f5d7dcee63f0197fe3c5bdc1482cf656b580591de0c6f65087336c2b05e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/activity-records.mjs",
+        "archiveSha256": "06a79c486e0f9869f5f2562adfc179a497ee27579ad1f53257631cdec59fbbb6",
+        "sourceSha256": "06a79c486e0f9869f5f2562adfc179a497ee27579ad1f53257631cdec59fbbb6",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/app.js",
+        "archiveSha256": "bb2740b5a996b278f4ed3fb0617912f2f04617525b280c817eefdbe607f973f2",
+        "sourceSha256": "bb2740b5a996b278f4ed3fb0617912f2f04617525b280c817eefdbe607f973f2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/concept-v4.png",
+        "archiveSha256": "ee40a23aa3bba22cb01a5848c473f257fad5e91f266e29ec037e087ef99f0ecc",
+        "sourceSha256": "ee40a23aa3bba22cb01a5848c473f257fad5e91f266e29ec037e087ef99f0ecc",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/README.txt",
+        "archiveSha256": "948b7aaecc776cb3dba5d876de05d61a2be37f03b6bd5fab76034921e50c06b2",
+        "sourceSha256": "948b7aaecc776cb3dba5d876de05d61a2be37f03b6bd5fab76034921e50c06b2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/chairs/chair-c-spindle-back.png",
+        "archiveSha256": "b3f35770c8f5fbb4135b6d67f39742dabb11f0bdcf88227bb0563c86ea395059",
+        "sourceSha256": "b3f35770c8f5fbb4135b6d67f39742dabb11f0bdcf88227bb0563c86ea395059",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/chairs/chair-c-spindle-front.png",
+        "archiveSha256": "d3dc42ed4738163578766fc148ecc65fea1192a97329562558e32d55b9d9196e",
+        "sourceSha256": "d3dc42ed4738163578766fc148ecc65fea1192a97329562558e32d55b9d9196e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/chairs/chair-d-club-back.png",
+        "archiveSha256": "18f90727b0865252b0aaacfe16f7115b5be8ea1b32d7e42577174c713ee0a3fb",
+        "sourceSha256": "18f90727b0865252b0aaacfe16f7115b5be8ea1b32d7e42577174c713ee0a3fb",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/chairs/chair-d-club-front.png",
+        "archiveSha256": "bd5769b4559dd4a7d0415155d2479beb3888f28a5a2bdaa08cc17b0ed15158f2",
+        "sourceSha256": "bd5769b4559dd4a7d0415155d2479beb3888f28a5a2bdaa08cc17b0ed15158f2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/chairs/chair-e-wing-back.png",
+        "archiveSha256": "f7bcbf72c8a7d2a6da1a5f00895d2cb5f1e11cbdcdca9cb05fbca13aef3558d4",
+        "sourceSha256": "f7bcbf72c8a7d2a6da1a5f00895d2cb5f1e11cbdcdca9cb05fbca13aef3558d4",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/chairs/chair-e-wing-front.png",
+        "archiveSha256": "34b59ef1a11c526c633ceae8349b993e626aef84ef5bb06a8de09075e0c1e88a",
+        "sourceSha256": "34b59ef1a11c526c633ceae8349b993e626aef84ef5bb06a8de09075e0c1e88a",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/collection-catalog-36.json",
+        "archiveSha256": "5de3677e0eb7293c0bd71e91db9f132f124fede6d1c4b18a798ceccf0a2f8383",
+        "sourceSha256": "5de3677e0eb7293c0bd71e91db9f132f124fede6d1c4b18a798ceccf0a2f8383",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/collection-expansion-manifest.json",
+        "archiveSha256": "1d03201fcbd1fbc035985e99e74604dc32de6c262e9450d62442ca125af09c24",
+        "sourceSha256": "1d03201fcbd1fbc035985e99e74604dc32de6c262e9450d62442ca125af09c24",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/floorlight/floor-light-tripod.png",
+        "archiveSha256": "eae0664c160ce9efcb630ba17283cdf93250c4ed2d68691f8d75a728978267fa",
+        "sourceSha256": "eae0664c160ce9efcb630ba17283cdf93250c4ed2d68691f8d75a728978267fa",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/foregroundplant/foreground-plant-trailing.png",
+        "archiveSha256": "81649dfeb2b351fa390b9cac4fef25ee6e2e6d4a63e55f4b70bf64ae9c86739f",
+        "sourceSha256": "81649dfeb2b351fa390b9cac4fef25ee6e2e6d4a63e55f4b70bf64ae9c86739f",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/integration-patches.json",
+        "archiveSha256": "c27b510b2d69450a177296b63e19ff23980019d96ac7edb2f5d65b4e2db677b0",
+        "sourceSha256": "c27b510b2d69450a177296b63e19ff23980019d96ac7edb2f5d65b4e2db677b0",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/plants/plant-c-olive.png",
+        "archiveSha256": "66f828844f76be66805769f0ecd93c453ec1a22d9a23c2e42eaab807de4f9361",
+        "sourceSha256": "66f828844f76be66805769f0ecd93c453ec1a22d9a23c2e42eaab807de4f9361",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/sidefurniture/side-cabinet-drawer.png",
+        "archiveSha256": "db20d08a79c8fab99515db98e6af38e1e58ff0060d5c562b0c63e57bd620efbf",
+        "sourceSha256": "db20d08a79c8fab99515db98e6af38e1e58ff0060d5c562b0c63e57bd620efbf",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/sidefurniture/side-cart-two-tier.png",
+        "archiveSha256": "717b53b11910f8b715d2c2bc2b16243ac44cb346a90fdddb93c8d6804a123c61",
+        "sourceSha256": "717b53b11910f8b715d2c2bc2b16243ac44cb346a90fdddb93c8d6804a123c61",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/sidefurniture/side-table-tall.png",
+        "archiveSha256": "00bcdbaf077d2dbfb1df33d3a07f8286fe68f4c68cb9996e55c240abb7521305",
+        "sourceSha256": "00bcdbaf077d2dbfb1df33d3a07f8286fe68f4c68cb9996e55c240abb7521305",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/tabletop/tabletop-candle.png",
+        "archiveSha256": "29be59c97b86d5ac9ac5ef357b7e05913d7adf02b38b6ac1d08ad0365c8b59ce",
+        "sourceSha256": "29be59c97b86d5ac9ac5ef357b7e05913d7adf02b38b6ac1d08ad0365c8b59ce",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/tabletop/tabletop-hourglass.png",
+        "archiveSha256": "7212aa49fc63c67bc212dbf63a6145661911747839fa17c192476a233cc0f9ea",
+        "sourceSha256": "7212aa49fc63c67bc212dbf63a6145661911747839fa17c192476a233cc0f9ea",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/tabletop/tabletop-pear-dish.png",
+        "archiveSha256": "969d761f1f4a45af8fbd240f931e75b14443aee671da43eeb35ac951d8a7f6a2",
+        "sourceSha256": "969d761f1f4a45af8fbd240f931e75b14443aee671da43eeb35ac951d8a7f6a2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/chair-c-spindle.png",
+        "archiveSha256": "976f35a43405d0663912162be57c012b4101856e60654698e5b72e6ade79b155",
+        "sourceSha256": "976f35a43405d0663912162be57c012b4101856e60654698e5b72e6ade79b155",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/chair-d-club.png",
+        "archiveSha256": "3a2e7772b1451c7c815458d2f4423b63277a8b776b5459270cf9aa8a17a632f2",
+        "sourceSha256": "3a2e7772b1451c7c815458d2f4423b63277a8b776b5459270cf9aa8a17a632f2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/chair-e-wing.png",
+        "archiveSha256": "be5eda2337153000dcb68021ccd4efac23b3b5fb9999e5a87e685fea5336285b",
+        "sourceSha256": "be5eda2337153000dcb68021ccd4efac23b3b5fb9999e5a87e685fea5336285b",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/floor-light-tripod.png",
+        "archiveSha256": "f82ce21fcc126465130e4173d625f861dd755569d986c85edd7d57bfbf9bd23e",
+        "sourceSha256": "f82ce21fcc126465130e4173d625f861dd755569d986c85edd7d57bfbf9bd23e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/foreground-plant-trailing.png",
+        "archiveSha256": "6a5287113e9ba885885976fc32c375db738d7da8d4bc13173efbf06b7313b921",
+        "sourceSha256": "6a5287113e9ba885885976fc32c375db738d7da8d4bc13173efbf06b7313b921",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/plant-c-olive.png",
+        "archiveSha256": "dba226b3f5f246f2bfc3e8608378b2fbbcd7fa3b5d9791999465aff22253b672",
+        "sourceSha256": "dba226b3f5f246f2bfc3e8608378b2fbbcd7fa3b5d9791999465aff22253b672",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/side-cabinet-drawer.png",
+        "archiveSha256": "6d27ab77d35af3031667917b4425276404d7011addeb0d4a86f9eb1f855a3d5c",
+        "sourceSha256": "6d27ab77d35af3031667917b4425276404d7011addeb0d4a86f9eb1f855a3d5c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/side-cart-two-tier.png",
+        "archiveSha256": "bb232617345c027584d787299ec557144946d4ee91e0973b1fc169e364eb708e",
+        "sourceSha256": "bb232617345c027584d787299ec557144946d4ee91e0973b1fc169e364eb708e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/side-table-tall.png",
+        "archiveSha256": "4b33b426d802252a640182983031a4c0b6f62064d89a9a8d50a595e61183ea6d",
+        "sourceSha256": "4b33b426d802252a640182983031a4c0b6f62064d89a9a8d50a595e61183ea6d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/tabletop-candle.png",
+        "archiveSha256": "c03c065867df42922c544d3fc954d53904a4cd89a240284c94b56b52650cb428",
+        "sourceSha256": "c03c065867df42922c544d3fc954d53904a4cd89a240284c94b56b52650cb428",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/tabletop-hourglass.png",
+        "archiveSha256": "420b950195407cdded91774018c2858336bca849d23287f2fba192bf12d2b9ef",
+        "sourceSha256": "420b950195407cdded91774018c2858336bca849d23287f2fba192bf12d2b9ef",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/tabletop-pear-dish.png",
+        "archiveSha256": "8bc7ecb01cdb1178bce2b234b650516dca2bf99c3e268bf52af496691d193a12",
+        "sourceSha256": "8bc7ecb01cdb1178bce2b234b650516dca2bf99c3e268bf52af496691d193a12",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/wall-landscape-coast.png",
+        "archiveSha256": "1666e114744151966b8efd71552acd1d4c40533b0242a96e59e87d2e9bd51122",
+        "sourceSha256": "1666e114744151966b8efd71552acd1d4c40533b0242a96e59e87d2e9bd51122",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/wall-landscape-mountains.png",
+        "archiveSha256": "f8ea621f99fcba8d451ee3f0827657c4fc7dc438d3fd9dba6a491dbec7169183",
+        "sourceSha256": "f8ea621f99fcba8d451ee3f0827657c4fc7dc438d3fd9dba6a491dbec7169183",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/thumbs/wall-landscape-pond.png",
+        "archiveSha256": "fdc52c47ece55a0d9b7118da470b889827bda9a31e52ac7f45c066261312abf5",
+        "sourceSha256": "fdc52c47ece55a0d9b7118da470b889827bda9a31e52ac7f45c066261312abf5",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/wallart/wall-landscape-coast.png",
+        "archiveSha256": "f1b875bffe03c91defe41916939196acfbd0982be3880838b94842f58c574ab8",
+        "sourceSha256": "f1b875bffe03c91defe41916939196acfbd0982be3880838b94842f58c574ab8",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/wallart/wall-landscape-mountains.png",
+        "archiveSha256": "bc2f8a47dfaa0fb7936be192aad6b59d1d6c3631f839ac7c33bd5f10f681d8de",
+        "sourceSha256": "bc2f8a47dfaa0fb7936be192aad6b59d1d6c3631f839ac7c33bd5f10f681d8de",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/expansion-v43/wallart/wall-landscape-pond.png",
+        "archiveSha256": "cc1df90ef95a4833b6bcc36121d41f58d4fc9c812573185adc38eca4290ab060",
+        "sourceSha256": "cc1df90ef95a4833b6bcc36121d41f58d4fc9c812573185adc38eca4290ab060",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/floorlight/floor-light-small.png",
+        "archiveSha256": "91c47f4ec04f00a7e039960ab6e0797218c6eff7af4c7882db55fafa97eca124",
+        "sourceSha256": "91c47f4ec04f00a7e039960ab6e0797218c6eff7af4c7882db55fafa97eca124",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/foregroundplant/foreground-plant-small.png",
+        "archiveSha256": "7b154c3d9cc71629f4adf5eb8da5b65629ac316a5c26aaeecbe37d40cbfea600",
+        "sourceSha256": "7b154c3d9cc71629f4adf5eb8da5b65629ac316a5c26aaeecbe37d40cbfea600",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/manifest.json",
+        "archiveSha256": "5f15c5e9f6b857a6a094ec42794d8c4f81fa3eb032609e832ad12d449274d93d",
+        "sourceSha256": "5f15c5e9f6b857a6a094ec42794d8c4f81fa3eb032609e832ad12d449274d93d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/pendant/pendant-line-patch.png",
+        "archiveSha256": "58962908a607fe3ee5e845d7d5708b629a978968e94d749a356f2261e5286147",
+        "sourceSha256": "58962908a607fe3ee5e845d7d5708b629a978968e94d749a356f2261e5286147",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/pendant/pendant-small.png",
+        "archiveSha256": "033c421ccbf395bfa8e7e2d758217d6ec8146c9447039fe6705b3d9bd7e8f2b8",
+        "sourceSha256": "033c421ccbf395bfa8e7e2d758217d6ec8146c9447039fe6705b3d9bd7e8f2b8",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/rugs/rug-check.png",
+        "archiveSha256": "b0aafa03ef4ae71a34ab7398586d8013135331cb6e934aaae63ec8fb1e984e2a",
+        "sourceSha256": "b0aafa03ef4ae71a34ab7398586d8013135331cb6e934aaae63ec8fb1e984e2a",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/rugs/rug-cloud.png",
+        "archiveSha256": "0a73a2aaa98010e65a73fd0e8bdd9451578d4d9f29374f165ee0d9c0e3cdbaa5",
+        "sourceSha256": "0a73a2aaa98010e65a73fd0e8bdd9451578d4d9f29374f165ee0d9c0e3cdbaa5",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/rugs/rug-petal.png",
+        "archiveSha256": "86c5468ac4b33bbf6c8be52eaf57acd799ef457cd3fb8b1592dc719e0826dcea",
+        "sourceSha256": "86c5468ac4b33bbf6c8be52eaf57acd799ef457cd3fb8b1592dc719e0826dcea",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/rugs/rug-stripe.png",
+        "archiveSha256": "138031b76010709196ce687b1a84ea4a5bf5e4d2250a48ba66428a92faab9695",
+        "sourceSha256": "138031b76010709196ce687b1a84ea4a5bf5e4d2250a48ba66428a92faab9695",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/sidefurniture/low-bookcase.png",
+        "archiveSha256": "8d1dcac38c66cea3df95c37e061be6a15e206257c526a9d1d067a67bab5eddf9",
+        "sourceSha256": "8d1dcac38c66cea3df95c37e061be6a15e206257c526a9d1d067a67bab5eddf9",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/sidefurniture/side-table.png",
+        "archiveSha256": "4fbee54420d48cca428f60c1056fd9491be8e8a0482754309b0091da1ad44d80",
+        "sourceSha256": "4fbee54420d48cca428f60c1056fd9491be8e8a0482754309b0091da1ad44d80",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/tabletop/tabletop-books.png",
+        "archiveSha256": "c56110bc5e6029ec61e210635dbb51586037dcf9a2a81b39485f7424ad22ad40",
+        "sourceSha256": "c56110bc5e6029ec61e210635dbb51586037dcf9a2a81b39485f7424ad22ad40",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/tabletop/tabletop-teapot.png",
+        "archiveSha256": "99e81618b6891b711a46c7eb77549648339e4c25c091852626dad35b07ab2f3a",
+        "sourceSha256": "99e81618b6891b711a46c7eb77549648339e4c25c091852626dad35b07ab2f3a",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/floor-light-small.png",
+        "archiveSha256": "e52a628542f0478b365b5035f85e809b70e760c4c77d62bfb707489de63bab58",
+        "sourceSha256": "e52a628542f0478b365b5035f85e809b70e760c4c77d62bfb707489de63bab58",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/foreground-plant-small.png",
+        "archiveSha256": "0f3a55badafc598046f8c2d5b621c1c664fe2d753d79b3dff076ac047c7758fc",
+        "sourceSha256": "0f3a55badafc598046f8c2d5b621c1c664fe2d753d79b3dff076ac047c7758fc",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/low-bookcase.png",
+        "archiveSha256": "b0de124d4edc86c4c22e5bb7a6b08a6729c088ecace978eb822aff2521796f3c",
+        "sourceSha256": "b0de124d4edc86c4c22e5bb7a6b08a6729c088ecace978eb822aff2521796f3c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/pendant-small.png",
+        "archiveSha256": "d942b8706de495ea8b48bd4d18fd99227c407fc3b7a3b4ecc9c2657ca3de886b",
+        "sourceSha256": "d942b8706de495ea8b48bd4d18fd99227c407fc3b7a3b4ecc9c2657ca3de886b",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/rug-check.png",
+        "archiveSha256": "d9173d41d637a52f483afb89ac74d92c603cbe7f7a3a2d275a925700f2a83e20",
+        "sourceSha256": "d9173d41d637a52f483afb89ac74d92c603cbe7f7a3a2d275a925700f2a83e20",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/rug-cloud.png",
+        "archiveSha256": "516c12adeff8874d63be39ebfaae12f4f084d181cdf7f15c722719bf0ae40a0f",
+        "sourceSha256": "516c12adeff8874d63be39ebfaae12f4f084d181cdf7f15c722719bf0ae40a0f",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/rug-petal.png",
+        "archiveSha256": "f8943dcfba9236416e7c10ea481a5088b80478b0eb4a896c9c36b361b67fa723",
+        "sourceSha256": "f8943dcfba9236416e7c10ea481a5088b80478b0eb4a896c9c36b361b67fa723",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/rug-stripe.png",
+        "archiveSha256": "fad350ca4c4a38a7374fc6f21f1652880405fceba15935de521bf4761cb3e078",
+        "sourceSha256": "fad350ca4c4a38a7374fc6f21f1652880405fceba15935de521bf4761cb3e078",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/side-table.png",
+        "archiveSha256": "a46b8879fe265bbfa26f90587627e5d6d83154621deb9311256b8e6b8fc28f46",
+        "sourceSha256": "a46b8879fe265bbfa26f90587627e5d6d83154621deb9311256b8e6b8fc28f46",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/tabletop-books.png",
+        "archiveSha256": "a93778c285983a58c2884da358da5ea80a10f1087c6b29fd39e0d47141e67d18",
+        "sourceSha256": "a93778c285983a58c2884da358da5ea80a10f1087c6b29fd39e0d47141e67d18",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/tabletop-teapot.png",
+        "archiveSha256": "1ae1098551ad83b5bede3a4e912f43178d26dddabd65072fc0d22d3a8a34a91d",
+        "sourceSha256": "1ae1098551ad83b5bede3a4e912f43178d26dddabd65072fc0d22d3a8a34a91d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/wall-owl-mona.png",
+        "archiveSha256": "43334d747d219f07a3ca43b9ceb1dfb5f528a505c56aba0376fca1bf1b9352fe",
+        "sourceSha256": "43334d747d219f07a3ca43b9ceb1dfb5f528a505c56aba0376fca1bf1b9352fe",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/thumbs/wall-owl-pearl.png",
+        "archiveSha256": "ba603715fb37208b565b37f8da66f95e34a0914b4695660d5e6595d460b8aa35",
+        "sourceSha256": "ba603715fb37208b565b37f8da66f95e34a0914b4695660d5e6595d460b8aa35",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/wallart/wall-owl-mona.png",
+        "archiveSha256": "5a6d79c28c898086e666180da476b486433d9d180dd59ff6766a75db1da7087e",
+        "sourceSha256": "5a6d79c28c898086e666180da476b486433d9d180dd59ff6766a75db1da7087e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/extensions-v37/wallart/wall-owl-pearl.png",
+        "archiveSha256": "a0404c8bb25016caa7abadbac090077c071948399ec5093f836b9ad517a99376",
+        "sourceSha256": "a0404c8bb25016caa7abadbac090077c071948399ec5093f836b9ad517a99376",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/fonts/LXGWWenKai-Light.ttf",
+        "archiveSha256": "526ec70cbb0118e871d481f8179e03ff045f0e4d72d080dcca87950c4ab27cca",
+        "sourceSha256": "526ec70cbb0118e871d481f8179e03ff045f0e4d72d080dcca87950c4ab27cca",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/fonts/OFL.txt",
+        "archiveSha256": "1a25e35da1031c6c3436fde545bb9cb5aca954e9873afe510c834b8b79bd21a0",
+        "sourceSha256": "1a25e35da1031c6c3436fde545bb9cb5aca954e9873afe510c834b8b79bd21a0",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/fonts/ZCOOLKuaiLe-OFL.txt",
+        "archiveSha256": "538078469839b4a2e7ad22bef4ebe41681a4e53749bb2a072144024f1d6d703d",
+        "sourceSha256": "538078469839b4a2e7ad22bef4ebe41681a4e53749bb2a072144024f1d6d703d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/fonts/ZCOOLKuaiLe-Regular.ttf",
+        "archiveSha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d",
+        "sourceSha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/corner-curtain-left/corner-curtain.png",
+        "archiveSha256": "c3f3f33cb16d24c9082cf7426cf1abf1fa5a77d3d4879934f2148468bee37e88",
+        "sourceSha256": "c3f3f33cb16d24c9082cf7426cf1abf1fa5a77d3d4879934f2148468bee37e88",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/corner-vine-left/corner-vine.png",
+        "archiveSha256": "8d6029b60becd9f2e9d8a2ada92bfae1391fafc03b7fc9e2a34655e13337076c",
+        "sourceSha256": "8d6029b60becd9f2e9d8a2ada92bfae1391fafc03b7fc9e2a34655e13337076c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/integration-patches.json",
+        "archiveSha256": "8dfbf99e43095122ce90848b69140e14558bbd6f1a8744fe4709111ba3d6203d",
+        "sourceSha256": "8dfbf99e43095122ce90848b69140e14558bbd6f1a8744fe4709111ba3d6203d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/layer-decor-manifest.json",
+        "archiveSha256": "09de9792508111b64b8546bacae37778b2051524dedf8904762981fa1a905451",
+        "sourceSha256": "09de9792508111b64b8546bacae37778b2051524dedf8904762981fa1a905451",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/portable-light/floor-light-handheld.png",
+        "archiveSha256": "a2bce139e9059c662dac1c48ffbe2d47dec92e590379e0a8a6d6af8675619569",
+        "sourceSha256": "a2bce139e9059c662dac1c48ffbe2d47dec92e590379e0a8a6d6af8675619569",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/reused-assets.json",
+        "archiveSha256": "26c035ef50b14683fc623f61524272bd0f79c3bf051c75f60d983801a3ef9bb2",
+        "sourceSha256": "26c035ef50b14683fc623f61524272bd0f79c3bf051c75f60d983801a3ef9bb2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/string-lights/flower-string-lights.png",
+        "archiveSha256": "3379f695b4748d54ce7b3d0fcc349fd5530a1dd0af8c990d30f4eaa6ebb88cbb",
+        "sourceSha256": "3379f695b4748d54ce7b3d0fcc349fd5530a1dd0af8c990d30f4eaa6ebb88cbb",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/thumbs/corner-curtain.png",
+        "archiveSha256": "5bd923423afcfb532d57020818c22bef593a15b89b232913b609eec56a972f60",
+        "sourceSha256": "5bd923423afcfb532d57020818c22bef593a15b89b232913b609eec56a972f60",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/thumbs/corner-vine.png",
+        "archiveSha256": "04463a3864fa8f9a0c1c8d2a47267a24981aad4d543a01dfb62e098f2469c54c",
+        "sourceSha256": "04463a3864fa8f9a0c1c8d2a47267a24981aad4d543a01dfb62e098f2469c54c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/thumbs/floor-light-handheld.png",
+        "archiveSha256": "5bebbb8c4b45a4bbeeef4883f15165ac4ae610d6fb56f2a9839cf0e5b17ded71",
+        "sourceSha256": "5bebbb8c4b45a4bbeeef4883f15165ac4ae610d6fb56f2a9839cf0e5b17ded71",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/layer-decor-v51/thumbs/flower-string-lights.png",
+        "archiveSha256": "b249e7e4e7b2a93a8be2fbd5e1440eb1d66d389b2cabf3975089f23c8ee46f18",
+        "sourceSha256": "b249e7e4e7b2a93a8be2fbd5e1440eb1d66d389b2cabf3975089f23c8ee46f18",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/motion-v7/body-parts.png",
+        "archiveSha256": "2c1bd45b766bc4bca362db16cb0cbc13329cc8c75fc786fcf9b87f8ae92e428b",
+        "sourceSha256": "2c1bd45b766bc4bca362db16cb0cbc13329cc8c75fc786fcf9b87f8ae92e428b",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/motion-v7/head-poses.png",
+        "archiveSha256": "196a1cb3faf9ee90fbb14ef02f70fe1551ea697986dd05d217953febc023fd3c",
+        "sourceSha256": "196a1cb3faf9ee90fbb14ef02f70fe1551ea697986dd05d217953febc023fd3c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/motion-v7/head-up-sip.png",
+        "archiveSha256": "715a4344e1cdcdbc979ab3cb3213b67eb4636d8f3e033301acf40b5c2aaeebe8",
+        "sourceSha256": "715a4344e1cdcdbc979ab3cb3213b67eb4636d8f3e033301acf40b5c2aaeebe8",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/motion-v7/owl-renderer.mjs",
+        "archiveSha256": "fdd398ea09bd234557b97752834a04794a5eddedb350044c27c02f54b666d254",
+        "sourceSha256": "fdd398ea09bd234557b97752834a04794a5eddedb350044c27c02f54b666d254",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/motion-v7/pitch-landmarks.json",
+        "archiveSha256": "07b0814e771dadd35ec236414fe081d190db8125439c39b1e17bf9149738955b",
+        "sourceSha256": "07b0814e771dadd35ec236414fe081d190db8125439c39b1e17bf9149738955b",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/motion-v7/yaw-landmarks.json",
+        "archiveSha256": "c57f508f549f5ad7c2ab986337c1c4c34ab5d1f8f63e6177838a24838941c0f3",
+        "sourceSha256": "c57f508f549f5ad7c2ab986337c1c4c34ab5d1f8f63e6177838a24838941c0f3",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/glasses-front.png",
+        "archiveSha256": "8dfcb29cbd88278516ec6b9be4fd74d98ace6a59420ebc1b94ad7666cf8f1ad6",
+        "sourceSha256": "8dfcb29cbd88278516ec6b9be4fd74d98ace6a59420ebc1b94ad7666cf8f1ad6",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/glasses-left30.png",
+        "archiveSha256": "41154459d4f333b3bfa2cc750e5db8e13b9d78aa04217dd23fcf9b34c0a5a158",
+        "sourceSha256": "41154459d4f333b3bfa2cc750e5db8e13b9d78aa04217dd23fcf9b34c0a5a158",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/glasses-left60.png",
+        "archiveSha256": "2f418ad8aeaaccac7af4b32dbf8b22ccfcca089296d7efaf1acbc6cbb2be36e6",
+        "sourceSha256": "2f418ad8aeaaccac7af4b32dbf8b22ccfcca089296d7efaf1acbc6cbb2be36e6",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/glasses-right30.png",
+        "archiveSha256": "1e99750f8a7775ab38faa67eb9d2a015d810ad55c5c1b29b513ad32f63ca5b4e",
+        "sourceSha256": "1e99750f8a7775ab38faa67eb9d2a015d810ad55c5c1b29b513ad32f63ca5b4e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/glasses-right60.png",
+        "archiveSha256": "20fcc919dace1942f3f1bac7c0639b23309b7189403542c2f81a6a169374b8f5",
+        "sourceSha256": "20fcc919dace1942f3f1bac7c0639b23309b7189403542c2f81a6a169374b8f5",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/glasses-up.png",
+        "archiveSha256": "ae4220672d9d57c5273628cce51c20c0de07de8012f46e6bb8a284a1520256c7",
+        "sourceSha256": "ae4220672d9d57c5273628cce51c20c0de07de8012f46e6bb8a284a1520256c7",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/provenance/manifest.json",
+        "archiveSha256": "9507b5394ace338568c3b4ab8e3667beb435d265e7c8aa86826bb7c0cc53ba92",
+        "sourceSha256": "9507b5394ace338568c3b4ab8e3667beb435d265e7c8aa86826bb7c0cc53ba92",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/reading-chair-back.png",
+        "archiveSha256": "67e4d35be233234116e4e158cc6a325902c99730b5062d0067c339df8f46fbec",
+        "sourceSha256": "67e4d35be233234116e4e158cc6a325902c99730b5062d0067c339df8f46fbec",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/outfit/reading-chair-front.png",
+        "archiveSha256": "14148faa28d84e6c8c639446347aa2470035806b31562b391139097da1d8396f",
+        "sourceSha256": "14148faa28d84e6c8c639446347aa2470035806b31562b391139097da1d8396f",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/paper-fibers.svg",
+        "archiveSha256": "aa68e3f879ce6348eace9ba07959c8b3426b847729698743b47f1f410201ddb6",
+        "sourceSha256": "aa68e3f879ce6348eace9ba07959c8b3426b847729698743b47f1f410201ddb6",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/art-source-notes.json",
+        "archiveSha256": "71df94c940a06eb605d43780c7b496f16ac83711094c1e0c9a3fcfd090210da2",
+        "sourceSha256": "71df94c940a06eb605d43780c7b496f16ac83711094c1e0c9a3fcfd090210da2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/integration-patches.json",
+        "archiveSha256": "9e258bfa853e21be416e822819e2091aa6877120a5b8a716a0c2b5640ef3516a",
+        "sourceSha256": "9e258bfa853e21be416e822819e2091aa6877120a5b8a716a0c2b5640ef3516a",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/lamps/lamp-lilac-torchiere.png",
+        "archiveSha256": "1e1a456ea1eb8425948e477bb62f6230f29616f6ebbeae7ae01b1c22ad11f821",
+        "sourceSha256": "1e1a456ea1eb8425948e477bb62f6230f29616f6ebbeae7ae01b1c22ad11f821",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/lamps/lamp-paper-oval.png",
+        "archiveSha256": "ca4c1b200039c568ea6ae2af7414422a2c47048239048060fb0655203ccfd776",
+        "sourceSha256": "ca4c1b200039c568ea6ae2af7414422a2c47048239048060fb0655203ccfd776",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/lamps/lamp-pleated-tripod.png",
+        "archiveSha256": "a1f01471ebcc8aa03f7a3b9aab38f0a0d5d398d4bca7a54dbfd05942b0dc34b6",
+        "sourceSha256": "a1f01471ebcc8aa03f7a3b9aab38f0a0d5d398d4bca7a54dbfd05942b0dc34b6",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/portrait-tall-lamp-manifest.json",
+        "archiveSha256": "ec8dc92d5432437422051f42a9ae4a8a04a4f2508bc24726c728680b26d6bf1b",
+        "sourceSha256": "ec8dc92d5432437422051f42a9ae4a8a04a4f2508bc24726c728680b26d6bf1b",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/thumbs/lamp-lilac-torchiere.png",
+        "archiveSha256": "3aee59a83d86616f89a0d2376cd6589cdbea861551bd88421359b0fc642dd700",
+        "sourceSha256": "3aee59a83d86616f89a0d2376cd6589cdbea861551bd88421359b0fc642dd700",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/thumbs/lamp-paper-oval.png",
+        "archiveSha256": "58bfe57e48914efdbfa8d4889a68f45055f315daace6fda777565dbd72197d14",
+        "sourceSha256": "58bfe57e48914efdbfa8d4889a68f45055f315daace6fda777565dbd72197d14",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/thumbs/lamp-pleated-tripod.png",
+        "archiveSha256": "de95bf1b63ba29a7ad7bbb643d93ef32113a7a774abed945cca438c462d6ce16",
+        "sourceSha256": "de95bf1b63ba29a7ad7bbb643d93ef32113a7a774abed945cca438c462d6ce16",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/thumbs/wall-owl-red-chaperon.png",
+        "archiveSha256": "13a84b171a671354364481ebb9b8ed1481a705b7b2b1ae6981002f6feb7c7a82",
+        "sourceSha256": "13a84b171a671354364481ebb9b8ed1481a705b7b2b1ae6981002f6feb7c7a82",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/thumbs/wall-owl-rembrandt.png",
+        "archiveSha256": "7794bd896b614f693ec6b1201b457ba6514faae5ce53972e3049c38b0c6fe8e2",
+        "sourceSha256": "7794bd896b614f693ec6b1201b457ba6514faae5ce53972e3049c38b0c6fe8e2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/thumbs/wall-owl-vangogh.png",
+        "archiveSha256": "a46db1d9e1568d7fef8fd47145396689437701eacf7eecc6af2499e2c6cabfaf",
+        "sourceSha256": "a46db1d9e1568d7fef8fd47145396689437701eacf7eecc6af2499e2c6cabfaf",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/wallart/wall-owl-red-chaperon.png",
+        "archiveSha256": "87a5b5b903543a0b335a492eba4dbdf1c4fe759b1c1a74cf906d4e67d726faee",
+        "sourceSha256": "87a5b5b903543a0b335a492eba4dbdf1c4fe759b1c1a74cf906d4e67d726faee",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/wallart/wall-owl-rembrandt.png",
+        "archiveSha256": "00b4f240beda1d72ab148b3d7cc03499f7a3f155bf39161866f5b98a5f85e63a",
+        "sourceSha256": "00b4f240beda1d72ab148b3d7cc03499f7a3f155bf39161866f5b98a5f85e63a",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/portrait-lamps-v48/wallart/wall-owl-vangogh.png",
+        "archiveSha256": "d9c3919c9931fb0e2cb415868d893dce19a348fdae3f4abdee01a81d76e05f6c",
+        "sourceSha256": "d9c3919c9931fb0e2cb415868d893dce19a348fdae3f4abdee01a81d76e05f6c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-paper.svg",
+        "archiveSha256": "2fdb972bb4e7223b74b263cd66287651415c8cf4db12fd29c649aa04f72f3f91",
+        "sourceSha256": "2fdb972bb4e7223b74b263cd66287651415c8cf4db12fd29c649aa04f72f3f91",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/chair-lilac-back.png",
+        "archiveSha256": "062c146de467f38e44ab95c33daf5104b9de4ebba0b675237344257eea061ab8",
+        "sourceSha256": "062c146de467f38e44ab95c33daf5104b9de4ebba0b675237344257eea061ab8",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/chair-lilac-front.png",
+        "archiveSha256": "91e962d0a911b39943fc3da84cfa3f2a97e95059e49f863170ce68f953cb813e",
+        "sourceSha256": "91e962d0a911b39943fc3da84cfa3f2a97e95059e49f863170ce68f953cb813e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/chair-lilac-thumb.png",
+        "archiveSha256": "507f261c793b2e8893840996242c58b1c372197655bca4f0fa296ea383a4ed2f",
+        "sourceSha256": "507f261c793b2e8893840996242c58b1c372197655bca4f0fa296ea383a4ed2f",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/chair-sage-back.png",
+        "archiveSha256": "704840f309ec6d6aee31090dbe7f4346ad6f9d98f7e5e154293fc743a96f1068",
+        "sourceSha256": "704840f309ec6d6aee31090dbe7f4346ad6f9d98f7e5e154293fc743a96f1068",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/chair-sage-front.png",
+        "archiveSha256": "91e962d0a911b39943fc3da84cfa3f2a97e95059e49f863170ce68f953cb813e",
+        "sourceSha256": "91e962d0a911b39943fc3da84cfa3f2a97e95059e49f863170ce68f953cb813e",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/chair-sage-thumb.png",
+        "archiveSha256": "bfa33226bfe0d962aa1efed99e165b879265b5ed7687525361e05362ae4f0efd",
+        "sourceSha256": "bfa33226bfe0d962aa1efed99e165b879265b5ed7687525361e05362ae4f0efd",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/faithful-v4-manifest.json",
+        "archiveSha256": "8895f77fdce6625624faae9397c51b6c4654534c435cee3c1386ba3be0367f71",
+        "sourceSha256": "8895f77fdce6625624faae9397c51b6c4654534c435cee3c1386ba3be0367f71",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/lamp-brass-thumb.png",
+        "archiveSha256": "28052c6c4d1854728e9d0a9ddd6fe86c3f978cc44ff6855bba375a84120a80b2",
+        "sourceSha256": "28052c6c4d1854728e9d0a9ddd6fe86c3f978cc44ff6855bba375a84120a80b2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/lamp-brass.png",
+        "archiveSha256": "af9e23201f200177448424176373fe9aaf28981161241a389a2f87fca87255b0",
+        "sourceSha256": "af9e23201f200177448424176373fe9aaf28981161241a389a2f87fca87255b0",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/lamp-linen-thumb.png",
+        "archiveSha256": "68ce7548e082ff55b375dee3e8275361c33d85ec0c003489f9883fb208ab8e74",
+        "sourceSha256": "68ce7548e082ff55b375dee3e8275361c33d85ec0c003489f9883fb208ab8e74",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/lamp-linen.png",
+        "archiveSha256": "59719daee80d9ef36603011fb74069ac513f2e400bcfdcd874d95b2c2b3290c3",
+        "sourceSha256": "59719daee80d9ef36603011fb74069ac513f2e400bcfdcd874d95b2c2b3290c3",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/plant-flower-thumb.png",
+        "archiveSha256": "aeb243032bcd3f0997c6986afd9300aa0f80a07cf034ad238d0bfe573d3bbf81",
+        "sourceSha256": "aeb243032bcd3f0997c6986afd9300aa0f80a07cf034ad238d0bfe573d3bbf81",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/plant-flower.png",
+        "archiveSha256": "7a98952a1b67fc8a4f602008e6b149db6645436c66b16e2ebdd2979859c94e7c",
+        "sourceSha256": "7a98952a1b67fc8a4f602008e6b149db6645436c66b16e2ebdd2979859c94e7c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/plant-leaf-thumb.png",
+        "archiveSha256": "68823015c4c51dee77eb05d64924fd1b6e1ab266734c19942b6e287dfa2bafb9",
+        "sourceSha256": "68823015c4c51dee77eb05d64924fd1b6e1ab266734c19942b6e287dfa2bafb9",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/plant-leaf.png",
+        "archiveSha256": "a3cc46a00239e43b42995bd27564c5dd7e91def0c73a76b156b4ffb6fdf61e77",
+        "sourceSha256": "a3cc46a00239e43b42995bd27564c5dd7e91def0c73a76b156b4ffb6fdf61e77",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/provenance.json",
+        "archiveSha256": "688db84c5a157a2af4f2cca668893af6599274a03602b6d5765a4653a750c46d",
+        "sourceSha256": "688db84c5a157a2af4f2cca668893af6599274a03602b6d5765a4653a750c46d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/room-base.png",
+        "archiveSha256": "dfa6fdc1e2bbf4e1c588b486687ba573b04517fadb379fd874a4465b2f9b4dfd",
+        "sourceSha256": "dfa6fdc1e2bbf4e1c588b486687ba573b04517fadb379fd874a4465b2f9b4dfd",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/rug-cream-thumb.png",
+        "archiveSha256": "9cefe27f13df57d461d5b76515310b340d32aa141b45a2cc3666378e8be47427",
+        "sourceSha256": "9cefe27f13df57d461d5b76515310b340d32aa141b45a2cc3666378e8be47427",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/rug-cream.png",
+        "archiveSha256": "116edf28fa4405f9b1855df6ebf89cf9572c6d50395ce80a04511b6feb97127c",
+        "sourceSha256": "116edf28fa4405f9b1855df6ebf89cf9572c6d50395ce80a04511b6feb97127c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/rug-pattern-thumb.png",
+        "archiveSha256": "230e2eb6d30c23a8754a6937e25b3e32ad872a4927ad4860f4dbcfa432b192f0",
+        "sourceSha256": "230e2eb6d30c23a8754a6937e25b3e32ad872a4927ad4860f4dbcfa432b192f0",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-v30/rug-pattern.png",
+        "archiveSha256": "062c6e9cf36b6e093f2e121fb78e9b3c844d5ec53597f71ae8a7706ee6d0d1bd",
+        "sourceSha256": "062c6e9cf36b6e093f2e121fb78e9b3c844d5ec53597f71ae8a7706ee6d0d1bd",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/room-window.svg",
+        "archiveSha256": "118d9bed26bbc623d53084f0825bab085e2facf42d60145edb1d214221270f7b",
+        "sourceSha256": "118d9bed26bbc623d53084f0825bab085e2facf42d60145edb1d214221270f7b",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/tall-table-v42/manifest.json",
+        "archiveSha256": "8c0699bfadc408bcac6c53c3be5647ca9fabfcd0f6fc4f3cd78078a892bf3ff9",
+        "sourceSha256": "8c0699bfadc408bcac6c53c3be5647ca9fabfcd0f6fc4f3cd78078a892bf3ff9",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/tall-table-v42/side-table-tall.metadata.json",
+        "archiveSha256": "7f2201ea19c49f945737375e2842db13101e51efcb508eab324cfbb4175f1542",
+        "sourceSha256": "7f2201ea19c49f945737375e2842db13101e51efcb508eab324cfbb4175f1542",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/tall-table-v42/sidefurniture/side-table-tall.png",
+        "archiveSha256": "00bcdbaf077d2dbfb1df33d3a07f8286fe68f4c68cb9996e55c240abb7521305",
+        "sourceSha256": "00bcdbaf077d2dbfb1df33d3a07f8286fe68f4c68cb9996e55c240abb7521305",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/assets/tall-table-v42/thumbs/side-table-tall.png",
+        "archiveSha256": "4b33b426d802252a640182983031a4c0b6f62064d89a9a8d50a595e61183ea6d",
+        "sourceSha256": "4b33b426d802252a640182983031a4c0b6f62064d89a9a8d50a595e61183ea6d",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/collection-draft.mjs",
+        "archiveSha256": "300425e1ef594e0cee01332fa8b707d7031b6542a203c507c343f976efdafb67",
+        "sourceSha256": "300425e1ef594e0cee01332fa8b707d7031b6542a203c507c343f976efdafb67",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/collection-panel.mjs",
+        "archiveSha256": "0beba97dfc0e1fdaaca95bdafa127f0554aebdbe3fba225d2cb85d8232a0e9b6",
+        "sourceSha256": "0beba97dfc0e1fdaaca95bdafa127f0554aebdbe3fba225d2cb85d8232a0e9b6",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/companion-attention.mjs",
+        "archiveSha256": "30eb6a5aff737d8dcd2d54a6e5365f2a4c2225538a940751e47d70135589c3d2",
+        "sourceSha256": "30eb6a5aff737d8dcd2d54a6e5365f2a4c2225538a940751e47d70135589c3d2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/equipment-view.mjs",
+        "archiveSha256": "b78321338a0893567b268bd9aadf10562f5496265f666622e334d4cd3cb10614",
+        "sourceSha256": "b78321338a0893567b268bd9aadf10562f5496265f666622e334d4cd3cb10614",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/glasses-registration.mjs",
+        "archiveSha256": "1b9143961b719fcda31ef3d96f3a9ec0c5bc2d85b4afdada0733fc84f93a6e8f",
+        "sourceSha256": "1b9143961b719fcda31ef3d96f3a9ec0c5bc2d85b4afdada0733fc84f93a6e8f",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/index.html",
+        "archiveSha256": "2a414f6681b2e3a535833e2a212eb26dc6c918946cb3ef4dd2f784c3aadde633",
+        "sourceSha256": "2a414f6681b2e3a535833e2a212eb26dc6c918946cb3ef4dd2f784c3aadde633",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/layer-order.cjs",
+        "archiveSha256": "cc5382bc52a09d1546002cacf5fba36c6815f6cfaeecba5c9872f43565ad7793",
+        "sourceSha256": "cc5382bc52a09d1546002cacf5fba36c6815f6cfaeecba5c9872f43565ad7793",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/layer-order.js",
+        "archiveSha256": "904e5eae40f17c7bf0db91a0d11e6756302f4392e202deb7b74d0798a298aba2",
+        "sourceSha256": "904e5eae40f17c7bf0db91a0d11e6756302f4392e202deb7b74d0798a298aba2",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/motion-clock.mjs",
+        "archiveSha256": "06dec82edc0a9537934d2053bb70026aa4eeb6e9ca7bcdf079f7de76c9975e07",
+        "sourceSha256": "06dec82edc0a9537934d2053bb70026aa4eeb6e9ca7bcdf079f7de76c9975e07",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/outfit-assets.mjs",
+        "archiveSha256": "94c4c8c43c6e55bc440d615731668ad533101e2c1549af122c0a53fea5f69202",
+        "sourceSha256": "94c4c8c43c6e55bc440d615731668ad533101e2c1549af122c0a53fea5f69202",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/outfit-renderer.mjs",
+        "archiveSha256": "363829897ce2c1be7b6050152a55b6d4ebe9f5f7ee50e8427a0f42b09fa06a96",
+        "sourceSha256": "363829897ce2c1be7b6050152a55b6d4ebe9f5f7ee50e8427a0f42b09fa06a96",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/owl-scene.mjs",
+        "archiveSha256": "edb2fb8f5aa99b6bbed049f6a94318d14b491cd84f5b75c34ffec3a0fb40514f",
+        "sourceSha256": "edb2fb8f5aa99b6bbed049f6a94318d14b491cd84f5b75c34ffec3a0fb40514f",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/paper-interior.css",
+        "archiveSha256": "6d28f1278bdd18e5c42575590778906183e8dbbc7007a4ae9a0cbd0f4ec33934",
+        "sourceSha256": "6d28f1278bdd18e5c42575590778906183e8dbbc7007a4ae9a0cbd0f4ec33934",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/placement-input.mjs",
+        "archiveSha256": "2d64c53140c2bc7d0b10c9ba6d6f805f9522b45c9f0da3747ddaa1e6db4a2d24",
+        "sourceSha256": "2d64c53140c2bc7d0b10c9ba6d6f805f9522b45c9f0da3747ddaa1e6db4a2d24",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/placement-rules.cjs",
+        "archiveSha256": "40eb073e83c05c3975dd872ca9fab3550d911a571e143529a013dee844cf7a2a",
+        "sourceSha256": "40eb073e83c05c3975dd872ca9fab3550d911a571e143529a013dee844cf7a2a",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/placement-rules.js",
+        "archiveSha256": "df982d6951bd6cecd11f46fc4f7d14dd6acbba2aa6e107f8906c828ee6757335",
+        "sourceSha256": "df982d6951bd6cecd11f46fc4f7d14dd6acbba2aa6e107f8906c828ee6757335",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/renderers/owl-equipped.mjs",
+        "archiveSha256": "dcb41c7c3950a5343302146f924b17c866ce34572202ca085a223e20bda7a765",
+        "sourceSha256": "dcb41c7c3950a5343302146f924b17c866ce34572202ca085a223e20bda7a765",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/role-placement.mjs",
+        "archiveSha256": "08d550fd97a2d5ccacec19f8e1b5f01eb873e37daf714cfbce386e88b9ce8b21",
+        "sourceSha256": "08d550fd97a2d5ccacec19f8e1b5f01eb873e37daf714cfbce386e88b9ce8b21",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/room-assets.mjs",
+        "archiveSha256": "9fdf2011420abb88af737706faf10bc6ea010581909c580e79a024ccede7a433",
+        "sourceSha256": "9fdf2011420abb88af737706faf10bc6ea010581909c580e79a024ccede7a433",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/room-geometry.cjs",
+        "archiveSha256": "0073df2e5d8ee8f2783e5e9c31586f50cd2f07d18a02fee00422e4b732a42629",
+        "sourceSha256": "0073df2e5d8ee8f2783e5e9c31586f50cd2f07d18a02fee00422e4b732a42629",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/room-geometry.js",
+        "archiveSha256": "e97dd1f0595e99018a92cb3ab1ed307080b4a6d5ed21bbe6c4ad4deff2894fd6",
+        "sourceSha256": "e97dd1f0595e99018a92cb3ab1ed307080b4a6d5ed21bbe6c4ad4deff2894fd6",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/room-slots.mjs",
+        "archiveSha256": "b60382d1e47e5933c04fc0b230af81944244ad6e2b02e067b01013bf1b09e85c",
+        "sourceSha256": "b60382d1e47e5933c04fc0b230af81944244ad6e2b02e067b01013bf1b09e85c",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/room-viewport.mjs",
+        "archiveSha256": "a0afbae8b460fcdf3f010dfcd00c1c35b8ce772a16161d7a4fa5c18927e8e346",
+        "sourceSha256": "a0afbae8b460fcdf3f010dfcd00c1c35b8ce772a16161d7a4fa5c18927e8e346",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/seat-ground.mjs",
+        "archiveSha256": "79765f7e942ba4b4b4aa1292e6fd99b13729e34e9247be447f733df119b881b3",
+        "sourceSha256": "79765f7e942ba4b4b4aa1292e6fd99b13729e34e9247be447f733df119b881b3",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/style.css",
+        "archiveSha256": "9a1c674047d2745824c77316ee900982202aeb5713878fd6d90d4f2e286380f8",
+        "sourceSha256": "9a1c674047d2745824c77316ee900982202aeb5713878fd6d90d4f2e286380f8",
+        "matches": true
+      },
+      {
+        "path": "owl/ui/widget-drag.mjs",
+        "archiveSha256": "31baf991d130e74f8e48ce4fae64192f1d057cee0ee453516f676642abe6fafb",
+        "sourceSha256": "31baf991d130e74f8e48ce4fae64192f1d057cee0ee453516f676642abe6fafb",
+        "matches": true
+      },
+      {
+        "path": "preload.js",
+        "archiveSha256": "4f0d8c3441a30d0e2e6ae7107b2717ab3316237a0f6ec4b96e8b3b6cd4fb8c7b",
+        "sourceSha256": "4f0d8c3441a30d0e2e6ae7107b2717ab3316237a0f6ec4b96e8b3b6cd4fb8c7b",
+        "matches": true
+      },
+      {
+        "path": "renderer/app.js",
+        "archiveSha256": "fd3bd56db123859d94013cbaf5baf430fd3092522c33b5fa13f000b9e0da6aa6",
+        "sourceSha256": "fd3bd56db123859d94013cbaf5baf430fd3092522c33b5fa13f000b9e0da6aa6",
+        "matches": true
+      },
+      {
+        "path": "renderer/assets/irixi-placeholder.svg",
+        "archiveSha256": "1c12f40f5936f6f845d36cd8c99b9c3c6ed20e5be9b261e3b4b088c51fea2424",
+        "sourceSha256": "1c12f40f5936f6f845d36cd8c99b9c3c6ed20e5be9b261e3b4b088c51fea2424",
+        "matches": true
+      },
+      {
+        "path": "renderer/cream-theme.css",
+        "archiveSha256": "02379756dad1bef47e7111ece7108383e8def6f63164cb12305b36ec6c86109d",
+        "sourceSha256": "02379756dad1bef47e7111ece7108383e8def6f63164cb12305b36ec6c86109d",
+        "matches": true
+      },
+      {
+        "path": "renderer/domain.js",
+        "archiveSha256": "d130d3bf58966a5650d57778c92b48b88529e289b6826785a915d74ec3b3baf4",
+        "sourceSha256": "d130d3bf58966a5650d57778c92b48b88529e289b6826785a915d74ec3b3baf4",
+        "matches": true
+      },
+      {
+        "path": "renderer/effects.js",
+        "archiveSha256": "8d7e7c8b7ee39b57a0f63d076561e4b83c36db5f950e70f45e2527236e46a96b",
+        "sourceSha256": "8d7e7c8b7ee39b57a0f63d076561e4b83c36db5f950e70f45e2527236e46a96b",
+        "matches": true
+      },
+      {
+        "path": "renderer/icon-motion.js",
+        "archiveSha256": "68b1d5ac0ca55348cb03166a0ca4491e5b57945063c46a84075bdc0c4ce99ce3",
+        "sourceSha256": "68b1d5ac0ca55348cb03166a0ca4491e5b57945063c46a84075bdc0c4ce99ce3",
+        "matches": true
+      },
+      {
+        "path": "renderer/index.html",
+        "archiveSha256": "68bd8bf17ddc3fceaaf13a83fe323a5d2f0c91ff60962db905b5e71a4520b4f3",
+        "sourceSha256": "68bd8bf17ddc3fceaaf13a83fe323a5d2f0c91ff60962db905b5e71a4520b4f3",
+        "matches": true
+      },
+      {
+        "path": "renderer/notification.css",
+        "archiveSha256": "937d270a376341f3e15f3cee68069be5cf7833d8a9af33510e53f08ea3e1448f",
+        "sourceSha256": "937d270a376341f3e15f3cee68069be5cf7833d8a9af33510e53f08ea3e1448f",
+        "matches": true
+      },
+      {
+        "path": "renderer/notification.html",
+        "archiveSha256": "bdb962dc4765fe9d2a96e01ed5b87c80d59e4c77b0c82739462f03b08738e701",
+        "sourceSha256": "bdb962dc4765fe9d2a96e01ed5b87c80d59e4c77b0c82739462f03b08738e701",
+        "matches": true
+      },
+      {
+        "path": "renderer/notification.js",
+        "archiveSha256": "d48e48bde2c4099b42841799e808e356e51708bb82fc5d77c571a29b20928d3f",
+        "sourceSha256": "d48e48bde2c4099b42841799e808e356e51708bb82fc5d77c571a29b20928d3f",
+        "matches": true
+      },
+      {
+        "path": "renderer/owl-embedded.css",
+        "archiveSha256": "6e70f4b419302342d0003e9fe4fa0b45f51c51f046fa82b9794f2c52febbdbcb",
+        "sourceSha256": "6e70f4b419302342d0003e9fe4fa0b45f51c51f046fa82b9794f2c52febbdbcb",
+        "matches": true
+      },
+      {
+        "path": "renderer/owl-embedded.mjs",
+        "archiveSha256": "e027fff8253b233f892cedf7194d1ddd30f6350b0c0df1f672041c3f68fa8f3f",
+        "sourceSha256": "e027fff8253b233f892cedf7194d1ddd30f6350b0c0df1f672041c3f68fa8f3f",
+        "matches": true
+      },
+      {
+        "path": "renderer/styles.css",
+        "archiveSha256": "db98117ab9c73295b5a6ccc41474a2318f180eb4c2368e5f4e046559c507ea7b",
+        "sourceSha256": "db98117ab9c73295b5a6ccc41474a2318f180eb4c2368e5f4e046559c507ea7b",
+        "matches": true
+      },
+      {
+        "path": "renderer/tools.js",
+        "archiveSha256": "34d31539d07b9706195081a1b8abf49bf13e5e6de20adcc1109aec9f0f2a9e0f",
+        "sourceSha256": "34d31539d07b9706195081a1b8abf49bf13e5e6de20adcc1109aec9f0f2a9e0f",
+        "matches": true
+      },
+      {
+        "path": "renderer/workspace.js",
+        "archiveSha256": "5acade30d31e21b463ebceae120b90e7f04cfa12ad71f0262f0d7ca5c4458f99",
+        "sourceSha256": "5acade30d31e21b463ebceae120b90e7f04cfa12ad71f0262f0d7ca5c4458f99",
+        "matches": true
+      },
+      {
+        "path": "tool-platform.js",
+        "archiveSha256": "0e332f5db280b3fafc16c3c73c94c50bf61d61104337a65f03f2cbac4cfdf24c",
+        "sourceSha256": "0e332f5db280b3fafc16c3c73c94c50bf61d61104337a65f03f2cbac4cfdf24c",
+        "matches": true
+      },
+      {
+        "path": "package.json",
+        "normalization": "electron-builder removes scripts, devDependencies and build",
+        "matches": true
+      }
+    ]
+  },
+  "infoPlist": {
+    "candidateVersion": "0.4.18",
+    "baselineVersion": "0.4.17",
+    "candidateBuildVersion": "0.4.18",
+    "baselineBuildVersion": "0.4.17",
+    "changedKeys": [
+      "CFBundleShortVersionString",
+      "CFBundleVersion",
+      "ElectronAsarIntegrity"
+    ],
+    "unexpectedKeys": [],
+    "bundleIdentifier": "com.irixi.toolbox",
+    "bundleIdentifierPreserved": true,
+    "minimumSystemVersion": "13.0",
+    "minimumSystemVersionPreserved": true,
+    "privacyStringsIdentical": true,
+    "privacyUsageDescriptions": {
+      "NSAppleEventsUsageDescription": "IRiXi的小工具库需要控制「系统事件」来枚举并聚焦当前窗口、操作网易云音乐的播放菜单。",
+      "NSAudioCaptureUsageDescription": "This app needs access to audio capture",
+      "NSBluetoothAlwaysUsageDescription": "This app needs access to Bluetooth",
+      "NSBluetoothPeripheralUsageDescription": "This app needs access to Bluetooth",
+      "NSCameraUsageDescription": "IRiXi的小工具库需要使用摄像头来显示「镜子」预览。",
+      "NSMicrophoneUsageDescription": "IRiXi的小工具库需要使用麦克风来录音并生成转写文本。"
+    },
+    "asarIntegrityMatchesHeader": true,
+    "otherIntegrityMetadataIdentical": true
+  },
+  "signing": {
+    "candidate": {
+      "authority": "IRiXi Local Code Signing",
+      "identifier": "com.irixi.toolbox",
+      "hardenedRuntime": true,
+      "signatureVerified": true,
+      "verifyExitStatus": 0,
+      "certificateSha256": "d42c87a0bf765e4bc71e985e4b1f7c6db6c4f8e0dd0057cd39cb513ea958bdef",
+      "entitlements": {
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.device.camera": true,
+        "com.apple.security.automation.apple-events": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.device.audio-input": true,
+        "com.apple.security.cs.disable-library-validation": true
+      },
+      "designatedRequirementSha256": "34a754e115ed8352daad265e20cea715554708268ea913b76bb48e69af46849f"
+    },
+    "baseline": {
+      "authority": "IRiXi Local Code Signing",
+      "identifier": "com.irixi.toolbox",
+      "hardenedRuntime": true,
+      "signatureVerified": true,
+      "verifyExitStatus": 0,
+      "certificateSha256": "d42c87a0bf765e4bc71e985e4b1f7c6db6c4f8e0dd0057cd39cb513ea958bdef",
+      "entitlements": {
+        "com.apple.security.cs.allow-unsigned-executable-memory": true,
+        "com.apple.security.device.camera": true,
+        "com.apple.security.automation.apple-events": true,
+        "com.apple.security.cs.allow-jit": true,
+        "com.apple.security.device.audio-input": true,
+        "com.apple.security.cs.disable-library-validation": true
+      },
+      "designatedRequirementSha256": "34a754e115ed8352daad265e20cea715554708268ea913b76bb48e69af46849f"
+    },
+    "stableLocalIdentityPreserved": true,
+    "designatedRequirementPreserved": true,
+    "entitlementsIdentical": true
+  },
+  "native": {
+    "module": {
+      "candidateSignedSha256": "9b2f3521b0ce9b386eed15dd3bffeb6865880a7693396b8241347fc73d3791ba",
+      "baselineSignedSha256": "6c8381fc87837e2720a7f8476f4232f8074f0d02f6a12f4d89ef0708913c7e39",
+      "signedBytesIdentical": false,
+      "signatureRemovalMethod": "codesign --remove-signature on private copies only",
+      "candidateUnsignedSha256": "e23fa571acaac053013e6e052f31269931884df54116dc36f52dc9e86d3de058",
+      "baselineUnsignedSha256": "e23fa571acaac053013e6e052f31269931884df54116dc36f52dc9e86d3de058",
+      "nativeCodePreserved": true
+    },
+    "framework": {
+      "candidateSignedSha256": "1832dd310e0bf9cb43d0c0d15c6054f7381caea8b4626342a0561ac0691ae1e8",
+      "baselineSignedSha256": "22e988e92ece1d62be1fb2aab8afd86a3fce315c6a43b1258e17dfafbd1dd3fa",
+      "signedBytesIdentical": false,
+      "signatureRemovalMethod": "codesign --remove-signature on private copies only",
+      "candidateUnsignedSha256": "d13cfb72950178c02c19609ade27bbdbdd6b2c9d8aab48eaef490a122e3209b7",
+      "baselineUnsignedSha256": "d13cfb72950178c02c19609ade27bbdbdd6b2c9d8aab48eaef490a122e3209b7",
+      "nativeCodePreserved": true
+    },
+    "manifestCompatibilityIdentical": true,
+    "manifest": {
+      "abiVersion": 7,
+      "architecture": "arm64",
+      "frameworkBundleId": "com.irixi.toolbox.native-kit",
+      "frameworkName": "IRiXiNativeKit.framework",
+      "frameworkVersion": "0.6.0",
+      "moduleFile": "irixi-native.node",
+      "schemaVersion": 1,
+      "signature": "stable-local"
+    },
+    "candidateManifestModuleHashMatches": true,
+    "candidateManifestFrameworkHashMatches": true,
+    "baselineManifestModuleHashMatches": true,
+    "baselineManifestFrameworkHashMatches": true,
+    "candidateNativeSignaturesVerified": true,
+    "frameworkInfoPlistIdentical": true
+  },
+  "incrementalFromFourEffectCandidate": {
+    "previousAsarSha256": "4e9e5fd46448d5bcc8b88c0f7db97ffc4e88263d99f216e0ea981b24ae335294",
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+    "expectedChangedOnly": true,
+    "changed": [
+      "owl/celebration-ui/app.js",
+      "owl/celebration-ui/style.css",
+      "owl/completion-host.cjs"
+    ]
+  },
+  "visualVerification": {
+    "scope": "Current seven-effect candidate only; not an official installation or real lock/session/multiple-display verification",
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+    "checks": {
+      "originalAvatarPixelsAndProportions": true,
+      "allSevenEffectsCleanupAndReducedMotion": true,
+      "threeResponsiveViewports": true,
+      "realThreeSecondNaturalCompletion": true,
+      "nativeOwnOverlayOnScreen": true,
+      "foregroundApplicationPreserved": true,
+      "hostAndEmbeddedModuleHidden": true,
+      "automaticDismissal": true,
+      "manualClose": true
+    },
+    "privateDesktopPixelsCaptured": false,
+    "productionUserDataUsed": false
+  },
+  "visualRuntimeChecks": {
+    "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+    "hidden": {
+      "passed": true,
+      "checks": 26,
+      "frames": 51,
+      "finishedAt": "2026-10-08T15:20:11.417Z"
+    },
+    "nativeVisible": {
+      "passed": true,
+      "checks": 5,
+      "frames": 12,
+      "finishedAt": "2026-10-08T15:26:02.017Z"
+    },
+    "originalAvatar": {
+      "source": "head-poses.png:0,0,418,418",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "originalPixelsMatch": true,
+      "aspectRatio": 1,
+      "filter": "none"
+    },
+    "desktopPixelsCaptured": false,
+    "productionUserDataUsed": false
+  }
+}

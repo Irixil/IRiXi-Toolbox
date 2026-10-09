@@ -1,0 +1,106 @@
+{
+  "source": "Actual production renderer frames in a never-shown isolated Electron window",
+  "payload": "Synthetic 25-minute completion preview, not a claim of running a 25-minute timer",
+  "composition": "Transparent capture composited over invented solid #e8e3d9 desktop; preview label added",
+  "size": [
+    1000,
+    640
+  ],
+  "fps": 8,
+  "gifDurationMs": 5500,
+  "gifs": {
+    "meteors": {
+      "file": "completion-meteors.gif",
+      "bytes": 262002,
+      "sha256": "0f229e5936f5606baf025eac5d6de8e393265b747f550ed2753f88fa23e436ef",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 32,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0012.png"
+    },
+    "fireworks": {
+      "file": "completion-fireworks.gif",
+      "bytes": 249641,
+      "sha256": "131cb9e78964fe44c4c92d96ffbd7a0a1b91db3dde13d58c6eddec8f8d5e620e",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 34,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0017.png"
+    },
+    "ribbons": {
+      "file": "completion-ribbons.gif",
+      "bytes": 287790,
+      "sha256": "dd52e185d07ae68076d70324319d650b72833d76c7ac57e8bb2fb8267a91b11a",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 33,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0013.png"
+    },
+    "flowers": {
+      "file": "completion-flowers.gif",
+      "bytes": 203945,
+      "sha256": "ad1184a822edbdb19160ddc8be2564eb5e3317fce2859545fa9a7f9afd6a0517",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 35,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0012.png"
+    },
+    "petals": {
+      "file": "completion-petals.gif",
+      "bytes": 259376,
+      "sha256": "f9b35f844119fd38ac5ce6eddb5ae86f4ef4850d6fc824fd2fd78cd18da934e0",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 32,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0013.png"
+    },
+    "paper-stars": {
+      "file": "completion-paper-stars.gif",
+      "bytes": 245725,
+      "sha256": "43b1f71e4eaf3716cae29b5fb69020478cf7b3bd2cdce77244ffafc9e17e83da",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 31,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0013.png"
+    },
+    "blooms": {
+      "file": "completion-blooms.gif",
+      "bytes": 185323,
+      "sha256": "46deb873462e6623e5e348befc30845943195534c782c03be293bbf12f6e2393",
+      "sourceFrameCount": 44,
+      "encodedFrameCount": 31,
+      "encodedDurationMs": 5500,
+      "posterSourceFrame": "0013.png"
+    }
+  },
+  "naturalCompletion": {
+    "source": "Production host/service/file store heartbeat, genuine 3-second focus in isolated profile, module hidden and host collapsed",
+    "asarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+    "rendererFrames": 12,
+    "file": "natural-completion.gif",
+    "sha256": "fa5f901df23c0e8c9911671ffdb2a4a1148d2b074ed8c5c460e339cb9db04ecb",
+    "composition": "Own transparent renderer pixels composited on simulated solid backdrop; no desktop pixels",
+    "shownExactlyOnce": true,
+    "nativeOnScreen": true,
+    "foregroundPreserved": true,
+    "automaticDismissMs": 8010,
+    "clipNote": "Only the first UI frames after completion are shown; eight-second destruction is measured by the runtime check, not represented as a full recording."
+  },
+  "originalAvatar": {
+    "source": "app/owl/ui/assets/motion-v7/head-poses.png",
+    "sourceDimensions": [
+      1254,
+      1254
+    ],
+    "sourceRect": [
+      0,
+      0,
+      418,
+      418
+    ],
+    "sha256": "196a1cb3faf9ee90fbb14ef02f70fe1551ea697986dd05d217953febc023fd3c",
+    "equalScale": true,
+    "originalPixelsMatch": true
+  },
+  "totalGifBytes": 1774856
+}

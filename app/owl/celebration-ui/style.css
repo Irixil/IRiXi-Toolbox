@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Owl Doodle';
+  src: url('../ui/assets/fonts/ZCOOLKuaiLe-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Owl WenKai';
+  src: url('../ui/assets/fonts/LXGWWenKai-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font-family: 'Owl Doodle', 'Owl WenKai', 'PingFang SC', sans-serif;
+  color: #403a32;
+  background: transparent;
+  --paper: #f6ede6;
+  --ink: #73674f;
+  --sage: #8c9c77;
+  --gold: #d3b779;
+  --rose: #cba299;
+  --lilac: #b4a6bd;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+body { pointer-events: none; user-select: none; }
+[hidden] { display: none !important; }
+
+#celebration { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
+.particle, .launch, .gift { position: absolute; pointer-events: none; }
+.particle svg, .launch svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.doodle { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.particle { transform-origin: center; }
+
+.completion-card {
+  position: fixed;
+  left: 50%;
+  bottom: max(28px, 4vh);
+  width: min(500px, calc(100vw - 40px));
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 19px 42px 19px 19px;
+  min-height: 118px;
+  background: var(--paper) url('../ui/assets/paper-fibers.svg') repeat;
+  background-size: auto, 128px 128px;
+  border: 1.5px solid #ad9f88;
+  border-radius: 17px 13px 18px 12px;
+  box-shadow: 0 5px 22px #362e2626, 2px 2px 0 #d4c5b4;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  transition: opacity 180ms ease-out, transform 240ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.completion-card.visible { opacity: 1; transform: translate(-50%, 0); }
+.completion-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid #cbbda242;
+  border-radius: 13px 10px 14px 9px;
+  pointer-events: none;
+}
+.owl-avatar { width: 80px; height: 80px; flex: 0 0 80px; }
+.completion-copy { min-width: 0; }
+.eyebrow { margin: 0 0 7px; color: #887a61; font-size: 13px; line-height: 1.1; }
+h1 { margin: 0; font-size: 22px; line-height: 1.3; font-weight: 400; color: #47583e; }
+.completion-note { margin: 8px 0 0; font-family: 'Owl WenKai', 'PingFang SC', sans-serif; font-size: 13px; line-height: 1.3; color: #7d7161; }
+#dismiss {
+  position: absolute;
+  right: 11px;
+  top: 10px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  border: none;
+  border-radius: 8px 6px 7px 6px;
+  color: #8d806e;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+#dismiss svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+#dismiss:active { background: #d9ccb7; }
+#dismiss:focus-visible { outline: 2px solid #8c9c77; outline-offset: 1px; }
+@media (hover: hover) and (pointer: fine) {
+  #dismiss:hover { color: #554b3d; background: #e7dccc; }
+}
+
+.gift { right: max(42px, 6vw); bottom: 25px; width: 135px; height: 146px; }
+.gift svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.gift-lid { transform-box: fill-box; transform-origin: 30% 70%; }
+
+body.reduced-motion .completion-card { transition: none; }
+body.reduced-motion .completion-card.visible { transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) {
+  .completion-card { transition: none; }
+}
+@media (max-width: 560px) {
+  .completion-card { gap: 11px; padding-left: 13px; bottom: 24px; min-height: 108px; }
+  .owl-avatar { width: 64px; height: 64px; flex-basis: 64px; }
+  h1 { font-size: 19px; }
+  .completion-note { font-size: 12px; }
+  .gift { right: 17px; bottom: 147px; width: 107px; height: 116px; }
+}
+@media (max-height: 280px) {
+  .completion-card { bottom: 12px; min-height: 92px; gap: 13px; padding: 12px 42px 12px 13px; }
+  .owl-avatar { width: 56px; height: 56px; flex-basis: 56px; }
+  .eyebrow { font-size: 12px; margin-bottom: 4px; }
+  h1 { font-size: 19px; }
+  .completion-note { font-size: 12px; margin-top: 4px; }
+  .gift { width: 91px; height: 98px; bottom: 105px; }
+}

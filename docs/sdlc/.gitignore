@@ -1,0 +1,11 @@
+*
+!.gitignore
+!evidence/
+evidence/*
+!evidence/desktop-completion62-final-candidate.json
+!evidence/desktop-completion62-source-artwork.json
+!evidence/desktop-completion62-node-applicability-v2.json
+!evidence/completion62/
+evidence/completion62/*
+!evidence/completion62/package-preflight.json
+!evidence/completion62/historical-release-files.json
