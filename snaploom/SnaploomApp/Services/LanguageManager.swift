@@ -53,7 +53,7 @@ final class LanguageManager {
         ("zh-Hant", "繁體中文"),
     ]
 
-    private var bundle: Bundle = .main
+    private var bundle: Bundle = Bundle(for: LanguageManager.self)
 
     private init() {
         reload()
@@ -71,6 +71,10 @@ final class LanguageManager {
 
     /// Resolves the actual language code (never "system").
     var resolvedLanguage: String {
+        #if IRIXI_HELPER
+        // The toolbox embeds this framework in Electron, whose bundle has no .lproj.
+        return "zh-Hans"
+        #else
         let lang = currentLanguage
         if lang == "system" {
             // Find first system language we support
@@ -91,6 +95,7 @@ final class LanguageManager {
             return "en"
         }
         return lang
+        #endif
     }
 
     func localizedString(_ key: String) -> String {
@@ -99,11 +104,12 @@ final class LanguageManager {
 
     private func reload() {
         let lang = resolvedLanguage
-        if let path = Bundle.main.path(forResource: lang, ofType: "lproj"),
+        let frameworkBundle = Bundle(for: LanguageManager.self)
+        if let path = frameworkBundle.path(forResource: lang, ofType: "lproj"),
            let langBundle = Bundle(path: path) {
             bundle = langBundle
         } else {
-            bundle = .main
+            bundle = frameworkBundle
         }
     }
 }

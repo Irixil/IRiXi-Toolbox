@@ -105,7 +105,7 @@
 "OCR" = "OCR";
 "OCR Text" = "OCR 文字";
 "OCR (extract text)" = "OCR（提取文字）";
-"OCR & QR" = "OCR & QR";
+"OCR & QR" = "文字/二维码";
 "Run OCR & QR" = "运行 OCR & QR";
 "Upload" = "上传";
 "Share" = "共享";
@@ -146,7 +146,7 @@
 "On" = "开";
 "Text Only" = "仅文字";
 "All Text" = "全部文字";
-"PII" = "PII";
+"PII" = "隐私信息";
 "Faces" = "面部";
 "People" = "人物";
 "Confirm before upload" = "上传前确认";
@@ -162,6 +162,7 @@
 "Effect" = "效果";
 "Font" = "字体";
 "System" = "系统";
+"System (SF Pro)" = "系统（SF Pro）";
 
 /* Overlay / Canvas */
 "Click a window  ·  Drag for custom area  ·  F for full screen" = "点按窗口  ·  拖拽自定义区域  ·  F 全屏";

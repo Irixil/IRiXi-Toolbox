@@ -40,9 +40,15 @@ function main() {
   const modulePath = path.join(contents, 'Frameworks', 'irixi-native.node');
   const frameworkPath = path.join(contents, 'Frameworks', 'IRiXiNativeKit.framework');
   const frameworkBinary = path.join(frameworkPath, 'IRiXiNativeKit');
+  const simplifiedChineseStrings = path.join(frameworkPath, 'Resources', 'zh-Hans.lproj', 'Localizable.strings');
   const manifestPath = path.join(contents, 'Resources', 'native-module-manifest.json');
-  for (const required of [modulePath, frameworkPath, frameworkBinary, manifestPath]) {
+  for (const required of [modulePath, frameworkPath, frameworkBinary, manifestPath, simplifiedChineseStrings]) {
     if (!fs.existsSync(required)) fail(`候选包缺少：${required}`);
+  }
+  const localizedStrings = fs.readFileSync(simplifiedChineseStrings, 'utf8');
+  if (!localizedStrings.includes('"OCR & QR" = "文字/二维码";')
+      || !localizedStrings.includes('"PII" = "隐私信息";')) {
+    fail('候选包缺少工具箱所需的简体中文界面文案。');
   }
   if (plistValue(path.join(contents, 'Info.plist'), 'CFBundleIdentifier') !== HOST_BUNDLE_ID) {
     fail('候选 App 身份不正确。');
@@ -69,7 +75,7 @@ function main() {
   run('/usr/bin/codesign', ['--verify', '--strict', modulePath]);
   run('/usr/bin/codesign', ['--verify', '--strict', frameworkPath]);
   run('/usr/bin/codesign', ['--verify', '--deep', '--strict', appPath]);
-  console.log('候选 App 的原生模块、固定身份和签名均通过校验。');
+  console.log('候选 App 的原生模块、简体中文资源、固定身份和签名均通过校验。');
 }
 
 main();

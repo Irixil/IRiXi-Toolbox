@@ -50,6 +50,10 @@ framework="$output_root/IRiXiNativeKit.framework"
 module_dir="$framework/Modules/IRiXiNativeKit.swiftmodule"
 module_cache="$output_root/ModuleCache.noindex"
 sdk_path="$(xcrun --sdk macosx --show-sdk-path)"
+swift_test_flags=()
+if [[ "${IRIXI_NATIVE_KIT_ENABLE_TESTING:-0}" == "1" ]]; then
+  swift_test_flags+=(-enable-testing)
+fi
 
 rm -rf "$framework"
 mkdir -p "$module_dir"
@@ -57,6 +61,7 @@ mkdir -p "$framework/Resources"
 mkdir -p "$module_cache"
 cp "$plist_file" "$framework/Info.plist"
 cp "$plist_file" "$framework/Resources/Info.plist"
+cp -R "$project_root/SnaploomApp/"*.lproj "$framework/Resources/"
 
 xcrun swiftc \
   -parse-as-library \
@@ -64,6 +69,7 @@ xcrun swiftc \
   -D OFFLINE \
   -emit-library \
   -emit-module \
+  "${swift_test_flags[@]}" \
   -module-name IRiXiNativeKit \
   -target arm64-apple-macos13.0 \
   -sdk "$sdk_path" \

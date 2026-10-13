@@ -137,7 +137,7 @@ class FontPickerView: NSScrollView {
                 .font: displayFont,
                 .foregroundColor: ToolbarLayout.iconColor.withAlphaComponent(isSelected ? 1.0 : 0.8),
             ]
-            let displayName = entry.family == "System" ? "System (SF Pro)" : entry.family
+            let displayName = entry.family == "System" ? L("System (SF Pro)") : entry.family
             let str = displayName as NSString
             let strSize = str.size(withAttributes: attrs)
             str.draw(at: NSPoint(x: textX, y: rowRect.midY - strSize.height / 2), withAttributes: attrs)

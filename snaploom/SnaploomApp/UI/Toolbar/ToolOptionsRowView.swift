@@ -903,7 +903,7 @@ class ToolOptionsRowView: NSView {
         var curX = x
 
         // Font family dropdown
-        let displayName = ov.textEditor.fontFamily == "System" ? "System" : ov.textEditor.fontFamily
+        let displayName = ov.textEditor.fontFamily == "System" ? L("System") : ov.textEditor.fontFamily
         let fontBtn = NSButton(title: "\(displayName) ▾", target: self, action: #selector(fontFamilyClicked(_:)))
         fontBtn.bezelStyle = .recessed
         fontBtn.font = NSFont.systemFont(ofSize: 10, weight: .medium)
