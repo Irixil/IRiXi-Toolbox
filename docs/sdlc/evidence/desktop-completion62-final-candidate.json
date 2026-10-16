@@ -1,0 +1,341 @@
+{
+  "schema": 2,
+  "kind": "original-owl-seven-effects-exact-candidate-readiness",
+  "checkedAt": "2026-10-08T15:31:51.025870+00:00",
+  "candidateVersion": "0.4.18",
+  "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+  "baselineAppVersion": "0.4.17",
+  "baselineAsarSha256": "9ea1c0530e610a32384509bc8dba3bc7fb3dc17564794c5c2679a7aa72074f51",
+  "scope": "Current seven-effect candidate feature verification only; official application has not been updated",
+  "effectCount": 7,
+  "effectIDs": [
+    "meteors",
+    "fireworks",
+    "ribbons",
+    "flowers",
+    "petals",
+    "paper-stars",
+    "blooms"
+  ],
+  "originalAvatar": {
+    "source": "head-poses.png:0,0,418,418",
+    "sourceWidth": 1254,
+    "sourceHeight": 1254,
+    "originalPixelsMatch": true,
+    "aspectRatio": 1,
+    "filter": "none"
+  },
+  "sourceAtlasSha256": "196a1cb3faf9ee90fbb14ef02f70fe1551ea697986dd05d217953febc023fd3c",
+  "packagePreflight": {
+    "result": "passed",
+    "checksPassed": 11,
+    "checksTotal": 11,
+    "sourceProductionHashesMatch": true,
+    "sourceProductionFileCount": 219,
+    "candidateArchiveFileCount": 237,
+    "stableLocalIdentityPreserved": true,
+    "designatedRequirementPreserved": true,
+    "entitlementsIdentical": true,
+    "nativeABI": 7,
+    "nativeUnsignedCodePreserved": true,
+    "privacyDescriptionsIdentical": true,
+    "incrementalFromFourEffects": {
+      "previousAsarSha256": "4e9e5fd46448d5bcc8b88c0f7db97ffc4e88263d99f216e0ea981b24ae335294",
+      "candidateAsarSha256": "f86890d1aafa7ca55e3e8e63cfaec7b30ffc3567e38c5af8c771718b4eff7f73",
+      "expectedChangedOnly": true,
+      "changed": [
+        "owl/celebration-ui/app.js",
+        "owl/celebration-ui/style.css",
+        "owl/completion-host.cjs"
+      ]
+    }
+  },
+  "nodeComponents": {
+    "tests": 174,
+    "passed": 174,
+    "failed": 0,
+    "completionCore": 12,
+    "completionHost": 17,
+    "productionSourceBytesMatchCandidate": true,
+    "logSha256": "4bb7efca0441a55617d6f43b875f840227da7880f8a5a32e3f5b28d4692c5e4b"
+  },
+  "hiddenActualPackage": {
+    "passed": true,
+    "checkCount": 26,
+    "frameCount": 51,
+    "finishedAt": "2026-10-08T15:20:11.417Z",
+    "checks": [
+      {
+        "name": "production embedded module hidden and host collapsed before timer starts",
+        "passed": true
+      },
+      {
+        "name": "completion avatar pixels exactly match a uniform crop of the existing production owl atlas, with original proportions and no filter",
+        "passed": true
+      },
+      {
+        "name": "three-second production heartbeat naturally completes, persists, and renders exact duration without focusing or opening toolbox",
+        "passed": true
+      },
+      {
+        "name": "natural completion is shown once and automatically destroyed after eight seconds",
+        "passed": true
+      },
+      {
+        "name": "early replacement and manual end do not celebrate or claim a natural completion",
+        "passed": true
+      },
+      {
+        "name": "natural break completion never emits a focus celebration or duplicate earned minutes",
+        "passed": true
+      },
+      {
+        "name": "saved reduced motion displays exact minute-and-second text with no particles or running animation",
+        "passed": true
+      },
+      {
+        "name": "real close button dismisses overlay through the production isolated preload and IPC",
+        "passed": true
+      },
+      {
+        "name": "paper-stars: real particle motion and natural cleanup",
+        "passed": true
+      },
+      {
+        "name": "petals: real particle motion and natural cleanup",
+        "passed": true
+      },
+      {
+        "name": "blooms: real particle motion and natural cleanup",
+        "passed": true
+      },
+      {
+        "name": "fireworks: real particle motion and natural cleanup",
+        "passed": true
+      },
+      {
+        "name": "paper-stars: reduced motion remains static with no delayed particles",
+        "passed": true
+      },
+      {
+        "name": "petals: reduced motion remains static with no delayed particles",
+        "passed": true
+      },
+      {
+        "name": "meteors: real particle motion and natural cleanup",
+        "passed": true
+      },
+      {
+        "name": "blooms: reduced motion remains static with no delayed particles",
+        "passed": true
+      },
+      {
+        "name": "ribbons: real particle motion and natural cleanup",
+        "passed": true
+      },
+      {
+        "name": "fireworks: reduced motion remains static with no delayed particles",
+        "passed": true
+      },
+      {
+        "name": "meteors: reduced motion remains static with no delayed particles",
+        "passed": true
+      },
+      {
+        "name": "flowers: real particle motion and natural cleanup",
+        "passed": true
+      },
+      {
+        "name": "ribbons: reduced motion remains static with no delayed particles",
+        "passed": true
+      },
+      {
+        "name": "flowers: reduced motion remains static with no delayed particles",
+        "passed": true
+      },
+      {
+        "name": "320x568: card and close control stay visible; original avatar retains its proportions and pixels",
+        "passed": true
+      },
+      {
+        "name": "560x240: card and close control stay visible; original avatar retains its proportions and pixels",
+        "passed": true
+      },
+      {
+        "name": "1024x220: card and close control stay visible; original avatar retains its proportions and pixels",
+        "passed": true
+      },
+      {
+        "name": "all seven renderer effects, cleanup, reduced motion, and small-screen layouts preserve timer-store bytes",
+        "passed": true
+      }
+    ],
+    "naturalFocusMs": 3000,
+    "renderedTitle": "刚刚成功专注 3 秒",
+    "hostCollapsed": true,
+    "embeddedHidden": true,
+    "overlayFocusable": false,
+    "overlayFocused": false,
+    "showInactiveCalls": 1,
+    "automaticDismissMs": 8001,
+    "effectCount": 7,
+    "effectIDs": [
+      "meteors",
+      "fireworks",
+      "ribbons",
+      "flowers",
+      "petals",
+      "paper-stars",
+      "blooms"
+    ],
+    "responsiveViewportSizes": [
+      {
+        "width": 320,
+        "height": 568
+      },
+      {
+        "width": 560,
+        "height": 240
+      },
+      {
+        "width": 1024,
+        "height": 220
+      }
+    ]
+  },
+  "visibleActualPackage": {
+    "passed": true,
+    "checkCount": 5,
+    "frameCount": 12,
+    "finishedAt": "2026-10-08T15:26:02.017Z",
+    "checks": [
+      {
+        "name": "production embedded module hidden and host collapsed before timer starts",
+        "passed": true
+      },
+      {
+        "name": "completion avatar pixels exactly match a uniform crop of the existing production owl atlas, with original proportions and no filter",
+        "passed": true
+      },
+      {
+        "name": "native compositor confirms desktop overlay onscreen and foreground application PID unchanged",
+        "passed": true
+      },
+      {
+        "name": "three-second production heartbeat naturally completes, persists, and renders exact duration without focusing or opening toolbox",
+        "passed": true
+      },
+      {
+        "name": "natural completion is shown once and automatically destroyed after eight seconds",
+        "passed": true
+      }
+    ],
+    "naturalFocusMs": 3000,
+    "renderedTitle": "刚刚成功专注 3 秒",
+    "hostCollapsed": true,
+    "embeddedHidden": true,
+    "overlayFocusable": false,
+    "overlayFocused": false,
+    "showInactiveCalls": 1,
+    "automaticDismissMs": 8010,
+    "ownNativeOverlayOnScreen": true,
+    "foregroundPreserved": true
+  },
+  "preview": {
+    "source": "Actual production renderer frames in a never-shown isolated Electron window",
+    "payload": "Synthetic 25-minute completion preview, not a claim of running a 25-minute timer",
+    "composition": "Transparent capture composited over invented solid #e8e3d9 desktop; preview label added",
+    "size": [
+      1000,
+      640
+    ],
+    "fps": 8,
+    "gifDurationMs": 5500,
+    "gifs": {
+      "meteors": {
+        "file": "completion-meteors.gif",
+        "bytes": 262002,
+        "sha256": "0f229e5936f5606baf025eac5d6de8e393265b747f550ed2753f88fa23e436ef",
+        "sourceFrameCount": 44,
+        "encodedFrameCount": 32,
+        "encodedDurationMs": 5500,
+        "posterSourceFrame": "0012.png"
+      },
+      "fireworks": {
+        "file": "completion-fireworks.gif",
+        "bytes": 249641,
+        "sha256": "131cb9e78964fe44c4c92d96ffbd7a0a1b91db3dde13d58c6eddec8f8d5e620e",
+        "sourceFrameCount": 44,
+        "encodedFrameCount": 34,
+        "encodedDurationMs": 5500,
+        "posterSourceFrame": "0017.png"
+      },
+      "ribbons": {
+        "file": "completion-ribbons.gif",
+        "bytes": 287790,
+        "sha256": "dd52e185d07ae68076d70324319d650b72833d76c7ac57e8bb2fb8267a91b11a",
+        "sourceFrameCount": 44,
+        "encodedFrameCount": 33,
+        "encodedDurationMs": 5500,
+        "posterSourceFrame": "0013.png"
+      },
+      "flowers": {
+        "file": "completion-flowers.gif",
+        "bytes": 203945,
+        "sha256": "ad1184a822edbdb19160ddc8be2564eb5e3317fce2859545fa9a7f9afd6a0517",
+        "sourceFrameCount": 44,
+        "encodedFrameCount": 35,
+        "encodedDurationMs": 5500,
+        "posterSourceFrame": "0012.png"
+      },
+      "petals": {
+        "file": "completion-petals.gif",
+        "bytes": 259376,
+        "sha256": "f9b35f844119fd38ac5ce6eddb5ae86f4ef4850d6fc824fd2fd78cd18da934e0",
+        "sourceFrameCount": 44,
+        "encodedFrameCount": 32,
+        "encodedDurationMs": 5500,
+        "posterSourceFrame": "0013.png"
+      },
+      "paper-stars": {
+        "file": "completion-paper-stars.gif",
+        "bytes": 245725,
+        "sha256": "43b1f71e4eaf3716cae29b5fb69020478cf7b3bd2cdce77244ffafc9e17e83da",
+        "sourceFrameCount": 44,
+        "encodedFrameCount": 31,
+        "encodedDurationMs": 5500,
+        "posterSourceFrame": "0013.png"
+      },
+      "blooms": {
+        "file": "completion-blooms.gif",
+        "bytes": 185323,
+        "sha256": "46deb873462e6623e5e348befc30845943195534c782c03be293bbf12f6e2393",
+        "sourceFrameCount": 44,
+        "encodedFrameCount": 31,
+        "encodedDurationMs": 5500,
+        "posterSourceFrame": "0013.png"
+      }
+    },
+    "gifCount": 7,
+    "gifTotalBytes": 1693802,
+    "sourceProductionBytesMatchCurrentCandidate": true
+  },
+  "privacy": {
+    "productionUserDataUsed": false,
+    "desktopPixelsCaptured": false,
+    "capturesOnlyOwnWebContents": true,
+    "privateProfilePathsIncluded": false,
+    "processOrWindowIDsIncluded": false
+  },
+  "systemBoundary": {
+    "lockSleepInactiveSessionAndDisplayChanges": "Node policy simulation passed; no real lock/session/multiple-display exercise",
+    "actualSpaceFullscreenPhysicalMultipleDisplays": "not tested",
+    "lockedScreenVisibility": "not supported or claimed"
+  },
+  "deployment": {
+    "status": "waiting_parent_coordinated_safe_normal_restart",
+    "formalAppUpdated": false,
+    "reason": "Formal installation remains separate; current visual acceptance does not authorize interrupting a real round or imply restart approval"
+  },
+  "oldGlobalUnverified": "unchanged; feature proof does not certify earlier unrelated requirements"
+}

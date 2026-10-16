@@ -4,8 +4,9 @@ const {FileStore}=require('./src/store.cjs');
 const {FocusService}=require('./src/service.cjs');
 const {FocusController}=require('./src/focus-controller.cjs');
 const {ActivityService,ActivityFileStore}=require('./src/activity.cjs');
+const {createCompletionHost}=require('./completion-host.cjs');
 // One host-owned service and writer; closing a view never closes the service.
-exports.createOwlHost=({app,BrowserWindow,WebContentsView,ipcMain,powerMonitor,dataDir,showCard,showHome,readForeground,frontendRoot=path.join(__dirname,'ui'),watchFrontend=false,isExpanded=()=>true})=>{
+exports.createOwlHost=({app,BrowserWindow,WebContentsView,ipcMain,powerMonitor,screen,nativeTheme,dataDir,showCard,showHome,readForeground,frontendRoot=path.join(__dirname,'ui'),watchFrontend=false,isExpanded=()=>true})=>{
   let store,service,controller,standalone,disposed=false,frontendWatcher,refreshTimer,embedded,mainViewWindow,embeddingSuppressed=false,dragPointer=null,dragGeneration=0,dragQueue=Promise.resolve();
   const page=path.join(frontendRoot,'index.html');
   const defaultsFile=path.join(dataDir,'legacy-pomodoro.json');
@@ -17,6 +18,7 @@ exports.createOwlHost=({app,BrowserWindow,WebContentsView,ipcMain,powerMonitor,d
   }
   try{store=new FileStore(dataDir);service=new FocusService(store);const snapshot=service.snapshot.bind(service);service.snapshot=()=>({...snapshot(),configuredFocusSeconds:defaults.seconds,configuredBreakSeconds:defaults.breakSeconds??300});controller=new FocusController(service);}
   catch(error){store?.close();throw error;}
+  const completion=createCompletionHost({service,BrowserWindow,ipcMain,powerMonitor,screen,nativeTheme});
   const checked=event=>{if(!controller.allowed(event))throw Error('未授权窗口');};
   const activity=new ActivityService({store:new ActivityFileStore(path.join(dataDir,'activity')),foreground:readForeground});
   activity.on('change',state=>{for(const view of controller.views){if(!view.isDestroyed())view.send('owl:activity-changed',state);}});
@@ -130,5 +132,5 @@ exports.createOwlHost=({app,BrowserWindow,WebContentsView,ipcMain,powerMonitor,d
   const suspend=()=>{activity.stop('系统休眠，APP 记录已停止；唤醒后需要主动开启。');try{service.suspend();}catch(e){console.error(e.message);}};
   const resume=()=>{try{service.tick();}catch(e){console.error(e.message);}};
   powerMonitor.on('suspend',suspend);powerMonitor.on('resume',resume);
-  return {service,controller,activity,register,openStandalone,getStandalone:()=>standalone,getEmbedded:()=>embedded,inspectEmbedding:()=>({expanded:isExpanded(),suppressed:embeddingSuppressed,visible:embedded?.getVisible(),dragPointer}),attach,hideEmbedded,allowEmbedded:()=>{embeddingSuppressed=false;},page,dispose(){if(disposed)return;activity.close();disposed=true;if(embedded){mainViewWindow?.contentView.removeChildView(embedded);if(!embedded.webContents.isDestroyed())embedded.webContents.close({waitForBeforeUnload:false});embedded=null;}clearTimeout(refreshTimer);frontendWatcher?.close();clearInterval(heartbeat);powerMonitor.removeListener('suspend',suspend);powerMonitor.removeListener('resume',resume);controller.dispose();service.close();}};
+  return {service,controller,activity,completion,register,openStandalone,getStandalone:()=>standalone,getEmbedded:()=>embedded,inspectEmbedding:()=>({expanded:isExpanded(),suppressed:embeddingSuppressed,visible:embedded?.getVisible(),dragPointer}),attach,hideEmbedded,allowEmbedded:()=>{embeddingSuppressed=false;},page,dispose(){if(disposed)return;completion.dispose();activity.close();disposed=true;if(embedded){mainViewWindow?.contentView.removeChildView(embedded);if(!embedded.webContents.isDestroyed())embedded.webContents.close({waitForBeforeUnload:false});embedded=null;}clearTimeout(refreshTimer);frontendWatcher?.close();clearInterval(heartbeat);powerMonitor.removeListener('suspend',suspend);powerMonitor.removeListener('resume',resume);controller.dispose();service.close();}};
 };

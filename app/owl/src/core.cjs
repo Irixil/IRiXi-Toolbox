@@ -71,6 +71,17 @@ function validateState(s, allowLegacy = false) {
       throw new Error('活动计时记录不正确；原文件已保留。');
     if (a.kind === 'focus') recorded += a.elapsedMs;
   }
+  // Older saves have only kind/outcome/at/message. Round metadata is optional,
+  // but a new record must be complete so a notice cannot use the next preset.
+  const last = s.lastOutcome;
+  if (last && ['sessionId', 'durationMs', 'focusMs', 'startedAt'].some(key => Object.hasOwn(last, key))) {
+    if (typeof last.sessionId !== 'string' || !last.sessionId || !['focus', 'break'].includes(last.kind)
+      || !['completed', 'ended'].includes(last.outcome) || !int(last.durationMs) || last.durationMs < 1000
+      || !int(last.focusMs) || last.focusMs > last.durationMs || !Number.isFinite(last.startedAt)
+      || !Number.isFinite(last.at) || (last.kind === 'break' && last.focusMs !== 0)
+      || (last.kind === 'focus' && last.outcome === 'completed' && last.focusMs !== last.durationMs))
+      throw new Error('本轮完成记录不正确；原文件已保留。');
+  }
   if (recorded !== s.totalFocusMs) throw new Error('累计时间与逐次记录不一致；停止写入。');
   return s;
 }
@@ -80,7 +91,8 @@ function award(s,catalog=COLLECTION_CATALOG) { s.creditedMinutes=Math.floor(s.to
 function finish(s, now, outcome) {
   const a = s.active;
   if (a.kind === 'focus') s.settledFocusMs += a.elapsedMs;
-  s.lastOutcome = { kind: a.kind, outcome, at: now,
+  s.lastOutcome = { kind: a.kind, outcome, at: now, sessionId: a.id,
+    durationMs: a.durationMs, focusMs: a.kind === 'focus' ? a.elapsedMs : 0, startedAt: a.startedAt,
     message: a.kind === 'focus' ? (outcome === 'completed' ? '本轮专注完成，可以开始休息。' : '本轮已提前结束，实际计入的时间已保存。')
       : (outcome === 'completed' ? '休息结束；准备好后手动开始下一轮。' : '休息已结束。') };
   s.active = null;
