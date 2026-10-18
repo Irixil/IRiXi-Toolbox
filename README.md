@@ -1,10 +1,18 @@
-# IRiXi的小工具库
+# IRiXi Toolbox · Mac 灵动岛效率工具箱
+
+[简体中文](README.md) · [English](README.en.md)
+
+把截图翻译、剪贴板、待办笔记和猫头鹰番茄钟放到屏幕顶部，用时展开，用完收起。
+
+A macOS Dynamic Island productivity toolbox with screenshot OCR, translation, clipboard history, notes and an owl Pomodoro companion.
+
+[功能一览](#能做什么) · [安装与源码运行](#安装与第一次使用) · [猫头鹰番茄钟](#猫头鹰番茄钟) · [反馈问题](https://github.com/Irixil/IRiXi-Toolbox/issues)
 
 项目创作者：**[IRiXi](https://github.com/Irixil)**（GitHub：Irixil）。原始仓库：[Irixil/IRiXi-Toolbox](https://github.com/Irixil/IRiXi-Toolbox) · [作者与推荐署名](ATTRIBUTION.md)。
 
 一个放在 Mac 屏幕顶部的个人工具箱。点击顶部入口，展开奶油色工作台，就能记待办、写笔记、找剪贴内容、截图识字，或者让红围巾猫头鹰陪你专注一会儿。用完收起，继续手头的工作。
 
-工具箱外层采用平整的奶油米色与黑字。嵌入首页的猫头鹰番茄钟保留自己的原配色和细微纸纹。
+工具箱外层采用平整的奶油米色与黑字。嵌入首页的猫头鹰番茄钟保留自己的原配色和细微纸纹。日常记录保存在本机，联网功能按需使用。
 
 ![真实界面操作预览，展示首页、工具、待办、剪贴与笔记](docs/media/overview.gif)
 
@@ -128,6 +136,8 @@
 本地 `.irixi-tool` 示例当前只允许自己的独立存储，不能联网、读取任意文件或控制电脑，界面格式目前限于计数器。
 
 ## 从源码运行与开发
+
+想先了解独立番茄钟？[IRiXi Owl Focus 猫头鹰陪伴式番茄钟](https://github.com/Irixil/irixi-owl-focus)只保留专注计时、成长收藏和房间装扮。工具箱则将它与截图、翻译、剪贴板等工具放在同一工作台。两个版本的存档独立，不自动同步。
 
 建议使用 **Xcode 26 或更高版本**；需要 **Node.js 22.12 或更高版本**，以及本机可用的稳定代码签名身份。较旧的 Xcode 尚未验证。先克隆本仓库，在仓库根目录运行以下命令。
 
