@@ -40,9 +40,11 @@ Want only the companion timer? See [IRiXi Owl Focus](https://github.com/Irixil/i
 
 The current build target is an Apple Silicon Mac running macOS 13 or later. Apple Translation features require macOS 15 or later. Other platforms have not been verified.
 
-After starting the app, click the top-of-screen entry to expand it. Use the tabs to open tools, tasks, clipboard, notes or recording. Press Escape or click another app to collapse it. Settings contains shortcuts, widget visibility and the local data-folder shortcut.
+After starting the app, click the top-of-screen entry to expand it. Use the tabs to open tools, tasks, clipboard, notes or recording. Click the blank area of the top navigation bar, press Escape or click another app to collapse it. Clicking a tab still switches pages. Settings contains shortcuts, widget visibility and the local data-folder shortcut.
 
 Start with three local actions: add a task, save a note, then begin one focus session. None needs a model API. Enable clipboard history separately if wanted.
+
+Clipboard history keeps up to 100 non-favorite items. Favorites do not count toward this limit and are preserved, including their images, by automatic cleanup and Clear history. Deleting a favorite requires confirmation. Once unfavorited, an item follows the ordinary history retention rule again.
 
 ### Permissions and connections
 

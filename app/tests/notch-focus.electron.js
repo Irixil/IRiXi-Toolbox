@@ -2,11 +2,59 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, WebContentsView, ipcMain, powerMonitor, screen, nativeTheme } = require('electron');
+const appRoot = process.env.IRIXI_NOTCH_TEST_APP_ROOT || path.join(__dirname, '..');
+const { createOwlHost } = require(path.join(appRoot, 'owl', 'owl-host.cjs'));
 
 const isolatedUserData = fs.mkdtempSync(path.join(os.tmpdir(), 'to-do-panel-electron-test-'));
 app.setPath('userData', isolatedUserData);
 app.once('will-quit', () => fs.rmSync(isolatedUserData, { recursive: true, force: true }));
+
+async function verifyOwlHiddenLifecycle(window) {
+  const handlers = new Map();
+  const host = createOwlHost({
+    app, BrowserWindow, WebContentsView, powerMonitor, screen, nativeTheme,
+    ipcMain: {
+      handle: (name, handler) => { handlers.set(name, handler); ipcMain.handle(name, handler); },
+      on: ipcMain.on.bind(ipcMain),
+      removeListener: ipcMain.removeListener.bind(ipcMain),
+    },
+    dataDir: path.join(isolatedUserData, 'owl-focus'),
+    showCard: () => {}, showHome: () => {},
+    readForeground: () => { throw new Error('本测试不读取真实活动应用'); },
+  });
+  host.register(window);
+  host.attach(window);
+  const event = { sender: window.webContents, senderFrame: window.webContents.mainFrame };
+  const embed = value => handlers.get('owl:embed-bounds')(event, value);
+  try {
+    const bounds = { visible: true, x: 0, y: 40, width: 360, height: 300 };
+    assert.equal(embed(bounds), true);
+    assert.equal(host.getEmbedded().getVisible(), true);
+    const started = handlers.get('owl:command')(event, {
+      type: 'start', requestId: 'hidden-lifecycle-start', task: '隔离计时测试', seconds: 10,
+    });
+    assert.equal(started.ok, true);
+    await window.webContents.executeJavaScript("window.NotchHome.setModuleVisible('pomodoro', false)");
+    assert.equal(embed({ visible: false }), true);
+    assert.equal(host.getEmbedded().getVisible(), false);
+    await new Promise(resolve => setTimeout(resolve, 1150));
+    const hidden = host.service.snapshot();
+    assert.equal(hidden.active.id, started.state.active.id);
+    assert.equal(hidden.active.status, 'running');
+    assert.ok(hidden.active.elapsedMs > started.state.active.elapsedMs, '隐藏猫头鹰组件后宿主必须继续计时');
+    await window.webContents.executeJavaScript("window.NotchHome.setModuleVisible('pomodoro', true)");
+    assert.equal(embed(bounds), true);
+    const restored = host.service.snapshot();
+    assert.equal(host.getEmbedded().getVisible(), true);
+    assert.equal(restored.active.id, hidden.active.id, '显示组件不得创建另一轮');
+    assert.ok(restored.active.elapsedMs >= hidden.active.elapsedMs, '显示组件不得重置计时');
+    assert.equal(host.activity.snapshot().enabled, false, '活动应用记录保持关闭');
+  } finally {
+    host.dispose();
+    for (const name of handlers.keys()) ipcMain.removeHandler(name);
+  }
+}
 
 async function main() {
   await app.whenReady();
@@ -24,7 +72,7 @@ async function main() {
   });
 
   try {
-    await window.loadFile(path.join(__dirname, '..', 'renderer', 'index.html'));
+    await window.loadFile(path.join(appRoot, 'renderer', 'index.html'));
     const freshProfileClipboardState = await window.webContents.executeJavaScript(`
       (() => ({
         history: localStorage.getItem('notch-clip-history'),
@@ -147,6 +195,7 @@ async function main() {
       true,
       `展开后点击顶部中央空白必须收起；最终状态 ${topbarBlankToggle.appClass} / aria-hidden=${topbarBlankToggle.panelAriaHidden}`
     );
+    assert.equal(topbarBlankToggle.panelAriaHidden, 'true', '收起后内容必须从辅助功能树隐藏');
 
     const topbarTabAndSpaceToggle = await window.webContents.executeJavaScript(`
       (async () => {
@@ -167,6 +216,10 @@ async function main() {
         hitTarget?.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
         await sleep(30);
         const todoActivated = document.getElementById('tab-todo').classList.contains('active');
+        const expandedAfterTab = document.getElementById('app').classList.contains('expanded');
+        document.getElementById('tab-todo').click();
+        await sleep(30);
+        const expandedAfterContent = document.getElementById('app').classList.contains('expanded');
         document.dispatchEvent(new KeyboardEvent('keydown', {
           key: ' ',
           code: 'Space',
@@ -177,6 +230,8 @@ async function main() {
         return {
           opened,
           todoActivated,
+          expandedAfterTab,
+          expandedAfterContent,
           tabHit: Boolean(hitTarget?.closest('#tab-button-todo')),
           collapsedBySpace,
         };
@@ -185,6 +240,8 @@ async function main() {
     assert.equal(topbarTabAndSpaceToggle.opened, true);
     assert.equal(topbarTabAndSpaceToggle.tabHit, true, '空白穿透不得破坏真实 Tab 的点击命中');
     assert.equal(topbarTabAndSpaceToggle.todoActivated, true, '真实 Tab 点击必须继续切换页面');
+    assert.equal(topbarTabAndSpaceToggle.expandedAfterTab, true, '点击标签不得误收起面板');
+    assert.equal(topbarTabAndSpaceToggle.expandedAfterContent, true, '点击内容区域不得误收起面板');
     assert.equal(topbarTabAndSpaceToggle.collapsedBySpace, true, '展开后 Space 必须继续收起');
 
     window.setSize(1240, 616);
@@ -739,19 +796,6 @@ async function main() {
         await new Promise((resolve) => requestAnimationFrame(resolve));
         const musicStoppedAfterHover = document.getElementById('music-color-bends').dataset.effectRunning === 'false';
 
-        const minutes = document.getElementById('pomodoro-minutes');
-        const seconds = document.getElementById('pomodoro-seconds');
-        minutes.value = '00';
-        seconds.value = '10';
-        seconds.dispatchEvent(new Event('blur'));
-        document.getElementById('pomodoro-toggle').click();
-        const before = Number(minutes.value) * 60 + Number(seconds.value);
-        window.NotchHome.setModuleVisible('pomodoro', false);
-        await new Promise((resolve) => setTimeout(resolve, 1150));
-        const whileHidden = Number(minutes.value) * 60 + Number(seconds.value);
-        window.NotchHome.setModuleVisible('pomodoro', true);
-        const after = Number(minutes.value) * 60 + Number(seconds.value);
-        document.getElementById('pomodoro-reset').click();
         return {
           scansWhileHidden,
           scansAfterRestore,
@@ -759,9 +803,6 @@ async function main() {
           musicIdleAfterRestore,
           musicAnimatingOnHover,
           musicStoppedAfterHover,
-          before,
-          whileHidden,
-          after,
         };
       })()
     `);
@@ -771,8 +812,8 @@ async function main() {
     assert.equal(lifecycleAudit.musicIdleAfterRestore, true);
     assert.equal(lifecycleAudit.musicAnimatingOnHover, true);
     assert.equal(lifecycleAudit.musicStoppedAfterHover, true);
-    assert.ok(lifecycleAudit.whileHidden < lifecycleAudit.before, '番茄钟隐藏后应继续计时');
-    assert.equal(lifecycleAudit.after, lifecycleAudit.whileHidden);
+    // 计时已由独立猫头鹰宿主持有，使用真实宿主和视图替代已移除的旧计时 DOM。
+    await verifyOwlHiddenLifecycle(window);
 
     const idlePerformanceAudit = await window.webContents.executeJavaScript(`
       (async () => {
@@ -878,6 +919,7 @@ async function main() {
     assert.equal(autoLayoutMotionAudit.rapidDuplicateGhosts, false, '连续切换必须先清理上一轮 Auto Layout ghost');
     assert.ok(autoLayoutMotionAudit.rapidMaxTileAnimations <= 1, '连续切换不得叠加多轮组件动画');
     assert.equal(autoLayoutMotionAudit.rapidGhostsAfter, 0, '连续切换结束后不得残留 Auto Layout ghost');
+    console.log('notch-focus: passed (topbar collapse, tab/content guard, keyboard, layout, clipboard, owl host lifecycle)');
   } finally {
     if (window.webContents.debugger.isAttached()) window.webContents.debugger.detach();
     window.destroy();

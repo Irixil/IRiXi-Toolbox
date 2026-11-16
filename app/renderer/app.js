@@ -1027,8 +1027,15 @@ if (collapseBtn) {
   });
 }
 
-// 导航周围的空白也是工作台内部。近边缘的点击不应突然收起面板；
-// 展开态使用明确的收起按钮，外部失焦及既有快捷键仍按原规则收起。
+// 展开后由顶栏空白接替折叠条；标签和控件仍只执行各自操作。
+const topbarEl = document.querySelector('.topbar');
+if (topbarEl) {
+  topbarEl.addEventListener('click', (event) => {
+    if (event.target.closest('.tabs, button, input, textarea, select, a, [contenteditable]')) return;
+    event.stopPropagation();
+    setMode(false);
+  });
+}
 
 function initTab() {
   setActiveTab('home');
@@ -3206,8 +3213,10 @@ function normalizeClipEntry(entry) {
 function saveClipHistory(list) {
   try {
     localStorage.setItem(CLIP_HISTORY_KEY, JSON.stringify(list));
+    return true;
   } catch (e) {
-    // ignore quota errors
+    showStatusToast('剪贴记录未能保存，原有历史和收藏已保留', { duration: 5000 });
+    return false;
   }
 }
 
@@ -3226,8 +3235,10 @@ function loadClipFavorites() {
 function saveClipFavorites(list) {
   try {
     localStorage.setItem(CLIP_FAV_KEY, JSON.stringify(list));
+    return true;
   } catch (e) {
-    // ignore quota errors
+    showStatusToast('收藏更改未能保存，请重试', { duration: 5000 });
+    return false;
   }
 }
 
@@ -3277,22 +3288,11 @@ async function addClipEntry(raw) {
   };
 
   // 每一次系统复制都是独立历史事件；相同内容也必须保留为两条记录。
-  const updated = window.NotchDomain.prependClipboardHistory(clipHistory, entry, CLIP_MAX);
+  const updated = window.NotchDomain.prependClipboardHistory(clipHistory, entry, CLIP_MAX, clipFavorites);
+  // 先保存，再提交内存状态和删除图片，避免写盘失败后丢失旧内容。
+  if (!saveClipHistory(updated.history)) return false;
   clipHistory = updated.history;
-  const evicted = updated.evicted;
-  if (evicted.length > 0) {
-    const evictedPaths = evicted
-      .filter((e) => e.type === 'image' && e.imagePath)
-      .map((e) => e.imagePath);
-    if (evictedPaths.length > 0) {
-      if (window.notchAPI && typeof window.notchAPI.deleteClipImages === 'function') {
-        window.notchAPI.deleteClipImages(evictedPaths).catch(() => {});
-      }
-      evictedPaths.forEach((p) => clipImageCache.delete(p));
-    }
-  }
-
-  saveClipHistory(clipHistory);
+  deleteUnusedClipImages(updated.evicted);
 
   // 图片条目预加载缩略图
   if (entry.type === 'image' && entry.imagePath) {
@@ -3302,6 +3302,20 @@ async function addClipEntry(raw) {
   clipDataVersion++; // clipHistory 已变（含 FIFO 淘汰）
   renderClipList();
   renderClipFavs();
+  return true;
+}
+
+function deleteUnusedClipImages(removed) {
+  // 工作目录备份用相对路径，当前会话可能用绝对路径；图片目录是扁平的。
+  const imageKey = (imagePath) => imagePath.split(/[\\/]/).pop();
+  const retainedPaths = new Set(clipHistory.map((entry) => entry.imagePath).filter(Boolean).map(imageKey));
+  const paths = [...new Set(removed
+    .filter((entry) => entry.type === 'image' && entry.imagePath && !retainedPaths.has(imageKey(entry.imagePath)))
+    .map((entry) => entry.imagePath))];
+  paths.forEach((imagePath) => clipImageCache.delete(imagePath));
+  if (paths.length && window.notchAPI && typeof window.notchAPI.deleteClipImages === 'function') {
+    window.notchAPI.deleteClipImages(paths).catch(() => {});
+  }
 }
 
 function formatClipTime(ts) {
@@ -3479,14 +3493,12 @@ function focusClipControl(ids, action = 'copy') {
 }
 
 function toggleClipFavorite(id, focusContext = null) {
+  if (!clipHistory.some((entry) => entry.id === id)) return;
   const idx = clipFavorites.indexOf(id);
-  if (idx === -1) {
-    clipFavorites.push(id);
-  } else {
-    clipFavorites.splice(idx, 1);
-  }
+  const nextFavorites = idx === -1 ? [...clipFavorites, id] : clipFavorites.filter((fid) => fid !== id);
+  if (!saveClipFavorites(nextFavorites)) return;
+  clipFavorites = nextFavorites;
   clipDataVersion++; // clipFavorites 已变
-  saveClipFavorites(clipFavorites);
   renderClipList();
   renderClipFavs();
   if (focusContext && focusContext.restoreFocus) {
@@ -3501,16 +3513,25 @@ function toggleClipFavorite(id, focusContext = null) {
   }
 }
 
-function deleteClipEntry(id, focusContext = null) {
+function deleteClipEntry(id, focusContext = null, confirmed = false) {
   const idx = clipHistory.findIndex((e) => e.id === id);
   if (idx === -1) return;
   const entry = clipHistory[idx];
   const favoriteIndex = clipFavorites.indexOf(id);
-  clipHistory.splice(idx, 1);
-  clipFavorites = clipFavorites.filter((fid) => fid !== id);
+  if (favoriteIndex !== -1 && !confirmed) {
+    showStatusToast('这条记录已收藏，确认删除？', {
+      actionLabel: '确认删除',
+      duration: 5000,
+      onAction: () => deleteClipEntry(id, focusContext, true),
+    });
+    return;
+  }
+  const nextHistory = clipHistory.filter((item) => item.id !== id);
+  if (!saveClipHistory(nextHistory)) return;
+  clipHistory = nextHistory;
+  const nextFavorites = clipFavorites.filter((fid) => fid !== id);
+  if (saveClipFavorites(nextFavorites)) clipFavorites = nextFavorites;
   clipDataVersion++; // clipHistory + clipFavorites 已变
-  saveClipHistory(clipHistory);
-  saveClipFavorites(clipFavorites);
   renderClipList();
   renderClipFavs();
   if (focusContext && focusContext.restoreFocus) {
@@ -3521,24 +3542,24 @@ function deleteClipEntry(id, focusContext = null) {
     duration: 5000,
     onAction: () => {
       if (clipHistory.some((item) => item.id === id)) return;
-      clipHistory.splice(Math.min(idx, clipHistory.length), 0, entry);
+      const restoredHistory = [...clipHistory];
+      restoredHistory.splice(Math.min(idx, restoredHistory.length), 0, entry);
       if (favoriteIndex !== -1) {
-        clipFavorites.splice(Math.min(favoriteIndex, clipFavorites.length), 0, id);
+        const restoredFavorites = clipFavorites.filter((fid) => fid !== id);
+        restoredFavorites.splice(Math.min(favoriteIndex, restoredFavorites.length), 0, id);
+        if (!saveClipFavorites(restoredFavorites)) return;
+        clipFavorites = restoredFavorites;
       }
+      if (!saveClipHistory(restoredHistory)) return;
+      clipHistory = restoredHistory;
       clipDataVersion++;
-      saveClipHistory(clipHistory);
-      saveClipFavorites(clipFavorites);
       renderClipList();
       renderClipFavs();
       focusClipControl([id]);
       showStatusToast('已撤销删除');
     },
     onExpire: () => {
-      if (entry.type !== 'image' || !entry.imagePath) return;
-      clipImageCache.delete(entry.imagePath);
-      if (window.notchAPI && typeof window.notchAPI.deleteClipImages === 'function') {
-        window.notchAPI.deleteClipImages([entry.imagePath]).catch(() => {});
-      }
+      deleteUnusedClipImages([entry]);
     },
   });
 }
@@ -3547,22 +3568,23 @@ function resetClipClearConfirmation() {
   clipClearArmed = false;
   if (clipClearBtn) {
     clipClearBtn.classList.remove('confirming');
-    clipClearBtn.setAttribute('aria-label', '清空历史');
+    clipClearBtn.setAttribute('aria-label', '清空历史（保留收藏）');
   }
 }
 
 function requestClearClipHistory() {
-  if (clipHistory.length === 0) {
-    showStatusToast('剪贴板历史已是空的');
+  const removedCount = clipHistory.filter((entry) => !clipFavorites.includes(entry.id)).length;
+  if (removedCount === 0) {
+    showStatusToast('没有可清理的历史，收藏会一直保留');
     return;
   }
   if (!clipClearArmed) {
     clipClearArmed = true;
     if (clipClearBtn) {
       clipClearBtn.classList.add('confirming');
-      clipClearBtn.setAttribute('aria-label', `再次点击确认清空 ${clipHistory.length} 条历史`);
+      clipClearBtn.setAttribute('aria-label', `再次点击确认清空 ${removedCount} 条历史，保留收藏`);
     }
-    showStatusToast(`再点一次垃圾桶，清空 ${clipHistory.length} 条记录`, {
+    showStatusToast(`再点一次垃圾桶，清空 ${removedCount} 条历史，保留收藏`, {
       duration: 3000,
       onExpire: resetClipClearConfirmation,
     });
@@ -3581,22 +3603,17 @@ if (clipClearBtn) {
 }
 
 function clearClipHistory() {
-  const removedCount = clipHistory.length;
-  const imagePaths = clipHistory
-    .filter((e) => e.type === 'image' && e.imagePath)
-    .map((e) => e.imagePath);
-  clipHistory = [];
-  clipFavorites = [];
-  clipImageCache.clear();
-  clipDataVersion++; // 全部数据已清空
-  saveClipHistory([]);
-  saveClipFavorites([]);
-  if (imagePaths.length > 0 && window.notchAPI && typeof window.notchAPI.deleteClipImages === 'function') {
-    window.notchAPI.deleteClipImages(imagePaths).catch(() => {});
-  }
+  const favorites = new Set(clipFavorites);
+  const retained = clipHistory.filter((entry) => favorites.has(entry.id));
+  const removed = clipHistory.filter((entry) => !favorites.has(entry.id));
+  if (!saveClipHistory(retained)) return false;
+  clipHistory = retained;
+  clipDataVersion++;
+  deleteUnusedClipImages(removed);
   renderClipList();
   renderClipFavs();
-  showStatusToast(`已清空 ${removedCount} 条剪贴记录`);
+  showStatusToast(`已清空 ${removed.length} 条历史，保留 ${retained.length} 条收藏`);
+  return true;
 }
 
 async function copyClipEntry(id) {

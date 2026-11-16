@@ -173,13 +173,18 @@
     ));
   }
 
-  function prependClipboardHistory(history, entry, maxEntries = 100) {
+  function prependClipboardHistory(history, entry, maxEntries = 100, favoriteIds = []) {
     const limit = Math.max(1, Math.floor(Number(maxEntries) || 100));
     const next = [entry, ...(Array.isArray(history) ? history : [])];
-    return {
-      history: next.slice(0, limit),
-      evicted: next.slice(limit),
-    };
+    const favorites = new Set(favoriteIds);
+    const kept = [];
+    const evicted = [];
+    let ordinaryCount = 0;
+    for (const item of next) {
+      if (favorites.has(item.id) || ordinaryCount++ < limit) kept.push(item);
+      else evicted.push(item);
+    }
+    return { history: kept, evicted };
   }
 
   function createCommand(text, id, createdAt) {
